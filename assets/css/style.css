@@ -57,7 +57,9 @@ a:hover {
 .spacer {
   height: 40px;
 }
-
+.section-space {
+  height: 40px;
+}
 .cta {
   margin-top: 60px;
   font-size: 18px;
