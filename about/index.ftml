@@ -3,22 +3,22 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Unbound Healing Ministries</title>
-  <link rel="stylesheet" href="/unboundhealing/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
 <link rel="canonical" href="https://unboundhealing.org/about/">
 </head>
 <body>
 
 <header class="nav">
   <div class="left">
-    <a href="/unboundhealing/">Unbound Healing Ministries</a>
+    <a href="/">Unbound Healing Ministries</a>
   </div>
 
   <div class="right">
-    <a href="/unboundhealing/invitations/">Invitations</a>
-    <a href="/unboundhealing/what-was-noticed/">What Was Noticed?</a>
-    <a href="/unboundhealing/listen/">Listen</a>
-    <a href="/unboundhealing/gather/">Gather</a>
-    <a href="/unboundhealing/support/">Support</a>
+    <a href="/invitations/">Invitations</a>
+    <a href="/what-was-noticed/">What Was Noticed?</a>
+    <a href="/listen/">Listen</a>
+    <a href="/gather/">Gather</a>
+    <a href="/support/">Support</a>
   </div>
 </header>
 
