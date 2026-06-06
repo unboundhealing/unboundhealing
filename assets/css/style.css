@@ -40,7 +40,7 @@ header {
 
 /* LOGO IMAGE */
 .header-logo {
-  height: 44px;        /* main control: adjust this */
+  height: 44px;
   width: auto;
   display: block;
   transition: transform 0.2s ease, opacity 0.2s ease;
@@ -80,16 +80,21 @@ header {
   width: 100%;
 }
 
-/* PAGE LAYOUT */
+/* PAGE LAYOUT (CENTERED CONTAINER) */
 .page {
   max-width: 800px;
   margin: 0 auto;
   padding: 80px 20px;
 }
 
-/* HERO */
-.hero {
+/* TEXT ALIGNMENT SYSTEM */
+.page--centered {
   text-align: center;
+}
+
+/* HERO (now generic spacing only — no forced centering) */
+.hero {
+  margin-bottom: 40px;
 }
 
 .big-question {
