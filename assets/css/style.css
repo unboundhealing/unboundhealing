@@ -23,26 +23,26 @@ a:hover {
   color: var(--accent);
 }
 
-/* HEADER */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 22px 30px;
+/* =========================
+   CENTERED HEADER SYSTEM
+   ========================= */
+
+.centered-header {
+  text-align: center;
+  padding: 28px 20px 10px;
   font-family: Inter, sans-serif;
 }
 
-/* LEFT SIDE (LOGO) */
-.left {
-  display: flex;
-  align-items: center;
+/* logo wrapper */
+.logo-wrap {
+  margin-bottom: 14px;
 }
 
-/* LOGO IMAGE */
+/* logo image */
 .header-logo {
   height: 44px;
   width: auto;
-  display: block;
+  display: inline-block;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -51,21 +51,22 @@ header {
   opacity: 0.9;
 }
 
-/* RIGHT NAV LINKS */
-.right {
+/* nav under logo */
+.centered-header .nav {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 18px;
   font-size: 14px;
 }
 
-.right a {
+.centered-header .nav a {
   position: relative;
   padding: 4px 0;
 }
 
 /* subtle underline animation */
-.right a::after {
+.centered-header .nav a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -76,23 +77,29 @@ header {
   transition: width 0.2s ease;
 }
 
-.right a:hover::after {
+.centered-header .nav a:hover::after {
   width: 100%;
 }
 
-/* PAGE LAYOUT (CENTERED CONTAINER) */
+/* =========================
+   PAGE LAYOUT SYSTEM
+   ========================= */
+
 .page {
   max-width: 800px;
   margin: 0 auto;
   padding: 80px 20px;
 }
 
-/* TEXT ALIGNMENT SYSTEM */
+/* shared centering utility */
 .page--centered {
   text-align: center;
 }
 
-/* HERO (now generic spacing only — no forced centering) */
+/* =========================
+   HERO / HOMEPAGE CONTENT
+   ========================= */
+
 .hero {
   margin-bottom: 40px;
 }
@@ -122,7 +129,10 @@ header {
   color: var(--accent);
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+   ========================= */
+
 .footer {
   text-align: center;
   padding: 60px 20px;
@@ -134,18 +144,19 @@ header {
   margin-top: 10px;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+   ========================= */
+
 @media (max-width: 700px) {
-  header {
-    flex-direction: column;
-    gap: 14px;
-    padding: 18px 16px;
+
+  .centered-header {
+    padding: 20px 16px 10px;
   }
 
-  .right {
-    flex-wrap: wrap;
-    justify-content: center;
+  .centered-header .nav {
     gap: 12px;
+    font-size: 13px;
   }
 
   .header-logo {
