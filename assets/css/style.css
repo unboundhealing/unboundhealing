@@ -43,12 +43,13 @@ a:hover {
   height: 44px;
   width: auto;
   display: inline-block;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.92;              /* softens presence */
+  transition: transform 0.2s ease, opacity 0.25s ease;
 }
 
 .header-logo:hover {
   transform: scale(1.02);
-  opacity: 0.9;
+  opacity: 1;
 }
 
 /* nav under logo */
