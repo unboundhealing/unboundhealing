@@ -168,6 +168,9 @@ p {
 
 .article h1 {
   text-align: center;
+  font-weight: 500;
+  margin-bottom: var(--space-lg);
+  letter-spacing: 0.2px;
 }
 
 /* =========================
