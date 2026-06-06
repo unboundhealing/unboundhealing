@@ -3,15 +3,38 @@
   --text: #2f2f2f;
   --accent: #6f8f6a;
   --muted: #6a6a6a;
+
+  /* =========================
+     SPACING RHYTHM SYSTEM
+     ========================= */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+
+  /* =========================
+     TYPOGRAPHY RHYTHM
+     ========================= */
+  --text-sm: 14px;
+  --text-base: 18px;
+  --text-lg: 24px;
+  --text-xl: 32px;
+
+  --line-height: 1.65;
 }
 
-/* BASE */
+/* =========================
+   BASE
+   ========================= */
+
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
   font-family: "Crimson Pro", serif;
-  line-height: 1.6;
+  line-height: var(--line-height);
+  font-size: var(--text-base);
 }
 
 a {
@@ -29,21 +52,20 @@ a:hover {
 
 .centered-header {
   text-align: center;
-  padding: 28px 20px 10px;
+  padding: var(--space-md) 20px var(--space-xs);
   font-family: Inter, sans-serif;
 }
 
-/* logo wrapper */
+/* logo */
 .logo-wrap {
-  margin-bottom: 14px;
+  margin-bottom: var(--space-sm);
 }
 
-/* logo image */
 .header-logo {
   height: 44px;
   width: auto;
   display: inline-block;
-  opacity: 0.92;              /* softens presence */
+  opacity: 0.92;
   transition: transform 0.2s ease, opacity 0.25s ease;
 }
 
@@ -52,13 +74,13 @@ a:hover {
   opacity: 1;
 }
 
-/* nav under logo */
+/* nav */
 .centered-header .nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 18px;
-  font-size: 14px;
+  gap: var(--space-md);
+  font-size: var(--text-sm);
 }
 
 .centered-header .nav a {
@@ -66,7 +88,6 @@ a:hover {
   padding: 4px 0;
 }
 
-/* subtle underline animation */
 .centered-header .nav a::after {
   content: "";
   position: absolute;
@@ -89,45 +110,60 @@ a:hover {
 .page {
   max-width: 800px;
   margin: 0 auto;
-  padding: 80px 20px;
+  padding: var(--space-xl) 20px;
 }
 
-/* shared centering utility */
+/* centered text mode */
 .page--centered {
   text-align: center;
 }
 
 /* =========================
-   HERO / HOMEPAGE CONTENT
+   HERO (homepage)
    ========================= */
 
 .hero {
-  margin-bottom: 40px;
+  margin-bottom: var(--space-lg);
 }
 
 .big-question {
-  font-size: 26px;
-  margin-bottom: 60px;
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-lg);
+  line-height: 1.5;
 }
 
 .line {
-  margin: 6px 0;
-  font-size: 18px;
+  margin: var(--space-xs) 0;
+  font-size: var(--text-base);
 }
 
 .spacer {
-  height: 40px;
+  height: var(--space-lg);
 }
 
 .section-space {
-  height: 40px;
+  height: var(--space-lg);
 }
 
 /* CTA */
 .cta {
-  margin-top: 60px;
-  font-size: 18px;
+  margin-top: var(--space-lg);
+  font-size: var(--text-base);
   color: var(--accent);
+}
+
+/* =========================
+   TYPOGRAPHY CONSISTENCY
+   ========================= */
+
+/* paragraphs (for Invitations, Gather, etc.) */
+p {
+  margin: 0 0 var(--space-sm);
+}
+
+/* optional subtle refinement for long text pages */
+.page:not(.page--centered) p {
+  line-height: var(--line-height);
 }
 
 /* =========================
@@ -136,13 +172,13 @@ a:hover {
 
 .footer {
   text-align: center;
-  padding: 60px 20px;
-  font-size: 14px;
+  padding: var(--space-xl) 20px;
+  font-size: var(--text-sm);
   color: var(--muted);
 }
 
 .footer .warm {
-  margin-top: 10px;
+  margin-top: var(--space-xs);
 }
 
 /* =========================
@@ -152,11 +188,11 @@ a:hover {
 @media (max-width: 700px) {
 
   .centered-header {
-    padding: 20px 16px 10px;
+    padding: var(--space-sm) 16px var(--space-xs);
   }
 
   .centered-header .nav {
-    gap: 12px;
+    gap: var(--space-sm);
     font-size: 13px;
   }
 
