@@ -1,9 +1,40 @@
-https://unboundhealing.org/
-https://unboundhealing.org/invitations/
-https://unboundhealing.org/invitations/cooling-tea/
-https://unboundhealing.org/invitations/tom/
-https://unboundhealing.org/what-was-noticed/
-https://unboundhealing.org/listen/
-https://unboundhealing.org/gather/
-https://unboundhealing.org/support/
-https://unboundhealing.org/about/
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://unboundhealing.org/</loc>
+  </url>
+
+  <url>
+    <loc>https://unboundhealing.org/invitations/</loc>
+  </url>
+
+  <url>
+    <loc>https://unboundhealing.org/invitations/cooling-tea/</loc>
+  </url>
+
+  <url>
+    <loc>https://unboundhealing.org/invitations/tom/</loc>
+  </url>
+
+  <url>
+    <loc>https://unboundhealing.org/what-was-noticed/</loc>
+  </url>
+
+  <url>
+    <loc>https://unboundhealing.org/listen/</loc>
+  </url>
+
+  <url>
+    <loc>https://unboundhealing.org/gather/</loc>
+  </url>
+
+  <url>
+    <loc>https://unboundhealing.org/support/</loc>
+  </url>
+
+  <url>
+    <loc>https://unboundhealing.org/about/</loc>
+  </url>
+
+</urlset>
