@@ -5,6 +5,7 @@
   --muted: #6a6a6a;
 }
 
+/* BASE */
 body {
   margin: 0;
   background: var(--bg);
@@ -22,24 +23,71 @@ a:hover {
   color: var(--accent);
 }
 
-.nav {
+/* HEADER */
+header {
   display: flex;
   justify-content: space-between;
-  padding: 20px 30px;
+  align-items: center;
+  padding: 22px 30px;
   font-family: Inter, sans-serif;
+}
+
+/* LEFT SIDE (LOGO) */
+.left {
+  display: flex;
+  align-items: center;
+}
+
+/* LOGO IMAGE */
+.header-logo {
+  height: 44px;        /* main control: adjust this */
+  width: auto;
+  display: block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.header-logo:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+/* RIGHT NAV LINKS */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
   font-size: 14px;
 }
 
-.nav .right a {
-  margin-left: 18px;
+.right a {
+  position: relative;
+  padding: 4px 0;
 }
 
+/* subtle underline animation */
+.right a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+
+.right a:hover::after {
+  width: 100%;
+}
+
+/* PAGE LAYOUT */
 .page {
   max-width: 800px;
   margin: 0 auto;
   padding: 80px 20px;
 }
 
+/* HERO */
 .hero {
   text-align: center;
 }
@@ -57,15 +105,19 @@ a:hover {
 .spacer {
   height: 40px;
 }
+
 .section-space {
   height: 40px;
 }
+
+/* CTA */
 .cta {
   margin-top: 60px;
   font-size: 18px;
   color: var(--accent);
 }
 
+/* FOOTER */
 .footer {
   text-align: center;
   padding: 60px 20px;
@@ -75,4 +127,27 @@ a:hover {
 
 .footer .warm {
   margin-top: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px 16px;
+  }
+
+  .right {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .header-logo {
+    height: 38px;
+  }
+
+  .big-question {
+    font-size: 22px;
+  }
 }
