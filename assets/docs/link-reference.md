@@ -48,6 +48,12 @@ External: <a href="https://unboundhealing.org/inviting/just-listening/">just lis
 
 Internal: <a href="/inviting/just-listening/">just listening...</a>
 
+## OPEN...
+
+External: <a href="https://unboundhealing.org/inviting/open/">open...</a>
+
+Internal: <a href="/inviting/open/">open...</a>
+
 ## NOTICING
 
 External: <a href="https://unboundhealing.org/noticing/">Noticing</a>
