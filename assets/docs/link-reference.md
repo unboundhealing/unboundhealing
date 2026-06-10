@@ -42,6 +42,12 @@ External: <a href="https://unboundhealing.org/inviting/love-concept/">love is ju
 
 Internal: <a href="/inviting/love-concept/">love is just a concept...</a>
 
+## JUST LISTENING...
+
+External: <a href="https://unboundhealing.org/inviting/just-listening/">just listening...</a>
+
+Internal: <a href="/inviting/just-listening/">just listening...</a>
+
 ## NOTICING
 
 External: <a href="https://unboundhealing.org/noticing/">Noticing</a>
