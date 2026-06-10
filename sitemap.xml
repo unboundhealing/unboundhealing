@@ -6,6 +6,10 @@
   </url>
 
   <url>
+    <loc>https://unboundhealing.org/welcome/</loc>
+  </url>
+
+  <url>
     <loc>https://unboundhealing.org/inviting/</loc>
   </url>
 
@@ -20,14 +24,18 @@
   <url>
     <loc>https://unboundhealing.org/inviting/liz/</loc>
   </url>
-  
+
+  <url>
+    <loc>https://unboundhealing.org/inviting/love-concept/</loc>
+  </url>
+
   <url>
     <loc>https://unboundhealing.org/noticing/</loc>
   </url>
   
-<url>
-  <loc>https://unboundhealing.org/noticing/shared-experiences/</loc>
-</url>
+  <url>
+    <loc>https://unboundhealing.org/noticing/shared-experiences/</loc>
+  </url>
   
   <url>
     <loc>https://unboundhealing.org/listening/</loc>
@@ -47,6 +55,34 @@
 
   <url>
     <loc>https://unboundhealing.org/about/conversing/</loc>
+  </url>
+
+  <url>
+    <loc>https://unboundhealing.org/concept/</loc>
+  </url>
+
+  <url>
+    <loc>https://unboundhealing.org/concept/ici/</loc>
+  </url>
+
+  <url>
+    <loc>https://unboundhealing.org/concept/origin/</loc>
+  </url>
+
+  <url>
+    <loc>https://unboundhealing.org/concept/experimenting/</loc>
+  </url>
+
+  <url>
+    <loc>https://unboundhealing.org/concept/idea/</loc>
+  </url>
+
+  <url>
+    <loc>https://unboundhealing.org/concept/zone/</loc>
+  </url>
+
+  <url>
+    <loc>https://unboundhealing.org/concept/just-thinking/</loc>
   </url>
 
 </urlset>
