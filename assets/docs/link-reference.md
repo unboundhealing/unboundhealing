@@ -12,47 +12,53 @@ External: <a href="https://unboundhealing.org/welcome/">Welcome in...</a>
 
 Internal: <a href="/welcome/">Welcome in...</a>
 
-## INVITING
+## OPENING
 
-External: <a href="https://unboundhealing.org/inviting/">Inviting</a>
+External: <a href="https://unboundhealing.org/opening/">Opening</a>
 
-Internal: <a href="/inviting/">Inviting</a>
+Internal: <a href="/opening/">Opening</a>
 
-## COOLING TEA
+## (((COOLING TEA)))
 
-External: <a href="https://unboundhealing.org/inviting/cooling-tea/">cooling tea</a>
+External: <a href="https://unboundhealing.org/opening/cooling-tea/">(((cooling tea)))</a>
 
-Internal: <a href="/inviting/cooling-tea/">cooling tea</a>
+Internal: <a href="/opening/cooling-tea/">(((cooling tea)))</a>
 
-## COFFEE WITH TOM
+## (((COFFEE WITH TOM)))
 
-External: <a href="https://unboundhealing.org/inviting/tom/">coffee with tom</a>
+External: <a href="https://unboundhealing.org/opening/tom/">(((coffee with tom)))</a>
 
-Internal: <a href="/inviting/tom/">coffee with tom</a>
+Internal: <a href="/opening/tom/">(((coffee with tom)))</a>
 
-## LIZ
+## (((LIZ)))
 
-External: <a href="https://unboundhealing.org/inviting/liz/">liz</a>
+External: <a href="https://unboundhealing.org/opening/liz/">(((liz)))</a>
 
-Internal: <a href="/inviting/liz/">liz</a>
+Internal: <a href="/opening/liz/">(((liz)))</a>
 
-## LOVE IS JUST A CONCEPT...
+## (((LOVE IS JUST A CONCEPT...)))
 
-External: <a href="https://unboundhealing.org/inviting/love-concept/">love is just a concept...</a>
+External: <a href="https://unboundhealing.org/opening/love-concept/">(((love is just a concept...)))</a>
 
-Internal: <a href="/inviting/love-concept/">love is just a concept...</a>
+Internal: <a href="/opening/love-concept/">(((love is just a concept...)))</a>
 
-## JUST LISTENING...
+## (((JUST LISTENING...)))
 
-External: <a href="https://unboundhealing.org/inviting/just-listening/">just listening...</a>
+External: <a href="https://unboundhealing.org/opening/just-listening/">(((just listening...)))</a>
 
-Internal: <a href="/inviting/just-listening/">just listening...</a>
+Internal: <a href="/opening/just-listening/">(((just listening...)))</a>
 
-## OPEN...
+## (((OPEN...)))
 
-External: <a href="https://unboundhealing.org/inviting/open/">open...</a>
+External: <a href="https://unboundhealing.org/opening/open/">(((open...)))</a>
 
-Internal: <a href="/inviting/open/">open...</a>
+Internal: <a href="/opening/open/">(((open...)))</a>
+
+## (((OPENING...)))
+
+External: <a href="https://unboundhealing.org/opening/opening/">(((opening...)))</a>
+
+Internal: <a href="/opening/opening/">(((opening...)))</a>
 
 ## NOTICING
 
@@ -116,9 +122,15 @@ Internal: <a href="/concept/origin/">Almost-Origin Story</a>
 
 ## EXPERIMENTING...
 
-External: <a href="https://unboundhealing.org/concept/experimenting/">experimenting...</a>
+External: <a href="https://unboundhealing.org/concept/experimenting/">Experimenting...</a>
 
-Internal: <a href="/concept/experimenting/">experimenting...</a>
+Internal: <a href="/concept/experimenting/">Experimenting...</a>
+
+## EXPERIMENTING...
+
+External: <a href="https://unboundhealing.org/concept/evolving/">Evolving...</a>
+
+Internal: <a href="/concept/evolving/">Evolving...</a>
 
 ## (((IDEA)))
 
@@ -137,4 +149,10 @@ Internal: <a href="/concept/zone/">(((zone?)))</a>
 External: <a href="https://unboundhealing.org/concept/just-thinking/">(((so i was just thinking...)))</a>
 
 Internal: <a href="/concept/just-thinking/">(((so i was just thinking...)))</a>
+
+## (((ICED COFFEE)))
+
+External: <a href="https://unboundhealing.org/concept/iced-coffee/">(((iced coffee)))</a>
+
+Internal: <a href="/concept/iced-coffee/">(((iced coffee)))</a>
 
