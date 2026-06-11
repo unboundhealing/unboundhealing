@@ -10,31 +10,35 @@
   </url>
 
   <url>
-    <loc>https://unboundhealing.org/inviting/</loc>
+    <loc>https://unboundhealing.org/opening/</loc>
   </url>
 
   <url>
-    <loc>https://unboundhealing.org/inviting/cooling-tea/</loc>
+    <loc>https://unboundhealing.org/opening/cooling-tea/</loc>
   </url>
 
   <url>
-    <loc>https://unboundhealing.org/inviting/tom/</loc>
+    <loc>https://unboundhealing.org/opening/tom/</loc>
   </url>
 
   <url>
-    <loc>https://unboundhealing.org/inviting/liz/</loc>
+    <loc>https://unboundhealing.org/opening/liz/</loc>
   </url>
 
   <url>
-    <loc>https://unboundhealing.org/inviting/love-concept/</loc>
+    <loc>https://unboundhealing.org/opening/love-concept/</loc>
   </url>
   
   <url>
-    <loc>https://unboundhealing.org/inviting/just-litening/</loc>
+    <loc>https://unboundhealing.org/opening/just-litening/</loc>
   </url>
 
   <url>
-    <loc>https://unboundhealing.org/inviting/open/</loc>
+    <loc>https://unboundhealing.org/opening/open/</loc>
+  </url>
+  
+  <url>
+    <loc>https://unboundhealing.org/opening/opening/</loc>
   </url>
 
   <url>
@@ -84,6 +88,10 @@
   <url>
     <loc>https://unboundhealing.org/concept/idea/</loc>
   </url>
+  
+  <url>
+    <loc>https://unboundhealing.org/concept/evolving/</loc>
+  </url>
 
   <url>
     <loc>https://unboundhealing.org/concept/zone/</loc>
@@ -91,6 +99,10 @@
 
   <url>
     <loc>https://unboundhealing.org/concept/just-thinking/</loc>
+  </url>
+  
+  <url>
+    <loc>https://unboundhealing.org/concept/iced-coffee/</loc>
   </url>
 
 </urlset>
