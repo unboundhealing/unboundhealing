@@ -54,6 +54,12 @@ External: <a href="https://unboundhealing.org/opening/open/">(((open...)))</a>
 
 Internal: <a href="/opening/open/">(((open...)))</a>
 
+## (((THIS MORNING...)))
+
+External: <a href="https://unboundhealing.org/opening/this-morning/">(((this morning...)))</a>
+
+Internal: <a href="/opening/this-morning/">(((this morning...)))</a>
+
 ## NOTICING
 
 External: <a href="https://unboundhealing.org/noticing/">Noticing</a>
