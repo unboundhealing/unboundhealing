@@ -199,7 +199,18 @@ p {
   margin-bottom: var(--space-lg);
   letter-spacing: 0.2px;
 }
+/* Page titles and subtitles */
 
+.subtitle {
+  text-align: center;
+  font-style: italic;
+}
+
+.subtitle-spaced {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 40px;
+}
 /* =========================
    FOOTER
    ========================= */
