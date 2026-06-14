@@ -201,15 +201,14 @@ p {
 }
 /* Page titles and subtitles */
 
-.subtitle {
+.subtitle-title {
   text-align: center;
   font-style: italic;
 }
 
-.subtitle-spaced {
-  text-align: center;
+.subtitle-subheading {
   font-style: italic;
-  margin-bottom: 40px;
+  font-size: 0.8rem;
 }
 /* =========================
    FOOTER
