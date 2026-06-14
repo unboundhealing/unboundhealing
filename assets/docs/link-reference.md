@@ -66,6 +66,18 @@ External: <a href="https://unboundhealing.org/opening/this-morning-too/">(((this
 
 Internal: <a href="/opening/this-morning-too/">(((this morning...)))</a>
 
+## (((SOLD-OUT...)))
+
+External: <a href="https://unboundhealing.org/opening/sold-out/">(((sold-out...)))</a>
+
+Internal: <a href="/opening/sold-out/">(((sold-out...)))</a>
+
+## (((THIS YOU...)))
+
+External: <a href="https://unboundhealing.org/opening/this-you/">(((this-you...)))</a>
+
+Internal: <a href="/opening/this-you/">(((this you...)))</a>
+
 ## NOTICING
 
 External: <a href="https://unboundhealing.org/noticing/">Noticing</a>
