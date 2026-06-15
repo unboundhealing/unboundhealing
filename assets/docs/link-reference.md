@@ -86,9 +86,9 @@ Internal: <a href="/noticing/">Noticing</a>
 
 ## SHARED EXPERIENCES
 
-External: <a href="https://unboundhealing.org/noticing/shared-experiences/">shared experiences</a>
+External: <a href="https://unboundhealing.org/noticing/shared-experiences/">Shared Experiences</a>
 
-Internal: <a href="/noticing/shared-experiences/">shared experiences</a>
+Internal: <a href="/noticing/shared-experiences/">Shared Experiences</a>
 
 ## LISTENING
 
