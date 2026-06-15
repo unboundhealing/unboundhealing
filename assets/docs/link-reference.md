@@ -2,7 +2,7 @@
 
 ## HOME
 
-External: <a href="https://unboundhealing.org/">https://unboundhealing.org/</a>
+External: <a href="https://unboundhealing.org/">Unbound Healing (Ministries?)</a>
 
 Internal: <a href="/">Home</a>
 
