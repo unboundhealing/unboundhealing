@@ -74,7 +74,7 @@ Internal: <a href="/opening/sold-out/">(((sold-out...)))</a>
 
 ## (((THIS YOU...)))
 
-External: <a href="https://unboundhealing.org/opening/this-you/">(((this-you...)))</a>
+External: <a href="https://unboundhealing.org/opening/this-you/">(((this you...)))</a>
 
 Internal: <a href="/opening/this-you/">(((this you...)))</a>
 
