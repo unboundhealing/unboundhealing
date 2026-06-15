@@ -1,0 +1,273 @@
+:root {
+  --bg: #f4f0e6;
+  --text: #2f2f2f;
+  --accent: #6f8f6a;
+  --muted: #6a6a6a;
+
+  /* =========================
+     SPACING RHYTHM SYSTEM
+     ========================= */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+
+  /* =========================
+     TYPOGRAPHY RHYTHM
+     ========================= */
+  --text-sm: 14px;
+  --text-base: 18px;
+  --text-lg: 24px;
+  --text-xl: 32px;
+
+  --line-height: 1.65;
+}
+
+/* =========================
+   BASE
+   ========================= */
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Crimson Pro", serif;
+  line-height: var(--line-height);
+  font-size: var(--text-base);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+/* =========================
+   ARTICLE / CONTENT LINKS
+   ========================= */
+
+main a {
+color: var(–accent);
+text-decoration: underline;
+text-decoration-color: rgba(111,143,106,0.35);
+text-underline-offset: 2px;
+}
+
+main a:hover {
+text-decoration-color: rgba(111,143,106,0.7);
+}
+/* =========================
+   ARTICLE IMAGES
+   ========================= */
+
+.article-image {
+  margin: 40px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.article-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+.article-image figcaption {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* =========================
+   CENTERED HEADER SYSTEM
+   ========================= */
+
+.centered-header {
+  text-align: center;
+  padding: var(--space-md) 20px var(--space-xs);
+  font-family: Inter, sans-serif;
+}
+
+/* logo */
+.logo-wrap {
+  margin-bottom: var(--space-sm);
+}
+
+.header-logo {
+  height: 44px;
+  width: auto;
+  display: inline-block;
+  opacity: 0.92;
+  transition: transform 0.2s ease, opacity 0.25s ease;
+}
+
+.header-logo:hover {
+  transform: scale(1.02);
+  opacity: 1;
+}
+
+/* nav */
+.centered-header .nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  font-size: var(--text-sm);
+}
+
+.centered-header .nav a {
+  position: relative;
+  padding: 4px 0;
+}
+
+.centered-header .nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+
+.centered-header .nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   PAGE LAYOUT SYSTEM
+   ========================= */
+
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-xl) 20px;
+}
+
+/* centered text mode */
+.page--centered {
+  text-align: center;
+}
+/* =========================
+   ABOUT PAGE
+   ========================= */
+
+.about-substack {
+  margin-top: 80px;
+}
+
+.about-substack h2 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+/* =========================
+   HERO (homepage)
+   ========================= */
+
+.hero {
+  margin-bottom: var(--space-lg);
+}
+
+.big-question {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-lg);
+  line-height: 1.5;
+}
+
+.line {
+  margin: var(--space-xs) 0;
+  font-size: var(--text-base);
+}
+
+.spacer {
+  height: var(--space-lg);
+}
+
+.section-space {
+  height: var(--space-lg);
+}
+
+/* CTA */
+.cta {
+  margin-top: var(--space-lg);
+  font-size: var(--text-base);
+  color: var(--accent);
+}
+
+/* =========================
+   TYPOGRAPHY CONSISTENCY
+   ========================= */
+
+/* paragraphs (for Invitations, Gather, etc.) */
+p {
+  margin: 0 0 var(--space-sm);
+}
+
+/* optional subtle refinement for long text pages */
+.page:not(.page--centered) p {
+  line-height: var(--line-height);
+}
+
+.article h1 {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: var(--space-lg);
+  letter-spacing: 0.2px;
+}
+/* Page titles and subtitles */
+
+.subtitle-title {
+  text-align: center;
+  font-style: italic;
+}
+
+.subtitle-subheading {
+  font-style: italic;
+  font-size: 0.8rem;
+}
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer {
+  text-align: center;
+  padding: var(--space-xl) 20px;
+  font-size: var(--text-sm);
+  color: var(--muted);
+}
+
+.footer .warm {
+  margin-top: var(--space-xs);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 700px) {
+
+  .centered-header {
+    padding: var(--space-sm) 16px var(--space-xs);
+  }
+
+  .centered-header .nav {
+    gap: var(--space-sm);
+    font-size: 13px;
+  }
+
+  .header-logo {
+    height: 38px;
+  }
+
+  .big-question {
+    font-size: 22px;
+  }
+}
