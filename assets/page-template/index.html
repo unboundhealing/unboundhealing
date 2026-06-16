@@ -152,13 +152,19 @@ independent centering
 <h2>IMAGES</h2>
 
 <figure class="article-image">
-  <a href="/assets/images/FOLDER/FILENAME.webp" target="_blank" rel="noopener noreferrer">
-    <img
-      src="/assets/images/FOLDER/FILENAME.webp"
-      alt="IMAGE_DESCRIPTION"
-      loading="lazy">
+  <a href="/assets/images/FOLDER/FILE.webp" 
+    target="_blank" 
+    rel="noopener noreferrer">
+    <picture>
+      <source
+        media="(max-width: 768px)"
+        srcset="/assets/images/FOLDER/FILE_mobile.webp">
+      <img
+        src="/assets/images/FOLDER/FILE.webp"
+        alt="DESCRIPTION"
+        loading="lazy">
+    </picture>
   </a>
-
   <figcaption>
     CAPTION_TEXT
   </figcaption>
