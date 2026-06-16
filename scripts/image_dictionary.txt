@@ -1,0 +1,3 @@
+# filename|artist|title|caption
+lizzo_good_as_hell_1|Lizzo|Good as Hell|Expert+ run at 85% speed. Focused rhythm play with light score awareness.
+foo_fighters_the_pretender_1|Foo Fighters|The Pretender|High-energy Expert+ run with heavy rhythmic intensity.
