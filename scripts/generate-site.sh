@@ -10,4 +10,6 @@ echo "🚀 Generating full site system..."
 ./scripts/build-search-index.sh
 ./scripts/build-tags.sh
 
+echo "🧠 OpenGraph assumed embedded in templates or build step"
+
 echo "✅ All outputs updated"
