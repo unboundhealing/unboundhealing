@@ -1,51 +1,70 @@
 name: Build Unbound Healing Site
 
 on:
-push:
-branches:
-- main
+  push:
+    branches:
+      - main
 
+# IMPORTANT: allows GitHub Actions to push generated files back to repo
 permissions:
-contents: write
+  contents: write
 
 jobs:
-build:
-runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-```
-steps:
-  - name: Checkout repo
-    uses: actions/checkout@v4
-    with:
-      fetch-depth: 0
+    steps:
+      # -------------------------------------
+      # 1. Checkout repository
+      # -------------------------------------
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-  - name: Set up environment
-    run: |
-      sudo apt-get update
-      sudo apt-get install -y bash curl jq
+      # -------------------------------------
+      # 2. System dependencies (Linux runner)
+      # -------------------------------------
+      - name: Set up environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y bash curl jq
 
-  - name: Make scripts executable
-    run: chmod +x scripts/*.sh
+      # -------------------------------------
+      # 3. Make scripts executable
+      # -------------------------------------
+      - name: Make scripts executable
+        run: chmod +x scripts/*.sh
 
-  - name: Generate full site system
-    run: |
-      ./scripts/generate-site.sh
+      # -------------------------------------
+      # 4. Run full site generation pipeline
+      # -------------------------------------
+      - name: Generate full site system
+        run: |
+          set -e
+          ./scripts/generate-site.sh
 
-  - name: Commit generated files
-    run: |
-      git config user.name "github-actions"
-      git config user.email "github-actions@users.noreply.github.com"
+      # -------------------------------------
+      # 5. Commit generated outputs
+      # -------------------------------------
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
 
-      git add \
-        sitemap.xml \
-        feed.xml \
-        link-reference.md \
-        search-index.json \
-        tags.json
+          git add \
+            feed.xml \
+            sitemap.xml \
+            link-reference.md \
+            search-index.json \
+            tags.json || true
 
-      git diff --cached --quiet || \
-      git commit -m "[skip ci] auto-update generated site files"
+          # Only commit if there are actual changes
+          git diff --cached --quiet || git commit -m "auto-update generated site files"
 
-  - name: Push changes
-    run: git push
-```
+      # -------------------------------------
+      # 6. Push changes back to GitHub
+      # -------------------------------------
+      - name: Push changes
+        run: |
+          git push
