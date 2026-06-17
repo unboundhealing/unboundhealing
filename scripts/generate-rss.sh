@@ -2,9 +2,6 @@
 
 set -e
 
-# =========================
-# CONFIG
-# =========================
 PROJECT_ROOT="/Users/unboundhealing/Documents/Unbound Healing/Web Design"
 SITEMAP="$PROJECT_ROOT/sitemap.xml"
 OUTPUT="$PROJECT_ROOT/feed.xml"
@@ -12,26 +9,59 @@ BASE_URL="https://unboundhealing.org"
 
 cd "$PROJECT_ROOT" || exit 1
 
-echo "📡 Generating RSS feed from sitemap..."
+echo "📡 Generating RSS feed v1.2..."
 
 # =========================
-# FUNCTIONS
+# PROPER NOUNS (extend anytime)
 # =========================
+PROPER_NOUNS=(
+  "Tom"
+  "Liz"
+  "Unbound Healing"
+  "Substack"
+  "GitHub"
+  "Interconnected Content Initiative"
+)
+
+protect_proper_nouns() {
+  local input="$1"
+  local output="$input"
+
+  for noun in "${PROPER_NOUNS[@]}"; do
+    output=$(echo "$output" | sed "s/${noun,,}/__PROTECTED_${noun}__/gI")
+  done
+
+  echo "$output"
+}
+
+restore_proper_nouns() {
+  local input="$1"
+  local output="$input"
+
+  for noun in "${PROPER_NOUNS[@]}"; do
+    output=$(echo "$output" | sed "s/__PROTECTED_${noun}__/$noun/g")
+  done
+
+  echo "$output"
+}
 
 sentence_case() {
-  # lowercases everything, then capitalizes first word
-  # preserves proper nouns crudely via whitelist pattern later if needed
-
   local input="$1"
 
-  # lowercase whole string
-  local lower=$(echo "$input" | tr '[:upper:]' '[:lower:]')
+  # protect proper nouns first
+  local protected=$(protect_proper_nouns "$input")
 
-  # capitalize first character
+  # lowercase everything
+  local lower=$(echo "$protected" | tr '[:upper:]' '[:lower:]')
+
+  # capitalize first character only
   local first_char=$(echo "${lower:0:1}" | tr '[:lower:]' '[:upper:]')
   local rest="${lower:1}"
 
-  echo "${first_char}${rest}"
+  local combined="${first_char}${rest}"
+
+  # restore proper nouns
+  restore_proper_nouns "$combined"
 }
 
 extract_title() {
@@ -41,12 +71,8 @@ extract_title() {
 
 extract_description() {
   local file="$1"
-
-  # meta description
-  local desc=$(grep -m 1 'meta name="description"' "$file" \
-    | sed 's/.*content="\([^"]*\)".*/\1/')
-
-  echo "$desc"
+  grep -m 1 'meta name="description"' "$file" \
+    | sed 's/.*content="\([^"]*\)".*/\1/'
 }
 
 # =========================
@@ -73,28 +99,31 @@ cat > "$OUTPUT" <<EOF
 EOF
 
 # =========================
-# PROCESS SITEMAP URLS
+# PROCESS SITEMAP
 # =========================
 
 grep "<loc>" "$SITEMAP" | sed 's/<[^>]*>//g' | while read -r url; do
 
-  # skip index page duplicates if needed later
+  echo "→ processing $url"
+
   path=$(echo "$url" | sed "s|$BASE_URL||")
   file_path="$PROJECT_ROOT${path}index.html"
 
-  # fallback for direct html pages
   if [[ ! -f "$file_path" ]]; then
     file_path="$PROJECT_ROOT${path}.html"
   fi
 
-  # skip if file doesn't exist (folders like /opening/)
   if [[ ! -f "$file_path" ]]; then
     continue
   fi
 
   raw_title=$(extract_title "$file_path")
-  title=$(sentence_case "$raw_title")
 
+  if [[ -z "$raw_title" ]]; then
+    raw_title="Untitled"
+  fi
+
+  title=$(sentence_case "$raw_title")
   description=$(extract_description "$file_path")
 
   cat >> "$OUTPUT" <<EOF
@@ -109,14 +138,10 @@ EOF
 
 done
 
-# =========================
-# CLOSE RSS
-# =========================
-
 cat >> "$OUTPUT" <<EOF
 
 </channel>
 </rss>
 EOF
 
-echo "✅ RSS feed generated: feed.xml"
+echo "✅ RSS feed generated at $OUTPUT"
