@@ -8,44 +8,41 @@ cd "$ROOT_DIR"
 
 OUTPUT="search-index.json"
 
-echo "[" > "$OUTPUT"
+echo "{" > "$OUTPUT"
 
-first=true
+FIRST=true
 
-# Pull URLs from sitemap
-grep "<loc>" sitemap.xml | sed 's/<[^>]*>//g' | while read -r url; do
+find . -type f -name "*.html" | while read -r file; do
 
-  echo "→ indexing $url"
+  URL=$(echo "$file" \
+    | sed 's|^\./||' \
+    | sed 's|index.html||' \
+    | sed 's|\.html$||')
 
-  # fetch HTML
-  html=$(curl -s "$url")
+  URL="https://unboundhealing.org/${URL}"
 
-  # extract title
-  title=$(echo "$html" | grep -o '<title>[^<]*' | sed 's/<title>//')
+  TITLE=$(grep -m1 "<title>" "$file" | sed 's/<[^>]*>//g' || true)
+  DESC=$(grep -m1 'name="description"' "$file" | sed -E 's/.*content="([^"]*)".*/\1/' || true)
 
-  # extract meta description
-  desc=$(echo "$html" | grep -o 'meta name="description" content="[^"]*"' | sed 's/.*content="//;s/"$//')
+  TAGS=$(echo "$URL" | tr '/' '\n' | grep -v '^$' | tail -n +4 | paste -sd "," -)
 
-  # basic tag inference (folder-based)
-  tags=$(echo "$url" | awk -F/ '{for(i=4;i<NF;i++) printf $i","}' | sed 's/,$//')
-
-  if [ "$first" = true ]; then
-    first=false
+  if [ "$FIRST" = true ]; then
+    FIRST=false
   else
     echo "," >> "$OUTPUT"
   fi
 
   cat <<EOF >> "$OUTPUT"
-{
-  "title": "$title",
-  "url": "$url",
-  "description": "$desc",
-  "tags": "$tags"
+"$URL": {
+  "title": "$TITLE",
+  "description": "$DESC",
+  "tags": "$TAGS",
+  "url": "$URL"
 }
 EOF
 
 done
 
-echo "]" >> "$OUTPUT"
+echo "}" >> "$OUTPUT"
 
-echo "✅ search-index.json built"
+echo "✅ Search index built"
