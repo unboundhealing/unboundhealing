@@ -1,13 +1,13 @@
 #!/bin/bash
 set -e
 
-echo "🚀 Generating full site system v1.3"
+echo "🚀 Generating full site system..."
 
 ./scripts/build-sitemap.sh
-./scripts/build-rss.sh
 ./scripts/build-links.sh
+./scripts/generate-rss.sh
 ./scripts/build-search-index.sh
 ./scripts/build-tags.sh
 ./scripts/audit-opengraph.sh
 
-echo "✅ All systems updated"
+echo "✅ All outputs updated"
