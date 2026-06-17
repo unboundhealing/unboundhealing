@@ -20,7 +20,12 @@ echo "🔎 (placeholder) search index..."
 # future: ./scripts/generate-search-index.sh
 
 echo "📦 Staging changes..."
-git add feed.xml
+git add \
+  sitemap.xml \
+  feed.xml \
+  link-reference.md \
+  search-index.json \
+  tags.json
 
 echo "📝 Committing changes..."
 
