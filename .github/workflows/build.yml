@@ -1,0 +1,29 @@
+name: Build Unbound Healing Site
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up permissions
+        run: chmod +x scripts/*.sh
+
+      - name: Run site generator
+        run: ./scripts/generate-site.sh
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add feed.xml sitemap.xml link-reference.md search-index.json || true
+          git commit -m "auto: regenerate site assets" || exit 0
+
+      - name: Push changes
+        run: git push
