@@ -1,136 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://unboundhealing.org/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/welcome/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/opening/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/opening/cooling-tea/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/opening/tom/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/opening/liz/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/opening/love-concept/</loc>
-  </url>
-  
-  <url>
-    <loc>https://unboundhealing.org/opening/just-listening/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/opening/open/</loc>
-  </url>
-  
-  <url>
-    <loc>https://unboundhealing.org/opening/this-morning/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/opening/this-morning-too/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/opening/sold-out/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/opening/this-you/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/opening/this-morning-a/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/opening/post-this/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/opening/yes-and-no/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/noticing/</loc>
-  </url>
-  
-  <url>
-    <loc>https://unboundhealing.org/noticing/shared-experiences/</loc>
-  </url>
-  
-  <url>
-    <loc>https://unboundhealing.org/listening/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/gathering/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/supporting/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/about/</loc>
-  </url>
-
   <url>
     <loc>https://unboundhealing.org/about/conversing/</loc>
   </url>
-
   <url>
-    <loc>https://unboundhealing.org/concept/</loc>
+    <loc>https://unboundhealing.org/about/</loc>
   </url>
-
-  <url>
-    <loc>https://unboundhealing.org/concept/ici/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/concept/origin/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/concept/experimenting/</loc>
-  </url>
-
-  <url>
-    <loc>https://unboundhealing.org/concept/idea/</loc>
-  </url>
-  
   <url>
     <loc>https://unboundhealing.org/concept/evolving/</loc>
   </url>
-
   <url>
-    <loc>https://unboundhealing.org/concept/zone/</loc>
+    <loc>https://unboundhealing.org/concept/experimenting/</loc>
   </url>
-
-  <url>
-    <loc>https://unboundhealing.org/concept/just-thinking/</loc>
-  </url>
-  
   <url>
     <loc>https://unboundhealing.org/concept/iced-coffee/</loc>
   </url>
-
+  <url>
+    <loc>https://unboundhealing.org/concept/ici/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/concept/idea/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/concept/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/concept/just-thinking/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/concept/origin/</loc>
+  </url>
   <url>
     <loc>https://unboundhealing.org/concept/website-building/</loc>
   </url>
-
+  <url>
+    <loc>https://unboundhealing.org/concept/zone/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/gathering/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/inviting/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/listening/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/noticing/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/noticing/shared-experiences/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/opening/cooling-tea/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/opening/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/opening/just-listening/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/opening/liz/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/opening/love-concept/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/opening/open/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/opening/post-this/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/opening/sold-out/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/opening/this-morning-a/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/opening/this-morning-too/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/opening/this-morning/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/opening/this-you/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/opening/tom/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/opening/yes-and-no/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/supporting/</loc>
+  </url>
+  <url>
+    <loc>https://unboundhealing.org/welcome/</loc>
+  </url>
 </urlset>
