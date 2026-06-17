@@ -1,15 +1,13 @@
 #!/bin/bash
-
 set -e
 
-echo "🚀 Generating full site system..."
+echo "🚀 Generating full site system v1.3"
 
 ./scripts/build-sitemap.sh
 ./scripts/build-rss.sh
 ./scripts/build-links.sh
 ./scripts/build-search-index.sh
 ./scripts/build-tags.sh
+./scripts/audit-opengraph.sh
 
-echo "🧠 OpenGraph assumed embedded in templates or build step"
-
-echo "✅ All outputs updated"
+echo "✅ All systems updated"
