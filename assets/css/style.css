@@ -50,7 +50,7 @@ a:hover {
    ========================= */
 
 main a {
-color: var(–accent);
+color: var(--accent);
 text-decoration: underline;
 text-decoration-color: rgba(111,143,106,0.35);
 text-underline-offset: 2px;
