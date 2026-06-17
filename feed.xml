@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <rss version="2.0">
 
-  <channel>
+<channel>
 
-```
 <title>Unbound Healing Ministries</title>
-
 <link>https://unboundhealing.org/</link>
 
 <description>
-  Reflection, presence, and invitation into deeper awareness through writing, listening, and shared attention.
+Reflection, presence, and invitation into deeper awareness through writing, listening, and shared attention.
 </description>
 
 <language>en-us</language>
@@ -21,25 +18,250 @@
   <link>https://unboundhealing.org/</link>
 </image>
 
-<lastBuildDate>Tue, 16 Jun 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 17 Jun 2026 00:00:00 GMT</lastBuildDate>
 
-<!-- ===================================== -->
-<!-- ENTRY TEMPLATE                        -->
-<!-- ===================================== -->
 
-<!--
+<!-- HOME -->
 <item>
-  <title>TITLE</title>
-  <link>https://unboundhealing.org/FOLDER/SLUG/</link>
-  <guid>https://unboundhealing.org/FOLDER/SLUG/</guid>
-  <description>
-    DESCRIPTION
-  </description>
+  <title>Unbound Healing Ministries</title>
+  <link>https://unboundhealing.org/</link>
+  <guid>https://unboundhealing.org/</guid>
+  <description>Unbound Healing is a space of reflection, presence, and invitation into deeper awareness through writing, listening, and shared attention.</description>
 </item>
--->
-```
 
-  </channel>
+<!-- WELCOME -->
+<item>
+  <title>Welcome</title>
+  <link>https://unboundhealing.org/welcome/</link>
+  <guid>https://unboundhealing.org/welcome/</guid>
+  <description>A welcoming introduction to Unbound Healing Ministries: awareness, ordinary experience, curiosity, coffee, birds, and being.</description>
+</item>
 
+<!-- OPENING INDEX -->
+<item>
+  <title>Opening</title>
+  <link>https://unboundhealing.org/opening/</link>
+  <guid>https://unboundhealing.org/opening/</guid>
+  <description>A collection of observations, stories, and questions—each a doorway into lived experience.</description>
+</item>
+
+<!-- OPENING POSTS -->
+<item>
+  <title>Cooling Tea</title>
+  <link>https://unboundhealing.org/opening/cooling-tea/</link>
+  <guid>https://unboundhealing.org/opening/cooling-tea/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>Coffee with Tom</title>
+  <link>https://unboundhealing.org/opening/tom/</link>
+  <guid>https://unboundhealing.org/opening/tom/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>Liz</title>
+  <link>https://unboundhealing.org/opening/liz/</link>
+  <guid>https://unboundhealing.org/opening/liz/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>Love Concept</title>
+  <link>https://unboundhealing.org/opening/love-concept/</link>
+  <guid>https://unboundhealing.org/opening/love-concept/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>Just Listening</title>
+  <link>https://unboundhealing.org/opening/just-listening/</link>
+  <guid>https://unboundhealing.org/opening/just-listening/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>Open</title>
+  <link>https://unboundhealing.org/opening/open/</link>
+  <guid>https://unboundhealing.org/opening/open/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>This Morning</title>
+  <link>https://unboundhealing.org/opening/this-morning/</link>
+  <guid>https://unboundhealing.org/opening/this-morning/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>This Morning Too</title>
+  <link>https://unboundhealing.org/opening/this-morning-too/</link>
+  <guid>https://unboundhealing.org/opening/this-morning-too/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>Sold Out</title>
+  <link>https://unboundhealing.org/opening/sold-out/</link>
+  <guid>https://unboundhealing.org/opening/sold-out/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>This You</title>
+  <link>https://unboundhealing.org/opening/this-you/</link>
+  <guid>https://unboundhealing.org/opening/this-you/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>This Morning A</title>
+  <link>https://unboundhealing.org/opening/this-morning-a/</link>
+  <guid>https://unboundhealing.org/opening/this-morning-a/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>Post This</title>
+  <link>https://unboundhealing.org/opening/post-this/</link>
+  <guid>https://unboundhealing.org/opening/post-this/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>Yes and No</title>
+  <link>https://unboundhealing.org/opening/yes-and-no/</link>
+  <guid>https://unboundhealing.org/opening/yes-and-no/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<!-- NOTICING -->
+<item>
+  <title>Noticing</title>
+  <link>https://unboundhealing.org/noticing/</link>
+  <guid>https://unboundhealing.org/noticing/</guid>
+  <description>A space for noticing—subtle observations, reflections, and the quiet unfolding of awareness in everyday life.</description>
+</item>
+
+<item>
+  <title>Shared Experiences</title>
+  <link>https://unboundhealing.org/noticing/shared-experiences/</link>
+  <guid>https://unboundhealing.org/noticing/shared-experiences/</guid>
+  <description>A collection of observations, questions, and moments generously shared by visitors.</description>
+</item>
+
+<!-- LISTENING -->
+<item>
+  <title>Listening</title>
+  <link>https://unboundhealing.org/listening/</link>
+  <guid>https://unboundhealing.org/listening/</guid>
+  <description>Audio reflections and spoken explorations into awareness, presence, and lived experience.</description>
+</item>
+
+<!-- GATHERING -->
+<item>
+  <title>Gathering</title>
+  <link>https://unboundhealing.org/gathering/</link>
+  <guid>https://unboundhealing.org/gathering/</guid>
+  <description>A space for shared attention and gathering—reflections on connection, presence, and being together.</description>
+</item>
+
+<!-- SUPPORTING -->
+<item>
+  <title>Supporting</title>
+  <link>https://unboundhealing.org/supporting/</link>
+  <guid>https://unboundhealing.org/supporting/</guid>
+  <description>Ways to support the ongoing work of Unbound Healing and its continued offering of reflective content.</description>
+</item>
+
+<!-- ABOUT -->
+<item>
+  <title>About</title>
+  <link>https://unboundhealing.org/about/</link>
+  <guid>https://unboundhealing.org/about/</guid>
+  <description>About Unbound Healing Ministries, its intention, and the perspective behind the work and invitations offered here.</description>
+</item>
+
+<item>
+  <title>Conversing</title>
+  <link>https://unboundhealing.org/about/conversing/</link>
+  <guid>https://unboundhealing.org/about/conversing/</guid>
+  <description>An invitation to converse about healing, spirituality, suffering, curiosity, or whatever appears present.</description>
+</item>
+
+<!-- CONCEPT -->
+<item>
+  <title>Concept</title>
+  <link>https://unboundhealing.org/concept/</link>
+  <guid>https://unboundhealing.org/concept/</guid>
+  <description>A collection of concepts, experiments, conversations, and connective threads exploring how ideas emerge, relate, and evolve.</description>
+</item>
+
+<item>
+  <title>ICI</title>
+  <link>https://unboundhealing.org/concept/ici/</link>
+  <guid>https://unboundhealing.org/concept/ici/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>Origin</title>
+  <link>https://unboundhealing.org/concept/origin/</link>
+  <guid>https://unboundhealing.org/concept/origin/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>Experimenting</title>
+  <link>https://unboundhealing.org/concept/experimenting/</link>
+  <guid>https://unboundhealing.org/concept/experimenting/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>Idea</title>
+  <link>https://unboundhealing.org/concept/idea/</link>
+  <guid>https://unboundhealing.org/concept/idea/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>Evolving</title>
+  <link>https://unboundhealing.org/concept/evolving/</link>
+  <guid>https://unboundhealing.org/concept/evolving/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>Zone</title>
+  <link>https://unboundhealing.org/concept/zone/</link>
+  <guid>https://unboundhealing.org/concept/zone/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>Just Thinking</title>
+  <link>https://unboundhealing.org/concept/just-thinking/</link>
+  <guid>https://unboundhealing.org/concept/just-thinking/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>Iced Coffee</title>
+  <link>https://unboundhealing.org/concept/iced-coffee/</link>
+  <guid>https://unboundhealing.org/concept/iced-coffee/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+<item>
+  <title>Website Building</title>
+  <link>https://unboundhealing.org/concept/website-building/</link>
+  <guid>https://unboundhealing.org/concept/website-building/</guid>
+  <description>DESCRIPTION</description>
+</item>
+
+</channel>
 </rss>
 
