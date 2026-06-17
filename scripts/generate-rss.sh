@@ -1,44 +1,101 @@
 #!/bin/zsh
 
-SITE="https://unboundhealing.org"
-SITEMAP="./sitemap.xml"
-OUTPUT="./feed.xml"
+set -e
 
-echo "📡 Generating RSS feed..."
+# =========================
+# CONFIG
+# =========================
+PROJECT_ROOT="/Users/unboundhealing/Documents/Unbound Healing/Web Design"
+SITEMAP="$PROJECT_ROOT/sitemap.xml"
+OUTPUT="$PROJECT_ROOT/feed.xml"
+BASE_URL="https://unboundhealing.org"
 
-# start feed
+cd "$PROJECT_ROOT" || exit 1
+
+echo "📡 Generating RSS feed from sitemap..."
+
+# =========================
+# FUNCTIONS
+# =========================
+
+sentence_case() {
+  # lowercases everything, then capitalizes first word
+  # preserves proper nouns crudely via whitelist pattern later if needed
+
+  local input="$1"
+
+  # lowercase whole string
+  local lower=$(echo "$input" | tr '[:upper:]' '[:lower:]')
+
+  # capitalize first character
+  local first_char=$(echo "${lower:0:1}" | tr '[:lower:]' '[:upper:]')
+  local rest="${lower:1}"
+
+  echo "${first_char}${rest}"
+}
+
+extract_title() {
+  local file="$1"
+  grep -m 1 "<title>" "$file" | sed 's/<[^>]*>//g'
+}
+
+extract_description() {
+  local file="$1"
+
+  # meta description
+  local desc=$(grep -m 1 'meta name="description"' "$file" \
+    | sed 's/.*content="\([^"]*\)".*/\1/')
+
+  echo "$desc"
+}
+
+# =========================
+# BUILD RSS HEADER
+# =========================
+
 cat > "$OUTPUT" <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
+
 <title>Unbound Healing Ministries</title>
-<link>$SITE</link>
+<link>$BASE_URL/</link>
 <description>Reflection, presence, and invitation into deeper awareness through writing, listening, and shared attention.</description>
 <language>en-us</language>
+
 <image>
-  <url>$SITE/og-image.png</url>
+  <url>$BASE_URL/og-image.png</url>
   <title>Unbound Healing Ministries</title>
-  <link>$SITE</link>
+  <link>$BASE_URL/</link>
 </image>
+
+<lastBuildDate>$(date -R)</lastBuildDate>
 EOF
 
-# extract URLs from sitemap
-grep -o "<loc>[^<]*</loc>" "$SITEMAP" | sed 's/<loc>//g;s/<\/loc>//g' | while read url
-do
+# =========================
+# PROCESS SITEMAP URLS
+# =========================
 
-  # skip homepage if you want (optional)
-  # [[ "$url" == "$SITE/" ]] && continue
+grep "<loc>" "$SITEMAP" | sed 's/<[^>]*>//g' | while read -r url; do
 
-  echo "→ processing $url"
+  # skip index page duplicates if needed later
+  path=$(echo "$url" | sed "s|$BASE_URL||")
+  file_path="$PROJECT_ROOT${path}index.html"
 
-  html=$(curl -s "$url")
+  # fallback for direct html pages
+  if [[ ! -f "$file_path" ]]; then
+    file_path="$PROJECT_ROOT${path}.html"
+  fi
 
-  title=$(echo "$html" | grep -o '<title>[^<]*</title>' | sed 's/<title>//g;s/<\/title>//g')
-  desc=$(echo "$html" | grep -o 'name="description" content="[^"]*"' | sed 's/.*content="//g;s/"//g')
+  # skip if file doesn't exist (folders like /opening/)
+  if [[ ! -f "$file_path" ]]; then
+    continue
+  fi
 
-  # XML escape safety (basic)
-  title=$(echo "$title" | sed 's/&/\&amp;/g')
-  desc=$(echo "$desc" | sed 's/&/\&amp;/g')
+  raw_title=$(extract_title "$file_path")
+  title=$(sentence_case "$raw_title")
+
+  description=$(extract_description "$file_path")
 
   cat >> "$OUTPUT" <<EOF
 
@@ -46,16 +103,20 @@ do
   <title>$title</title>
   <link>$url</link>
   <guid>$url</guid>
-  <description>$desc</description>
+  <description><![CDATA[$description]]></description>
 </item>
 EOF
 
 done
 
-# close feed
+# =========================
+# CLOSE RSS
+# =========================
+
 cat >> "$OUTPUT" <<EOF
+
 </channel>
 </rss>
 EOF
 
-echo "✅ RSS feed generated at $OUTPUT"
+echo "✅ RSS feed generated: feed.xml"
