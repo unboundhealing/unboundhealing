@@ -1,35 +1,39 @@
-name: Unbound Healing Site Generator v1.3
+name: Build Unbound Healing Site
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Set up permissions
+      - name: Set up environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y bash curl jq
+
+      - name: Make scripts executable
         run: chmod +x scripts/*.sh
 
-      - name: Run site generator (RSS + sitemap + indexes)
-        run: ./scripts/generate-site.sh
-
-      - name: Validate output
+      - name: Generate full site system
         run: |
-          echo "Checking generated files..."
-          test -f feed.xml
-          test -f sitemap.xml
+          ./scripts/generate-site.sh
 
-      - name: Upload generated artifacts (optional)
-        uses: actions/upload-artifact@v4
-        with:
-          name: site-output
-          path: |
-            feed.xml
-            sitemap.xml
-            link-reference.md
-            search-index.json
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add feed.xml sitemap.xml link-reference.md search-index.json tags.json || true
+
+          git commit -m "Auto-build site outputs [skip ci]" || echo "No changes to commit"
+
+      - name: Push changes
+        run: |
+          git push
