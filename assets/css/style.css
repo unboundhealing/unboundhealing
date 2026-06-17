@@ -72,6 +72,8 @@ text-decoration-color: rgba(111,143,106,0.7);
 .article-image img {
   width: 100%;
   height: auto;
+  max-height: 90vh;
+  object-fit: contain;
   border-radius: 6px;
   display: block;
 }
