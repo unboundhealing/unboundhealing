@@ -1,42 +1,34 @@
-#!/bin/zsh
+#!/bin/bash
 
-set -e
+set -e  # stop on error
 
-PROJECT_ROOT="/Users/unboundhealing/Documents/Unbound Healing/Web Design"
+echo "🚀 Unbound Healing Publisher v1.3 (Step 1)"
 
-cd "$PROJECT_ROOT" || exit 1
+ROOT_DIR="$(git rev-parse --show-toplevel)"
+cd "$ROOT_DIR"
 
-echo "🚀 Publishing pipeline started..."
-
-# =========================
-# 1. SYNC FIRST (critical)
-# =========================
-echo "🔄 Syncing with remote..."
-git pull --rebase origin main || exit 1
-
-# =========================
-# 2. GENERATE RSS
-# =========================
-echo "📡 Generating RSS..."
+echo "📡 Generating RSS feed..."
 ./scripts/generate-rss.sh
 
-# =========================
-# 3. STAGE CHANGES
-# =========================
-git add feed.xml scripts/generate-rss.sh scripts/publish.sh
+echo "📄 (placeholder) sitemap sync..."
+# future: ./scripts/generate-sitemap.sh
 
-# =========================
-# 4. SAFETY CHECK
-# =========================
-if git diff --cached --quiet; then
-  echo "🟡 No changes to publish"
-  exit 0
-fi
+echo "🔗 (placeholder) link-reference sync..."
+# future: ./scripts/generate-link-reference.sh
 
-# =========================
-# 5. COMMIT + PUSH
-# =========================
-git commit -m "publish: update site + rss feed"
+echo "🔎 (placeholder) search index..."
+# future: ./scripts/generate-search-index.sh
+
+echo "📦 Staging changes..."
+git add feed.xml
+
+echo "📝 Committing changes..."
+
+TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
+
+git commit -m "site publish: $TIMESTAMP" || echo "⚠️ No changes to commit"
+
+echo "⬆️ Pushing to origin/main..."
 git push
 
-echo "✅ Publish complete"
+echo "✅ Publish complete."
