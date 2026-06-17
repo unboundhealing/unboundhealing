@@ -1,1 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0">
+
+  <channel>
+
+```
+<title>Unbound Healing Ministries</title>
+
+<link>https://unboundhealing.org/</link>
+
+<description>
+  Reflection, presence, and invitation into deeper awareness through writing, listening, and shared attention.
+</description>
+
+<language>en-us</language>
+
+<image>
+  <url>https://unboundhealing.org/og-image.png</url>
+  <title>Unbound Healing Ministries</title>
+  <link>https://unboundhealing.org/</link>
+</image>
+
+<lastBuildDate>Tue, 16 Jun 2026 00:00:00 GMT</lastBuildDate>
+
+<!-- ===================================== -->
+<!-- ENTRY TEMPLATE                        -->
+<!-- ===================================== -->
+
+<!--
+<item>
+  <title>TITLE</title>
+  <link>https://unboundhealing.org/FOLDER/SLUG/</link>
+  <guid>https://unboundhealing.org/FOLDER/SLUG/</guid>
+  <description>
+    DESCRIPTION
+  </description>
+</item>
+-->
+```
+
+  </channel>
+
+</rss>
 
