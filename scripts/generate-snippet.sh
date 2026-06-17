@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+set -e
+
 BASE="/Users/unboundhealing/Documents/Unbound Healing/Web Design"
 DICT="$BASE/scripts/image_dictionary.txt"
 
