@@ -12,7 +12,7 @@ External: <a href="https://unboundhealing.org/welcome/">Welcome in...</a>
 
 Internal: <a href="/welcome/">Welcome in...</a>
 
-## OPENING
+## OPENING...
 
 External: <a href="https://unboundhealing.org/opening/">Opening</a>
 
@@ -89,6 +89,12 @@ Internal: <a href="/opening/this-morning-a/">(((this morning...)))</a>
 External: <a href="https://unboundhealing.org/opening/post-this/">(((post this?)))</a>
 
 Internal: <a href="/opening/post-this/">(((post this?)))</a>
+
+## (((YES AND NO...)))
+
+External: <a href="https://unboundhealing.org/opening/yes-and-no/">(((yes and no...)))</a>
+
+Internal: <a href="/opening/yes-and-no/">(((yes and no...)))</a>
 
 ## NOTICING
 
