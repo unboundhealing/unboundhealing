@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -e
 
 echo "🚀 Generating full site system..."
