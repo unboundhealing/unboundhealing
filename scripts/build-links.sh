@@ -11,30 +11,48 @@ OUTPUT="link-reference.md"
 echo "# UNBOUND HEALING LINK REFERENCE" > "$OUTPUT"
 echo "" >> "$OUTPUT"
 
-find . -name "*.html" 
-! -path "./404.html" 
-! -path "./assets/*" 
-| sort | while read -r file
-do
+# ----------------------------------------
+# Safe HTML discovery (CI-safe)
+# ----------------------------------------
+find . -name "*.html" \
+  ! -path "./404.html" \
+  ! -path "./assets/*" \
+  | sort | while read -r file; do
 
-TITLE=$(grep -m1 "<title>" "$file" 
-| sed 's/<[^>]*>//g' 
-| sed 's/| Unbound Healing Ministries//')
+  # ----------------------------------------
+  # Extract title safely
+  # ----------------------------------------
+  TITLE=$(grep -m1 "<title>" "$file" \
+    | sed 's/<[^>]*>//g' \
+    | sed 's/| Unbound Healing Ministries//g' \
+    | sed 's/^ *//;s/ *$//')
 
-URL=$(echo "$file" 
-| sed 's|^./||' 
-| sed 's|index.html$||' 
-| sed 's|.html$||')
+  # fallback if no title found
+  if [ -z "$TITLE" ]; then
+    TITLE="Untitled"
+  fi
 
-INTERNAL="/${URL}"
+  # ----------------------------------------
+  # Normalize URL
+  # ----------------------------------------
+  URL=$(echo "$file" \
+    | sed 's|^./||' \
+    | sed 's|index.html$||' \
+    | sed 's|\.html$||')
 
-if [ "$INTERNAL" = "/" ]; then
-INTERNAL="/"
-fi
+  INTERNAL="/${URL}"
 
-EXTERNAL="https://unboundhealing.org${INTERNAL}"
+  # normalize homepage
+  if [ "$INTERNAL" = "//" ] || [ "$INTERNAL" = "/" ]; then
+    INTERNAL="/"
+  fi
 
-cat >> "$OUTPUT" <<EOF
+  EXTERNAL="https://unboundhealing.org${INTERNAL}"
+
+  # ----------------------------------------
+  # Write entry
+  # ----------------------------------------
+  cat >> "$OUTPUT" <<EOF
 
 ## ${TITLE}
 
