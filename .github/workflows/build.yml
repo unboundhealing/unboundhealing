@@ -11,12 +11,12 @@ on:
       - search-index.json
       - tags.json
 
-      - content-model.json \
-      - content-graph.json \
-      - link-suggestions.json \
-      - semantic-model.json \
-      - semantic-graph.json \
-      - concept-clusters.json \
+      - content-model.json
+      - content-graph.json
+      - link-suggestions.json
+      - semantic-model.json
+      - semantic-graph.json
+      - concept-clusters.json
       - homepage-intelligence.json
       
 concurrency:
