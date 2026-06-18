@@ -1,35 +1,53 @@
 #!/bin/bash
 set -e
 
-echo "🏷 Building tags..."
+echo "🏷 Building tags (v3.1 derived intelligence)..."
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
 
+INPUT="search-index.json"
 OUTPUT="tags.json"
+
+if [ ! -f "$INPUT" ]; then
+  echo "❌ search-index.json not found"
+  exit 1
+fi
 
 echo "{" > "$OUTPUT"
 
+# ---------------------------------------
+# Extract all tag strings from search index
+# ---------------------------------------
+
+ALL_TAGS=$(grep -o '"tags": *"[^"]*"' "$INPUT" \
+  | sed 's/"tags": "//' \
+  | sed 's/"//g' \
+  | tr ',' '\n' \
+  | sed '/^$/d' \
+  | sort \
+  | uniq)
+
 FIRST=true
 
-find . -type f -name "*.html" | while read -r file; do
+for tag in $ALL_TAGS; do
 
-  URL=$(echo "$file" \
-    | sed 's|^\./||' \
-    | sed 's|index.html||' \
-    | sed 's|\.html$||')
+  # ---------------------------------------
+  # Find pages containing this tag
+  # ---------------------------------------
+  PAGES=$(grep -B3 -A2 "\"tags\":.*$tag" "$INPUT" \
+    | grep '"url"' \
+    | sed -E 's/.*"(https[^"]+)".*/\1/' \
+    | sort \
+    | uniq)
 
-  URL="https://unboundhealing.org/${URL}"
+  PAGE_LIST=$(printf '%s\n' "$PAGES" | sed 's/^/    "/; s/$/"/' | paste -sd "," -)
 
-  TAG1=$(echo "$URL" | cut -d'/' -f4)
-  TAG2=$(echo "$URL" | cut -d'/' -f5)
+  COUNT=$(echo "$PAGES" | grep -c .)
 
-  if [ -z "$TAG2" ]; then
-    TAGS="$TAG1"
-  else
-    TAGS="$TAG1,$TAG2"
-  fi
-
+  # ---------------------------------------
+  # JSON formatting safety
+  # ---------------------------------------
   if [ "$FIRST" = true ]; then
     FIRST=false
   else
@@ -37,11 +55,16 @@ find . -type f -name "*.html" | while read -r file; do
   fi
 
   cat <<EOF >> "$OUTPUT"
-"$URL": "$TAGS"
+"$tag": {
+  "count": $COUNT,
+  "pages": [
+$PAGE_LIST
+  ]
+}
 EOF
 
 done
 
 echo "}" >> "$OUTPUT"
 
-echo "✅ Tags built"
+echo "✅ Tags built (v3.1)"
