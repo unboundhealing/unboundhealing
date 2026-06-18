@@ -25,6 +25,9 @@ python3 scripts/build-semantic-graph.py
 echo "🧩 Building concept clusters..."
 python3 scripts/build-concept-clusters.py
 
+echo "🏠 Building homepage intelligence..."
+python3 scripts/build-homepage-intelligence.py
+
 # =========================
 # EXECUTION LAYER
 # =========================
