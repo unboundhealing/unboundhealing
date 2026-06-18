@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      
+
 concurrency:
   group: build-main
   cancel-in-progress: true
@@ -17,39 +17,74 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # -------------------------------------
+      # 1. Checkout repo
+      # -------------------------------------
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
+      # -------------------------------------
+      # 2. System dependencies
+      # -------------------------------------
       - name: Setup environment
         run: |
           sudo apt-get update
           sudo apt-get install -y bash curl jq
 
+      # -------------------------------------
+      # 3. Make scripts executable
+      # -------------------------------------
       - name: Make scripts executable
         run: chmod +x scripts/*.sh
-        
-      - name: Set up Python (for content parsing)
+
+      # -------------------------------------
+      # 4. Python environment (for intelligence layer)
+      # -------------------------------------
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: |
           pip install beautifulsoup4
+
+      # -------------------------------------
+      # 5. Generate full site system
+      # -------------------------------------
       - name: Generate full site system
         run: |
           set -e
           ./scripts/generate-site.sh
 
-      - name: Upload build artifacts
+      # -------------------------------------
+      # 6. Upload build outputs (SITE LAYER)
+      # -------------------------------------
+      - name: Upload site build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: unbound-healing-build
+          name: unbound-healing-site
           path: |
             feed.xml
             sitemap.xml
             link-reference.md
             search-index.json
             tags.json
+
+      # -------------------------------------
+      # 7. Upload intelligence layer (NEW)
+      # -------------------------------------
+      - name: Upload intelligence artifacts (v3 layer)
+        uses: actions/upload-artifact@v4
+        with:
+          name: unbound-healing-intelligence
+          path: |
+            homepage-intelligence.json
+            semantic-graph.json
+            concept-clusters.json
+            semantic-model.json
+            content-model.json
+            content-graph.json
+            link-suggestions.json
