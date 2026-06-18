@@ -65,8 +65,8 @@ jobs:
 
           git diff --cached --quiet && echo "No changes" && exit 0
 
-          git commit -m "auto-update generated site files"
-
+          git commit -m "[skip ci] auto-update generated site files"
+          
       # -------------------------------------
       # 6. Push (safe for GitHub-only workflow)
       # -------------------------------------
