@@ -1,67 +1,72 @@
 #!/bin/bash
 set -e
 
-echo "🔗 Building link-reference.md..."
+echo "🔗 Building link intelligence layer (v3.1)..."
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
 
+INPUT="search-index.json"
 OUTPUT="link-reference.md"
 
-echo "# UNBOUND HEALING LINK REFERENCE" > "$OUTPUT"
+if [ ! -f "$INPUT" ]; then
+  echo "❌ search-index.json not found"
+  exit 1
+fi
+
+echo "# 🔗 UNBOUND HEALING LINK INTELLIGENCE" > "$OUTPUT"
 echo "" >> "$OUTPUT"
 
-# ----------------------------------------
-# Safe HTML discovery (CI-safe)
-# ----------------------------------------
-find . -name "*.html" \
-  ! -path "./404.html" \
-  ! -path "./assets/*" \
-  | sort | while read -r file; do
+# ---------------------------------------
+# Extract all URLs (nodes)
+# ---------------------------------------
+URLS=$(grep -o '"url": *"[^"]*"' "$INPUT" \
+  | sed 's/"url": "//' \
+  | sed 's/"//g' \
+  | sort \
+  | uniq)
 
-  # ----------------------------------------
-  # Extract title safely
-  # ----------------------------------------
-  TITLE=$(grep -m1 "<title>" "$file" \
-    | sed 's/<[^>]*>//g' \
-    | sed 's/| Unbound Healing Ministries//g' \
-    | sed 's/^ *//;s/ *$//')
+for url in $URLS; do
 
-  # fallback if no title found
-  if [ -z "$TITLE" ]; then
-    TITLE="Untitled"
+  echo "→ processing $url"
+
+  # ---------------------------------------
+  # Extract slug for matching relationships
+  # ---------------------------------------
+  SLUG=$(echo "$url" | sed 's|https://unboundhealing.org||')
+
+  # ---------------------------------------
+  # Find pages that mention this URL
+  # (basic heuristic: occurrence in index)
+  # ---------------------------------------
+  INCOMING=$(grep -B5 -A5 "$url" "$INPUT" \
+    | grep '"url"' \
+    | sed -E 's/.*"(https[^"]+)".*/\1/' \
+    | sort | uniq)
+
+  # ---------------------------------------
+  # Write section
+  # ---------------------------------------
+  echo "## $url" >> "$OUTPUT"
+  echo "" >> "$OUTPUT"
+
+  echo "### Incoming Links" >> "$OUTPUT"
+
+  if [ -z "$INCOMING" ]; then
+    echo "- None detected" >> "$OUTPUT"
+  else
+    for link in $INCOMING; do
+      echo "- $link" >> "$OUTPUT"
+    done
   fi
 
-  # ----------------------------------------
-  # Normalize URL
-  # ----------------------------------------
-  URL=$(echo "$file" \
-    | sed 's|^./||' \
-    | sed 's|index.html$||' \
-    | sed 's|\.html$||')
+  echo "" >> "$OUTPUT"
 
-  INTERNAL="/${URL}"
+  echo "### Outgoing Links (placeholder for future parser)" >> "$OUTPUT"
+  echo "- (to be derived from HTML body parsing in v3.2)" >> "$OUTPUT"
 
-  # normalize homepage
-  if [ "$INTERNAL" = "//" ] || [ "$INTERNAL" = "/" ]; then
-    INTERNAL="/"
-  fi
-
-  EXTERNAL="https://unboundhealing.org${INTERNAL}"
-
-  # ----------------------------------------
-  # Write entry
-  # ----------------------------------------
-  cat >> "$OUTPUT" <<EOF
-
-## ${TITLE}
-
-External: <a href="${EXTERNAL}">${TITLE}</a>
-
-Internal: <a href="${INTERNAL}">${TITLE}</a>
-
-EOF
+  echo "" >> "$OUTPUT"
 
 done
 
-echo "✅ link-reference.md updated"
+echo "✅ Link intelligence layer built (v3.1)"
