@@ -20,6 +20,9 @@ echo "💡 Building link suggestions..."
 # OUTPUT LAYERS (existing system)
 # =========================
 
+echo "🔗 Applying internal link injections..."
+./scripts/apply-internal-links.sh
+
 echo "🏷 Building tags..."
 ./scripts/build-tags.sh
 
