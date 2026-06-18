@@ -36,11 +36,11 @@ External: <a href="https://unboundhealing.org/concept/iced-coffee/">iced coffee<
 Internal: <a href="/concept/iced-coffee/">iced coffee</a>
 
 
-## Interconnected Content Inititiative™
+## Interconnected Content Initiative™
 
-External: <a href="https://unboundhealing.org/concept/ici/">Interconnected Content Inititiative™</a>
+External: <a href="https://unboundhealing.org/concept/ici/">Interconnected Content Initiative™</a>
 
-Internal: <a href="/concept/ici/">Interconnected Content Inititiative™</a>
+Internal: <a href="/concept/ici/">Interconnected Content Initiative™</a>
 
 
 ## idea
@@ -190,11 +190,11 @@ External: <a href="https://unboundhealing.org/opening/this-morning-a/">this morn
 Internal: <a href="/opening/this-morning-a/">this morning…</a>
 
 
-## this morning… </title
+## this morning…
 
-External: <a href="https://unboundhealing.org/opening/this-morning-too/">this morning… </title</a>
+External: <a href="https://unboundhealing.org/opening/this-morning-too/">this morning…</a>
 
-Internal: <a href="/opening/this-morning-too/">this morning… </title</a>
+Internal: <a href="/opening/this-morning-too/">this morning…</a>
 
 
 ## this morning…
