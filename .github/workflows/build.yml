@@ -1,4 +1,4 @@
-name: Build Unbound Healing Site
+name: Build Unbound Healing Site (v3 Stable)
 
 on:
   push:
@@ -13,62 +13,41 @@ on:
 
 concurrency:
   group: build-main
-  cancel-in-progress: true      
+  cancel-in-progress: true
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # -------------------------------------
-      # 1. Checkout GitHub state (source of truth)
-      # -------------------------------------
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
-      # -------------------------------------
-      # 2. Dependencies
-      # -------------------------------------
-      - name: Set up environment
+      - name: Setup environment
         run: |
           sudo apt-get update
           sudo apt-get install -y bash curl jq
 
-      # -------------------------------------
-      # 3. Prepare scripts
-      # -------------------------------------
       - name: Make scripts executable
         run: chmod +x scripts/*.sh
 
-      # -------------------------------------
-      # 4. Generate full system
-      # -------------------------------------
-      - name: Generate site system
+      - name: Generate full site system
         run: |
           set -e
           ./scripts/generate-site.sh
 
-      # -------------------------------------
-      # 5. Commit generated files (only if needed)
-      # -------------------------------------
-      - name: Commit generated files
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@users.noreply.github.com"
-
-          git add feed.xml sitemap.xml link-reference.md search-index.json tags.json || true
-
-          git diff --cached --quiet && echo "No changes" && exit 0
-
-          git commit -m "[skip ci] auto-update generated site files"
-          
-      # -------------------------------------
-      # 6. Push (safe for GitHub-only workflow)
-      # -------------------------------------
-      - name: Push changes
-        run: git push origin HEAD:main
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: unbound-healing-build
+          path: |
+            feed.xml
+            sitemap.xml
+            link-reference.md
+            search-index.json
+            tags.json
