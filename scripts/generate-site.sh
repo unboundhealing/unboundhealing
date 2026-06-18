@@ -22,6 +22,9 @@ python3 scripts/extract-semantic-model.py
 echo "🧭 Building semantic graph..."
 python3 scripts/build-semantic-graph.py
 
+echo "🧩 Building concept clusters..."
+python3 scripts/build-concept-clusters.py
+
 # =========================
 # EXECUTION LAYER
 # =========================
