@@ -19,12 +19,19 @@ echo "💡 Building link suggestions..."
 echo "🧠 Building semantic model..."
 python3 scripts/extract-semantic-model.py
 
+echo "🧭 Building semantic graph..."
+python3 scripts/build-semantic-graph.py
+
 # =========================
-# OUTPUT LAYERS (existing system)
+# EXECUTION LAYER
 # =========================
 
 echo "🔗 Applying internal link injections..."
 ./scripts/apply-internal-links.sh
+
+# =========================
+# OUTPUT LAYERS (existing system)
+# =========================
 
 echo "🏷 Building tags..."
 ./scripts/build-tags.sh
