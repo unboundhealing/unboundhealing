@@ -4,7 +4,13 @@ on:
   push:
     branches:
       - main
-
+    paths-ignore:
+      - feed.xml
+      - sitemap.xml
+      - link-reference.md
+      - search-index.json
+      - tags.json
+      
 permissions:
   contents: write
 
