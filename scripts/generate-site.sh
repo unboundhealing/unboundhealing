@@ -45,6 +45,10 @@ echo "🏷 Building tags..."
 echo "🔎 Building search index..."
 ./scripts/build-search-index.sh
 
+echo "🧠 Building semantic words (v3.3 Phase 1)..."
+python3 scripts/build-semantic-words.py
+echo "✅ Semantic words built (v3.3)"
+
 echo "🗺 Building sitemap..."
 ./scripts/build-sitemap.sh
 
