@@ -16,6 +16,9 @@ echo "🔗 Building content graph..."
 echo "💡 Building link suggestions..."
 ./scripts/build-link-suggestions.sh
 
+echo "🧠 Building semantic model..."
+python3 scripts/extract-semantic-model.py
+
 # =========================
 # OUTPUT LAYERS (existing system)
 # =========================
