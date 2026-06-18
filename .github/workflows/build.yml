@@ -88,3 +88,6 @@ jobs:
             content-model.json
             content-graph.json
             link-suggestions.json
+            semantic-words.json
+
+            
