@@ -10,6 +10,7 @@ on:
       - link-reference.md
       - search-index.json
       - tags.json
+
       - content-model.json \
       - content-graph.json \
       - link-suggestions.json \
