@@ -6,8 +6,7 @@ ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 INTEL_FILE = os.path.join(ROOT, "homepage-intelligence.json")
 LABEL_FILE = os.path.join(ROOT, "homepage-ui-labels.json")
 
-OUTPUT = os.path.join(ROOT, "homepage-intelligence-blocks.html")
-
+OUTPUT = os.path.join(ROOT, "assets", "homepage-intelligence-blocks.html")
 
 def safe_load_json(path, fallback=None):
     if not os.path.exists(path):
