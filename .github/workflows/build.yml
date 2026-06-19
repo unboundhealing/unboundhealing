@@ -89,5 +89,5 @@ jobs:
             content-graph.json
             link-suggestions.json
             semantic-words.json
-
+            word-graph.json
             
