@@ -1,67 +1,61 @@
 import json
+from collections import defaultdict, Counter
 import os
-from collections import Counter
 
-# ----------------------------------
-# ALWAYS resolve repo root in CI
-# ----------------------------------
-ROOT = os.environ.get("GITHUB_WORKSPACE")
+ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
-if not ROOT:
-    # fallback for local runs
-    ROOT = os.getcwd()
-
-SEMANTIC_GRAPH = os.path.join(ROOT, "semantic-graph.json")
-CLUSTERS = os.path.join(ROOT, "concept-clusters.json")
+GRAPH_FILE = os.path.join(ROOT, "semantic-graph.json")
+CLUSTERS_FILE = os.path.join(ROOT, "concept-clusters.json")
 OUTPUT = os.path.join(ROOT, "homepage-intelligence.json")
 
-# ----------------------------------
-# Load inputs safely
-# ----------------------------------
-with open(SEMANTIC_GRAPH, "r", encoding="utf-8") as f:
-    graph = json.load(f)
+# -----------------------------
+# Load data
+# -----------------------------
+with open(GRAPH_FILE, "r", encoding="utf-8") as f:
+    graph = json.load(f)["edges"]
 
-with open(CLUSTERS, "r", encoding="utf-8") as f:
+with open(CLUSTERS_FILE, "r", encoding="utf-8") as f:
     clusters = json.load(f)
 
-# ----------------------------------
-# Page importance scoring
-# ----------------------------------
+# -----------------------------
+# Node importance (centrality-lite)
+# -----------------------------
 scores = Counter()
 
-for edge in graph.get("edges", []):
+for edge in graph:
     weight = edge.get("weight", 1)
     scores[edge["from"]] += weight
     scores[edge["to"]] += weight
 
-top_pages = [
+featured_pages = [
     {"url": url, "score": score}
     for url, score in scores.most_common(10)
 ]
 
-# ----------------------------------
-# Concept importance scoring
-# ----------------------------------
-concept_scores = [
-    {
+# -----------------------------
+# Cluster importance
+# -----------------------------
+cluster_scores = []
+
+for concept, pages in clusters.items():
+    cluster_scores.append({
         "concept": concept,
-        "pages": len(members)
-    }
-    for concept, members in clusters.items()
-]
+        "size": len(pages)
+    })
 
-concept_scores.sort(key=lambda x: x["pages"], reverse=True)
+cluster_scores.sort(key=lambda x: x["size"], reverse=True)
 
-# ----------------------------------
-# Write output (CRITICAL FIX)
-# ----------------------------------
+# -----------------------------
+# Build “gravity layer”
+# -----------------------------
+top_concepts = cluster_scores[:8]
+
 output = {
-    "featured_pages": top_pages[:5],
-    "top_concepts": concept_scores[:10]
+    "featured_pages": featured_pages[:5],
+    "concept_clusters": top_concepts
 }
 
 with open(OUTPUT, "w", encoding="utf-8") as f:
     json.dump(output, f, indent=2)
 
-print("🏠 Homepage intelligence built (v3.3)")
-print(f"📦 Wrote: {OUTPUT}")
+print("🏠 Homepage intelligence built (v3.3 Phase 4)")
