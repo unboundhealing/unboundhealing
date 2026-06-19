@@ -44,6 +44,10 @@ echo "🧠 Rendering homepage intelligence HTML..."
 python3 scripts/render-homepage-html.py
 echo "✅ Homepage UI blocks rendered"
 
+echo "📦 Moving homepage intelligence into Jekyll includes..."
+mv homepage-intelligence-blocks.html _includes/
+echo "✅ Homepage UI blocks ready for Jekyll"
+
 # =========================
 # OUTPUT LAYERS (existing system)
 # =========================
