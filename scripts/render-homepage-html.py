@@ -22,12 +22,10 @@ labels = safe_load_json(LABEL_FILE, {
     "concepts": "Fields of meaning"
 })
 
-# 🔍 DEBUG CHECKPOINT (add this)
 print("INTEL FILE PATH:", INTEL_FILE)
-print("LABEL FILE PATH:", LABEL_FILE)
 print("INTEL FILE EXISTS:", os.path.exists(INTEL_FILE))
-print("LABEL FILE EXISTS:", os.path.exists(LABEL_FILE))
 print("INTEL RAW:", intel)
+
 
 def clean_url(url):
     return url.replace("https://unboundhealing.org", "").rstrip("/")
@@ -35,41 +33,22 @@ def clean_url(url):
 
 html = []
 
-# =====================================================
-# 🧠 VISIBILITY / DEBUG ANCHOR (THIS IS THE KEY FIX)
-# =====================================================
+# =============================
+# VISIBILITY ANCHOR (FIXED)
+# =============================
 html.append("""
 <!-- INTELLIGENCE SYSTEM ACTIVE -->
-<section class="homepage-intelligence-debug" style="display:none">
+<section class="homepage-intelligence-debug">
   homepage-intelligence-status: active
 </section>
 """)
 
-
-# -----------------------------
-# DATA
-# -----------------------------
 featured = intel.get("featured_pages", [])
-concepts = intel.get("top_concepts", [])
+concepts = intel.get("concept_clusters", [])  # IMPORTANT: matches your actual JSON
 
-
-# -----------------------------
-# FALLBACK SAFETY
-# -----------------------------
-if not featured and not concepts:
-    html.append("""
-<section class="homepage-section points-of-attention">
-  <h2>Points of attention</h2>
-  <ul>
-    <li>Intelligence layer active (no data yet)</li>
-  </ul>
-</section>
-""")
-
-
-# -----------------------------
-# POINTS OF ATTENTION
-# -----------------------------
+# =============================
+# FEATURED
+# =============================
 if featured:
     html.append(f"""
 <section class="homepage-section points-of-attention">
@@ -82,15 +61,11 @@ if featured:
         label = url.strip("/") or "/"
         html.append(f'    <li><a href="{url}">{label}</a></li>')
 
-    html.append("""
-  </ul>
-</section>
-""")
+    html.append("</ul></section>")
 
-
-# -----------------------------
-# FIELDS OF MEANING
-# -----------------------------
+# =============================
+# CONCEPTS
+# =============================
 if concepts:
     html.append(f"""
 <section class="homepage-section fields-of-meaning">
@@ -102,27 +77,19 @@ if concepts:
         name = concept.get("concept", "unknown")
         html.append(f'    <li>{name}</li>')
 
-    html.append("""
-  </ul>
-</section>
-""")
+    html.append("</ul></section>")
 
-
-# -----------------------------
-# FINAL SAFETY NET
-# -----------------------------
-if not html:
+# =============================
+# GUARANTEE OUTPUT
+# =============================
+if len(html) == 1:
     html.append("""
 <section>
   <h2>System Notice</h2>
-  <p>Homepage intelligence generated but no output was produced.</p>
+  <p>No featured content rendered.</p>
 </section>
 """)
 
-
-# -----------------------------
-# WRITE OUTPUT
-# -----------------------------
 with open(OUTPUT, "w", encoding="utf-8") as f:
     f.write("\n".join(html))
 
