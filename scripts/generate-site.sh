@@ -36,6 +36,14 @@ echo "✅ Homepage intelligence complete (v3.3)"
 echo "🔗 Applying internal link injections..."
 ./scripts/apply-internal-links.sh
 
+# ------------------------
+# OUTPUT LAYER (NEW PART GOES HERE)
+# ------------------------
+
+echo "🧠 Rendering homepage intelligence HTML..."
+python3 scripts/render-homepage-html.py
+echo "✅ Homepage UI blocks rendered"
+
 # =========================
 # OUTPUT LAYERS (existing system)
 # =========================
@@ -57,10 +65,6 @@ echo "✅ Word graph built (v3.3)"
 echo "🔗 Injecting related content (v3.3 Phase 3)..."
 python3 scripts/inject-related-content.py
 echo "✅ Related content injected (v3.3)"
-
-echo "🧠 Rendering homepage intelligence HTML..."
-python3 scripts/render-homepage-html.py
-echo "✅ Homepage UI blocks rendered"
 
 echo "🗺 Building sitemap..."
 ./scripts/build-sitemap.sh
