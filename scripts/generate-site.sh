@@ -49,6 +49,10 @@ echo "🧠 Building semantic words (v3.3 Phase 1)..."
 python3 scripts/build-semantic-words.py
 echo "✅ Semantic words built (v3.3)"
 
+echo "🧭 Building word graph (v3.3 Phase 2)..."
+python3 scripts/build-word-graph.py
+echo "✅ Word graph built (v3.3)"
+
 echo "🗺 Building sitemap..."
 ./scripts/build-sitemap.sh
 
