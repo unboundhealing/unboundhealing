@@ -145,21 +145,30 @@
   </footer>
 
 <script>
-fetch('/assets/homepage-intelligence-blocks.html')
-  .then(r => r.text())
-  .then(html => {
-    console.log("INTELLIGENCE HTML:", html);
+function loadIntelligence() {
+  const target = document.getElementById('homepage-intelligence');
 
-    const target = document.getElementById('homepage-intelligence');
+  if (!target) {
+    console.warn("INTELLIGENCE TARGET MISSING - retrying...");
+    return;
+  }
 
-    if (!target) {
-      console.error("homepage-intelligence div NOT FOUND in DOM");
-      return;
-    }
+  fetch('/assets/homepage-intelligence-blocks.html')
+    .then(r => r.text())
+    .then(html => {
+      console.log("INTELLIGENCE HTML:", html);
+      target.innerHTML = html;
+    })
+    .catch(err => {
+      console.error("INTELLIGENCE FETCH FAILED:", err);
+    });
+}
 
-    target.innerHTML = html;
-  })
-  .catch(err => console.error("INTELLIGENCE FETCH FAILED:", err));
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", loadIntelligence);
+} else {
+  loadIntelligence();
+}
 </script>
 
 </body>
