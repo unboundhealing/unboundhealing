@@ -42,8 +42,8 @@ featured = intel.get("featured_pages", []) or []
 concepts = intel.get("concept_clusters", []) or []
 
 def clean_url(url):
-if not url:
-return "#"
+    if not url:
+        return "#"
 
 ```
 cleaned = url.replace(
