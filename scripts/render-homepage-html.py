@@ -12,16 +12,14 @@ OUTPUT = os.path.join(ROOT, "assets", "homepage-intelligence-blocks.html")
 os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
 
 def safe_load_json(path):
-if not os.path.exists(path):
-return {}
+    if not os.path.exists(path):
+        return {}
 
-```
-try:
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
-except Exception:
-    return {}
-```
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
 
 intel = safe_load_json(INTEL_FILE)
 labels_raw = safe_load_json(LABEL_FILE)
