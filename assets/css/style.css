@@ -278,7 +278,7 @@ p {
    HOMEPAGE INTELLIGENCE
    ========================= */
 
-.points-of-attention,
+.arising-observations,
 .essential-inspirations {
   margin-top: 80px;
   text-align: center;
@@ -287,7 +287,7 @@ p {
   margin-right: auto;
 }
 
-.points-of-attention h2,
+.arising-observations h2,
 .essential-inspirations h2 {
   font-size: 20px;
   font-weight: 400;
@@ -331,26 +331,18 @@ p {
   gap: 12px;
 }
 
-.intelligence-tag,
+.intelligence-link,
 .concept-tag {
   display: inline-block;
-  padding: 5px 12px;
+  padding: 6px 12px;
   border-radius: 999px;
-
-  background:
-    rgba(111, 143, 106, 0.08);
-
+  background: rgba(111, 143, 106, 0.08);
   color: var(--muted);
-
-  font-family: Inter, sans-serif;
   font-size: 0.9rem;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-.intelligence-tag:hover,
+.intelligence-link:hover,
 .concept-tag:hover {
   background:
     rgba(111, 143, 106, 0.15);
