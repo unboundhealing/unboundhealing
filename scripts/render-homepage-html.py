@@ -18,7 +18,7 @@ def safe_load_json(path, fallback=None):
         return json.load(f)
 
 intel = safe_load_json(INTEL_FILE, {})
-labels = safe_load_json(LABEL_FILE, {
+labels = safe_load_json(INTEL_FILE, {
     "featured": "Points of attention",
     "concepts": "Fields of meaning"
 })
@@ -34,20 +34,29 @@ concepts = intel.get("concept_clusters", [])
 html = []
 
 # =============================
-# HARD VISIBILITY MARKER (ALWAYS SHOW)
+# 🚨 DEBUG VISIBILITY MARKER (MUST ALWAYS SHOW FIRST)
 # =============================
 html.append("""
+<div style="position:fixed;top:0;left:0;z-index:99999;background:red;color:white;padding:10px;">
+INTELLIGENCE LOADED
+</div>
+""")
+
+# =============================
+# HARD VISIBILITY SECTION
+# =============================
+html.append(f"""
 <section style="padding:10px;background:#fff3cd;border:1px solid #ffeeba;">
   <strong>INTELLIGENCE SYSTEM ACTIVE</strong>
-  <div>featured_pages: {}</div>
-  <div>concept_clusters: {}</div>
+  <div>featured_pages: {len(featured)}</div>
+  <div>concept_clusters: {len(concepts)}</div>
 </section>
-""".format(len(featured), len(concepts)))
+""")
 
 # =============================
 # FEATURED
 # =============================
-html.append("<section class='points-of-attention'><h2>{}</h2><ul>".format(labels["featured"]))
+html.append(f"<section class='points-of-attention'><h2>{labels['featured']}</h2><ul>")
 
 if featured:
     for page in featured[:5]:
@@ -61,7 +70,7 @@ html.append("</ul></section>")
 # =============================
 # CONCEPTS
 # =============================
-html.append("<section class='fields-of-meaning'><h2>{}</h2><ul>".format(labels["concepts"]))
+html.append(f"<section class='fields-of-meaning'><h2>{labels['concepts']}</h2><ul>")
 
 if concepts:
     for c in concepts[:8]:
@@ -72,7 +81,7 @@ else:
 html.append("</ul></section>")
 
 # =============================
-# WRITE OUTPUT (FORCE FLUSHED CONTENT)
+# WRITE OUTPUT (ATOMIC SAFE WRITE)
 # =============================
 final_html = "\n".join(html)
 
