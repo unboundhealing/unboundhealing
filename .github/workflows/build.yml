@@ -10,8 +10,9 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: write
+  contents: read
   pages: write
+  id-token: write
 
 jobs:
   build:
@@ -23,8 +24,6 @@ jobs:
       # -------------------------------------
       - name: Checkout repo
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
 
       # -------------------------------------
       # 2. System dependencies
@@ -61,7 +60,7 @@ jobs:
           ./scripts/generate-site.sh
 
       # -------------------------------------
-      # 6. Debug output
+      # 6. Verify outputs
       # -------------------------------------
       - name: Verify build outputs
         run: |
@@ -69,16 +68,17 @@ jobs:
           ls -R ./assets || true
 
       # -------------------------------------
-      # 7. Upload artifacts (optional but fine)
+      # 7. Upload Pages artifact (THIS IS REQUIRED)
       # -------------------------------------
-      - name: Upload site build artifacts
-        uses: actions/upload-artifact@v4
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: unbound-healing-site
-          path: |
-            feed.xml
-            sitemap.xml
-            link-reference.md
-            search-index.json
-            tags.json
-            assets/**/*.html
+          path: .
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
