@@ -40,7 +40,7 @@ jobs:
         run: chmod +x scripts/*.sh
 
       # -------------------------------------
-      # 4. Python environment (for intelligence layer)
+      # 4. Python environment
       # -------------------------------------
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -52,7 +52,7 @@ jobs:
           pip install beautifulsoup4
 
       # -------------------------------------
-      # 5. Generate full site system
+      # 5. Generate full system
       # -------------------------------------
       - name: Generate full site system
         run: |
@@ -60,7 +60,16 @@ jobs:
           ./scripts/generate-site.sh
 
       # -------------------------------------
-      # 6. Upload build outputs (SITE LAYER)
+      # 6. Verify outputs (DEBUG SAFETY STEP)
+      # -------------------------------------
+      - name: Verify build outputs
+        run: |
+          echo "Checking generated files..."
+          ls -R ./assets || true
+          ls -R . || true
+
+      # -------------------------------------
+      # 7. Upload SITE artifacts
       # -------------------------------------
       - name: Upload site build artifacts
         uses: actions/upload-artifact@v4
@@ -72,11 +81,12 @@ jobs:
             link-reference.md
             search-index.json
             tags.json
+            assets/**/*.html
 
       # -------------------------------------
-      # 7. Upload intelligence layer (NEW)
+      # 8. Upload INTELLIGENCE artifacts
       # -------------------------------------
-      - name: Upload intelligence artifacts (v3 layer)
+      - name: Upload intelligence artifacts
         uses: actions/upload-artifact@v4
         with:
           name: unbound-healing-intelligence
@@ -90,4 +100,3 @@ jobs:
             link-suggestions.json
             semantic-words.json
             word-graph.json
-            
