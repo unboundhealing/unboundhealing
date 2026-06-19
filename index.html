@@ -149,8 +149,17 @@ fetch('/assets/homepage-intelligence-blocks.html')
   .then(r => r.text())
   .then(html => {
     console.log("INTELLIGENCE HTML:", html);
-    document.getElementById('homepage-intelligence').innerHTML = html;
-  });
+
+    const target = document.getElementById('homepage-intelligence');
+
+    if (!target) {
+      console.error("homepage-intelligence div NOT FOUND in DOM");
+      return;
+    }
+
+    target.innerHTML = html;
+  })
+  .catch(err => console.error("INTELLIGENCE FETCH FAILED:", err));
 </script>
 
 </body>
