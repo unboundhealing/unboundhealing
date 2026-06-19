@@ -10,7 +10,8 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
+  pages: write
 
 jobs:
   build:
@@ -60,16 +61,15 @@ jobs:
           ./scripts/generate-site.sh
 
       # -------------------------------------
-      # 6. Verify outputs (DEBUG SAFETY STEP)
+      # 6. Debug output
       # -------------------------------------
       - name: Verify build outputs
         run: |
-          echo "Checking generated files..."
+          echo "Checking assets..."
           ls -R ./assets || true
-          ls -R . || true
 
       # -------------------------------------
-      # 7. Upload SITE artifacts
+      # 7. Upload artifacts (optional but fine)
       # -------------------------------------
       - name: Upload site build artifacts
         uses: actions/upload-artifact@v4
@@ -84,19 +84,10 @@ jobs:
             assets/**/*.html
 
       # -------------------------------------
-      # 8. Upload INTELLIGENCE artifacts
+      # 8. DEPLOY TO GITHUB PAGES
       # -------------------------------------
-      - name: Upload intelligence artifacts
-        uses: actions/upload-artifact@v4
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          name: unbound-healing-intelligence
-          path: |
-            homepage-intelligence.json
-            semantic-graph.json
-            concept-clusters.json
-            semantic-model.json
-            content-model.json
-            content-graph.json
-            link-suggestions.json
-            semantic-words.json
-            word-graph.json
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
