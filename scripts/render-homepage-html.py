@@ -45,26 +45,6 @@ def clean_url(url):
 html = []
 
 # =============================
-# DEBUG VISIBILITY MARKER
-# =============================
-html.append("""
-<div style="position:fixed;top:0;left:0;z-index:99999;background:red;color:white;padding:10px;">
-INTELLIGENCE LOADED
-</div>
-""")
-
-# =============================
-# STATUS BLOCK
-# =============================
-html.append(f"""
-<section style="padding:10px;background:#fff3cd;border:1px solid #ffeeba;">
-  <strong>INTELLIGENCE SYSTEM ACTIVE</strong>
-  <div>featured_pages: {len(featured)}</div>
-  <div>concept_clusters: {len(concepts)}</div>
-</section>
-""")
-
-# =============================
 # FEATURED
 # =============================
 html.append(f"""
