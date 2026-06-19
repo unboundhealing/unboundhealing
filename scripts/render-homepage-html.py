@@ -54,7 +54,7 @@ html.append(f"""
 """)
 
 if featured:
-    for page in featured[:5]:
+    for page in featured[:3]:
         url = clean_url(page.get("url"))
         html.append(f'<li><a href="{url}">{url}</a></li>')
 else:
@@ -72,7 +72,7 @@ html.append(f"""
 """)
 
 if concepts:
-    for c in concepts[:8]:
+    for c in concepts[:3]:
         html.append(f'<li>{c.get("concept", "unknown")}</li>')
 else:
     html.append("<li>No concepts found</li>")
