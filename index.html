@@ -145,15 +145,13 @@
   </footer>
 
 <script>
-fetch('/homepage-intelligence-blocks.html')
+fetch('/assets/homepage-intelligence-blocks.html')
   .then(r => r.text())
   .then(html => {
     console.log("INTELLIGENCE HTML:", html);
     document.getElementById('homepage-intelligence').innerHTML = html;
-  })
-  .catch(err => console.error("FETCH FAILED:", err));
+  });
 </script>
-
 
 </body>
 </html>
