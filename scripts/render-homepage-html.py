@@ -81,46 +81,13 @@ html = []
 # ==================================
 
 html.append(f"""
-<section class="points-of-attention">
+<section class="arising-observations">
   <h2>{labels["featured"]}</h2>
-  <ul class="intelligence-list">
-""")
-
-if featured:
-
-    for page in featured:
-
-        raw_url = page.get("url", "")
-        url = clean_url(raw_url)
-
-        lookup = normalize_url_key(raw_url)
-
-        title = titles.get(lookup)
-
-        if not title:
-
-            title = (
-                url.strip("/")
-                .split("/")[-1]
-                .replace("-", " ")
-                .title()
-            )
-
-            if not title:
-                title = "Home"
-
-        html.append(
-            f'<li><a href="{url}">{title}</a></li>'
-        )
-
-else:
-
-    html.append(
-        "<li class='intelligence-muted'>No observations found</li>"
-    )
-
-html.append("""
-  </ul>
+  <div class="intelligence-cloud">
+    <a class="intelligence-link" href="/opening/">Opening</a>
+    <a class="intelligence-link" href="/about/">About</a>
+    <a class="intelligence-link" href="/concept/iced-coffee/">Iced Coffee</a>
+  </div>
 </section>
 """)
 
