@@ -275,7 +275,7 @@ p {
 }
 
 /* =========================
-   HOMEPAGE INTELLIGENCE
+   HOMEPAGE INTELLIGENCE — UNIFIED SYSTEM
    ========================= */
 
 .arising-observations,
@@ -287,71 +287,43 @@ p {
   margin-right: auto;
 }
 
+/* identical headings */
 .arising-observations h2,
 .essential-inspirations h2 {
   font-size: 20px;
   font-weight: 400;
   color: var(--muted);
-  opacity: 0.8;
+  opacity: 0.85;
   margin-bottom: 24px;
 }
 
-.intelligence-list,
-.concept-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.intelligence-list li,
-.concept-list li {
-  margin: 14px 0;
-}
-
-.intelligence-list a,
-.concept-list a {
-  color: inherit;
-  text-decoration: none;
-  transition:
-    color 0.2s ease,
-    opacity 0.2s ease;
-}
-
-.intelligence-list a:hover,
-.concept-list a:hover {
-  color: var(--accent);
-  opacity: 0.95;
-}
-
-.intelligence-cloud,
-.concept-cloud {
+/* SINGLE LAYOUT SYSTEM (this is the key) */
+.chip-cloud {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
 }
 
-.intelligence-link,
-.concept-tag {
+/* EVERYTHING becomes a chip */
+.chip {
   display: inline-block;
   padding: 6px 12px;
   border-radius: 999px;
   background: rgba(111, 143, 106, 0.08);
   color: var(--muted);
   font-size: 0.9rem;
+  text-decoration: none;
   transition: all 0.2s ease;
 }
 
-.intelligence-link:hover,
-.concept-tag:hover {
-  background:
-    rgba(111, 143, 106, 0.15);
-
+/* hover identical for links + tags */
+.chip:hover {
+  background: rgba(111, 143, 106, 0.15);
   color: var(--accent);
 }
 
-.intelligence-muted,
-.concept-muted {
-  color: var(--muted);
-  opacity: 0.7;
+/* muted fallback */
+.chip.muted {
+  opacity: 0.6;
 }
