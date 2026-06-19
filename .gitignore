@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+._*
+Thumbs.db
+
+# terminal noise
+.zsh_history
+.zsh_sessions/
+
+# image pipeline temp only
+assets/images/_temp/

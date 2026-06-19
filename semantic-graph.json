@@ -1,0 +1,4873 @@
+{
+  "nodes": [
+    {
+      "url": "https://unboundhealing.org/",
+      "title": "Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "invitation"
+    },
+    {
+      "url": "https://unboundhealing.org/noticing/",
+      "title": "Noticing | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "reflection"
+    },
+    {
+      "url": "https://unboundhealing.org/noticing/shared-experiences/",
+      "title": "Shared Experiences | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "reflection"
+    },
+    {
+      "url": "https://unboundhealing.org/inviting/",
+      "title": "Inviting | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "reflection"
+    },
+    {
+      "url": "https://unboundhealing.org/welcome/",
+      "title": "Welcome in\u2026 | Unbound Healing Ministries",
+      "tone": "contemplative",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/assets/homepage-intelligence-blocks",
+      "title": "",
+      "tone": "neutral",
+      "intent": "reflection"
+    },
+    {
+      "url": "https://unboundhealing.org/assets/entry-template/",
+      "title": "TITLE | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "reflection"
+    },
+    {
+      "url": "https://unboundhealing.org/assets/updates-temp/",
+      "title": "",
+      "tone": "neutral",
+      "intent": "reflection"
+    },
+    {
+      "url": "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1",
+      "title": "",
+      "tone": "neutral",
+      "intent": "reflection"
+    },
+    {
+      "url": "https://unboundhealing.org/assets/images/_html/test_image",
+      "title": "",
+      "tone": "neutral",
+      "intent": "reflection"
+    },
+    {
+      "url": "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1",
+      "title": "",
+      "tone": "neutral",
+      "intent": "reflection"
+    },
+    {
+      "url": "https://unboundhealing.org/assets/page-template/",
+      "title": "FOLDER | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "reflection"
+    },
+    {
+      "url": "https://unboundhealing.org/concept/",
+      "title": "Concept | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "exploration"
+    },
+    {
+      "url": "https://unboundhealing.org/concept/just-thinking/",
+      "title": "so i was just thinking\u2026 | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/concept/zone/",
+      "title": "zone? | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/concept/ici/",
+      "title": "Interconnected Content Initiative\u2122 | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/concept/origin/",
+      "title": "Almost-Origin Story | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/concept/idea/",
+      "title": "idea | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "reflection"
+    },
+    {
+      "url": "https://unboundhealing.org/concept/website-building/",
+      "title": "website building: | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/concept/iced-coffee/",
+      "title": "iced coffee | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/concept/experimenting/",
+      "title": "Experimenting | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/concept/evolving/",
+      "title": "Evolving\u2026 | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/opening/",
+      "title": "Opening\u2026 | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "invitation"
+    },
+    {
+      "url": "https://unboundhealing.org/opening/post-this/",
+      "title": "post this? | Unbound Healing Ministries",
+      "tone": "contemplative",
+      "intent": "exploration"
+    },
+    {
+      "url": "https://unboundhealing.org/opening/love-concept/",
+      "title": "love is just a concept\u2026 | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "exploration"
+    },
+    {
+      "url": "https://unboundhealing.org/opening/open/",
+      "title": "open\u2026 | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/opening/yes-and-no/",
+      "title": "yes and no\u2026 | Unbound Healing Ministries",
+      "tone": "contemplative",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/opening/this-you/",
+      "title": "this you\u2026 | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "reflection"
+    },
+    {
+      "url": "https://unboundhealing.org/opening/this-morning/",
+      "title": "this morning\u2026 | Unbound Healing Ministries",
+      "tone": "contemplative",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/opening/just-listening/",
+      "title": "just listening\u2026 | Unbound Healing Ministries",
+      "tone": "contemplative",
+      "intent": "attention / awareness"
+    },
+    {
+      "url": "https://unboundhealing.org/opening/this-morning-a/",
+      "title": "this morning\u2026 | Unbound Healing Ministries",
+      "tone": "contemplative",
+      "intent": "exploration"
+    },
+    {
+      "url": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "title": "i love you (,/?) lukewarm strong decaf coffee\u2026 | Unbound Healing Ministries",
+      "tone": "contemplative",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/opening/cooling-tea/",
+      "title": "cooling tea | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/opening/this-morning-too/",
+      "title": "this morning\u2026 | Unbound Healing Ministries",
+      "tone": "contemplative",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/opening/liz/",
+      "title": "liz | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/opening/tom/",
+      "title": "coffee with tom | Unbound Healing Ministries",
+      "tone": "contemplative",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/opening/sold-out/",
+      "title": "sold-out\u2026 | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "reflection"
+    },
+    {
+      "url": "https://unboundhealing.org/about/",
+      "title": "About | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/about/conversing/",
+      "title": "Conversing | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "invitation"
+    },
+    {
+      "url": "https://unboundhealing.org/listening/",
+      "title": "Listening | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "identity / description"
+    },
+    {
+      "url": "https://unboundhealing.org/gathering/",
+      "title": "Gathering | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "reflection"
+    },
+    {
+      "url": "https://unboundhealing.org/supporting/",
+      "title": "Supporting | Unbound Healing Ministries",
+      "tone": "neutral",
+      "intent": "identity / description"
+    }
+  ],
+  "edges": [
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/noticing/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "thought",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/noticing/shared-experiences/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/inviting/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "this",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/welcome/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/concept/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/concept/just-thinking/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/concept/zone/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/concept/origin/",
+      "weight": 2,
+      "shared_concepts": [
+        "have",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/concept/idea/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "this",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/concept/website-building/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/concept/iced-coffee/",
+      "weight": 5,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "that",
+        "this",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/concept/experimenting/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/concept/evolving/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/opening/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "this",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/opening/post-this/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/opening/love-concept/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/opening/open/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/opening/yes-and-no/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/opening/this-you/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 4,
+      "shared_concepts": [
+        "anything",
+        "healing",
+        "that",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/opening/this-morning-a/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "that",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "that",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/",
+      "to": "https://unboundhealing.org/noticing/shared-experiences/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "share",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/",
+      "to": "https://unboundhealing.org/inviting/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/",
+      "to": "https://unboundhealing.org/concept/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/",
+      "to": "https://unboundhealing.org/concept/just-thinking/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/",
+      "to": "https://unboundhealing.org/concept/zone/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/",
+      "to": "https://unboundhealing.org/concept/idea/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/",
+      "to": "https://unboundhealing.org/concept/website-building/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/",
+      "to": "https://unboundhealing.org/concept/iced-coffee/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/",
+      "to": "https://unboundhealing.org/opening/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 2,
+      "shared_concepts": [
+        "healing",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 1,
+      "shared_concepts": [
+        "share"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/shared-experiences/",
+      "to": "https://unboundhealing.org/inviting/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/shared-experiences/",
+      "to": "https://unboundhealing.org/concept/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/shared-experiences/",
+      "to": "https://unboundhealing.org/concept/just-thinking/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/shared-experiences/",
+      "to": "https://unboundhealing.org/concept/zone/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/shared-experiences/",
+      "to": "https://unboundhealing.org/concept/idea/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/shared-experiences/",
+      "to": "https://unboundhealing.org/concept/website-building/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/shared-experiences/",
+      "to": "https://unboundhealing.org/concept/iced-coffee/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/shared-experiences/",
+      "to": "https://unboundhealing.org/opening/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "observations",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/shared-experiences/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 2,
+      "shared_concepts": [
+        "healing",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/shared-experiences/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 1,
+      "shared_concepts": [
+        "share"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/shared-experiences/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 5,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "questions",
+        "shared",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/shared-experiences/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/shared-experiences/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/noticing/shared-experiences/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "shared",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/welcome/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/assets/updates-temp/",
+      "weight": 1,
+      "shared_concepts": [
+        "here"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/concept/",
+      "weight": 4,
+      "shared_concepts": [
+        "content",
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/concept/just-thinking/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/concept/zone/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/concept/ici/",
+      "weight": 1,
+      "shared_concepts": [
+        "content"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/concept/origin/",
+      "weight": 2,
+      "shared_concepts": [
+        "content",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/concept/idea/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "this",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/concept/website-building/",
+      "weight": 4,
+      "shared_concepts": [
+        "content",
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/concept/iced-coffee/",
+      "weight": 5,
+      "shared_concepts": [
+        "healing",
+        "here",
+        "ministries",
+        "this",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/concept/experimenting/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/concept/evolving/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/opening/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "this",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/opening/post-this/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/opening/love-concept/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/opening/open/",
+      "weight": 2,
+      "shared_concepts": [
+        "here",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/opening/this-you/",
+      "weight": 2,
+      "shared_concepts": [
+        "here",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 2,
+      "shared_concepts": [
+        "healing",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/opening/this-morning-a/",
+      "weight": 2,
+      "shared_concepts": [
+        "here",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 2,
+      "shared_concepts": [
+        "here",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "here",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "here",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/inviting/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 2,
+      "shared_concepts": [
+        "here",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/concept/ici/",
+      "weight": 1,
+      "shared_concepts": [
+        "being"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/concept/origin/",
+      "weight": 2,
+      "shared_concepts": [
+        "this",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/concept/idea/",
+      "weight": 2,
+      "shared_concepts": [
+        "morning",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/concept/iced-coffee/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/concept/experimenting/",
+      "weight": 3,
+      "shared_concepts": [
+        "like",
+        "this",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/concept/evolving/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/opening/",
+      "weight": 2,
+      "shared_concepts": [
+        "morning",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/opening/post-this/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/opening/love-concept/",
+      "weight": 3,
+      "shared_concepts": [
+        "being",
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/opening/open/",
+      "weight": 4,
+      "shared_concepts": [
+        "like",
+        "that",
+        "this",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/opening/yes-and-no/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/opening/this-you/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 5,
+      "shared_concepts": [
+        "being",
+        "like",
+        "morning",
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/opening/this-morning-a/",
+      "weight": 2,
+      "shared_concepts": [
+        "morning",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 2,
+      "shared_concepts": [
+        "this",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 2,
+      "shared_concepts": [
+        "morning",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 2,
+      "shared_concepts": [
+        "like",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/welcome/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 3,
+      "shared_concepts": [
+        "being",
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/assets/entry-template/",
+      "to": "https://unboundhealing.org/assets/images/_html/test_image",
+      "weight": 1,
+      "shared_concepts": [
+        "text"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/assets/entry-template/",
+      "to": "https://unboundhealing.org/assets/page-template/",
+      "weight": 11,
+      "shared_concepts": [
+        "image",
+        "images",
+        "inside",
+        "lines",
+        "link",
+        "meta",
+        "paragraph",
+        "property",
+        "secondary",
+        "subtitle",
+        "text"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/assets/entry-template/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 1,
+      "shared_concepts": [
+        "link"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/assets/updates-temp/",
+      "to": "https://unboundhealing.org/concept/iced-coffee/",
+      "weight": 1,
+      "shared_concepts": [
+        "here"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/assets/updates-temp/",
+      "to": "https://unboundhealing.org/opening/open/",
+      "weight": 1,
+      "shared_concepts": [
+        "here"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/assets/updates-temp/",
+      "to": "https://unboundhealing.org/opening/this-you/",
+      "weight": 1,
+      "shared_concepts": [
+        "here"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/assets/updates-temp/",
+      "to": "https://unboundhealing.org/opening/this-morning-a/",
+      "weight": 1,
+      "shared_concepts": [
+        "here"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/assets/updates-temp/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 1,
+      "shared_concepts": [
+        "here"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/assets/updates-temp/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 1,
+      "shared_concepts": [
+        "here"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/assets/updates-temp/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 1,
+      "shared_concepts": [
+        "here"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/assets/updates-temp/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 1,
+      "shared_concepts": [
+        "here"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/assets/images/_html/test_image",
+      "to": "https://unboundhealing.org/assets/page-template/",
+      "weight": 1,
+      "shared_concepts": [
+        "text"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/assets/page-template/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 1,
+      "shared_concepts": [
+        "link"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/",
+      "to": "https://unboundhealing.org/concept/just-thinking/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/",
+      "to": "https://unboundhealing.org/concept/zone/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/",
+      "to": "https://unboundhealing.org/concept/ici/",
+      "weight": 2,
+      "shared_concepts": [
+        "content",
+        "interconnected"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/",
+      "to": "https://unboundhealing.org/concept/origin/",
+      "weight": 2,
+      "shared_concepts": [
+        "content",
+        "initiative"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/",
+      "to": "https://unboundhealing.org/concept/idea/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/",
+      "to": "https://unboundhealing.org/concept/website-building/",
+      "weight": 4,
+      "shared_concepts": [
+        "content",
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/",
+      "to": "https://unboundhealing.org/concept/iced-coffee/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/",
+      "to": "https://unboundhealing.org/concept/experimenting/",
+      "weight": 1,
+      "shared_concepts": [
+        "experimenting"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/",
+      "to": "https://unboundhealing.org/opening/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/",
+      "to": "https://unboundhealing.org/opening/love-concept/",
+      "weight": 1,
+      "shared_concepts": [
+        "concept"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 2,
+      "shared_concepts": [
+        "healing",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/concept/zone/",
+      "weight": 8,
+      "shared_concepts": [
+        "about",
+        "healing",
+        "ministries",
+        "thinking",
+        "unbound",
+        "whatever",
+        "while",
+        "zone"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/concept/origin/",
+      "weight": 2,
+      "shared_concepts": [
+        "just",
+        "while"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/concept/idea/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/concept/website-building/",
+      "weight": 4,
+      "shared_concepts": [
+        "about",
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/concept/iced-coffee/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/concept/experimenting/",
+      "weight": 3,
+      "shared_concepts": [
+        "about",
+        "thinking",
+        "while"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/opening/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "just",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/opening/post-this/",
+      "weight": 2,
+      "shared_concepts": [
+        "just",
+        "thinking"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/opening/love-concept/",
+      "weight": 1,
+      "shared_concepts": [
+        "just"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/opening/open/",
+      "weight": 2,
+      "shared_concepts": [
+        "about",
+        "just"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 4,
+      "shared_concepts": [
+        "about",
+        "just",
+        "thinking",
+        "while"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "just",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 1,
+      "shared_concepts": [
+        "about"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 3,
+      "shared_concepts": [
+        "just",
+        "thinking",
+        "while"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 3,
+      "shared_concepts": [
+        "about",
+        "just",
+        "thinking"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 1,
+      "shared_concepts": [
+        "about"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 2,
+      "shared_concepts": [
+        "about",
+        "just"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 1,
+      "shared_concepts": [
+        "thinking"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 4,
+      "shared_concepts": [
+        "about",
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 5,
+      "shared_concepts": [
+        "about",
+        "healing",
+        "ministries",
+        "thinking",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/just-thinking/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 1,
+      "shared_concepts": [
+        "just"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/concept/ici/",
+      "weight": 1,
+      "shared_concepts": [
+        "writing"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/concept/origin/",
+      "weight": 1,
+      "shared_concepts": [
+        "while"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/concept/idea/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/concept/website-building/",
+      "weight": 4,
+      "shared_concepts": [
+        "about",
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/concept/iced-coffee/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/concept/experimenting/",
+      "weight": 3,
+      "shared_concepts": [
+        "about",
+        "thinking",
+        "while"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/opening/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/opening/post-this/",
+      "weight": 2,
+      "shared_concepts": [
+        "thinking",
+        "writing"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/opening/open/",
+      "weight": 2,
+      "shared_concepts": [
+        "about",
+        "writing"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 3,
+      "shared_concepts": [
+        "about",
+        "thinking",
+        "while"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 2,
+      "shared_concepts": [
+        "healing",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 1,
+      "shared_concepts": [
+        "about"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 2,
+      "shared_concepts": [
+        "thinking",
+        "while"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 2,
+      "shared_concepts": [
+        "about",
+        "thinking"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 1,
+      "shared_concepts": [
+        "about"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 1,
+      "shared_concepts": [
+        "about"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 1,
+      "shared_concepts": [
+        "thinking"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 4,
+      "shared_concepts": [
+        "about",
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 5,
+      "shared_concepts": [
+        "about",
+        "healing",
+        "ministries",
+        "thinking",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/zone/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/concept/origin/",
+      "weight": 2,
+      "shared_concepts": [
+        "coffee",
+        "content"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/concept/website-building/",
+      "weight": 2,
+      "shared_concepts": [
+        "content",
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/concept/iced-coffee/",
+      "weight": 1,
+      "shared_concepts": [
+        "coffee"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/concept/experimenting/",
+      "weight": 1,
+      "shared_concepts": [
+        "coffee"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/concept/evolving/",
+      "weight": 1,
+      "shared_concepts": [
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/opening/",
+      "weight": 1,
+      "shared_concepts": [
+        "coffee"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/opening/post-this/",
+      "weight": 1,
+      "shared_concepts": [
+        "writing"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/opening/love-concept/",
+      "weight": 1,
+      "shared_concepts": [
+        "being"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/opening/open/",
+      "weight": 1,
+      "shared_concepts": [
+        "writing"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 2,
+      "shared_concepts": [
+        "being",
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 1,
+      "shared_concepts": [
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/opening/this-morning-a/",
+      "weight": 1,
+      "shared_concepts": [
+        "coffee"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 1,
+      "shared_concepts": [
+        "coffee"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 1,
+      "shared_concepts": [
+        "coffee"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 1,
+      "shared_concepts": [
+        "coffee"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 1,
+      "shared_concepts": [
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 1,
+      "shared_concepts": [
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 1,
+      "shared_concepts": [
+        "coffee"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/ici/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 2,
+      "shared_concepts": [
+        "being",
+        "coffee"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/concept/idea/",
+      "weight": 2,
+      "shared_concepts": [
+        "idea",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/concept/website-building/",
+      "weight": 1,
+      "shared_concepts": [
+        "content"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/concept/iced-coffee/",
+      "weight": 3,
+      "shared_concepts": [
+        "coffee",
+        "idea",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/concept/experimenting/",
+      "weight": 4,
+      "shared_concepts": [
+        "coffee",
+        "this",
+        "while",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/concept/evolving/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/opening/",
+      "weight": 3,
+      "shared_concepts": [
+        "coffee",
+        "just",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/opening/post-this/",
+      "weight": 2,
+      "shared_concepts": [
+        "just",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/opening/love-concept/",
+      "weight": 2,
+      "shared_concepts": [
+        "just",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/opening/open/",
+      "weight": 3,
+      "shared_concepts": [
+        "just",
+        "this",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/opening/this-you/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 3,
+      "shared_concepts": [
+        "just",
+        "this",
+        "while"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 1,
+      "shared_concepts": [
+        "just"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/opening/this-morning-a/",
+      "weight": 2,
+      "shared_concepts": [
+        "coffee",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 3,
+      "shared_concepts": [
+        "coffee",
+        "this",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 4,
+      "shared_concepts": [
+        "idea",
+        "just",
+        "this",
+        "while"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 3,
+      "shared_concepts": [
+        "coffee",
+        "just",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 1,
+      "shared_concepts": [
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 3,
+      "shared_concepts": [
+        "coffee",
+        "just",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 1,
+      "shared_concepts": [
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 1,
+      "shared_concepts": [
+        "coffee"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/origin/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 3,
+      "shared_concepts": [
+        "coffee",
+        "just",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/concept/website-building/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound",
+        "website"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/concept/iced-coffee/",
+      "weight": 5,
+      "shared_concepts": [
+        "healing",
+        "idea",
+        "ministries",
+        "this",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/concept/experimenting/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/concept/evolving/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/opening/",
+      "weight": 5,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "morning",
+        "this",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/opening/post-this/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/opening/love-concept/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/opening/open/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/opening/this-you/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 2,
+      "shared_concepts": [
+        "morning",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 2,
+      "shared_concepts": [
+        "healing",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/opening/this-morning-a/",
+      "weight": 4,
+      "shared_concepts": [
+        "morning",
+        "nothing",
+        "this",
+        "website"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 2,
+      "shared_concepts": [
+        "idea",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 2,
+      "shared_concepts": [
+        "morning",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/idea/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/concept/iced-coffee/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/concept/experimenting/",
+      "weight": 1,
+      "shared_concepts": [
+        "about"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/concept/evolving/",
+      "weight": 1,
+      "shared_concepts": [
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/opening/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "some",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/opening/love-concept/",
+      "weight": 1,
+      "shared_concepts": [
+        "some"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/opening/open/",
+      "weight": 1,
+      "shared_concepts": [
+        "about"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/opening/yes-and-no/",
+      "weight": 1,
+      "shared_concepts": [
+        "some"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 2,
+      "shared_concepts": [
+        "about",
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "unbound",
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/opening/this-morning-a/",
+      "weight": 1,
+      "shared_concepts": [
+        "website"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 2,
+      "shared_concepts": [
+        "about",
+        "some"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 1,
+      "shared_concepts": [
+        "about"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 1,
+      "shared_concepts": [
+        "about"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 1,
+      "shared_concepts": [
+        "about"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 1,
+      "shared_concepts": [
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 5,
+      "shared_concepts": [
+        "about",
+        "healing",
+        "ministries",
+        "unbound",
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 4,
+      "shared_concepts": [
+        "about",
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/website-building/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 1,
+      "shared_concepts": [
+        "some"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/concept/experimenting/",
+      "weight": 2,
+      "shared_concepts": [
+        "coffee",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/concept/evolving/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/opening/",
+      "weight": 6,
+      "shared_concepts": [
+        "coffee",
+        "healing",
+        "ministries",
+        "opening",
+        "this",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/opening/post-this/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/opening/love-concept/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/opening/open/",
+      "weight": 4,
+      "shared_concepts": [
+        "also",
+        "here",
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/opening/yes-and-no/",
+      "weight": 2,
+      "shared_concepts": [
+        "also",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/opening/this-you/",
+      "weight": 2,
+      "shared_concepts": [
+        "here",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "that",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/opening/this-morning-a/",
+      "weight": 3,
+      "shared_concepts": [
+        "coffee",
+        "here",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 2,
+      "shared_concepts": [
+        "coffee",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 4,
+      "shared_concepts": [
+        "cooling",
+        "idea",
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 3,
+      "shared_concepts": [
+        "coffee",
+        "here",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 2,
+      "shared_concepts": [
+        "coffee",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 5,
+      "shared_concepts": [
+        "healing",
+        "here",
+        "ministries",
+        "that",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "that",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "here",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 4,
+      "shared_concepts": [
+        "coffee",
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/iced-coffee/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 4,
+      "shared_concepts": [
+        "coffee",
+        "here",
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/concept/evolving/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/opening/",
+      "weight": 2,
+      "shared_concepts": [
+        "coffee",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/opening/post-this/",
+      "weight": 4,
+      "shared_concepts": [
+        "really",
+        "thinking",
+        "this",
+        "vitamins"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/opening/love-concept/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/opening/open/",
+      "weight": 4,
+      "shared_concepts": [
+        "about",
+        "like",
+        "this",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/opening/this-you/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 5,
+      "shared_concepts": [
+        "about",
+        "like",
+        "thinking",
+        "this",
+        "while"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 1,
+      "shared_concepts": [
+        "even"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/opening/this-morning-a/",
+      "weight": 2,
+      "shared_concepts": [
+        "coffee",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 4,
+      "shared_concepts": [
+        "about",
+        "coffee",
+        "this",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 3,
+      "shared_concepts": [
+        "thinking",
+        "this",
+        "while"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 5,
+      "shared_concepts": [
+        "about",
+        "coffee",
+        "even",
+        "thinking",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 2,
+      "shared_concepts": [
+        "about",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 3,
+      "shared_concepts": [
+        "about",
+        "coffee",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 4,
+      "shared_concepts": [
+        "even",
+        "like",
+        "thinking",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 1,
+      "shared_concepts": [
+        "about"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 1,
+      "shared_concepts": [
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 2,
+      "shared_concepts": [
+        "about",
+        "thinking"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 1,
+      "shared_concepts": [
+        "coffee"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/experimenting/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 3,
+      "shared_concepts": [
+        "coffee",
+        "even",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/opening/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/opening/post-this/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/opening/love-concept/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/opening/open/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/opening/yes-and-no/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/opening/this-you/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 3,
+      "shared_concepts": [
+        "that",
+        "this",
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/opening/this-morning-a/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 2,
+      "shared_concepts": [
+        "know",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 2,
+      "shared_concepts": [
+        "this",
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 3,
+      "shared_concepts": [
+        "conversation",
+        "that",
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 2,
+      "shared_concepts": [
+        "conversation",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 1,
+      "shared_concepts": [
+        "conversation"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/concept/evolving/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/opening/post-this/",
+      "weight": 2,
+      "shared_concepts": [
+        "just",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/opening/love-concept/",
+      "weight": 4,
+      "shared_concepts": [
+        "just",
+        "love",
+        "some",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/opening/open/",
+      "weight": 2,
+      "shared_concepts": [
+        "just",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/opening/yes-and-no/",
+      "weight": 1,
+      "shared_concepts": [
+        "some"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/opening/this-you/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 3,
+      "shared_concepts": [
+        "just",
+        "morning",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "just",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/opening/this-morning-a/",
+      "weight": 3,
+      "shared_concepts": [
+        "coffee",
+        "morning",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 4,
+      "shared_concepts": [
+        "coffee",
+        "love",
+        "some",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 3,
+      "shared_concepts": [
+        "just",
+        "love",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 4,
+      "shared_concepts": [
+        "coffee",
+        "just",
+        "morning",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 1,
+      "shared_concepts": [
+        "love"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 2,
+      "shared_concepts": [
+        "coffee",
+        "just"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 4,
+      "shared_concepts": [
+        "coffee",
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 4,
+      "shared_concepts": [
+        "coffee",
+        "just",
+        "some",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/post-this/",
+      "to": "https://unboundhealing.org/opening/love-concept/",
+      "weight": 3,
+      "shared_concepts": [
+        "just",
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/post-this/",
+      "to": "https://unboundhealing.org/opening/open/",
+      "weight": 4,
+      "shared_concepts": [
+        "just",
+        "that",
+        "this",
+        "writing"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/post-this/",
+      "to": "https://unboundhealing.org/opening/yes-and-no/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/post-this/",
+      "to": "https://unboundhealing.org/opening/this-you/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/post-this/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 4,
+      "shared_concepts": [
+        "just",
+        "that",
+        "thinking",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/post-this/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 2,
+      "shared_concepts": [
+        "just",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/post-this/",
+      "to": "https://unboundhealing.org/opening/this-morning-a/",
+      "weight": 3,
+      "shared_concepts": [
+        "emoji",
+        "laughing",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/post-this/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 2,
+      "shared_concepts": [
+        "emoji",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/post-this/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 4,
+      "shared_concepts": [
+        "just",
+        "that",
+        "thinking",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/post-this/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 4,
+      "shared_concepts": [
+        "emoji",
+        "just",
+        "thinking",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/post-this/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/post-this/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 2,
+      "shared_concepts": [
+        "just",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/post-this/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 2,
+      "shared_concepts": [
+        "thinking",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/post-this/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/post-this/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/post-this/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 1,
+      "shared_concepts": [
+        "thinking"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/post-this/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 3,
+      "shared_concepts": [
+        "just",
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/love-concept/",
+      "to": "https://unboundhealing.org/opening/open/",
+      "weight": 3,
+      "shared_concepts": [
+        "just",
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/love-concept/",
+      "to": "https://unboundhealing.org/opening/yes-and-no/",
+      "weight": 2,
+      "shared_concepts": [
+        "some",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/love-concept/",
+      "to": "https://unboundhealing.org/opening/this-you/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/love-concept/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 5,
+      "shared_concepts": [
+        "being",
+        "just",
+        "maybe",
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/love-concept/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 2,
+      "shared_concepts": [
+        "just",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/love-concept/",
+      "to": "https://unboundhealing.org/opening/this-morning-a/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/love-concept/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 3,
+      "shared_concepts": [
+        "love",
+        "some",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/love-concept/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 4,
+      "shared_concepts": [
+        "just",
+        "love",
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/love-concept/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 2,
+      "shared_concepts": [
+        "just",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/love-concept/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 2,
+      "shared_concepts": [
+        "love",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/love-concept/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 2,
+      "shared_concepts": [
+        "just",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/love-concept/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/love-concept/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/love-concept/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/love-concept/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 5,
+      "shared_concepts": [
+        "being",
+        "just",
+        "some",
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/open/",
+      "to": "https://unboundhealing.org/opening/yes-and-no/",
+      "weight": 2,
+      "shared_concepts": [
+        "also",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/open/",
+      "to": "https://unboundhealing.org/opening/this-you/",
+      "weight": 2,
+      "shared_concepts": [
+        "here",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/open/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 5,
+      "shared_concepts": [
+        "about",
+        "just",
+        "like",
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/open/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 3,
+      "shared_concepts": [
+        "just",
+        "that",
+        "thoughts"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/open/",
+      "to": "https://unboundhealing.org/opening/this-morning-a/",
+      "weight": 2,
+      "shared_concepts": [
+        "here",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/open/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 3,
+      "shared_concepts": [
+        "about",
+        "this",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/open/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 3,
+      "shared_concepts": [
+        "just",
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/open/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 4,
+      "shared_concepts": [
+        "about",
+        "here",
+        "just",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/open/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 3,
+      "shared_concepts": [
+        "about",
+        "that",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/open/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 4,
+      "shared_concepts": [
+        "about",
+        "just",
+        "that",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/open/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 2,
+      "shared_concepts": [
+        "like",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/open/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 3,
+      "shared_concepts": [
+        "about",
+        "here",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/open/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/open/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 2,
+      "shared_concepts": [
+        "about",
+        "here"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/open/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 4,
+      "shared_concepts": [
+        "here",
+        "just",
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/yes-and-no/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/yes-and-no/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/yes-and-no/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 1,
+      "shared_concepts": [
+        "some"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/yes-and-no/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/yes-and-no/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/yes-and-no/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "then"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/yes-and-no/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/yes-and-no/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 2,
+      "shared_concepts": [
+        "sometimes",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/yes-and-no/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 2,
+      "shared_concepts": [
+        "some",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-you/",
+      "to": "https://unboundhealing.org/opening/this-morning/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-you/",
+      "to": "https://unboundhealing.org/opening/this-morning-a/",
+      "weight": 3,
+      "shared_concepts": [
+        "here",
+        "sure",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-you/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-you/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-you/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 2,
+      "shared_concepts": [
+        "here",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-you/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 2,
+      "shared_concepts": [
+        "sure",
+        "things"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-you/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-you/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 1,
+      "shared_concepts": [
+        "here"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-you/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 1,
+      "shared_concepts": [
+        "here"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-you/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 2,
+      "shared_concepts": [
+        "here",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning/",
+      "to": "https://unboundhealing.org/opening/just-listening/",
+      "weight": 3,
+      "shared_concepts": [
+        "just",
+        "that",
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning/",
+      "to": "https://unboundhealing.org/opening/this-morning-a/",
+      "weight": 2,
+      "shared_concepts": [
+        "morning",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 2,
+      "shared_concepts": [
+        "about",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 5,
+      "shared_concepts": [
+        "just",
+        "that",
+        "thinking",
+        "this",
+        "while"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 5,
+      "shared_concepts": [
+        "about",
+        "just",
+        "morning",
+        "thinking",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 2,
+      "shared_concepts": [
+        "about",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 3,
+      "shared_concepts": [
+        "about",
+        "just",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 4,
+      "shared_concepts": [
+        "like",
+        "thinking",
+        "this",
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 3,
+      "shared_concepts": [
+        "about",
+        "that",
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 2,
+      "shared_concepts": [
+        "about",
+        "thinking"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 4,
+      "shared_concepts": [
+        "being",
+        "just",
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/just-listening/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 2,
+      "shared_concepts": [
+        "just",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/just-listening/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 2,
+      "shared_concepts": [
+        "even",
+        "just"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/just-listening/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/just-listening/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 2,
+      "shared_concepts": [
+        "just",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/just-listening/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 2,
+      "shared_concepts": [
+        "even",
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/just-listening/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 4,
+      "shared_concepts": [
+        "healing",
+        "that",
+        "unbound",
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/just-listening/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "that",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/just-listening/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "listening",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/just-listening/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 2,
+      "shared_concepts": [
+        "healing",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/just-listening/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 3,
+      "shared_concepts": [
+        "even",
+        "just",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning-a/",
+      "to": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "weight": 3,
+      "shared_concepts": [
+        "coffee",
+        "emoji",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning-a/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 2,
+      "shared_concepts": [
+        "from",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning-a/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 5,
+      "shared_concepts": [
+        "coffee",
+        "emoji",
+        "here",
+        "morning",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning-a/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 1,
+      "shared_concepts": [
+        "sure"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning-a/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 1,
+      "shared_concepts": [
+        "coffee"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning-a/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning-a/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 1,
+      "shared_concepts": [
+        "here"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning-a/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 1,
+      "shared_concepts": [
+        "here"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning-a/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 1,
+      "shared_concepts": [
+        "coffee"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning-a/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 3,
+      "shared_concepts": [
+        "coffee",
+        "here",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "to": "https://unboundhealing.org/opening/cooling-tea/",
+      "weight": 2,
+      "shared_concepts": [
+        "love",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 4,
+      "shared_concepts": [
+        "about",
+        "coffee",
+        "emoji",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 4,
+      "shared_concepts": [
+        "about",
+        "little",
+        "love",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 3,
+      "shared_concepts": [
+        "about",
+        "coffee",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 1,
+      "shared_concepts": [
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 1,
+      "shared_concepts": [
+        "about"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 1,
+      "shared_concepts": [
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 1,
+      "shared_concepts": [
+        "about"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 1,
+      "shared_concepts": [
+        "coffee"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 5,
+      "shared_concepts": [
+        "coffee",
+        "decaf",
+        "some",
+        "strong",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/cooling-tea/",
+      "to": "https://unboundhealing.org/opening/this-morning-too/",
+      "weight": 3,
+      "shared_concepts": [
+        "just",
+        "thinking",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/cooling-tea/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 2,
+      "shared_concepts": [
+        "love",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/cooling-tea/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 2,
+      "shared_concepts": [
+        "just",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/cooling-tea/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 2,
+      "shared_concepts": [
+        "thinking",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/cooling-tea/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/cooling-tea/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/cooling-tea/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 1,
+      "shared_concepts": [
+        "thinking"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/cooling-tea/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 3,
+      "shared_concepts": [
+        "just",
+        "that",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning-too/",
+      "to": "https://unboundhealing.org/opening/liz/",
+      "weight": 1,
+      "shared_concepts": [
+        "about"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning-too/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 3,
+      "shared_concepts": [
+        "about",
+        "coffee",
+        "just"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning-too/",
+      "to": "https://unboundhealing.org/opening/sold-out/",
+      "weight": 3,
+      "shared_concepts": [
+        "even",
+        "thinking",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning-too/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 2,
+      "shared_concepts": [
+        "about",
+        "here"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning-too/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 3,
+      "shared_concepts": [
+        "about",
+        "here",
+        "thinking"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning-too/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 1,
+      "shared_concepts": [
+        "coffee"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/this-morning-too/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 5,
+      "shared_concepts": [
+        "coffee",
+        "even",
+        "here",
+        "just",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/liz/",
+      "to": "https://unboundhealing.org/opening/tom/",
+      "weight": 3,
+      "shared_concepts": [
+        "about",
+        "that",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/liz/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 2,
+      "shared_concepts": [
+        "about",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/liz/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/liz/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 1,
+      "shared_concepts": [
+        "about"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/liz/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/tom/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 2,
+      "shared_concepts": [
+        "about",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/tom/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 2,
+      "shared_concepts": [
+        "that",
+        "with"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/tom/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 2,
+      "shared_concepts": [
+        "about",
+        "still"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/tom/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 1,
+      "shared_concepts": [
+        "coffee"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/tom/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 3,
+      "shared_concepts": [
+        "coffee",
+        "just",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/sold-out/",
+      "to": "https://unboundhealing.org/about/",
+      "weight": 1,
+      "shared_concepts": [
+        "what"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/sold-out/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 1,
+      "shared_concepts": [
+        "thinking"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/opening/sold-out/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 2,
+      "shared_concepts": [
+        "even",
+        "this"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/about/",
+      "to": "https://unboundhealing.org/about/conversing/",
+      "weight": 5,
+      "shared_concepts": [
+        "conversation",
+        "healing",
+        "ministries",
+        "that",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/about/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 5,
+      "shared_concepts": [
+        "about",
+        "healing",
+        "here",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/about/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 5,
+      "shared_concepts": [
+        "conversation",
+        "healing",
+        "ministries",
+        "shared",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/about/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 2,
+      "shared_concepts": [
+        "here",
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/about/conversing/",
+      "to": "https://unboundhealing.org/listening/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/about/conversing/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 4,
+      "shared_concepts": [
+        "conversation",
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/about/conversing/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 1,
+      "shared_concepts": [
+        "that"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/listening/",
+      "to": "https://unboundhealing.org/gathering/",
+      "weight": 3,
+      "shared_concepts": [
+        "healing",
+        "ministries",
+        "unbound"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/listening/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 1,
+      "shared_concepts": [
+        "here"
+      ]
+    },
+    {
+      "from": "https://unboundhealing.org/gathering/",
+      "to": "https://unboundhealing.org/supporting/",
+      "weight": 1,
+      "shared_concepts": [
+        "coffee"
+      ]
+    }
+  ]
+}

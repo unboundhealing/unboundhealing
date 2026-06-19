@@ -1,0 +1,64 @@
+{
+  "edges": [
+    {
+      "from": "lizzo_good_as_hell_1",
+      "to": "liz",
+      "weight": 0.3,
+      "reason": "semantic_overlap"
+    },
+    {
+      "from": "just-thinking",
+      "to": "just-listening",
+      "weight": 0.3,
+      "reason": "semantic_overlap"
+    },
+    {
+      "from": "concept",
+      "to": "conversing",
+      "weight": 0.3,
+      "reason": "semantic_overlap"
+    },
+    {
+      "from": "open",
+      "to": "opening",
+      "weight": 0.3,
+      "reason": "semantic_overlap"
+    },
+    {
+      "from": "this-you",
+      "to": "this-morning",
+      "weight": 0.3,
+      "reason": "semantic_overlap"
+    },
+    {
+      "from": "this-you",
+      "to": "this-morning-a",
+      "weight": 0.3,
+      "reason": "semantic_overlap"
+    },
+    {
+      "from": "this-you",
+      "to": "this-morning-too",
+      "weight": 0.3,
+      "reason": "semantic_overlap"
+    },
+    {
+      "from": "this-morning",
+      "to": "this-morning-a",
+      "weight": 0.3,
+      "reason": "semantic_overlap"
+    },
+    {
+      "from": "this-morning",
+      "to": "this-morning-too",
+      "weight": 0.3,
+      "reason": "semantic_overlap"
+    },
+    {
+      "from": "this-morning-a",
+      "to": "this-morning-too",
+      "weight": 0.3,
+      "reason": "semantic_overlap"
+    }
+  ]
+}

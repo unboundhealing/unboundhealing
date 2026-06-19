@@ -1,0 +1,748 @@
+{
+  "https://unboundhealing.org/": {
+    "title": "Unbound Healing Ministries",
+    "concepts": [
+      "this",
+      "unbound",
+      "healing",
+      "ministries",
+      "have",
+      "ever",
+      "noticed",
+      "extraordinary",
+      "that",
+      "anything",
+      "happening",
+      "thought"
+    ],
+    "tone": "neutral",
+    "intent": "invitation"
+  },
+  "https://unboundhealing.org/noticing/": {
+    "title": "Noticing | Unbound Healing Ministries",
+    "concepts": [
+      "noticing",
+      "share",
+      "unbound",
+      "healing",
+      "ministries",
+      "thought",
+      "feeling",
+      "question",
+      "memory",
+      "smile",
+      "confusion",
+      "publicly"
+    ],
+    "tone": "neutral",
+    "intent": "reflection"
+  },
+  "https://unboundhealing.org/noticing/shared-experiences/": {
+    "title": "Shared Experiences | Unbound Healing Ministries",
+    "concepts": [
+      "shared",
+      "experiences",
+      "share",
+      "unbound",
+      "healing",
+      "ministries",
+      "collection",
+      "observations",
+      "questions",
+      "moments",
+      "generously",
+      "visitors"
+    ],
+    "tone": "neutral",
+    "intent": "reflection"
+  },
+  "https://unboundhealing.org/inviting/": {
+    "title": "Inviting | Unbound Healing Ministries",
+    "concepts": [
+      "inviting",
+      "unbound",
+      "healing",
+      "ministries",
+      "this",
+      "page",
+      "archived",
+      "historical",
+      "context",
+      "content",
+      "found",
+      "here"
+    ],
+    "tone": "neutral",
+    "intent": "reflection"
+  },
+  "https://unboundhealing.org/welcome/": {
+    "title": "Welcome in\u2026 | Unbound Healing Ministries",
+    "concepts": [
+      "this",
+      "that",
+      "morning",
+      "welcome",
+      "like",
+      "being",
+      "start",
+      "including",
+      "every",
+      "with",
+      "honestly",
+      "hurry"
+    ],
+    "tone": "contemplative",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/assets/homepage-intelligence-blocks": {
+    "title": "",
+    "concepts": [],
+    "tone": "neutral",
+    "intent": "reflection"
+  },
+  "https://unboundhealing.org/assets/entry-template/": {
+    "title": "TITLE | Unbound Healing Ministries",
+    "concepts": [
+      "text",
+      "paragraph",
+      "secondary",
+      "lines",
+      "link",
+      "images",
+      "title",
+      "subtitle",
+      "inside",
+      "meta",
+      "property",
+      "image"
+    ],
+    "tone": "neutral",
+    "intent": "reflection"
+  },
+  "https://unboundhealing.org/assets/updates-temp/": {
+    "title": "",
+    "concepts": [
+      "paste",
+      "code",
+      "updates",
+      "here",
+      "easy",
+      "back",
+      "forth",
+      "copy",
+      "pasting"
+    ],
+    "tone": "neutral",
+    "intent": "reflection"
+  },
+  "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1": {
+    "title": "",
+    "concepts": [],
+    "tone": "neutral",
+    "intent": "reflection"
+  },
+  "https://unboundhealing.org/assets/images/_html/test_image": {
+    "title": "",
+    "concepts": [
+      "caption",
+      "text"
+    ],
+    "tone": "neutral",
+    "intent": "reflection"
+  },
+  "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1": {
+    "title": "",
+    "concepts": [],
+    "tone": "neutral",
+    "intent": "reflection"
+  },
+  "https://unboundhealing.org/assets/page-template/": {
+    "title": "FOLDER | Unbound Healing Ministries",
+    "concepts": [
+      "text",
+      "paragraph",
+      "secondary",
+      "lines",
+      "link",
+      "images",
+      "folder",
+      "subtitle",
+      "inside",
+      "meta",
+      "property",
+      "image"
+    ],
+    "tone": "neutral",
+    "intent": "reflection"
+  },
+  "https://unboundhealing.org/concept/": {
+    "title": "Concept | Unbound Healing Ministries",
+    "concepts": [
+      "concept",
+      "unbound",
+      "healing",
+      "ministries",
+      "interconnected",
+      "content",
+      "initiative",
+      "almost",
+      "origin",
+      "story",
+      "experimenting",
+      "evolving"
+    ],
+    "tone": "neutral",
+    "intent": "exploration"
+  },
+  "https://unboundhealing.org/concept/just-thinking/": {
+    "title": "so i was just thinking\u2026 | Unbound Healing Ministries",
+    "concepts": [
+      "just",
+      "thinking",
+      "whatever",
+      "unbound",
+      "healing",
+      "ministries",
+      "about",
+      "recent",
+      "piece",
+      "called",
+      "zone",
+      "while"
+    ],
+    "tone": "neutral",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/concept/zone/": {
+    "title": "zone? | Unbound Healing Ministries",
+    "concepts": [
+      "about",
+      "beatsaber",
+      "zone",
+      "thinking",
+      "writing",
+      "playing",
+      "good",
+      "whatever",
+      "unbound",
+      "healing",
+      "ministries",
+      "while"
+    ],
+    "tone": "neutral",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/concept/ici/": {
+    "title": "Interconnected Content Initiative\u2122 | Unbound Healing Ministries",
+    "concepts": [
+      "when",
+      "nodes",
+      "reflection",
+      "being",
+      "what",
+      "interconnected",
+      "content",
+      "experiment",
+      "exploration",
+      "writing",
+      "coffee",
+      "happens"
+    ],
+    "tone": "neutral",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/concept/origin/": {
+    "title": "Almost-Origin Story | Unbound Healing Ministries",
+    "concepts": [
+      "chatgpt",
+      "clint",
+      "just",
+      "this",
+      "coffee",
+      "content",
+      "initiative",
+      "have",
+      "idea",
+      "with",
+      "while",
+      "would"
+    ],
+    "tone": "neutral",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/concept/idea/": {
+    "title": "idea | Unbound Healing Ministries",
+    "concepts": [
+      "idea",
+      "busy",
+      "morning",
+      "mental",
+      "website",
+      "already",
+      "cross",
+      "nothing",
+      "this",
+      "unbound",
+      "healing",
+      "ministries"
+    ],
+    "tone": "neutral",
+    "intent": "reflection"
+  },
+  "https://unboundhealing.org/concept/website-building/": {
+    "title": "website building: | Unbound Healing Ministries",
+    "concepts": [
+      "what",
+      "some",
+      "website",
+      "building",
+      "about",
+      "cool",
+      "content",
+      "unbound",
+      "healing",
+      "ministries",
+      "making",
+      "better"
+    ],
+    "tone": "neutral",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/concept/iced-coffee/": {
+    "title": "iced coffee | Unbound Healing Ministries",
+    "concepts": [
+      "this",
+      "coffee",
+      "that",
+      "here",
+      "iced",
+      "idea",
+      "also",
+      "opening",
+      "unbound",
+      "healing",
+      "ministries",
+      "cooling"
+    ],
+    "tone": "neutral",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/concept/experimenting/": {
+    "title": "Experimenting | Unbound Healing Ministries",
+    "concepts": [
+      "experimenting",
+      "thinking",
+      "about",
+      "with",
+      "links",
+      "like",
+      "this",
+      "while",
+      "vitamins",
+      "coffee",
+      "really",
+      "even"
+    ],
+    "tone": "neutral",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/concept/evolving/": {
+    "title": "Evolving\u2026 | Unbound Healing Ministries",
+    "concepts": [
+      "user",
+      "assistant",
+      "conversation",
+      "perhaps",
+      "find",
+      "what",
+      "know",
+      "that",
+      "myself",
+      "wondering",
+      "this",
+      "does"
+    ],
+    "tone": "neutral",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/opening/": {
+    "title": "Opening\u2026 | Unbound Healing Ministries",
+    "concepts": [
+      "this",
+      "opening",
+      "some",
+      "morning",
+      "coffee",
+      "love",
+      "just",
+      "unbound",
+      "healing",
+      "ministries",
+      "observations",
+      "arrive"
+    ],
+    "tone": "neutral",
+    "intent": "invitation"
+  },
+  "https://unboundhealing.org/opening/post-this/": {
+    "title": "post this? | Unbound Healing Ministries",
+    "concepts": [
+      "breathing",
+      "this",
+      "writing",
+      "thinking",
+      "emoji",
+      "laughing",
+      "vitamins",
+      "post",
+      "just",
+      "really",
+      "worth",
+      "that"
+    ],
+    "tone": "contemplative",
+    "intent": "exploration"
+  },
+  "https://unboundhealing.org/opening/love-concept/": {
+    "title": "love is just a concept\u2026 | Unbound Healing Ministries",
+    "concepts": [
+      "love",
+      "that",
+      "together",
+      "just",
+      "being",
+      "fundamental",
+      "maybe",
+      "concept",
+      "this",
+      "held",
+      "beingness",
+      "some"
+    ],
+    "tone": "neutral",
+    "intent": "exploration"
+  },
+  "https://unboundhealing.org/opening/open/": {
+    "title": "open\u2026 | Unbound Healing Ministries",
+    "concepts": [
+      "about",
+      "this",
+      "with",
+      "writing",
+      "masturbation",
+      "thoughts",
+      "that",
+      "also",
+      "open",
+      "here",
+      "just",
+      "like"
+    ],
+    "tone": "neutral",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/opening/yes-and-no/": {
+    "title": "yes and no\u2026 | Unbound Healing Ministries",
+    "concepts": [
+      "that",
+      "death",
+      "could",
+      "uncomfortable",
+      "pain",
+      "injury",
+      "unpleasant",
+      "then",
+      "also",
+      "else",
+      "sometimes",
+      "some"
+    ],
+    "tone": "contemplative",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/opening/this-you/": {
+    "title": "this you\u2026 | Unbound Healing Ministries",
+    "concepts": [
+      "this",
+      "entirely",
+      "discovery",
+      "sure",
+      "there",
+      "memories",
+      "things",
+      "none",
+      "them",
+      "right",
+      "here",
+      "reading"
+    ],
+    "tone": "neutral",
+    "intent": "reflection"
+  },
+  "https://unboundhealing.org/opening/this-morning/": {
+    "title": "this morning\u2026 | Unbound Healing Ministries",
+    "concepts": [
+      "this",
+      "that",
+      "just",
+      "about",
+      "morning",
+      "thinking",
+      "like",
+      "while",
+      "remember",
+      "maybe",
+      "being",
+      "what"
+    ],
+    "tone": "contemplative",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/opening/just-listening/": {
+    "title": "just listening\u2026 | Unbound Healing Ministries",
+    "concepts": [
+      "what",
+      "anything",
+      "listening",
+      "just",
+      "thoughts",
+      "supposed",
+      "specific",
+      "even",
+      "worry",
+      "that",
+      "unbound",
+      "healing"
+    ],
+    "tone": "contemplative",
+    "intent": "attention / awareness"
+  },
+  "https://unboundhealing.org/opening/this-morning-a/": {
+    "title": "this morning\u2026 | Unbound Healing Ministries",
+    "concepts": [
+      "this",
+      "here",
+      "laughing",
+      "morning",
+      "sips",
+      "coffee",
+      "emoji",
+      "website",
+      "nothing",
+      "sure",
+      "cute",
+      "from"
+    ],
+    "tone": "contemplative",
+    "intent": "exploration"
+  },
+  "https://unboundhealing.org/opening/lukewarm-decaf/": {
+    "title": "i love you (,/?) lukewarm strong decaf coffee\u2026 | Unbound Healing Ministries",
+    "concepts": [
+      "this",
+      "some",
+      "coffee",
+      "emoji",
+      "about",
+      "strong",
+      "decaf",
+      "link",
+      "little",
+      "point",
+      "love",
+      "with"
+    ],
+    "tone": "contemplative",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/opening/cooling-tea/": {
+    "title": "cooling tea | Unbound Healing Ministries",
+    "concepts": [
+      "this",
+      "that",
+      "just",
+      "cooling",
+      "journals",
+      "added",
+      "from",
+      "idea",
+      "while",
+      "written",
+      "thinking",
+      "love"
+    ],
+    "tone": "neutral",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/opening/this-morning-too/": {
+    "title": "this morning\u2026 | Unbound Healing Ministries",
+    "concepts": [
+      "this",
+      "thinking",
+      "about",
+      "morning",
+      "coffee",
+      "just",
+      "away",
+      "dish",
+      "here",
+      "enough",
+      "even",
+      "emoji"
+    ],
+    "tone": "contemplative",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/opening/liz/": {
+    "title": "liz | Unbound Healing Ministries",
+    "concepts": [
+      "about",
+      "love",
+      "hard",
+      "which",
+      "share",
+      "with",
+      "little",
+      "sure",
+      "things",
+      "that",
+      "feels",
+      "know"
+    ],
+    "tone": "neutral",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/opening/tom/": {
+    "title": "coffee with tom | Unbound Healing Ministries",
+    "concepts": [
+      "then",
+      "down",
+      "walking",
+      "that",
+      "write",
+      "coffee",
+      "with",
+      "still",
+      "about",
+      "should",
+      "just",
+      "sidewalk"
+    ],
+    "tone": "contemplative",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/opening/sold-out/": {
+    "title": "sold-out\u2026 | Unbound Healing Ministries",
+    "concepts": [
+      "this",
+      "thinking",
+      "what",
+      "sold",
+      "like",
+      "even",
+      "different",
+      "faces",
+      "seems",
+      "stadium",
+      "look",
+      "exist"
+    ],
+    "tone": "neutral",
+    "intent": "reflection"
+  },
+  "https://unboundhealing.org/about/": {
+    "title": "About | Unbound Healing Ministries",
+    "concepts": [
+      "what",
+      "about",
+      "healing",
+      "shared",
+      "unbound",
+      "ministries",
+      "ordinary",
+      "through",
+      "conversation",
+      "questions",
+      "here",
+      "that"
+    ],
+    "tone": "neutral",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/about/conversing/": {
+    "title": "Conversing | Unbound Healing Ministries",
+    "concepts": [
+      "sometimes",
+      "conversing",
+      "healing",
+      "simply",
+      "that",
+      "conversation",
+      "unbound",
+      "ministries",
+      "occasionally",
+      "someone",
+      "reaches",
+      "with"
+    ],
+    "tone": "neutral",
+    "intent": "invitation"
+  },
+  "https://unboundhealing.org/listening/": {
+    "title": "Listening | Unbound Healing Ministries",
+    "concepts": [
+      "listening",
+      "unbound",
+      "healing",
+      "ministries",
+      "still",
+      "nervous",
+      "podcasting",
+      "thinking",
+      "about",
+      "conversations",
+      "appear",
+      "here"
+    ],
+    "tone": "neutral",
+    "intent": "identity / description"
+  },
+  "https://unboundhealing.org/gathering/": {
+    "title": "Gathering | Unbound Healing Ministries",
+    "concepts": [
+      "gathering",
+      "gatherings",
+      "unbound",
+      "healing",
+      "ministries",
+      "possible",
+      "future",
+      "coffee",
+      "conversation",
+      "community",
+      "walks",
+      "shared"
+    ],
+    "tone": "neutral",
+    "intent": "reflection"
+  },
+  "https://unboundhealing.org/supporting/": {
+    "title": "Supporting | Unbound Healing Ministries",
+    "concepts": [
+      "that",
+      "this",
+      "being",
+      "here",
+      "decaf",
+      "even",
+      "coffee",
+      "feel",
+      "support",
+      "just",
+      "some",
+      "strong"
+    ],
+    "tone": "neutral",
+    "intent": "identity / description"
+  }
+}
