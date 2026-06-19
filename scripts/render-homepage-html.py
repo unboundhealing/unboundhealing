@@ -80,5 +80,7 @@ with open(OUTPUT, "w", encoding="utf-8") as f:
     f.write(final_html)
 
 print("OUTPUT PATH:", OUTPUT)
-print("OUTPUT SIZE:", len(final_html))
-print("🏠 Homepage intelligence HTML rendered (FIXED TEST VERSION)")
+print("OUTPUT SIZE:", len(final_html) if 'final_html' in globals() else len("\n".join(html)))
+print("DEBUG FILE EXISTS:", os.path.exists(OUTPUT))
+print("DEBUG FILE CONTENT PREVIEW:", open(OUTPUT, "r", encoding="utf-8").read()[:200])
+print("🏠 Homepage intelligence HTML rendered")
