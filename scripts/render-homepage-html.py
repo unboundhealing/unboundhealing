@@ -22,6 +22,12 @@ labels = safe_load_json(LABEL_FILE, {
     "concepts": "Fields of meaning"
 })
 
+# 🔍 DEBUG CHECKPOINT (add this)
+print("INTEL FILE PATH:", INTEL_FILE)
+print("LABEL FILE PATH:", LABEL_FILE)
+print("INTEL FILE EXISTS:", os.path.exists(INTEL_FILE))
+print("LABEL FILE EXISTS:", os.path.exists(LABEL_FILE))
+print("INTEL RAW:", intel)
 
 def clean_url(url):
     return url.replace("https://unboundhealing.org", "").rstrip("/")
