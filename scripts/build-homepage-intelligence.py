@@ -51,8 +51,8 @@ cluster_scores.sort(key=lambda x: x["size"], reverse=True)
 top_concepts = cluster_scores[:8]
 
 output = {
-    "featured_pages": featured_pages[:5],
-    "concept_clusters": top_concepts
+    "featured_pages": featured_pages[:3],
+    "concept_clusters": top_concepts[:3]
 }
 
 with open(OUTPUT, "w", encoding="utf-8") as f:
