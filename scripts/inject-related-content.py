@@ -177,7 +177,7 @@ for file in HTML_FILES:
                 )
             )
 
-            a["class"] = "related-tag"
+            a["class"] = "related-chip"
 
             a.string = lookup_title(r)
 
