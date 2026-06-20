@@ -321,6 +321,9 @@ p {
 .chip:hover {
   background: rgba(111, 143, 106, 0.15);
   color: var(--accent);
+
+  transform: translateY(-1px);
+  transition: transform 160ms ease, background 200ms ease, color 200ms ease;
 }
 
 /* muted fallback */
