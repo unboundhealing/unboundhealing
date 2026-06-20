@@ -19,9 +19,12 @@ with open(GRAPH_FILE, "r", encoding="utf-8") as f:
 with open(WORDS_FILE, "r", encoding="utf-8") as f:
     pages = json.load(f)["pages"]
 
-with open(PAGE_TITLES_FILE, "r", encoding="utf-8") as f:
-    page_titles = json.load(f)
-
+if os.path.exists(PAGE_TITLES_FILE):
+    with open(PAGE_TITLES_FILE, "r", encoding="utf-8") as f:
+        page_titles = json.load(f)
+else:
+    page_titles = {}
+    
 # -----------------------------
 # Build lookup tables
 # -----------------------------
