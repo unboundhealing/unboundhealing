@@ -330,3 +330,43 @@ p {
 .chip.muted {
   opacity: 0.6;
 }
+
+/* =========================
+   RELATED CONTENT SYSTEM
+   ========================= */
+
+.related-paths {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.related-paths h3 {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--muted);
+  opacity: 0.8;
+  margin-bottom: 24px;
+}
+
+.related-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.related-chip {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(111,143,106,0.08);
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all .2s ease;
+}
+
+.related-chip:hover {
+  background: rgba(111,143,106,0.15);
+  color: var(--accent);
+}
