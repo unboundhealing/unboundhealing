@@ -166,6 +166,9 @@ echo "🧭 Building word graph (v3.3 Phase 2)..."
 python3 scripts/build-word-graph.py
 echo "✅ Word graph built (v3.3)"
 
+echo "📖 Building page titles..."
+python scripts/build-page-titles.py
+
 echo "🔗 Injecting related content (v3.3 Phase 3)..."
 python3 scripts/inject-related-content.py
 echo "✅ Related content injected (v3.3)"
