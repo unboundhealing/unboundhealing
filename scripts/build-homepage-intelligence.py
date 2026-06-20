@@ -33,23 +33,27 @@ featured_pages = [
 ]
 
 # -----------------------------
-# Cluster importance
+# Stop-word filter (must be defined first)
+# -----------------------------
+STOP_CONCEPTS = {
+    "that", "these", "those",
+    "and", "or", "but",
+    "the", "a", "an",
+    "to", "of", "in", "on", "for",
+    "unbound",
+}
+
+# -----------------------------
+# Cluster importance + cleaning
 # -----------------------------
 cluster_scores = []
-
-for concept, pages in clusters.items():
-    cluster_scores.append({
-        "concept": concept,
-        "size": len(pages)
-    })
-
-cluster_scores.sort(key=lambda x: x["size"], reverse=True)
-
 clean_clusters = {}
 
 for concept, pages in clusters.items():
+
     concept_clean = concept.strip().lower()
 
+    # filter noise concepts
     if concept_clean in STOP_CONCEPTS:
         continue
 
@@ -58,13 +62,12 @@ for concept, pages in clusters.items():
 
     clean_clusters[concept] = pages
 
-STOP_CONCEPTS = {
-    "that", "these", "those",
-    "and", "or", "but",
-    "the", "a", "an",
-    "to", "of", "in", "on", "for",
-    "unbound",  # optional: only if it's not semantically meaningful in your model
-}
+    cluster_scores.append({
+        "concept": concept_clean,
+        "size": len(pages)
+    })
+
+cluster_scores.sort(key=lambda x: x["size"], reverse=True)
 
 # -----------------------------
 # Build “gravity layer”
