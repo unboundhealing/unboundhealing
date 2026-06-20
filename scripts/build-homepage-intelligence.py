@@ -42,6 +42,21 @@ STOP_CONCEPTS = {
     "to", "of", "in", "on", "for",
     "unbound",
 }
+SEMANTIC_NOISE = {
+    "this","that","these","those",
+    "it","its","they","them",
+    "here","there",
+    "thing","things",
+    "something","anything",
+}
+def is_noise_concept(word):
+    return (
+        word in STOP_WORDS or
+        word in SEMANTIC_NOISE or
+        len(word) < 3
+)
+def normalize_concept(word):
+    return word.strip().lower()
 
 # -----------------------------
 # Cluster importance + cleaning
