@@ -28,6 +28,9 @@ python3 scripts/build-concept-clusters.py
 echo "🌿 Building semantic salience..."
 python3 scripts/build-semantic-salience.py
 
+echo "🗂 Building concept index..."
+python scripts/build-concept-index.py
+
 #!/bin/bash
 set -e
 
