@@ -45,6 +45,27 @@ for concept, pages in clusters.items():
 
 cluster_scores.sort(key=lambda x: x["size"], reverse=True)
 
+clean_clusters = {}
+
+for concept, pages in clusters.items():
+    concept_clean = concept.strip().lower()
+
+    if concept_clean in STOP_CONCEPTS:
+        continue
+
+    if len(concept_clean) < 3:
+        continue
+
+    clean_clusters[concept] = pages
+
+STOP_CONCEPTS = {
+    "that", "these", "those",
+    "and", "or", "but",
+    "the", "a", "an",
+    "to", "of", "in", "on", "for",
+    "unbound",  # optional: only if it's not semantically meaningful in your model
+}
+
 # -----------------------------
 # Build “gravity layer”
 # -----------------------------
