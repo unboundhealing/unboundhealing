@@ -280,7 +280,7 @@ p {
 
 .arising-observations,
 .essential-inspirations {
-  margin-top: 100px;
+  margin-top: 90px;
   text-align: center;
   max-width: 700px;
   margin-left: auto;
@@ -293,7 +293,7 @@ p {
   font-size: 20px;
   font-weight: 400;
   color: var(--muted);
-  opacity: 0.85;
+  opacity: 0.81;
   margin-bottom: 24px;
 }
 
@@ -314,16 +314,15 @@ p {
   color: var(--muted);
   font-size: 0.9rem;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: transform 180ms ease, background 220ms ease, color 220ms ease;
 }
 
 /* hover identical for links + tags */
 .chip:hover {
   background: rgba(111, 143, 106, 0.15);
   color: var(--accent);
-
   transform: translateY(-1px);
-  transition: transform 160ms ease, background 200ms ease, color 200ms ease;
+  transition: transform 180ms ease, background 220ms ease, color 220ms ease;
 }
 
 /* muted fallback */
@@ -336,7 +335,7 @@ p {
    ========================= */
 
 .related-paths {
-  margin-top: 80px;
+  margin-top: 90px;
   text-align: center;
 }
 
@@ -344,7 +343,7 @@ p {
   font-size: 20px;
   font-weight: 400;
   color: var(--muted);
-  opacity: 0.8;
+  opacity: 0.81;
   margin-bottom: 24px;
 }
 
@@ -363,10 +362,14 @@ p {
   color: var(--muted);
   font-size: 0.9rem;
   text-decoration: none;
-  transition: all .2s ease;
+  transition: transform 180ms ease, background 220ms ease, opacity 220ms ease;
 }
 
 .related-chip:hover {
   background: rgba(111,143,106,0.15);
   color: var(--accent);
+  
+}
+.related-chip:hover {
+  transform: translateY(-1px);
 }
