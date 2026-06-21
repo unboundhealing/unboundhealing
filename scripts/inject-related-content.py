@@ -2,15 +2,14 @@ import json
 import os
 import re
 from bs4 import BeautifulSoup
-from collections import defaultdict
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
-PAGE_TITLES_FILE = os.path.join(ROOT, "page-titles.json")
 SALIENCE_FILE = os.path.join(ROOT, "semantic-salience.json")
+PAGE_TITLES_FILE = os.path.join(ROOT, "page-titles.json")
 
 # -----------------------------
-# Load salience (ONLY SOURCE OF TRUTH)
+# Load salience (FINAL FORM)
 # -----------------------------
 with open(SALIENCE_FILE, "r", encoding="utf-8") as f:
     salience = json.load(f)
@@ -23,20 +22,6 @@ if os.path.exists(PAGE_TITLES_FILE):
         page_titles = json.load(f)
 else:
     page_titles = {}
-
-# -----------------------------
-# Build reverse index: URL → salience group
-# -----------------------------
-url_to_group = {}
-group_to_pages = {}
-
-for group_key, group_data in salience.items():
-    pages = group_data.get("pages", [])
-
-    group_to_pages[group_key] = pages
-
-    for p in pages:
-        url_to_group[p["url"]] = group_key
 
 # -----------------------------
 # Helpers
@@ -64,16 +49,11 @@ def get_url_from_file(file_path):
 
 
 def lookup_title(url):
-    path = (
-        url.replace("https://unboundhealing.org", "")
-        .rstrip("/")
-    )
-
+    path = url.replace("https://unboundhealing.org", "").rstrip("/")
     key = "/" if path == "" else f"{path}/"
 
-    title = page_titles.get(key)
-    if title:
-        return title
+    if key in page_titles:
+        return page_titles[key]
 
     slug = key.strip("/").split("/")[-1]
     return slug.replace("-", " ").title()
@@ -90,29 +70,29 @@ for file in HTML_FILES:
         with open(file, "r", encoding="utf-8") as f:
             soup = BeautifulSoup(f, "html.parser")
 
-        # Remove previous injections
+        # remove old injections
         for old in soup.select("section.related-paths"):
             old.decompose()
 
         url = get_url_from_file(file)
 
-        if url not in url_to_group:
+        if url not in salience:
             continue
 
-        group = url_to_group[url]
-        pages = group_to_pages.get(group, [])
+        related_items = salience[url].get("related", [])
 
-        # remove current page + limit
         related = [
-            p["url"]
-            for p in pages
-            if p["url"] != url
+            r["url"]
+            for r in related_items
+            if r["url"] != url
         ][:5]
 
         if not related:
             continue
 
-        # Create section
+        # -----------------------------
+        # build UI
+        # -----------------------------
         block = soup.new_tag("section")
         block["class"] = "related-paths"
 
@@ -124,14 +104,16 @@ for file in HTML_FILES:
         cloud["class"] = "related-cloud"
 
         for r in related:
-            a = soup.new_tag("a", href=r.replace("https://unboundhealing.org", ""))
+            a = soup.new_tag(
+                "a",
+                href=r.replace("https://unboundhealing.org", "")
+            )
             a["class"] = "related-chip"
             a.string = lookup_title(r)
             cloud.append(a)
 
         block.append(cloud)
 
-        # Insert
         footer = soup.find("footer")
 
         if footer:
@@ -147,4 +129,4 @@ for file in HTML_FILES:
     except Exception as e:
         print(f"⚠️ Skipped {file}: {e}")
 
-print("✅ Phase 3 injection complete")
+print("✅ Final form injection complete")
