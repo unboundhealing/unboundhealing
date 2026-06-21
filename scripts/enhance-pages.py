@@ -34,7 +34,6 @@ def find_html_files():
 
     for root, _, fns in os.walk(ROOT):
 
-        # hard boundary: never touch assets pipeline
         if "/assets/" in root.replace("\\", "/"):
             continue
 
@@ -70,17 +69,26 @@ def lookup_title(url):
 
 
 # =========================================================
-# PLUGIN INTERFACE CONTRACT (IMPORTANT)
+# PLUGIN CONTEXT (future semantic layer hook)
 # =========================================================
 
-def run_plugin(plugin, soup, url):
+def build_context(url):
     """
-    Safe plugin wrapper:
-    - isolates failures
-    - ensures uniform logging
+    This is your future bridge to semantic-salience-driven behavior.
     """
+    return {
+        "url": url,
+        "salience": salience.get(url, {}),
+    }
+
+
+# =========================================================
+# PLUGIN INTERFACE
+# =========================================================
+
+def run_plugin(plugin, soup, url, context):
     try:
-        plugin(soup, url)
+        plugin(soup, url, context)
     except Exception as e:
         print(f"⚠️ Plugin failed: {plugin.__name__} -> {e}")
 
@@ -89,9 +97,8 @@ def run_plugin(plugin, soup, url):
 # PLUGINS
 # =========================================================
 
-def plugin_related_content(soup, url):
+def plugin_related_content(soup, url, context):
 
-    # idempotent cleanup
     for old in soup.select("section.related-paths"):
         old.decompose()
 
@@ -138,9 +145,8 @@ def plugin_related_content(soup, url):
         soup.body.append(block)
 
 
-def plugin_tracking(soup, url=None):
+def plugin_tracking(soup, url, context):
 
-    # idempotent guard
     if soup.find("script", {"src": TRACKER_PATH}):
         return
 
@@ -153,19 +159,25 @@ def plugin_tracking(soup, url=None):
         soup.append(script)
 
 
-def plugin_future_magic(soup, url):
-    # reserved extension hook
+def plugin_future_magic(soup, url, context):
+    # reserved semantic expansion hook
     pass
 
 
 # =========================================================
-# PLUGIN REGISTRY
+# REGISTRY (NOW TRUE SYSTEM LAYER)
 # =========================================================
 
-PLUGINS = [
-    plugin_related_content,
-    plugin_tracking,
-    plugin_future_magic,
+PLUGIN_REGISTRY = {
+    "related_content": plugin_related_content,
+    "tracking": plugin_tracking,
+    "future_magic": plugin_future_magic,
+}
+
+ACTIVE_PLUGINS = [
+    "related_content",
+    "tracking",
+    "future_magic",
 ]
 
 
@@ -175,8 +187,15 @@ PLUGINS = [
 
 def enhance_page(soup, url):
 
-    for plugin in PLUGINS:
-        run_plugin(plugin, soup, url)
+    context = build_context(url)
+
+    for name in ACTIVE_PLUGINS:
+        plugin = PLUGIN_REGISTRY.get(name)
+
+        if not plugin:
+            continue
+
+        run_plugin(plugin, soup, url, context)
 
     return soup
 
