@@ -5,11 +5,16 @@ ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
 TRACKER_PATH = "/assets/js/semantic-tracker.js"
 
+
+# -----------------------------
+# Helpers
+# -----------------------------
 def find_html_files():
     files = []
 
     for root, _, fns in os.walk(ROOT):
 
+        # skip asset pipeline completely
         if "/assets/" in root.replace("\\", "/"):
             continue
 
@@ -20,6 +25,30 @@ def find_html_files():
     return files
 
 
+# -----------------------------
+# Injection
+# -----------------------------
+def inject_tracking_script(soup):
+    """
+    Idempotent tracking injection
+    """
+
+    # avoid duplicate injection
+    if soup.find("script", {"src": TRACKER_PATH}):
+        return
+
+    script = soup.new_tag("script", src=TRACKER_PATH)
+    script["defer"] = True
+
+    if soup.body:
+        soup.body.append(script)
+    else:
+        soup.append(script)
+
+
+# -----------------------------
+# Main
+# -----------------------------
 HTML_FILES = find_html_files()
 
 for file in HTML_FILES:
@@ -28,17 +57,7 @@ for file in HTML_FILES:
         with open(file, "r", encoding="utf-8") as f:
             soup = BeautifulSoup(f, "html.parser")
 
-        # avoid duplicate injection
-        if soup.find("script", {"src": TRACKER_PATH}):
-            continue
-
-        script = soup.new_tag("script", src=TRACKER_PATH)
-        script["defer"] = True
-
-        if soup.body:
-            soup.body.append(script)
-        else:
-            soup.append(script)
+        inject_tracking_script(soup)
 
         with open(file, "w", encoding="utf-8") as f:
             f.write(str(soup))
