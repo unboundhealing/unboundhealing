@@ -20,6 +20,12 @@ def safe_load(path):
 
 salience_data = safe_load(SALIENCE_FILE)
 
+print("SALIENCE SAMPLE:")
+for k, v in list(concepts.items())[:3]:
+    print(k)
+    print(v)
+    print("---")
+
 # -----------------------------
 # Minimal stop filter (ONLY hygiene, not logic)
 # -----------------------------
