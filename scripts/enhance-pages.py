@@ -11,221 +11,165 @@ PAGE_TITLES_FILE = os.path.join(ROOT, "page-titles.json")
 TRACKER_PATH = "/assets/js/semantic-tracker.js"
 
 # -----------------------------
-
 # Load salience
-
 # -----------------------------
-
 with open(SALIENCE_FILE, "r", encoding="utf-8") as f:
-salience = json.load(f)
+    salience = json.load(f)
 
 # -----------------------------
-
 # Load page titles
-
 # -----------------------------
-
 if os.path.exists(PAGE_TITLES_FILE):
-with open(PAGE_TITLES_FILE, "r", encoding="utf-8") as f:
-page_titles = json.load(f)
+    with open(PAGE_TITLES_FILE, "r", encoding="utf-8") as f:
+        page_titles = json.load(f)
 else:
-page_titles = {}
+    page_titles = {}
 
 # -----------------------------
-
 # Helpers
-
 # -----------------------------
-
 def find_html_files():
-files = []
+    files = []
 
-```
-for root, _, fns in os.walk(ROOT):
+    for root, _, fns in os.walk(ROOT):
 
-    # Skip assets folder
-    if "/assets/" in root.replace("\\", "/"):
-        continue
+        # Skip assets folder
+        if "/assets/" in root.replace("\\", "/"):
+            continue
 
-    for f in fns:
-        if f.endswith(".html"):
-            files.append(os.path.join(root, f))
+        for f in fns:
+            if f.endswith(".html"):
+                files.append(os.path.join(root, f))
 
-return files
-```
+    return files
+
 
 def get_url_from_file(file_path):
-rel = (
-file_path
-.replace(ROOT, "")
-.replace("index.html", "")
-.replace(".html", "")
-)
-
-```
-rel = re.sub(r"^/", "", rel)
-
-return f"https://unboundhealing.org/{rel}"
-```
-
-def lookup_title(url):
-path = url.replace(
-"https://unboundhealing.org",
-""
-).rstrip("/")
-
-```
-key = "/" if path == "" else f"{path}/"
-
-if key in page_titles:
-    return page_titles[key]
-
-slug = key.strip("/").split("/")[-1]
-
-return slug.replace("-", " ").title()
-```
-
-# -----------------------------
-
-# Related Content
-
-# -----------------------------
-
-def inject_related_content(soup, url):
-
-```
-for old in soup.select("section.related-paths"):
-    old.decompose()
-
-if url not in salience:
-    return
-
-related_items = salience[url].get("related", [])
-
-related = [
-    r["url"]
-    for r in related_items
-    if r["url"] != url
-][:5]
-
-if not related:
-    return
-
-block = soup.new_tag("section")
-block["class"] = "related-paths"
-
-heading = soup.new_tag("h3")
-heading.string = "Further paths to ponder…"
-
-block.append(heading)
-
-cloud = soup.new_tag("div")
-cloud["class"] = "related-cloud"
-
-for r in related:
-
-    a = soup.new_tag(
-        "a",
-        href=r.replace(
-            "https://unboundhealing.org",
-            ""
-        )
+    rel = (
+        file_path
+        .replace(ROOT, "")
+        .replace("index.html", "")
+        .replace(".html", "")
     )
 
-    a["class"] = "related-chip"
-    a.string = lookup_title(r)
+    rel = re.sub(r"^/", "", rel)
 
-    cloud.append(a)
+    return f"https://unboundhealing.org/{rel}"
 
-block.append(cloud)
 
-footer = soup.find("footer")
+def lookup_title(url):
+    path = url.replace("https://unboundhealing.org", "").rstrip("/")
+    key = "/" if path == "" else f"{path}/"
 
-if footer:
-    footer.insert_before(block)
+    if key in page_titles:
+        return page_titles[key]
 
-elif soup.body:
-    soup.body.append(block)
-```
+    slug = key.strip("/").split("/")[-1]
+    return slug.replace("-", " ").title()
 
-# -----------------------------
-
-# Tracking Script
 
 # -----------------------------
+# Related Content Injection
+# -----------------------------
+def inject_related_content(soup, url):
 
+    # remove previous injections
+    for old in soup.select("section.related-paths"):
+        old.decompose()
+
+    if url not in salience:
+        return
+
+    related_items = salience[url].get("related", [])
+
+    related = [
+        r["url"]
+        for r in related_items
+        if r["url"] != url
+    ][:5]
+
+    if not related:
+        return
+
+    block = soup.new_tag("section")
+    block["class"] = "related-paths"
+
+    heading = soup.new_tag("h3")
+    heading.string = "Further paths to ponder…"
+    block.append(heading)
+
+    cloud = soup.new_tag("div")
+    cloud["class"] = "related-cloud"
+
+    for r in related:
+
+        a = soup.new_tag(
+            "a",
+            href=r.replace("https://unboundhealing.org", "")
+        )
+
+        a["class"] = "related-chip"
+        a.string = lookup_title(r)
+
+        cloud.append(a)
+
+    block.append(cloud)
+
+    footer = soup.find("footer")
+
+    if footer:
+        footer.insert_before(block)
+    elif soup.body:
+        soup.body.append(block)
+
+
+# -----------------------------
+# Tracking Script Injection
+# -----------------------------
 def inject_tracking_script(soup):
 
-```
-if soup.find("script", {"src": TRACKER_PATH}):
-    return
+    if soup.find("script", {"src": TRACKER_PATH}):
+        return
 
-script = soup.new_tag(
-    "script",
-    src=TRACKER_PATH
-)
+    script = soup.new_tag("script", src=TRACKER_PATH)
+    script["defer"] = True
 
-script["defer"] = True
+    if soup.body:
+        soup.body.append(script)
+    else:
+        soup.append(script)
 
-if soup.body:
-    soup.body.append(script)
-
-else:
-    soup.append(script)
-```
 
 # -----------------------------
-
-# Future Expansion Point
-
+# Future Expansion Hook
 # -----------------------------
-
 def inject_future_magic(soup, url):
-pass
+    pass
+
 
 # -----------------------------
-
 # Main
-
 # -----------------------------
-
 HTML_FILES = find_html_files()
 
 for file in HTML_FILES:
 
-```
-try:
+    try:
+        with open(file, "r", encoding="utf-8") as f:
+            soup = BeautifulSoup(f, "html.parser")
 
-    with open(file, "r", encoding="utf-8") as f:
-        soup = BeautifulSoup(
-            f,
-            "html.parser"
-        )
+        url = get_url_from_file(file)
 
-    url = get_url_from_file(file)
+        inject_related_content(soup, url)
+        inject_tracking_script(soup)
+        inject_future_magic(soup, url)
 
-    inject_related_content(
-        soup,
-        url
-    )
+        with open(file, "w", encoding="utf-8") as f:
+            f.write(str(soup))
 
-    inject_tracking_script(
-        soup
-    )
+        print(f"✨ Enhanced {file}")
 
-    inject_future_magic(
-        soup,
-        url
-    )
-
-    with open(file, "w", encoding="utf-8") as f:
-        f.write(str(soup))
-
-    print(f"✨ Enhanced {file}")
-
-except Exception as e:
-
-    print(f"⚠️ Skipped {file}: {e}")
-```
+    except Exception as e:
+        print(f"⚠️ Skipped {file}: {e}")
 
 print("✅ Page enhancement complete")
