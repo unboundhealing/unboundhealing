@@ -6,69 +6,47 @@ from collections import defaultdict
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
-GRAPH_FILE = os.path.join(ROOT, "word-graph.json")
-WORDS_FILE = os.path.join(ROOT, "semantic-words.json")
 PAGE_TITLES_FILE = os.path.join(ROOT, "page-titles.json")
+SALIENCE_FILE = os.path.join(ROOT, "semantic-salience.json")
 
 # -----------------------------
-# Load data
+# Load salience (ONLY SOURCE OF TRUTH)
 # -----------------------------
-CONCEPTS_FILE = os.path.join(ROOT, "semantic-concepts.json")
+with open(SALIENCE_FILE, "r", encoding="utf-8") as f:
+    salience = json.load(f)
 
-with open(CONCEPTS_FILE, "r", encoding="utf-8") as f:
-    data = json.load(f)
-
-concepts = data.get("nodes") or data.get("concepts") or data.get("items")
-edges = data.get("edges")
-
-if concepts is None:
-    raise ValueError(f"Can't find concept list. Keys found: {list(data.keys())}")
-
+# -----------------------------
+# Load page titles
+# -----------------------------
 if os.path.exists(PAGE_TITLES_FILE):
     with open(PAGE_TITLES_FILE, "r", encoding="utf-8") as f:
         page_titles = json.load(f)
 else:
     page_titles = {}
-    
-# -----------------------------
-# Build lookup tables
-# -----------------------------
-concept_to_urls = defaultdict(list)
-url_to_concept = {}
-
-for c in concepts:
-    cid = c["id"]
-    urls = c.get("urls", [])
-
-    concept_to_urls[cid].extend(urls)
-
-    for u in urls:
-        url_to_concept[u] = cid
 
 # -----------------------------
-# Build adjacency map
+# Build reverse index: URL → salience group
 # -----------------------------
-adj = defaultdict(list)
+url_to_group = {}
+group_to_pages = {}
 
-for edge in edges:
-    a = edge["from"]
-    b = edge["to"]
-    w = edge["weight"]
+for group_key, group_data in salience.items():
+    pages = group_data.get("pages", [])
 
-    adj[a].append((b, w))
-    adj[b].append((a, w))
+    group_to_pages[group_key] = pages
+
+    for p in pages:
+        url_to_group[p["url"]] = group_key
 
 # -----------------------------
 # Helpers
 # -----------------------------
 def find_html_files():
     html_files = []
-
     for root, _, files in os.walk(ROOT):
         for f in files:
             if f.endswith(".html"):
                 html_files.append(os.path.join(root, f))
-
     return html_files
 
 
@@ -85,119 +63,79 @@ def get_url_from_file(file_path):
     return f"https://unboundhealing.org/{rel}"
 
 
-def pick_related(word, current_url, limit=5):
-
-    candidates = []
-
-    for neighbor, weight in adj.get(word, []):
-
-        for url in word_to_urls.get(neighbor, []):
-
-            if url != current_url:
-                candidates.append((url, weight))
-
-    candidates.sort(
-        key=lambda x: x[1],
-        reverse=True
-    )
-
-    return [c[0] for c in candidates[:limit]]
-
-
 def lookup_title(url):
-
     path = (
-        url.replace(
-            "https://unboundhealing.org",
-            ""
-        )
+        url.replace("https://unboundhealing.org", "")
         .rstrip("/")
     )
 
-    if path == "":
-        key = "/"
-    else:
-        key = f"{path}/"
+    key = "/" if path == "" else f"{path}/"
 
     title = page_titles.get(key)
-
     if title:
         return title
 
     slug = key.strip("/").split("/")[-1]
+    return slug.replace("-", " ").title()
 
-    return concept_titles.get(slug) or slug.replace("-", " ").title()
 
 # -----------------------------
-# Injection logic
+# Injection
 # -----------------------------
 HTML_FILES = find_html_files()
 
 for file in HTML_FILES:
 
     try:
-
         with open(file, "r", encoding="utf-8") as f:
             soup = BeautifulSoup(f, "html.parser")
 
-        # ----------------------------------
         # Remove previous injections
-        # ----------------------------------
         for old in soup.select("section.related-paths"):
             old.decompose()
 
         url = get_url_from_file(file)
 
-        if url not in url_to_concept:
+        if url not in url_to_group:
             continue
 
-        concept = url_to_concept[url]
+        group = url_to_group[url]
+        pages = group_to_pages.get(group, [])
 
-        related = pick_related(concept, url, limit=5)
+        # remove current page + limit
+        related = [
+            p["url"]
+            for p in pages
+            if p["url"] != url
+        ][:5]
 
         if not related:
             continue
 
-        # ----------------------------------
         # Create section
-        # ----------------------------------
         block = soup.new_tag("section")
         block["class"] = "related-paths"
 
         heading = soup.new_tag("h3")
         heading.string = "Further paths to ponder…"
-
         block.append(heading)
 
         cloud = soup.new_tag("div")
         cloud["class"] = "related-cloud"
 
         for r in related:
-
-            a = soup.new_tag(
-                "a",
-                href=r.replace(
-                    "https://unboundhealing.org",
-                    ""
-                )
-            )
-
+            a = soup.new_tag("a", href=r.replace("https://unboundhealing.org", ""))
             a["class"] = "related-chip"
-
             a.string = lookup_title(r)
-
             cloud.append(a)
 
         block.append(cloud)
 
-        # ----------------------------------
-        # Insert before footer if present
-        # ----------------------------------
+        # Insert
         footer = soup.find("footer")
 
         if footer:
             footer.insert_before(block)
-
         elif soup.body:
             soup.body.append(block)
 
@@ -207,7 +145,6 @@ for file in HTML_FILES:
         print(f"🔗 Injected related paths into {file}")
 
     except Exception as e:
-
         print(f"⚠️ Skipped {file}: {e}")
 
 print("✅ Phase 3 injection complete")
