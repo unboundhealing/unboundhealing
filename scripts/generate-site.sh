@@ -53,14 +53,9 @@ echo "🧭 Building word graph..."
 python3 scripts/build-word-graph.py
 echo "✅ Word graph built"
 
-echo "🔗 Injecting related content..."
-python3 scripts/inject-related-content.py
-echo "✅ Related content injected"
-
-# >>> ADDED HERE (TRACKING INJECTION)
-echo "📡 Injecting semantic tracking script..."
-python3 scripts/inject-tracking.py
-echo "✅ Tracking script injected"
+echo "✨ Enhancing pages..."
+python3 scripts/enhance-pages.py
+echo "✅ Page enhancement complete"
 
 # =========================
 # RENDERING LAYER
