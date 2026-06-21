@@ -12,7 +12,7 @@ TRACKER_PATH = "/assets/js/semantic-tracker.js"
 
 
 # -----------------------------
-# Load data
+# Load Data
 # -----------------------------
 with open(SALIENCE_FILE, "r", encoding="utf-8") as f:
     salience = json.load(f)
@@ -66,10 +66,11 @@ def lookup_title(url):
     return slug.replace("-", " ").title()
 
 
-# -----------------------------
-# Injection: Related Content
-# -----------------------------
-def inject_related_content(soup, url):
+# =========================================================
+# PLUGINS
+# =========================================================
+
+def plugin_related_content(soup, url):
 
     for old in soup.select("section.related-paths"):
         old.decompose()
@@ -117,10 +118,7 @@ def inject_related_content(soup, url):
         soup.body.append(block)
 
 
-# -----------------------------
-# Injection: Tracking
-# -----------------------------
-def inject_tracking(soup):
+def plugin_tracking(soup, url=None):
 
     if soup.find("script", {"src": TRACKER_PATH}):
         return
@@ -134,28 +132,41 @@ def inject_tracking(soup):
         soup.append(script)
 
 
-# -----------------------------
-# Future Hook (OG / schema / etc.)
-# -----------------------------
-def inject_future_magic(soup, url):
+def plugin_future_magic(soup, url):
+    # reserved expansion slot
     pass
 
 
-# -----------------------------
-# SINGLE PASS PIPELINE
-# -----------------------------
+# =========================================================
+# PLUGIN REGISTRY (THE CORE IDEA)
+# =========================================================
+
+PLUGINS = [
+    plugin_related_content,
+    plugin_tracking,
+    plugin_future_magic,
+]
+
+
+# =========================================================
+# ENGINE
+# =========================================================
+
 def enhance_page(soup, url):
 
-    inject_related_content(soup, url)
-    inject_tracking(soup)
-    inject_future_magic(soup, url)
+    for plugin in PLUGINS:
+        try:
+            plugin(soup, url)
+        except Exception as e:
+            print(f"⚠️ Plugin failed: {plugin.__name__} -> {e}")
 
     return soup
 
 
-# -----------------------------
-# Main loop (single pass)
-# -----------------------------
+# =========================================================
+# MAIN LOOP
+# =========================================================
+
 HTML_FILES = find_html_files()
 
 for file in HTML_FILES:
@@ -176,4 +187,4 @@ for file in HTML_FILES:
     except Exception as e:
         print(f"⚠️ Skipped {file}: {e}")
 
-print("✅ Single-pass enhancement complete")
+print("✅ Plugin registry enhancement complete")
