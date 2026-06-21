@@ -7,10 +7,16 @@ TRACKER_PATH = "/assets/js/semantic-tracker.js"
 
 def find_html_files():
     files = []
+
     for root, _, fns in os.walk(ROOT):
+
+        if "/assets/" in root.replace("\\", "/"):
+            continue
+
         for f in fns:
             if f.endswith(".html"):
                 files.append(os.path.join(root, f))
+
     return files
 
 
