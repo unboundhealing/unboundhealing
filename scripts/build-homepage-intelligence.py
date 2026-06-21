@@ -21,10 +21,11 @@ def safe_load(path):
 salience_data = safe_load(SALIENCE_FILE)
 
 print("SALIENCE SAMPLE:")
-for k, v in list(concepts.items())[:3]:
+for k, v in list(salience_data.items())[:3]:
     print(k)
     print(v)
     print("---")
+    
 
 # -----------------------------
 # Minimal stop filter (ONLY hygiene, not logic)
@@ -92,7 +93,7 @@ for c in concepts:
         page_scores[url] = (
             page_scores.get(url, 0)
             + c["salience"]
-    )
+        )
 featured_pages = [
     {"url": url, "score": score}
     for url, score in sorted(
