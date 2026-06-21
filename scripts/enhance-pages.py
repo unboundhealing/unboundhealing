@@ -10,20 +10,19 @@ PAGE_TITLES_FILE = os.path.join(ROOT, "page-titles.json")
 
 TRACKER_PATH = "/assets/js/semantic-tracker.js"
 
+
 # -----------------------------
-# Load salience
+# Load data
 # -----------------------------
 with open(SALIENCE_FILE, "r", encoding="utf-8") as f:
     salience = json.load(f)
 
-# -----------------------------
-# Load page titles
-# -----------------------------
 if os.path.exists(PAGE_TITLES_FILE):
     with open(PAGE_TITLES_FILE, "r", encoding="utf-8") as f:
         page_titles = json.load(f)
 else:
     page_titles = {}
+
 
 # -----------------------------
 # Helpers
@@ -33,7 +32,6 @@ def find_html_files():
 
     for root, _, fns in os.walk(ROOT):
 
-        # Skip assets folder
         if "/assets/" in root.replace("\\", "/"):
             continue
 
@@ -69,11 +67,10 @@ def lookup_title(url):
 
 
 # -----------------------------
-# Related Content Injection
+# Injection: Related Content
 # -----------------------------
 def inject_related_content(soup, url):
 
-    # remove previous injections
     for old in soup.select("section.related-paths"):
         old.decompose()
 
@@ -102,15 +99,12 @@ def inject_related_content(soup, url):
     cloud["class"] = "related-cloud"
 
     for r in related:
-
         a = soup.new_tag(
             "a",
             href=r.replace("https://unboundhealing.org", "")
         )
-
         a["class"] = "related-chip"
         a.string = lookup_title(r)
-
         cloud.append(a)
 
     block.append(cloud)
@@ -124,9 +118,9 @@ def inject_related_content(soup, url):
 
 
 # -----------------------------
-# Tracking Script Injection
+# Injection: Tracking
 # -----------------------------
-def inject_tracking_script(soup):
+def inject_tracking(soup):
 
     if soup.find("script", {"src": TRACKER_PATH}):
         return
@@ -141,14 +135,26 @@ def inject_tracking_script(soup):
 
 
 # -----------------------------
-# Future Expansion Hook
+# Future Hook (OG / schema / etc.)
 # -----------------------------
 def inject_future_magic(soup, url):
     pass
 
 
 # -----------------------------
-# Main
+# SINGLE PASS PIPELINE
+# -----------------------------
+def enhance_page(soup, url):
+
+    inject_related_content(soup, url)
+    inject_tracking(soup)
+    inject_future_magic(soup, url)
+
+    return soup
+
+
+# -----------------------------
+# Main loop (single pass)
 # -----------------------------
 HTML_FILES = find_html_files()
 
@@ -160,9 +166,7 @@ for file in HTML_FILES:
 
         url = get_url_from_file(file)
 
-        inject_related_content(soup, url)
-        inject_tracking_script(soup)
-        inject_future_magic(soup, url)
+        soup = enhance_page(soup, url)
 
         with open(file, "w", encoding="utf-8") as f:
             f.write(str(soup))
@@ -172,4 +176,4 @@ for file in HTML_FILES:
     except Exception as e:
         print(f"⚠️ Skipped {file}: {e}")
 
-print("✅ Page enhancement complete")
+print("✅ Single-pass enhancement complete")
