@@ -13,11 +13,13 @@ PAGE_TITLES_FILE = os.path.join(ROOT, "page-titles.json")
 # -----------------------------
 # Load data
 # -----------------------------
-with open(GRAPH_FILE, "r", encoding="utf-8") as f:
-    graph = json.load(f)["edges"]
+CONCEPTS_FILE = os.path.join(ROOT, "semantic-concepts.json")
 
-with open(WORDS_FILE, "r", encoding="utf-8") as f:
-    pages = json.load(f)["pages"]
+with open(CONCEPTS_FILE, "r", encoding="utf-8") as f:
+    data = json.load(f)
+
+concepts = data["nodes"]
+edges = data["edges"]
 
 if os.path.exists(PAGE_TITLES_FILE):
     with open(PAGE_TITLES_FILE, "r", encoding="utf-8") as f:
@@ -28,19 +30,24 @@ else:
 # -----------------------------
 # Build lookup tables
 # -----------------------------
-word_to_urls = defaultdict(list)
-url_to_word = {}
+concept_to_urls = defaultdict(list)
+url_to_concept = {}
 
-for p in pages:
-    word_to_urls[p["word"]].append(p["url"])
-    url_to_word[p["url"]] = p["word"]
+for c in concepts:
+    cid = c["id"]
+    urls = c.get("urls", [])
+
+    concept_to_urls[cid].extend(urls)
+
+    for u in urls:
+        url_to_concept[u] = cid
 
 # -----------------------------
 # Build adjacency map
 # -----------------------------
 adj = defaultdict(list)
 
-for edge in graph:
+for edge in edges:
     a = edge["from"]
     b = edge["to"]
     w = edge["weight"]
@@ -116,8 +123,7 @@ def lookup_title(url):
 
     slug = key.strip("/").split("/")[-1]
 
-    return slug.replace("-", " ").title()
-
+    return concept_titles.get(slug) or slug.replace("-", " ").title()
 
 # -----------------------------
 # Injection logic
@@ -139,16 +145,12 @@ for file in HTML_FILES:
 
         url = get_url_from_file(file)
 
-        if url not in url_to_word:
+        if url not in url_to_concept:
             continue
 
-        word = url_to_word[url]
+        concept = url_to_concept[url]
 
-        related = pick_related(
-            word,
-            url,
-            limit=5
-        )
+        related = pick_related(concept, url, limit=5)
 
         if not related:
             continue
