@@ -74,8 +74,19 @@ page_scores = {}
 
 for c in concepts:
     for p in c["pages"]:
-        page_scores[p] = page_scores.get(p, 0) + c["salience"]
 
+        if isinstance(p, dict):
+            url = p.get("url")
+        else:
+            url = p
+
+        if not url:
+            continue
+
+        page_scores[url] = (
+            page_scores.get(url, 0)
+            + c["salience"]
+    )
 featured_pages = [
     {"url": url, "score": score}
     for url, score in sorted(
