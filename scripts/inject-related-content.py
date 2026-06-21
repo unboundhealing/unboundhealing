@@ -6,10 +6,17 @@ from bs4 import BeautifulSoup
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
 SALIENCE_FILE = os.path.join(ROOT, "semantic-salience.json")
+CONTEXT_FILE = os.path.join(ROOT, "semantic-context.json")
 PAGE_TITLES_FILE = os.path.join(ROOT, "page-titles.json")
 
 # -----------------------------
-# Load salience (FINAL FORM)
+# Load semantic context (PRIMARY)
+# -----------------------------
+with open(CONTEXT_FILE, "r", encoding="utf-8") as f:
+    context = json.load(f)
+
+# -----------------------------
+# Load salience (FALLBACK ONLY)
 # -----------------------------
 with open(SALIENCE_FILE, "r", encoding="utf-8") as f:
     salience = json.load(f)
@@ -29,6 +36,8 @@ else:
 def find_html_files():
     html_files = []
     for root, _, files in os.walk(ROOT):
+        if "/assets/" in root.replace("\\", "/"):
+            continue
         for f in files:
             if f.endswith(".html"):
                 html_files.append(os.path.join(root, f))
@@ -44,7 +53,6 @@ def get_url_from_file(file_path):
     )
 
     rel = re.sub(r"^/", "", rel)
-
     return f"https://unboundhealing.org/{rel}"
 
 
@@ -76,15 +84,22 @@ for file in HTML_FILES:
 
         url = get_url_from_file(file)
 
-        if url not in salience:
+        # -----------------------------
+        # SOURCE SELECTION (context → fallback)
+        # -----------------------------
+        related_items = []
+
+        if url in context:
+            related_items = context[url].get("related", [])
+        elif url in salience:
+            related_items = salience[url].get("related", [])
+
+        if not related_items:
             continue
 
-        related_items = salience[url].get("related", [])
-
         related = [
-            r["url"]
-            for r in related_items
-            if r["url"] != url
+            r["url"] for r in related_items
+            if r.get("url") != url
         ][:5]
 
         if not related:
@@ -106,7 +121,10 @@ for file in HTML_FILES:
         for r in related:
             a = soup.new_tag(
                 "a",
-                href=r.replace("https://unboundhealing.org", "")
+                href=r.replace(
+                    "https://unboundhealing.org",
+                    ""
+                )
             )
             a["class"] = "related-chip"
             a.string = lookup_title(r)
