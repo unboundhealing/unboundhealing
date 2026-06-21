@@ -18,8 +18,11 @@ CONCEPTS_FILE = os.path.join(ROOT, "semantic-concepts.json")
 with open(CONCEPTS_FILE, "r", encoding="utf-8") as f:
     data = json.load(f)
 
-concepts = data["nodes"]
-edges = data["edges"]
+concepts = data.get("nodes") or data.get("concepts") or data.get("items")
+edges = data.get("edges")
+
+if concepts is None:
+    raise ValueError(f"Can't find concept list. Keys found: {list(data.keys())}")
 
 if os.path.exists(PAGE_TITLES_FILE):
     with open(PAGE_TITLES_FILE, "r", encoding="utf-8") as f:
