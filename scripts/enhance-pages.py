@@ -11,9 +11,10 @@ PAGE_TITLES_FILE = os.path.join(ROOT, "page-titles.json")
 TRACKER_PATH = "/assets/js/semantic-tracker.js"
 
 
-# -----------------------------
-# Load Data
-# -----------------------------
+# =========================================================
+# DATA LOADING
+# =========================================================
+
 with open(SALIENCE_FILE, "r", encoding="utf-8") as f:
     salience = json.load(f)
 
@@ -24,14 +25,16 @@ else:
     page_titles = {}
 
 
-# -----------------------------
-# Helpers
-# -----------------------------
+# =========================================================
+# HELPERS
+# =========================================================
+
 def find_html_files():
     files = []
 
     for root, _, fns in os.walk(ROOT):
 
+        # hard boundary: never touch assets pipeline
         if "/assets/" in root.replace("\\", "/"):
             continue
 
@@ -67,11 +70,28 @@ def lookup_title(url):
 
 
 # =========================================================
+# PLUGIN INTERFACE CONTRACT (IMPORTANT)
+# =========================================================
+
+def run_plugin(plugin, soup, url):
+    """
+    Safe plugin wrapper:
+    - isolates failures
+    - ensures uniform logging
+    """
+    try:
+        plugin(soup, url)
+    except Exception as e:
+        print(f"⚠️ Plugin failed: {plugin.__name__} -> {e}")
+
+
+# =========================================================
 # PLUGINS
 # =========================================================
 
 def plugin_related_content(soup, url):
 
+    # idempotent cleanup
     for old in soup.select("section.related-paths"):
         old.decompose()
 
@@ -120,6 +140,7 @@ def plugin_related_content(soup, url):
 
 def plugin_tracking(soup, url=None):
 
+    # idempotent guard
     if soup.find("script", {"src": TRACKER_PATH}):
         return
 
@@ -133,12 +154,12 @@ def plugin_tracking(soup, url=None):
 
 
 def plugin_future_magic(soup, url):
-    # reserved expansion slot
+    # reserved extension hook
     pass
 
 
 # =========================================================
-# PLUGIN REGISTRY (THE CORE IDEA)
+# PLUGIN REGISTRY
 # =========================================================
 
 PLUGINS = [
@@ -149,42 +170,51 @@ PLUGINS = [
 
 
 # =========================================================
-# ENGINE
+# ENGINE CORE
 # =========================================================
 
 def enhance_page(soup, url):
 
     for plugin in PLUGINS:
-        try:
-            plugin(soup, url)
-        except Exception as e:
-            print(f"⚠️ Plugin failed: {plugin.__name__} -> {e}")
+        run_plugin(plugin, soup, url)
 
     return soup
 
 
 # =========================================================
-# MAIN LOOP
+# PIPELINE
 # =========================================================
 
-HTML_FILES = find_html_files()
+def process_file(file_path):
 
-for file in HTML_FILES:
+    with open(file_path, "r", encoding="utf-8") as f:
+        soup = BeautifulSoup(f, "html.parser")
 
-    try:
-        with open(file, "r", encoding="utf-8") as f:
-            soup = BeautifulSoup(f, "html.parser")
+    url = get_url_from_file(file_path)
 
-        url = get_url_from_file(file)
+    enhance_page(soup, url)
 
-        soup = enhance_page(soup, url)
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(str(soup))
 
-        with open(file, "w", encoding="utf-8") as f:
-            f.write(str(soup))
+    print(f"✨ Enhanced {file_path}")
 
-        print(f"✨ Enhanced {file}")
 
-    except Exception as e:
-        print(f"⚠️ Skipped {file}: {e}")
+# =========================================================
+# ENTRYPOINT
+# =========================================================
 
-print("✅ Plugin registry enhancement complete")
+def main():
+    html_files = find_html_files()
+
+    for file_path in html_files:
+        try:
+            process_file(file_path)
+        except Exception as e:
+            print(f"⚠️ Skipped {file_path}: {e}")
+
+    print("✅ Plugin registry enhancement complete")
+
+
+if __name__ == "__main__":
+    main()
