@@ -80,14 +80,6 @@ echo "🏷 Building tags..."
 echo "🔎 Building search index..."
 ./scripts/build-search-index.sh
 
-echo "🧠 Building semantic words..."
-python3 scripts/build-semantic-words.py
-echo "✅ Semantic words built"
-
-echo "🧭 Building word graph..."
-python3 scripts/build-word-graph.py
-echo "✅ Word graph built"
-
 echo "🗺 Building sitemap..."
 ./scripts/build-sitemap.sh
 
