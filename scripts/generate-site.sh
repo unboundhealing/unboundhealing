@@ -57,6 +57,11 @@ echo "🔗 Injecting related content..."
 python3 scripts/inject-related-content.py
 echo "✅ Related content injected"
 
+# >>> ADDED HERE (TRACKING INJECTION)
+echo "📡 Injecting semantic tracking script..."
+python3 scripts/inject-tracking.py
+echo "✅ Tracking script injected"
+
 # =========================
 # RENDERING LAYER
 # =========================
