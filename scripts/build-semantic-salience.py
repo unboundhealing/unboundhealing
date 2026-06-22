@@ -27,38 +27,48 @@ print("SAMPLE CLUSTER:", list(clusters.items())[:2])
 
 
 # =========================================================
-# NETWORK STRUCTURES
+# STRUCTURES
 # =========================================================
 
 inflow_raw = defaultdict(float)
 outflow_raw = defaultdict(float)
 
-concept_neighbors = defaultdict(lambda: defaultdict(float))
+concept_graph = defaultdict(lambda: defaultdict(float))
 
 edge_total = len(graph)
 edge_concept_coverage = 0
 
 
 # =========================================================
-# IMPROVED CONCEPT DAMPING (semantic frequency bias)
+# ADAPTIVE CONCEPT DAMPING (IMPROVED)
 # =========================================================
-# instead of string length (bad proxy), use mild lexical damping
-# keeps "this/that" down but doesn't distort real short concepts
 
 STOP_BIAS = {
-    "this": 0.55,
-    "that": 0.60,
-    "here": 0.75,
-    "just": 0.70,
-    "about": 0.85
+    "this": 0.50,
+    "that": 0.55,
+    "here": 0.70,
+    "just": 0.65,
+    "about": 0.80,
+    "what": 0.70,
+    "like": 0.85
 }
 
 def concept_damp(c):
-    return STOP_BIAS.get(c, 1.0)
+    # hybrid damping: stopword bias + mild length entropy proxy
+    base = STOP_BIAS.get(c, 1.0)
+    entropy_penalty = 1.0 / (1.0 + math.log1p(len(c)))
+    return base * (0.7 + 0.3 * entropy_penalty)
 
 
 # =========================================================
-# BUILD GRAPH
+# EDGE PRUNING THRESHOLD (NOISE CONTROL)
+# =========================================================
+
+MIN_EDGE_WEIGHT = 0.1
+
+
+# =========================================================
+# BUILD STRUCTURAL + CONCEPT SPACE
 # =========================================================
 
 for edge in graph:
@@ -68,21 +78,21 @@ for edge in graph:
     target = edge.get("to")
     concepts = edge.get("shared_concepts", [])
 
-    if concepts:
-        edge_concept_coverage += 1
-
     if not source or not target:
         continue
 
-    # FLOW
+    if concepts:
+        edge_concept_coverage += 1
+
+    # -------------------------
+    # URL FLOW SPACE
+    # -------------------------
     outflow_raw[source] += weight
     inflow_raw[target] += weight
 
-    # =========================================================
-    # CONCEPT GRAPH (ASYMMETRIC + WEIGHTED)
-    # =========================================================
-    # key fix: directional reinforcement instead of full clique explosion
-
+    # -------------------------
+    # CONCEPT MANIFOLD (PRUNED)
+    # -------------------------
     for a in concepts:
         for b in concepts:
 
@@ -91,9 +101,10 @@ for edge in graph:
 
             w = weight * concept_damp(a) * concept_damp(b)
 
-            # bidirectional but NOT identical (slight asymmetry)
-            concept_neighbors[a][b] += w
-            concept_neighbors[b][a] += w * 0.85
+            if w < MIN_EDGE_WEIGHT:
+                continue
+
+            concept_graph[a][b] += w
 
 
 print("\n🧪 EDGE SIGNAL COVERAGE")
@@ -101,26 +112,18 @@ print(f"Edges with shared_concepts: {edge_concept_coverage}/{edge_total}")
 
 
 # =========================================================
-# HELPERS
+# NORMALIZATION (LOG-STABLE)
 # =========================================================
 
 def log_norm(d):
     if not d:
         return {}
 
-    transformed = {k: math.log1p(v) for k, v in d.items()}
-    max_v = max(transformed.values(), default=1.0)
+    v = {k: math.log1p(x) for k, x in d.items()}
+    m = max(v.values(), default=1.0)
 
-    return {k: v / max_v for k, v in transformed.items()}
+    return {k: x / m for k, x in v.items()}
 
-
-def clamp(x):
-    return max(0.0, min(1.0, x))
-
-
-# =========================================================
-# FLOW NORMALIZATION (POST-GRAPH BUILD ONLY)
-# =========================================================
 
 inflow = log_norm(inflow_raw)
 outflow = log_norm(outflow_raw)
@@ -131,7 +134,7 @@ outflow = log_norm(outflow_raw)
 # =========================================================
 
 connectivity_raw = {
-    c: len(concept_neighbors.get(c, {}))
+    c: len(concept_graph.get(c, {}))
     for c in clusters.keys()
 }
 
@@ -139,38 +142,53 @@ connectivity = log_norm(connectivity_raw)
 
 
 # =========================================================
-# STABILITY (IMPROVED NUMERICAL SAFETY)
+# STABILITY (ENERGY BALANCE MODEL)
 # =========================================================
 
 def stability_fn(i, o):
     denom = i + o
     if denom == 0:
         return 0.0
-    return 1.0 - abs(i - o) / denom
+
+    imbalance = abs(i - o) / denom
+    return 1.0 / (1.0 + imbalance)
 
 
 # =========================================================
-# CONCEPT DIFFUSION (FIXED: TWO-PASS NORMALIZED FLOW)
+# OPTION A: CONCEPT-PROJECTED FLOW MODEL
+# =========================================================
+# converts URL flow → concept manifold influence
+
+concept_flow = defaultdict(float)
+
+for c in clusters.keys():
+    concept_flow[c] = (inflow.get(c, 0.0) + outflow.get(c, 0.0)) / 2.0
+
+
+# =========================================================
+# DIFFUSION UPGRADE (RANDOM WALK NORMALIZED PROPAGATION)
 # =========================================================
 
-# Step 1: accumulate influence
-raw_diff = defaultdict(float)
+diffusion = defaultdict(float)
 
-for c, neighbors in concept_neighbors.items():
-    total = sum(neighbors.values()) + 1e-9
+for node, neighbors in concept_graph.items():
+
+    total = sum(neighbors.values())
+    if total == 0:
+        continue
 
     for n, w in neighbors.items():
-        flow = (w / total)
 
-        raw_diff[c] += flow
-        raw_diff[n] += flow * 0.65  # decay for outward diffusion
+        p = w / total  # transition probability
 
-# Step 2: normalize diffusion field
-diffused = log_norm(raw_diff)
+        diffusion[node] += p
+        diffusion[n] += p * 0.6  # decay outward spread
+
+diffusion = log_norm(diffusion)
 
 
 # =========================================================
-# SEMANTIC GRAVITY MODEL (v4.1)
+# SEMANTIC GRAVITY MODEL (FINAL v5)
 # =========================================================
 
 output = {}
@@ -181,33 +199,34 @@ for concept, pages in clusters.items():
     o = outflow.get(concept, 0.0)
 
     conn = connectivity.get(concept, 0.0)
-    diff = diffused.get(concept, 0.0)
+    diff = diffusion.get(concept, 0.0)
 
-    salience_raw = (i + o) / 2.0
+    projected = concept_flow.get(concept, 0.0)
     stability = stability_fn(i, o)
 
-    # =========================================================
-    # NONLINEAR FUSION (IMPORTANT FIX)
-    # replaces linear blend with soft geometric coupling
-    # =========================================================
+    # -----------------------------------------------------
+    # NONLINEAR MULTI-LAYER FUSION
+    # -----------------------------------------------------
 
-    base = (
-        (salience_raw ** 1.2) * 0.45 +
-        (conn ** 1.1) * 0.20 +
-        (diff ** 1.1) * 0.20 +
-        (stability ** 1.3) * 0.15
+    salience = math.log1p(projected)
+
+    gravity = (
+        (salience ** 1.15) * 0.35 +
+        (conn ** 1.10) * 0.20 +
+        (diff ** 1.15) * 0.25 +
+        (stability ** 1.25) * 0.20
     )
 
-    gravity = clamp(base)
+    gravity = max(0.0, min(1.0, gravity))
 
     related = sorted(
-        concept_neighbors.get(concept, {}).items(),
+        concept_graph.get(concept, {}).items(),
         key=lambda x: x[1],
         reverse=True
     )[:10]
 
     output[concept] = {
-        "salience": round(salience_raw, 4),
+        "salience": round(salience, 4),
         "gravity": round(gravity, 4),
         "inflow": round(i, 4),
         "outflow": round(o, 4),
@@ -235,7 +254,7 @@ with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
 # DEBUG REPORT
 # =========================================================
 
-print("\n🧠 Semantic gravity model built (v4.1 stabilized)")
+print("\n🧠 Semantic gravity model built (v5 concept-projected)")
 print("📦 Wrote:", OUTPUT_FILE)
 print("📦 Concepts:", len(output))
 
