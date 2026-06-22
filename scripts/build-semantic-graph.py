@@ -107,12 +107,9 @@ for e in edges:
 # =========================================================
 
 if not output_edges:
-    output_edges = [{
-        "from": "__system__",
-        "to": "__system__",
-        "weight": 1.0,
-        "shared_concepts": ["system", "fallback"]
-    }]
+    raise ValueError(
+        "Semantic graph collapsed: no valid concept-bearing edges extracted from content graph"
+    )
 
 # =========================================================
 # SAVE
