@@ -1,20 +1,3 @@
-#!/bin/bash
-set -e
-
-echo "🔗 Building content graph (v3.4 schema-flex safe)..."
-
-ROOT_DIR="$(git rev-parse --show-toplevel)"
-cd "$ROOT_DIR"
-
-INPUT="content-model.json"
-OUTPUT="content-graph.json"
-
-if [ ! -f "$INPUT" ]; then
-  echo "❌ content-model.json not found."
-  exit 1
-fi
-
-python3 - << 'EOF'
 import json
 
 INPUT = "content-model.json"
@@ -24,67 +7,77 @@ with open(INPUT, "r", encoding="utf-8") as f:
     raw = json.load(f)
 
 # -----------------------------
-# NORMALIZE INPUT (CRITICAL FIX)
+# NORMALIZE INPUT
 # -----------------------------
 pages = []
 
 if isinstance(raw, dict):
 
-    # Case 1: standard schema
-    if "pages" in raw and isinstance(raw["pages"], list):
+    if "pages" in raw:
         pages = raw["pages"]
 
-    # Case 2: object-map schema (YOUR CURRENT BUG)
     else:
         for url, obj in raw.items():
             if not isinstance(obj, dict):
                 continue
 
+            tags = obj.get("tags", [])
+
+            # FIX: normalize tag formats
+            if isinstance(tags, str):
+                tags = [t.strip() for t in tags.split(",") if t.strip()]
+
             pages.append({
                 "url": url,
                 "title": obj.get("title", ""),
-                "tags": obj.get("tags", [])
+                "tags": tags
             })
 
 elif isinstance(raw, list):
     pages = raw
 
-# -----------------------------
-# HARD SAFETY CHECK
-# -----------------------------
 if not pages:
-    print("❌ ERROR: No pages detected after normalization")
-    print("🔍 raw type:", type(raw))
+    print("❌ No pages detected after normalization")
+    print("raw type:", type(raw))
     exit(1)
+
+# -----------------------------
+# DEBUG: TAG HEALTH
+# -----------------------------
+empty_tags = sum(1 for p in pages if not p.get("tags"))
+
+print("\n🧪 TAG HEALTH")
+print("pages:", len(pages))
+print("pages with empty tags:", empty_tags)
 
 nodes = []
 edges = []
 
-# -----------------------------
-# build nodes
-# -----------------------------
-for p in pages:
-    nodes.append({
-        "url": p.get("url"),
-        "title": p.get("title", ""),
-        "tags": p.get("tags", [])
-    })
-
-# -----------------------------
-# build edges (tag overlap)
-# -----------------------------
-
 def overlap(a, b):
     return len(set(a) & set(b))
 
+# -----------------------------
+# BUILD GRAPH
+# -----------------------------
 for i, a in enumerate(pages):
-    tags_a = set(a.get("tags", []))
+
+    tags_a = a.get("tags", [])
+    if isinstance(tags_a, str):
+        tags_a = [t.strip() for t in tags_a.split(",") if t.strip()]
+
+    nodes.append({
+        "url": a.get("url"),
+        "title": a.get("title", ""),
+        "tags": tags_a
+    })
 
     for j, b in enumerate(pages):
-        if i == j:
+        if i >= j:
             continue
 
-        tags_b = set(b.get("tags", []))
+        tags_b = b.get("tags", [])
+        if isinstance(tags_b, str):
+            tags_b = [t.strip() for t in tags_b.split(",") if t.strip()]
 
         score = overlap(tags_a, tags_b)
 
@@ -93,17 +86,14 @@ for i, a in enumerate(pages):
                 "from": a.get("url"),
                 "to": b.get("url"),
                 "weight": float(score),
-                "shared_concepts": list(tags_a & tags_b)
+                "shared_concepts": list(set(tags_a) & set(tags_b))
             })
 
+print("\n🔗 GRAPH STATS")
+print("nodes:", len(nodes))
+print("edges:", len(edges))
+
 with open(OUTPUT, "w", encoding="utf-8") as f:
-    json.dump({
-        "nodes": nodes,
-        "edges": edges
-    }, f, indent=2, ensure_ascii=False)
+    json.dump({"nodes": nodes, "edges": edges}, f, indent=2, ensure_ascii=False)
 
-print("📦 nodes:", len(nodes))
-print("📦 edges:", len(edges))
-EOF
-
-echo "✅ Content graph built (v3.4 schema-flex safe)"
+print("✅ Content graph built (v3.5 normalized tags + stable projection)")
