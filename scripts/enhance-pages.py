@@ -74,31 +74,50 @@ def lookup_title(url):
 # =========================================================
 
 def compute_related(url, limit=5):
-    """
-    Pure salience-driven relationship inference:
-    - Two pages are "related" if they appear in same concept bucket
-    """
 
-    related = []
-    seen = set()
+    # map: concept → salience
+    concept_weights = {}
+
+    for concept, node in salience.items():
+        concept_weights[concept] = node.get("salience", 0)
+
+    # find all concepts this page belongs to
+    page_concepts = set()
 
     for concept, node in salience.items():
         pages = node.get("pages", [])
 
-        urls = [p["url"] for p in pages if "url" in p]
+        if any(p["url"] == url for p in pages):
+            page_concepts.add(concept)
 
-        if url not in urls:
-            continue
+    if not page_concepts:
+        return []
 
-        for u in urls:
-            if u != url and u not in seen:
-                seen.add(u)
-                related.append(u)
+    # score other pages
+    scores = {}
 
-            if len(related) >= limit:
-                return related
+    for concept in page_concepts:
+        node = salience.get(concept, {})
+        pages = node.get("pages", [])
 
-    return related
+        weight = concept_weights.get(concept, 0)
+
+        for p in pages:
+            other_url = p["url"]
+
+            if other_url == url:
+                continue
+
+            scores[other_url] = scores.get(other_url, 0) + weight
+
+    # rank
+    ranked = sorted(
+        scores.items(),
+        key=lambda x: x[1],
+        reverse=True
+    )
+
+    return [url for url, _ in ranked[:limit]]
 
 
 # =========================================================
