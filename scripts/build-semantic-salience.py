@@ -21,6 +21,15 @@ with open(CLUSTERS_FILE, "r", encoding="utf-8") as f:
 
 
 # =========================================================
+# DEBUG: RAW INPUT CHECK (BEFORE TRANSFORMATIONS)
+# =========================================================
+
+print("\n🧪 RAW INPUT INSPECTION")
+print("SAMPLE GRAPH EDGE:", graph[:5])
+print("SAMPLE CLUSTER:", list(clusters.items())[:2])
+
+
+# =========================================================
 # BUILD DIRECTIONAL CONCEPT NETWORK
 # =========================================================
 
@@ -82,6 +91,14 @@ connectivity = normalize(connectivity)
 
 
 # =========================================================
+# DEBUG: POST-NETWORK STATE CHECK
+# =========================================================
+
+print("\n🧪 NETWORK STATE INSPECTION")
+print("NEIGHBOR SAMPLE:", dict(list(neighbors.items())[:2]))
+
+
+# =========================================================
 # BUILD SEMANTIC GRAVITY MODEL
 # =========================================================
 
@@ -133,10 +150,10 @@ with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
 
 
 # =========================================================
-# DEBUG REPORT (THIS IS WHAT YOU WERE MISSING)
+# DEBUG REPORT
 # =========================================================
 
-print("🧠 Semantic gravity model built")
+print("\n🧠 Semantic gravity model built")
 print("📦 Wrote:", OUTPUT_FILE)
 print("📦 Concepts:", len(output))
 
@@ -148,7 +165,6 @@ print("Inflow nodes:", len(inflow))
 print("Outflow nodes:", len(outflow))
 print("Connectivity nodes:", len(connectivity))
 
-# detect silent failure mode
 zero_conn = sum(1 for v in connectivity.values() if v == 0)
 if zero_conn > 0:
     print(f"⚠️ {zero_conn} concepts have ZERO connectivity")
