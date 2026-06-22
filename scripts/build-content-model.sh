@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "🧠 Building content model (v3.2)..."
+echo "🧠 Building content model (v3.3 normalized)..."
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
@@ -9,13 +9,14 @@ cd "$ROOT_DIR"
 OUTPUT="content-model.json"
 
 echo "{" > "$OUTPUT"
+echo '"pages": [' >> "$OUTPUT"
 
 FIRST=true
 
 find . -type f -name "*.html" | while read -r file; do
 
   # ---------------------------------------
-  # Convert file path → canonical URL
+  # URL normalization
   # ---------------------------------------
   URL=$(echo "$file" \
     | sed 's|^\./||' \
@@ -25,7 +26,7 @@ find . -type f -name "*.html" | while read -r file; do
   URL="https://unboundhealing.org/${URL}"
 
   # ---------------------------------------
-  # REAL STRUCTURED EXTRACTION (v3.2 upgrade)
+  # TITLE
   # ---------------------------------------
   TITLE=$(python3 - <<EOF
 from bs4 import BeautifulSoup
@@ -33,29 +34,32 @@ from bs4 import BeautifulSoup
 with open("$file", "r", encoding="utf-8") as f:
     soup = BeautifulSoup(f.read(), "html.parser")
 
-title = soup.title.string if soup.title else ""
-print(title.strip() if title else "")
+t = soup.title.string if soup.title else ""
+print(t.strip() if t else "")
 EOF
 )
 
+  # ---------------------------------------
+  # DESCRIPTION
+  # ---------------------------------------
   DESCRIPTION=$(python3 - <<EOF
 from bs4 import BeautifulSoup
 
 with open("$file", "r", encoding="utf-8") as f:
     soup = BeautifulSoup(f.read(), "html.parser")
 
-meta = soup.find("meta", attrs={"name": "description"})
-print(meta["content"].strip() if meta and meta.get("content") else "")
+m = soup.find("meta", attrs={"name": "description"})
+print(m["content"].strip() if m and m.get("content") else "")
 EOF
 )
 
   # ---------------------------------------
-  # TAG EXTRACTION (light heuristic for now)
+  # TAGS (stable + safe fallback)
   # ---------------------------------------
   TAGS=$(echo "$URL" | tr '/' '\n' | grep -v '^$' | tail -n +4 | paste -sd "," -)
 
   # ---------------------------------------
-  # JSON SAFE OUTPUT
+  # WRITE JSON ITEM
   # ---------------------------------------
   if [ "$FIRST" = true ]; then
     FIRST=false
@@ -64,17 +68,18 @@ EOF
   fi
 
   cat <<EOF >> "$OUTPUT"
-"$URL": {
+{
+  "url": "$URL",
   "file": "$file",
   "title": "$TITLE",
   "description": "$DESCRIPTION",
-  "tags": "$TAGS",
-  "url": "$URL"
+  "tags": "$TAGS"
 }
 EOF
 
 done
 
+echo "]" >> "$OUTPUT"
 echo "}" >> "$OUTPUT"
 
-echo "✅ Content model built (v3.2)"
+echo "✅ Content model built (v3.3 normalized)"
