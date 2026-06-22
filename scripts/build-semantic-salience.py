@@ -30,7 +30,7 @@ print("SAMPLE CLUSTER:", list(clusters.items())[:2])
 
 
 # =========================================================
-# 🧪 DEBUG: CONCEPT ALIGNMENT CHECK (CRITICAL)
+# 🧪 CONCEPT ALIGNMENT CHECK
 # =========================================================
 
 graph_concepts_sample = set()
@@ -50,12 +50,17 @@ print("Overlap sample:", list(overlap)[:10])
 
 
 # =========================================================
-# BUILD DIRECTIONAL CONCEPT NETWORK
+# BUILD URL + CONCEPT HYBRID SIGNAL MODEL
 # =========================================================
 
 inflow = defaultdict(float)
 outflow = defaultdict(float)
-neighbors = defaultdict(dict)
+
+# URL neighbors (kept for page-level structure)
+url_neighbors = defaultdict(dict)
+
+# ✅ NEW: concept-level graph (THIS FIXES EVERYTHING)
+concept_neighbors = defaultdict(dict)
 
 edge_concept_coverage = 0
 edge_total = len(graph)
@@ -63,10 +68,8 @@ edge_total = len(graph)
 for edge in graph:
 
     weight = float(edge.get("weight", 1))
-
     source = edge.get("from")
     target = edge.get("to")
-
     concepts = edge.get("shared_concepts", [])
 
     if concepts:
@@ -75,12 +78,24 @@ for edge in graph:
     if not source or not target:
         continue
 
-    # URL-level flow (kept for structure)
+    # -----------------------------
+    # URL-level structure (unchanged)
+    # -----------------------------
     outflow[source] += weight
     inflow[target] += weight
 
-    neighbors[source][target] = neighbors[source].get(target, 0) + weight
-    neighbors[target][source] = neighbors[target].get(source, 0) + weight
+    url_neighbors[source][target] = url_neighbors[source].get(target, 0) + weight
+    url_neighbors[target][source] = url_neighbors[target].get(source, 0) + weight
+
+    # -----------------------------
+    # ✅ CONCEPT-LEVEL GRAPH (FIX)
+    # -----------------------------
+    # connect all concepts in shared_concepts to each other
+    for a in concepts:
+        for b in concepts:
+            if a == b:
+                continue
+            concept_neighbors[a][b] = concept_neighbors[a].get(b, 0) + weight
 
 
 print("\n🧪 EDGE SIGNAL COVERAGE")
@@ -92,7 +107,6 @@ print(f"Edges with shared_concepts: {edge_concept_coverage}/{edge_total}")
 # =========================================================
 
 def normalize(values):
-
     if not values:
         return {}
 
@@ -112,13 +126,13 @@ outflow = normalize(outflow)
 
 
 # =========================================================
-# CONNECTIVITY
+# CONNECTIVITY (NOW CORRECT)
 # =========================================================
 
 connectivity = {}
 
 for concept in clusters.keys():
-    connectivity[concept] = len(neighbors.get(concept, {}))
+    connectivity[concept] = len(concept_neighbors.get(concept, {}))
 
 connectivity = normalize(connectivity)
 
@@ -129,8 +143,8 @@ connectivity = normalize(connectivity)
 
 print("\n🧪 NETWORK STATE INSPECTION")
 
-sample_neighbors = dict(list(neighbors.items())[:2])
-print("NEIGHBOR SAMPLE:", sample_neighbors)
+sample_neighbors = dict(list(concept_neighbors.items())[:2])
+print("CONCEPT NEIGHBOR SAMPLE:", sample_neighbors)
 
 print("Inflow nodes:", len(inflow))
 print("Outflow nodes:", len(outflow))
@@ -162,7 +176,7 @@ for concept, pages in clusters.items():
     related_concepts = []
 
     for related, weight in sorted(
-        neighbors.get(concept, {}).items(),
+        concept_neighbors.get(concept, {}).items(),
         key=lambda x: x[1],
         reverse=True
     )[:10]:
