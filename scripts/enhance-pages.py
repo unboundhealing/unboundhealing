@@ -70,7 +70,7 @@ def lookup_title(url):
 # (pure projection: concept ↔ page bipartite scoring)
 # =========================================================
 
-def compute_related(url, limit=5):
+def compute_related(url, limit=3):
     """
     Core idea:
     - salience = concept nodes
