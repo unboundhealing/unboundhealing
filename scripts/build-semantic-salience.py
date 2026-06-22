@@ -13,7 +13,23 @@ OUTPUT_FILE = os.path.join(ROOT, "semantic-salience.json")
 # =========================================================
 
 with open(GRAPH_FILE, "r", encoding="utf-8") as f:
-    graph = json.load(f).get("edges", [])
+    graph_data = json.load(f)
+
+graph = graph_data.get("edges", [])
+
+# ---------------------------------------------------------
+# HARD SAFETY GUARD (your requested rule)
+# ---------------------------------------------------------
+
+if not graph or graph == [
+    {
+        "from": "__system__",
+        "to": "__system__",
+        "weight": 1.0,
+        "shared_concepts": ["system", "fallback"]
+    }
+]:
+    raise ValueError("Semantic graph not yet valid gravity substrate")
 
 print("\n🧪 RAW INPUT INSPECTION")
 print("SAMPLE EDGE:", graph[:2])
@@ -22,19 +38,15 @@ print("SAMPLE EDGE:", graph[:2])
 # STRUCTURES
 # =========================================================
 
-url_flow_in = defaultdict(float)
-url_flow_out = defaultdict(float)
-
-concept_flow_in = defaultdict(float)
-concept_flow_out = defaultdict(float)
-
+concept_in = defaultdict(float)
+concept_out = defaultdict(float)
 concept_links = defaultdict(lambda: defaultdict(float))
 
 edge_count = len(graph)
-concept_edge_coverage = 0
+covered_edges = 0
 
 # =========================================================
-# STOP BIAS (gravity damping)
+# STOP DAMPING (gravity attenuation)
 # =========================================================
 
 STOP_BIAS = {
@@ -49,7 +61,7 @@ def damp(c):
     return STOP_BIAS.get(c, 1.0)
 
 # =========================================================
-# PHASE 1 — FLOW PROJECTION
+# FLOW PROJECTION (ONLY SOURCE OF TRUTH)
 # =========================================================
 
 for e in graph:
@@ -61,17 +73,13 @@ for e in graph:
     if not src or not tgt:
         continue
 
-    url_flow_out[src] += w
-    url_flow_in[tgt] += w
-
     if concepts:
-        concept_edge_coverage += 1
-
+        covered_edges += 1
         per = w / max(len(concepts), 1)
 
         for c in concepts:
-            concept_flow_in[c] += per
-            concept_flow_out[c] += per
+            concept_in[c] += per
+            concept_out[c] += per
 
         for a in concepts:
             for b in concepts:
@@ -79,18 +87,24 @@ for e in graph:
                     continue
                 concept_links[a][b] += w * damp(a) * damp(b)
 
-print("\n🧪 EDGE SIGNAL COVERAGE")
-print(f"{concept_edge_coverage}/{edge_count}")
-
 # =========================================================
-# NORMALIZATION
+# NORMALIZATION (FIXED + SAFE)
 # =========================================================
 
 def log_norm(d):
     if not d:
         return {}
+
     t = {k: math.log1p(v) for k, v in d.items()}
-    m = max(t.values(), 1.0)
+    values = list(t.values())
+
+    if not values:
+        return {}
+
+    m = max(values)
+    if m == 0:
+        return {k: 0.0 for k in t}
+
     return {k: v / m for k, v in t.items()}
 
 def clamp(x):
@@ -106,27 +120,23 @@ def stability(i, o):
 # NORMALIZE FLOWS
 # =========================================================
 
-in_n = log_norm(concept_flow_in)
-out_n = log_norm(concept_flow_out)
-
-# =========================================================
-# CONNECTIVITY
-# =========================================================
+in_n = log_norm(concept_in)
+out_n = log_norm(concept_out)
 
 connectivity_raw = {c: len(n) for c, n in concept_links.items()}
 connectivity = log_norm(connectivity_raw)
 
 # =========================================================
-# DIFFUSION (gravity field relaxation)
+# DIFFUSION FIELD (gravity relaxation)
 # =========================================================
 
 nodes = list(concept_links.keys())
 rank = {n: 1.0 for n in nodes}
 
 damping = 0.85
-iters = 10
+iterations = 10
 
-for _ in range(iters):
+for _ in range(iterations):
     new = defaultdict(float)
 
     for n, nbrs in concept_links.items():
@@ -143,12 +153,17 @@ for _ in range(iters):
 rank = log_norm(rank)
 
 # =========================================================
-# GRAVITY CORE (NO EXTERNAL DEPENDENCY)
+# GRAVITY FIELD (FINAL AUTHORITY LAYER)
 # =========================================================
 
 output = {}
 
-all_concepts = set(in_n.keys()) | set(out_n.keys()) | set(connectivity.keys()) | set(rank.keys())
+all_concepts = (
+    set(in_n.keys()) |
+    set(out_n.keys()) |
+    set(connectivity.keys()) |
+    set(rank.keys())
+)
 
 for c in all_concepts:
 
@@ -159,7 +174,7 @@ for c in all_concepts:
 
     s = stability(i, o)
 
-    salience = (i + o) / 2
+    salience = (i + o) / 2.0
 
     gravity = (
         (salience ** 1.1) * 0.45 +
@@ -168,10 +183,8 @@ for c in all_concepts:
         (s ** 1.2) * 0.10
     )
 
-    gravity = clamp(gravity)
-
     output[c] = {
-        "gravity": round(gravity, 5),
+        "gravity": round(clamp(gravity), 5),
         "salience": round(salience, 5),
         "inflow": round(i, 5),
         "outflow": round(o, 5),
@@ -181,11 +194,11 @@ for c in all_concepts:
     }
 
 # =========================================================
-# SAVE
+# SAVE (ONLY SOURCE OF TRUTH)
 # =========================================================
 
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump(output, f, indent=2, ensure_ascii=False)
 
-print("\n🧠 Semantic gravity model built (v5.1 unified salience core)")
+print("\n🧠 Semantic gravity model built (v5.2 salience-core)")
 print("📦 concepts:", len(output))
