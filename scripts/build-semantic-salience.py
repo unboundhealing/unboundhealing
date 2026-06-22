@@ -67,6 +67,10 @@ for concept, pages in clusters.items():
 # -----------------------------
 # Save
 # -----------------------------
+print(json.dumps(
+    list(output.items())[:3],
+    indent=2
+))
 
 with open(OUTPUT, "w", encoding="utf-8") as f:
     json.dump(
