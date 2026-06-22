@@ -7,49 +7,73 @@ ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 INPUT_FILE = os.path.join(ROOT, "content-graph.json")
 OUTPUT_FILE = os.path.join(ROOT, "semantic-graph.json")
 
-# ---------------------------------------------------------
-# CONFIG
-# ---------------------------------------------------------
+# =========================================================
+# CONFIG (gravity-native constraints)
+# =========================================================
 
 STOP = {
     "this", "that", "just", "about", "here",
-    "like", "thing", "things", "or", "and"
+    "like", "thing", "things", "or", "and",
+    "the", "a", "an", "to", "of", "in", "on"
 }
 
-MAX_CONCEPTS_PER_EDGE = 8
+MAX_CONCEPTS_PER_EDGE = 10
+MIN_CONCEPT_LENGTH = 3
 MAX_WEIGHT = 5.0
 
-# ---------------------------------------------------------
-# HELPERS
-# ---------------------------------------------------------
+# =========================================================
+# NORMALIZATION
+# =========================================================
 
 def normalize(c):
     if not c:
         return None
+
     c = str(c).strip().lower()
-    if not c or c in STOP:
+
+    if c in STOP:
         return None
-    if len(c) < 2:
+
+    if len(c) < MIN_CONCEPT_LENGTH:
         return None
+
+    if any(ch.isdigit() for ch in c):
+        return None
+
     return c
 
 
+# =========================================================
+# FALLBACK CONCEPT EXTRACTION (STRONGER)
+# =========================================================
+
 def extract_fallback_concepts(edge):
     """
-    Safety net:
-    If shared_concepts is missing or empty,
-    try tags if they exist in upstream structure.
+    Gravity-native fallback:
+    pulls from ALL weak semantic hints instead of just tags.
     """
+    candidates = []
+
+    # tags
     tags = edge.get("tags") or []
     if isinstance(tags, str):
         tags = tags.replace(",", " ").split()
 
-    return [normalize(t) for t in tags if normalize(t)]
+    candidates.extend(tags)
+
+    # url-derived signals
+    for field in ["from", "to"]:
+        url = edge.get(field, "")
+        if url:
+            parts = url.split("/")
+            candidates.extend(parts[-3:])
+
+    return [normalize(t) for t in candidates if normalize(t)]
 
 
-# ---------------------------------------------------------
+# =========================================================
 # LOAD
-# ---------------------------------------------------------
+# =========================================================
 
 with open(INPUT_FILE, "r", encoding="utf-8") as f:
     raw = json.load(f)
@@ -58,69 +82,68 @@ raw_edges = raw.get("edges", [])
 
 edges_out = []
 
-# ---------------------------------------------------------
-# BUILD
-# ---------------------------------------------------------
+# =========================================================
+# BUILD (GRAVITY PROJECTION LAYER)
+# =========================================================
 
 for e in raw_edges:
 
     source = e.get("from")
     target = e.get("to")
-    weight = float(e.get("weight", 1))
 
     if not source or not target:
         continue
 
-    concepts = e.get("shared_concepts")
+    weight = float(e.get("weight", 1))
+    weight = min(weight, MAX_WEIGHT)
 
-    # fallback if missing or empty
+    concepts = e.get("shared_concepts") or []
+
     if not concepts:
         concepts = extract_fallback_concepts(e)
-
-    if not concepts:
-        continue
 
     concepts = [normalize(c) for c in concepts]
     concepts = [c for c in concepts if c]
 
-    if len(concepts) < 1:
+    # deduplicate but preserve order
+    seen = set()
+    cleaned = []
+    for c in concepts:
+        if c not in seen:
+            cleaned.append(c)
+            seen.add(c)
+
+    if not cleaned:
         continue
 
-    # cap explosion
-    concepts = concepts[:MAX_CONCEPTS_PER_EDGE]
-
-    # clamp weight
-    weight = min(weight, MAX_WEIGHT)
+    cleaned = cleaned[:MAX_CONCEPTS_PER_EDGE]
 
     edges_out.append({
         "from": source,
         "to": target,
         "weight": weight,
-        "shared_concepts": concepts
+        "shared_concepts": cleaned
     })
 
 
-# ---------------------------------------------------------
-# GUARANTEE NON-EMPTY OUTPUT SAFETY
-# ---------------------------------------------------------
+# =========================================================
+# GUARANTEE (but NOT polluting signal space)
+# =========================================================
 
-if len(edges_out) == 0:
-    print("⚠️ WARNING: semantic graph empty — injecting safe fallback structure")
-
+if not edges_out:
     edges_out = [{
         "from": "__system__",
         "to": "__system__",
-        "weight": 1,
+        "weight": 1.0,
         "shared_concepts": ["system", "fallback"]
     }]
 
-
-# ---------------------------------------------------------
+# =========================================================
 # SAVE
-# ---------------------------------------------------------
+# =========================================================
 
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump({"edges": edges_out}, f, indent=2, ensure_ascii=False)
 
-print("🧭 Semantic graph built (v4.2 hardened)")
+print("🧭 Semantic graph built (v4.3 gravity-native projection)")
 print("📦 edges:", len(edges_out))
