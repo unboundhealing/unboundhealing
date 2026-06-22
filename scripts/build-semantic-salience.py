@@ -27,23 +27,39 @@ print("SAMPLE CLUSTER:", list(clusters.items())[:2])
 
 
 # =========================================================
-# HYBRID NETWORK BUILD
+# NETWORK STRUCTURES
 # =========================================================
 
 inflow_raw = defaultdict(float)
 outflow_raw = defaultdict(float)
 
-url_neighbors = defaultdict(dict)
 concept_neighbors = defaultdict(lambda: defaultdict(float))
 
 edge_total = len(graph)
 edge_concept_coverage = 0
 
 
-# damping reduces dominance of generic words ("this", "that")
-def concept_damp(c):
-    return 1.0 / (1.0 + math.log1p(len(c)))
+# =========================================================
+# IMPROVED CONCEPT DAMPING (semantic frequency bias)
+# =========================================================
+# instead of string length (bad proxy), use mild lexical damping
+# keeps "this/that" down but doesn't distort real short concepts
 
+STOP_BIAS = {
+    "this": 0.55,
+    "that": 0.60,
+    "here": 0.75,
+    "just": 0.70,
+    "about": 0.85
+}
+
+def concept_damp(c):
+    return STOP_BIAS.get(c, 1.0)
+
+
+# =========================================================
+# BUILD GRAPH
+# =========================================================
 
 for edge in graph:
 
@@ -58,25 +74,26 @@ for edge in graph:
     if not source or not target:
         continue
 
-    # URL FLOW (raw)
+    # FLOW
     outflow_raw[source] += weight
     inflow_raw[target] += weight
 
-    url_neighbors[source][target] = url_neighbors[source].get(target, 0) + weight
-    url_neighbors[target][source] = url_neighbors[target].get(source, 0) + weight
-
     # =========================================================
-    # CONCEPT GRAPH + DIFFUSION + DAMPING
+    # CONCEPT GRAPH (ASYMMETRIC + WEIGHTED)
     # =========================================================
+    # key fix: directional reinforcement instead of full clique explosion
 
-    # direct clique connections
     for a in concepts:
         for b in concepts:
+
             if a == b:
                 continue
 
             w = weight * concept_damp(a) * concept_damp(b)
+
+            # bidirectional but NOT identical (slight asymmetry)
             concept_neighbors[a][b] += w
+            concept_neighbors[b][a] += w * 0.85
 
 
 print("\n🧪 EDGE SIGNAL COVERAGE")
@@ -88,22 +105,21 @@ print(f"Edges with shared_concepts: {edge_concept_coverage}/{edge_total}")
 # =========================================================
 
 def log_norm(d):
-    """log-scaled normalization (prevents collapse, preserves structure)"""
     if not d:
         return {}
 
     transformed = {k: math.log1p(v) for k, v in d.items()}
-    max_v = max(transformed.values(), default=1)
+    max_v = max(transformed.values(), default=1.0)
 
     return {k: v / max_v for k, v in transformed.items()}
 
 
-def clamp(x, lo=0.0, hi=1.0):
-    return max(lo, min(hi, x))
+def clamp(x):
+    return max(0.0, min(1.0, x))
 
 
 # =========================================================
-# FLOW SIGNALS (RAW + LOG NORMALIZED)
+# FLOW NORMALIZATION (POST-GRAPH BUILD ONLY)
 # =========================================================
 
 inflow = log_norm(inflow_raw)
@@ -111,7 +127,7 @@ outflow = log_norm(outflow_raw)
 
 
 # =========================================================
-# CONNECTIVITY (with diffusion smoothing)
+# CONNECTIVITY
 # =========================================================
 
 connectivity_raw = {
@@ -123,34 +139,38 @@ connectivity = log_norm(connectivity_raw)
 
 
 # =========================================================
-# STABILITY FUNCTION (FIXED)
+# STABILITY (IMPROVED NUMERICAL SAFETY)
 # =========================================================
 
 def stability_fn(i, o):
-    # symmetric balance score
-    if i + o == 0:
+    denom = i + o
+    if denom == 0:
         return 0.0
-    return 1.0 - abs(i - o) / (i + o)
+    return 1.0 - abs(i - o) / denom
 
 
 # =========================================================
-# CONCEPT DIFFUSION STEP (IMPORTANT FIX)
+# CONCEPT DIFFUSION (FIXED: TWO-PASS NORMALIZED FLOW)
 # =========================================================
 
-# propagate influence once across concept graph
-diffused = defaultdict(float)
+# Step 1: accumulate influence
+raw_diff = defaultdict(float)
 
 for c, neighbors in concept_neighbors.items():
+    total = sum(neighbors.values()) + 1e-9
+
     for n, w in neighbors.items():
-        diffused[c] += w * 0.25
-        diffused[n] += w * 0.25
+        flow = (w / total)
 
+        raw_diff[c] += flow
+        raw_diff[n] += flow * 0.65  # decay for outward diffusion
 
-diffused = log_norm(diffused)
+# Step 2: normalize diffusion field
+diffused = log_norm(raw_diff)
 
 
 # =========================================================
-# SEMANTIC GRAVITY MODEL (STABILIZED v4)
+# SEMANTIC GRAVITY MODEL (v4.1)
 # =========================================================
 
 output = {}
@@ -164,23 +184,22 @@ for concept, pages in clusters.items():
     diff = diffused.get(concept, 0.0)
 
     salience_raw = (i + o) / 2.0
-
     stability = stability_fn(i, o)
 
     # =========================================================
-    # FINAL GRAVITY (balanced composite)
+    # NONLINEAR FUSION (IMPORTANT FIX)
+    # replaces linear blend with soft geometric coupling
     # =========================================================
 
-    gravity = (
-        (salience_raw * 0.4)
-        + (conn * 0.2)
-        + (diff * 0.2)
-        + (stability * 0.2)
+    base = (
+        (salience_raw ** 1.2) * 0.45 +
+        (conn ** 1.1) * 0.20 +
+        (diff ** 1.1) * 0.20 +
+        (stability ** 1.3) * 0.15
     )
 
-    gravity = clamp(gravity)
+    gravity = clamp(base)
 
-    # related concepts (top neighbors)
     related = sorted(
         concept_neighbors.get(concept, {}).items(),
         key=lambda x: x[1],
@@ -216,7 +235,7 @@ with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
 # DEBUG REPORT
 # =========================================================
 
-print("\n🧠 Semantic gravity model built (v4.0)")
+print("\n🧠 Semantic gravity model built (v4.1 stabilized)")
 print("📦 Wrote:", OUTPUT_FILE)
 print("📦 Concepts:", len(output))
 
