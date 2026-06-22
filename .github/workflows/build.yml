@@ -60,7 +60,7 @@ jobs:
           ./scripts/generate-site.sh
 
       # -------------------------------------
-      # 6. 🔍 OPTION C: CONTENT MODEL INSPECTION (CRITICAL DEBUG POINT)
+      # 6. 🔍 OPTION C: CONTENT MODEL INSPECTION (FIXED YAML SAFE)
       # -------------------------------------
       - name: Inspect content-model.json schema (Option C)
         run: |
@@ -71,8 +71,9 @@ jobs:
             exit 1
           fi
 
-          python3 -c "
-import json, sys
+          python3 << 'EOF'
+import json
+import sys
 
 try:
     data = json.load(open('content-model.json'))
@@ -90,11 +91,13 @@ if len(data.keys()) == 0:
     print('❌ EMPTY MODEL DETECTED - STOPPING BUILD')
     sys.exit(1)
 
-# Optional deeper inspection
 for k in ['pages', 'nodes', 'content']:
     if k in data:
-        print(f'✅ Found key: {k} (count={len(data[k]) if isinstance(data[k], list) else "non-list"})')
-"
+        val = data[k]
+        size = len(val) if isinstance(val, list) else 'non-list'
+        print(f'✅ Found key: {k} (count={size})')
+EOF
+
       # -------------------------------------
       # 7. Verify outputs
       # -------------------------------------
