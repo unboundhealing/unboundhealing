@@ -1,5 +1,6 @@
 import json
 import os
+import math
 from collections import defaultdict
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
@@ -30,11 +31,10 @@ print("SAMPLE CLUSTER:", list(clusters.items())[:2])
 
 
 # =========================================================
-# 🧪 CONCEPT ALIGNMENT CHECK
+# CONCEPT ALIGNMENT CHECK
 # =========================================================
 
 graph_concepts_sample = set()
-
 for e in graph[:20]:
     graph_concepts_sample.update(e.get("shared_concepts", []))
 
@@ -50,22 +50,17 @@ print("Overlap sample:", list(overlap)[:10])
 
 
 # =========================================================
-# BUILD HYBRID URL + CONCEPT SIGNAL MODEL
+# BUILD HYBRID NETWORK
 # =========================================================
 
 inflow = defaultdict(float)
 outflow = defaultdict(float)
 
 url_neighbors = defaultdict(dict)
+concept_neighbors = defaultdict(dict)
 
-# ✅ concept-level graph (FIXED CORE LAYER)
-concept_neighbors = defaultdict(lambda: defaultdict(float))
-
-concept_inflow = defaultdict(float)
-concept_outflow = defaultdict(float)
-
-edge_concept_coverage = 0
 edge_total = len(graph)
+edge_concept_coverage = 0
 
 for edge in graph:
 
@@ -80,27 +75,19 @@ for edge in graph:
     if not source or not target:
         continue
 
-    # -------------------------------------------------
-    # URL GRAPH (kept for structural/page intelligence)
-    # -------------------------------------------------
+    # URL FLOW
     outflow[source] += weight
     inflow[target] += weight
 
     url_neighbors[source][target] = url_neighbors[source].get(target, 0) + weight
     url_neighbors[target][source] = url_neighbors[target].get(source, 0) + weight
 
-    # -------------------------------------------------
-    # CONCEPT GRAPH (CORE FIX)
-    # -------------------------------------------------
-    # project edge weight into all concept pairs
+    # CONCEPT GRAPH (fully connected clique per edge)
     for a in concepts:
-        concept_inflow[a] += weight
-        concept_outflow[a] += weight
-
         for b in concepts:
             if a == b:
                 continue
-            concept_neighbors[a][b] += weight
+            concept_neighbors[a][b] = concept_neighbors[a].get(b, 0) + weight
 
 
 print("\n🧪 EDGE SIGNAL COVERAGE")
@@ -120,73 +107,69 @@ def normalize(values):
     if max_value <= 0:
         return {k: 0.0 for k in values}
 
-    return {
-        k: round(v / max_value, 4)
-        for k, v in values.items()
-    }
+    return {k: round(v / max_value, 4) for k, v in values.items()}
 
+
+# =========================================================
+# CONNECTIVITY (IMPROVED: LOG SCALE)
+# =========================================================
+
+connectivity_raw = {
+    concept: len(concept_neighbors.get(concept, {}))
+    for concept in clusters.keys()
+}
+
+max_conn = max(connectivity_raw.values(), default=1)
+
+connectivity = {
+    k: math.log1p(v) / math.log1p(max_conn) if max_conn > 0 else 0.0
+    for k, v in connectivity_raw.items()
+}
+
+
+# =========================================================
+# NORMALIZE FLOW
+# =========================================================
 
 inflow = normalize(inflow)
 outflow = normalize(outflow)
-concept_inflow = normalize(concept_inflow)
-concept_outflow = normalize(concept_outflow)
 
 
 # =========================================================
-# CONNECTIVITY (CONCEPT-LEVEL)
-# =========================================================
-
-connectivity = {}
-
-for concept in clusters.keys():
-    connectivity[concept] = len(concept_neighbors.get(concept, {}))
-
-connectivity = normalize(connectivity)
-
-
-# =========================================================
-# DEBUG: POST-NETWORK STATE
+# DEBUG STATE
 # =========================================================
 
 print("\n🧪 NETWORK STATE INSPECTION")
-
-sample_neighbors = dict(list(concept_neighbors.items())[:2])
-print("CONCEPT NEIGHBOR SAMPLE:", sample_neighbors)
-
-print("Concept inflow nodes:", len(concept_inflow))
-print("Concept outflow nodes:", len(concept_outflow))
-print("Connectivity nodes:", len(connectivity))
+print("Concept neighbor sample:", dict(list(concept_neighbors.items())[:2]))
+print("Inflow nodes:", len(inflow))
+print("Outflow nodes:", len(outflow))
+print("Connectivity nodes:", len(connectivity_raw))
 
 zero_conn = sum(1 for v in connectivity.values() if v == 0)
-if zero_conn > 0:
+if zero_conn:
     print(f"⚠️ {zero_conn} concepts have ZERO connectivity")
 
 
 # =========================================================
-# STABILITY FUNCTION (IMPROVED + SAFE)
-# =========================================================
-
-def compute_stability(in_val, out_val):
-    denom = max(in_val + out_val, 1e-6)
-    return round(1 - abs(in_val - out_val) / denom, 4)
-
-
-# =========================================================
-# BUILD SEMANTIC GRAVITY MODEL
+# SEMANTIC GRAVITY MODEL (STABILIZED)
 # =========================================================
 
 output = {}
 
 for concept, pages in clusters.items():
 
-    incoming = concept_inflow.get(concept, 0.0)
-    outgoing = concept_outflow.get(concept, 0.0)
+    incoming = inflow.get(concept, 0.0)
+    outgoing = outflow.get(concept, 0.0)
     conn = connectivity.get(concept, 0.0)
 
-    stability = compute_stability(incoming, outgoing)
-    salience = round((incoming + outgoing) / 2, 4)
+    # STABILITY (bounded ratio form)
+    stability = 1 / (1 + abs(incoming - outgoing))
 
-    gravity = round(salience * stability * conn, 4)
+    # SALIENCE
+    salience = (incoming + outgoing) / 2
+
+    # NORMALIZED COMPOSITE GRAVITY (GEOMETRIC MEAN)
+    gravity = (salience * stability * conn) ** (1/3) if (salience * stability * conn) > 0 else 0.0
 
     related_concepts = []
 
@@ -202,12 +185,12 @@ for concept, pages in clusters.items():
         })
 
     output[concept] = {
-        "salience": salience,
-        "gravity": gravity,
-        "inflow": incoming,
-        "outflow": outgoing,
-        "stability": stability,
-        "connectivity": conn,
+        "salience": round(salience, 4),
+        "gravity": round(gravity, 4),
+        "inflow": round(incoming, 4),
+        "outflow": round(outgoing, 4),
+        "stability": round(stability, 4),
+        "connectivity": round(conn, 4),
         "page_count": len(pages),
         "pages": pages,
         "related_concepts": related_concepts
@@ -233,15 +216,11 @@ print("📦 Concepts:", len(output))
 print("\n🔎 SYSTEM SANITY CHECK")
 print("Graph edges:", len(graph))
 print("Concept clusters:", len(clusters))
-print("Concept inflow nodes:", len(concept_inflow))
-print("Concept outflow nodes:", len(concept_outflow))
+print("Inflow nodes:", len(inflow))
+print("Outflow nodes:", len(outflow))
 print("Connectivity nodes:", len(connectivity))
 
-top = sorted(
-    output.items(),
-    key=lambda x: x[1]["gravity"],
-    reverse=True
-)[:10]
+top = sorted(output.items(), key=lambda x: x[1]["gravity"], reverse=True)[:10]
 
 print("\n🌌 Top gravity concepts")
 
