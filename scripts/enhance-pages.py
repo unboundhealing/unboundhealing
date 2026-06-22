@@ -34,7 +34,6 @@ def find_html_files():
 
     for root, _, fns in os.walk(ROOT):
 
-        # hard boundary: never touch assets pipeline
         if "/assets/" in root.replace("\\", "/"):
             continue
 
@@ -70,13 +69,25 @@ def lookup_title(url):
 
 
 # =========================================================
-# CONTEXT LAYER (future semantic bridge)
+# CONTEXT LAYER (STRICT SINGLE SOURCE OF TRUTH)
 # =========================================================
 
 def build_context(url):
+    node = salience.get(url, {})
+
+    related = [
+        item["url"]
+        for item in node.get("related", [])
+        if item.get("url") != url
+    ][:5]
+
     return {
         "url": url,
-        "salience": salience.get(url, {}),
+        "title": lookup_title(url),
+        "related": related,
+
+        # DEBUG ONLY (safe to remove later)
+        "raw": node,
     }
 
 
@@ -84,33 +95,24 @@ def build_context(url):
 # PLUGIN SYSTEM
 # =========================================================
 
-def run_plugin(plugin_name, plugin_fn, soup, url, context):
+def run_plugin(name, fn, soup, context):
     try:
-        plugin_fn(soup, url, context)
+        fn(soup, context)
     except Exception as e:
-        print(f"⚠️ Plugin failed [{plugin_name}] -> {e}")
+        print(f"⚠️ Plugin failed [{name}] -> {e}")
 
 
 # =========================================================
-# PLUGINS
+# PLUGINS (CONTEXT ONLY — NO GLOBAL DATA ACCESS)
 # =========================================================
 
-def plugin_related_content(soup, url, context):
+def plugin_related_content(soup, context):
 
-    # remove old injections (idempotent)
+    # idempotent cleanup
     for old in soup.select("section.related-paths"):
         old.decompose()
 
-    if url not in salience:
-        return
-
-    related_items = salience[url].get("related", [])
-
-    related = [
-        r["url"]
-        for r in related_items
-        if r["url"] != url
-    ][:5]
+    related = context.get("related", [])
 
     if not related:
         return
@@ -144,7 +146,7 @@ def plugin_related_content(soup, url, context):
         soup.body.append(block)
 
 
-def plugin_tracking(soup, url, context):
+def plugin_tracking(soup, context):
 
     if soup.find("script", {"src": TRACKER_PATH}):
         return
@@ -158,13 +160,13 @@ def plugin_tracking(soup, url, context):
         soup.append(script)
 
 
-def plugin_future_magic(soup, url, context):
+def plugin_future_magic(soup, context):
     # reserved semantic expansion hook
     pass
 
 
 # =========================================================
-# REGISTRY (DATA-DRIVEN CORE)
+# REGISTRY (DATA-DRIVEN EXECUTION LAYER)
 # =========================================================
 
 PLUGIN_REGISTRY = {
@@ -173,7 +175,6 @@ PLUGIN_REGISTRY = {
     "future_magic": plugin_future_magic,
 }
 
-# 👇 THIS is now the ONLY switch you need to control system behavior
 ACTIVE_PLUGINS = [
     "related_content",
     "tracking",
@@ -182,7 +183,7 @@ ACTIVE_PLUGINS = [
 
 
 # =========================================================
-# ENGINE CORE
+# ENGINE CORE (CONTEXT-LOCKED EXECUTION)
 # =========================================================
 
 def enhance_page(soup, url):
@@ -190,13 +191,13 @@ def enhance_page(soup, url):
     context = build_context(url)
 
     for name in ACTIVE_PLUGINS:
-        plugin_fn = PLUGIN_REGISTRY.get(name)
+        plugin = PLUGIN_REGISTRY.get(name)
 
-        if not plugin_fn:
+        if not plugin:
             print(f"⚠️ Unknown plugin: {name}")
             continue
 
-        run_plugin(name, plugin_fn, soup, url, context)
+        run_plugin(name, plugin, soup, context)
 
     return soup
 
