@@ -21,14 +21,9 @@ graph = graph_data.get("edges", [])
 # HARD SAFETY GUARD (your requested rule)
 # ---------------------------------------------------------
 
-if not graph or graph == [
-    {
-        "from": "__system__",
-        "to": "__system__",
-        "weight": 1.0,
-        "shared_concepts": ["system", "fallback"]
-    }
-]:
+if not graph or len(graph) <= 1:
+    print("⚠️ WARNING: semantic graph extremely sparse (gravity will self-heal)")
+    
     raise ValueError("Semantic graph not yet valid gravity substrate")
 
 print("\n🧪 RAW INPUT INSPECTION")
