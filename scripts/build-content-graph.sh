@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "🔗 Building content graph (v3.2)..."
+echo "🔗 Building content graph (v3.3 stable)..."
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
@@ -10,97 +10,70 @@ INPUT="content-model.json"
 OUTPUT="content-graph.json"
 
 if [ ! -f "$INPUT" ]; then
-  echo "❌ content-model.json not found. Run build-content-model.sh first."
+  echo "❌ content-model.json not found."
   exit 1
 fi
 
-# ---------------------------------------
-# Initialize graph structure
-# ---------------------------------------
-echo "{" > "$OUTPUT"
-echo '"nodes": [' >> "$OUTPUT"
+python3 - << 'EOF'
+import json
 
-# Extract URLs as nodes
-URLS=$(grep -o '"url": *"[^"]*"' "$INPUT" \
-  | sed 's/"url": "//' \
-  | sed 's/"//g' \
-  | sort \
-  | uniq)
+INPUT = "content-model.json"
+OUTPUT = "content-graph.json"
 
-FIRST=true
+with open(INPUT, "r", encoding="utf-8") as f:
+    data = json.load(f)
 
-for url in $URLS; do
+pages = data.get("pages", [])
 
-  if [ "$FIRST" = true ]; then
-    FIRST=false
-  else
-    echo "," >> "$OUTPUT"
-  fi
+nodes = []
+edges = []
 
-  # Extract metadata
-  TITLE=$(grep -A3 "$url" "$INPUT" | grep '"title"' | head -n1 | sed 's/.*": "//' | sed 's/".*//')
-  TAGS=$(grep -A5 "$url" "$INPUT" | grep '"tags"' | head -n1 | sed 's/.*": "//' | sed 's/".*//')
+# -----------------------------
+# build nodes
+# -----------------------------
+for p in pages:
+    nodes.append({
+        "url": p.get("url"),
+        "title": p.get("title"),
+        "tags": p.get("tags", [])
+    })
 
-  cat <<EOF >> "$OUTPUT"
-{
-  "url": "$url",
-  "title": "$TITLE",
-  "tags": "$TAGS"
+# -----------------------------
+# build edges (tag overlap)
+# -----------------------------
+
+def overlap(a, b):
+    return len(set(a) & set(b))
+
+for i, a in enumerate(pages):
+    tags_a = set(a.get("tags", []))
+
+    for j, b in enumerate(pages):
+        if i == j:
+            continue
+
+        tags_b = set(b.get("tags", []))
+
+        score = overlap(tags_a, tags_b)
+
+        if score > 0:
+            edges.append({
+                "from": a.get("url"),
+                "to": b.get("url"),
+                "weight": float(score),
+                "shared_concepts": list(tags_a & tags_b)
+            })
+
+output = {
+    "nodes": nodes,
+    "edges": edges
 }
+
+with open(OUTPUT, "w", encoding="utf-8") as f:
+    json.dump(output, f, indent=2, ensure_ascii=False)
+
+print("nodes:", len(nodes))
+print("edges:", len(edges))
 EOF
 
-done
-
-echo "]," >> "$OUTPUT"
-echo '"edges": [' >> "$OUTPUT"
-
-# ---------------------------------------
-# Build edges (tag-based relationships)
-# ---------------------------------------
-
-EDGE_FIRST=true
-
-for url_a in $URLS; do
-  TAGS_A=$(grep -A5 "$url_a" "$INPUT" | grep '"tags"' | head -n1 | sed 's/.*": "//' | sed 's/".*//')
-
-  for url_b in $URLS; do
-    if [ "$url_a" = "$url_b" ]; then
-      continue
-    fi
-
-    TAGS_B=$(grep -A5 "$url_b" "$INPUT" | grep '"tags"' | head -n1 | sed 's/.*": "//' | sed 's/".*//')
-
-    # ---------------------------------------
-    # SIMPLE OVERLAP SCORE
-    # ---------------------------------------
-    SCORE=0
-
-    for tag in $(echo "$TAGS_A" | tr ',' ' '); do
-      echo "$TAGS_B" | grep -q "$tag" && SCORE=$((SCORE+1)) || true
-    done
-
-    if [ "$SCORE" -gt 0 ]; then
-
-      if [ "$EDGE_FIRST" = true ]; then
-        EDGE_FIRST=false
-      else
-        echo "," >> "$OUTPUT"
-      fi
-
-      cat <<EOF >> "$OUTPUT"
-{
-  "from": "$url_a",
-  "to": "$url_b",
-  "weight": $SCORE
-}
-EOF
-
-    fi
-
-  done
-done
-
-echo "]" >> "$OUTPUT"
-echo "}" >> "$OUTPUT"
-
-echo "✅ Content graph built (v3.2)"
+echo "✅ Content graph built (v3.3 stable)"
