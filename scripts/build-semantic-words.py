@@ -1,80 +1,40 @@
 import json
 import os
 import re
-from collections import defaultdict
+from collections import Counter
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
-INPUT_INDEX = os.path.join(ROOT, "search-index.json")
-OUTPUT = os.path.join(ROOT, "semantic-words.json")
+GRAPH_FILE = os.path.join(ROOT, "semantic-graph.json")
+OUTPUT_FILE = os.path.join(ROOT, "semantic-words.json")
 
-# -----------------------------
-# Load search index
-# -----------------------------
-with open(INPUT_INDEX, "r", encoding="utf-8") as f:
-    index = json.load(f)
+STOP = {
+    "this","that","just","about","here","like","thing","things",
+    "and","or","but","the","a","an","to","of","in","on"
+}
 
-results = []
+def tokenize(text):
+    return re.findall(r"[a-zA-Z]{3,}", text.lower())
 
-# -----------------------------
-# Helper: extract clean word
-# -----------------------------
-def extract_word(title, url):
-    """
-    Priority:
-    1. URL slug
-    2. title dominant noun
-    3. fallback: first meaningful token
-    """
 
-    # URL-based signal
-    slug = url.rstrip("/").split("/")[-1]
-    if slug:
-        return slug.lower()
+with open(GRAPH_FILE, "r", encoding="utf-8") as f:
+    edges = json.load(f).get("edges", [])
 
-    # Title-based fallback
-    if title:
-        clean = re.sub(r"[^a-zA-Z\s]", "", title).strip().lower()
-        words = clean.split()
-        if words:
-            return words[0]
+freq = Counter()
 
-    return "unknown"
+for e in edges:
+    for c in e.get("shared_concepts", []):
+        if c not in STOP:
+            freq[c] += 1
 
-# -----------------------------
-# Build semantic words
-# -----------------------------
-for url, data in index.items():
+# prune low-signal words
+filtered = {
+    k: v for k, v in freq.items()
+    if v >= 2 and k not in STOP
+}
 
-    title = data.get("title", "")
-    url_lower = url.lower()
+with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    json.dump(filtered, f, indent=2)
 
-    word = extract_word(title, url)
-
-    signals = []
-
-    if word in url_lower:
-        signals.append("url_match")
-
-    if word in title.lower():
-        signals.append("title_match")
-
-    confidence = 0.5 + (0.2 * len(signals))
-
-    results.append({
-        "url": url,
-        "word": word,
-        "confidence": round(min(confidence, 0.95), 2),
-        "signals": signals
-    })
-
-# -----------------------------
-# Write output
-# -----------------------------
-with open(OUTPUT, "w", encoding="utf-8") as f:
-    json.dump({
-        "pages": results
-    }, f, indent=2)
-
-print("🧠 Semantic words built (v3.3 Phase 1)")
-print(f"📦 Wrote: {OUTPUT}")
+print("🧠 Semantic words built (v4.0 filtered)")
+print("📦 words:", len(filtered))
