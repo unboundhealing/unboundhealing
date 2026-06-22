@@ -21,12 +21,32 @@ with open(CLUSTERS_FILE, "r", encoding="utf-8") as f:
 
 
 # =========================================================
-# DEBUG: RAW INPUT CHECK (BEFORE TRANSFORMATIONS)
+# DEBUG: RAW INPUT INSPECTION
 # =========================================================
 
 print("\n🧪 RAW INPUT INSPECTION")
 print("SAMPLE GRAPH EDGE:", graph[:5])
 print("SAMPLE CLUSTER:", list(clusters.items())[:2])
+
+
+# =========================================================
+# 🧪 DEBUG: CONCEPT ALIGNMENT CHECK (CRITICAL)
+# =========================================================
+
+graph_concepts_sample = set()
+
+for e in graph[:20]:
+    graph_concepts_sample.update(e.get("shared_concepts", []))
+
+cluster_keys_sample = set(list(clusters.keys())[:50])
+
+overlap = graph_concepts_sample & cluster_keys_sample
+
+print("\n🧪 CONCEPT ALIGNMENT CHECK")
+print("Graph concept sample:", list(graph_concepts_sample)[:20])
+print("Cluster keys sample:", list(cluster_keys_sample)[:20])
+print("Overlap count:", len(overlap))
+print("Overlap sample:", list(overlap)[:10])
 
 
 # =========================================================
@@ -37,6 +57,9 @@ inflow = defaultdict(float)
 outflow = defaultdict(float)
 neighbors = defaultdict(dict)
 
+edge_concept_coverage = 0
+edge_total = len(graph)
+
 for edge in graph:
 
     weight = float(edge.get("weight", 1))
@@ -44,9 +67,15 @@ for edge in graph:
     source = edge.get("from")
     target = edge.get("to")
 
+    concepts = edge.get("shared_concepts", [])
+
+    if concepts:
+        edge_concept_coverage += 1
+
     if not source or not target:
         continue
 
+    # URL-level flow (kept for structure)
     outflow[source] += weight
     inflow[target] += weight
 
@@ -54,8 +83,12 @@ for edge in graph:
     neighbors[target][source] = neighbors[target].get(source, 0) + weight
 
 
+print("\n🧪 EDGE SIGNAL COVERAGE")
+print(f"Edges with shared_concepts: {edge_concept_coverage}/{edge_total}")
+
+
 # =========================================================
-# SAFE NORMALIZATION (NO DIVISION ERRORS EVER)
+# SAFE NORMALIZATION
 # =========================================================
 
 def normalize(values):
@@ -79,7 +112,7 @@ outflow = normalize(outflow)
 
 
 # =========================================================
-# CONNECTIVITY (SAFE + GUARDED)
+# CONNECTIVITY
 # =========================================================
 
 connectivity = {}
@@ -91,11 +124,22 @@ connectivity = normalize(connectivity)
 
 
 # =========================================================
-# DEBUG: POST-NETWORK STATE CHECK
+# DEBUG: POST-NETWORK STATE
 # =========================================================
 
 print("\n🧪 NETWORK STATE INSPECTION")
-print("NEIGHBOR SAMPLE:", dict(list(neighbors.items())[:2]))
+
+sample_neighbors = dict(list(neighbors.items())[:2])
+print("NEIGHBOR SAMPLE:", sample_neighbors)
+
+print("Inflow nodes:", len(inflow))
+print("Outflow nodes:", len(outflow))
+print("Connectivity nodes:", len(connectivity))
+
+zero_conn = sum(1 for v in connectivity.values() if v == 0)
+
+if zero_conn > 0:
+    print(f"⚠️ {zero_conn} concepts have ZERO connectivity")
 
 
 # =========================================================
@@ -158,16 +202,11 @@ print("📦 Wrote:", OUTPUT_FILE)
 print("📦 Concepts:", len(output))
 
 print("\n🔎 SYSTEM SANITY CHECK")
-
 print("Graph edges:", len(graph))
 print("Concept clusters:", len(clusters))
 print("Inflow nodes:", len(inflow))
 print("Outflow nodes:", len(outflow))
 print("Connectivity nodes:", len(connectivity))
-
-zero_conn = sum(1 for v in connectivity.values() if v == 0)
-if zero_conn > 0:
-    print(f"⚠️ {zero_conn} concepts have ZERO connectivity")
 
 top = sorted(
     output.items(),
