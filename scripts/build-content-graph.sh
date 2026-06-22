@@ -10,8 +10,8 @@ INPUT="content-model.json"
 OUTPUT="content-graph.json"
 
 if [ ! -f "$INPUT" ]; then
-echo "❌ content-model.json not found."
-exit 1
+    echo "❌ content-model.json not found."
+    exit 1
 fi
 
 python3 << 'EOF'
@@ -22,158 +22,134 @@ INPUT = "content-model.json"
 OUTPUT = "content-graph.json"
 
 # ==========================================================
-
 # LOAD
-
 # ==========================================================
 
 with open(INPUT, "r", encoding="utf-8") as f:
-raw = json.load(f)
+    raw = json.load(f)
 
 # ==========================================================
-
 # INPUT SHAPE INSPECTION
-
 # ==========================================================
 
 print("\n🧪 CONTENT MODEL INSPECTION")
-print("root type:", type(raw).**name**)
+print("root type:", type(raw).__name__)
 
 if isinstance(raw, dict):
-print("top-level keys:", list(raw.keys())[:25])
+    print("top-level keys:", list(raw.keys())[:25])
 
 # ==========================================================
-
 # NORMALIZE INPUT
-
 # ==========================================================
 
 pages = []
 
 if isinstance(raw, dict):
 
-```
-if "pages" in raw and isinstance(raw["pages"], list):
+    if "pages" in raw and isinstance(raw["pages"], list):
 
-    pages = raw["pages"]
+        pages = raw["pages"]
 
-else:
+    else:
 
-    for url, obj in raw.items():
+        for url, obj in raw.items():
 
-        if not isinstance(obj, dict):
-            continue
+            if not isinstance(obj, dict):
+                continue
 
-        pages.append({
-            "url": url,
-            "title": obj.get("title", ""),
-            "tags": obj.get("tags", [])
-        })
-```
+            pages.append({
+                "url": url,
+                "title": obj.get("title", ""),
+                "tags": obj.get("tags", [])
+            })
 
 elif isinstance(raw, list):
 
-```
-pages = raw
-```
+    pages = raw
 
 if not pages:
-raise ValueError("No pages detected in content-model.json")
+    raise ValueError("No pages detected in content-model.json")
 
 # ==========================================================
-
 # TAG NORMALIZATION
-
 # ==========================================================
 
 def normalize_tags(tags):
 
-```
-if not tags:
-    return []
+    if not tags:
+        return []
 
-if isinstance(tags, str):
+    if isinstance(tags, str):
 
-    tags = [
-        t.strip().lower()
-        for t in tags.split(",")
-        if t.strip()
-    ]
+        tags = [
+            t.strip().lower()
+            for t in tags.split(",")
+            if t.strip()
+        ]
 
-elif isinstance(tags, list):
+    elif isinstance(tags, list):
 
-    tags = [
-        str(t).strip().lower()
-        for t in tags
-        if str(t).strip()
-    ]
+        tags = [
+            str(t).strip().lower()
+            for t in tags
+            if str(t).strip()
+        ]
 
-else:
-    return []
+    else:
+        return []
 
-return list(dict.fromkeys(tags))
-```
+    return list(dict.fromkeys(tags))
 
 # ==========================================================
-
 # BUILD NODES
-
 # ==========================================================
 
 nodes = []
 
 for page in pages:
 
-```
-tags = normalize_tags(page.get("tags"))
+    tags = normalize_tags(page.get("tags"))
 
-nodes.append({
-    "url": page.get("url"),
-    "title": page.get("title", ""),
-    "tags": tags
-})
-```
+    nodes.append({
+        "url": page.get("url"),
+        "title": page.get("title", ""),
+        "tags": tags
+    })
 
 # ==========================================================
-
 # BUILD EDGES
-
 # ==========================================================
 
 edges = []
 
 for i, a in enumerate(nodes):
 
-```
-a_tags = set(a["tags"])
+    a_tags = set(a["tags"])
 
-if not a_tags:
-    continue
-
-for j, b in enumerate(nodes):
-
-    if i == j:
+    if not a_tags:
         continue
 
-    b_tags = set(b["tags"])
+    for j, b in enumerate(nodes):
 
-    shared = sorted(a_tags & b_tags)
+        if i == j:
+            continue
 
-    if not shared:
-        continue
+        b_tags = set(b["tags"])
 
-    edges.append({
-        "from": a["url"],
-        "to": b["url"],
-        "weight": float(len(shared)),
-        "shared_concepts": shared
-    })
-```
+        shared = sorted(a_tags & b_tags)
+
+        if not shared:
+            continue
+
+        edges.append({
+            "from": a["url"],
+            "to": b["url"],
+            "weight": float(len(shared)),
+            "shared_concepts": shared
+        })
 
 # ==========================================================
-
 # DEEP DEBUGGING
-
 # ==========================================================
 
 print("\n🧪 CONTENT GRAPH DEBUG")
@@ -182,8 +158,9 @@ print("pages:", len(nodes))
 print("edges:", len(edges))
 
 tagged_pages = sum(
-1 for n in nodes
-if n.get("tags")
+    1
+    for n in nodes
+    if n.get("tags")
 )
 
 print("pages with tags:", tagged_pages)
@@ -191,7 +168,7 @@ print("pages with tags:", tagged_pages)
 all_tags = []
 
 for n in nodes:
-all_tags.extend(n.get("tags", []))
+    all_tags.extend(n.get("tags", []))
 
 print("total tags discovered:", len(all_tags))
 print("unique tags discovered:", len(set(all_tags)))
@@ -199,7 +176,7 @@ print("unique tags discovered:", len(set(all_tags)))
 print("\nTOP 50 TAGS")
 
 for tag, count in Counter(all_tags).most_common(50):
-print(f"{tag}: {count}")
+    print(f"{tag}: {count}")
 
 print("\nFIRST 10 TAGGED PAGES")
 
@@ -207,61 +184,56 @@ shown = 0
 
 for n in nodes:
 
-```
-if not n.get("tags"):
-    continue
+    if not n.get("tags"):
+        continue
 
-print("\nURL:", n["url"])
-print("TAGS:", n["tags"][:20])
+    print("\nURL:", n["url"])
+    print("TAGS:", n["tags"][:20])
 
-shown += 1
+    shown += 1
 
-if shown >= 10:
-    break
-```
+    if shown >= 10:
+        break
 
 print("\nFIRST 5 RAW PAGE OBJECTS")
 
 for p in pages[:5]:
-print(json.dumps(p, indent=2)[:1500])
-print("-" * 60)
+    print(json.dumps(p, indent=2)[:1500])
+    print("-" * 60)
 
 if nodes:
-print("\nSAMPLE NODE")
-print(json.dumps(nodes[0], indent=2))
+    print("\nSAMPLE NODE")
+    print(json.dumps(nodes[0], indent=2))
 
 if edges:
-print("\nSAMPLE EDGE")
-print(json.dumps(edges[0], indent=2))
+    print("\nSAMPLE EDGE")
+    print(json.dumps(edges[0], indent=2))
 
 print("\nFIRST FIVE EDGE CONCEPT LISTS")
 
 for edge in edges[:5]:
-print(edge.get("shared_concepts"))
+    print(edge.get("shared_concepts"))
 
 # ==========================================================
-
 # SAVE
-
 # ==========================================================
 
 with open(OUTPUT, "w", encoding="utf-8") as f:
 
-```
-json.dump(
-    {
-        "nodes": nodes,
-        "edges": edges
-    },
-    f,
-    indent=2,
-    ensure_ascii=False
-)
-```
+    json.dump(
+        {
+            "nodes": nodes,
+            "edges": edges
+        },
+        f,
+        indent=2,
+        ensure_ascii=False
+    )
 
 print("\n📦 nodes:", len(nodes))
 print("📦 edges:", len(edges))
 print("✅ content-graph built (v3.6 diagnostic gravity feed)")
+
 EOF
 
 echo "✅ Content graph built"
