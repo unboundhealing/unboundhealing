@@ -1,36 +1,41 @@
 import json
+import os
 from collections import defaultdict
 
-INPUT = "semantic-model.json"
-OUTPUT = "concept-clusters.json"
+ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
-with open(INPUT, "r", encoding="utf-8") as f:
-    pages = json.load(f)
+GRAPH_FILE = os.path.join(ROOT, "semantic-graph.json")
+OUTPUT_FILE = os.path.join(ROOT, "concept-clusters.json")
+
+STOP = {"this","that","just","about","here","like"}
+
+with open(GRAPH_FILE, "r", encoding="utf-8") as f:
+    graph = json.load(f).get("edges", [])
 
 clusters = defaultdict(list)
 
-for url, data in pages.items():
+for e in graph:
+    url = e["to"]
 
-    concepts = data.get("concepts", [])
+    for c in e.get("shared_concepts", []):
+        c = c.lower().strip()
 
-    # top 5 concepts only
-    for concept in concepts[:5]:
-        clusters[concept].append({
+        if c in STOP:
+            continue
+
+        clusters[c].append({
             "url": url,
-            "title": data.get("title", "")
+            "weight": float(e.get("weight", 1))
         })
 
-# remove weak clusters
-result = {}
+# prune junk clusters
+clusters = {
+    k: v for k, v in clusters.items()
+    if len(v) >= 2 and k not in STOP
+}
 
-for concept, members in clusters.items():
-    if len(members) >= 2:
-        result[concept] = sorted(
-            members,
-            key=lambda x: x["title"]
-        )
+with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    json.dump(clusters, f, indent=2)
 
-with open(OUTPUT, "w", encoding="utf-8") as f:
-    json.dump(result, f, indent=2)
-
-print("🧩 Concept clusters built (v3.3)")
+print("🧩 Concept clusters built (v4.0 clean)")
+print("📦 clusters:", len(clusters))
