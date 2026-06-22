@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "🔗 Building content graph (v3.4 schema-flex)..."
+echo "🔗 Building content graph (v3.4 schema-flex safe)..."
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
@@ -21,64 +21,70 @@ INPUT = "content-model.json"
 OUTPUT = "content-graph.json"
 
 with open(INPUT, "r", encoding="utf-8") as f:
-    data = json.load(f)
+    raw = json.load(f)
 
-# ---------------------------------------
-# 🔍 SCHEMA DETECTION LAYER (NEW)
-# ---------------------------------------
+# -----------------------------
+# NORMALIZE INPUT (CRITICAL FIX)
+# -----------------------------
+pages = []
 
-if "pages" in data and isinstance(data["pages"], list):
-    pages = data["pages"]
+if isinstance(raw, dict):
 
-elif "nodes" in data and isinstance(data["nodes"], list):
-    pages = data["nodes"]
+    # Case 1: standard schema
+    if "pages" in raw and isinstance(raw["pages"], list):
+        pages = raw["pages"]
 
-else:
-    # fallback: treat dict-of-urls as pages
-    pages = []
+    # Case 2: object-map schema (YOUR CURRENT BUG)
+    else:
+        for url, obj in raw.items():
+            if not isinstance(obj, dict):
+                continue
 
-    for k, v in data.items():
-        if isinstance(v, dict):
             pages.append({
-                "url": k,
-                "title": v.get("title", ""),
-                "tags": v.get("tags", [])
+                "url": url,
+                "title": obj.get("title", ""),
+                "tags": obj.get("tags", [])
             })
 
-print("🔍 Detected pages:", len(pages))
+elif isinstance(raw, list):
+    pages = raw
 
-# ---------------------------------------
-# BUILD NODES
-# ---------------------------------------
+# -----------------------------
+# HARD SAFETY CHECK
+# -----------------------------
+if not pages:
+    print("❌ ERROR: No pages detected after normalization")
+    print("🔍 raw type:", type(raw))
+    exit(1)
 
 nodes = []
 edges = []
 
+# -----------------------------
+# build nodes
+# -----------------------------
 for p in pages:
-    if not isinstance(p, dict):
-        continue
-
     nodes.append({
         "url": p.get("url"),
-        "title": p.get("title"),
+        "title": p.get("title", ""),
         "tags": p.get("tags", [])
     })
 
-# ---------------------------------------
-# BUILD EDGES (tag overlap)
-# ---------------------------------------
+# -----------------------------
+# build edges (tag overlap)
+# -----------------------------
 
 def overlap(a, b):
     return len(set(a) & set(b))
 
 for i, a in enumerate(pages):
-    tags_a = set(a.get("tags", []) if isinstance(a, dict) else [])
+    tags_a = set(a.get("tags", []))
 
     for j, b in enumerate(pages):
         if i == j:
             continue
 
-        tags_b = set(b.get("tags", []) if isinstance(b, dict) else [])
+        tags_b = set(b.get("tags", []))
 
         score = overlap(tags_a, tags_b)
 
@@ -90,16 +96,14 @@ for i, a in enumerate(pages):
                 "shared_concepts": list(tags_a & tags_b)
             })
 
-output = {
-    "nodes": nodes,
-    "edges": edges
-}
-
 with open(OUTPUT, "w", encoding="utf-8") as f:
-    json.dump(output, f, indent=2, ensure_ascii=False)
+    json.dump({
+        "nodes": nodes,
+        "edges": edges
+    }, f, indent=2, ensure_ascii=False)
 
 print("📦 nodes:", len(nodes))
 print("📦 edges:", len(edges))
 EOF
 
-echo "✅ Content graph built (v3.4 schema-flex)"
+echo "✅ Content graph built (v3.4 schema-flex safe)"
