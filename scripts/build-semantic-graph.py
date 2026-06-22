@@ -1,47 +1,47 @@
 import json
-from itertools import combinations
+import os
+from collections import defaultdict
 
-INPUT = "semantic-model.json"
-OUTPUT = "semantic-graph.json"
+ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
-with open(INPUT, "r", encoding="utf-8") as f:
-    pages = json.load(f)
+INPUT_FILE = os.path.join(ROOT, "content-graph.json")
+OUTPUT_FILE = os.path.join(ROOT, "semantic-graph.json")
 
-urls = list(pages.keys())
+STOP = {"this","that","just","about","here","like","thing"}
 
-graph = {
-    "nodes": [],
-    "edges": []
-}
+def valid(c):
+    return c and c.lower() not in STOP
 
-for url, data in pages.items():
-    graph["nodes"].append({
-        "url": url,
-        "title": data["title"],
-        "tone": data["tone"],
-        "intent": data["intent"]
-    })
 
-for a, b in combinations(urls, 2):
+with open(INPUT_FILE, "r", encoding="utf-8") as f:
+    raw = json.load(f)
 
-    concepts_a = set(pages[a]["concepts"])
-    concepts_b = set(pages[b]["concepts"])
+edges_out = []
 
-    overlap = concepts_a.intersection(concepts_b)
+for e in raw.get("edges", []):
 
-    if not overlap:
+    concepts = [
+        c.lower().strip()
+        for c in e.get("shared_concepts", [])
+        if valid(c)
+    ]
+
+    # remove ultra-noisy edges
+    if len(concepts) < 1:
         continue
 
-    score = len(overlap)
+    # cap explosion
+    concepts = concepts[:6]
 
-    graph["edges"].append({
-        "from": a,
-        "to": b,
-        "weight": score,
-        "shared_concepts": sorted(list(overlap))
+    edges_out.append({
+        "from": e["from"],
+        "to": e["to"],
+        "weight": min(float(e.get("weight", 1)), 5.0),
+        "shared_concepts": concepts
     })
 
-with open(OUTPUT, "w", encoding="utf-8") as f:
-    json.dump(graph, f, indent=2)
+with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    json.dump({"edges": edges_out}, f, indent=2)
 
-print("🧭 Semantic graph built (v3.3)")
+print("🧭 Semantic graph built (v4.0 denoised)")
+print("📦 edges:", len(edges_out))
