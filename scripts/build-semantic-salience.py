@@ -50,17 +50,19 @@ print("Overlap sample:", list(overlap)[:10])
 
 
 # =========================================================
-# BUILD URL + CONCEPT HYBRID SIGNAL MODEL
+# BUILD HYBRID URL + CONCEPT SIGNAL MODEL
 # =========================================================
 
 inflow = defaultdict(float)
 outflow = defaultdict(float)
 
-# URL neighbors (kept for page-level structure)
 url_neighbors = defaultdict(dict)
 
-# ✅ NEW: concept-level graph (THIS FIXES EVERYTHING)
-concept_neighbors = defaultdict(dict)
+# ✅ concept-level graph (FIXED CORE LAYER)
+concept_neighbors = defaultdict(lambda: defaultdict(float))
+
+concept_inflow = defaultdict(float)
+concept_outflow = defaultdict(float)
 
 edge_concept_coverage = 0
 edge_total = len(graph)
@@ -78,24 +80,27 @@ for edge in graph:
     if not source or not target:
         continue
 
-    # -----------------------------
-    # URL-level structure (unchanged)
-    # -----------------------------
+    # -------------------------------------------------
+    # URL GRAPH (kept for structural/page intelligence)
+    # -------------------------------------------------
     outflow[source] += weight
     inflow[target] += weight
 
     url_neighbors[source][target] = url_neighbors[source].get(target, 0) + weight
     url_neighbors[target][source] = url_neighbors[target].get(source, 0) + weight
 
-    # -----------------------------
-    # ✅ CONCEPT-LEVEL GRAPH (FIX)
-    # -----------------------------
-    # connect all concepts in shared_concepts to each other
+    # -------------------------------------------------
+    # CONCEPT GRAPH (CORE FIX)
+    # -------------------------------------------------
+    # project edge weight into all concept pairs
     for a in concepts:
+        concept_inflow[a] += weight
+        concept_outflow[a] += weight
+
         for b in concepts:
             if a == b:
                 continue
-            concept_neighbors[a][b] = concept_neighbors[a].get(b, 0) + weight
+            concept_neighbors[a][b] += weight
 
 
 print("\n🧪 EDGE SIGNAL COVERAGE")
@@ -123,10 +128,12 @@ def normalize(values):
 
 inflow = normalize(inflow)
 outflow = normalize(outflow)
+concept_inflow = normalize(concept_inflow)
+concept_outflow = normalize(concept_outflow)
 
 
 # =========================================================
-# CONNECTIVITY (NOW CORRECT)
+# CONNECTIVITY (CONCEPT-LEVEL)
 # =========================================================
 
 connectivity = {}
@@ -146,14 +153,22 @@ print("\n🧪 NETWORK STATE INSPECTION")
 sample_neighbors = dict(list(concept_neighbors.items())[:2])
 print("CONCEPT NEIGHBOR SAMPLE:", sample_neighbors)
 
-print("Inflow nodes:", len(inflow))
-print("Outflow nodes:", len(outflow))
+print("Concept inflow nodes:", len(concept_inflow))
+print("Concept outflow nodes:", len(concept_outflow))
 print("Connectivity nodes:", len(connectivity))
 
 zero_conn = sum(1 for v in connectivity.values() if v == 0)
-
 if zero_conn > 0:
     print(f"⚠️ {zero_conn} concepts have ZERO connectivity")
+
+
+# =========================================================
+# STABILITY FUNCTION (IMPROVED + SAFE)
+# =========================================================
+
+def compute_stability(in_val, out_val):
+    denom = max(in_val + out_val, 1e-6)
+    return round(1 - abs(in_val - out_val) / denom, 4)
 
 
 # =========================================================
@@ -164,11 +179,11 @@ output = {}
 
 for concept, pages in clusters.items():
 
-    incoming = inflow.get(concept, 0.0)
-    outgoing = outflow.get(concept, 0.0)
+    incoming = concept_inflow.get(concept, 0.0)
+    outgoing = concept_outflow.get(concept, 0.0)
     conn = connectivity.get(concept, 0.0)
 
-    stability = round(1 - abs(incoming - outgoing), 4)
+    stability = compute_stability(incoming, outgoing)
     salience = round((incoming + outgoing) / 2, 4)
 
     gravity = round(salience * stability * conn, 4)
@@ -218,8 +233,8 @@ print("📦 Concepts:", len(output))
 print("\n🔎 SYSTEM SANITY CHECK")
 print("Graph edges:", len(graph))
 print("Concept clusters:", len(clusters))
-print("Inflow nodes:", len(inflow))
-print("Outflow nodes:", len(outflow))
+print("Concept inflow nodes:", len(concept_inflow))
+print("Concept outflow nodes:", len(concept_outflow))
 print("Connectivity nodes:", len(connectivity))
 
 top = sorted(
