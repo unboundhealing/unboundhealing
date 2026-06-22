@@ -68,5 +68,12 @@ for url, node in salience.items():
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump(semantic_context, f, indent=2)
 
+for k, v in list(output.items())[:3]:
+    print(k)
+    print(v)
+    print("---")
+
 print(f"🧠 semantic-context.json built → {OUTPUT_FILE}")
 print(f"📦 total nodes: {len(semantic_context)}")
+print("CONTEXT SAMPLE:")
+
