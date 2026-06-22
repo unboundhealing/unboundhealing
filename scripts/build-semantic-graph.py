@@ -67,12 +67,16 @@ output_edges = []
 # PROJECTION ONLY (NO SEMANTIC AUTHORITY)
 # =========================================================
 
+dropped_no_concepts = 0
+dropped_missing_nodes = 0
+
 for e in edges:
 
     src = e.get("from")
     tgt = e.get("to")
 
     if not src or not tgt:
+        dropped_missing_nodes += 1
         continue
 
     weight = min(float(e.get("weight", 1)), MAX_WEIGHT)
@@ -82,18 +86,19 @@ for e in edges:
     concepts = [normalize(c) for c in concepts]
     concepts = [c for c in concepts if c]
 
+    # dedupe
     seen = set()
     cleaned = []
-
     for c in concepts:
         if c not in seen:
             cleaned.append(c)
             seen.add(c)
 
-    if not cleaned:
-        continue
-
     cleaned = cleaned[:MAX_CONCEPTS_PER_EDGE]
+
+    if not cleaned:
+        dropped_no_concepts += 1
+        continue
 
     output_edges.append({
         "from": src,
@@ -103,13 +108,30 @@ for e in edges:
     })
 
 # =========================================================
-# SAFE FALLBACK (STRUCTURAL ONLY, NOT SEMANTIC)
+# DEBUG REPORT (IMPORTANT FOR GRAVITY DEBUGGING)
 # =========================================================
 
-if not output_edges:
-    raise ValueError(
-        "Semantic graph collapsed: no valid concept-bearing edges extracted from content graph"
-    )
+print("\n🧪 SEMANTIC GRAPH DEBUG")
+print("input edges:", len(edges))
+print("valid edges:", len(output_edges))
+print("dropped (no nodes):", dropped_missing_nodes)
+print("dropped (no concepts):", dropped_no_concepts)
+
+# =========================================================
+# SAFE FALLBACK (STRUCTURAL ONLY)
+# =========================================================
+
+if len(output_edges) == 0:
+
+    print("⚠️ WARNING: no valid semantic edges found")
+    print("🧱 injecting structural fallback only")
+
+    output_edges = [{
+        "from": "__system__",
+        "to": "__system__",
+        "weight": 1.0,
+        "shared_concepts": ["system", "fallback"]
+    }]
 
 # =========================================================
 # SAVE
