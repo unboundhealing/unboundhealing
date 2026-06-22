@@ -7,9 +7,11 @@ SALIENCE_FILE = os.path.join(ROOT, "semantic-salience.json")
 PAGE_TITLES_FILE = os.path.join(ROOT, "page-titles.json")
 OUTPUT_FILE = os.path.join(ROOT, "semantic-context.json")
 
-# -----------------------------
-# Load inputs
-# -----------------------------
+
+# =========================================================
+# LOAD DATA
+# =========================================================
+
 with open(SALIENCE_FILE, "r", encoding="utf-8") as f:
     salience = json.load(f)
 
@@ -19,58 +21,52 @@ if os.path.exists(PAGE_TITLES_FILE):
 else:
     page_titles = {}
 
-# -----------------------------
-# Helpers
-# -----------------------------
+
+# =========================================================
+# HELPERS
+# =========================================================
+
 def lookup_title(url):
     path = url.replace("https://unboundhealing.org", "").rstrip("/")
     key = "/" if path == "" else f"{path}/"
 
-    if key in page_titles:
-        return page_titles[key]
-
-    slug = key.strip("/").split("/")[-1]
-    return slug.replace("-", " ").title()
+    return page_titles.get(key)
 
 
-def build_related(items, current_url, limit=5):
-    if not items:
+def extract_related(node, url):
+    if not node:
         return []
 
-    related = []
-    for r in items:
-        if r["url"] == current_url:
-            continue
+    return [
+        item["url"]
+        for item in node.get("related", [])
+        if item.get("url") and item.get("url") != url
+    ][:5]
 
-        related.append({
-            "url": r["url"],
-            "score": r.get("score", 0)
-        })
 
-    related.sort(key=lambda x: x["score"], reverse=True)
-    return related[:limit]
+# =========================================================
+# BUILD CONTEXT MAP
+# =========================================================
 
-# -----------------------------
-# Build context map
-# -----------------------------
-context = {}
+semantic_context = {}
 
-for url, data in salience.items():
+for url, node in salience.items():
 
-    related_items = data.get("related", [])
-
-    context[url] = {
+    semantic_context[url] = {
         "url": url,
-        "title": lookup_title(url),
-        "related": build_related(related_items, url, limit=5),
-        "raw_salience": data.get("salience", 0),
-        "page_count": data.get("page_count", 0)
+        "title": lookup_title(url) or url,
+        "related": extract_related(node, url),
+        "salience_score": node.get("salience", 0),
+        "page_count": node.get("page_count", 0),
     }
 
-# -----------------------------
-# Write output
-# -----------------------------
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-    json.dump(context, f, indent=2)
 
-print(f"✅ Semantic context built → {OUTPUT_FILE}")
+# =========================================================
+# WRITE OUTPUT
+# =========================================================
+
+with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    json.dump(semantic_context, f, indent=2)
+
+print(f"🧠 semantic-context.json built → {OUTPUT_FILE}")
+print(f"📦 total nodes: {len(semantic_context)}")
