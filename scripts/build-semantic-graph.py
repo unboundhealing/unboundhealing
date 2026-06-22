@@ -1,6 +1,5 @@
 import json
 import os
-from collections import defaultdict
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
@@ -8,7 +7,7 @@ INPUT_FILE = os.path.join(ROOT, "content-graph.json")
 OUTPUT_FILE = os.path.join(ROOT, "semantic-graph.json")
 
 # =========================================================
-# CONFIG (gravity-native constraints)
+# CONFIG
 # =========================================================
 
 STOP = {
@@ -18,11 +17,11 @@ STOP = {
 }
 
 MAX_CONCEPTS_PER_EDGE = 10
-MIN_CONCEPT_LENGTH = 3
+MIN_LEN = 3
 MAX_WEIGHT = 5.0
 
 # =========================================================
-# NORMALIZATION
+# NORMALIZATION (PURE FILTER ONLY)
 # =========================================================
 
 def normalize(c):
@@ -34,7 +33,7 @@ def normalize(c):
     if c in STOP:
         return None
 
-    if len(c) < MIN_CONCEPT_LENGTH:
+    if len(c) < MIN_LEN:
         return None
 
     if any(ch.isdigit() for ch in c):
@@ -42,34 +41,17 @@ def normalize(c):
 
     return c
 
-
 # =========================================================
-# FALLBACK CONCEPT EXTRACTION (STRONGER)
+# FALLBACK EXTRACTION (NON-INTERPRETIVE)
 # =========================================================
 
-def extract_fallback_concepts(edge):
-    """
-    Gravity-native fallback:
-    pulls from ALL weak semantic hints instead of just tags.
-    """
-    candidates = []
-
-    # tags
+def extract_fallback(edge):
     tags = edge.get("tags") or []
+
     if isinstance(tags, str):
         tags = tags.replace(",", " ").split()
 
-    candidates.extend(tags)
-
-    # url-derived signals
-    for field in ["from", "to"]:
-        url = edge.get(field, "")
-        if url:
-            parts = url.split("/")
-            candidates.extend(parts[-3:])
-
-    return [normalize(t) for t in candidates if normalize(t)]
-
+    return [normalize(t) for t in tags if normalize(t)]
 
 # =========================================================
 # LOAD
@@ -78,36 +60,31 @@ def extract_fallback_concepts(edge):
 with open(INPUT_FILE, "r", encoding="utf-8") as f:
     raw = json.load(f)
 
-raw_edges = raw.get("edges", [])
-
-edges_out = []
+edges = raw.get("edges", [])
+output_edges = []
 
 # =========================================================
-# BUILD (GRAVITY PROJECTION LAYER)
+# PROJECTION ONLY (NO SEMANTIC AUTHORITY)
 # =========================================================
 
-for e in raw_edges:
+for e in edges:
 
-    source = e.get("from")
-    target = e.get("to")
+    src = e.get("from")
+    tgt = e.get("to")
 
-    if not source or not target:
+    if not src or not tgt:
         continue
 
-    weight = float(e.get("weight", 1))
-    weight = min(weight, MAX_WEIGHT)
+    weight = min(float(e.get("weight", 1)), MAX_WEIGHT)
 
-    concepts = e.get("shared_concepts") or []
-
-    if not concepts:
-        concepts = extract_fallback_concepts(e)
+    concepts = e.get("shared_concepts") or extract_fallback(e)
 
     concepts = [normalize(c) for c in concepts]
     concepts = [c for c in concepts if c]
 
-    # deduplicate but preserve order
     seen = set()
     cleaned = []
+
     for c in concepts:
         if c not in seen:
             cleaned.append(c)
@@ -118,20 +95,19 @@ for e in raw_edges:
 
     cleaned = cleaned[:MAX_CONCEPTS_PER_EDGE]
 
-    edges_out.append({
-        "from": source,
-        "to": target,
+    output_edges.append({
+        "from": src,
+        "to": tgt,
         "weight": weight,
         "shared_concepts": cleaned
     })
 
-
 # =========================================================
-# GUARANTEE (but NOT polluting signal space)
+# SAFE FALLBACK (STRUCTURAL ONLY, NOT SEMANTIC)
 # =========================================================
 
-if not edges_out:
-    edges_out = [{
+if not output_edges:
+    output_edges = [{
         "from": "__system__",
         "to": "__system__",
         "weight": 1.0,
@@ -143,7 +119,7 @@ if not edges_out:
 # =========================================================
 
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-    json.dump({"edges": edges_out}, f, indent=2, ensure_ascii=False)
+    json.dump({"edges": output_edges}, f, indent=2, ensure_ascii=False)
 
-print("🧭 Semantic graph built (v4.3 gravity-native projection)")
-print("📦 edges:", len(edges_out))
+print("🧭 Semantic graph built (v4.4 projection-only)")
+print("📦 edges:", len(output_edges))
