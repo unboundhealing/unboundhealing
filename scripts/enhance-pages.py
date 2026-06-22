@@ -34,6 +34,7 @@ def find_html_files():
 
     for root, _, fns in os.walk(ROOT):
 
+        # hard boundary: never touch assets pipeline
         if "/assets/" in root.replace("\\", "/"):
             continue
 
@@ -69,13 +70,10 @@ def lookup_title(url):
 
 
 # =========================================================
-# PLUGIN CONTEXT (future semantic layer hook)
+# CONTEXT LAYER (future semantic bridge)
 # =========================================================
 
 def build_context(url):
-    """
-    This is your future bridge to semantic-salience-driven behavior.
-    """
     return {
         "url": url,
         "salience": salience.get(url, {}),
@@ -83,14 +81,14 @@ def build_context(url):
 
 
 # =========================================================
-# PLUGIN INTERFACE
+# PLUGIN SYSTEM
 # =========================================================
 
-def run_plugin(plugin, soup, url, context):
+def run_plugin(plugin_name, plugin_fn, soup, url, context):
     try:
-        plugin(soup, url, context)
+        plugin_fn(soup, url, context)
     except Exception as e:
-        print(f"⚠️ Plugin failed: {plugin.__name__} -> {e}")
+        print(f"⚠️ Plugin failed [{plugin_name}] -> {e}")
 
 
 # =========================================================
@@ -99,6 +97,7 @@ def run_plugin(plugin, soup, url, context):
 
 def plugin_related_content(soup, url, context):
 
+    # remove old injections (idempotent)
     for old in soup.select("section.related-paths"):
         old.decompose()
 
@@ -165,7 +164,7 @@ def plugin_future_magic(soup, url, context):
 
 
 # =========================================================
-# REGISTRY (NOW TRUE SYSTEM LAYER)
+# REGISTRY (DATA-DRIVEN CORE)
 # =========================================================
 
 PLUGIN_REGISTRY = {
@@ -174,6 +173,7 @@ PLUGIN_REGISTRY = {
     "future_magic": plugin_future_magic,
 }
 
+# 👇 THIS is now the ONLY switch you need to control system behavior
 ACTIVE_PLUGINS = [
     "related_content",
     "tracking",
@@ -190,12 +190,13 @@ def enhance_page(soup, url):
     context = build_context(url)
 
     for name in ACTIVE_PLUGINS:
-        plugin = PLUGIN_REGISTRY.get(name)
+        plugin_fn = PLUGIN_REGISTRY.get(name)
 
-        if not plugin:
+        if not plugin_fn:
+            print(f"⚠️ Unknown plugin: {name}")
             continue
 
-        run_plugin(plugin, soup, url, context)
+        run_plugin(name, plugin_fn, soup, url, context)
 
     return soup
 
