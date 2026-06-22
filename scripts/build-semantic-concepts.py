@@ -1,158 +1,62 @@
 import json
 import os
 import re
-from bs4 import BeautifulSoup
-from collections import Counter
+from collections import defaultdict, Counter
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
-OUTPUT = os.path.join(
-    ROOT,
-    "semantic-concepts.json"
-)
-
-# -----------------------------
-# Locate pages
-# -----------------------------
-
-def find_html_files():
-
-    html_files = []
-
-    for root, _, files in os.walk(ROOT):
-
-        for f in files:
-
-            if f.endswith(".html"):
-                html_files.append(
-                    os.path.join(root, f)
-                )
-
-    return html_files
+GRAPH_FILE = os.path.join(ROOT, "semantic-graph.json")
+OUTPUT_FILE = os.path.join(ROOT, "semantic-concepts.json")
 
 
-# -----------------------------
-# Helpers
-# -----------------------------
-
-STOP = {
-    "the","a","an",
-    "and","or","but",
-    "to","of","in","on","for",
-    "with","from","into",
-    "that","this","these","those",
-    "is","are","was","were",
-    "be","been","being"
+STOP_CONCEPTS = {
+    "this","that","these","those","just","about","here","there",
+    "thing","things","like","okay","ok","really","very","still"
 }
 
-
-def clean_text(text):
-
-    text = text.lower()
-
-    text = re.sub(
-        r"[^a-z0-9\s-]",
-        " ",
-        text
-    )
-
-    text = re.sub(
-        r"\s+",
-        " ",
-        text
-    )
-
-    return text.strip()
+def clean(c):
+    if not c:
+        return None
+    c = c.strip().lower()
+    c = re.sub(r"[^a-z0-9\-]", "", c)
+    return c if c else None
 
 
-# -----------------------------
-# Extract concepts
-# -----------------------------
+with open(GRAPH_FILE, "r", encoding="utf-8") as f:
+    graph = json.load(f).get("edges", [])
 
-pages = []
+concept_freq = Counter()
+concept_pages = defaultdict(set)
 
-for file in find_html_files():
+for e in graph:
+    concepts = e.get("shared_concepts", [])
+    url = e.get("to")
 
-    try:
+    for c in concepts:
+        c = clean(c)
+        if not c or c in STOP_CONCEPTS:
+            continue
 
-        with open(
-            file,
-            "r",
-            encoding="utf-8"
-        ) as f:
-
-            soup = BeautifulSoup(
-                f,
-                "html.parser"
-            )
-
-        text = clean_text(
-            soup.get_text(" ")
-        )
-
-        words = text.split()
-
-        concepts = Counter()
-
-        # two-word phrases
-
-        for i in range(len(words) - 1):
-
-            a = words[i]
-            b = words[i + 1]
-
-            if (
-                a in STOP or
-                b in STOP
-            ):
-                continue
-
-            phrase = f"{a} {b}"
-
-            concepts[phrase] += 1
-
-        rel = (
-            file.replace(ROOT, "")
-                .replace("index.html", "")
-        )
-
-        rel = rel.lstrip("/")
-
-        url = (
-            "https://unboundhealing.org/"
-            + rel
-        )
-
-        pages.append({
-            "url": url,
-            "concepts": [
-                c
-                for c, n
-                in concepts.items()
-                if n >= 2
-            ]
-        })
-
-    except Exception:
-        pass
+        concept_freq[c] += 1
+        concept_pages[c].add(url)
 
 
-# -----------------------------
-# Save
-# -----------------------------
+N = max(1, len(graph))
 
-with open(
-    OUTPUT,
-    "w",
-    encoding="utf-8"
-) as f:
+concepts = {}
 
-    json.dump(
-        {"pages": pages},
-        f,
-        indent=2,
-        ensure_ascii=False
-    )
+for c, freq in concept_freq.items():
+    # IDF-style weighting
+    idf = max(0.2, (1.0 + (N / (1 + freq))) ** 0.35)
 
-print("🌱 Semantic concepts built")
-print("📦 Wrote:", OUTPUT)
+    concepts[c] = {
+        "frequency": freq,
+        "idf_weight": round(idf, 4),
+        "pages": list(concept_pages[c])
+    }
+
+with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    json.dump(concepts, f, indent=2)
+
+print("🌱 Semantic concepts built (v4.0 Phase 6 upgraded)")
+print("📦 Concepts:", len(concepts))
