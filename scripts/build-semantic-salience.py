@@ -58,16 +58,10 @@ def normalize(values):
 
     max_value = max(values.values(), default=1)
 
-    output = {}
-
-    for key, value in values.items():
-
-        output[key] = round(
-            value / max_value,
-            4
-        )
-
-    return output
+    return {
+        key: round(value / max_value, 4)
+        for key, value in values.items()
+    }
 
 
 inflow = normalize(inflow)
@@ -75,7 +69,22 @@ outflow = normalize(outflow)
 
 
 # =========================================================
-# BUILD SALIENCE MODEL
+# CONNECTIVITY
+# =========================================================
+
+connectivity = {}
+
+for concept in clusters:
+
+    connectivity[concept] = len(
+        neighbors.get(concept, {})
+    )
+
+connectivity = normalize(connectivity)
+
+
+# =========================================================
+# BUILD SEMANTIC GRAVITY MODEL
 # =========================================================
 
 output = {}
@@ -95,6 +104,13 @@ for concept, pages in clusters.items():
         4
     )
 
+    gravity = round(
+        salience
+        * stability
+        * connectivity.get(concept, 0),
+        4
+    )
+
     related_concepts = []
 
     for related, weight in sorted(
@@ -110,9 +126,14 @@ for concept, pages in clusters.items():
 
     output[concept] = {
         "salience": salience,
+        "gravity": gravity,
         "inflow": incoming,
         "outflow": outgoing,
         "stability": stability,
+        "connectivity": connectivity.get(
+            concept,
+            0
+        ),
         "page_count": len(pages),
         "pages": pages,
         "related_concepts": related_concepts
@@ -139,3 +160,21 @@ with open(
 print("🧠 Semantic gravity model built")
 print("📦 Wrote:", OUTPUT_FILE)
 print("📦 Concepts:", len(output))
+
+top = sorted(
+    output.items(),
+    key=lambda x: x[1]["gravity"],
+    reverse=True
+)[:10]
+
+print()
+print("🌌 Top gravity concepts")
+
+for concept, data in top:
+
+    print(
+        f"{concept}: "
+        f"gravity={data['gravity']} "
+        f"salience={data['salience']} "
+        f"connectivity={data['connectivity']}"
+    )
