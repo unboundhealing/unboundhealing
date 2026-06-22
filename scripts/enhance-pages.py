@@ -30,18 +30,19 @@ else:
 # =========================================================
 
 def find_html_files():
-    files = []
+    html_files = []
 
-    for root, _, fns in os.walk(ROOT):
+    for root_dir, _, files in os.walk(ROOT):
 
-        if "/assets/" in root.replace("\\", "/"):
+        # hard boundary: never touch assets pipeline
+        if "/assets/" in root_dir.replace("\\", "/"):
             continue
 
-        for f in fns:
+        for f in files:
             if f.endswith(".html"):
-                files.append(os.path.join(root, f))
+                html_files.append(os.path.join(root_dir, f))
 
-    return files
+    return html_files
 
 
 def get_url_from_file(file_path):
@@ -69,25 +70,23 @@ def lookup_title(url):
 
 
 # =========================================================
-# CONTEXT LAYER (STRICT SINGLE SOURCE OF TRUTH)
+# CONTEXT LAYER (SINGLE SOURCE OF TRUTH)
 # =========================================================
 
 def build_context(url):
     node = salience.get(url, {})
 
     related = [
-        item["url"]
+        item.get("url")
         for item in node.get("related", [])
-        if item.get("url") != url
+        if item.get("url") and item.get("url") != url
     ][:5]
 
     return {
         "url": url,
         "title": lookup_title(url),
         "related": related,
-
-        # DEBUG ONLY (safe to remove later)
-        "raw": node,
+        "raw": node  # optional debug layer
     }
 
 
@@ -103,7 +102,7 @@ def run_plugin(name, fn, soup, context):
 
 
 # =========================================================
-# PLUGINS (CONTEXT ONLY — NO GLOBAL DATA ACCESS)
+# PLUGINS (CONTEXT-ONLY CONTRACT)
 # =========================================================
 
 def plugin_related_content(soup, context):
@@ -148,6 +147,7 @@ def plugin_related_content(soup, context):
 
 def plugin_tracking(soup, context):
 
+    # idempotent guard
     if soup.find("script", {"src": TRACKER_PATH}):
         return
 
@@ -161,12 +161,12 @@ def plugin_tracking(soup, context):
 
 
 def plugin_future_magic(soup, context):
-    # reserved semantic expansion hook
+    # reserved expansion hook
     pass
 
 
 # =========================================================
-# REGISTRY (DATA-DRIVEN EXECUTION LAYER)
+# REGISTRY
 # =========================================================
 
 PLUGIN_REGISTRY = {
@@ -183,7 +183,7 @@ ACTIVE_PLUGINS = [
 
 
 # =========================================================
-# ENGINE CORE (CONTEXT-LOCKED EXECUTION)
+# ENGINE CORE
 # =========================================================
 
 def enhance_page(soup, url):
