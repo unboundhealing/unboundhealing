@@ -28,10 +28,6 @@ python3 scripts/build-concept-clusters.py
 echo "🌿 Building semantic salience..."
 python3 scripts/build-semantic-salience.py
 
-echo "🧭 Building semantic context..."
-python3 scripts/build-semantic-context.py
-echo "✅ Semantic context built"
-
 echo "🌱 Building semantic concepts..."
 python3 scripts/build-semantic-concepts.py
 
