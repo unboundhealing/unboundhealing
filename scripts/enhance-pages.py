@@ -12,7 +12,7 @@ TRACKER_PATH = "/assets/js/semantic-tracker.js"
 
 
 # =========================================================
-# DATA LOADING
+# LOAD SALIENCE (SINGLE SOURCE OF TRUTH)
 # =========================================================
 
 with open(SALIENCE_FILE, "r", encoding="utf-8") as f:
@@ -34,7 +34,6 @@ def find_html_files():
 
     for root_dir, _, files in os.walk(ROOT):
 
-        # hard boundary: never touch assets pipeline
         if "/assets/" in root_dir.replace("\\", "/"):
             continue
 
@@ -70,32 +69,60 @@ def lookup_title(url):
 
 
 # =========================================================
+# SALIENCE-NATIVE RELATION ENGINE
+# (no precomputed "related" allowed)
+# =========================================================
+
+def compute_related(url, limit=5):
+    """
+    Pure salience-driven relationship inference:
+    - Two pages are "related" if they appear in same concept bucket
+    """
+
+    related = []
+    seen = set()
+
+    for concept, node in salience.items():
+        pages = node.get("pages", [])
+
+        urls = [p["url"] for p in pages if "url" in p]
+
+        if url not in urls:
+            continue
+
+        for u in urls:
+            if u != url and u not in seen:
+                seen.add(u)
+                related.append(u)
+
+            if len(related) >= limit:
+                return related
+
+    return related
+
+
+# =========================================================
 # PLUGIN SYSTEM
 # =========================================================
 
-def run_plugin(name, fn, soup, url, node):
+def run_plugin(name, fn, soup, url):
     try:
-        fn(soup, url, node)
+        fn(soup, url)
     except Exception as e:
         print(f"⚠️ Plugin failed [{name}] -> {e}")
 
 
 # =========================================================
-# PLUGINS
+# PLUGINS (SALIENCE-ONLY CONTRACT)
 # =========================================================
 
-def plugin_related_content(soup, url, node):
+def plugin_related_content(soup, url):
 
     # idempotent cleanup
     for old in soup.select("section.related-paths"):
         old.decompose()
 
-    related = [
-        item.get("url")
-        for item in node.get("related", [])
-        if item.get("url")
-        and item.get("url") != url
-    ][:5]
+    related = compute_related(url)
 
     if not related:
         return
@@ -105,7 +132,6 @@ def plugin_related_content(soup, url, node):
 
     heading = soup.new_tag("h3")
     heading.string = "Further paths to ponder…"
-
     block.append(heading)
 
     cloud = soup.new_tag("div")
@@ -115,10 +141,7 @@ def plugin_related_content(soup, url, node):
 
         a = soup.new_tag(
             "a",
-            href=related_url.replace(
-                "https://unboundhealing.org",
-                ""
-            )
+            href=related_url.replace("https://unboundhealing.org", "")
         )
 
         a["class"] = "related-chip"
@@ -132,33 +155,26 @@ def plugin_related_content(soup, url, node):
 
     if footer:
         footer.insert_before(block)
-
     elif soup.body:
         soup.body.append(block)
 
 
-def plugin_tracking(soup, url, node):
+def plugin_tracking(soup, url):
 
-    # idempotent guard
     if soup.find("script", {"src": TRACKER_PATH}):
         return
 
-    script = soup.new_tag(
-        "script",
-        src=TRACKER_PATH
-    )
-
+    script = soup.new_tag("script", src=TRACKER_PATH)
     script["defer"] = True
 
     if soup.body:
         soup.body.append(script)
-
     else:
         soup.append(script)
 
 
-def plugin_future_magic(soup, url, node):
-    # reserved expansion hook
+def plugin_future_magic(soup, url):
+    # reserved expansion hook (pure salience future layer)
     pass
 
 
@@ -180,12 +196,10 @@ ACTIVE_PLUGINS = [
 
 
 # =========================================================
-# ENGINE CORE
+# ENGINE CORE (SALIENCE-ONLY MODE)
 # =========================================================
 
 def enhance_page(soup, url):
-
-    node = salience.get(url, {})
 
     for name in ACTIVE_PLUGINS:
 
@@ -195,13 +209,7 @@ def enhance_page(soup, url):
             print(f"⚠️ Unknown plugin: {name}")
             continue
 
-        run_plugin(
-            name,
-            plugin,
-            soup,
-            url,
-            node
-        )
+        run_plugin(name, plugin, soup, url)
 
     return soup
 
@@ -213,17 +221,11 @@ def enhance_page(soup, url):
 def process_file(file_path):
 
     with open(file_path, "r", encoding="utf-8") as f:
-        soup = BeautifulSoup(
-            f,
-            "html.parser"
-        )
+        soup = BeautifulSoup(f, "html.parser")
 
     url = get_url_from_file(file_path)
 
-    enhance_page(
-        soup,
-        url
-    )
+    enhance_page(soup, url)
 
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(str(soup))
@@ -240,18 +242,12 @@ def main():
     html_files = find_html_files()
 
     for file_path in html_files:
-
         try:
             process_file(file_path)
-
         except Exception as e:
-            print(
-                f"⚠️ Skipped {file_path}: {e}"
-            )
+            print(f"⚠️ Skipped {file_path}: {e}")
 
-    print(
-        "✅ Plugin registry enhancement complete"
-    )
+    print("✅ Plugin registry enhancement complete")
 
 
 if __name__ == "__main__":
