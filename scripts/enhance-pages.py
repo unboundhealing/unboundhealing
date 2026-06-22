@@ -7,7 +7,6 @@ ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
 SALIENCE_FILE = os.path.join(ROOT, "semantic-salience.json")
 PAGE_TITLES_FILE = os.path.join(ROOT, "page-titles.json")
-
 TRACKER_PATH = "/assets/js/semantic-tracker.js"
 
 
@@ -33,7 +32,6 @@ def find_html_files():
     html_files = []
 
     for root_dir, _, files in os.walk(ROOT):
-
         if "/assets/" in root_dir.replace("\\", "/"):
             continue
 
@@ -53,7 +51,6 @@ def get_url_from_file(file_path):
     )
 
     rel = re.sub(r"^/", "", rel)
-
     return f"https://unboundhealing.org/{rel}"
 
 
@@ -69,55 +66,52 @@ def lookup_title(url):
 
 
 # =========================================================
-# SALIENCE-NATIVE RELATION ENGINE
-# (no precomputed "related" allowed)
+# SALIENCE-ONLY RELATION ENGINE
+# (pure projection: concept ↔ page bipartite scoring)
 # =========================================================
 
 def compute_related(url, limit=5):
+    """
+    Core idea:
+    - salience = concept nodes
+    - each concept contains pages
+    - relatedness = sum of shared concept salience weights
+    """
 
-    # map: concept → salience
-    concept_weights = {}
+    # 1. build reverse index: page → concepts it belongs to
+    page_to_concepts = {}
 
     for concept, node in salience.items():
-        concept_weights[concept] = node.get("salience", 0)
+        for p in node.get("pages", []):
+            page_to_concepts.setdefault(p["url"], set()).add(concept)
 
-    # find all concepts this page belongs to
-    page_concepts = set()
-
-    for concept, node in salience.items():
-        pages = node.get("pages", [])
-
-        if any(p["url"] == url for p in pages):
-            page_concepts.add(concept)
-
-    if not page_concepts:
+    if url not in page_to_concepts:
         return []
 
-    # score other pages
+    source_concepts = page_to_concepts[url]
+
+    # 2. score pages by shared concept salience
     scores = {}
 
-    for concept in page_concepts:
+    for concept in source_concepts:
         node = salience.get(concept, {})
-        pages = node.get("pages", [])
+        weight = node.get("salience", 0)
 
-        weight = concept_weights.get(concept, 0)
+        for p in node.get("pages", []):
+            other = p["url"]
 
-        for p in pages:
-            other_url = p["url"]
-
-            if other_url == url:
+            if other == url:
                 continue
 
-            scores[other_url] = scores.get(other_url, 0) + weight
+            scores[other] = scores.get(other, 0) + weight
 
-    # rank
+    # 3. rank deterministically
     ranked = sorted(
         scores.items(),
-        key=lambda x: x[1],
-        reverse=True
+        key=lambda x: (-x[1], x[0])
     )
 
-    return [url for url, _ in ranked[:limit]]
+    return [u for u, _ in ranked[:limit]]
 
 
 # =========================================================
@@ -132,7 +126,7 @@ def run_plugin(name, fn, soup, url):
 
 
 # =========================================================
-# PLUGINS (SALIENCE-ONLY CONTRACT)
+# PLUGINS (PURE SALIENCE CONTRACT)
 # =========================================================
 
 def plugin_related_content(soup, url):
@@ -150,22 +144,19 @@ def plugin_related_content(soup, url):
     block["class"] = "related-paths"
 
     heading = soup.new_tag("h3")
-    heading.string = "Further paths to ponder…"
+    heading.string = "Further paths to explore…"
     block.append(heading)
 
     cloud = soup.new_tag("div")
     cloud["class"] = "related-cloud"
 
     for related_url in related:
-
         a = soup.new_tag(
             "a",
             href=related_url.replace("https://unboundhealing.org", "")
         )
-
         a["class"] = "related-chip"
         a.string = lookup_title(related_url)
-
         cloud.append(a)
 
     block.append(cloud)
@@ -193,7 +184,7 @@ def plugin_tracking(soup, url):
 
 
 def plugin_future_magic(soup, url):
-    # reserved expansion hook (pure salience future layer)
+    # intentionally empty (reserved salience expansion layer)
     pass
 
 
@@ -215,13 +206,12 @@ ACTIVE_PLUGINS = [
 
 
 # =========================================================
-# ENGINE CORE (SALIENCE-ONLY MODE)
+# ENGINE CORE
 # =========================================================
 
 def enhance_page(soup, url):
 
     for name in ACTIVE_PLUGINS:
-
         plugin = PLUGIN_REGISTRY.get(name)
 
         if not plugin:
@@ -257,7 +247,6 @@ def process_file(file_path):
 # =========================================================
 
 def main():
-
     html_files = find_html_files()
 
     for file_path in html_files:
@@ -266,7 +255,7 @@ def main():
         except Exception as e:
             print(f"⚠️ Skipped {file_path}: {e}")
 
-    print("✅ Plugin registry enhancement complete")
+    print("✅ Semantic salience enhancement complete")
 
 
 if __name__ == "__main__":
