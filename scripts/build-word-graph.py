@@ -8,25 +8,52 @@ INPUT = os.path.join(ROOT, "semantic-words.json")
 OUTPUT = os.path.join(ROOT, "word-graph.json")
 
 # -----------------------------
-# Load semantic words
+# LOAD SAFE
 # -----------------------------
 with open(INPUT, "r", encoding="utf-8") as f:
-    data = json.load(f)["pages"]
+    data = json.load(f)
+
+# ---------------------------------------
+# SCHEMA SAFETY (FIXES YOUR CRASH)
+# ---------------------------------------
+pages = None
+
+if isinstance(data, dict):
+    if "pages" in data:
+        pages = data["pages"]
+    elif "words" in data:
+        pages = data["words"]
+    elif "items" in data:
+        pages = data["items"]
+
+if pages is None:
+    print("❌ ERROR: No valid data structure found in semantic-words.json")
+    print("🔍 Keys:", list(data.keys()) if isinstance(data, dict) else type(data))
+    pages = []
 
 # -----------------------------
-# Group pages by word
+# GROUP WORDS → PAGES
 # -----------------------------
 word_to_pages = defaultdict(list)
 
-for item in data:
-    word_to_pages[item["word"]].append(item["url"])
+for item in pages:
+    if not isinstance(item, dict):
+        continue
+
+    word = item.get("word")
+    url = item.get("url")
+
+    if not word or not url:
+        continue
+
+    word_to_pages[word].append(url)
 
 words = list(word_to_pages.keys())
 
 edges = []
 
 # -----------------------------
-# Build relationships
+# BUILD RELATIONSHIPS
 # -----------------------------
 for i, w1 in enumerate(words):
     for w2 in words[i+1:]:
@@ -34,10 +61,8 @@ for i, w1 in enumerate(words):
         pages1 = set(word_to_pages[w1])
         pages2 = set(word_to_pages[w2])
 
-        # simple overlap signal (v3.3 Phase 2 baseline logic)
         overlap = len(pages1 & pages2)
 
-        # heuristic similarity boost
         shared_prefix = 1 if w1[:3] == w2[:3] else 0
 
         weight = (overlap * 0.6) + (shared_prefix * 0.3)
@@ -51,12 +76,12 @@ for i, w1 in enumerate(words):
             })
 
 # -----------------------------
-# Write graph
+# WRITE OUTPUT
 # -----------------------------
 with open(OUTPUT, "w", encoding="utf-8") as f:
     json.dump({
         "edges": edges
-    }, f, indent=2)
+    }, f, indent=2, ensure_ascii=False)
 
-print("🧭 Word graph built (v3.3 Phase 2)")
+print("🧭 Word graph built (v3.4 schema-safe)")
 print(f"📦 Wrote: {OUTPUT}")
