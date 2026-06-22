@@ -6,7 +6,7 @@ ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
 GRAPH_FILE = os.path.join(ROOT, "semantic-graph.json")
 CLUSTERS_FILE = os.path.join(ROOT, "concept-clusters.json")
-OUTPUT = os.path.join(ROOT, "semantic-salience.json")
+OUTPUT_FILE = os.path.join(ROOT, "semantic-salience.json")
 
 
 # =========================================================
@@ -21,32 +21,53 @@ with open(CLUSTERS_FILE, "r", encoding="utf-8") as f:
 
 
 # =========================================================
-# DIRECTIONAL WEIGHT MODEL
+# BUILD DIRECTIONAL CONCEPT NETWORK
 # =========================================================
 
 inflow = defaultdict(float)
 outflow = defaultdict(float)
 
+neighbors = defaultdict(dict)
+
 for edge in graph:
-    w = edge.get("weight", 1)
 
-    src = edge["from"]
-    dst = edge["to"]
+    weight = float(edge.get("weight", 1))
 
-    # outgoing pressure (projection)
-    outflow[src] += w
+    source = edge["from"]
+    target = edge["to"]
 
-    # incoming pressure (absorption)
-    inflow[dst] += w
+    outflow[source] += weight
+    inflow[target] += weight
+
+    neighbors[source][target] = (
+        neighbors[source].get(target, 0)
+        + weight
+    )
+
+    neighbors[target][source] = (
+        neighbors[target].get(source, 0)
+        + weight
+    )
 
 
 # =========================================================
 # NORMALIZATION
 # =========================================================
 
-def normalize(d):
-    max_v = max(d.values(), default=1)
-    return {k: round(v / max_v, 4) for k, v in d.items()}
+def normalize(values):
+
+    max_value = max(values.values(), default=1)
+
+    output = {}
+
+    for key, value in values.items():
+
+        output[key] = round(
+            value / max_value,
+            4
+        )
+
+    return output
 
 
 inflow = normalize(inflow)
@@ -54,29 +75,47 @@ outflow = normalize(outflow)
 
 
 # =========================================================
-# COMPOSITE SALIENCE FIELDS
+# BUILD SALIENCE MODEL
 # =========================================================
 
 output = {}
 
 for concept, pages in clusters.items():
 
-    i = inflow.get(concept, 0.0)
-    o = outflow.get(concept, 0.0)
+    incoming = inflow.get(concept, 0.0)
+    outgoing = outflow.get(concept, 0.0)
 
-    # core idea:
-    # - inflow = "how much the world feeds this concept"
-    # - outflow = "how much this concept distributes meaning"
+    stability = round(
+        1 - abs(incoming - outgoing),
+        4
+    )
 
-    stability = 1 - abs(i - o)
+    salience = round(
+        (incoming + outgoing) / 2,
+        4
+    )
+
+    related_concepts = []
+
+    for related, weight in sorted(
+        neighbors.get(concept, {}).items(),
+        key=lambda x: x[1],
+        reverse=True
+    )[:10]:
+
+        related_concepts.append({
+            "concept": related,
+            "weight": round(weight, 4)
+        })
 
     output[concept] = {
-        "inflow": i,
-        "outflow": o,
-        "stability": round(stability, 4),
-        "salience": round((i + o) / 2, 4),
+        "salience": salience,
+        "inflow": incoming,
+        "outflow": outgoing,
+        "stability": stability,
         "page_count": len(pages),
-        "pages": pages
+        "pages": pages,
+        "related_concepts": related_concepts
     }
 
 
@@ -84,8 +123,19 @@ for concept, pages in clusters.items():
 # SAVE
 # =========================================================
 
-with open(OUTPUT, "w", encoding="utf-8") as f:
-    json.dump(output, f, indent=2, ensure_ascii=False)
+with open(
+    OUTPUT_FILE,
+    "w",
+    encoding="utf-8"
+) as f:
 
-print("🧠 Directional semantic salience built")
-print("📦 Wrote:", OUTPUT)
+    json.dump(
+        output,
+        f,
+        indent=2,
+        ensure_ascii=False
+    )
+
+print("🧠 Semantic gravity model built")
+print("📦 Wrote:", OUTPUT_FILE)
+print("📦 Concepts:", len(output))
