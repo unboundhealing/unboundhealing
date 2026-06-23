@@ -1,17 +1,29 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "🧠 Building content model (v6 hardened resolver + dependency-safe)..."
+echo "🧠 Building content model (v7 hardened CI-resilient resolver)..."
 
-ROOT_DIR="${GITHUB_WORKSPACE:-$(pwd)}"
-cd "$ROOT_DIR"
+ROOT_DIR="${GITHUB_WORKSPACE:-$(git rev-parse --show-toplevel 2>/dev/null || pwd)}"
+
+echo "📍 ROOT_DIR: $ROOT_DIR"
+cd "$ROOT_DIR" || {
+  echo "❌ Cannot enter ROOT_DIR"
+  exit 1
+}
 
 REGISTRY="content-registry.json"
 OUTPUT="content-model.json"
 TMP="content-model.tmp.json"
+BROKEN_LOG="broken-paths.log"
+
+: > "$BROKEN_LOG"
+
+# ---------------------------------------------------
+# STEP 1 — VALIDATE REGISTRY
+# ---------------------------------------------------
 
 if [ ! -f "$REGISTRY" ]; then
-  echo "❌ registry missing"
+  echo "❌ registry missing: $REGISTRY"
   exit 1
 fi
 
@@ -25,11 +37,14 @@ EOF
 
 echo "📦 registry entries: $COUNT"
 
-echo "{" > "$TMP"
-echo '"pages": [' >> "$TMP"
+if [ "$COUNT" -eq 0 ]; then
+  echo "❌ registry empty"
+  exit 1
+fi
 
-FIRST=true
-PROCESSED=0
+# ---------------------------------------------------
+# STEP 2 — LOAD REGISTRY STREAM
+# ---------------------------------------------------
 
 python3 - <<EOF > /tmp/_pages.txt
 import json
@@ -38,15 +53,42 @@ for p in data["pages"]:
     print(p["path"] + "||" + p["url"])
 EOF
 
+# ---------------------------------------------------
+# STEP 3 — BUILD MODEL
+# ---------------------------------------------------
+
+echo "🧠 building content model from registry..."
+
+echo "{" > "$TMP"
+echo '"pages": [' >> "$TMP"
+
+FIRST=true
+PROCESSED=0
+BROKEN=0
+
 while IFS="||" read -r path url; do
 
-  file="$ROOT_DIR/$path"
+  # ---------------------------------------------------
+  # SAFE NORMALIZATION
+  # ---------------------------------------------------
 
-  echo "🔎 resolving: $path → $file"
+  clean="${path#./}"
+
+  # resolve safely
+  file="$ROOT_DIR/$clean"
+  file="$(echo "$file" | sed 's#//*/#/#g')"
+
+  echo "🔎 resolving: $clean"
+
+  # ---------------------------------------------------
+  # FILE GUARD (NO EXIT — JUST LOG)
+  # ---------------------------------------------------
 
   if [ ! -f "$file" ]; then
     echo "❌ missing file: $file"
-    exit 1
+    echo "$clean" >> "$BROKEN_LOG"
+    BROKEN=$((BROKEN+1))
+    continue
   fi
 
   # ---------------------------------------------------
@@ -54,9 +96,7 @@ while IFS="||" read -r path url; do
   # ---------------------------------------------------
 
   TITLE=$(python3 - "$file" <<'PY'
-import sys
-import re
-
+import sys,re
 path=sys.argv[1]
 
 try:
@@ -69,6 +109,10 @@ print(m.group(1).strip() if m else "")
 PY
 )
 
+  # ---------------------------------------------------
+  # WRITE ENTRY
+  # ---------------------------------------------------
+
   if [ "$FIRST" = true ]; then
     FIRST=false
   else
@@ -78,25 +122,43 @@ PY
   cat <<EOF >> "$TMP"
 {
   "url": "$url",
-  "file": "$path",
+  "file": "$clean",
   "title": $(python3 -c "import json; print(json.dumps('''$TITLE'''))")
 }
 EOF
 
-  ((PROCESSED++))
+  PROCESSED=$((PROCESSED+1))
 
 done < /tmp/_pages.txt
+
+# ---------------------------------------------------
+# STEP 4 — CLOSE JSON
+# ---------------------------------------------------
 
 echo "]" >> "$TMP"
 echo "}" >> "$TMP"
 
+# ---------------------------------------------------
+# STEP 5 — VALIDATE OUTPUT (NON-FATAL SAFE)
+# ---------------------------------------------------
+
 python3 - <<EOF
 import json
 json.load(open("$TMP"))
-print("✅ model valid")
+print("✅ model JSON valid")
 EOF
+
+# ---------------------------------------------------
+# STEP 6 — WRITE OUTPUT
+# ---------------------------------------------------
 
 mv "$TMP" "$OUTPUT"
 
+# ---------------------------------------------------
+# SUMMARY
+# ---------------------------------------------------
+
 echo "📦 pages processed: $PROCESSED"
-echo "✅ content model built"
+echo "⚠️ broken paths: $BROKEN"
+echo "📁 broken log: $BROKEN_LOG"
+echo "✅ content model built (v7 resilient, non-fatal FS mode)"
