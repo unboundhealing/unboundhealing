@@ -1,7 +1,25 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
-echo "🚀 Generating v3.2 full system..."
+echo "🚀 Generating v3.3 full system (registry-first deterministic DAG)..."
+
+ROOT_DIR="$(git rev-parse --show-toplevel)"
+cd "$ROOT_DIR"
+
+# =========================
+# BOOTSTRAP LAYER (CRITICAL FIX)
+# =========================
+
+echo "🧭 Building deterministic content registry..."
+./scripts/build-content-registry.sh
+
+# HARD CHECK: prevent silent downstream failure
+if [ ! -f "content-registry.json" ]; then
+  echo "❌ FATAL: content-registry.json not found after build"
+  exit 1
+fi
+
+echo "✅ registry available"
 
 # =========================
 # INTELLIGENCE LAYER
@@ -84,4 +102,4 @@ echo "📡 Generating RSS..."
 echo "🧭 Auditing OpenGraph..."
 ./scripts/audit-opengraph.sh
 
-echo "✅ All outputs updated"
+echo "✅ All outputs updated (v3.3 complete DAG execution)"
