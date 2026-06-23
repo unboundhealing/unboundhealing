@@ -3,12 +3,12 @@ import os
 from collections import Counter, defaultdict
 
 # =========================================================
-# CONFIG / PATHS
+# ROOT / SINGLE TRUTH SOURCE
 # =========================================================
 
 ROOT_DIR = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
-INPUT_FILE = os.path.join(ROOT_DIR, "content-graph.json")
+SALIENCE_FILE = os.path.join(ROOT_DIR, "semantic-salience.json")
 OUTPUT_FILE = os.path.join(ROOT_DIR, "concept-model.json")
 
 # =========================================================
@@ -24,17 +24,23 @@ def safe_load(path):
     except Exception:
         return None
 
-raw = safe_load(INPUT_FILE)
 
-if not raw:
-    print("⚠️ content-graph missing or unreadable")
-    raw = {"nodes": [], "edges": []}
+semantic = safe_load(SALIENCE_FILE)
 
-edges = raw.get("edges") or []
-nodes = raw.get("nodes") or []
+if not semantic:
+    print("❌ semantic-salience.json missing or unreadable")
+    semantic = {"nodes": [], "edges": []}
 
 # =========================================================
-# NORMALIZATION
+# SINGLE SOURCE EXTRACTION
+# =========================================================
+# semantic-salience is the ONLY authority
+
+nodes = semantic.get("nodes", {})
+edges = semantic.get("edges", [])
+
+# =========================================================
+# NORMALIZATION (light, defensive only)
 # =========================================================
 
 def normalize_concept(c):
@@ -43,41 +49,30 @@ def normalize_concept(c):
 
     c = str(c).strip().lower()
 
-    # hard filters
     if len(c) < 2:
         return None
 
-    if c in {"and", "or", "the", "a", "an"}:
-        return None
-
-    if any(ch.isdigit() for ch in c):
+    # minimal noise filter (do NOT over-engineer ontology)
+    if c in {"and", "or", "the", "a", "an", "of", "to", "in"}:
         return None
 
     return c
 
 # =========================================================
-# CONCEPT EXTRACTION
+# CONCEPT EXTRACTION (FROM NODES ONLY)
 # =========================================================
 
 concept_counter = Counter()
 concept_to_pages = defaultdict(set)
-concept_edges = []
 
-valid_edge_count = 0
-dropped_edge_count = 0
+node_count = 0
 
-for e in edges:
-    src = e.get("from")
-    tgt = e.get("to")
+for url, node in nodes.items():
+    node_count += 1
 
-    if not src or not tgt:
-        dropped_edge_count += 1
-        continue
-
-    concepts = e.get("shared_concepts") or []
-
+    concepts = node.get("concepts", []) or []
     if not isinstance(concepts, list):
-        concepts = []
+        continue
 
     cleaned = []
     for c in concepts:
@@ -85,50 +80,57 @@ for e in edges:
         if nc:
             cleaned.append(nc)
 
-    cleaned = list(dict.fromkeys(cleaned))  # dedupe stable
+    # stable dedupe
+    cleaned = list(dict.fromkeys(cleaned))
 
-    if not cleaned:
-        dropped_edge_count += 1
-        continue
-
-    valid_edge_count += 1
-
-    # update stats
     for c in cleaned:
         concept_counter[c] += 1
-        concept_to_pages[c].add(src)
-        concept_to_pages[c].add(tgt)
+        concept_to_pages[c].add(url)
 
+# =========================================================
+# EDGE WEIGHT ANALYSIS (DERIVATIVE ONLY)
+# =========================================================
+
+edge_count = len(edges)
+
+concept_edges = []
+
+for e in edges:
+    a = e.get("a")
+    b = e.get("b")
+
+    if not a or not b:
+        continue
+
+    # edges are structural only; no concept mining here
     concept_edges.append({
-        "from": src,
-        "to": tgt,
-        "concepts": cleaned,
+        "a": str(a),
+        "b": str(b),
         "weight": float(e.get("weight", 1.0))
     })
 
 # =========================================================
-# BUILD CONCEPT NODES
+# BUILD CONCEPT INDEX (DERIVATIVE VIEW)
 # =========================================================
 
 concepts = []
 
-for concept, count in concept_counter.items():
-
+for concept, freq in concept_counter.items():
     concepts.append({
         "concept": concept,
-        "frequency": count,
+        "frequency": freq,
         "connected_pages": len(concept_to_pages.get(concept, []))
     })
 
-# stable sort (important for deterministic salience)
+# deterministic ordering = consumer stability
 concepts.sort(key=lambda x: (-x["frequency"], x["concept"]))
 
 # =========================================================
-# SAFE FALLBACK (CRITICAL FOR PIPELINE STABILITY)
+# SAFE FALLBACK (pipeline stability)
 # =========================================================
 
 if not concepts:
-    print("⚠️ no concepts detected — injecting fallback layer")
+    print("⚠️ No concepts found in semantic-salience — injecting fallback")
 
     concepts = [{
         "concept": "system",
@@ -136,45 +138,40 @@ if not concepts:
         "connected_pages": 0
     }]
 
-    concept_edges = []
-
 # =========================================================
 # DEBUG REPORT
 # =========================================================
 
-print("\n🧠 CONCEPT MODEL DEBUG")
-print("edges input:", len(edges))
-print("edges valid:", valid_edge_count)
-print("edges dropped:", dropped_edge_count)
-
+print("\n🧠 CONTENT MODEL (CONSUMER VIEW)")
+print("nodes:", node_count)
+print("edges:", edge_count)
 print("concepts:", len(concepts))
-print("unique concepts:", len(concept_counter))
 
 print("\nTOP 20 CONCEPTS")
 
 for c in concepts[:20]:
-    print(c["concept"], c["frequency"])
+    print(f"{c['concept']} → {c['frequency']}")
 
 # =========================================================
-# OUTPUT
+# OUTPUT (DERIVED, NOT AUTHORITATIVE)
 # =========================================================
 
 output = {
+    "source": "semantic-salience-v4",
+    "role": "consumer-derived-concept-view",
+    "nodes": node_count,
+    "edges": edge_count,
     "concepts": concepts,
-    "edges": concept_edges
+    "edges_passthrough": concept_edges
 }
 
 try:
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
-    print("\n✅ concept model written:", OUTPUT_FILE)
+    print("\n✅ concept-model written:", OUTPUT_FILE)
 
 except Exception as e:
     print("❌ failed to write concept model:", str(e))
 
-# =========================================================
-# PIPELINE SAFETY SIGNAL
-# =========================================================
-
-print("🧭 concept-model pipeline complete (derivative layer, non-authoritative)")
+print("🧭 content-model complete (pure consumer of semantic-salience)")
