@@ -29,7 +29,7 @@ def load_registry():
 def extract_concepts(path, url):
     base = f"{path} {url}"
     base = normalize(base)
-    parts = [p for p in re.split(r"[/_\\- ]+", base) if p]
+    parts = [p for p in re.split(r"[/_\- ]+", base) if p]
     return list(dict.fromkeys(parts))  # unique, stable order
 
 def main():
