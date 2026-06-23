@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 import json
 import os
-from collections import defaultdict
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 PATH = os.path.join(ROOT, "semantic-salience.json")
 
 print("🔍 Inspecting semantic-salience.json...")
+
+# =========================================================
+# FILE SAFETY CHECK
+# =========================================================
 
 if not os.path.exists(PATH):
     print("❌ semantic-salience.json missing")
@@ -19,28 +22,29 @@ print("✅ truth layer loaded")
 
 
 # =========================================================
-# BASIC STRUCTURE REPORT
+# STRUCTURE OVERVIEW (OBSERVATIONAL ONLY)
 # =========================================================
 
 nodes = data.get("nodes", {}) or {}
-edges = data.get("edges", []) or []
+edges = data.get("edges", []) or {}
 
 print("📦 nodes:", len(nodes))
 print("📦 edges:", len(edges))
 
 
 # =========================================================
-# SAFE CONCEPT EXTRACTION (NO ASSUMPTIONS)
+# STRICT SALIENCE CHECK (NO FALLBACKS)
 # =========================================================
 
 salience = data.get("salience", None)
 
-# ---------------------------------------------------------
-# CASE 1: legacy / older pipeline still present
-# ---------------------------------------------------------
-if isinstance(salience, dict) and salience:
-    print("🧠 salience layer detected (legacy mode)")
+if salience is None:
+    print("\n🧠 salience layer: NOT PRESENT")
+    print("⚠️ semantic-salience is operating in GRAPH-ONLY MODE")
+    print("⚠️ NO semantic ranking or concept scoring available")
 
+elif isinstance(salience, dict) and salience:
+    print("\n🧠 salience layer: ACTIVE")
     print("🧠 concepts:", len(salience))
 
     top = sorted(
@@ -51,52 +55,48 @@ if isinstance(salience, dict) and salience:
 
     print("\n🔥 TOP CONCEPTS:")
     for k, v in top:
-        print(k, "→", round(v.get("score", 0), 5))
+        print(k, "→", round(v.get("score", 5), 5))
 
-
-# ---------------------------------------------------------
-# CASE 2: v3 system (nodes + edges only)
-# ---------------------------------------------------------
 else:
-    print("🧠 salience layer not found → deriving from graph")
-
-    # derive concept frequencies from nodes
-    concept_frequency = defaultdict(int)
-
-    for node_url, node_data in nodes.items():
-        concepts = node_data.get("concepts", [])
-
-        if isinstance(concepts, list):
-            for c in concepts:
-                concept_frequency[c] += 1
-
-    print("🧠 derived concepts:", len(concept_frequency))
-
-    if concept_frequency:
-        top = sorted(
-            concept_frequency.items(),
-            key=lambda x: x[1],
-            reverse=True
-        )[:10]
-
-        print("\n🔥 TOP CONCEPTS (derived):")
-        for k, v in top:
-            print(k, "→", v)
-    else:
-        print("\n🔥 TOP CONCEPTS: (none found)")
-        print("⚠️ Suggestion: upstream concept extraction is not populating nodes.concepts")
+    print("\n🧠 salience layer: EMPTY OR INVALID")
+    print("⚠️ semantic-salience exists but contains no usable scoring data")
 
 
 # =========================================================
-# EDGE HEALTH CHECK
+# EDGE HEALTH (PURE STRUCTURAL METRICS ONLY)
 # =========================================================
 
 print("\n🔗 edge sanity check:")
 
 if edges:
-    print("avg edges per node ~", round(len(edges) / max(len(nodes), 1), 2))
+    avg = len(edges) / max(len(nodes), 1)
+    print("avg edges per node ~", round(avg, 2))
 else:
     print("⚠️ no edges present")
+
+
+# =========================================================
+# NODE CONCEPT AUDIT (STRUCTURAL ONLY — NO DERIVATION)
+# =========================================================
+
+concept_count = 0
+concept_nodes = 0
+
+for node in nodes.values():
+    concepts = node.get("concepts", [])
+
+    if isinstance(concepts, list):
+        if concepts:
+            concept_nodes += 1
+            concept_count += len(concepts)
+
+print("\n🧭 concept field audit (structural only):")
+print("nodes with concepts:", concept_nodes)
+print("total concept references:", concept_count)
+
+if concept_nodes == 0:
+    print("⚠️ WARNING: no node-level concepts found")
+    print("⚠️ upstream semantic extraction may be failing")
 
 
 # =========================================================
@@ -107,5 +107,9 @@ print("\n📊 SUMMARY:")
 print("nodes:", len(nodes))
 print("edges:", len(edges))
 print("salience present:", isinstance(salience, dict))
+
+print("\n🧭 single-truth policy:")
+print("✔ semantic-salience is treated as authoritative source")
+print("✔ no graph-derived semantic inference performed here")
 
 print("\n✅ inspection complete")
