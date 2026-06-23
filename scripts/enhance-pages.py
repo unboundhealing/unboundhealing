@@ -118,7 +118,7 @@ CONCEPT_MAP = build_concept_index()
 # RELATED ENGINE (TRUTH-LAYER ONLY)
 # =========================================================
 
-def compute_related(url, limit=5):
+def compute_related(url, limit=3):
 
     if url not in salience:
         return []
