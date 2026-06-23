@@ -11,10 +11,14 @@ OUTPUT_PATH = os.path.join(ROOT, "semantic-salience.json")
 def normalize(text: str) -> str:
     if not text:
         return ""
+
     text = text.lower().strip()
     text = re.sub(r"https?://[^/]+", "", text)
-    text = re.sub(r"[^a-z0-9/_\\- ]", "", text)
     text = re.sub(r"/+", "/", text)
+
+    # SAFE CHARACTER FILTER (NO RANGE ERRORS)
+    text = re.sub(r"[^a-z0-9/_\- ]", "", text)
+
     return text.strip("/")
 
 def load_registry():
