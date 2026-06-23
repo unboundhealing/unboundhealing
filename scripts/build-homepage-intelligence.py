@@ -1,132 +1,121 @@
 import json
 import os
+from collections import defaultdict
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
-SALIENCE_FILE = os.path.join(ROOT, "semantic-salience.json")
-OUTPUT = os.path.join(ROOT, "homepage-intelligence.json")
-
-# -----------------------------
-# Load data
-# -----------------------------
-def safe_load(path):
-    if not os.path.exists(path):
-        return {}
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except Exception:
-        return {}
-
-salience_data = safe_load(SALIENCE_FILE)
-
-print("SALIENCE SAMPLE:")
-for k, v in list(salience_data.items())[:3]:
-    print(k)
-    print(v)
-    print("---")
-    
-
-# -----------------------------
-# Minimal stop filter (ONLY hygiene, not logic)
-# -----------------------------
-STOP = {
-    "that", "this", "these", "those",
-    "and", "or", "but",
-    "the", "a", "an",
-    "to", "of", "in", "on", "for",
-    "unbound"
-}
-
-def is_noise(word: str) -> bool:
-    w = word.strip().lower()
-    return w in STOP or len(w) < 3
+GRAPH_FILE = os.path.join(ROOT, "semantic-salience.json")
+OUTPUT_FILE = os.path.join(ROOT, "homepage-intelligence.json")
 
 
-def normalize(word: str) -> str:
-    return word.strip().lower()
+def load_graph():
+    with open(GRAPH_FILE, "r") as f:
+        return json.load(f)
 
 
-# -----------------------------
-# STEP 1 — extract concepts from salience
-# -----------------------------
-concepts = []
+def normalize_nodes(nodes_dict):
+    """
+    Nodes already come as dict keyed by URL.
+    We just ensure consistent structure.
+    """
+    normalized = {}
 
-for concept, data in salience_data.items():
-
-    name = normalize(concept)
-
-    if is_noise(name):
-        continue
-
-    concepts.append({
-        "concept": name,
-        "salience": data.get("salience", 0),
-        "page_count": data.get("page_count", 0),
-        "pages": data.get("pages", [])
-    })
-
-
-# -----------------------------
-# STEP 2 — sort by salience (single authority source)
-# -----------------------------
-concepts.sort(key=lambda x: x["salience"], reverse=True)
-
-
-# -----------------------------
-# STEP 3 — featured pages (light extraction only)
-# -----------------------------
-# derive featured pages from concept pages (no graph logic here)
-page_scores = {}
-
-for c in concepts:
-    for p in c["pages"]:
-
-        if isinstance(p, dict):
-            url = p.get("url")
-        else:
-            url = p
-
-        if not url:
+    for url, data in nodes_dict.items():
+        if not isinstance(data, dict):
             continue
 
-        page_scores[url] = (
-            page_scores.get(url, 0)
-            + c["salience"]
-        )
-featured_pages = [
-    {"url": url, "score": score}
-    for url, score in sorted(
-        page_scores.items(),
-        key=lambda x: x[1],
-        reverse=True
-    )
-]
+        normalized[url] = {
+            "path": data.get("path"),
+            "url": data.get("url"),
+            "concepts": data.get("concepts", []),
+            "salience": data.get("salience", 0)
+        }
+
+    return normalized
 
 
-# -----------------------------
-# STEP 4 — select top concepts
-# -----------------------------
-top_concepts = [
-    {
-        "concept": c["concept"],
-        "salience": c["salience"],
-        "page_count": c["page_count"]
+def normalize_edges(edges_list):
+    """
+    FIX: edges are LISTS of dicts, NOT dicts.
+    """
+    normalized = []
+
+    if not isinstance(edges_list, list):
+        return normalized
+
+    for edge in edges_list:
+        if not isinstance(edge, dict):
+            continue
+
+        normalized.append({
+            "a": edge.get("a"),
+            "b": edge.get("b"),
+            "weight": edge.get("weight", 1)
+        })
+
+    return normalized
+
+
+def compute_homepage_intelligence(nodes, edges):
+    """
+    Lightweight derivative layer:
+    - count concept frequency
+    - identify hub nodes
+    """
+
+    concept_counts = defaultdict(int)
+    node_scores = {}
+
+    # Count concepts
+    for url, node in nodes.items():
+        concepts = node.get("concepts", [])
+        for c in concepts:
+            concept_counts[c] += 1
+
+    # Simple salience scoring
+    for url, node in nodes.items():
+        score = 0
+
+        concepts = node.get("concepts", [])
+        score += len(concepts)
+
+        # bonus if concept is widely used
+        for c in concepts:
+            score += concept_counts.get(c, 0) * 0.1
+
+        node_scores[url] = round(score, 3)
+
+    return {
+        "concept_counts": dict(concept_counts),
+        "node_scores": node_scores,
+        "edge_count": len(edges)
     }
-    for c in concepts[:3]
-]
 
 
-# -----------------------------
-# OUTPUT
-# -----------------------------
-output = {
-    "featured_pages": featured_pages[:3],
-    "concept_clusters": top_concepts
-}
+def main():
+    graph = load_graph()
 
-with open(OUTPUT, "w", encoding="utf-8") as f:
-    json.dump(output, f, indent=2)
+    nodes_raw = graph.get("nodes", {})
+    edges_raw = graph.get("edges", [])
 
-print("🏠 Homepage intelligence built (v3.5 unified salience pipeline)")
-print("📦 Wrote:", OUTPUT)
+    nodes = normalize_nodes(nodes_raw)
+    edges = normalize_edges(edges_raw)
+
+    intelligence = compute_homepage_intelligence(nodes, edges)
+
+    output = {
+        "nodes": nodes,
+        "edges": edges,
+        "intelligence": intelligence
+    }
+
+    with open(OUTPUT_FILE, "w") as f:
+        json.dump(output, f, indent=2)
+
+    print("🏠 homepage-intelligence built successfully")
+    print(f"📦 nodes: {len(nodes)}")
+    print(f"🔗 edges: {len(edges)}")
+
+
+if __name__ == "__main__":
+    main()
