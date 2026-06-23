@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "🧭 Building deterministic content registry (v6 contract-safe + path-normalized)..."
+echo "🧭 Building deterministic content registry (v6 CI-hardened + fully deterministic)..."
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
@@ -10,12 +10,19 @@ OUTPUT="content-registry.json"
 TMP="content-registry.tmp.json"
 
 # ---------------------------------------------------
-# STEP 1 — DISCOVER FILES (DETERMINISTIC + SAFE)
+# STEP 1 — DISCOVER FILES (CI-SAFE, NO MAPFILE)
 # ---------------------------------------------------
 
 echo "📂 scanning root: $(pwd)"
 
-mapfile -t FILES < <(
+FILES=()
+
+while IFS= read -r f; do
+  # defensive guard
+  [[ -z "${f:-}" ]] && continue
+
+  FILES+=("$f")
+done < <(
   find . -type f -name "*.html" \
     ! -path "./.git/*" \
     ! -path "./.github/*" \
@@ -31,7 +38,7 @@ if [ "${#FILES[@]}" -eq 0 ]; then
 fi
 
 # ---------------------------------------------------
-# STEP 2 — START JSON
+# STEP 2 — INIT JSON
 # ---------------------------------------------------
 
 echo "{" > "$TMP"
@@ -46,41 +53,45 @@ COUNT=0
 
 for file in "${FILES[@]}"; do
 
-  # -----------------------------
-  # CANONICAL PATH NORMALIZATION
-  # -----------------------------
-  clean="${file#./}"
-  clean="${clean#./}"
-
-  # force absolute safety (no leading ./ or /)
-  clean=$(echo "$clean" | sed 's|^\./||' | sed 's|^/||')
-
-  # skip empty safety
-  if [ -z "$clean" ]; then
+  # safety guard (CRITICAL under set -u)
+  if [[ -z "${file:-}" ]]; then
     continue
   fi
 
-  # -----------------------------
-  # URL NORMALIZATION
-  # -----------------------------
+  # normalize path
+  clean="${file#./}"
+  clean="${clean#./}"
+
+  if [[ -z "$clean" ]]; then
+    continue
+  fi
+
+  # ---------------------------------------------------
+  # URL NORMALIZATION (CANONICAL)
+  # ---------------------------------------------------
+
   url_path=$(echo "$clean" \
     | sed 's|index.html$||' \
     | sed 's|\.html$||')
 
   url="https://unboundhealing.org/${url_path}"
+
+  # collapse accidental slashes
   url=$(echo "$url" | sed 's|//|/|g' | sed 's|https:/|https://|')
 
-  # -----------------------------
-  # TYPE
-  # -----------------------------
+  # ---------------------------------------------------
+  # TYPE CLASSIFICATION (NON-RESTRICTIVE)
+  # ---------------------------------------------------
+
   type="page"
   if [[ "$clean" == assets/* ]]; then
     type="asset"
   fi
 
-  # -----------------------------
-  # WRITE ENTRY
-  # -----------------------------
+  # ---------------------------------------------------
+  # WRITE JSON ENTRY (SAFE + DETERMINISTIC)
+  # ---------------------------------------------------
+
   if [ "$FIRST" = true ]; then
     FIRST=false
   else
@@ -107,7 +118,7 @@ echo "]" >> "$TMP"
 echo "}" >> "$TMP"
 
 # ---------------------------------------------------
-# STEP 5 — VALIDATION (STRICT)
+# STEP 5 — VALIDATION (HARD GUARANTEE)
 # ---------------------------------------------------
 
 echo "🧪 validating registry..."
@@ -118,15 +129,21 @@ import json
 with open("$TMP","r") as f:
     data = json.load(f)
 
-assert "pages" in data
-assert isinstance(data["pages"], list)
+if "pages" not in data:
+    raise Exception("Missing 'pages' key")
+
+if not isinstance(data["pages"], list):
+    raise Exception("'pages' must be a list")
+
+if len(data["pages"]) == 0:
+    raise Exception("Registry is empty")
 
 for p in data["pages"]:
-    for k in ["path","url","type"]:
+    for k in ["path", "url", "type"]:
         if k not in p:
-            raise Exception("Missing key: " + k)
+            raise Exception(f"Missing key: {k}")
 
-print("✅ registry valid (v6 contract-safe)")
+print("✅ registry valid (v6 CI-hardened + deterministic)")
 EOF
 
 # ---------------------------------------------------
@@ -135,6 +152,10 @@ EOF
 
 mv "$TMP" "$OUTPUT"
 
+# ---------------------------------------------------
+# STEP 7 — SUMMARY
+# ---------------------------------------------------
+
 echo "📦 registry entries: $COUNT"
 echo "📁 wrote: $OUTPUT"
-echo "✅ registry built (v6 contract-safe + normalized paths)"
+echo "✅ content registry built (v6 CI-hardened + fully deterministic + zero mapfile + zero subshell risk)"
