@@ -1,15 +1,12 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "🧠 Building content model (v8 semantic-clean CI-resilient resolver + NOISE FILTER LAYER)..."
+echo "🧠 Building content model (v9 canonical-ID aligned + CI-safe)"
 
 ROOT_DIR="${GITHUB_WORKSPACE:-$(git rev-parse --show-toplevel 2>/dev/null || pwd)}"
 
 echo "📍 ROOT_DIR: $ROOT_DIR"
-cd "$ROOT_DIR" || {
-  echo "❌ Cannot enter ROOT_DIR"
-  exit 1
-}
+cd "$ROOT_DIR" || exit 1
 
 REGISTRY="content-registry.json"
 OUTPUT="content-model.json"
@@ -18,148 +15,67 @@ BROKEN_LOG="broken-paths.log"
 
 : > "$BROKEN_LOG"
 
-# ---------------------------------------------------
-# STEP 1 — VALIDATE REGISTRY
-# ---------------------------------------------------
-
 if [ ! -f "$REGISTRY" ]; then
-  echo "❌ registry missing: $REGISTRY"
+  echo "❌ registry missing"
   exit 1
 fi
 
 echo "🧭 loading registry..."
 
-COUNT=$(python3 - <<EOF
-import json
-print(len(json.load(open("$REGISTRY")).get("pages", [])))
-EOF
-)
-
-echo "📦 registry entries: $COUNT"
-
-if [ "$COUNT" -eq 0 ]; then
-  echo "❌ registry empty"
-  exit 1
-fi
-
-# ---------------------------------------------------
-# STEP 2 — LOAD REGISTRY STREAM
-# ---------------------------------------------------
-
 python3 - <<EOF > /tmp/_pages.txt
 import json
 data=json.load(open("$REGISTRY"))
-for p in data["pages"]:
-    print(p["path"] + "||" + p["url"])
+for p in data.get("pages", []):
+    print(p.get("path","") + "||" + p.get("url",""))
 EOF
 
-# ---------------------------------------------------
-# STEP 3 — SEMANTIC CLEANING FILTER (CRITICAL FIX LAYER)
-# ---------------------------------------------------
-
-echo "🧠 applying semantic noise filter layer..."
-
-python3 - <<'EOF' > /tmp/_cleaned_pages.txt
-import sys
-
-STOP = {
-    "https","http","org","com","net","html","index",
-    "unboundhealing","ministries","www"
-}
-
-def clean_token(t):
-    t = t.lower().strip()
-    if t in STOP:
-        return None
-    if len(t) < 3:
-        return None
-    if any(c.isdigit() for c in t):
-        return None
-    if t.startswith("|"):
-        t = t.replace("|","")
-    return t or None
-
-with open("/tmp/_pages.txt") as f:
-    for line in f:
-        path,url = line.strip().split("||")
-
-        # derive CLEAN semantic slug only
-        slug = path.replace("index.html","").replace(".html","").strip("/")
-
-        parts = [p for p in slug.replace("/", " ").split(" ") if p]
-
-        cleaned = []
-        for p in parts:
-            c = clean_token(p)
-            if c:
-                cleaned.append(c)
-
-        # ALWAYS keep at least empty list, never URL noise fallback
-        print(path + "||" + url + "||" + ",".join(cleaned))
-EOF
-
-# ---------------------------------------------------
-# STEP 4 — BUILD MODEL
-# ---------------------------------------------------
-
-echo "🧠 building content model from registry..."
+echo "🧠 building content model..."
 
 echo "{" > "$TMP"
 echo '"pages": [' >> "$TMP"
 
 FIRST=true
-PROCESSED=0
-BROKEN=0
+COUNT=0
 
-while IFS="||" read -r path url concepts; do
+canonicalize () {
+  python3 - <<PY
+import re,sys
+p=sys.argv[1].strip()
 
-  clean="${path#./}"
-  file="$ROOT_DIR/$clean"
+p=p.lstrip("|")
+p=re.sub(r"^https?:\/\/[^\/]+","",p)
+p="/" + p.strip("/")
+p=re.sub(r"/+","/",p)
+if "." not in p.split("/")[-1]:
+    if not p.endswith("/"):
+        p+="/"
+print(p.lower())
+PY
+}
+
+while IFS="||" read -r path url; do
+
+  clean_path="$(canonicalize "$path")"
+  clean_url="$(canonicalize "$url")"
+
+  file="$ROOT_DIR/$clean_path"
   file="$(echo "$file" | sed 's#//*/#/#g')"
 
-  echo "🔎 resolving: $clean"
+  echo "🔎 resolving: $clean_path"
 
   if [ ! -f "$file" ]; then
     echo "❌ missing file: $file"
-    echo "$clean" >> "$BROKEN_LOG"
-    BROKEN=$((BROKEN+1))
+    echo "$clean_path" >> "$BROKEN_LOG"
     continue
   fi
 
-  # ---------------------------------------------------
-  # SAFE TITLE EXTRACTION (NO BS4 DEPENDENCY)
-  # ---------------------------------------------------
-
   TITLE=$(python3 - "$file" <<'PY'
 import sys,re
-path=sys.argv[1]
-
-try:
-    html=open(path,encoding="utf-8").read()
-except:
-    html=""
-
-m=re.search(r"<title>(.*?)</title>", html, re.IGNORECASE|re.DOTALL)
+html=open(sys.argv[1],encoding="utf-8").read()
+m=re.search(r"<title>(.*?)</title>",html,re.I|re.S)
 print(m.group(1).strip() if m else "")
 PY
 )
-
-  # ---------------------------------------------------
-  # FINAL SAFETY FILTER (REMOVE URL NOISE FALLBACKS)
-  # ---------------------------------------------------
-
-  FINAL_TAGS=$(python3 - <<PY
-raw="$concepts"
-stop={"https","http","org","com","net","html","index","unboundhealing","ministries","www"}
-
-tags=[t for t in raw.split(",") if t and t not in stop and len(t)>=3]
-print(",".join(tags))
-PY
-)
-
-  # ---------------------------------------------------
-  # WRITE ENTRY
-  # ---------------------------------------------------
 
   if [ "$FIRST" = true ]; then
     FIRST=false
@@ -169,45 +85,27 @@ PY
 
   cat <<EOF >> "$TMP"
 {
-  "url": "$url",
-  "file": "$clean",
-  "title": $(python3 -c "import json; print(json.dumps('''$TITLE'''))"),
-  "tags": $(python3 -c "import json; print(json.dumps('''$FINAL_TAGS'''))")
+  "url": "$clean_url",
+  "file": "$clean_path",
+  "title": $(python3 -c "import json; print(json.dumps('''$TITLE'''))")
 }
 EOF
 
-  PROCESSED=$((PROCESSED+1))
+  COUNT=$((COUNT+1))
 
-done < /tmp/_cleaned_pages.txt
-
-# ---------------------------------------------------
-# STEP 5 — CLOSE JSON
-# ---------------------------------------------------
+done < /tmp/_pages.txt
 
 echo "]" >> "$TMP"
 echo "}" >> "$TMP"
 
-# ---------------------------------------------------
-# STEP 6 — VALIDATION (NON-FATAL SAFE)
-# ---------------------------------------------------
-
 python3 - <<EOF
 import json
 json.load(open("$TMP"))
-print("✅ model JSON valid (v8 semantic-clean)")
+print("✅ model JSON valid")
 EOF
-
-# ---------------------------------------------------
-# STEP 7 — WRITE OUTPUT
-# ---------------------------------------------------
 
 mv "$TMP" "$OUTPUT"
 
-# ---------------------------------------------------
-# SUMMARY
-# ---------------------------------------------------
-
-echo "📦 pages processed: $PROCESSED"
-echo "⚠️ broken paths: $BROKEN"
-echo "📁 broken log: $BROKEN_LOG"
-echo "✅ content model built (v8 semantic-clean CI-resilient resolver)"
+echo "📦 pages processed: $COUNT"
+echo "⚠️ broken paths: $(wc -l < $BROKEN_LOG || true)"
+echo "✅ content model built (v9 canonical-id aligned)"
