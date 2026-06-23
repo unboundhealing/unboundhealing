@@ -3,7 +3,7 @@ set -euo pipefail
 
 echo "🧠 Building content model (v6 registry-driven deterministic pipeline - fixed resolver)..."
 
-ROOT_DIR="$(git rev-parse --show-toplevel)"
+ROOT_DIR="${GITHUB_WORKSPACE:-$(pwd)}"
 cd "$ROOT_DIR"
 
 REGISTRY="content-registry.json"
