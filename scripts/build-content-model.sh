@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "🧠 Building content model (v6 registry-driven deterministic pipeline)..."
+echo "🧠 Building content model (v6 registry-driven deterministic pipeline - fixed resolver)..."
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
@@ -10,9 +10,10 @@ REGISTRY="content-registry.json"
 OUTPUT="content-model.json"
 TMP="content-model.tmp.json"
 
-# -----------------------------
-# VALIDATE REGISTRY EXISTS
-# -----------------------------
+# ---------------------------------------------------
+# STEP 1 — VALIDATE REGISTRY EXISTS
+# ---------------------------------------------------
+
 if [ ! -f "$REGISTRY" ]; then
   echo "❌ registry missing: $REGISTRY"
   echo "💡 run build-content-registry.sh first"
@@ -21,37 +22,37 @@ fi
 
 echo "🧭 loading registry..."
 
-# -----------------------------
-# extract page list safely
-# -----------------------------
-PAGES=$(python3 - <<EOF
+# ---------------------------------------------------
+# STEP 2 — EXTRACT ENTRIES
+# ---------------------------------------------------
+
+COUNT=$(python3 - <<EOF
 import json
 data = json.load(open("$REGISTRY"))
-pages = data.get("pages", [])
-print(len(pages))
+print(len(data.get("pages", [])))
 EOF
 )
 
-echo "📦 registry entries: $PAGES"
+echo "📦 registry entries: $COUNT"
 
-if [ "$PAGES" -eq 0 ]; then
+if [ "$COUNT" -eq 0 ]; then
   echo "❌ registry empty"
-  echo "💡 build-content-registry.sh produced no pages"
   exit 1
 fi
 
-# -----------------------------
-# START MODEL BUILD
-# -----------------------------
+# ---------------------------------------------------
+# STEP 3 — BUILD MODEL
+# ---------------------------------------------------
+
 echo "🧠 building content model from registry..."
 
 echo "{" > "$TMP"
 echo '"pages": [' >> "$TMP"
 
 FIRST=true
-COUNT=0
+PROCESSED=0
 
-python3 - <<EOF > /tmp/_registry_pages.txt
+python3 - <<EOF > /tmp/_pages.txt
 import json
 data = json.load(open("$REGISTRY"))
 for p in data["pages"]:
@@ -60,23 +61,37 @@ EOF
 
 while IFS="||" read -r path url; do
 
+  # ---------------------------------------------------
+  # FIXED PATH RESOLUTION (CRITICAL FIX)
+  # ---------------------------------------------------
   file="$ROOT_DIR/$path"
+  file=$(echo "$file" | sed 's|//|/|g')
+
+  echo "🔎 resolving: $path → $file"
 
   if [ ! -f "$file" ]; then
-    echo "⚠️ missing file: $file"
-    continue
+    echo "❌ missing registry file: $file"
+    exit 1
   fi
 
+  # ---------------------------------------------------
+  # SAFE TITLE EXTRACTION
+  # ---------------------------------------------------
   TITLE=$(python3 - <<EOF
 from bs4 import BeautifulSoup
-path="$file"
+
 try:
-    soup = BeautifulSoup(open(path, encoding="utf-8").read(), "html.parser")
+    with open("$file", encoding="utf-8") as f:
+        soup = BeautifulSoup(f.read(), "html.parser")
     print((soup.title.string or "").strip())
 except:
     print("")
 EOF
 )
+
+  # ---------------------------------------------------
+  # WRITE ENTRY
+  # ---------------------------------------------------
 
   if [ "$FIRST" = true ]; then
     FIRST=false
@@ -92,26 +107,35 @@ EOF
 }
 EOF
 
-  ((COUNT++))
+  ((PROCESSED++))
 
-done < /tmp/_registry_pages.txt
+done < /tmp/_pages.txt
+
+# ---------------------------------------------------
+# STEP 4 — CLOSE JSON
+# ---------------------------------------------------
 
 echo "]" >> "$TMP"
 echo "}" >> "$TMP"
 
-# -----------------------------
-# validate
-# -----------------------------
+# ---------------------------------------------------
+# STEP 5 — VALIDATION
+# ---------------------------------------------------
+
 echo "🧪 validating JSON..."
 
 python3 - <<EOF
 import json
 json.load(open("$TMP"))
-print("✅ JSON valid")
+print("✅ JSON valid (v6 pipeline)")
 EOF
+
+# ---------------------------------------------------
+# STEP 6 — WRITE OUTPUT
+# ---------------------------------------------------
 
 mv "$TMP" "$OUTPUT"
 
-echo "✅ Content model built (v6 registry-driven)"
+echo "✅ Content model built (v6 registry-driven fixed)"
 echo "📁 output: $OUTPUT"
-echo "📦 pages processed: $COUNT"
+echo "📦 pages processed: $PROCESSED"
