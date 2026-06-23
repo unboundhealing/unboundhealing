@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "🧠 Building content model (v7 hardened CI-resilient resolver)..."
+echo "🧠 Building content model (v8 semantic-clean CI-resilient resolver + NOISE FILTER LAYER)..."
 
 ROOT_DIR="${GITHUB_WORKSPACE:-$(git rev-parse --show-toplevel 2>/dev/null || pwd)}"
 
@@ -54,7 +54,52 @@ for p in data["pages"]:
 EOF
 
 # ---------------------------------------------------
-# STEP 3 — BUILD MODEL
+# STEP 3 — SEMANTIC CLEANING FILTER (CRITICAL FIX LAYER)
+# ---------------------------------------------------
+
+echo "🧠 applying semantic noise filter layer..."
+
+python3 - <<'EOF' > /tmp/_cleaned_pages.txt
+import sys
+
+STOP = {
+    "https","http","org","com","net","html","index",
+    "unboundhealing","ministries","www"
+}
+
+def clean_token(t):
+    t = t.lower().strip()
+    if t in STOP:
+        return None
+    if len(t) < 3:
+        return None
+    if any(c.isdigit() for c in t):
+        return None
+    if t.startswith("|"):
+        t = t.replace("|","")
+    return t or None
+
+with open("/tmp/_pages.txt") as f:
+    for line in f:
+        path,url = line.strip().split("||")
+
+        # derive CLEAN semantic slug only
+        slug = path.replace("index.html","").replace(".html","").strip("/")
+
+        parts = [p for p in slug.replace("/", " ").split(" ") if p]
+
+        cleaned = []
+        for p in parts:
+            c = clean_token(p)
+            if c:
+                cleaned.append(c)
+
+        # ALWAYS keep at least empty list, never URL noise fallback
+        print(path + "||" + url + "||" + ",".join(cleaned))
+EOF
+
+# ---------------------------------------------------
+# STEP 4 — BUILD MODEL
 # ---------------------------------------------------
 
 echo "🧠 building content model from registry..."
@@ -66,23 +111,13 @@ FIRST=true
 PROCESSED=0
 BROKEN=0
 
-while IFS="||" read -r path url; do
-
-  # ---------------------------------------------------
-  # SAFE NORMALIZATION
-  # ---------------------------------------------------
+while IFS="||" read -r path url concepts; do
 
   clean="${path#./}"
-
-  # resolve safely
   file="$ROOT_DIR/$clean"
   file="$(echo "$file" | sed 's#//*/#/#g')"
 
   echo "🔎 resolving: $clean"
-
-  # ---------------------------------------------------
-  # FILE GUARD (NO EXIT — JUST LOG)
-  # ---------------------------------------------------
 
   if [ ! -f "$file" ]; then
     echo "❌ missing file: $file"
@@ -110,6 +145,19 @@ PY
 )
 
   # ---------------------------------------------------
+  # FINAL SAFETY FILTER (REMOVE URL NOISE FALLBACKS)
+  # ---------------------------------------------------
+
+  FINAL_TAGS=$(python3 - <<PY
+raw="$concepts"
+stop={"https","http","org","com","net","html","index","unboundhealing","ministries","www"}
+
+tags=[t for t in raw.split(",") if t and t not in stop and len(t)>=3]
+print(",".join(tags))
+PY
+)
+
+  # ---------------------------------------------------
   # WRITE ENTRY
   # ---------------------------------------------------
 
@@ -123,33 +171,34 @@ PY
 {
   "url": "$url",
   "file": "$clean",
-  "title": $(python3 -c "import json; print(json.dumps('''$TITLE'''))")
+  "title": $(python3 -c "import json; print(json.dumps('''$TITLE'''))"),
+  "tags": $(python3 -c "import json; print(json.dumps('''$FINAL_TAGS'''))")
 }
 EOF
 
   PROCESSED=$((PROCESSED+1))
 
-done < /tmp/_pages.txt
+done < /tmp/_cleaned_pages.txt
 
 # ---------------------------------------------------
-# STEP 4 — CLOSE JSON
+# STEP 5 — CLOSE JSON
 # ---------------------------------------------------
 
 echo "]" >> "$TMP"
 echo "}" >> "$TMP"
 
 # ---------------------------------------------------
-# STEP 5 — VALIDATE OUTPUT (NON-FATAL SAFE)
+# STEP 6 — VALIDATION (NON-FATAL SAFE)
 # ---------------------------------------------------
 
 python3 - <<EOF
 import json
 json.load(open("$TMP"))
-print("✅ model JSON valid")
+print("✅ model JSON valid (v8 semantic-clean)")
 EOF
 
 # ---------------------------------------------------
-# STEP 6 — WRITE OUTPUT
+# STEP 7 — WRITE OUTPUT
 # ---------------------------------------------------
 
 mv "$TMP" "$OUTPUT"
@@ -161,4 +210,4 @@ mv "$TMP" "$OUTPUT"
 echo "📦 pages processed: $PROCESSED"
 echo "⚠️ broken paths: $BROKEN"
 echo "📁 broken log: $BROKEN_LOG"
-echo "✅ content model built (v7 resilient, non-fatal FS mode)"
+echo "✅ content model built (v8 semantic-clean CI-resilient resolver)"
