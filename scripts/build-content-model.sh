@@ -1,232 +1,169 @@
 #!/bin/bash
 set -e
 
-echo "🧠 Building content model (v4.0 content-derived concepts)..."
+echo "🧠 Building content model (v4.1 normalized + diagnostic pipeline)..."
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
 
 OUTPUT="content-model.json"
-TMP_OUTPUT="${OUTPUT}.tmp"
 
-rm -f "$TMP_OUTPUT"
+# ==========================================================
+# INIT OUTPUT
+# ==========================================================
 
-python3 << 'EOF'
-import json
-import os
-import re
-from collections import Counter
+echo "{" > "$OUTPUT"
+echo '  "pages": [' >> "$OUTPUT"
+
+FIRST=true
+PAGE_COUNT=0
+
+# ==========================================================
+# HTML DISCOVERY (SAFE ITERATION)
+# ==========================================================
+
+while IFS= read -r file; do
+
+  # ---------------------------------------
+  # URL normalization
+  # ---------------------------------------
+
+  URL=$(echo "$file" \
+    | sed 's|^\./||' \
+    | sed 's|index.html||' \
+    | sed 's|\.html$||')
+
+  URL="https://unboundhealing.org/${URL}"
+
+  # ---------------------------------------
+  # TITLE
+  # ---------------------------------------
+
+  TITLE=$(python3 - <<EOF
 from bs4 import BeautifulSoup
 
-OUTPUT = "content-model.json"
+with open("$file", "r", encoding="utf-8") as f:
+    soup = BeautifulSoup(f.read(), "html.parser")
 
-# ==========================================================
-# CONFIG
-# ==========================================================
+t = soup.title.string if soup.title else ""
+print(t.strip() if t else "")
+EOF
+)
 
-STOPWORDS = {
-    "the","and","for","are","with","that","this","from","into",
-    "your","their","there","about","would","could","should",
-    "have","been","being","were","they","them","then","than",
-    "when","what","where","which","while","will","just",
-    "through","within","without","because","also","very",
-    "much","more","some","such","each","many","most",
-    "into","onto","upon","over","under","between",
-    "unbound","healing","ministries"
-}
+  # ---------------------------------------
+  # DESCRIPTION
+  # ---------------------------------------
 
-SKIP_PATHS = {
-    "./assets/entry-template/index.html",
-    "./assets/page-template/index.html",
-    "./assets/updates-temp/index.html"
-}
+  DESCRIPTION=$(python3 - <<EOF
+from bs4 import BeautifulSoup
 
-SKIP_CONTAINS = [
-    "/assets/images/",
-    "/assets/_html/"
-]
+with open("$file", "r", encoding="utf-8") as f:
+    soup = BeautifulSoup(f.read(), "html.parser")
 
-MAX_TAGS = 15
+m = soup.find("meta", attrs={"name": "description"})
+print(m["content"].strip() if m and m.get("content") else "")
+EOF
+)
 
-# ==========================================================
-# HELPERS
-# ==========================================================
+  # ---------------------------------------
+  # BODY SAMPLE (diagnostic-safe)
+  # ---------------------------------------
 
-def extract_text(soup):
-    for tag in soup([
-        "script",
-        "style",
-        "noscript",
-        "svg",
-        "header",
-        "footer",
-        "nav"
-    ]):
-        tag.decompose()
+  BODY_SAMPLE=$(python3 - <<EOF
+from bs4 import BeautifulSoup
 
-    return soup.get_text(" ", strip=True)
+with open("$file", "r", encoding="utf-8") as f:
+    soup = BeautifulSoup(f.read(), "html.parser")
 
-def normalize_word(word):
-    word = word.lower().strip()
+text = soup.get_text(" ", strip=True)
+print(text[:300].replace("\n", " "))
+EOF
+)
 
-    word = re.sub(r"[^a-z\-]", "", word)
+  # ---------------------------------------
+  # TAG EXTRACTION (ROBUST)
+  # ---------------------------------------
 
-    if len(word) < 4:
-        return None
+  TAGS=$(python3 - <<EOF
+from bs4 import BeautifulSoup
 
-    if word in STOPWORDS:
-        return None
+with open("$file", "r", encoding="utf-8") as f:
+    soup = BeautifulSoup(f.read(), "html.parser")
 
-    if word.isdigit():
-        return None
+# heuristic tag sources
+raw = []
 
-    return word
+# 1. meta keywords
+m = soup.find("meta", attrs={"name": "keywords"})
+if m and m.get("content"):
+    raw.extend(m["content"].split(","))
 
-def build_tags(title, description, body):
-    text = " ".join([
-        title or "",
-        description or "",
-        body or ""
-    ])
+# 2. headings (light weight)
+for h in soup.find_all(["h1", "h2"]):
+    raw.append(h.get_text())
 
-    words = re.findall(r"[A-Za-z\-]{4,}", text)
+# normalize
+clean = []
+for t in raw:
+    if not t:
+        continue
+    t = str(t).strip().lower()
+    t = t.replace(" ", "-")
+    if len(t) < 2:
+        continue
+    clean.append(t)
 
-    cleaned = []
+# dedupe preserve order
+seen = set()
+out = []
+for t in clean:
+    if t not in seen:
+        seen.add(t)
+        out.append(t)
 
-    for w in words:
-        n = normalize_word(w)
+print(out)
+EOF
+)
 
-        if n:
-            cleaned.append(n)
+  # ---------------------------------------
+  # WRITE PAGE OBJECT
+  # ---------------------------------------
 
-    counts = Counter(cleaned)
+  if [ "$FIRST" = true ]; then
+    FIRST=false
+  else
+    echo "," >> "$OUTPUT"
+  fi
 
-    tags = [
-        word
-        for word, count
-        in counts.most_common(MAX_TAGS)
-    ]
-
-    return tags
-
-# ==========================================================
-# DISCOVER HTML FILES
-# ==========================================================
-
-html_files = []
-
-for root, dirs, files in os.walk("."):
-
-    for file in files:
-
-        if not file.endswith(".html"):
-            continue
-
-        path = os.path.join(root, file)
-
-        if path in SKIP_PATHS:
-            continue
-
-        if any(x in path for x in SKIP_CONTAINS):
-            continue
-
-        html_files.append(path)
-
-html_files = sorted(html_files)
-
-# ==========================================================
-# BUILD MODEL
-# ==========================================================
-
-pages = []
-
-all_tags = []
-
-print("\n🧪 CONTENT MODEL DIAGNOSTICS\n")
-
-for idx, file in enumerate(html_files):
-
-    with open(file, "r", encoding="utf-8") as f:
-        soup = BeautifulSoup(f.read(), "html.parser")
-
-    url = (
-        "https://unboundhealing.org/"
-        + file.replace("./", "")
-              .replace("index.html", "")
-              .replace(".html", "")
-    )
-
-    title = ""
-
-    if soup.title and soup.title.string:
-        title = soup.title.string.strip()
-
-    description = ""
-
-    meta = soup.find(
-        "meta",
-        attrs={"name": "description"}
-    )
-
-    if meta and meta.get("content"):
-        description = meta["content"].strip()
-
-    body_text = extract_text(soup)
-
-    tags = build_tags(
-        title,
-        description,
-        body_text
-    )
-
-    all_tags.extend(tags)
-
-    pages.append({
-        "url": url,
-        "file": file,
-        "title": title,
-        "description": description,
-        "tags": tags
-    })
-
-    if idx < 10:
-        print("=" * 70)
-        print("URL:", url)
-        print("TITLE:", title)
-        print("DESCRIPTION:", description[:150])
-        print("BODY SAMPLE:", body_text[:250])
-        print("TAGS:", tags)
-        print()
-
-# ==========================================================
-# GLOBAL DIAGNOSTICS
-# ==========================================================
-
-print("\n🧪 MODEL SUMMARY")
-print("pages:", len(pages))
-
-print("\nTOP 100 DISCOVERED TAGS")
-
-for tag, count in Counter(all_tags).most_common(100):
-    print(f"{tag}: {count}")
-
-# ==========================================================
-# SAVE
-# ==========================================================
-
-with open(OUTPUT, "w", encoding="utf-8") as f:
-    json.dump(
-        {
-            "pages": pages
-        },
-        f,
-        indent=2,
-        ensure_ascii=False
-    )
-
-print("\n✅ Content model built (v4.0 content-derived concepts)")
-print("📦 pages:", len(pages))
-print("📦 unique tags:", len(set(all_tags)))
+  cat <<EOF >> "$OUTPUT"
+  {
+    "url": "$URL",
+    "file": "$file",
+    "title": "$TITLE",
+    "description": "$DESCRIPTION",
+    "body_sample": "$BODY_SAMPLE",
+    "tags": $TAGS
+  }
 EOF
 
-echo "✅ Content model built"
+  PAGE_COUNT=$((PAGE_COUNT + 1))
+
+done < <(find . -type f -name "*.html")
+
+# ==========================================================
+# CLOSE JSON
+# ==========================================================
+
+echo "" >> "$OUTPUT"
+echo "  ]" >> "$OUTPUT"
+echo "}" >> "$OUTPUT"
+
+# ==========================================================
+# SUMMARY REPORT
+# ==========================================================
+
+echo ""
+echo "🧪 CONTENT MODEL DIAGNOSTICS"
+echo "📦 pages processed: $PAGE_COUNT"
+echo "📁 output: $OUTPUT"
+echo "✅ content model built (v4.1 normalized + diagnostic pipeline)"
