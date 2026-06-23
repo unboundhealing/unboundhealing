@@ -19,35 +19,40 @@ STOPWORDS = {
 }
 
 # =========================================================
-# CONCEPT CANONICALIZATION REGISTRY (TRUTH CORE)
+# CANONICALIZATION (STRUCTURAL NORMALIZATION ONLY)
 # =========================================================
 
-def canonicalize(concept: str) -> str:
+def canonicalize_concept(text: str) -> str:
     """
-    Single-source concept identity resolver.
+    Enforces a single stable representation for concepts.
 
-    This is NOT interpretation.
-    This is identity stabilization.
+    RULE:
+    - spaces, underscores, hyphens collapse into hyphen form
+    - lowercase normalization
+    - structural consistency only (NOT semantic interpretation)
     """
 
-    concept = concept.lower().strip()
+    text = text.lower().strip()
 
-    # normalize separators into stable form
-    concept = re.sub(r"[_\s]+", "-", concept)
+    # unify separators into hyphen
+    text = re.sub(r"[\s_]+", "-", text)
 
-    # collapse repeated dashes
-    concept = re.sub(r"-{2,}", "-", concept)
+    # remove invalid characters
+    text = re.sub(r"[^a-z0-9\-]", "", text)
 
-    return concept
+    # collapse multiple hyphens
+    text = re.sub(r"-{2,}", "-", text)
+
+    return text
 
 
 # =========================================================
-# NORMALIZATION
+# NORMALIZATION (RAW STRUCTURAL CLEANING)
 # =========================================================
 
 def normalize(text: str) -> str:
     """
-    Normalize raw structural input into token-safe space.
+    Normalize raw structural input into token space.
     """
 
     text = text.lower()
@@ -60,17 +65,20 @@ def normalize(text: str) -> str:
 
 
 # =========================================================
-# CONCEPT EXTRACTION (STRUCTURE ONLY)
+# CONCEPT EXTRACTION (STRUCTURAL REALITY + LIGHT PHRASES)
 # =========================================================
 
 def extract_concepts(path: str):
     """
-    Extract concepts from structural reality:
+    Extract concepts from structural reality.
 
     SOURCES:
     - URL/path structure
-    - directory hierarchy
     - token segmentation
+    - phrase adjacency
+
+    IMPORTANT:
+    Canonicalization is applied BEFORE storage.
     """
 
     base = normalize(path)
@@ -80,21 +88,41 @@ def extract_concepts(path: str):
         if t and t not in STOPWORDS
     ]
 
-    concepts = []
+    raw_concepts = []
 
     # -----------------------------
-    # base tokens (structure)
+    # 1. single-token concepts
     # -----------------------------
     for t in tokens:
-        concepts.append(canonicalize(t))
+        raw_concepts.append(t)
 
     # -----------------------------
-    # phrase concepts (adjacent structure ONLY)
+    # 2. phrase concepts (2-token)
     # -----------------------------
     for i in range(len(tokens) - 1):
-        concepts.append(
-            canonicalize(f"{tokens[i]} {tokens[i+1]}")
-        )
+        raw_concepts.append(f"{tokens[i]} {tokens[i+1]}")
+
+    # -----------------------------
+    # 3. phrase concepts (3-token)
+    # -----------------------------
+    for i in range(len(tokens) - 2):
+        raw_concepts.append(f"{tokens[i]} {tokens[i+1]} {tokens[i+2]}")
+
+    # -----------------------------
+    # CANONICALIZATION STEP
+    # -----------------------------
+    seen = set()
+    concepts = []
+
+    for c in raw_concepts:
+        canon = canonicalize_concept(c)
+
+        if not canon:
+            continue
+
+        if canon not in seen:
+            seen.add(canon)
+            concepts.append(canon)
 
     return concepts
 
@@ -139,16 +167,15 @@ def build_registry(html_files):
 
 
 # =========================================================
-# GRAPH = STRUCTURE OF REALITY (PURE RELATIONS)
+# GRAPH = STRUCTURE OF REALITY
 # =========================================================
 
 def build_graph(registry):
     """
-    Graph is ONLY structure.
+    GRAPH = STRUCTURE ONLY
 
-    No weighting.
-    No interpretation.
-    No salience logic here.
+    - nodes = existence
+    - edges = co-occurrence
     """
 
     nodes = {}
@@ -164,7 +191,6 @@ def build_graph(registry):
 
         concepts = data["concepts"]
 
-        # co-occurrence structure
         for i in range(len(concepts)):
             for j in range(i + 1, len(concepts)):
 
@@ -175,84 +201,69 @@ def build_graph(registry):
                 edge_weights[key] += 1
 
     edges = [
-        {
-            "a": a,
-            "b": b,
-            "weight": weight
-        }
-        for (a, b), weight in edge_weights.items()
+        {"a": a, "b": b, "weight": w}
+        for (a, b), w in edge_weights.items()
     ]
 
     return nodes, edges
 
 
 # =========================================================
-# SALIENCE = WEIGHTING OF REALITY (CANONICALIZED)
+# SALIENCE = WEIGHTING SIGNALS ONLY (NO RANKING)
 # =========================================================
 
 def build_salience(registry, edges):
     """
-    Salience is pure measurable weighting.
+    SALIENCE = observable signals only
 
-    NO ranking.
-    NO normalization outputs.
-    ONLY raw structural signals.
+    RULES:
+    - no ranking
+    - no scoring
+    - no normalization
+    - only measurable counts
     """
 
     frequency = defaultdict(int)
     connectivity = defaultdict(int)
 
-    # -----------------------------
-    # frequency signal
-    # -----------------------------
+    # frequency from registry
     for page in registry.values():
         for concept in page["concepts"]:
             frequency[concept] += 1
 
-    # -----------------------------
-    # connectivity signal
-    # -----------------------------
+    # connectivity from edges
     neighbors = defaultdict(set)
 
     for edge in edges:
         a = edge["a"]
         b = edge["b"]
-
         neighbors[a].add(b)
         neighbors[b].add(a)
 
     for concept, neigh in neighbors.items():
         connectivity[concept] = len(neigh)
 
-    # -----------------------------
-    # SALIENCE CORE (CANONICAL KEYS)
-    # -----------------------------
     salience = {}
 
-    all_concepts = set(frequency.keys()) | set(connectivity.keys())
+    all_concepts = set(frequency) | set(connectivity)
 
-    for concept in all_concepts:
-        c = canonicalize(concept)
-
+    for c in all_concepts:
         salience[c] = {
-            "frequency": frequency.get(concept, 0),
-            "connectivity": connectivity.get(concept, 0)
+            "frequency": frequency[c],
+            "connectivity": connectivity[c]
         }
 
     return salience
 
 
 # =========================================================
-# PAGE GRAPH (CONSUMER ONLY LAYER)
+# PAGE GRAPH (CONSUMER LAYER ONLY)
 # =========================================================
 
 def build_page_graph(registry):
     """
-    Derived navigation layer ONLY.
-
-    NOT truth.
-    NOT structure.
-    NOT salience.
+    Derived navigation layer only.
+    Not part of truth layer.
     """
 
     concept_index = defaultdict(set)
@@ -286,7 +297,7 @@ def build_page_graph(registry):
 
 
 # =========================================================
-# TRUTH LAYER ASSEMBLY (SINGLE SOURCE OF REALITY)
+# TRUTH LAYER ASSEMBLY
 # =========================================================
 
 def build_semantic_salience(registry):
@@ -298,23 +309,19 @@ def build_semantic_salience(registry):
     page_graph = build_page_graph(registry)
 
     return {
-        "version": "4.1",
+        "version": "4.2",
         "philosophy": {
             "graph": "structure of reality",
             "salience": "weighting of reality",
             "consumers": "read only"
         },
 
-        # -----------------------------
         # TRUTH LAYER
-        # -----------------------------
         "nodes": nodes,
         "edges": edges,
         "salience": salience,
 
-        # -----------------------------
-        # DERIVED ONLY (NON-TRUTH)
-        # -----------------------------
+        # DERIVED LAYER (NON-TRUTH)
         "page_graph": page_graph
     }
 
@@ -360,7 +367,7 @@ def main():
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(semantic, f, indent=2, ensure_ascii=False)
 
-    print("🌌 semantic-salience COMPLETE (v4.1 CANONICAL TRUTH MODEL)")
+    print("🌌 semantic-salience COMPLETE (v4.2 CANONICAL TRUTH MODEL)")
     print("📁 output:", output_path)
     print("📦 nodes:", len(semantic["nodes"]))
     print("📦 edges:", len(semantic["edges"]))
