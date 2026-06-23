@@ -7,21 +7,38 @@ from collections import defaultdict
 from urllib.parse import urljoin
 
 # =========================================================
-# CONFIG
+# CONFIG — SINGLE TRUTH CONTEXT
 # =========================================================
 
 DOMAIN = "https://unboundhealing.org/"
 
 STOPWORDS = {
-    "https",
-    "http",
-    "www",
-    "com",
-    "org",
-    "html",
-    "indexhtml",
-    "index"
+    "https", "http", "www",
+    "com", "org",
+    "html", "indexhtml", "index"
 }
+
+# =========================================================
+# CONCEPT CANONICALIZATION REGISTRY (TRUTH CORE)
+# =========================================================
+
+def canonicalize(concept: str) -> str:
+    """
+    Single-source concept identity resolver.
+
+    This is NOT interpretation.
+    This is identity stabilization.
+    """
+
+    concept = concept.lower().strip()
+
+    # normalize separators into stable form
+    concept = re.sub(r"[_\s]+", "-", concept)
+
+    # collapse repeated dashes
+    concept = re.sub(r"-{2,}", "-", concept)
+
+    return concept
 
 
 # =========================================================
@@ -30,96 +47,86 @@ STOPWORDS = {
 
 def normalize(text: str) -> str:
     """
-    Normalize path/url fragments into a stable concept space.
+    Normalize raw structural input into token-safe space.
     """
 
     text = text.lower()
 
-    text = re.sub(
-        r"\.html?$",
-        "",
-        text
-    )
+    text = re.sub(r"\.html?$", "", text)
 
-    text = re.sub(
-        r"[^a-z0-9/_\-\s]",
-        "",
-        text
-    )
+    text = re.sub(r"[^a-z0-9/_\-\s]", "", text)
 
     return text
 
 
+# =========================================================
+# CONCEPT EXTRACTION (STRUCTURE ONLY)
+# =========================================================
+
 def extract_concepts(path: str):
     """
-    Extract concepts directly from structural reality.
+    Extract concepts from structural reality:
 
-    IMPORTANT:
-
-    Concepts are stored in semantic-salience
-    and become part of the truth layer itself.
-
-    Downstream systems should consume them,
-    not regenerate them.
+    SOURCES:
+    - URL/path structure
+    - directory hierarchy
+    - token segmentation
     """
 
     base = normalize(path)
 
-    parts = [
-        p
-        for p in re.split(
-            r"[/_\-\s]+",
-            base
-        )
-        if p and p not in STOPWORDS
+    tokens = [
+        t for t in re.split(r"[/_\-\s]+", base)
+        if t and t not in STOPWORDS
     ]
 
-    seen = set()
     concepts = []
 
-    for p in parts:
-        if p not in seen:
-            seen.add(p)
-            concepts.append(p)
+    # -----------------------------
+    # base tokens (structure)
+    # -----------------------------
+    for t in tokens:
+        concepts.append(canonicalize(t))
+
+    # -----------------------------
+    # phrase concepts (adjacent structure ONLY)
+    # -----------------------------
+    for i in range(len(tokens) - 1):
+        concepts.append(
+            canonicalize(f"{tokens[i]} {tokens[i+1]}")
+        )
 
     return concepts
 
 
 # =========================================================
-# URL HELPERS
+# URL RESOLUTION
 # =========================================================
 
 def build_url(path: str) -> str:
     """
-    Build canonical URL.
+    Canonical URL builder.
     """
 
     path = path.replace("\\", "/")
 
     if path.endswith("index.html"):
         path = path[:-10]
-
     elif path.endswith(".html"):
         path = path[:-5]
 
-    return urljoin(
-        DOMAIN,
-        path.lstrip("/")
-    )
+    return urljoin(DOMAIN, path.lstrip("/"))
 
 
 # =========================================================
-# REGISTRY
+# REGISTRY (STRUCTURAL REALITY INDEX)
 # =========================================================
 
 def build_registry(html_files):
-
     registry = {}
 
     for path in html_files:
-
         url = build_url(path)
-
         concepts = extract_concepts(path)
 
         registry[url] = {
@@ -132,17 +139,16 @@ def build_registry(html_files):
 
 
 # =========================================================
-# GRAPH = STRUCTURE OF REALITY
+# GRAPH = STRUCTURE OF REALITY (PURE RELATIONS)
 # =========================================================
 
 def build_graph(registry):
     """
-    Build canonical graph structure.
+    Graph is ONLY structure.
 
-    Graph answers:
-
-    What exists?
-    What is connected?
+    No weighting.
+    No interpretation.
+    No salience logic here.
     """
 
     nodes = {}
@@ -158,118 +164,102 @@ def build_graph(registry):
 
         concepts = data["concepts"]
 
+        # co-occurrence structure
         for i in range(len(concepts)):
             for j in range(i + 1, len(concepts)):
 
                 a = concepts[i]
                 b = concepts[j]
 
-                key = tuple(
-                    sorted([a, b])
-                )
-
+                key = tuple(sorted((a, b)))
                 edge_weights[key] += 1
 
-    edges = []
-
-    for (a, b), weight in sorted(
-        edge_weights.items()
-    ):
-
-        edges.append({
+    edges = [
+        {
             "a": a,
             "b": b,
             "weight": weight
-        })
+        }
+        for (a, b), weight in edge_weights.items()
+    ]
 
     return nodes, edges
 
 
 # =========================================================
-# SALIENCE = WEIGHTING OF REALITY
+# SALIENCE = WEIGHTING OF REALITY (CANONICALIZED)
 # =========================================================
 
 def build_salience(registry, edges):
     """
-    Build raw weighting layer.
+    Salience is pure measurable weighting.
 
-    IMPORTANT:
-
-    No ranking.
-    No interpretation.
-    No derived scores.
-
-    Store only raw observable properties.
-
-    Consumers decide later how to rank,
-    sort, weight, search, recommend,
-    visualize, etc.
+    NO ranking.
+    NO normalization outputs.
+    ONLY raw structural signals.
     """
 
     frequency = defaultdict(int)
-    connectedness = defaultdict(int)
+    connectivity = defaultdict(int)
 
+    # -----------------------------
+    # frequency signal
+    # -----------------------------
     for page in registry.values():
-
         for concept in page["concepts"]:
             frequency[concept] += 1
 
-    concept_neighbors = defaultdict(set)
+    # -----------------------------
+    # connectivity signal
+    # -----------------------------
+    neighbors = defaultdict(set)
 
     for edge in edges:
-
         a = edge["a"]
         b = edge["b"]
 
-        concept_neighbors[a].add(b)
-        concept_neighbors[b].add(a)
+        neighbors[a].add(b)
+        neighbors[b].add(a)
 
-    for concept, neighbors in concept_neighbors.items():
-        connectedness[concept] = len(neighbors)
+    for concept, neigh in neighbors.items():
+        connectivity[concept] = len(neigh)
 
+    # -----------------------------
+    # SALIENCE CORE (CANONICAL KEYS)
+    # -----------------------------
     salience = {}
 
-    all_concepts = set()
+    all_concepts = set(frequency.keys()) | set(connectivity.keys())
 
-    all_concepts.update(frequency.keys())
-    all_concepts.update(connectedness.keys())
+    for concept in all_concepts:
+        c = canonicalize(concept)
 
-    for concept in sorted(all_concepts):
-
-        salience[concept] = {
-            "frequency": frequency.get(
-                concept,
-                0
-            ),
-            "connectedness": connectedness.get(
-                concept,
-                0
-            )
+        salience[c] = {
+            "frequency": frequency.get(concept, 0),
+            "connectivity": connectivity.get(concept, 0)
         }
 
     return salience
 
 
 # =========================================================
-# PAGE GRAPH
+# PAGE GRAPH (CONSUMER ONLY LAYER)
 # =========================================================
 
 def build_page_graph(registry):
     """
-    Derived navigation layer.
+    Derived navigation layer ONLY.
 
-    This is NOT truth.
-
-    This is a consumer-friendly view
-    derived from the truth layer.
+    NOT truth.
+    NOT structure.
+    NOT salience.
     """
 
-    concept_map = defaultdict(set)
+    concept_index = defaultdict(set)
 
     for url, data in registry.items():
-
-        for concept in data["concepts"]:
-            concept_map[concept].add(url)
+        for c in data["concepts"]:
+            concept_index[c].add(url)
 
     page_graph = {}
 
@@ -277,75 +267,54 @@ def build_page_graph(registry):
 
         related_scores = defaultdict(int)
 
-        for concept in data["concepts"]:
-
-            for other_url in concept_map[concept]:
-
-                if other_url == url:
-                    continue
-
-                related_scores[other_url] += 1
+        for c in data["concepts"]:
+            for other in concept_index[c]:
+                if other != url:
+                    related_scores[other] += 1
 
         ranked = sorted(
             related_scores.items(),
-            key=lambda x: (
-                -x[1],
-                x[0]
-            )
+            key=lambda x: (-x[1], x[0])
         )
 
         page_graph[url] = {
             "concepts": data["concepts"],
-            "related": [
-                item[0]
-                for item in ranked[:10]
-            ]
+            "related": [r[0] for r in ranked[:10]]
         }
 
     return page_graph
 
 
 # =========================================================
-# TRUTH LAYER
+# TRUTH LAYER ASSEMBLY (SINGLE SOURCE OF REALITY)
 # =========================================================
 
 def build_semantic_salience(registry):
-    """
-    Single source of truth.
 
-    GRAPH
-        structure of reality
+    nodes, edges = build_graph(registry)
 
-    SALIENCE
-        weighting of reality
+    salience = build_salience(registry, edges)
 
-    EVERYTHING ELSE
-        consumers only
-    """
-
-    nodes, edges = build_graph(
-        registry
-    )
-
-    salience = build_salience(
-        registry,
-        edges
-    )
-
-    page_graph = build_page_graph(
-        registry
-    )
+    page_graph = build_page_graph(registry)
 
     return {
-        "version": "3.2",
+        "version": "4.1",
         "philosophy": {
             "graph": "structure of reality",
             "salience": "weighting of reality",
             "consumers": "read only"
         },
+
+        # -----------------------------
+        # TRUTH LAYER
+        # -----------------------------
         "nodes": nodes,
         "edges": edges,
         "salience": salience,
+
+        # -----------------------------
+        # DERIVED ONLY (NON-TRUTH)
+        # -----------------------------
         "page_graph": page_graph
     }
 
@@ -355,27 +324,14 @@ def build_semantic_salience(registry):
 # =========================================================
 
 def find_html_files(root):
-
     html_files = []
 
     for dirpath, _, filenames in os.walk(root):
-
         for filename in filenames:
-
-            if not filename.endswith(".html"):
-                continue
-
-            full_path = os.path.join(
-                dirpath,
-                filename
-            )
-
-            rel_path = os.path.relpath(
-                full_path,
-                root
-            )
-
-            html_files.append(rel_path)
+            if filename.endswith(".html"):
+                full = os.path.join(dirpath, filename)
+                rel = os.path.relpath(full, root)
+                html_files.append(rel)
 
     return sorted(html_files)
 
@@ -393,63 +349,22 @@ def main():
     print("📂 scanning root:", root)
     print("📦 html files discovered:", len(html_files))
 
-    registry = build_registry(
-        html_files
-    )
+    registry = build_registry(html_files)
 
     print("📦 registry entries:", len(registry))
 
-    semantic_salience = build_semantic_salience(
-        registry
-    )
+    semantic = build_semantic_salience(registry)
 
-    output_path = os.path.join(
-        root,
-        "semantic-salience.json"
-    )
+    output_path = os.path.join(root, "semantic-salience.json")
 
-    with open(
-        output_path,
-        "w",
-        encoding="utf-8"
-    ) as f:
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(semantic, f, indent=2, ensure_ascii=False)
 
-        json.dump(
-            semantic_salience,
-            f,
-            indent=2,
-            ensure_ascii=False
-        )
-
-    print(
-        "🌌 semantic-salience COMPLETE (v3.2 FIRST-CLASS SALIENCE)"
-    )
-
-    print(
-        "📁 output:",
-        output_path
-    )
-
-    print(
-        "📦 nodes:",
-        len(
-            semantic_salience["nodes"]
-        )
-    )
-
-    print(
-        "📦 edges:",
-        len(
-            semantic_salience["edges"]
-        )
-    )
-
-    print(
-        "🧠 concepts:",
-        len(
-            semantic_salience["salience"]
-        )
-    )
+    print("🌌 semantic-salience COMPLETE (v4.1 CANONICAL TRUTH MODEL)")
+    print("📁 output:", output_path)
+    print("📦 nodes:", len(semantic["nodes"]))
+    print("📦 edges:", len(semantic["edges"]))
+    print("🧠 salience concepts:", len(semantic["salience"]))
 
 
 if __name__ == "__main__":
