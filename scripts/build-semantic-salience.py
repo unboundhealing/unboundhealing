@@ -1,89 +1,159 @@
-#!/usr/bin/env python3
-import json
 import os
 import re
-from collections import defaultdict
+from urllib.parse import urljoin
 
-ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
-REGISTRY_PATH = os.path.join(ROOT, "content-registry.json")
-OUTPUT_PATH = os.path.join(ROOT, "semantic-salience.json")
+# -----------------------------
+# Config
+# -----------------------------
+
+DOMAIN = "https://unboundhealing.org/"
+
+STOPWORDS = {
+    "https", "http", "www", "com", "org",
+    "indexhtml", "html", "index"
+}
+
+# -----------------------------
+# Normalization
+# -----------------------------
 
 def normalize(text: str) -> str:
-    if not text:
-        return ""
+    """
+    Normalize path/url fragments into clean token base.
+    """
+    text = text.lower()
 
-    text = text.lower().strip()
-    text = re.sub(r"https?://[^/]+", "", text)
-    text = re.sub(r"/+", "/", text)
+    # strip file extensions early
+    text = re.sub(r"\.html?$", "", text)
 
-    # SAFE CHARACTER FILTER (NO RANGE ERRORS)
-    text = re.sub(r"[^a-z0-9/_\- ]", "", text)
+    # remove junk tokens but KEEP separators intact for splitting
+    text = re.sub(r"[^a-z0-9/_\\- ]", "", text)
 
-    return text.strip("/")
+    return text
 
-def load_registry():
-    with open(REGISTRY_PATH, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return data.get("pages", [])
 
-def extract_concepts(path, url):
-    base = f"{path} {url}"
-    base = normalize(base)
-    parts = [p for p in re.split(r"[/_\- ]+", base) if p]
-    return list(dict.fromkeys(parts))  # unique, stable order
+def extract_concepts(path: str, url: str):
+    """
+    Extract semantic concepts from a file path + URL.
+    """
 
-def main():
-    pages = load_registry()
+    base = normalize(path)
 
-    if not pages:
-        raise ValueError("Registry empty — cannot build semantic-salience")
+    parts = [
+        p for p in re.split(r"[/_\\- ]+", base)
+        if p and p not in STOPWORDS
+    ]
 
-    nodes = {}
-    edges = []
+    # dedupe while preserving order
+    seen = set()
+    concepts = []
+    for p in parts:
+        if p not in seen:
+            seen.add(p)
+            concepts.append(p)
 
-    for p in pages:
-        path = p.get("path", "")
-        url = p.get("url", "")
+    return concepts
 
+
+# -----------------------------
+# URL builder (FIXED)
+# -----------------------------
+
+def build_url(path: str) -> str:
+    """
+    Safely construct canonical URL.
+    Prevents https:/// bugs.
+    """
+    return urljoin(DOMAIN, path.lstrip("/"))
+
+
+# -----------------------------
+# Registry builder
+# -----------------------------
+
+def build_registry(html_files):
+    registry = {}
+
+    for path in html_files:
+        url = build_url(path)
         concepts = extract_concepts(path, url)
 
-        nodes[url] = {
+        registry[url] = {
             "path": path,
             "url": url,
             "concepts": concepts
         }
 
-        # build full connectivity inside node concept space
+    return registry
+
+
+# -----------------------------
+# Semantic layer (safe stub)
+# -----------------------------
+
+def build_semantic_layer(registry):
+    """
+    Simple graph representation (no assumptions about plugin format).
+    """
+
+    nodes = {}
+    edges = []
+
+    for url, data in registry.items():
+        nodes[url] = data
+
+        concepts = data["concepts"]
+
+        # naive co-occurrence edges
         for i in range(len(concepts)):
             for j in range(i + 1, len(concepts)):
-                edges.append((concepts[i], concepts[j]))
+                edges.append({
+                    "a": concepts[i],
+                    "b": concepts[j],
+                    "weight": 1
+                })
 
-    # collapse edges into weights
-    weighted = defaultdict(int)
-    for a, b in edges:
-        key = tuple(sorted((a, b)))
-        weighted[key] += 1
-
-    graph_edges = [
-        {"a": a, "b": b, "weight": w}
-        for (a, b), w in weighted.items()
-    ]
-
-    salience = {
-        "truth_layer": "semantic-salience",
+    return {
         "nodes": nodes,
-        "edges": graph_edges,
-        "node_count": len(nodes),
-        "edge_count": len(graph_edges)
+        "edges": edges
     }
 
-    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-        json.dump(salience, f, indent=2)
 
-    print("🌌 semantic-salience COMPLETE (single truth layer)")
-    print(f"📦 nodes: {len(nodes)}")
-    print(f"📦 edges: {len(graph_edges)}")
-    print(f"📁 output: {OUTPUT_PATH}")
+# -----------------------------
+# Main
+# -----------------------------
+
+def main():
+    root = os.getcwd()
+
+    html_files = []
+
+    for dirpath, _, filenames in os.walk(root):
+        for f in filenames:
+            if f.endswith(".html"):
+                rel_path = os.path.join(dirpath, f).replace(root + "/", "")
+                html_files.append(rel_path)
+
+    print("📂 scanning root:", root)
+    print("📦 html files discovered:", len(html_files))
+
+    registry = build_registry(html_files)
+
+    print("📦 registry entries:", len(registry))
+
+    semantic = build_semantic_layer(registry)
+
+    output_path = os.path.join(root, "semantic-salience.json")
+
+    with open(output_path, "w") as f:
+        import json
+        json.dump(semantic, f, indent=2)
+
+    print("🌌 semantic-salience COMPLETE (v3.1 FIXED)")
+    print("📁 output:", output_path)
+    print("📦 nodes:", len(semantic["nodes"]))
+    print("📦 edges:", len(semantic["edges"]))
+
 
 if __name__ == "__main__":
     main()
