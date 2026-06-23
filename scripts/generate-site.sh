@@ -27,4 +27,19 @@ echo "📡 RSS..."
 echo "✨ Page enhancement..."
 python3 scripts/enhance-pages.py || true
 
+echo "🧠 Building semantic words..."
+python3 scripts/build-semantic-words.py || true
+
+echo "🧭 Word graph..."
+python3 scripts/build-word-graph.py || true
+
+echo "🔎 Search index..."
+./scripts/build-search-index.sh || true
+
+echo "🏷 Tags..."
+./scripts/build-tags.sh || true
+
+echo "🧭 OPEN GRAPH AUDIT..."
+./scripts/audit-opengraph.sh || true
+
 echo "✅ BUILD COMPLETE — semantic-salience is the ONLY truth layer"
