@@ -1,291 +1,117 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "🧠 Building content model (v6 declarative registry + deterministic pipeline)..."
+echo "🧠 Building content model (v6 registry-driven deterministic pipeline)..."
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
 
 REGISTRY="content-registry.json"
-MODEL="content-model.json"
-TMP_MODEL="content-model.tmp.json"
+OUTPUT="content-model.json"
+TMP="content-model.tmp.json"
 
-# -------------------------------------------------------
-# STEP 0 — DETERMINE CONTENT SURFACE (NON-RESTRICTIVE)
-# -------------------------------------------------------
-# We are NOT blocking access. We are simply defining what
-# belongs to "content surface" vs "system/internal surface".
+# -----------------------------
+# VALIDATE REGISTRY EXISTS
+# -----------------------------
+if [ ! -f "$REGISTRY" ]; then
+  echo "❌ registry missing: $REGISTRY"
+  echo "💡 run build-content-registry.sh first"
+  exit 1
+fi
 
-echo "🧭 Building deterministic content registry..."
+echo "🧭 loading registry..."
 
-mapfile -t RAW_FILES < <(find . -type f -name "*.html" | sort)
-
-INCLUDE_PATTERNS=(
-  "./assets/"
-  "./concept/"
-  "./about/"
-  "./opening/"
-  "./noticing/"
-  "./listening/"
-  "./gathering/"
-  "./supporting/"
-  "./inviting/"
-  "./index.html"
-  "./welcome/"
-  "./feed.xml"
-  "./sitemap.xml"
+# -----------------------------
+# extract page list safely
+# -----------------------------
+PAGES=$(python3 - <<EOF
+import json
+data = json.load(open("$REGISTRY"))
+pages = data.get("pages", [])
+print(len(pages))
+EOF
 )
 
-is_included() {
-  local file="$1"
-  for pattern in "${INCLUDE_PATTERNS[@]}"; do
-    if [[ "$file" == *"$pattern"* ]]; then
-      return 0
-    fi
-  done
-  return 1
-}
+echo "📦 registry entries: $PAGES"
 
-# -------------------------------------------------------
-# BUILD REGISTRY (DETERMINISTIC SOURCE OF TRUTH)
-# -------------------------------------------------------
+if [ "$PAGES" -eq 0 ]; then
+  echo "❌ registry empty"
+  echo "💡 build-content-registry.sh produced no pages"
+  exit 1
+fi
 
-echo "{" > "$REGISTRY"
-echo '"included_files": [' >> "$REGISTRY"
+# -----------------------------
+# START MODEL BUILD
+# -----------------------------
+echo "🧠 building content model from registry..."
+
+echo "{" > "$TMP"
+echo '"pages": [' >> "$TMP"
 
 FIRST=true
-INCLUDED_COUNT=0
+COUNT=0
 
-for file in "${RAW_FILES[@]}"; do
-  # normalize
-  CLEAN_FILE="${file#./}"
-
-  if is_included "$CLEAN_FILE"; then
-    if [ "$FIRST" = true ]; then
-      FIRST=false
-    else
-      echo "," >> "$REGISTRY"
-    fi
-
-    HASH=$(echo -n "$CLEAN_FILE" | shasum -a 256 | awk '{print $1}')
-
-    cat <<EOF >> "$REGISTRY"
-{
-  "file": "$CLEAN_FILE",
-  "hash": "$HASH"
-}
+python3 - <<EOF > /tmp/_registry_pages.txt
+import json
+data = json.load(open("$REGISTRY"))
+for p in data["pages"]:
+    print(p["path"] + "||" + p["url"])
 EOF
 
-    ((INCLUDED_COUNT++))
+while IFS="||" read -r path url; do
+
+  file="$ROOT_DIR/$path"
+
+  if [ ! -f "$file" ]; then
+    echo "⚠️ missing file: $file"
+    continue
   fi
-done
 
-echo "]" >> "$REGISTRY"
-echo "}" >> "$REGISTRY"
-
-echo "📦 registry entries: $INCLUDED_COUNT"
-
-# -------------------------------------------------------
-# VALIDATE REGISTRY
-# -------------------------------------------------------
-echo "🧪 validating registry..."
-
-python3 - <<EOF
-import json
-with open("$REGISTRY") as f:
-    json.load(f)
-print("✅ registry valid")
-EOF
-
-# -------------------------------------------------------
-# STEP 1 — LOAD REGISTERED FILES ONLY
-# -------------------------------------------------------
-echo "🧠 Building content model from registry..."
-
-mapfile -t FILES < <(python3 - <<EOF
-import json
-
-with open("$REGISTRY") as f:
-    data = json.load(f)
-
-files = [x["file"] for x in data["included_files"]]
-files.sort()
-print("\n".join(files))
-EOF
-)
-
-TOTAL=${#FILES[@]}
-echo "📦 pages discovered (registry-controlled): $TOTAL"
-
-# -------------------------------------------------------
-# STEP 2 — BUILD MODEL
-# -------------------------------------------------------
-echo "{" > "$TMP_MODEL"
-echo '"pages": [' >> "$TMP_MODEL"
-
-FIRST=true
-PROCESSED=0
-
-for file in "${FILES[@]}"; do
-  ((PROCESSED++))
-
-  URL=$(echo "$file" \
-    | sed 's|^\./||' \
-    | sed 's|index.html$||' \
-    | sed 's|\.html$||')
-
-  URL="https://unboundhealing.org/${URL}"
-
-  # -------------------------
-  # TITLE
-  # -------------------------
-  TITLE=$(python3 - "$file" <<'EOF'
-import sys
+  TITLE=$(python3 - <<EOF
 from bs4 import BeautifulSoup
-
-path = sys.argv[1]
-
+path="$file"
 try:
-    with open(path, "r", encoding="utf-8") as f:
-        soup = BeautifulSoup(f.read(), "html.parser")
+    soup = BeautifulSoup(open(path, encoding="utf-8").read(), "html.parser")
     print((soup.title.string or "").strip())
-except Exception:
+except:
     print("")
 EOF
 )
 
-  # -------------------------
-  # DESCRIPTION
-  # -------------------------
-  DESCRIPTION=$(python3 - "$file" <<'EOF'
-import sys
-from bs4 import BeautifulSoup
-
-path = sys.argv[1]
-
-try:
-    with open(path, "r", encoding="utf-8") as f:
-        soup = BeautifulSoup(f.read(), "html.parser")
-
-    m = soup.find("meta", attrs={"name": "description"})
-    if m and m.get("content"):
-        print(m["content"].strip())
-    else:
-        print("")
-except Exception:
-    print("")
-EOF
-)
-
-  # -------------------------
-  # BODY SAMPLE
-  # -------------------------
-  BODY_SAMPLE=$(python3 - "$file" <<'EOF'
-import sys
-from bs4 import BeautifulSoup
-
-path = sys.argv[1]
-
-try:
-    with open(path, "r", encoding="utf-8") as f:
-        soup = BeautifulSoup(f.read(), "html.parser")
-
-    text = soup.get_text(" ", strip=True)
-    print(text[:200].replace("\n", " "))
-except Exception:
-    print("")
-EOF
-)
-
-  # -------------------------
-  # TAGS (deterministic)
-  # -------------------------
-  TAGS=$(python3 - "$file" <<'EOF'
-import sys
-from bs4 import BeautifulSoup
-import re
-from collections import Counter
-
-path = sys.argv[1]
-
-try:
-    with open(path, "r", encoding="utf-8") as f:
-        soup = BeautifulSoup(f.read(), "html.parser")
-
-    text = soup.get_text(" ", strip=True).lower()
-    words = re.findall(r"[a-zA-Z][a-zA-Z\-]{2,}", text)
-
-    stop = {
-        "the","and","for","with","that","this","from","you","are","was",
-        "have","has","had","not","but","all","any","can","will","our"
-    }
-
-    filtered = [w for w in words if w not in stop]
-    counts = Counter(filtered)
-
-    tags = sorted([w for w,_ in counts.most_common(20)])
-    print(",".join(tags))
-
-except Exception:
-    print("")
-EOF
-)
-
-  TAG_JSON=$(python3 - <<EOF
-import json, sys
-tags = sys.stdin.read().strip()
-if not tags:
-    print("[]")
-else:
-    print(json.dumps([t.strip() for t in tags.split(",") if t.strip()]))
-EOF
-<<< "$TAGS")
-
-  # -------------------------
-  # WRITE ENTRY
-  # -------------------------
   if [ "$FIRST" = true ]; then
     FIRST=false
   else
-    echo "," >> "$TMP_MODEL"
+    echo "," >> "$TMP"
   fi
 
-  cat <<EOF >> "$TMP_MODEL"
+  cat <<EOF >> "$TMP"
 {
-  "url": "$URL",
-  "file": "$file",
-  "title": $(python3 -c "import json; print(json.dumps('''$TITLE'''))"),
-  "description": $(python3 -c "import json; print(json.dumps('''$DESCRIPTION'''))"),
-  "body_sample": $(python3 -c "import json; print(json.dumps('''$BODY_SAMPLE'''))"),
-  "tags": $TAG_JSON
+  "url": "$url",
+  "file": "$path",
+  "title": $(python3 -c "import json; print(json.dumps('''$TITLE'''))")
 }
 EOF
 
-  echo "✨ processed ($PROCESSED/$TOTAL): $URL"
+  ((COUNT++))
 
-done
+done < /tmp/_registry_pages.txt
 
-# -------------------------------------------------------
-# FINALIZE MODEL
-# -------------------------------------------------------
-echo "]" >> "$TMP_MODEL"
-echo "}" >> "$TMP_MODEL"
+echo "]" >> "$TMP"
+echo "}" >> "$TMP"
 
+# -----------------------------
+# validate
+# -----------------------------
 echo "🧪 validating JSON..."
 
 python3 - <<EOF
 import json
-with open("$TMP_MODEL") as f:
-    json.load(f)
+json.load(open("$TMP"))
 print("✅ JSON valid")
 EOF
 
-mv "$TMP_MODEL" "$MODEL"
+mv "$TMP" "$OUTPUT"
 
-# -------------------------------------------------------
-# SUMMARY OUTPUT
-# -------------------------------------------------------
-echo "✅ Content model built (v6 deterministic registry system)"
-echo "📁 model: $MODEL"
-echo "📁 registry: $REGISTRY"
-echo "📦 pages processed: $TOTAL"
+echo "✅ Content model built (v6 registry-driven)"
+echo "📁 output: $OUTPUT"
+echo "📦 pages processed: $COUNT"
