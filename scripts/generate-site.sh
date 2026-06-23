@@ -1,29 +1,18 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "🚀 Generating v3.3 full system (registry-first deterministic DAG)..."
+echo "🚀 Generating v3.3 full system..."
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
 
-# =========================
-# BOOTSTRAP LAYER (CRITICAL FIX)
-# =========================
-
 echo "🧭 Building deterministic content registry..."
 ./scripts/build-content-registry.sh
 
-# HARD CHECK: prevent silent downstream failure
 if [ ! -f "content-registry.json" ]; then
-  echo "❌ FATAL: content-registry.json not found after build"
+  echo "❌ registry missing after build"
   exit 1
 fi
-
-echo "✅ registry available"
-
-# =========================
-# INTELLIGENCE LAYER
-# =========================
 
 echo "🧠 Building content model..."
 ./scripts/build-content-model.sh
@@ -54,38 +43,21 @@ python3 scripts/build-page-titles.py
 
 echo "🏠 Building homepage intelligence..."
 python3 scripts/build-homepage-intelligence.py
-echo "✅ Homepage intelligence complete"
-
-# =========================
-# EXECUTION LAYER
-# =========================
 
 echo "🔗 Applying internal link injections..."
 ./scripts/apply-internal-links.sh
 
 echo "🧠 Building semantic words..."
 python3 scripts/build-semantic-words.py
-echo "✅ Semantic words built"
 
 echo "🧭 Building word graph..."
 python3 scripts/build-word-graph.py
-echo "✅ Word graph built"
 
 echo "✨ Enhancing pages..."
 python3 scripts/enhance-pages.py
-echo "✅ Page enhancement complete"
-
-# =========================
-# RENDERING LAYER
-# =========================
 
 echo "🧠 Rendering homepage intelligence HTML..."
 python3 scripts/render-homepage-html.py
-echo "✅ Homepage UI blocks rendered"
-
-# =========================
-# OUTPUT LAYER
-# =========================
 
 echo "🏷 Building tags..."
 ./scripts/build-tags.sh
@@ -102,4 +74,4 @@ echo "📡 Generating RSS..."
 echo "🧭 Auditing OpenGraph..."
 ./scripts/audit-opengraph.sh
 
-echo "✅ All outputs updated (v3.3 complete DAG execution)"
+echo "✅ All outputs updated"
