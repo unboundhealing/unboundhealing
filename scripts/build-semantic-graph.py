@@ -1,5 +1,7 @@
 import json
 import os
+import re
+from collections import defaultdict
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
@@ -16,19 +18,22 @@ STOP = {
     "the", "a", "an", "to", "of", "in", "on"
 }
 
-MAX_CONCEPTS_PER_EDGE = 10
-MIN_LEN = 3
+MAX_CONCEPTS_PER_EDGE = 12
+MIN_LEN = 2
 MAX_WEIGHT = 5.0
 
 # =========================================================
-# NORMALIZATION (PURE FILTER ONLY)
+# NORMALIZATION (LESS AGGRESSIVE = FIXED CORE ISSUE)
 # =========================================================
 
 def normalize(c):
-    if not c:
+    if c is None:
         return None
 
     c = str(c).strip().lower()
+
+    if not c:
+        return None
 
     if c in STOP:
         return None
@@ -36,25 +41,46 @@ def normalize(c):
     if len(c) < MIN_LEN:
         return None
 
-    if any(ch.isdigit() for ch in c):
+    # allow numbers (important for real-world tags)
+    c = re.sub(r"[^a-z0-9\- ]+", "", c)
+
+    if not c.strip():
         return None
 
-    return c
+    return c.strip()
 
 # =========================================================
-# FALLBACK EXTRACTION (NON-INTERPRETIVE)
+# FALLBACK EXTRACTION (FIXED: NOW ACTUALLY USES PAGE DATA)
 # =========================================================
 
 def extract_fallback(edge):
+    """
+    IMPORTANT FIX:
+    content-graph edges do NOT reliably contain tags,
+    so we derive weak concepts from structural metadata.
+    """
+
+    concepts = []
+
+    # URL/path signals (VERY IMPORTANT SIGNAL YOU WERE LOSING)
+    src = edge.get("from", "")
+    tgt = edge.get("to", "")
+
+    for part in [src, tgt]:
+        if part:
+            concepts.extend(part.replace(".html", "").split("/"))
+
+    # optional tags if present
     tags = edge.get("tags") or []
-
     if isinstance(tags, str):
-        tags = tags.replace(",", " ").split()
+        tags = re.split(r"[,\s]+", tags)
 
-    return [normalize(t) for t in tags if normalize(t)]
+    concepts.extend(tags)
+
+    return [normalize(c) for c in concepts if normalize(c)]
 
 # =========================================================
-# LOAD
+# LOAD CONTENT GRAPH
 # =========================================================
 
 with open(INPUT_FILE, "r", encoding="utf-8") as f:
@@ -64,11 +90,15 @@ edges = raw.get("edges", [])
 output_edges = []
 
 # =========================================================
-# PROJECTION ONLY (NO SEMANTIC AUTHORITY)
+# METRICS
 # =========================================================
 
 dropped_no_concepts = 0
 dropped_missing_nodes = 0
+
+# =========================================================
+# CORE TRANSFORMATION
+# =========================================================
 
 for e in edges:
 
@@ -81,18 +111,24 @@ for e in edges:
 
     weight = min(float(e.get("weight", 1)), MAX_WEIGHT)
 
-    concepts = e.get("shared_concepts") or extract_fallback(e)
+    concepts = e.get("shared_concepts")
 
-    concepts = [normalize(c) for c in concepts]
-    concepts = [c for c in concepts if c]
+    # FIX: always fallback if missing OR empty
+    if not concepts:
+        concepts = extract_fallback(e)
 
-    # dedupe
-    seen = set()
+    # normalize
     cleaned = []
+    seen = set()
+
     for c in concepts:
-        if c not in seen:
-            cleaned.append(c)
-            seen.add(c)
+        c = normalize(c)
+        if not c:
+            continue
+        if c in seen:
+            continue
+        seen.add(c)
+        cleaned.append(c)
 
     cleaned = cleaned[:MAX_CONCEPTS_PER_EDGE]
 
@@ -108,7 +144,7 @@ for e in edges:
     })
 
 # =========================================================
-# DEBUG REPORT (IMPORTANT FOR GRAVITY DEBUGGING)
+# DEBUG REPORT
 # =========================================================
 
 print("\n🧪 SEMANTIC GRAPH DEBUG")
@@ -118,20 +154,21 @@ print("dropped (no nodes):", dropped_missing_nodes)
 print("dropped (no concepts):", dropped_no_concepts)
 
 # =========================================================
-# SAFE FALLBACK (STRUCTURAL ONLY)
+# GUARANTEED MINIMUM GRAPH (CRITICAL FIX)
 # =========================================================
 
 if len(output_edges) == 0:
-
     print("⚠️ WARNING: no valid semantic edges found")
-    print("🧱 injecting structural fallback only")
+    print("🧱 injecting structural fallback graph (non-fatal)")
 
-    output_edges = [{
-        "from": "__system__",
-        "to": "__system__",
-        "weight": 1.0,
-        "shared_concepts": ["system", "fallback"]
-    }]
+    output_edges = [
+        {
+            "from": "__system__",
+            "to": "__system__",
+            "weight": 1.0,
+            "shared_concepts": ["system", "fallback"]
+        }
+    ]
 
 # =========================================================
 # SAVE
@@ -140,5 +177,5 @@ if len(output_edges) == 0:
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump({"edges": output_edges}, f, indent=2, ensure_ascii=False)
 
-print("🧭 Semantic graph built (v4.4 projection-only)")
+print("🧭 Semantic graph built (v5 resilient projection)")
 print("📦 edges:", len(output_edges))
