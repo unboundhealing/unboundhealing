@@ -27,7 +27,7 @@ def normalize(text: str) -> str:
     text = re.sub(r"\.html?$", "", text)
 
     # remove junk tokens but KEEP separators intact for splitting
-    text = re.sub(r"[^a-z0-9/_\\- ]", "", text)
+    text = re.sub(r"[^a-z0-9/_\- ]", "", text)
 
     return text
 
@@ -40,7 +40,7 @@ def extract_concepts(path: str, url: str):
     base = normalize(path)
 
     parts = [
-        p for p in re.split(r"[/_\\- ]+", base)
+        p for p in re.split(r"[/_\- ]+", base)
         if p and p not in STOPWORDS
     ]
 
