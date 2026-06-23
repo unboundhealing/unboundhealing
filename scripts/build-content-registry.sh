@@ -17,18 +17,16 @@ echo "📂 scanning root: $(pwd)"
 
 FILES=()
 
-while IFS= read -r f; do
-  # defensive guard
-  [[ -z "${f:-}" ]] && continue
-
+while read -r f; do
+  [[ -z "$f" ]] && continue
   FILES+=("$f")
-done < <(
-  find . -type f -name "*.html" \
-    ! -path "./.git/*" \
-    ! -path "./.github/*" \
-    ! -path "./scripts/*" \
-    | sort
-)
+done <<EOF
+$(find . -type f -name "*.html" \
+  ! -path "./.git/*" \
+  ! -path "./.github/*" \
+  ! -path "./scripts/*" \
+  | sort)
+EOF
 
 echo "📦 html files discovered: ${#FILES[@]}"
 
