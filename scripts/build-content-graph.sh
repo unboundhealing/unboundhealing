@@ -1,31 +1,56 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "🔗 Building content graph (v3.7 hardened + URL normalization fix)..."
+echo "🔗 Building content graph (v3.9 canonical-id hardened + CI-safe)"
 
 ROOT_DIR="${GITHUB_WORKSPACE:-$(git rev-parse --show-toplevel 2>/dev/null || pwd)}"
-
-echo "📍 ROOT_DIR: $ROOT_DIR"
-cd "$ROOT_DIR" || {
-  echo "❌ Cannot enter ROOT_DIR"
-  exit 1
-}
+cd "$ROOT_DIR"
 
 INPUT="content-model.json"
 OUTPUT="content-graph.json"
 
 if [ ! -f "$INPUT" ]; then
-  echo "❌ content-model.json not found."
+  echo "❌ content-model.json not found"
   exit 1
 fi
 
 python3 << 'EOF'
 import json
-import re
 from collections import Counter
+import re
+import os
 
 INPUT = "content-model.json"
 OUTPUT = "content-graph.json"
+
+# =========================================================
+# CANONICAL ID NORMALIZER (SINGLE SOURCE OF TRUTH)
+# =========================================================
+
+def canonical(path: str) -> str:
+    if not path:
+        return ""
+
+    p = str(path).strip()
+
+    # remove pipe artifacts
+    p = p.lstrip("|")
+
+    # strip domain if accidentally present
+    p = re.sub(r"^https?:\/\/[^\/]+", "", p)
+
+    # normalize slashes
+    p = "/" + p.strip("/")
+
+    # collapse duplicates
+    p = re.sub(r"/+", "/", p)
+
+    # enforce trailing slash for "directory-like" nodes
+    if "." not in p.split("/")[-1]:
+        if not p.endswith("/"):
+            p += "/"
+
+    return p.lower()
 
 # ==========================================================
 # LOAD
@@ -34,121 +59,73 @@ OUTPUT = "content-graph.json"
 with open(INPUT, "r", encoding="utf-8") as f:
     raw = json.load(f)
 
-print("\n🧪 CONTENT MODEL INSPECTION")
-print("root type:", type(raw).__name__)
-
-pages = []
-
-if isinstance(raw, dict):
-    pages = raw.get("pages", [])
-elif isinstance(raw, list):
-    pages = raw
+pages = raw.get("pages", [])
 
 if not pages:
-    raise ValueError("No pages detected")
+    raise ValueError("No pages found in content-model.json")
 
 # ==========================================================
-# CLEANING HELPERS (CRITICAL FIX LAYER)
+# NORMALIZE TAGS
 # ==========================================================
-
-def clean_url(u: str):
-    if not u:
-        return u
-    u = u.strip()
-
-    # remove leading pipe corruption
-    if u.startswith("|"):
-        u = u[1:]
-
-    # fix malformed protocol
-    u = u.replace("https:///","https://")
-    u = u.replace("http:///","http://")
-
-    return u
-
-def normalize_tag(t: str):
-    if not t:
-        return None
-
-    t = str(t).strip().lower()
-
-    # kill URLs in tags (CRITICAL FIX)
-    if "http" in t or "://" in t:
-        return None
-
-    # kill path fragments
-    if "/" in t:
-        return None
-
-    # remove garbage artifacts
-    if len(t) < 3:
-        return None
-
-    if t in {"this","that","and","or","the","a","an"}:
-        return None
-
-    return t
 
 def normalize_tags(tags):
     if not tags:
         return []
 
     if isinstance(tags, str):
-        tags = re.split(r"[,\s]+", tags)
+        tags = tags.split(",")
 
-    cleaned = []
+    out = []
     seen = set()
 
     for t in tags:
-        t = normalize_tag(t)
-        if t and t not in seen:
-            cleaned.append(t)
-            seen.add(t)
+        t = str(t).strip().lower()
+        t = re.sub(r"[^a-z0-9\-_]", "", t)
 
-    return cleaned
+        if not t:
+            continue
+
+        if t in seen:
+            continue
+
+        seen.add(t)
+        out.append(t)
+
+    return out
 
 # ==========================================================
-# BUILD NODES
+# BUILD NODES (CANONICALIZED URLS)
 # ==========================================================
 
 nodes = []
 
 for p in pages:
-
-    url = clean_url(p.get("url"))
-    tags = normalize_tags(p.get("tags"))
-
     nodes.append({
-        "url": url,
-        "title": p.get("title",""),
-        "tags": tags
+        "url": canonical(p.get("url") or p.get("file")),
+        "title": p.get("title", ""),
+        "tags": normalize_tags(p.get("tags"))
     })
 
+# remove empty nodes
+nodes = [n for n in nodes if n["url"]]
+
 # ==========================================================
-# BUILD EDGES (SAFE ONLY)
+# BUILD EDGES (STRICT MATCH ONLY)
 # ==========================================================
 
 edges = []
 
 for i, a in enumerate(nodes):
-
     a_tags = set(a["tags"])
     if not a_tags:
         continue
 
     for j, b in enumerate(nodes):
-
         if i == j:
             continue
 
         b_tags = set(b["tags"])
         shared = sorted(a_tags & b_tags)
-
-        if not shared:
-            continue
-
-        # FINAL SAFETY FILTER (critical)
-        shared = [c for c in shared if normalize_tag(c)]
 
         if not shared:
             continue
@@ -175,19 +152,16 @@ for n in nodes:
 print("total tags:", len(all_tags))
 print("unique tags:", len(set(all_tags)))
 
-print("\nTOP 30 TAGS")
-for t,c in Counter(all_tags).most_common(30):
-    print(t, c)
-
 # ==========================================================
-# FALLBACK SAFETY (ONLY IF NEEDED)
+# FALLBACK (NEVER ZERO GRAPH)
 # ==========================================================
 
 if not edges:
-    print("⚠️ injecting fallback edge (safe mode)")
+    print("⚠️ WARNING: no edges detected → injecting safe self-edge graph")
+
     edges = [{
-        "from": "system://root",
-        "to": "system://root",
+        "from": "/__system__/",
+        "to": "/__system__/",
         "weight": 1.0,
         "shared_concepts": ["system"]
     }]
@@ -204,7 +178,7 @@ with open(OUTPUT, "w", encoding="utf-8") as f:
 
 print("\n📦 nodes:", len(nodes))
 print("📦 edges:", len(edges))
-print("✅ content-graph built (v3.8 hardened URL-safe)")
+print("✅ content-graph built (v3.9 canonical-id stable)")
 EOF
 
 echo "✅ Content graph built"
