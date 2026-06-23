@@ -13,26 +13,22 @@ TRACKER_PATH = "/assets/js/semantic-tracker.js"
 
 
 # =========================================================
-# LOAD SALIENCE (SINGLE SOURCE OF TRUTH)
+# LOAD DATA (SAFE MODE)
 # =========================================================
 
-with open(SALIENCE_FILE, "r", encoding="utf-8") as f:
-    salience = json.load(f)
-
-# Context is OPTIONAL (never required for correctness)
-context = {}
-if os.path.exists(CONTEXT_FILE):
+def load_json(path, default):
+    if not os.path.exists(path):
+        return default
     try:
-        with open(CONTEXT_FILE, "r", encoding="utf-8") as f:
-            context = json.load(f)
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
     except Exception:
-        context = {}
+        return default
 
-if os.path.exists(PAGE_TITLES_FILE):
-    with open(PAGE_TITLES_FILE, "r", encoding="utf-8") as f:
-        page_titles = json.load(f)
-else:
-    page_titles = {}
+
+salience = load_json(SALIENCE_FILE, {})
+context = load_json(CONTEXT_FILE, {})
+page_titles = load_json(PAGE_TITLES_FILE, {})
 
 
 # =========================================================
@@ -77,19 +73,39 @@ def lookup_title(url):
 
 
 # =========================================================
-# CORE: SAFE GRAPH BUILDER (FROM CURRENT SALIENCE SHAPE)
+# SAFE NORMALIZER (CRITICAL FIX)
+# =========================================================
+
+def safe_node(node):
+    """
+    Ensures every salience entry behaves like a dict.
+    Prevents list/object mismatch crashes.
+    """
+    if isinstance(node, dict):
+        return node
+
+    # if it's malformed (list, string, etc.)
+    return {}
+
+
+def get_concepts(node):
+    node = safe_node(node)
+    concepts = node.get("concepts", [])
+    return concepts if isinstance(concepts, list) else []
+
+
+# =========================================================
+# BUILD CONCEPT INDEX (FIXED)
 # =========================================================
 
 def build_concept_index():
-    """
-    Builds:
-        concept -> [urls]
-    from canonical salience structure.
-    """
     concept_map = {}
 
     for url, node in salience.items():
-        for concept in node.get("concepts", []):
+
+        node = safe_node(node)
+
+        for concept in get_concepts(node):
             concept_map.setdefault(concept, []).append(url)
 
     return concept_map
@@ -98,35 +114,31 @@ def build_concept_index():
 CONCEPT_MAP = build_concept_index()
 
 
+# =========================================================
+# RELATED ENGINE (TRUTH-LAYER ONLY)
+# =========================================================
+
 def compute_related(url, limit=5):
-    """
-    Deterministic related-content derived ONLY from semantic-salience truth layer.
-    No dependency on broken enrichment fields.
-    """
 
     if url not in salience:
         return []
 
-    concepts = salience[url].get("concepts", [])
+    concepts = get_concepts(salience.get(url, {}))
+
     if not concepts:
         return []
 
     scores = {}
 
-    # -----------------------------------------
-    # Shared concept overlap scoring
-    # -----------------------------------------
     for concept in concepts:
-        related_urls = CONCEPT_MAP.get(concept, [])
 
-        for other in related_urls:
-            if other == url:
+        for other_url in CONCEPT_MAP.get(concept, []):
+
+            if other_url == url:
                 continue
-            scores[other] = scores.get(other, 0) + 1
 
-    # -----------------------------------------
-    # Rank results deterministically
-    # -----------------------------------------
+            scores[other_url] = scores.get(other_url, 0) + 1
+
     ranked = sorted(scores.items(), key=lambda x: (-x[1], x[0]))
 
     return [u for u, _ in ranked[:limit]]
@@ -148,9 +160,6 @@ def run_plugin(name, fn, soup, url):
 # =========================================================
 
 def plugin_related_content(soup, url):
-    """
-    Injects semantic-salience-driven related links.
-    """
 
     for old in soup.select("section.related-paths"):
         old.decompose()
@@ -171,12 +180,15 @@ def plugin_related_content(soup, url):
     cloud["class"] = "related-cloud"
 
     for related_url in related:
+
         a = soup.new_tag(
             "a",
             href=related_url.replace("https://unboundhealing.org", "")
         )
+
         a["class"] = "related-chip"
         a.string = lookup_title(related_url)
+
         cloud.append(a)
 
     block.append(cloud)
@@ -190,9 +202,6 @@ def plugin_related_content(soup, url):
 
 
 def plugin_tracking(soup, url):
-    """
-    Ensures semantic tracker exists exactly once.
-    """
 
     if soup.find("script", {"src": TRACKER_PATH}):
         return
@@ -207,7 +216,6 @@ def plugin_tracking(soup, url):
 
 
 def plugin_future_magic(soup, url):
-    # reserved for future semantic expansion
     pass
 
 
@@ -229,10 +237,11 @@ ACTIVE_PLUGINS = [
 
 
 # =========================================================
-# ENGINE CORE
+# CORE
 # =========================================================
 
 def enhance_page(soup, url):
+
     for name in ACTIVE_PLUGINS:
         plugin = PLUGIN_REGISTRY.get(name)
         if plugin:
@@ -246,6 +255,7 @@ def enhance_page(soup, url):
 # =========================================================
 
 def process_file(file_path):
+
     with open(file_path, "r", encoding="utf-8") as f:
         soup = BeautifulSoup(f, "html.parser")
 
@@ -264,6 +274,7 @@ def process_file(file_path):
 # =========================================================
 
 def main():
+
     html_files = find_html_files()
 
     for file_path in html_files:
