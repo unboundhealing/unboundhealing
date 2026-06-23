@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "🧭 Building deterministic content registry..."
+echo "🧭 Building deterministic content registry (v2 hardened + CI-safe)..."
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
@@ -9,12 +9,35 @@ cd "$ROOT_DIR"
 OUTPUT="content-registry.json"
 TMP="content-registry.tmp.json"
 
-# -----------------------------
-# deterministic file scan rules
-# -----------------------------
-mapfile -t FILES < <(find . -type f -name "*.html" | sort)
+# ---------------------------------------------------
+# STEP 1 — DETECT FILES (SAFE + ROOT-STABLE)
+# ---------------------------------------------------
 
-echo "📦 files discovered: ${#FILES[@]}"
+echo "📂 scanning root: $(pwd)"
+
+mapfile -t RAW_FILES < <(
+  find . -type f -name "*.html" \
+    ! -path "./.git/*" \
+    ! -path "./.github/*" \
+    ! -path "./scripts/*" \
+    | sort
+)
+
+echo "📦 html files discovered: ${#RAW_FILES[@]}"
+
+# ---------------------------------------------------
+# SAFETY CHECK (CRITICAL)
+# ---------------------------------------------------
+
+if [ "${#RAW_FILES[@]}" -eq 0 ]; then
+  echo "❌ registry scan returned ZERO HTML files"
+  echo "💡 check CI checkout path or working directory"
+  exit 1
+fi
+
+# ---------------------------------------------------
+# STEP 2 — BUILD REGISTRY
+# ---------------------------------------------------
 
 echo "{" > "$TMP"
 echo '"pages": [' >> "$TMP"
@@ -22,25 +45,44 @@ echo '"pages": [' >> "$TMP"
 FIRST=true
 COUNT=0
 
-for file in "${FILES[@]}"; do
+for file in "${RAW_FILES[@]}"; do
 
-  # normalize exclusions (IMPORTANT: NOT restrictive on content)
-  if [[ "$file" == ./.git/* ]] || [[ "$file" == ./.github/* ]]; then
+  # normalize path (single consistent format)
+  clean="${file#./}"
+
+  # skip accidental empty
+  if [ -z "$clean" ]; then
     continue
   fi
 
-  # strip leading ./
-  clean="${file#./}"
+  # ---------------------------------------------------
+  # URL NORMALIZATION (CANONICAL ROUTING)
+  # ---------------------------------------------------
 
-  # URL normalization
-  url=$(echo "$clean" | sed 's|index.html$||' | sed 's|\.html$||')
-  url="https://unboundhealing.org/${url}"
+  url_path=$(echo "$clean" \
+    | sed 's|index.html$||' \
+    | sed 's|\.html$||')
 
-  # basic page classification (non-restrictive)
+  # ensure leading slash safety normalization
+  url_path="${url_path#./}"
+  url="https://unboundhealing.org/${url_path}"
+
+  # remove accidental double slashes
+  url=$(echo "$url" | sed 's|//|/|g' | sed 's|https:/|https://|')
+
+  # ---------------------------------------------------
+  # TYPE CLASSIFICATION (NON-RESTRICTIVE)
+  # ---------------------------------------------------
+
   type="page"
+
   if [[ "$clean" == assets/* ]]; then
     type="asset"
   fi
+
+  # ---------------------------------------------------
+  # WRITE ENTRY
+  # ---------------------------------------------------
 
   if [ "$FIRST" = true ]; then
     FIRST=false
@@ -60,19 +102,36 @@ EOF
 
 done
 
+# ---------------------------------------------------
+# CLOSE JSON
+# ---------------------------------------------------
+
 echo "]" >> "$TMP"
 echo "}" >> "$TMP"
+
+# ---------------------------------------------------
+# VALIDATION (HARD FAIL SAFE)
+# ---------------------------------------------------
 
 echo "🧪 validating registry..."
 
 python3 - <<EOF
 import json
-json.load(open("$TMP"))
+with open("$TMP","r") as f:
+    json.load(f)
 print("✅ registry valid")
 EOF
 
+# ---------------------------------------------------
+# ATOMIC WRITE
+# ---------------------------------------------------
+
 mv "$TMP" "$OUTPUT"
+
+# ---------------------------------------------------
+# SUMMARY
+# ---------------------------------------------------
 
 echo "📦 registry entries: $COUNT"
 echo "📁 wrote: $OUTPUT"
-echo "✅ content registry built"
+echo "✅ content registry built (v2 deterministic + CI-safe)"
