@@ -1,5 +1,6 @@
 import os
 import re
+import json
 from urllib.parse import urljoin
 
 # -----------------------------
@@ -36,7 +37,6 @@ def extract_concepts(path: str, url: str):
     """
     Extract semantic concepts from a file path + URL.
     """
-
     base = normalize(path)
 
     parts = [
@@ -56,7 +56,7 @@ def extract_concepts(path: str, url: str):
 
 
 # -----------------------------
-# URL builder (FIXED)
+# URL builder
 # -----------------------------
 
 def build_url(path: str) -> str:
@@ -88,12 +88,12 @@ def build_registry(html_files):
 
 
 # -----------------------------
-# Semantic layer (safe stub)
+# Semantic layer (concept graph)
 # -----------------------------
 
 def build_semantic_layer(registry):
     """
-    Simple graph representation (no assumptions about plugin format).
+    Simple graph representation of concept co-occurrence.
     """
 
     nodes = {}
@@ -104,7 +104,6 @@ def build_semantic_layer(registry):
 
         concepts = data["concepts"]
 
-        # naive co-occurrence edges
         for i in range(len(concepts)):
             for j in range(i + 1, len(concepts)):
                 edges.append({
@@ -120,7 +119,56 @@ def build_semantic_layer(registry):
 
 
 # -----------------------------
-# Main
+# PAGE GRAPH (UI DERIVATION LAYER)
+# -----------------------------
+
+def build_page_graph(registry, semantic):
+    """
+    Builds page-level adjacency graph based on shared concepts.
+    This is the UI-facing layer used by plugins like related_content.
+    """
+
+    page_graph = {}
+
+    # -----------------------------
+    # INIT STRUCTURE
+    # -----------------------------
+    for url, data in registry.items():
+        page_graph[url] = {
+            "concepts": data["concepts"],
+            "related": []
+        }
+
+    # -----------------------------
+    # concept → urls reverse index
+    # -----------------------------
+    concept_map = {}
+
+    for url, data in registry.items():
+        for c in data["concepts"]:
+            concept_map.setdefault(c, []).append(url)
+
+    # -----------------------------
+    # build related pages
+    # -----------------------------
+    for url, data in registry.items():
+        related = set()
+
+        for c in data["concepts"]:
+            for other in concept_map.get(c, []):
+                if other != url:
+                    related.add(other)
+
+        page_graph[url]["related"] = list(related)[:5]
+
+    # attach once (important: single source of truth)
+    semantic["page_graph"] = page_graph
+
+    return semantic
+
+
+# -----------------------------
+# MAIN PIPELINE
 # -----------------------------
 
 def main():
@@ -143,13 +191,15 @@ def main():
 
     semantic = build_semantic_layer(registry)
 
+    # IMPORTANT: derive UI layer AFTER semantic graph
+    semantic = build_page_graph(registry, semantic)
+
     output_path = os.path.join(root, "semantic-salience.json")
 
-    with open(output_path, "w") as f:
-        import json
+    with open(output_path, "w", encoding="utf-8") as f:
         json.dump(semantic, f, indent=2)
 
-    print("🌌 semantic-salience COMPLETE (v3.1 FIXED)")
+    print("🌌 semantic-salience COMPLETE (v3.1 FIXED + PAGE GRAPH)")
     print("📁 output:", output_path)
     print("📦 nodes:", len(semantic["nodes"]))
     print("📦 edges:", len(semantic["edges"]))
