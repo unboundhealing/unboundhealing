@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "🧭 Building deterministic content registry (v2 hardened + CI-safe)..."
+echo "🧭 Building deterministic content registry (v3 hardened + fully JSON-safe)..."
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
@@ -10,7 +10,7 @@ OUTPUT="content-registry.json"
 TMP="content-registry.tmp.json"
 
 # ---------------------------------------------------
-# STEP 1 — DETECT FILES (SAFE + ROOT-STABLE)
+# STEP 1 — DISCOVER FILES (DETERMINISTIC)
 # ---------------------------------------------------
 
 echo "📂 scanning root: $(pwd)"
@@ -25,92 +25,97 @@ mapfile -t RAW_FILES < <(
 
 echo "📦 html files discovered: ${#RAW_FILES[@]}"
 
-# ---------------------------------------------------
-# SAFETY CHECK (CRITICAL)
-# ---------------------------------------------------
-
 if [ "${#RAW_FILES[@]}" -eq 0 ]; then
   echo "❌ registry scan returned ZERO HTML files"
-  echo "💡 check CI checkout path or working directory"
+  echo "💡 check CI checkout path / working directory"
   exit 1
 fi
 
 # ---------------------------------------------------
-# STEP 2 — BUILD REGISTRY
+# STEP 2 — BUILD JSON SAFELY (PYTHON-EMITTED)
 # ---------------------------------------------------
 
-echo "{" > "$TMP"
-echo '"pages": [' >> "$TMP"
+echo "🧠 building JSON registry (safe serializer)..."
 
-FIRST=true
-COUNT=0
+python3 - <<'EOF' > "$TMP"
+import json
+import os
 
-for file in "${RAW_FILES[@]}"; do
+files = os.environ.get("RAW_FILES_LIST", "").split("\n")
+files = [f for f in files if f.strip()]
 
-  # normalize path (single consistent format)
-  clean="${file#./}"
+pages = []
 
-  # skip accidental empty
-  if [ -z "$clean" ]; then
-    continue
-  fi
+for f in files:
+    clean = f.lstrip("./")
 
-  # ---------------------------------------------------
-  # URL NORMALIZATION (CANONICAL ROUTING)
-  # ---------------------------------------------------
+    # skip empty safety
+    if not clean:
+        continue
 
-  url_path=$(echo "$clean" \
-    | sed 's|index.html$||' \
-    | sed 's|\.html$||')
+    # canonical URL transform
+    url_path = clean
+    if url_path.endswith("index.html"):
+        url_path = url_path[:-10]
+    elif url_path.endswith(".html"):
+        url_path = url_path[:-5]
 
-  # ensure leading slash safety normalization
-  url_path="${url_path#./}"
-  url="https://unboundhealing.org/${url_path}"
+    url_path = url_path.lstrip("./")
 
-  # remove accidental double slashes
-  url=$(echo "$url" | sed 's|//|/|g' | sed 's|https:/|https://|')
+    url = "https://unboundhealing.org/" + url_path
 
-  # ---------------------------------------------------
-  # TYPE CLASSIFICATION (NON-RESTRICTIVE)
-  # ---------------------------------------------------
+    # normalize double slashes safely
+    url = url.replace("https://unboundhealing.org//", "https://unboundhealing.org/")
 
-  type="page"
+    page_type = "asset" if clean.startswith("assets/") else "page"
 
-  if [[ "$clean" == assets/* ]]; then
-    type="asset"
-  fi
+    pages.append({
+        "path": clean,
+        "url": url,
+        "type": page_type
+    })
 
-  # ---------------------------------------------------
-  # WRITE ENTRY
-  # ---------------------------------------------------
-
-  if [ "$FIRST" = true ]; then
-    FIRST=false
-  else
-    echo "," >> "$TMP"
-  fi
-
-  cat <<EOF >> "$TMP"
-{
-  "path": "$clean",
-  "url": "$url",
-  "type": "$type"
-}
+print(json.dumps({"pages": pages}, indent=2))
 EOF
 
-  ((COUNT++))
+# pass file list safely into python (newline separated)
+RAW_FILES_LIST="$(printf "%s\n" "${RAW_FILES[@]}")" python3 - <<'EOF' > "$TMP"
+import json, os
 
-done
+files = os.environ.get("RAW_FILES_LIST", "").split("\n")
+files = [f for f in files if f.strip()]
+
+pages = []
+
+for f in files:
+    clean = f.lstrip("./")
+
+    if not clean:
+        continue
+
+    url_path = clean
+    if url_path.endswith("index.html"):
+        url_path = url_path[:-10]
+    elif url_path.endswith(".html"):
+        url_path = url_path[:-5]
+
+    url_path = url_path.lstrip("./")
+    url = "https://unboundhealing.org/" + url_path
+    url = url.replace("https://unboundhealing.org//", "https://unboundhealing.org/")
+
+    page_type = "asset" if clean.startswith("assets/") else "page"
+
+    pages.append({
+        "path": clean,
+        "url": url,
+        "type": page_type
+    })
+
+print(json.dumps({"pages": pages}, indent=2))
+EOF
 
 # ---------------------------------------------------
-# CLOSE JSON
-# ---------------------------------------------------
-
-echo "]" >> "$TMP"
-echo "}" >> "$TMP"
-
-# ---------------------------------------------------
-# VALIDATION (HARD FAIL SAFE)
+# STEP 3 — VALIDATE JSON (HARD FAIL SAFE)
 # ---------------------------------------------------
 
 echo "🧪 validating registry..."
@@ -118,20 +123,20 @@ echo "🧪 validating registry..."
 python3 - <<EOF
 import json
 with open("$TMP","r") as f:
-    json.load(f)
+    data = json.load(f)
+
+assert "pages" in data
+assert isinstance(data["pages"], list)
+
 print("✅ registry valid")
+print("📦 pages:", len(data["pages"]))
 EOF
 
 # ---------------------------------------------------
-# ATOMIC WRITE
+# STEP 4 — ATOMIC WRITE
 # ---------------------------------------------------
 
 mv "$TMP" "$OUTPUT"
 
-# ---------------------------------------------------
-# SUMMARY
-# ---------------------------------------------------
-
-echo "📦 registry entries: $COUNT"
 echo "📁 wrote: $OUTPUT"
-echo "✅ content registry built (v2 deterministic + CI-safe)"
+echo "✅ content registry built (v3 deterministic + fully JSON-safe)"
