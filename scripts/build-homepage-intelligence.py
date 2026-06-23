@@ -1,112 +1,127 @@
-import json
 import os
-from collections import defaultdict
+import json
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
-GRAPH_FILE = os.path.join(ROOT, "semantic-salience.json")
+SAL_FILE = os.path.join(ROOT, "semantic-salience.json")
 OUTPUT_FILE = os.path.join(ROOT, "homepage-intelligence.json")
 
 
-def load_graph():
-    with open(GRAPH_FILE, "r") as f:
+def load_json(path):
+    with open(path, "r") as f:
         return json.load(f)
 
 
-def normalize_nodes(nodes_dict):
+def safe_nodes(raw_nodes):
     """
-    Nodes already come as dict keyed by URL.
-    We just ensure consistent structure.
+    Nodes are expected as dict:
+    {
+        url: {path, url, concepts: []}
+    }
     """
-    normalized = {}
+    if isinstance(raw_nodes, dict):
+        return raw_nodes
+    if isinstance(raw_nodes, list):
+        # fallback: convert list form to dict
+        out = {}
+        for item in raw_nodes:
+            if isinstance(item, dict) and "url" in item:
+                out[item["url"]] = item
+        return out
+    return {}
 
-    for url, data in nodes_dict.items():
-        if not isinstance(data, dict):
+
+def safe_edges(raw_edges):
+    """
+    Edges MUST be list of dicts:
+    [{a, b, weight}]
+    """
+    if not isinstance(raw_edges, list):
+        return []
+
+    cleaned = []
+    for e in raw_edges:
+        if not isinstance(e, dict):
             continue
 
-        normalized[url] = {
-            "path": data.get("path"),
-            "url": data.get("url"),
-            "concepts": data.get("concepts", []),
-            "salience": data.get("salience", 0)
-        }
+        a = e.get("a")
+        b = e.get("b")
 
-    return normalized
-
-
-def normalize_edges(edges_list):
-    """
-    FIX: edges are LISTS of dicts, NOT dicts.
-    """
-    normalized = []
-
-    if not isinstance(edges_list, list):
-        return normalized
-
-    for edge in edges_list:
-        if not isinstance(edge, dict):
+        if not a or not b:
             continue
 
-        normalized.append({
-            "a": edge.get("a"),
-            "b": edge.get("b"),
-            "weight": edge.get("weight", 1)
+        cleaned.append({
+            "a": str(a),
+            "b": str(b),
+            "weight": e.get("weight", 1)
         })
 
-    return normalized
+    return cleaned
 
 
-def compute_homepage_intelligence(nodes, edges):
+def build_homepage_intelligence(nodes, edges):
     """
-    Lightweight derivative layer:
-    - count concept frequency
-    - identify hub nodes
+    Derives homepage-level intelligence:
+    - top concepts
+    - hub nodes
+    - entry suggestions
     """
 
-    concept_counts = defaultdict(int)
-    node_scores = {}
+    concept_counts = {}
+    hubs = {}
 
-    # Count concepts
     for url, node in nodes.items():
-        concepts = node.get("concepts", [])
+        concepts = node.get("concepts", []) or []
         for c in concepts:
-            concept_counts[c] += 1
+            concept_counts[c] = concept_counts.get(c, 0) + 1
 
-    # Simple salience scoring
-    for url, node in nodes.items():
-        score = 0
+        hubs[url] = 0
 
-        concepts = node.get("concepts", [])
-        score += len(concepts)
+    for e in edges:
+        a = e["a"]
+        b = e["b"]
+        w = e["weight"]
 
-        # bonus if concept is widely used
-        for c in concepts:
-            score += concept_counts.get(c, 0) * 0.1
+        if a in hubs:
+            hubs[a] += w
+        if b in hubs:
+            hubs[b] += w
 
-        node_scores[url] = round(score, 3)
+    top_concepts = sorted(
+        concept_counts.items(),
+        key=lambda x: x[1],
+        reverse=True
+    )[:10]
+
+    top_hubs = sorted(
+        hubs.items(),
+        key=lambda x: x[1],
+        reverse=True
+    )[:10]
 
     return {
-        "concept_counts": dict(concept_counts),
-        "node_scores": node_scores,
+        "top_concepts": top_concepts,
+        "top_hubs": top_hubs,
+        "node_count": len(nodes),
         "edge_count": len(edges)
     }
 
 
 def main():
-    graph = load_graph()
+    data = load_json(SAL_FILE)
 
-    nodes_raw = graph.get("nodes", {})
-    edges_raw = graph.get("edges", [])
+    raw_nodes = data.get("nodes", {})
+    raw_edges = data.get("edges", [])
 
-    nodes = normalize_nodes(nodes_raw)
-    edges = normalize_edges(edges_raw)
+    nodes = safe_nodes(raw_nodes)
+    edges = safe_edges(raw_edges)
 
-    intelligence = compute_homepage_intelligence(nodes, edges)
+    homepage = build_homepage_intelligence(nodes, edges)
 
     output = {
-        "nodes": nodes,
-        "edges": edges,
-        "intelligence": intelligence
+        "homepage_intelligence": homepage,
+        "source": "semantic-salience-v3",
+        "status": "ok"
     }
 
     with open(OUTPUT_FILE, "w") as f:
