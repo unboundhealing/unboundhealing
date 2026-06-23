@@ -1,4 +1,4 @@
-name: Build Unbound Healing Site (v3.4 Stable)
+name: Build Unbound Healing Site (v3.5 Semantic-Salience Truth System)
 
 on:
   push:
@@ -34,13 +34,7 @@ jobs:
           sudo apt-get install -y bash curl jq
 
       # -------------------------------------
-      # 3. Make scripts executable
-      # -------------------------------------
-      - name: Make scripts executable
-        run: chmod +x scripts/*.sh
-
-      # -------------------------------------
-      # 4. Python environment
+      # 3. Python environment
       # -------------------------------------
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -52,34 +46,41 @@ jobs:
           pip install beautifulsoup4
 
       # -------------------------------------
-      # 5. Generate full system
+      # 4. Make scripts executable
       # -------------------------------------
-      - name: Generate full site system
+      - name: Make scripts executable
+        run: chmod +x scripts/*.sh
+
+      # -------------------------------------
+      # 5. Generate FULL SITE (single truth pipeline)
+      # -------------------------------------
+      - name: Generate site (semantic-salience only)
         run: |
-          set -e
+          set -euo pipefail
           ./scripts/generate-site.sh
 
       # -------------------------------------
-      # 6. 🔍 OPTION C (ROBUST SCRIPT VERSION)
+      # 6. VALIDATE SINGLE TRUTH LAYER
       # -------------------------------------
-      - name: Inspect content-model.json schema (Option C)
+      - name: Inspect semantic-salience truth layer
         run: |
-          echo "🔍 Inspecting content-model.json..."
+          echo "🔍 Inspecting semantic-salience.json..."
 
-          if [ ! -f content-model.json ]; then
-            echo "❌ content-model.json missing"
+          if [ ! -f semantic-salience.json ]; then
+            echo "❌ semantic-salience.json missing"
             exit 1
           fi
 
-          python3 scripts/inspect-content-model.py
+          python3 scripts/inspect-semantic-salience.py
 
       # -------------------------------------
-      # 7. Verify outputs
+      # 7. Verify output structure (lightweight)
       # -------------------------------------
       - name: Verify build outputs
         run: |
-          echo "Checking assets..."
+          echo "📦 Checking output files..."
           ls -R ./assets || true
+          ls -R ./ | grep -E "semantic|sitemap|rss|word|homepage" || true
 
       # -------------------------------------
       # 8. Upload Pages artifact
