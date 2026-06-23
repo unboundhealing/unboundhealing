@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "🧠 Building content model (v4.3 hardened JSON-safe pipeline)..."
+echo "🧠 Building content model (v5 deterministic Python engine)..."
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
@@ -11,118 +11,66 @@ TMP_OUTPUT="content-model.tmp.json"
 
 echo "🧠 Scanning HTML files..."
 
-# ---------------------------------------
-# Collect files in stable order (CRITICAL for reproducibility)
-# ---------------------------------------
-mapfile -t FILES < <(find . -type f -name "*.html" | sort)
+# -------------------------------------------------
+# STABLE FILE DISCOVERY (NO mapfile, CI-safe)
+# -------------------------------------------------
+FILES=$(find . -type f -name "*.html" | sort)
 
-TOTAL=${#FILES[@]}
-echo "📦 pages discovered: $TOTAL"
+COUNT=$(echo "$FILES" | sed '/^$/d' | wc -l | tr -d ' ')
+echo "📦 pages discovered: $COUNT"
 
-# ---------------------------------------
-# Start JSON (atomic build)
-# ---------------------------------------
-echo "{" > "$TMP_OUTPUT"
-echo '"pages": [' >> "$TMP_OUTPUT"
+if [ "$COUNT" -eq 0 ]; then
+  echo "❌ No HTML files found. Exiting."
+  exit 1
+fi
 
-FIRST=true
-PROCESSED=0
+# -------------------------------------------------
+# EXPORT FILE LIST TO PYTHON (deterministic boundary)
+# -------------------------------------------------
+export FILES
 
-# ---------------------------------------
-# Process each file
-# ---------------------------------------
-for file in "${FILES[@]}"; do
-  ((PROCESSED++))
-
-  # ---------------------------------------
-  # Normalize URL
-  # ---------------------------------------
-  URL=$(echo "$file" \
-    | sed 's|^\./||' \
-    | sed 's|index.html$||' \
-    | sed 's|\.html$||')
-
-  URL="https://unboundhealing.org/${URL}"
-
-  # ---------------------------------------
-  # Extract title safely
-  # ---------------------------------------
-  TITLE=$(python3 - "$file" <<'EOF'
-import sys
-from bs4 import BeautifulSoup
-
-path = sys.argv[1]
-
-try:
-    with open(path, "r", encoding="utf-8") as f:
-        soup = BeautifulSoup(f.read(), "html.parser")
-    print((soup.title.string or "").strip())
-except Exception:
-    print("")
-EOF
-)
-
-  # ---------------------------------------
-  # Extract description safely
-  # ---------------------------------------
-  DESCRIPTION=$(python3 - "$file" <<'EOF'
-import sys
-from bs4 import BeautifulSoup
-
-path = sys.argv[1]
-
-try:
-    with open(path, "r", encoding="utf-8") as f:
-        soup = BeautifulSoup(f.read(), "html.parser")
-
-    m = soup.find("meta", attrs={"name": "description"})
-    if m and m.get("content"):
-        print(m["content"].strip())
-    else:
-        print("")
-except Exception:
-    print("")
-EOF
-)
-
-  # ---------------------------------------
-  # BODY SAMPLE (limited + safe)
-  # ---------------------------------------
-  BODY_SAMPLE=$(python3 - "$file" <<'EOF'
-import sys
-from bs4 import BeautifulSoup
-
-path = sys.argv[1]
-
-try:
-    with open(path, "r", encoding="utf-8") as f:
-        soup = BeautifulSoup(f.read(), "html.parser")
-
-    text = soup.get_text(" ", strip=True)
-    print(text[:200].replace("\n", " "))
-except Exception:
-    print("")
-EOF
-)
-
-  # ---------------------------------------
-  # TAG GENERATION (stable + bounded)
-  # ---------------------------------------
-  TAGS=$(python3 - "$file" <<'EOF'
-import sys
-from bs4 import BeautifulSoup
+# -------------------------------------------------
+# SINGLE PYTHON ENGINE (replaces entire fragile bash loop)
+# -------------------------------------------------
+python3 <<'PY' > "$TMP_OUTPUT"
+import os
+import json
 import re
+from bs4 import BeautifulSoup
 from collections import Counter
 
-path = sys.argv[1]
+files = [f for f in os.environ["FILES"].split("\n") if f.strip()]
+files = sorted(files)
 
-try:
-    with open(path, "r", encoding="utf-8") as f:
-        soup = BeautifulSoup(f.read(), "html.parser")
+def safe_read(path):
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return f.read()
+    except Exception:
+        return ""
 
-    text = soup.get_text(" ", strip=True).lower()
+def extract_title(soup):
+    try:
+        return (soup.title.string or "").strip()
+    except Exception:
+        return ""
 
-    words = re.findall(r"[a-zA-Z][a-zA-Z\-]{2,}", text)
+def extract_description(soup):
+    try:
+        m = soup.find("meta", attrs={"name": "description"})
+        return m["content"].strip() if m and m.get("content") else ""
+    except Exception:
+        return ""
+
+def extract_body(soup):
+    try:
+        text = soup.get_text(" ", strip=True)
+        return text[:200]
+    except Exception:
+        return ""
+
+def extract_tags(text):
+    words = re.findall(r"[a-zA-Z][a-zA-Z\-]{2,}", text.lower())
 
     stop = {
         "the","and","for","with","that","this","from","you","are","was",
@@ -130,77 +78,51 @@ try:
     }
 
     filtered = [w for w in words if w not in stop]
-
     counts = Counter(filtered)
+    return [w for w,_ in counts.most_common(20)]
 
-    tags = [w for w,_ in counts.most_common(20)]
+pages = []
 
-    print(",".join(tags))
+for file in files:
+    html = safe_read(file)
+    soup = BeautifulSoup(html, "html.parser")
 
-except Exception:
-    print("")
-EOF
-)
+    url = file.replace("./", "")
+    url = re.sub(r"index\.html$", "", url)
+    url = re.sub(r"\.html$", "", url)
+    url = "https://unboundhealing.org/" + url.lstrip("/")
 
-  # Convert tags string → JSON array
-  TAG_JSON=$(python3 - <<EOF
-import json, sys
-tags = sys.stdin.read().strip()
-if not tags:
-    print("[]")
-else:
-    arr = [t.strip() for t in tags.split(",") if t.strip()]
-    print(json.dumps(arr))
-EOF
-<<< "$TAGS")
+    text = soup.get_text(" ", strip=True)
 
-  # ---------------------------------------
-  # WRITE ENTRY
-  # ---------------------------------------
-  if [ "$FIRST" = true ]; then
-    FIRST=false
-  else
-    echo "," >> "$TMP_OUTPUT"
-  fi
+    pages.append({
+        "url": url,
+        "file": file,
+        "title": extract_title(soup),
+        "description": extract_description(soup),
+        "body_sample": extract_body(soup),
+        "tags": extract_tags(text)
+    })
 
-  cat <<EOF >> "$TMP_OUTPUT"
-{
-  "url": "$URL",
-  "file": "$file",
-  "title": $(python3 -c "import json; print(json.dumps('''$TITLE'''))"),
-  "description": $(python3 -c "import json; print(json.dumps('''$DESCRIPTION'''))"),
-  "body_sample": $(python3 -c "import json; print(json.dumps('''$BODY_SAMPLE'''))"),
-  "tags": $TAG_JSON
-}
-EOF
+json.dump({"pages": pages}, open(os.environ.get("OUTPUT_FILE","/dev/stdout"), "w"), indent=2)
+PY
 
-  echo "✨ processed ($PROCESSED/$TOTAL): $URL"
-
-done
-
-# ---------------------------------------
-# CLOSE JSON
-# ---------------------------------------
-echo "]" >> "$TMP_OUTPUT"
-echo "}" >> "$TMP_OUTPUT"
-
-# ---------------------------------------
-# VALIDATION STEP (prevents graph crash)
-# ---------------------------------------
+# -------------------------------------------------
+# VALIDATE OUTPUT SAFELY
+# -------------------------------------------------
 echo "🧪 validating JSON..."
 
-python3 - <<EOF
+python3 <<PY
 import json
 with open("$TMP_OUTPUT","r") as f:
     json.load(f)
 print("✅ JSON valid")
-EOF
+PY
 
-# ---------------------------------------
-# ATOMIC WRITE (CRITICAL FIX)
-# ---------------------------------------
+# -------------------------------------------------
+# ATOMIC WRITE
+# -------------------------------------------------
 mv "$TMP_OUTPUT" "$OUTPUT"
 
-echo "✅ Content model built (v4.3 hardened JSON-safe pipeline)"
+echo "✅ Content model built (v5 deterministic engine)"
 echo "📁 output: $OUTPUT"
-echo "📦 pages processed: $TOTAL"
+echo "📦 pages processed: $COUNT"
