@@ -1,95 +1,97 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+set -euo pipefail
 
-echo "🧠 Building content model (v4.2 JSON-safe pipeline)..."
+echo "🧠 Building content model (v4.3 hardened JSON-safe pipeline)..."
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
 
 OUTPUT="content-model.json"
 
-# ==========================================================
-# PYTHON-DRIVEN MODEL GENERATION (NO SHELL JSON)
-# ==========================================================
-
-python3 << 'EOF'
-import json
+python3 - <<'PY'
 import os
+import json
+import re
 from bs4 import BeautifulSoup
 
-print("🧪 CONTENT MODEL DIAGNOSTICS")
+root = os.getcwd()
 
 pages = []
 
-for root, _, files in os.walk("."):
-    for file in files:
-        if not file.endswith(".html"):
+def safe_text(x):
+    if not x:
+        return ""
+    return str(x).strip()
+
+def extract_tags_from_body(text):
+    # stable semantic fallback (prevents explosion)
+    if not text:
+        return []
+    words = re.findall(r"[a-zA-Z0-9\-]{4,}", text.lower())
+    # deterministic, capped
+    return sorted(set(words))[:25]
+
+print("🧠 Scanning HTML files...")
+
+for dirpath, _, filenames in os.walk(root):
+    for f in filenames:
+        if not f.endswith(".html"):
             continue
 
-        path = os.path.join(root, file)
+        path = os.path.join(dirpath, f)
 
         try:
-            with open(path, "r", encoding="utf-8") as f:
-                soup = BeautifulSoup(f.read(), "html.parser")
+            with open(path, "r", encoding="utf-8", errors="ignore") as file:
+                soup = BeautifulSoup(file.read(), "html.parser")
 
-            url = path \
-                .replace("./", "") \
-                .replace("index.html", "") \
-                .replace(".html", "")
+            title = safe_text(soup.title.string if soup.title else "")
 
-            url = "https://unboundhealing.org/" + url
+            meta = soup.find("meta", attrs={"name": "description"})
+            description = safe_text(meta.get("content") if meta else "")
 
-            title = soup.title.get_text(strip=True) if soup.title else ""
-            desc_tag = soup.find("meta", attrs={"name": "description"})
-            desc = desc_tag["content"].strip() if desc_tag and desc_tag.get("content") else ""
+            body_text = safe_text(soup.get_text(" ", strip=True))
+            body_sample = body_text[:300]
 
-            body = soup.get_text(" ", strip=True)[:300]
+            # URL normalization
+            url = path.replace(root, "").replace("./", "/")
+            url = re.sub(r"index\.html$", "", url)
+            url = re.sub(r"\.html$", "", url)
+            url = "https://unboundhealing.org" + url
 
-            # SAFE TAG EXTRACTION
-            tags = []
-
-            for h in soup.find_all(["h1", "h2"]):
-                t = h.get_text(strip=True).lower()
-                if t:
-                    tags.append(t.replace(" ", "-"))
-
-            # dedupe
-            tags = list(dict.fromkeys(tags))
+            tags = extract_tags_from_body(body_text)
 
             pages.append({
                 "url": url,
                 "file": path,
                 "title": title,
-                "description": desc,
-                "body_sample": body,
+                "description": description,
+                "body_sample": body_sample,
                 "tags": tags
             })
 
         except Exception as e:
-            print(f"⚠️ skipped {path}: {e}")
+            print(f"⚠️ Skipping {path}: {e}")
 
-# ==========================================================
-# WRITE SAFE JSON (NO MANUAL ESCAPING)
-# ==========================================================
+model = {
+    "pages": pages
+}
 
 with open("content-model.json", "w", encoding="utf-8") as f:
-    json.dump({"pages": pages}, f, indent=2, ensure_ascii=False)
+    json.dump(model, f, ensure_ascii=False, indent=2)
 
-# ==========================================================
-# DIAGNOSTICS
-# ==========================================================
+print("")
+print("🧪 CONTENT MODEL DIAGNOSTICS")
+print(f"📦 pages processed: {len(pages)}")
+print(f"📁 output: content-model.json")
 
-print("\n🧪 MODEL SUMMARY")
-print("pages:", len(pages))
-
-tag_count = sum(len(p.get("tags", [])) for p in pages)
-print("total tagged entries:", tag_count)
-
-print("\nSAMPLE PAGE")
+# quick sample safety check
 if pages:
-    print(json.dumps(pages[0], indent=2)[:1500])
+    print("")
+    print("🧪 SAMPLE PAGE")
+    print(json.dumps(pages[0], indent=2)[:1200])
 
-print("\n✅ content model built (v4.2 JSON-safe)")
-EOF
+print("")
+print("✅ content model built (v4.3 hardened JSON-safe pipeline)")
+PY
 
-echo "✅ Content model built"
+echo "🔗 Content model build complete"
