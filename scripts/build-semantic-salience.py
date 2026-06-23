@@ -1,52 +1,82 @@
+#!/usr/bin/env python3
+
 import os
 import re
 import json
+from collections import defaultdict
 from urllib.parse import urljoin
 
-# -----------------------------
-# Config
-# -----------------------------
+# =========================================================
+# CONFIG
+# =========================================================
 
 DOMAIN = "https://unboundhealing.org/"
 
 STOPWORDS = {
-    "https", "http", "www", "com", "org",
-    "indexhtml", "html", "index"
+    "https",
+    "http",
+    "www",
+    "com",
+    "org",
+    "html",
+    "indexhtml",
+    "index"
 }
 
-# -----------------------------
-# Normalization
-# -----------------------------
+
+# =========================================================
+# NORMALIZATION
+# =========================================================
 
 def normalize(text: str) -> str:
     """
-    Normalize path/url fragments into clean token base.
+    Normalize path/url fragments into a stable concept space.
     """
+
     text = text.lower()
 
-    # strip file extensions early
-    text = re.sub(r"\.html?$", "", text)
+    text = re.sub(
+        r"\.html?$",
+        "",
+        text
+    )
 
-    # remove junk tokens but KEEP separators intact for splitting
-    text = re.sub(r"[^a-z0-9/_\- ]", "", text)
+    text = re.sub(
+        r"[^a-z0-9/_\-\s]",
+        "",
+        text
+    )
 
     return text
 
 
-def extract_concepts(path: str, url: str):
+def extract_concepts(path: str):
     """
-    Extract semantic concepts from a file path + URL.
+    Extract concepts directly from structural reality.
+
+    IMPORTANT:
+
+    Concepts are stored in semantic-salience
+    and become part of the truth layer itself.
+
+    Downstream systems should consume them,
+    not regenerate them.
     """
+
     base = normalize(path)
 
     parts = [
-        p for p in re.split(r"[/_\- ]+", base)
+        p
+        for p in re.split(
+            r"[/_\-\s]+",
+            base
+        )
         if p and p not in STOPWORDS
     ]
 
-    # dedupe while preserving order
     seen = set()
     concepts = []
+
     for p in parts:
         if p not in seen:
             seen.add(p)
@@ -55,28 +85,42 @@ def extract_concepts(path: str, url: str):
     return concepts
 
 
-# -----------------------------
-# URL builder
-# -----------------------------
+# =========================================================
+# URL HELPERS
+# =========================================================
 
 def build_url(path: str) -> str:
     """
-    Safely construct canonical URL.
-    Prevents https:/// bugs.
+    Build canonical URL.
     """
-    return urljoin(DOMAIN, path.lstrip("/"))
+
+    path = path.replace("\\", "/")
+
+    if path.endswith("index.html"):
+        path = path[:-10]
+
+    elif path.endswith(".html"):
+        path = path[:-5]
+
+    return urljoin(
+        DOMAIN,
+        path.lstrip("/")
+    )
 
 
-# -----------------------------
-# Registry builder
-# -----------------------------
+# =========================================================
+# REGISTRY
+# =========================================================
 
 def build_registry(html_files):
+
     registry = {}
 
     for path in html_files:
+
         url = build_url(path)
-        concepts = extract_concepts(path, url)
+
+        concepts = extract_concepts(path)
 
         registry[url] = {
             "path": path,
@@ -87,122 +131,325 @@ def build_registry(html_files):
     return registry
 
 
-# -----------------------------
-# Semantic layer (concept graph)
-# -----------------------------
+# =========================================================
+# GRAPH = STRUCTURE OF REALITY
+# =========================================================
 
-def build_semantic_layer(registry):
+def build_graph(registry):
     """
-    Simple graph representation of concept co-occurrence.
+    Build canonical graph structure.
+
+    Graph answers:
+
+    What exists?
+    What is connected?
     """
 
     nodes = {}
-    edges = []
+    edge_weights = defaultdict(int)
 
     for url, data in registry.items():
-        nodes[url] = data
+
+        nodes[url] = {
+            "path": data["path"],
+            "url": data["url"],
+            "concepts": data["concepts"]
+        }
 
         concepts = data["concepts"]
 
         for i in range(len(concepts)):
             for j in range(i + 1, len(concepts)):
-                edges.append({
-                    "a": concepts[i],
-                    "b": concepts[j],
-                    "weight": 1
-                })
 
-    return {
-        "nodes": nodes,
-        "edges": edges
-    }
+                a = concepts[i]
+                b = concepts[j]
+
+                key = tuple(
+                    sorted([a, b])
+                )
+
+                edge_weights[key] += 1
+
+    edges = []
+
+    for (a, b), weight in sorted(
+        edge_weights.items()
+    ):
+
+        edges.append({
+            "a": a,
+            "b": b,
+            "weight": weight
+        })
+
+    return nodes, edges
 
 
-# -----------------------------
-# PAGE GRAPH (UI DERIVATION LAYER)
-# -----------------------------
+# =========================================================
+# SALIENCE = WEIGHTING OF REALITY
+# =========================================================
 
-def build_page_graph(registry, semantic):
+def build_salience(registry, edges):
     """
-    Builds page-level adjacency graph based on shared concepts.
-    This is the UI-facing layer used by plugins like related_content.
+    Build raw weighting layer.
+
+    IMPORTANT:
+
+    No ranking.
+    No interpretation.
+    No derived scores.
+
+    Store only raw observable properties.
+
+    Consumers decide later how to rank,
+    sort, weight, search, recommend,
+    visualize, etc.
     """
+
+    frequency = defaultdict(int)
+    connectedness = defaultdict(int)
+
+    for page in registry.values():
+
+        for concept in page["concepts"]:
+            frequency[concept] += 1
+
+    concept_neighbors = defaultdict(set)
+
+    for edge in edges:
+
+        a = edge["a"]
+        b = edge["b"]
+
+        concept_neighbors[a].add(b)
+        concept_neighbors[b].add(a)
+
+    for concept, neighbors in concept_neighbors.items():
+        connectedness[concept] = len(neighbors)
+
+    salience = {}
+
+    all_concepts = set()
+
+    all_concepts.update(frequency.keys())
+    all_concepts.update(connectedness.keys())
+
+    for concept in sorted(all_concepts):
+
+        salience[concept] = {
+            "frequency": frequency.get(
+                concept,
+                0
+            ),
+            "connectedness": connectedness.get(
+                concept,
+                0
+            )
+        }
+
+    return salience
+
+
+# =========================================================
+# PAGE GRAPH
+# =========================================================
+
+def build_page_graph(registry):
+    """
+    Derived navigation layer.
+
+    This is NOT truth.
+
+    This is a consumer-friendly view
+    derived from the truth layer.
+    """
+
+    concept_map = defaultdict(set)
+
+    for url, data in registry.items():
+
+        for concept in data["concepts"]:
+            concept_map[concept].add(url)
 
     page_graph = {}
 
-    # -----------------------------
-    # INIT STRUCTURE
-    # -----------------------------
     for url, data in registry.items():
+
+        related_scores = defaultdict(int)
+
+        for concept in data["concepts"]:
+
+            for other_url in concept_map[concept]:
+
+                if other_url == url:
+                    continue
+
+                related_scores[other_url] += 1
+
+        ranked = sorted(
+            related_scores.items(),
+            key=lambda x: (
+                -x[1],
+                x[0]
+            )
+        )
+
         page_graph[url] = {
             "concepts": data["concepts"],
-            "related": []
+            "related": [
+                item[0]
+                for item in ranked[:10]
+            ]
         }
 
-    # -----------------------------
-    # concept → urls reverse index
-    # -----------------------------
-    concept_map = {}
-
-    for url, data in registry.items():
-        for c in data["concepts"]:
-            concept_map.setdefault(c, []).append(url)
-
-    # -----------------------------
-    # build related pages
-    # -----------------------------
-    for url, data in registry.items():
-        related = set()
-
-        for c in data["concepts"]:
-            for other in concept_map.get(c, []):
-                if other != url:
-                    related.add(other)
-
-        page_graph[url]["related"] = list(related)[:5]
-
-    # attach once (important: single source of truth)
-    semantic["page_graph"] = page_graph
-
-    return semantic
+    return page_graph
 
 
-# -----------------------------
-# MAIN PIPELINE
-# -----------------------------
+# =========================================================
+# TRUTH LAYER
+# =========================================================
 
-def main():
-    root = os.getcwd()
+def build_semantic_salience(registry):
+    """
+    Single source of truth.
+
+    GRAPH
+        structure of reality
+
+    SALIENCE
+        weighting of reality
+
+    EVERYTHING ELSE
+        consumers only
+    """
+
+    nodes, edges = build_graph(
+        registry
+    )
+
+    salience = build_salience(
+        registry,
+        edges
+    )
+
+    page_graph = build_page_graph(
+        registry
+    )
+
+    return {
+        "version": "3.2",
+        "philosophy": {
+            "graph": "structure of reality",
+            "salience": "weighting of reality",
+            "consumers": "read only"
+        },
+        "nodes": nodes,
+        "edges": edges,
+        "salience": salience,
+        "page_graph": page_graph
+    }
+
+
+# =========================================================
+# FILE DISCOVERY
+# =========================================================
+
+def find_html_files(root):
 
     html_files = []
 
     for dirpath, _, filenames in os.walk(root):
-        for f in filenames:
-            if f.endswith(".html"):
-                rel_path = os.path.join(dirpath, f).replace(root + "/", "")
-                html_files.append(rel_path)
+
+        for filename in filenames:
+
+            if not filename.endswith(".html"):
+                continue
+
+            full_path = os.path.join(
+                dirpath,
+                filename
+            )
+
+            rel_path = os.path.relpath(
+                full_path,
+                root
+            )
+
+            html_files.append(rel_path)
+
+    return sorted(html_files)
+
+
+# =========================================================
+# MAIN
+# =========================================================
+
+def main():
+
+    root = os.getcwd()
+
+    html_files = find_html_files(root)
 
     print("📂 scanning root:", root)
     print("📦 html files discovered:", len(html_files))
 
-    registry = build_registry(html_files)
+    registry = build_registry(
+        html_files
+    )
 
     print("📦 registry entries:", len(registry))
 
-    semantic = build_semantic_layer(registry)
+    semantic_salience = build_semantic_salience(
+        registry
+    )
 
-    # IMPORTANT: derive UI layer AFTER semantic graph
-    semantic = build_page_graph(registry, semantic)
+    output_path = os.path.join(
+        root,
+        "semantic-salience.json"
+    )
 
-    output_path = os.path.join(root, "semantic-salience.json")
+    with open(
+        output_path,
+        "w",
+        encoding="utf-8"
+    ) as f:
 
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(semantic, f, indent=2)
+        json.dump(
+            semantic_salience,
+            f,
+            indent=2,
+            ensure_ascii=False
+        )
 
-    print("🌌 semantic-salience COMPLETE (v3.1 FIXED + PAGE GRAPH)")
-    print("📁 output:", output_path)
-    print("📦 nodes:", len(semantic["nodes"]))
-    print("📦 edges:", len(semantic["edges"]))
+    print(
+        "🌌 semantic-salience COMPLETE (v3.2 FIRST-CLASS SALIENCE)"
+    )
+
+    print(
+        "📁 output:",
+        output_path
+    )
+
+    print(
+        "📦 nodes:",
+        len(
+            semantic_salience["nodes"]
+        )
+    )
+
+    print(
+        "📦 edges:",
+        len(
+            semantic_salience["edges"]
+        )
+    )
+
+    print(
+        "🧠 concepts:",
+        len(
+            semantic_salience["salience"]
+        )
+    )
 
 
 if __name__ == "__main__":
