@@ -17,8 +17,14 @@ fi
 echo "🧠 Building content model..."
 ./scripts/build-content-model.sh
 
+echo "========== CONTENT MODEL =========="
+cat content-model.json
+
 echo "🔗 Building content graph..."
 ./scripts/build-content-graph.sh
+
+echo "========== CONTENT GRAPH =========="
+cat content-graph.json
 
 echo "💡 Building link suggestions..."
 ./scripts/build-link-suggestions.sh
