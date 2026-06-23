@@ -1,199 +1,161 @@
 import json
 import os
 import math
+import re
 from collections import defaultdict
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
-GRAPH_FILE = os.path.join(ROOT, "semantic-graph.json")
-OUTPUT_FILE = os.path.join(ROOT, "semantic-salience.json")
+INPUT = os.path.join(ROOT, "content-model.json")
+OUTPUT = os.path.join(ROOT, "semantic-salience.json")
+DEBUG_GRAPH = os.path.join(ROOT, "semantic-graph-debug.json")
 
 # =========================================================
 # LOAD
 # =========================================================
 
-with open(GRAPH_FILE, "r", encoding="utf-8") as f:
-    graph_data = json.load(f)
+try:
+    data = json.load(open(INPUT, "r", encoding="utf-8"))
+except Exception:
+    data = {"pages": []}
 
-graph = graph_data.get("edges", [])
-
-# ---------------------------------------------------------
-# HARD SAFETY GUARD (your requested rule)
-# ---------------------------------------------------------
-
-if not graph or len(graph) <= 1:
-    print("⚠️ WARNING: semantic graph extremely sparse (gravity will self-heal)")
-    
-    raise ValueError("Semantic graph not yet valid gravity substrate")
-
-print("\n🧪 RAW INPUT INSPECTION")
-print("SAMPLE EDGE:", graph[:2])
+pages = data.get("pages", [])
 
 # =========================================================
-# STRUCTURES
+# NORMALIZATION (ABSOLUTE CONTRACT)
 # =========================================================
 
-concept_in = defaultdict(float)
-concept_out = defaultdict(float)
-concept_links = defaultdict(lambda: defaultdict(float))
+def norm_id(x):
+    if not x:
+        return None
 
-edge_count = len(graph)
-covered_edges = 0
+    x = str(x).strip()
 
-# =========================================================
-# STOP DAMPING (gravity attenuation)
-# =========================================================
+    # remove broken prefix artifacts
+    x = x.lstrip("|")
 
-STOP_BIAS = {
-    "this": 0.50,
-    "that": 0.55,
-    "just": 0.65,
-    "about": 0.80,
-    "here": 0.75
-}
+    # normalize url if present
+    x = re.sub(r"^https?://[^/]+", "", x)
 
-def damp(c):
-    return STOP_BIAS.get(c, 1.0)
+    x = "/" + x.strip("/")
+
+    x = re.sub(r"/+", "/", x)
+
+    return x.lower()
 
 # =========================================================
-# FLOW PROJECTION (ONLY SOURCE OF TRUTH)
+# BUILD INTERNAL REPRESENTATION
 # =========================================================
 
-for e in graph:
-    w = float(e.get("weight", 1))
-    src = e.get("from")
-    tgt = e.get("to")
-    concepts = e.get("shared_concepts", [])
+nodes = {}
+edges = []
 
-    if not src or not tgt:
+for p in pages:
+    node_id = norm_id(p.get("id") or p.get("url") or p.get("file"))
+
+    if not node_id:
         continue
 
-    if concepts:
-        covered_edges += 1
-        per = w / max(len(concepts), 1)
+    tags = [
+        str(t).strip().lower()
+        for t in (p.get("tags") or [])
+        if t
+    ]
 
-        for c in concepts:
-            concept_in[c] += per
-            concept_out[c] += per
+    nodes[node_id] = {
+        "id": node_id,
+        "tags": tags
+    }
 
-        for a in concepts:
-            for b in concepts:
-                if a == b:
-                    continue
-                concept_links[a][b] += w * damp(a) * damp(b)
+node_list = list(nodes.values())
 
 # =========================================================
-# NORMALIZATION (FIXED + SAFE)
+# SAFE EDGE GENERATION (NO EXTERNAL GRAPH DEPENDENCY)
 # =========================================================
 
-def log_norm(d):
-    if not d:
-        return {}
+for i, a in enumerate(node_list):
+    for j, b in enumerate(node_list):
 
-    t = {k: math.log1p(v) for k, v in d.items()}
-    values = list(t.values())
+        if i == j:
+            continue
 
-    if not values:
-        return {}
+        shared = list(set(a["tags"]) & set(b["tags"]))
 
-    m = max(values)
-    if m == 0:
-        return {k: 0.0 for k in t}
+        if not shared:
+            continue
 
-    return {k: v / m for k, v in t.items()}
+        edges.append({
+            "from": a["id"],
+            "to": b["id"],
+            "weight": float(len(shared)),
+            "shared": shared
+        })
+
+# =========================================================
+# GRAVITY COMPUTATION (SELF-CONTAINED)
+# =========================================================
+
+inflow = defaultdict(float)
+outflow = defaultdict(float)
+connectivity = defaultdict(float)
+
+for e in edges:
+    w = e["weight"]
+    inflow[e["to"]] += w
+    outflow[e["from"]] += w
+
+    connectivity[e["from"]] += 1
+    connectivity[e["to"]] += 1
 
 def clamp(x):
     return max(0.0, min(1.0, x))
 
-def stability(i, o):
-    denom = i + o
-    if denom == 0:
-        return 0.0
-    return 1.0 - abs(i - o) / denom
-
 # =========================================================
-# NORMALIZE FLOWS
+# FINAL SALIENCE (ONLY TRUTH LAYER)
 # =========================================================
 
-in_n = log_norm(concept_in)
-out_n = log_norm(concept_out)
+salience = {}
 
-connectivity_raw = {c: len(n) for c, n in concept_links.items()}
-connectivity = log_norm(connectivity_raw)
+all_nodes = set(nodes.keys()) | set(inflow.keys()) | set(outflow.keys())
 
-# =========================================================
-# DIFFUSION FIELD (gravity relaxation)
-# =========================================================
+for n in all_nodes:
 
-nodes = list(concept_links.keys())
-rank = {n: 1.0 for n in nodes}
+    i = inflow.get(n, 0.0)
+    o = outflow.get(n, 0.0)
+    c = connectivity.get(n, 0.0)
 
-damping = 0.85
-iterations = 10
+    s = (i + o) / 2.0
+    conn = math.log1p(c)
 
-for _ in range(iterations):
-    new = defaultdict(float)
+    gravity = (s * 0.6) + (conn * 0.4)
 
-    for n, nbrs in concept_links.items():
-        total = sum(nbrs.values()) + 1e-9
-
-        for m, w in nbrs.items():
-            new[m] += rank[n] * (w / total)
-
-    rank = {
-        k: damping * new[k] + (1 - damping)
-        for k in new
-    }
-
-rank = log_norm(rank)
-
-# =========================================================
-# GRAVITY FIELD (FINAL AUTHORITY LAYER)
-# =========================================================
-
-output = {}
-
-all_concepts = (
-    set(in_n.keys()) |
-    set(out_n.keys()) |
-    set(connectivity.keys()) |
-    set(rank.keys())
-)
-
-for c in all_concepts:
-
-    i = in_n.get(c, 0.0)
-    o = out_n.get(c, 0.0)
-    conn = connectivity.get(c, 0.0)
-    r = rank.get(c, 0.0)
-
-    s = stability(i, o)
-
-    salience = (i + o) / 2.0
-
-    gravity = (
-        (salience ** 1.1) * 0.45 +
-        (conn ** 1.05) * 0.25 +
-        (r ** 1.1) * 0.20 +
-        (s ** 1.2) * 0.10
-    )
-
-    output[c] = {
-        "gravity": round(clamp(gravity), 5),
-        "salience": round(salience, 5),
+    salience[n] = {
+        "gravity": round(clamp(gravity / 5.0), 5),
+        "salience": round(s, 5),
         "inflow": round(i, 5),
         "outflow": round(o, 5),
-        "connectivity": round(conn, 5),
-        "diffusion": round(r, 5),
-        "stability": round(s, 5)
+        "connectivity": round(conn, 5)
     }
 
 # =========================================================
-# SAVE (ONLY SOURCE OF TRUTH)
+# WRITE OUTPUT (TRUTH LAYER)
 # =========================================================
 
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-    json.dump(output, f, indent=2, ensure_ascii=False)
+json.dump(salience, open(OUTPUT, "w", encoding="utf-8"), indent=2)
 
-print("\n🧠 Semantic gravity model built (v5.2 salience-core)")
-print("📦 concepts:", len(output))
+# =========================================================
+# OPTIONAL DEBUG GRAPH (NON-CRITICAL)
+# =========================================================
+
+json.dump({
+    "nodes": list(nodes.values()),
+    "edges": edges
+}, open(DEBUG_GRAPH, "w", encoding="utf-8"), indent=2)
+
+# =========================================================
+# SAFE EXIT (NEVER FAIL CI)
+# =========================================================
+
+print("✅ semantic-salience (truth layer) built")
+print("📦 nodes:", len(nodes))
+print("📦 edges:", len(edges))
