@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "🧠 Building content model (v4.1 normalized + diagnostic pipeline)..."
+echo "🧠 Building content model (v4.2 JSON-safe pipeline)..."
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
@@ -9,161 +9,87 @@ cd "$ROOT_DIR"
 OUTPUT="content-model.json"
 
 # ==========================================================
-# INIT OUTPUT
+# PYTHON-DRIVEN MODEL GENERATION (NO SHELL JSON)
 # ==========================================================
 
-echo "{" > "$OUTPUT"
-echo '  "pages": [' >> "$OUTPUT"
-
-FIRST=true
-PAGE_COUNT=0
-
-# ==========================================================
-# HTML DISCOVERY (SAFE ITERATION)
-# ==========================================================
-
-while IFS= read -r file; do
-
-  # ---------------------------------------
-  # URL normalization
-  # ---------------------------------------
-
-  URL=$(echo "$file" \
-    | sed 's|^\./||' \
-    | sed 's|index.html||' \
-    | sed 's|\.html$||')
-
-  URL="https://unboundhealing.org/${URL}"
-
-  # ---------------------------------------
-  # TITLE
-  # ---------------------------------------
-
-  TITLE=$(python3 - <<EOF
+python3 << 'EOF'
+import json
+import os
 from bs4 import BeautifulSoup
 
-with open("$file", "r", encoding="utf-8") as f:
-    soup = BeautifulSoup(f.read(), "html.parser")
+print("🧪 CONTENT MODEL DIAGNOSTICS")
 
-t = soup.title.string if soup.title else ""
-print(t.strip() if t else "")
-EOF
-)
+pages = []
 
-  # ---------------------------------------
-  # DESCRIPTION
-  # ---------------------------------------
+for root, _, files in os.walk("."):
+    for file in files:
+        if not file.endswith(".html"):
+            continue
 
-  DESCRIPTION=$(python3 - <<EOF
-from bs4 import BeautifulSoup
+        path = os.path.join(root, file)
 
-with open("$file", "r", encoding="utf-8") as f:
-    soup = BeautifulSoup(f.read(), "html.parser")
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                soup = BeautifulSoup(f.read(), "html.parser")
 
-m = soup.find("meta", attrs={"name": "description"})
-print(m["content"].strip() if m and m.get("content") else "")
-EOF
-)
+            url = path \
+                .replace("./", "") \
+                .replace("index.html", "") \
+                .replace(".html", "")
 
-  # ---------------------------------------
-  # BODY SAMPLE (diagnostic-safe)
-  # ---------------------------------------
+            url = "https://unboundhealing.org/" + url
 
-  BODY_SAMPLE=$(python3 - <<EOF
-from bs4 import BeautifulSoup
+            title = soup.title.get_text(strip=True) if soup.title else ""
+            desc_tag = soup.find("meta", attrs={"name": "description"})
+            desc = desc_tag["content"].strip() if desc_tag and desc_tag.get("content") else ""
 
-with open("$file", "r", encoding="utf-8") as f:
-    soup = BeautifulSoup(f.read(), "html.parser")
+            body = soup.get_text(" ", strip=True)[:300]
 
-text = soup.get_text(" ", strip=True)
-print(text[:300].replace("\n", " "))
-EOF
-)
+            # SAFE TAG EXTRACTION
+            tags = []
 
-  # ---------------------------------------
-  # TAG EXTRACTION (ROBUST)
-  # ---------------------------------------
+            for h in soup.find_all(["h1", "h2"]):
+                t = h.get_text(strip=True).lower()
+                if t:
+                    tags.append(t.replace(" ", "-"))
 
-  TAGS=$(python3 - <<EOF
-from bs4 import BeautifulSoup
+            # dedupe
+            tags = list(dict.fromkeys(tags))
 
-with open("$file", "r", encoding="utf-8") as f:
-    soup = BeautifulSoup(f.read(), "html.parser")
+            pages.append({
+                "url": url,
+                "file": path,
+                "title": title,
+                "description": desc,
+                "body_sample": body,
+                "tags": tags
+            })
 
-# heuristic tag sources
-raw = []
-
-# 1. meta keywords
-m = soup.find("meta", attrs={"name": "keywords"})
-if m and m.get("content"):
-    raw.extend(m["content"].split(","))
-
-# 2. headings (light weight)
-for h in soup.find_all(["h1", "h2"]):
-    raw.append(h.get_text())
-
-# normalize
-clean = []
-for t in raw:
-    if not t:
-        continue
-    t = str(t).strip().lower()
-    t = t.replace(" ", "-")
-    if len(t) < 2:
-        continue
-    clean.append(t)
-
-# dedupe preserve order
-seen = set()
-out = []
-for t in clean:
-    if t not in seen:
-        seen.add(t)
-        out.append(t)
-
-print(out)
-EOF
-)
-
-  # ---------------------------------------
-  # WRITE PAGE OBJECT
-  # ---------------------------------------
-
-  if [ "$FIRST" = true ]; then
-    FIRST=false
-  else
-    echo "," >> "$OUTPUT"
-  fi
-
-  cat <<EOF >> "$OUTPUT"
-  {
-    "url": "$URL",
-    "file": "$file",
-    "title": "$TITLE",
-    "description": "$DESCRIPTION",
-    "body_sample": "$BODY_SAMPLE",
-    "tags": $TAGS
-  }
-EOF
-
-  PAGE_COUNT=$((PAGE_COUNT + 1))
-
-done < <(find . -type f -name "*.html")
+        except Exception as e:
+            print(f"⚠️ skipped {path}: {e}")
 
 # ==========================================================
-# CLOSE JSON
+# WRITE SAFE JSON (NO MANUAL ESCAPING)
 # ==========================================================
 
-echo "" >> "$OUTPUT"
-echo "  ]" >> "$OUTPUT"
-echo "}" >> "$OUTPUT"
+with open("content-model.json", "w", encoding="utf-8") as f:
+    json.dump({"pages": pages}, f, indent=2, ensure_ascii=False)
 
 # ==========================================================
-# SUMMARY REPORT
+# DIAGNOSTICS
 # ==========================================================
 
-echo ""
-echo "🧪 CONTENT MODEL DIAGNOSTICS"
-echo "📦 pages processed: $PAGE_COUNT"
-echo "📁 output: $OUTPUT"
-echo "✅ content model built (v4.1 normalized + diagnostic pipeline)"
+print("\n🧪 MODEL SUMMARY")
+print("pages:", len(pages))
+
+tag_count = sum(len(p.get("tags", [])) for p in pages)
+print("total tagged entries:", tag_count)
+
+print("\nSAMPLE PAGE")
+if pages:
+    print(json.dumps(pages[0], indent=2)[:1500])
+
+print("\n✅ content model built (v4.2 JSON-safe)")
+EOF
+
+echo "✅ Content model built"
