@@ -1,161 +1,118 @@
 import json
 import os
-import math
 import re
-from collections import defaultdict
+from collections import Counter, defaultdict
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
-INPUT = os.path.join(ROOT, "content-model.json")
-OUTPUT = os.path.join(ROOT, "semantic-salience.json")
-DEBUG_GRAPH = os.path.join(ROOT, "semantic-graph-debug.json")
+REGISTRY_FILE = os.path.join(ROOT, "content-registry.json")
+OUTPUT_FILE = os.path.join(ROOT, "semantic-salience.json")
 
-# =========================================================
-# LOAD
-# =========================================================
+STOP = {
+    "the","a","an","and","or","to","of","in","on","for","with","is","it",
+    "this","that","just","here","thing","things"
+}
 
-try:
-    data = json.load(open(INPUT, "r", encoding="utf-8"))
-except Exception:
-    data = {"pages": []}
-
-pages = data.get("pages", [])
-
-# =========================================================
-# NORMALIZATION (ABSOLUTE CONTRACT)
-# =========================================================
-
-def norm_id(x):
-    if not x:
+def normalize(text):
+    if not text:
         return None
+    text = str(text).lower().strip()
+    text = re.sub(r"[^a-z\\- ]", "", text)
+    if text in STOP:
+        return None
+    if len(text) < 3:
+        return None
+    return text
 
-    x = str(x).strip()
+# ----------------------------
+# LOAD REGISTRY
+# ----------------------------
 
-    # remove broken prefix artifacts
-    x = x.lstrip("|")
+with open(REGISTRY_FILE, "r", encoding="utf-8") as f:
+    registry = json.load(f)
 
-    # normalize url if present
-    x = re.sub(r"^https?://[^/]+", "", x)
+pages = registry.get("pages", [])
 
-    x = "/" + x.strip("/")
-
-    x = re.sub(r"/+", "/", x)
-
-    return x.lower()
-
-# =========================================================
-# BUILD INTERNAL REPRESENTATION
-# =========================================================
-
-nodes = {}
+nodes = []
+concept_counts = Counter()
 edges = []
 
+# ----------------------------
+# BUILD NODES + CONCEPTS
+# ----------------------------
+
 for p in pages:
-    node_id = norm_id(p.get("id") or p.get("url") or p.get("file"))
+    path = p.get("path","")
+    url = p.get("url","")
 
-    if not node_id:
-        continue
+    # derive lightweight concepts from URL path
+    parts = re.split(r"[\\/\\-]", path)
 
-    tags = [
-        str(t).strip().lower()
-        for t in (p.get("tags") or [])
-        if t
-    ]
+    concepts = []
+    for part in parts:
+        n = normalize(part)
+        if n:
+            concepts.append(n)
 
-    nodes[node_id] = {
-        "id": node_id,
-        "tags": tags
-    }
+    concepts = list(dict.fromkeys(concepts))
 
-node_list = list(nodes.values())
+    for c in concepts:
+        concept_counts[c] += 1
 
-# =========================================================
-# SAFE EDGE GENERATION (NO EXTERNAL GRAPH DEPENDENCY)
-# =========================================================
+    nodes.append({
+        "url": url,
+        "path": path,
+        "concepts": concepts
+    })
 
-for i, a in enumerate(node_list):
-    for j, b in enumerate(node_list):
+# ----------------------------
+# BUILD EDGES (ONLY FROM SAME LAYER)
+# ----------------------------
 
-        if i == j:
+for i, a in enumerate(nodes):
+    for j, b in enumerate(nodes):
+        if i >= j:
             continue
 
-        shared = list(set(a["tags"]) & set(b["tags"]))
-
+        shared = list(set(a["concepts"]) & set(b["concepts"]))
         if not shared:
             continue
 
         edges.append({
-            "from": a["id"],
-            "to": b["id"],
-            "weight": float(len(shared)),
-            "shared": shared
+            "from": a["url"],
+            "to": b["url"],
+            "weight": len(shared),
+            "concepts": shared
         })
 
-# =========================================================
-# GRAVITY COMPUTATION (SELF-CONTAINED)
-# =========================================================
+# ----------------------------
+# BUILD SALIENCE
+# ----------------------------
 
-inflow = defaultdict(float)
-outflow = defaultdict(float)
-connectivity = defaultdict(float)
+total = sum(concept_counts.values()) or 1
 
-for e in edges:
-    w = e["weight"]
-    inflow[e["to"]] += w
-    outflow[e["from"]] += w
-
-    connectivity[e["from"]] += 1
-    connectivity[e["to"]] += 1
-
-def clamp(x):
-    return max(0.0, min(1.0, x))
-
-# =========================================================
-# FINAL SALIENCE (ONLY TRUTH LAYER)
-# =========================================================
-
-salience = {}
-
-all_nodes = set(nodes.keys()) | set(inflow.keys()) | set(outflow.keys())
-
-for n in all_nodes:
-
-    i = inflow.get(n, 0.0)
-    o = outflow.get(n, 0.0)
-    c = connectivity.get(n, 0.0)
-
-    s = (i + o) / 2.0
-    conn = math.log1p(c)
-
-    gravity = (s * 0.6) + (conn * 0.4)
-
-    salience[n] = {
-        "gravity": round(clamp(gravity / 5.0), 5),
-        "salience": round(s, 5),
-        "inflow": round(i, 5),
-        "outflow": round(o, 5),
-        "connectivity": round(conn, 5)
+salience = {
+    c: {
+        "count": n,
+        "salience": n / total
     }
+    for c, n in concept_counts.items()
+}
 
-# =========================================================
-# WRITE OUTPUT (TRUTH LAYER)
-# =========================================================
+# ----------------------------
+# OUTPUT (SINGLE SOURCE OF TRUTH)
+# ----------------------------
 
-json.dump(salience, open(OUTPUT, "w", encoding="utf-8"), indent=2)
+output = {
+    "nodes": nodes,
+    "edges": edges,
+    "salience": salience
+}
 
-# =========================================================
-# OPTIONAL DEBUG GRAPH (NON-CRITICAL)
-# =========================================================
+with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    json.dump(output, f, indent=2, ensure_ascii=False)
 
-json.dump({
-    "nodes": list(nodes.values()),
-    "edges": edges
-}, open(DEBUG_GRAPH, "w", encoding="utf-8"), indent=2)
-
-# =========================================================
-# SAFE EXIT (NEVER FAIL CI)
-# =========================================================
-
-print("✅ semantic-salience (truth layer) built")
+print("🌌 semantic-salience built (SINGLE SOURCE OF TRUTH)")
 print("📦 nodes:", len(nodes))
 print("📦 edges:", len(edges))
+print("🧠 concepts:", len(salience))
