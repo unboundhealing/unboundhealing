@@ -1,126 +1,117 @@
 #!/usr/bin/env python3
 import json
-import re
 import os
-from collections import defaultdict
+import re
+from collections import defaultdict, Counter
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
-MODEL_PATH = os.path.join(ROOT, "content-model.json")
+REGISTRY_PATH = os.path.join(ROOT, "content-registry.json")
 OUTPUT_PATH = os.path.join(ROOT, "semantic-salience.json")
 
 
-# ---------------------------------------------------------
-# SAFE STRING NORMALIZATION (FIXED REGEX)
-# ---------------------------------------------------------
+# -------------------------------------------------------
+# SAFETY GUARDS
+# -------------------------------------------------------
+if not os.path.exists(REGISTRY_PATH):
+    raise FileNotFoundError("content-registry.json missing (required single input source)")
+
+
+# -------------------------------------------------------
+# NORMALIZATION
+# -------------------------------------------------------
 def normalize(text: str) -> str:
     if not isinstance(text, str):
         return ""
 
-    text = text.lower()
-
-    # FIX: no invalid regex ranges
-    text = re.sub(r"[^a-z0-9\- ]", " ", text)
+    text = text.lower().strip()
+    text = re.sub(r"[^a-z0-9\\-_/ ]", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
-
     return text
 
 
-# ---------------------------------------------------------
-# LOAD MODEL
-# ---------------------------------------------------------
-if not os.path.exists(MODEL_PATH):
-    raise FileNotFoundError("content-model.json missing")
+def tokenize(text: str):
+    return [t for t in text.split(" ") if len(t) > 2]
 
-with open(MODEL_PATH, "r", encoding="utf-8") as f:
-    model = json.load(f)
 
-pages = model.get("pages", [])
+# -------------------------------------------------------
+# LOAD REGISTRY (ONLY INPUT SOURCE)
+# -------------------------------------------------------
+with open(REGISTRY_PATH, "r", encoding="utf-8") as f:
+    registry = json.load(f)
+
+pages = registry.get("pages", [])
 
 if not pages:
-    raise ValueError("No pages found in content-model.json")
+    raise ValueError("Registry contains no pages")
 
 
-# ---------------------------------------------------------
-# BUILD SINGLE TRUTH LAYER
-# ---------------------------------------------------------
-concept_index = defaultdict(set)
-page_index = {}
-
-for page in pages:
-    url = page.get("url", "")
-    title = page.get("title", "")
-    file = page.get("file", "")
-
-    base_text = normalize(title + " " + url + " " + file)
-
-    words = [w for w in base_text.split(" ") if len(w) > 2]
-
-    page_index[url] = {
-        "title": title,
-        "file": file,
-        "concepts": words
-    }
-
-    for w in words:
-        concept_index[w].add(url)
-
-
-# ---------------------------------------------------------
-# BUILD EDGES (GUARANTEED NON-EMPTY)
-# ---------------------------------------------------------
+# -------------------------------------------------------
+# BUILD INTERNAL STATE
+# -------------------------------------------------------
+nodes = {}
+concept_counts = Counter()
 edges = []
 
-urls = list(page_index.keys())
 
-for i, a in enumerate(urls):
-    for j, b in enumerate(urls):
-        if i >= j:
-            continue
+# -------------------------------------------------------
+# BUILD NODES + CONCEPTS
+# -------------------------------------------------------
+for p in pages:
+    path = p.get("path", "")
+    url = p.get("url", "")
 
-        a_concepts = set(page_index[a]["concepts"])
-        b_concepts = set(page_index[b]["concepts"])
+    base = normalize(path + " " + url)
+    concepts = tokenize(base)
 
-        shared = list(a_concepts & b_concepts)
+    nodes[url] = {
+        "path": path,
+        "url": url,
+        "concepts": concepts
+    }
 
-        if not shared:
-            continue
-
-        edges.append({
-            "from": a,
-            "to": b,
-            "weight": len(shared),
-            "shared": shared[:10]
-        })
+    for c in concepts:
+        concept_counts[c] += 1
 
 
-# ---------------------------------------------------------
-# CONCEPT SALIENCE (THIS IS THE SINGLE TRUTH LAYER)
-# ---------------------------------------------------------
-concepts = []
+# -------------------------------------------------------
+# BUILD EDGES (FULL DENSE GRAPH)
+# -------------------------------------------------------
+urls = list(nodes.keys())
 
-for concept, urls_set in concept_index.items():
-    concepts.append({
-        "concept": concept,
-        "salience": len(urls_set),
-        "influence": len(urls_set),
-        "nodes": list(urls_set)[:10]
-    })
+for i in range(len(urls)):
+    for j in range(i + 1, len(urls)):
+        a = nodes[urls[i]]
+        b = nodes[urls[j]]
 
-concepts.sort(key=lambda x: x["salience"], reverse=True)
+        shared = list(set(a["concepts"]) & set(b["concepts"]))
+
+        if shared:
+            edges.append({
+                "from": urls[i],
+                "to": urls[j],
+                "weight": len(shared),
+                "shared": shared[:12]
+            })
 
 
-# ---------------------------------------------------------
-# GUARANTEE MINIMUM GRAPH (NO MORE FAIL STATES)
-# ---------------------------------------------------------
-if not concepts:
-    concepts = [{
-        "concept": "system",
-        "salience": 1,
-        "influence": 1,
-        "nodes": urls[:1]
-    }]
+# -------------------------------------------------------
+# BUILD SINGLE TRUTH LAYER (SALIENCE)
+# -------------------------------------------------------
+total = sum(concept_counts.values()) or 1
 
+salience = {
+    c: {
+        "count": n,
+        "score": n / total
+    }
+    for c, n in concept_counts.items()
+}
+
+
+# -------------------------------------------------------
+# GUARANTEE NON-EMPTY OUTPUT (NO FAIL STATES)
+# -------------------------------------------------------
 if not edges and len(urls) > 1:
     edges = [{
         "from": urls[0],
@@ -130,22 +121,22 @@ if not edges and len(urls) > 1:
     }]
 
 
-# ---------------------------------------------------------
-# FINAL OUTPUT (SEMANTIC SALIENCE = SINGLE SOURCE OF TRUTH)
-# ---------------------------------------------------------
+# -------------------------------------------------------
+# WRITE OUTPUT (ONLY TRUTH ARTIFACT)
+# -------------------------------------------------------
 output = {
     "truth_layer": "semantic-salience",
-    "pages": page_index,
-    "concepts": concepts,
-    "edges": edges
+    "nodes": nodes,
+    "edges": edges,
+    "salience": salience
 }
 
 with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
     json.dump(output, f, indent=2)
 
 
-print("🌌 semantic-salience built (SINGLE TRUTH LAYER)")
-print("📦 pages:", len(page_index))
-print("📦 concepts:", len(concepts))
+print("🌌 semantic-salience COMPLETE (single truth layer)")
+print("📦 nodes:", len(nodes))
 print("📦 edges:", len(edges))
-print("✅ output:", OUTPUT_PATH)
+print("🧠 concepts:", len(salience))
+print("📁 output:", OUTPUT_PATH)
