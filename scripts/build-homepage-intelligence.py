@@ -1,5 +1,12 @@
+#!/usr/bin/env python3
+
 import os
 import json
+from collections import defaultdict
+
+# =========================================================
+# PATHS
+# =========================================================
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
@@ -7,127 +14,163 @@ SAL_FILE = os.path.join(ROOT, "semantic-salience.json")
 OUTPUT_FILE = os.path.join(ROOT, "homepage-intelligence.json")
 
 
+# =========================================================
+# LOADER (TRUTH LAYER ONLY)
+# =========================================================
+
 def load_json(path):
-    with open(path, "r") as f:
+    with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-def safe_nodes(raw_nodes):
+# =========================================================
+# SAFE ACCESSORS (NO REINTERPRETATION OF TRUTH)
+# =========================================================
+
+def get_nodes(data):
     """
-    Nodes are expected as dict:
-    {
-        url: {path, url, concepts: []}
-    }
+    Nodes are authoritative from semantic-salience.
+
+    Expected format:
+        { url: { path, url, concepts } }
     """
-    if isinstance(raw_nodes, dict):
-        return raw_nodes
-    if isinstance(raw_nodes, list):
-        # fallback: convert list form to dict
-        out = {}
-        for item in raw_nodes:
-            if isinstance(item, dict) and "url" in item:
-                out[item["url"]] = item
-        return out
-    return {}
+    nodes = data.get("nodes", {})
+
+    if not isinstance(nodes, dict):
+        return {}
+
+    return nodes
 
 
-def safe_edges(raw_edges):
+def get_edges(data):
     """
-    Edges MUST be list of dicts:
-    [{a, b, weight}]
+    Edges are authoritative from semantic-salience.
+
+    Expected format:
+        [{a, b, weight}]
     """
-    if not isinstance(raw_edges, list):
+    edges = data.get("edges", [])
+
+    if not isinstance(edges, list):
         return []
 
     cleaned = []
-    for e in raw_edges:
+
+    for e in edges:
         if not isinstance(e, dict):
             continue
 
         a = e.get("a")
         b = e.get("b")
 
-        if not a or not b:
+        if a is None or b is None:
             continue
 
         cleaned.append({
             "a": str(a),
             "b": str(b),
-            "weight": e.get("weight", 1)
+            "weight": float(e.get("weight", 1))
         })
 
     return cleaned
 
 
+# =========================================================
+# PURE DERIVATION (NO NEW SEMANTIC LAYERS)
+# =========================================================
+
 def build_homepage_intelligence(nodes, edges):
     """
-    Derives homepage-level intelligence:
-    - top concepts
-    - hub nodes
-    - entry suggestions
+    Consumer projection of semantic-salience.
+
+    IMPORTANT PRINCIPLE:
+    - This does NOT interpret meaning
+    - This does NOT redefine structure
+    - This only aggregates already-existing truth signals
     """
 
-    concept_counts = {}
-    hubs = {}
+    concept_frequency = defaultdict(int)
+    node_degree = defaultdict(float)
 
-    for url, node in nodes.items():
-        concepts = node.get("concepts", []) or []
+    # -------------------------------------------------
+    # derive concept frequency from truth-layer nodes
+    # -------------------------------------------------
+    for node in nodes.values():
+        concepts = node.get("concepts", [])
+
+        if not isinstance(concepts, list):
+            continue
+
         for c in concepts:
-            concept_counts[c] = concept_counts.get(c, 0) + 1
+            concept_frequency[c] += 1
 
-        hubs[url] = 0
-
+    # -------------------------------------------------
+    # derive node connectivity from truth-layer edges
+    # -------------------------------------------------
     for e in edges:
         a = e["a"]
         b = e["b"]
         w = e["weight"]
 
-        if a in hubs:
-            hubs[a] += w
-        if b in hubs:
-            hubs[b] += w
+        node_degree[a] += w
+        node_degree[b] += w
 
+    # -------------------------------------------------
+    # top concepts (frequency-based only)
+    # -------------------------------------------------
     top_concepts = sorted(
-        concept_counts.items(),
-        key=lambda x: x[1],
-        reverse=True
+        concept_frequency.items(),
+        key=lambda x: (-x[1], x[0])
     )[:10]
 
+    # -------------------------------------------------
+    # top hubs (connectivity-based only)
+    # -------------------------------------------------
     top_hubs = sorted(
-        hubs.items(),
-        key=lambda x: x[1],
-        reverse=True
+        node_degree.items(),
+        key=lambda x: (-x[1], x[0])
     )[:10]
 
     return {
-        "top_concepts": top_concepts,
-        "top_hubs": top_hubs,
+        "top_concepts": [
+            {"concept": c, "frequency": f}
+            for c, f in top_concepts
+        ],
+        "top_hubs": [
+            {"node": n, "score": s}
+            for n, s in top_hubs
+        ],
         "node_count": len(nodes),
         "edge_count": len(edges)
     }
 
 
+# =========================================================
+# MAIN PIPELINE (PURE READ MODEL)
+# =========================================================
+
 def main():
+
     data = load_json(SAL_FILE)
 
-    raw_nodes = data.get("nodes", {})
-    raw_edges = data.get("edges", [])
-
-    nodes = safe_nodes(raw_nodes)
-    edges = safe_edges(raw_edges)
+    nodes = get_nodes(data)
+    edges = get_edges(data)
 
     homepage = build_homepage_intelligence(nodes, edges)
 
     output = {
         "homepage_intelligence": homepage,
-        "source": "semantic-salience-v3",
+
+        # explicit contract boundary
+        "source": "semantic-salience",
+        "consumer_model": "read-only-projection",
         "status": "ok"
     }
 
-    with open(OUTPUT_FILE, "w") as f:
-        json.dump(output, f, indent=2)
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
 
-    print("🏠 homepage-intelligence built successfully")
+    print("🏠 homepage-intelligence built successfully (v4.0 PURE CONSUMER)")
     print(f"📦 nodes: {len(nodes)}")
     print(f"🔗 edges: {len(edges)}")
 
