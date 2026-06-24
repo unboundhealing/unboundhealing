@@ -33,6 +33,19 @@ SALIENCE = load_salience()
 
 
 # =========================================================
+# RAW ACCESS LAYER (NO ABSTRACTION, NO QUERY ENGINE)
+# =========================================================
+
+def raw_salience():
+    return SALIENCE
+
+
+# NOTE:
+# Plugins may diverge semantically and structurally.
+# Only visual CSS classes are considered shared constraints.
+
+
+# =========================================================
 # FILE DISCOVERY
 # =========================================================
 
@@ -104,18 +117,19 @@ def plugin_related_content(soup, url, salience):
         old.decompose()
 
     pages = salience.get("pages", {})
-    node = pages.get(url, {})
+    if not isinstance(pages, dict):
+        return {}
 
+    node = pages.get(url, {})
     concepts = node.get("concepts", [])
+
     if not concepts:
         return
 
-    # build raw co-occurrence scoring directly from salience
     scores = {}
 
     for concept in concepts:
         word = concept.get("word") if isinstance(concept, dict) else concept
-
         if not word:
             continue
 
@@ -127,7 +141,6 @@ def plugin_related_content(soup, url, salience):
 
             for oc in other_concepts:
                 oword = oc.get("word") if isinstance(oc, dict) else oc
-
                 if oword == word:
                     scores[other_url] = scores.get(other_url, 0) + 1
 
@@ -162,7 +175,7 @@ def plugin_related_content(soup, url, salience):
 
 
 # ---------------------------------------------------------
-# TRACKING (UNCHANGED - NON-SEMANTIC)
+# TRACKING (NON-SEMANTIC)
 # ---------------------------------------------------------
 
 def plugin_tracking(soup, url, salience):
@@ -179,7 +192,7 @@ def plugin_tracking(soup, url, salience):
 
 
 # ---------------------------------------------------------
-# HOMEPAGE INTELLIGENCE (DIRECT SALIENCE SCAN)
+# HOMEPAGE INTELLIGENCE (RAW SALIENCE SCAN)
 # ---------------------------------------------------------
 
 def plugin_homepage_intelligence(soup, url, salience):
@@ -187,8 +200,9 @@ def plugin_homepage_intelligence(soup, url, salience):
         old.decompose()
 
     pages = salience.get("pages", {})
+    if not isinstance(pages, dict):
+        return {}
 
-    # compute raw salience weight per node (no abstraction layer)
     scored = []
 
     for u, node in pages.items():
@@ -234,35 +248,20 @@ def plugin_homepage_intelligence(soup, url, salience):
         soup.append(root)
 
 
-# ---------------------------------------------------------
-# FUTURE MAGIC (NON-SEMANTIC HOOK)
-# ---------------------------------------------------------
-
-def plugin_future_magic(soup, url, salience):
-    comment = soup.new_string("<!-- future_magic hook active -->")
-
-    if soup.body:
-        soup.body.append(comment)
-    else:
-        soup.append(comment)
-
-
 # =========================================================
-# PLUGIN REGISTRY
+# PLUGIN REGISTRY (INTERNAL ONLY)
 # =========================================================
 
 PLUGIN_ORDER = [
     "related_content",
     "tracking",
     "homepage_intelligence",
-    "future_magic",
 ]
 
 PLUGIN_REGISTRY = {
     "related_content": plugin_related_content,
     "tracking": plugin_tracking,
     "homepage_intelligence": plugin_homepage_intelligence,
-    "future_magic": plugin_future_magic,
 }
 
 ACTIVE_PLUGINS = PLUGIN_ORDER
@@ -276,7 +275,7 @@ def enhance_page(soup, url):
     for name in ACTIVE_PLUGINS:
         fn = PLUGIN_REGISTRY.get(name)
         if fn:
-            run_plugin(name, fn, soup, url, SALIENCE)
+            run_plugin(name, fn, soup, url, raw_salience())
 
     return soup
 
@@ -315,7 +314,7 @@ def main():
         except Exception as e:
             print(f"⚠️ Skipped {f}: {e}")
 
-    print("✅ Semantic-salience consumer layer complete (fully collapsed, no abstraction layer)")
+    print("✅ Semantic-salience consumer layer complete (fully collapsed, direct interpretation model)")
 
 
 if __name__ == "__main__":
