@@ -17,7 +17,7 @@ DOMAIN = "https://unboundhealing.org/"
 
 
 # =========================================================
-# LOAD SINGLE TRUTH LAYER (HARD REQUIREMENT)
+# LOAD SINGLE TRUTH LAYER
 # =========================================================
 
 with open(SALIENCE_FILE, "r", encoding="utf-8") as f:
@@ -57,45 +57,45 @@ def find_html_files():
 
 
 # =========================================================
-# URL RESOLUTION (CRITICAL: MUST MATCH SALIENCE KEYS)
+# URL NORMALIZATION (CRITICAL FIX)
+# MUST MATCH SALIENCE BUILDER EXACTLY
 # =========================================================
 
+def normalize_url(url: str) -> str:
+    """
+    Canonical URL form:
+    - always trailing slash
+    - no index.html
+    - no .html
+    """
+
+    url = url.strip()
+
+    if not url.startswith("http"):
+        return url
+
+    url = url.replace("index.html", "").replace(".html", "")
+
+    if not url.endswith("/"):
+        url += "/"
+
+    return url
+
+
 def get_url_from_file(file_path):
-    """
-    MUST MATCH semantic-salience generation EXACTLY.
-
-    We normalize to:
-    https://domain/path/
-    (always trailing slash for consistency with page_graph keys)
-    """
-
-    rel = file_path.replace(ROOT, "").replace("\\", "/")
+    rel = file_path.replace(ROOT, "")
+    rel = rel.replace("\\", "/")
 
     rel = rel.replace("index.html", "").replace(".html", "")
 
     if rel.startswith("/"):
         rel = rel[1:]
 
-    # ALWAYS trailing slash to match page_graph keys
+    # IMPORTANT: ensure trailing slash for graph match
     if rel and not rel.endswith("/"):
         rel += "/"
 
     return f"{DOMAIN}{rel}"
-
-
-def normalize_url(url):
-    """
-    Hardening: unify lookup across:
-    - trailing slash
-    - missing trailing slash
-    """
-    if not url:
-        return url
-
-    if url.endswith("/"):
-        return url
-
-    return url + "/"
 
 
 # =========================================================
@@ -114,33 +114,19 @@ def lookup_title(url):
 
 
 # =========================================================
-# TRUTH LAYER ACCESS
+# TRUTH LAYER ACCESS (FIXED HARDENING)
 # =========================================================
 
 def get_related(url, limit=3):
-    """
-    page_graph is the ONLY source of truth.
-    """
 
-    candidates = [
-        url,
-        normalize_url(url),
-        url.rstrip("/")
-    ]
+    url = normalize_url(url)
 
-    node = None
-
-    for c in candidates:
-        if c in PAGE_GRAPH:
-            node = PAGE_GRAPH[c]
-            break
+    node = PAGE_GRAPH.get(url) or PAGE_GRAPH.get(url.rstrip("/"))
 
     if not node:
         return []
 
     related = node.get("related", [])
-    if not isinstance(related, list):
-        return []
 
     cleaned = []
     seen = set()
@@ -173,10 +159,11 @@ def inject_related_content(file_path):
         with open(file_path, "r", encoding="utf-8") as f:
             soup = BeautifulSoup(f, "html.parser")
 
-        # remove old injections
+        # remove old injection
         for old in soup.select("section.related-paths"):
             old.decompose()
 
+        # FIXED: missing URL definition
         url = get_url_from_file(file_path)
 
         related_urls = get_related(url)
@@ -196,9 +183,7 @@ def inject_related_content(file_path):
 
         for r in related_urls:
 
-            a = soup.new_tag("a")
-
-            a["href"] = r.replace(DOMAIN, "").rstrip("/")
+            a = soup.new_tag("a", href=r.replace(DOMAIN, ""))
             a["class"] = "related-chip"
             a.string = lookup_title(r)
 
@@ -234,7 +219,7 @@ def main():
     for file_path in html_files:
         inject_related_content(file_path)
 
-    print("✅ Related-content injection complete (page_graph hardened consumer v4.2)")
+    print("✅ Related-content injection complete (hardened canonical URL match v5.0)")
 
 
 if __name__ == "__main__":
