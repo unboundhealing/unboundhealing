@@ -8,20 +8,19 @@ from collections import defaultdict
 # =========================================================
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
-
 SALIENCE_FILE = os.path.join(ROOT, "semantic-salience.json")
-HOME_INTEL_FILE = os.path.join(ROOT, "homepage-intelligence.json")
 
 TRACKER_PATH = "/assets/js/semantic-tracker.js"
+HOME_INTEL_FILE = os.path.join(ROOT, "homepage-intelligence.json")
 
 
 # =========================================================
-# LOAD SINGLE TRUTH LAYER (SEMANTIC SALIENCE)
+# LOAD SEMANTIC-SALIENCE (TRUTH LAYER ONLY)
 # =========================================================
 
 def load_salience():
     if not os.path.exists(SALIENCE_FILE):
-        raise FileNotFoundError("❌ semantic-salience.json missing (REQUIRED TRUTH LAYER)")
+        raise FileNotFoundError("❌ semantic-salience.json missing")
 
     with open(SALIENCE_FILE, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -36,16 +35,16 @@ salience = load_salience()
 
 
 # =========================================================
-# FILE DISCOVERY (SAFE CONSUMER FILTER)
+# FILE DISCOVERY
 # =========================================================
 
 def find_html_files():
     html_files = []
 
     for root_dir, _, files in os.walk(ROOT):
-        norm = root_dir.replace("\\", "/")
+        normalized = root_dir.replace("\\", "/")
 
-        if "/assets/" in norm:
+        if "/assets/" in normalized:
             continue
 
         for f in files:
@@ -62,7 +61,7 @@ def find_html_files():
 
 
 # =========================================================
-# URL NORMALIZATION
+# URL HELPERS
 # =========================================================
 
 def get_url_from_file(file_path):
@@ -77,11 +76,13 @@ def get_url_from_file(file_path):
 
 def fallback_title(url):
     path = url.replace("https://unboundhealing.org", "").strip("/")
-    return "Home" if not path else path.split("/")[-1].replace("-", " ").title()
+    if not path:
+        return "Home"
+    return path.split("/")[-1].replace("-", " ").title()
 
 
 # =========================================================
-# SAFE SALIENCE ACCESSORS
+# SAFE ACCESSORS
 # =========================================================
 
 def safe_node(node):
@@ -118,11 +119,10 @@ def get_concept_weight_map(node):
 
 
 # =========================================================
-# LAZY CONCEPT INDEX
+# CONCEPT INDEX (LAZY)
 # =========================================================
 
 _CONCEPT_INDEX = None
-
 
 def build_concept_index():
     index = defaultdict(set)
@@ -130,13 +130,7 @@ def build_concept_index():
 
     for url, node in pages.items():
         for c in get_concepts(node):
-            if isinstance(c, dict):
-                word = c.get("word")
-            elif isinstance(c, str):
-                word = c
-            else:
-                continue
-
+            word = c.get("word") if isinstance(c, dict) else c
             if word:
                 index[word].add(url)
 
@@ -151,13 +145,13 @@ def get_concept_index():
 
 
 # =========================================================
-# RELATED CONTENT ENGINE (DERIVED ONLY)
+# RELATED CONTENT ENGINE (CONSUMER OF TRUTH LAYER)
 # =========================================================
 
 def compute_related(url, limit=5):
     node = safe_node(salience.get(url))
-
     weights = get_concept_weight_map(node)
+
     if not weights:
         return []
 
@@ -197,30 +191,28 @@ def plugin_related_content(soup, url):
     if not related:
         return
 
-    section = soup.new_tag("section")
-    section["class"] = "related-paths"
+    block = soup.new_tag("section")
+    block["class"] = "related-paths"
 
     h = soup.new_tag("h3")
     h.string = "Further paths to follow..."
-    section.append(h)
+    block.append(h)
 
     cloud = soup.new_tag("div")
     cloud["class"] = "related-cloud"
 
     for r in related:
-        href = r.replace("https://unboundhealing.org", "")
-        a = soup.new_tag("a", href=href)
+        a = soup.new_tag("a", href=r.replace("https://unboundhealing.org", ""))
         a["class"] = "related-chip"
         a.string = fallback_title(r)
         cloud.append(a)
 
-    section.append(cloud)
+    block.append(cloud)
 
-    footer = soup.find("footer")
-    if footer:
-        footer.insert_before(section)
-    elif soup.body:
-        soup.body.append(section)
+    if soup.body:
+        soup.body.append(block)
+    else:
+        soup.append(block)
 
 
 def plugin_tracking(soup, url):
@@ -237,17 +229,32 @@ def plugin_tracking(soup, url):
 
 
 # =========================================================
-# FUTURE MAGIC (PLACEHOLDER ONLY)
+# FUTURE MAGIC (SAFE SEMANTIC HOOK)
 # =========================================================
 
 def plugin_future_magic(soup, url):
-    # intentionally inert hook
-    # safe extension point for future behavior
-    pass
+    """
+    FUTURE MAGIC (SEMANTIC HOOK ONLY)
+
+    Principle:
+    - consumes semantic-salience architecture context
+    - does NOT alter DOM meaningfully
+    - acts as inert extension point for future salience-driven rendering
+    """
+
+    # NON-INTRUSIVE: no visible UI unless explicitly needed later
+    # (this preserves "consumer-only layer" integrity)
+
+    comment = soup.new_string("<!-- future_magic hook active -->")
+
+    if soup.body:
+        soup.body.append(comment)
+    else:
+        soup.append(comment)
 
 
 # =========================================================
-# HOMEPAGE INTELLIGENCE (DERIVATIVE CONSUMER LAYER)
+# HOMEPAGE INTELLIGENCE (CONSUMER LAYER)
 # =========================================================
 
 def load_homepage_intelligence():
@@ -261,11 +268,7 @@ def load_homepage_intelligence():
         return None
 
 
-def plugin_homepage_intelligence(soup, url):
-    # ONLY run on homepage
-    if url.rstrip("/") != "https://unboundhealing.org":
-        return
-
+def inject_homepage_intelligence(soup, url):
     data = load_homepage_intelligence()
     if not data:
         return
@@ -276,13 +279,10 @@ def plugin_homepage_intelligence(soup, url):
     root = soup.new_tag("section")
     root["class"] = "homepage-intelligence"
 
-    intel = data.get("homepage_intelligence", {})
+    concepts = data.get("homepage_intelligence", {}).get("top_concepts", [])[:3]
+    hubs = data.get("homepage_intelligence", {}).get("top_hubs", [])[:3]
 
-    # -------------------------
-    # ESSENTIAL INSPIRATIONS
-    # -------------------------
-    concepts = intel.get("top_concepts", [])[:3]
-
+    # concepts
     if concepts:
         sec = soup.new_tag("div")
         sec["class"] = "essential-inspirations"
@@ -303,11 +303,7 @@ def plugin_homepage_intelligence(soup, url):
         sec.append(cloud)
         root.append(sec)
 
-    # -------------------------
-    # ARISING OBSERVATIONS
-    # -------------------------
-    hubs = intel.get("top_hubs", [])[:3]
-
+    # hubs
     if hubs:
         sec = soup.new_tag("div")
         sec["class"] = "arising-observations"
@@ -320,10 +316,9 @@ def plugin_homepage_intelligence(soup, url):
         cloud["class"] = "chip-cloud"
 
         for hnode in hubs:
-            node = hnode.get("node", "")
             a = soup.new_tag("a", href="#")
             a["class"] = "chip"
-            a.string = fallback_title(node)
+            a.string = fallback_title(hnode.get("node", ""))
             cloud.append(a)
 
         sec.append(cloud)
@@ -336,13 +331,13 @@ def plugin_homepage_intelligence(soup, url):
 
 
 # =========================================================
-# REGISTRY (DETERMINISTIC ORDER)
+# PLUGIN REGISTRY (DETERMINISTIC ORDER = SINGLE TRUTH FLOW)
 # =========================================================
 
 PLUGIN_REGISTRY = {
     "related_content": plugin_related_content,
     "tracking": plugin_tracking,
-    "homepage_intelligence": plugin_homepage_intelligence,
+    "homepage_intelligence": inject_homepage_intelligence,
     "future_magic": plugin_future_magic,
 }
 
@@ -353,13 +348,15 @@ PLUGIN_ORDER = [
     "future_magic",
 ]
 
+ACTIVE_PLUGINS = PLUGIN_ORDER
+
 
 # =========================================================
-# PAGE ENHANCEMENT CORE
+# ENHANCEMENT PIPELINE
 # =========================================================
 
 def enhance_page(soup, url):
-    for name in PLUGIN_ORDER:
+    for name in ACTIVE_PLUGINS:
         fn = PLUGIN_REGISTRY.get(name)
         if fn:
             run_plugin(name, fn, soup, url)
@@ -368,7 +365,7 @@ def enhance_page(soup, url):
 
 
 # =========================================================
-# PROCESS FILES
+# FILE PROCESSOR
 # =========================================================
 
 def process_file(file_path):
@@ -399,7 +396,7 @@ def main():
         except Exception as e:
             print(f"⚠️ Skipped {f}: {e}")
 
-    print("✅ Semantic-salience consumer layer complete (single truth architecture maintained)")
+    print("✅ Semantic-salience consumer layer complete (single truth architecture intact)")
 
 
 if __name__ == "__main__":
