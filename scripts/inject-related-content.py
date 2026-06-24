@@ -17,7 +17,7 @@ DOMAIN = "https://unboundhealing.org/"
 
 
 # =========================================================
-# LOAD SINGLE TRUTH LAYER
+# LOAD SINGLE TRUTH LAYER (HARD REQUIREMENT)
 # =========================================================
 
 with open(SALIENCE_FILE, "r", encoding="utf-8") as f:
@@ -35,6 +35,24 @@ if os.path.exists(PAGE_TITLES_FILE):
         page_titles = json.load(f)
 else:
     page_titles = {}
+
+
+# =========================================================
+# CANONICAL URL SYSTEM (SINGLE SOURCE OF TRUTH)
+# =========================================================
+
+def canonicalize(url: str) -> str:
+    url = url.strip()
+
+    if not url.startswith("http"):
+        url = f"{DOMAIN}{url}"
+
+    url = url.replace("index.html", "").replace(".html", "")
+
+    # normalize trailing slash
+    url = url.rstrip("/") + "/"
+
+    return url
 
 
 # =========================================================
@@ -57,30 +75,8 @@ def find_html_files():
 
 
 # =========================================================
-# URL NORMALIZATION (CRITICAL FIX)
-# MUST MATCH SALIENCE BUILDER EXACTLY
+# FILE → URL (MATCHES GRAPH EXACTLY VIA CANONICALIZE)
 # =========================================================
-
-def normalize_url(url: str) -> str:
-    """
-    Canonical URL form:
-    - always trailing slash
-    - no index.html
-    - no .html
-    """
-
-    url = url.strip()
-
-    if not url.startswith("http"):
-        return url
-
-    url = url.replace("index.html", "").replace(".html", "")
-
-    if not url.endswith("/"):
-        url += "/"
-
-    return url
-
 
 def get_url_from_file(file_path):
     rel = file_path.replace(ROOT, "")
@@ -91,11 +87,7 @@ def get_url_from_file(file_path):
     if rel.startswith("/"):
         rel = rel[1:]
 
-    # IMPORTANT: ensure trailing slash for graph match
-    if rel and not rel.endswith("/"):
-        rel += "/"
-
-    return f"{DOMAIN}{rel}"
+    return canonicalize(rel)
 
 
 # =========================================================
@@ -103,25 +95,26 @@ def get_url_from_file(file_path):
 # =========================================================
 
 def lookup_title(url):
-    path = url.replace(DOMAIN, "").rstrip("/")
-    key = "/" if path == "" else f"/{path}/"
+    url = canonicalize(url)
+
+    path = url.replace(DOMAIN, "").strip("/")
+    key = "/" if not path else f"/{path}/"
 
     if key in page_titles:
         return page_titles[key]
 
-    slug = key.strip("/").split("/")[-1]
+    slug = path.split("/")[-1] if path else ""
     return slug.replace("-", " ").title() if slug else "Home"
 
 
 # =========================================================
-# TRUTH LAYER ACCESS (FIXED HARDENING)
+# TRUTH LAYER ACCESS
 # =========================================================
 
 def get_related(url, limit=3):
+    url = canonicalize(url)
 
-    url = normalize_url(url)
-
-    node = PAGE_GRAPH.get(url) or PAGE_GRAPH.get(url.rstrip("/"))
+    node = PAGE_GRAPH.get(url)
 
     if not node:
         return []
@@ -135,7 +128,7 @@ def get_related(url, limit=3):
         if not r:
             continue
 
-        r = normalize_url(r)
+        r = canonicalize(r)
 
         if r in seen:
             continue
@@ -159,13 +152,11 @@ def inject_related_content(file_path):
         with open(file_path, "r", encoding="utf-8") as f:
             soup = BeautifulSoup(f, "html.parser")
 
-        # remove old injection
+        # remove old injections (idempotent)
         for old in soup.select("section.related-paths"):
             old.decompose()
 
-        # FIXED: missing URL definition
         url = get_url_from_file(file_path)
-
         related_urls = get_related(url)
 
         if not related_urls:
@@ -183,7 +174,14 @@ def inject_related_content(file_path):
 
         for r in related_urls:
 
-            a = soup.new_tag("a", href=r.replace(DOMAIN, ""))
+            a = soup.new_tag("a")
+
+            # IMPORTANT: make links relative, but stable
+            href = r.replace(DOMAIN, "").rstrip("/")
+            if not href.startswith("/"):
+                href = "/" + href
+
+            a["href"] = href
             a["class"] = "related-chip"
             a.string = lookup_title(r)
 
@@ -219,7 +217,7 @@ def main():
     for file_path in html_files:
         inject_related_content(file_path)
 
-    print("✅ Related-content injection complete (hardened canonical URL match v5.0)")
+    print("✅ Related-content injection complete (canonicalized graph v5.0)")
 
 
 if __name__ == "__main__":
