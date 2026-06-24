@@ -316,7 +316,12 @@ def enhance_page(soup, url):
 
 def process_file(file_path):
     with open(file_path, "r", encoding="utf-8") as f:
-        soup = BeautifulSoup(f, "lxml")
+        html = f.read()
+
+    try:
+        soup = BeautifulSoup(html, "lxml")
+    except Exception:
+        soup = BeautifulSoup(html, "html.parser")
 
     url = get_url_from_file(file_path)
     enhance_page(soup, url)
