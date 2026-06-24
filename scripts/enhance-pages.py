@@ -36,7 +36,7 @@ salience = load_salience()
 
 
 # =========================================================
-# FILE DISCOVERY (FIXED + SAFE CONSUMER FILTERING)
+# FILE DISCOVERY (SAFE CONSUMER FILTERING)
 # =========================================================
 
 def find_html_files():
@@ -45,7 +45,6 @@ def find_html_files():
     for root_dir, _, files in os.walk(ROOT):
         normalized_root = root_dir.replace("\\", "/")
 
-        # hard exclude assets early
         if "/assets/" in normalized_root:
             continue
 
@@ -56,7 +55,6 @@ def find_html_files():
             full_path = os.path.join(root_dir, file_name)
             normalized_file = full_path.replace("\\", "/")
 
-            # redundant safety guard (belt + suspenders)
             if "/assets/" in normalized_file:
                 continue
 
@@ -88,7 +86,7 @@ def fallback_title(url):
 
 
 # =========================================================
-# SALIENCE ACCESSORS (TRUTH-LAYER ONLY)
+# SALIENCE ACCESSORS (TRUTH-LAYER SAFE)
 # =========================================================
 
 def safe_node(node):
@@ -120,21 +118,43 @@ def get_concept_weight_map(node):
 
 
 # =========================================================
-# CONCEPT INDEX (PURE SALIENCE PROJECTION)
+# LAZY INITIALIZATION (FIXED)
 # =========================================================
 
+_CONCEPT_INDEX = None
+
 def build_concept_index():
-    index = defaultdict(list)
+    index = defaultdict(set)
 
-    for url, node in salience.items():
+    # FIX 1: support flat OR "pages" wrapper
+    pages = salience.get("pages", salience)
+
+    for url, node in pages.items():
         for concept in get_concepts(node):
-            if isinstance(concept, dict) and concept.get("word"):
-                index[concept["word"]].append(url)
 
-    return index
+            # FIX 2: dual-mode concept parsing
+            if isinstance(concept, dict):
+                word = concept.get("word")
+            elif isinstance(concept, str):
+                word = concept
+            else:
+                continue
+
+            if word:
+                index[word].add(url)
+
+    return {k: list(v) for k, v in index.items()}
 
 
-CONCEPT_INDEX = build_concept_index()
+def get_concept_index():
+    """
+    Lazy initializer:
+    builds CONCEPT_INDEX only when first needed.
+    """
+    global _CONCEPT_INDEX
+    if _CONCEPT_INDEX is None:
+        _CONCEPT_INDEX = build_concept_index()
+    return _CONCEPT_INDEX
 
 
 # =========================================================
@@ -148,10 +168,13 @@ def compute_related(url, limit=5):
     if not concept_weights:
         return []
 
+    CONCEPT_INDEX = get_concept_index()
+
     scores = defaultdict(float)
 
     for concept, weight in concept_weights.items():
-        for other_url in CONCEPT_INDEX.get(concept, []):
+        # FIX 3: dedupe expansion set
+        for other_url in set(CONCEPT_INDEX.get(concept, [])):
             if other_url != url:
                 scores[other_url] += weight
 
@@ -164,6 +187,7 @@ def compute_related(url, limit=5):
 # =========================================================
 
 def run_plugin(name, fn, soup, url):
+    print(f"🔌 running plugin: {name} → {url}")
     try:
         fn(soup, url)
     except Exception as e:
@@ -257,7 +281,10 @@ def enhance_page(soup, url):
 
 def process_file(file_path):
     with open(file_path, "r", encoding="utf-8") as f:
-        soup = BeautifulSoup(f, "html.parser")
+        try:
+            soup = BeautifulSoup(f, "lxml")
+        except Exception:
+            soup = BeautifulSoup(f, "html.parser")
 
     url = get_url_from_file(file_path)
 
