@@ -1,47 +1,55 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
 echo "🧭 Auditing OpenGraph tags..."
 
 MISSING=0
 
-# ---------------------------------------
-# ONLY audit public-facing pages
-# ---------------------------------------
-find . -name "*.html" \
-  ! -path "./assets/*" \
-  ! -path "./assets/images/_html/*" \
-  ! -path "./assets/page-template/*" \
-  ! -path "./assets/entry-template/*" \
-  ! -path "./assets/updates-temp/*" \
-  | while IFS= read -r file; do
+# ---------------------------------------------------------
+# AUDIT PUBLIC-FACING HTML ONLY
+# ---------------------------------------------------------
 
-    # -----------------------------------
-    # Check required OG tags
-    # -----------------------------------
-    if ! grep -q "og:title" "$file"; then
-      echo "⚠️ Missing og:title in $file"
-      MISSING=1
-    fi
+while IFS= read -r file; do
 
-    if ! grep -q "og:description" "$file"; then
-      echo "⚠️ Missing og:description in $file"
-      MISSING=1
-    fi
+  # -------------------------------------------------------
+  # REQUIRED TAGS
+  # -------------------------------------------------------
 
-    # og:image is OPTIONAL for some pages, but still flagged
-    if ! grep -q "og:image" "$file"; then
-      echo "⚠️ Missing og:image in $file"
-      MISSING=1
-    fi
+  if ! grep -q "og:title" "$file"; then
+    echo "⚠️ Missing og:title in $file"
+    ((MISSING+=1))
+  fi
 
-  done
+  if ! grep -q "og:description" "$file"; then
+    echo "⚠️ Missing og:description in $file"
+    ((MISSING+=1))
+  fi
 
-# ---------------------------------------
-# Final result
-# ---------------------------------------
-if [ "$MISSING" -eq 1 ]; then
+  # -------------------------------------------------------
+  # OPTIONAL BUT RECOMMENDED
+  # -------------------------------------------------------
+
+  if ! grep -q "og:image" "$file"; then
+    echo "⚠️ Missing og:image in $file"
+  fi
+
+done < <(
+  find . -name "*.html" \
+    ! -path "./assets/*" \
+    ! -path "./assets/images/_html/*" \
+    ! -path "./assets/page-template/*" \
+    ! -path "./assets/entry-template/*" \
+    ! -path "./assets/updates-temp/*"
+)
+
+# ---------------------------------------------------------
+# FINAL RESULT
+# ---------------------------------------------------------
+
+if [ "$MISSING" -gt 0 ]; then
+  echo ""
   echo "❌ OpenGraph audit failed"
+  echo "📊 Required tag violations: $MISSING"
   exit 1
 fi
 
