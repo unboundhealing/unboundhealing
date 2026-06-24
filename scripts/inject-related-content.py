@@ -23,13 +23,11 @@ DOMAIN = "https://unboundhealing.org/"
 with open(SALIENCE_FILE, "r", encoding="utf-8") as f:
     semantic = json.load(f)
 
-# HARD TRUTH CONTRACT:
-# If page_graph is missing, this consumer MUST fail loudly.
 PAGE_GRAPH = semantic["page_graph"]
 
 
 # =========================================================
-# LOAD PAGE TITLES (OPTIONAL CONSUMER ENRICHMENT)
+# LOAD PAGE TITLES (OPTIONAL)
 # =========================================================
 
 if os.path.exists(PAGE_TITLES_FILE):
@@ -44,15 +42,9 @@ else:
 # =========================================================
 
 def find_html_files():
-    """
-    Structural scan only.
-    No semantic interpretation.
-    """
     html_files = []
 
     for root, _, files in os.walk(ROOT):
-
-        # skip assets (non-content layer)
         if "/assets/" in root.replace("\\", "/"):
             continue
 
@@ -64,32 +56,29 @@ def find_html_files():
 
 
 # =========================================================
-# URL RESOLUTION (STRUCTURAL ONLY)
+# URL RESOLUTION (MUST MATCH GRAPH KEYS)
 # =========================================================
 
 def get_url_from_file(file_path):
-    """
-    NOTE:
-    This is a structural mapping only.
-    Canonical identity is defined by semantic-salience graph keys.
-    """
-
     rel = file_path.replace(ROOT, "")
-
-    # normalize filesystem artifact only
     rel = rel.replace("\\", "/")
 
-    # strip HTML artifacts
-    rel = rel.replace("index.html", "").replace(".html", "")
+    rel = rel.replace("index.html", "")
+    rel = rel.replace(".html", "")
 
     if rel.startswith("/"):
         rel = rel[1:]
 
-    return f"{DOMAIN}{rel}"
+    url = f"{DOMAIN}{rel}".rstrip("/")
+    return url
+
+
+def normalize_url(url):
+    return url.rstrip("/")
 
 
 # =========================================================
-# TITLE RESOLUTION (PURE UI LAYER)
+# TITLE RESOLUTION
 # =========================================================
 
 def lookup_title(url):
@@ -104,34 +93,29 @@ def lookup_title(url):
 
 
 # =========================================================
-# TRUTH LAYER ACCESS (ONLY RELATION SOURCE)
+# TRUTH LAYER ACCESS
 # =========================================================
 
 def get_related(url, limit=3):
-    """
-    SINGLE SOURCE OF TRUTH:
+    url = normalize_url(url)
 
-    page_graph is the only valid relationship system.
-
-    This consumer:
-    - does NOT compute relationships
-    - does NOT infer similarity
-    - does NOT rank semantics
-    """
-
-    node = PAGE_GRAPH.get(url)
+    node = PAGE_GRAPH.get(url) or PAGE_GRAPH.get(url + "/")
 
     if not node:
         return []
 
-    # graph-derived neighbors (already ordered upstream)
     related = node.get("related", [])
 
     cleaned = []
     seen = set()
 
     for r in related:
-        if not r or r in seen:
+        if not r:
+            continue
+
+        r = normalize_url(r)
+
+        if r in seen:
             continue
 
         seen.add(r)
@@ -153,9 +137,6 @@ def inject_related_content(file_path):
         with open(file_path, "r", encoding="utf-8") as f:
             soup = BeautifulSoup(f, "html.parser")
 
-        # -------------------------------------------------
-        # REMOVE PREVIOUS INJECTIONS (IDEMPOTENT BEHAVIOR)
-        # -------------------------------------------------
         for old in soup.select("section.related-paths"):
             old.decompose()
 
@@ -165,10 +146,6 @@ def inject_related_content(file_path):
 
         if not related_urls:
             return
-
-        # -------------------------------------------------
-        # BUILD UI BLOCK (PURE PRESENTATION LAYER)
-        # -------------------------------------------------
 
         block = soup.new_tag("section")
         block["class"] = "related-paths"
@@ -194,10 +171,6 @@ def inject_related_content(file_path):
 
         block.append(cloud)
 
-        # -------------------------------------------------
-        # INSERT STRATEGY (DOM SAFE)
-        # -------------------------------------------------
-
         footer = soup.find("footer")
 
         if footer:
@@ -205,7 +178,6 @@ def inject_related_content(file_path):
         elif soup.body:
             soup.body.append(block)
         else:
-            # hard fallback: append to document root
             soup.append(block)
 
         with open(file_path, "w", encoding="utf-8") as f:
@@ -214,7 +186,6 @@ def inject_related_content(file_path):
         print(f"🔗 Injected related paths into {file_path}")
 
     except Exception as e:
-        # fail-soft for CI stability, but log clearly
         print(f"⚠️ Skipped {file_path}: {e}")
 
 
@@ -228,7 +199,7 @@ def main():
     for file_path in html_files:
         inject_related_content(file_path)
 
-    print("✅ Related-content injection complete (page_graph single-truth consumer v4.1)")
+    print("✅ Related-content injection complete (page_graph single-truth consumer v4.2)")
 
 
 if __name__ == "__main__":
