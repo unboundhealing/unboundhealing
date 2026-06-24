@@ -1,7 +1,6 @@
 import json
 import os
 from bs4 import BeautifulSoup
-from collections import defaultdict
 
 # =========================================================
 # ROOT + SINGLE TRUTH LAYER
@@ -14,7 +13,7 @@ TRACKER_PATH = "/assets/js/semantic-tracker.js"
 
 
 # =========================================================
-# LOAD TRUTH LAYER (STRICT)
+# LOAD TRUTH LAYER (NO DERIVATION, NO TRANSFORMS)
 # =========================================================
 
 def load_salience():
@@ -30,7 +29,7 @@ def load_salience():
     return data
 
 
-salience = load_salience()
+SALIENCE = load_salience()
 
 
 # =========================================================
@@ -81,120 +80,60 @@ def fallback_title(url):
 
 
 # =========================================================
-# SAFE ACCESS
-# =========================================================
-
-def safe_node(node):
-    return node if isinstance(node, dict) else {}
-
-
-def get_concepts(node):
-    node = safe_node(node)
-    c = node.get("concepts", [])
-    return c if isinstance(c, list) else []
-
-
-def get_concept_weight_map(node):
-    node = safe_node(node)
-    weights = {}
-
-    for c in get_concepts(node):
-        if isinstance(c, dict):
-            word = c.get("word")
-            w = c.get("weight", 1.0)
-        elif isinstance(c, str):
-            word = c
-            w = 1.0
-        else:
-            continue
-
-        if word:
-            try:
-                weights[word] = float(w)
-            except Exception:
-                weights[word] = 1.0
-
-    return weights
-
-
-# =========================================================
-# SINGLE SALIENCE QUERY ENGINE (NEW CORE ABSTRACTION)
-# =========================================================
-
-def query_salience(url, mode="related", limit=5):
-    """
-    Single truth-layer interface.
-
-    mode:
-      - "related": graph adjacency-style relevance
-      - "homepage": salience-weighted global importance
-    """
-
-    node = safe_node(salience.get(url))
-
-    if mode == "related":
-        weights = get_concept_weight_map(node)
-        if not weights:
-            return []
-
-        index = salience.get("_concept_index")
-        if index is None:
-            index = build_concept_index()
-
-        scores = defaultdict(float)
-
-        for concept, weight in weights.items():
-            for other in set(index.get(concept, [])):
-                if other != url:
-                    scores[other] += weight
-
-        ranked = sorted(scores.items(), key=lambda x: (-x[1], x[0]))
-        return [u for u, _ in ranked[:limit]]
-
-    if mode == "homepage":
-        pages = salience.get("pages", salience)
-
-        scored = []
-        for u, n in pages.items():
-            if u == url:
-                continue
-
-            w = 0.0
-            for c in get_concepts(n):
-                if isinstance(c, dict):
-                    w += float(c.get("weight", 1.0))
-                else:
-                    w += 1.0
-
-            scored.append((u, w))
-
-        scored.sort(key=lambda x: (-x[1], x[0]))
-        return [u for u, _ in scored[:limit]]
-
-    return []
-
-
-# =========================================================
 # PLUGIN CORE
 # =========================================================
 
-def run_plugin(name, fn, soup, url):
+def run_plugin(name, fn, soup, url, salience):
     print(f"🔌 plugin: {name} → {url}")
     try:
-        fn(soup, url)
+        fn(soup, url, salience)
     except Exception as e:
         print(f"⚠️ plugin failed [{name}]: {e}")
 
 
 # =========================================================
-# PLUGINS (NOW PURE CONSUMERS OF SALIENCE)
+# PLUGINS (RAW SALIENCE CONSUMERS ONLY)
 # =========================================================
 
-def plugin_related_content(soup, url):
+# ---------------------------------------------------------
+# RELATED CONTENT (direct graph interpretation)
+# ---------------------------------------------------------
+
+def plugin_related_content(soup, url, salience):
     for old in soup.select("section.related-paths"):
         old.decompose()
 
-    related = query_salience(url, mode="related")
+    pages = salience.get("pages", {})
+    node = pages.get(url, {})
+
+    concepts = node.get("concepts", [])
+    if not concepts:
+        return
+
+    # build raw co-occurrence scoring directly from salience
+    scores = {}
+
+    for concept in concepts:
+        word = concept.get("word") if isinstance(concept, dict) else concept
+
+        if not word:
+            continue
+
+        for other_url, other_node in pages.items():
+            if other_url == url:
+                continue
+
+            other_concepts = other_node.get("concepts", [])
+
+            for oc in other_concepts:
+                oword = oc.get("word") if isinstance(oc, dict) else oc
+
+                if oword == word:
+                    scores[other_url] = scores.get(other_url, 0) + 1
+
+    ranked = sorted(scores.items(), key=lambda x: (-x[1], x[0]))[:5]
+    related = [u for u, _ in ranked]
+
     if not related:
         return
 
@@ -222,7 +161,11 @@ def plugin_related_content(soup, url):
         soup.append(block)
 
 
-def plugin_tracking(soup, url):
+# ---------------------------------------------------------
+# TRACKING (UNCHANGED - NON-SEMANTIC)
+# ---------------------------------------------------------
+
+def plugin_tracking(soup, url, salience):
     if soup.find("script", {"src": TRACKER_PATH}):
         return
 
@@ -235,12 +178,36 @@ def plugin_tracking(soup, url):
         soup.append(script)
 
 
-def plugin_homepage_intelligence(soup, url):
+# ---------------------------------------------------------
+# HOMEPAGE INTELLIGENCE (DIRECT SALIENCE SCAN)
+# ---------------------------------------------------------
+
+def plugin_homepage_intelligence(soup, url, salience):
     for old in soup.select("section.homepage-intelligence"):
         old.decompose()
 
-    top_nodes = query_salience(url, mode="homepage", limit=3)
-    if not top_nodes:
+    pages = salience.get("pages", {})
+
+    # compute raw salience weight per node (no abstraction layer)
+    scored = []
+
+    for u, node in pages.items():
+        if u == url:
+            continue
+
+        weight = 0.0
+        for c in node.get("concepts", []):
+            if isinstance(c, dict):
+                weight += float(c.get("weight", 1.0))
+            else:
+                weight += 1.0
+
+        scored.append((u, weight))
+
+    scored.sort(key=lambda x: (-x[1], x[0]))
+    top = [u for u, _ in scored[:3]]
+
+    if not top:
         return
 
     root = soup.new_tag("section")
@@ -253,7 +220,7 @@ def plugin_homepage_intelligence(soup, url):
     cloud = soup.new_tag("div")
     cloud["class"] = "chip-cloud"
 
-    for node_url in top_nodes:
+    for node_url in top:
         a = soup.new_tag("a", href=node_url.replace("https://unboundhealing.org", ""))
         a["class"] = "chip"
         a.string = fallback_title(node_url)
@@ -267,7 +234,11 @@ def plugin_homepage_intelligence(soup, url):
         soup.append(root)
 
 
-def plugin_future_magic(soup, url):
+# ---------------------------------------------------------
+# FUTURE MAGIC (NON-SEMANTIC HOOK)
+# ---------------------------------------------------------
+
+def plugin_future_magic(soup, url, salience):
     comment = soup.new_string("<!-- future_magic hook active -->")
 
     if soup.body:
@@ -277,7 +248,7 @@ def plugin_future_magic(soup, url):
 
 
 # =========================================================
-# PLUGIN REGISTRY (DETERMINISTIC ORDER)
+# PLUGIN REGISTRY
 # =========================================================
 
 PLUGIN_REGISTRY = {
@@ -305,7 +276,7 @@ def enhance_page(soup, url):
     for name in ACTIVE_PLUGINS:
         fn = PLUGIN_REGISTRY.get(name)
         if fn:
-            run_plugin(name, fn, soup, url)
+            run_plugin(name, fn, soup, url, SALIENCE)
 
     return soup
 
@@ -344,7 +315,7 @@ def main():
         except Exception as e:
             print(f"⚠️ Skipped {f}: {e}")
 
-    print("✅ Semantic-salience consumer layer complete (single truth architecture intact)")
+    print("✅ Semantic-salience consumer layer complete (fully collapsed, no abstraction layer)")
 
 
 if __name__ == "__main__":
