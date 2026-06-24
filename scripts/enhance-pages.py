@@ -33,16 +33,28 @@ SALIENCE = load_salience()
 
 
 # =========================================================
-# RAW ACCESS LAYER (NO ABSTRACTION, NO QUERY ENGINE)
+# RAW ACCESS LAYER
 # =========================================================
 
 def raw_salience():
     return SALIENCE
 
 
-# NOTE:
-# Plugins may diverge semantically and structurally.
-# Only visual CSS classes are considered shared constraints.
+# =========================================================
+# CONTAINER RESOLUTION (NEW STANDARDIZED LAYER)
+# =========================================================
+
+def get_container(soup):
+    return (
+        soup.body.find("main")
+        if soup.body and soup.body.find("main")
+        else soup.body or soup
+    )
+
+
+def append_block(soup, block):
+    container = get_container(soup)
+    container.append(block)
 
 
 # =========================================================
@@ -77,11 +89,9 @@ def find_html_files():
 
 def get_url_from_file(file_path):
     rel = os.path.relpath(file_path, ROOT).replace("\\", "/")
-
     rel = rel.replace("index.html", "")
     rel = rel.replace(".html", "")
     rel = rel.strip("/")
-
     return f"https://unboundhealing.org/{rel}" if rel else "https://unboundhealing.org/"
 
 
@@ -105,7 +115,7 @@ def run_plugin(name, fn, soup, url, salience):
 
 
 # =========================================================
-# PLUGINS (RAW SALIENCE CONSUMERS ONLY)
+# PLUGINS
 # =========================================================
 
 # ---------------------------------------------------------
@@ -137,9 +147,7 @@ def plugin_related_content(soup, url, salience):
             if other_url == url:
                 continue
 
-            other_concepts = other_node.get("concepts", [])
-
-            for oc in other_concepts:
+            for oc in other_node.get("concepts", []):
                 oword = oc.get("word") if isinstance(oc, dict) else oc
                 if oword == word:
                     scores[other_url] = scores.get(other_url, 0) + 1
@@ -171,12 +179,11 @@ def plugin_related_content(soup, url, salience):
 
     block.append(cloud)
 
-    container = soup.body.find("main") if soup.body and soup.body.find("main") else soup.body or soup
-    container.append(block)
+    append_block(soup, block)
 
 
 # ---------------------------------------------------------
-# TRACKING (NON-SEMANTIC)
+# TRACKING
 # ---------------------------------------------------------
 
 def plugin_tracking(soup, url, salience):
@@ -185,11 +192,9 @@ def plugin_tracking(soup, url, salience):
 
     script = soup.new_tag("script", src=TRACKER_PATH)
     script["defer"] = True
-
     script["data-salience-debug"] = "true"
 
-    container = soup.body.find("main") if soup.body and soup.body.find("main") else soup.body or soup
-    container.append(script)
+    append_block(soup, script)
 
 
 # ---------------------------------------------------------
@@ -212,10 +217,7 @@ def plugin_homepage_intelligence(soup, url, salience):
 
         weight = 0.0
         for c in node.get("concepts", []):
-            if isinstance(c, dict):
-                weight += float(c.get("weight", 1.0))
-            else:
-                weight += 1.0
+            weight += float(c.get("weight", 1.0)) if isinstance(c, dict) else 1.0
 
         scored.append((u, weight))
 
@@ -246,12 +248,11 @@ def plugin_homepage_intelligence(soup, url, salience):
 
     root.append(cloud)
 
-    container = soup.body.find("main") if soup.body and soup.body.find("main") else soup.body or soup
-    container.append(root)
+    append_block(soup, root)
 
 
 # =========================================================
-# PLUGIN REGISTRY
+# REGISTRY
 # =========================================================
 
 PLUGIN_ORDER = [
@@ -278,7 +279,6 @@ def enhance_page(soup, url):
         fn = PLUGIN_REGISTRY.get(name)
         if fn:
             run_plugin(name, fn, soup, url, raw_salience())
-
     return soup
 
 
@@ -316,7 +316,7 @@ def main():
         except Exception as e:
             print(f"⚠️ Skipped {f}: {e}")
 
-    print("✅ Semantic-salience consumer layer complete (fully collapsed, direct interpretation model)")
+    print("✅ Semantic-salience consumer layer complete (fully collapsed model)")
 
 
 if __name__ == "__main__":
