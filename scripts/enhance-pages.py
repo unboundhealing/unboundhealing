@@ -2,36 +2,52 @@ import json
 import os
 import re
 from bs4 import BeautifulSoup
+from collections import defaultdict
+
+# =========================================================
+# ROOT + TRUTH LAYER
+# =========================================================
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
-
 SALIENCE_FILE = os.path.join(ROOT, "semantic-salience.json")
 
 TRACKER_PATH = "/assets/js/semantic-tracker.js"
 
+
 # =========================================================
-# LOAD SINGLE TRUTH LAYER (HARD REQUIREMENT)
+# LOAD SINGLE TRUTH LAYER (HARD GUARANTEE)
 # =========================================================
 
 def load_salience():
     if not os.path.exists(SALIENCE_FILE):
-        raise FileNotFoundError("❌ semantic-salience.json missing (REQUIRED TRUTH LAYER)")
+        raise FileNotFoundError(
+            "❌ semantic-salience.json missing (REQUIRED SINGLE TRUTH LAYER)"
+        )
 
     with open(SALIENCE_FILE, "r", encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
+
+    if not isinstance(data, dict):
+        raise ValueError("❌ semantic-salience must be a dict")
+
+    return data
 
 
 salience = load_salience()
 
+
 # =========================================================
-# FILE DISCOVERY
+# FILE DISCOVERY (consumer-safe)
 # =========================================================
 
 def find_html_files():
     html_files = []
 
     for root_dir, _, files in os.walk(ROOT):
-        if "/assets/" in root_dir.replace("\\", "/"):
+        normalized = root_dir.replace("\\", "/")
+
+        # avoid assets + generated noise
+        if "/assets/" in normalized:
             continue
 
         for file_name in files:
@@ -42,28 +58,31 @@ def find_html_files():
 
 
 # =========================================================
-# URL MAPPING
+# URL NORMALIZATION (canonical form)
 # =========================================================
 
 def get_url_from_file(file_path):
-    rel = file_path.replace(ROOT, "")
+    rel = os.path.relpath(file_path, ROOT).replace("\\", "/")
 
     rel = rel.replace("index.html", "")
     rel = rel.replace(".html", "")
 
-    rel = re.sub(r"^/", "", rel)
+    rel = rel.strip("/")
 
-    return f"https://unboundhealing.org/{rel}"
+    return f"https://unboundhealing.org/{rel}" if rel else "https://unboundhealing.org/"
 
 
 def fallback_title(url):
-    path = url.replace("https://unboundhealing.org", "").rstrip("/")
-    slug = path.split("/")[-1] if path else "home"
-    return slug.replace("-", " ").title() or "Home"
+    path = url.replace("https://unboundhealing.org", "").strip("/")
+    if not path:
+        return "Home"
+
+    slug = path.split("/")[-1]
+    return slug.replace("-", " ").title()
 
 
 # =========================================================
-# SAFE ACCESSORS
+# SAFE SALIENCE ACCESSORS
 # =========================================================
 
 def safe_node(node):
@@ -72,22 +91,42 @@ def safe_node(node):
 
 def get_concepts(node):
     node = safe_node(node)
-    c = node.get("concepts", [])
-    return c if isinstance(c, list) else []
+    concepts = node.get("concepts", [])
+    return concepts if isinstance(concepts, list) else []
+
+
+def get_concept_weight_map(node):
+    """
+    Build concept → weight map from salience node.
+    If weight missing, default to 1.0.
+    """
+    node = safe_node(node)
+    concepts = get_concepts(node)
+
+    weights = {}
+
+    for c in concepts:
+        if isinstance(c, dict):
+            word = c.get("word")
+            weight = c.get("weight", 1.0)
+
+            if word:
+                weights[word] = float(weight)
+
+    return weights
 
 
 # =========================================================
-# CONCEPT INDEX (FROM SINGLE TRUTH LAYER)
+# CONCEPT INDEX (pure salience projection)
 # =========================================================
 
 def build_concept_index():
-    index = {}
+    index = defaultdict(list)
 
     for url, node in salience.items():
-        node = safe_node(node)
-
         for concept in get_concepts(node):
-            index.setdefault(concept, []).append(url)
+            if isinstance(concept, dict) and concept.get("word"):
+                index[concept["word"]].append(url)
 
     return index
 
@@ -96,32 +135,38 @@ CONCEPT_INDEX = build_concept_index()
 
 
 # =========================================================
-# RELATED CONTENT ENGINE (TRUTH LAYER ONLY)
+# RELATED CONTENT ENGINE (SALIENCE-WEIGHTED)
 # =========================================================
 
 def compute_related(url, limit=5):
     node = safe_node(salience.get(url))
 
-    concepts = get_concepts(node)
+    concept_weights = get_concept_weight_map(node)
 
-    if not concepts:
+    if not concept_weights:
         return []
 
-    scores = {}
+    scores = defaultdict(float)
 
-    for concept in concepts:
-        for other in CONCEPT_INDEX.get(concept, []):
-            if other == url:
+    # weighted resonance propagation
+    for concept, weight in concept_weights.items():
+        related_pages = CONCEPT_INDEX.get(concept, [])
+
+        for other_url in related_pages:
+            if other_url == url:
                 continue
-            scores[other] = scores.get(other, 0) + 1
 
+            # salience-weighted contribution
+            scores[other_url] += weight
+
+    # rank by strongest semantic resonance
     ranked = sorted(scores.items(), key=lambda x: (-x[1], x[0]))
 
     return [u for u, _ in ranked[:limit]]
 
 
 # =========================================================
-# PLUGIN SYSTEM
+# PLUGIN SYSTEM (pure consumer layer)
 # =========================================================
 
 def run_plugin(name, fn, soup, url):
@@ -136,7 +181,7 @@ def run_plugin(name, fn, soup, url):
 # =========================================================
 
 def plugin_related_content(soup, url):
-    # remove old blocks
+    # remove old state (idempotent consumer behavior)
     for old in soup.select("section.related-paths"):
         old.decompose()
 
@@ -156,7 +201,8 @@ def plugin_related_content(soup, url):
     cloud["class"] = "related-cloud"
 
     for r in related:
-        a = soup.new_tag("a", href=r.replace("https://unboundhealing.org", ""))
+        href = r.replace("https://unboundhealing.org", "")
+        a = soup.new_tag("a", href=href)
         a["class"] = "related-chip"
         a.string = fallback_title(r)
         cloud.append(a)
@@ -172,6 +218,7 @@ def plugin_related_content(soup, url):
 
 
 def plugin_tracking(soup, url):
+    # idempotent injection
     if soup.find("script", {"src": TRACKER_PATH}):
         return
 
@@ -185,7 +232,8 @@ def plugin_tracking(soup, url):
 
 
 def plugin_future_magic(soup, url):
-    pass
+    # intentionally inert consumer placeholder
+    return
 
 
 PLUGIN_REGISTRY = {
@@ -202,7 +250,7 @@ ACTIVE_PLUGINS = [
 
 
 # =========================================================
-# CORE PIPELINE
+# PAGE ENHANCEMENT CORE
 # =========================================================
 
 def enhance_page(soup, url):
@@ -210,11 +258,12 @@ def enhance_page(soup, url):
         plugin = PLUGIN_REGISTRY.get(name)
         if plugin:
             run_plugin(name, plugin, soup, url)
+
     return soup
 
 
 # =========================================================
-# PROCESSING
+# PROCESS FILE
 # =========================================================
 
 def process_file(file_path):
@@ -238,13 +287,13 @@ def process_file(file_path):
 def main():
     html_files = find_html_files()
 
-    for f in html_files:
+    for file_path in html_files:
         try:
-            process_file(f)
+            process_file(file_path)
         except Exception as e:
-            print(f"⚠️ Skipped {f}: {e}")
+            print(f"⚠️ Skipped {file_path}: {e}")
 
-    print("✅ Semantic gravity enhancement complete (truth-layer consumer only)")
+    print("✅ Semantic gravity enhancement complete (salience-consumer only)")
 
 
 if __name__ == "__main__":
