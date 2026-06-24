@@ -1,54 +1,63 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "🔎 Building search index (v4.0 salience-consumer architecture)"
+echo "🔎 Building search index (v4.1 resilient salience-consumer)"
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
 
 OUTPUT="search-index.json"
-
-if [ ! -f "semantic-salience.json" ]; then
-  echo "❌ semantic-salience.json missing — cannot build search index"
-  exit 1
-fi
+SAL_FILE="semantic-salience.json"
 
 echo "{" > "$OUTPUT"
-
 FIRST=true
 
 # ---------------------------------------
-# Load semantic-salience for tag projection
+# SAFE SALIENCE LOAD (NON-FATAL)
 # ---------------------------------------
-SAL_FILE="semantic-salience.json"
+CONCEPT_MAP="{}"
 
-echo "🧠 Loading semantic-salience (truth layer consumer mode)..."
+if [ -f "$SAL_FILE" ]; then
+  echo "🧠 Loading semantic-salience (optional enhancer)..."
 
-# We extract concept map using python for safety + correctness
-CONCEPT_MAP=$(python3 - << 'EOF'
+  CONCEPT_MAP=$(python3 - << 'EOF'
 import json
 
-with open("semantic-salience.json", "r", encoding="utf-8") as f:
-    data = json.load(f)
+try:
+    with open("semantic-salience.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+except Exception:
+    print("{}")
+    raise SystemExit(0)
 
-pages = data.get("pages", {})
+pages = data.get("pages", {}) if isinstance(data, dict) else {}
 
 result = {}
 
 for url, node in pages.items():
-    concepts = node.get("concepts", [])
-    if isinstance(concepts, list):
-        result[url] = [
-            c.get("word") for c in concepts
-            if isinstance(c, dict) and c.get("word")
-        ]
+    concepts = []
+
+    if isinstance(node, dict):
+        raw = node.get("concepts", [])
+
+        if isinstance(raw, list):
+            for c in raw:
+                if isinstance(c, dict):
+                    w = c.get("word")
+                    if w:
+                        concepts.append(w)
+
+    result[url] = concepts[:10]
 
 print(json.dumps(result))
 EOF
-)
+  ) || CONCEPT_MAP="{}"
+else
+  echo "⚠️ semantic-salience not found — continuing with empty tags"
+fi
 
 # ---------------------------------------
-# Process HTML files (STRUCTURE ONLY)
+# BUILD STRUCTURAL INDEX (NO SEMANTIC DEPENDENCY)
 # ---------------------------------------
 find . -type f -name "*.html" | while IFS= read -r file; do
 
@@ -67,25 +76,42 @@ find . -type f -name "*.html" | while IFS= read -r file; do
   [ -z "$DESC" ] && DESC=""
 
   # ---------------------------------------
-  # SALIENCE-DRIVEN TAGS (NOT FILESYSTEM)
+  # OPTIONAL SALIENCE TAGS (SAFE FALLBACK)
   # ---------------------------------------
   TAGS=$(echo "$CONCEPT_MAP" | python3 - << EOF
 import json, sys
 
-data = json.load(sys.stdin)
+try:
+    data = json.load(sys.stdin)
+except Exception:
+    data = {}
 
 url = "$URL"
-concepts = data.get(url, [])
 
-# ensure stable, small tag set
-concepts = [c for c in concepts if c]
+concepts = data.get(url, []) if isinstance(data, dict) else []
 
-print(",".join(concepts[:10]))
+if not isinstance(concepts, list):
+    concepts = []
+
+# normalize + dedupe
+clean = []
+seen = set()
+
+for c in concepts:
+    if not isinstance(c, str):
+        continue
+    c = c.strip().lower()
+    if not c or c in seen:
+        continue
+    seen.add(c)
+    clean.append(c)
+
+print(",".join(clean[:10]))
 EOF
 )
 
   # ---------------------------------------
-  # JSON formatting
+  # WRITE ENTRY
   # ---------------------------------------
   if [ "$FIRST" = true ]; then
     FIRST=false
@@ -110,5 +136,5 @@ done
 
 echo "}" >> "$OUTPUT"
 
-echo "✅ Search index built (v4.0 SALIENCE-ALIGNED)"
-echo "🧠 tags now derived from semantic-salience (NOT filesystem)"
+echo "✅ Search index built (v4.1 resilient)"
+echo "🧠 semantic-salience is optional, not required"
