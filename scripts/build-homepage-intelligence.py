@@ -153,6 +153,14 @@ def main():
 
     data = load_json(SAL_FILE)
 
+    print()
+    print("INTELLIGENCE INPUT KEYS:")
+    print(data.keys())
+
+    print()
+    print("PAGE_GRAPH COUNT:")
+    print(len(data.get("page_graph", {})))
+
     nodes = get_nodes(data)
     edges = get_edges(data)
 
