@@ -141,32 +141,5 @@
     <p>With gratitude for many conversations, including those with <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">ChatGPT</a>.</p>
   </footer>
 
-<script>
-function loadIntelligence() {
-  const target = document.getElementById('homepage-intelligence');
-
-  if (!target) {
-    console.warn("INTELLIGENCE TARGET MISSING - retrying...");
-    return;
-  }
-
-  fetch('/assets/homepage-intelligence-blocks.html')
-    .then(r => r.text())
-    .then(html => {
-      console.log("INTELLIGENCE HTML:", html);
-      target.innerHTML = html;
-    })
-    .catch(err => {
-      console.error("INTELLIGENCE FETCH FAILED:", err);
-    });
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", loadIntelligence);
-} else {
-  loadIntelligence();
-}
-</script>
-
 </body>
 </html>
