@@ -1,6 +1,5 @@
 import json
 import os
-import re
 from bs4 import BeautifulSoup
 from collections import defaultdict
 
@@ -15,7 +14,7 @@ TRACKER_PATH = "/assets/js/semantic-tracker.js"
 
 
 # =========================================================
-# LOAD SINGLE TRUTH LAYER (HARD GUARANTEE)
+# LOAD SINGLE TRUTH LAYER (STRICT BUT SAFE)
 # =========================================================
 
 def load_salience():
@@ -37,30 +36,37 @@ salience = load_salience()
 
 
 # =========================================================
-# FILE DISCOVERY (consumer-safe)
+# FILE DISCOVERY (FIXED + SAFE CONSUMER FILTERING)
 # =========================================================
 
 def find_html_files():
     html_files = []
 
     for root_dir, _, files in os.walk(ROOT):
-        normalized = root_dir.replace("\\", "/")
+        normalized_root = root_dir.replace("\\", "/")
 
-        # Skip anything inside an assets directory
-        parts = normalized.split("/")
-
-        if "assets" in parts:
+        # hard exclude assets early
+        if "/assets/" in normalized_root:
             continue
 
         for file_name in files:
-            if file_name.endswith(".html"):
-                html_files.append(os.path.join(root_dir, file_name))
+            if not file_name.endswith(".html"):
+                continue
+
+            full_path = os.path.join(root_dir, file_name)
+            normalized_file = full_path.replace("\\", "/")
+
+            # redundant safety guard (belt + suspenders)
+            if "/assets/" in normalized_file:
+                continue
+
+            html_files.append(full_path)
 
     return html_files
 
 
 # =========================================================
-# URL NORMALIZATION (canonical form)
+# URL NORMALIZATION
 # =========================================================
 
 def get_url_from_file(file_path):
@@ -68,7 +74,6 @@ def get_url_from_file(file_path):
 
     rel = rel.replace("index.html", "")
     rel = rel.replace(".html", "")
-
     rel = rel.strip("/")
 
     return f"https://unboundhealing.org/{rel}" if rel else "https://unboundhealing.org/"
@@ -79,12 +84,11 @@ def fallback_title(url):
     if not path:
         return "Home"
 
-    slug = path.split("/")[-1]
-    return slug.replace("-", " ").title()
+    return path.split("/")[-1].replace("-", " ").title()
 
 
 # =========================================================
-# SAFE SALIENCE ACCESSORS
+# SALIENCE ACCESSORS (TRUTH-LAYER ONLY)
 # =========================================================
 
 def safe_node(node):
@@ -98,28 +102,25 @@ def get_concepts(node):
 
 
 def get_concept_weight_map(node):
-    """
-    Build concept → weight map from salience node.
-    If weight missing, default to 1.0.
-    """
     node = safe_node(node)
-    concepts = get_concepts(node)
-
     weights = {}
 
-    for c in concepts:
+    for c in get_concepts(node):
         if isinstance(c, dict):
             word = c.get("word")
             weight = c.get("weight", 1.0)
 
             if word:
-                weights[word] = float(weight)
+                try:
+                    weights[word] = float(weight)
+                except Exception:
+                    weights[word] = 1.0
 
     return weights
 
 
 # =========================================================
-# CONCEPT INDEX (pure salience projection)
+# CONCEPT INDEX (PURE SALIENCE PROJECTION)
 # =========================================================
 
 def build_concept_index():
@@ -137,38 +138,29 @@ CONCEPT_INDEX = build_concept_index()
 
 
 # =========================================================
-# RELATED CONTENT ENGINE (SALIENCE-WEIGHTED)
+# RELATED CONTENT ENGINE
 # =========================================================
 
 def compute_related(url, limit=5):
     node = safe_node(salience.get(url))
 
     concept_weights = get_concept_weight_map(node)
-
     if not concept_weights:
         return []
 
     scores = defaultdict(float)
 
-    # weighted resonance propagation
     for concept, weight in concept_weights.items():
-        related_pages = CONCEPT_INDEX.get(concept, [])
+        for other_url in CONCEPT_INDEX.get(concept, []):
+            if other_url != url:
+                scores[other_url] += weight
 
-        for other_url in related_pages:
-            if other_url == url:
-                continue
-
-            # salience-weighted contribution
-            scores[other_url] += weight
-
-    # rank by strongest semantic resonance
     ranked = sorted(scores.items(), key=lambda x: (-x[1], x[0]))
-
     return [u for u, _ in ranked[:limit]]
 
 
 # =========================================================
-# PLUGIN SYSTEM (pure consumer layer)
+# PLUGIN SYSTEM (CONSUMER LAYER)
 # =========================================================
 
 def run_plugin(name, fn, soup, url):
@@ -183,12 +175,10 @@ def run_plugin(name, fn, soup, url):
 # =========================================================
 
 def plugin_related_content(soup, url):
-    # remove old state (idempotent consumer behavior)
     for old in soup.select("section.related-paths"):
         old.decompose()
 
     related = compute_related(url)
-
     if not related:
         return
 
@@ -212,7 +202,6 @@ def plugin_related_content(soup, url):
     block.append(cloud)
 
     footer = soup.find("footer")
-
     if footer:
         footer.insert_before(block)
     elif soup.body:
@@ -220,7 +209,6 @@ def plugin_related_content(soup, url):
 
 
 def plugin_tracking(soup, url):
-    # idempotent injection
     if soup.find("script", {"src": TRACKER_PATH}):
         return
 
@@ -234,7 +222,6 @@ def plugin_tracking(soup, url):
 
 
 def plugin_future_magic(soup, url):
-    # intentionally inert consumer placeholder
     return
 
 
@@ -279,8 +266,6 @@ def process_file(file_path):
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(str(soup))
 
-    print(f"✨ Enhanced {file_path}")
-
 
 # =========================================================
 # ENTRYPOINT
@@ -292,6 +277,7 @@ def main():
     for file_path in html_files:
         try:
             process_file(file_path)
+            print(f"✨ Enhanced {file_path}")
         except Exception as e:
             print(f"⚠️ Skipped {file_path}: {e}")
 
