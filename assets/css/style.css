@@ -1,11 +1,14 @@
 :root {
+  /* =========================
+     CORE THEME TOKENS
+     ========================= */
   --bg: #f4f0e6;
   --text: #2f2f2f;
   --accent: #6f8f6a;
   --muted: #6a6a6a;
 
   /* =========================
-     SPACING RHYTHM SYSTEM
+     SPACING SYSTEM
      ========================= */
   --space-xs: 8px;
   --space-sm: 16px;
@@ -14,7 +17,7 @@
   --space-xl: 64px;
 
   /* =========================
-     TYPOGRAPHY RHYTHM
+     TYPOGRAPHY SYSTEM
      ========================= */
   --text-sm: 14px;
   --text-base: 18px;
@@ -22,11 +25,17 @@
   --text-xl: 32px;
 
   --line-height: 1.65;
+
+  /* =========================
+     SEMANTIC SURFACE TOKENS
+     ========================= */
+  --surface-soft: rgba(111, 143, 106, 0.08);
+  --surface-hover: rgba(111, 143, 106, 0.15);
 }
 
-/* =========================
-   BASE
-   ========================= */
+/* =========================================================
+   BASE SYSTEM
+   ========================================================= */
 
 body {
   margin: 0;
@@ -45,23 +54,130 @@ a {
 a:hover {
   color: var(--accent);
 }
-/* =========================
-   ARTICLE / CONTENT LINKS
-   ========================= */
+
+/* =========================================================
+   CONTENT LINKS (semantic main content layer)
+   ========================================================= */
 
 main a {
-color: var(--accent);
-text-decoration: underline;
-text-decoration-color: rgba(111,143,106,0.35);
-text-underline-offset: 2px;
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(111,143,106,0.35);
+  text-underline-offset: 2px;
 }
 
 main a:hover {
-text-decoration-color: rgba(111,143,106,0.7);
+  text-decoration-color: rgba(111,143,106,0.7);
 }
-/* =========================
-   ARTICLE IMAGES
-   ========================= */
+
+/* =========================================================
+   SEMANTIC BLOCK SYSTEM (NEW CORE)
+   ========================================================= */
+
+/*
+  ALL plugin outputs now inherit from this.
+  This replaces:
+  - homepage-intelligence
+  - related-paths
+*/
+.semantic-block {
+  margin-top: 90px;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================================
+   SEMANTIC HEADINGS (shared across plugins)
+   ========================================================= */
+
+.semantic-block h2,
+.semantic-block h3 {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--muted);
+  opacity: 0.81;
+  margin-bottom: 24px;
+}
+
+/* =========================================================
+   SEMANTIC CLOUD SYSTEM (shared container)
+   ========================================================= */
+
+.semantic-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* =========================================================
+   SEMANTIC CHIP SYSTEM (CRITICAL UNIFICATION)
+   ========================================================= */
+
+.semantic-chip {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  background: var(--surface-soft);
+  color: var(--muted);
+
+  font-size: 0.9rem;
+  text-decoration: none;
+
+  transition:
+    transform 180ms ease,
+    background 220ms ease,
+    color 220ms ease;
+}
+
+.semantic-chip:hover {
+  background: var(--surface-hover);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* optional state */
+.semantic-chip.muted {
+  opacity: 0.6;
+}
+
+/* =========================================================
+   PLUGIN-SPECIFIC “ADAPTER LAYER” (VERY SMALL)
+   ========================================================= */
+
+/*
+  These are ONLY semantic adapters, not styling systems.
+  Plugins should NEVER define visual rules anymore.
+*/
+
+/* Related content */
+.related-paths {
+  /* inherits .semantic-block */
+}
+
+/* Homepage intelligence */
+.homepage-intelligence {
+  /* inherits .semantic-block */
+}
+
+/* Chip containers */
+.chip-cloud,
+.related-cloud {
+  composes: semantic-cloud;
+}
+
+/* Chip types */
+.chip,
+.related-chip {
+  composes: semantic-chip;
+}
+
+/* =========================================================
+   ARTICLE SYSTEM
+   ========================================================= */
 
 .article-image {
   margin: 40px auto;
@@ -85,9 +201,9 @@ text-decoration-color: rgba(111,143,106,0.7);
   font-style: italic;
 }
 
-/* =========================
+/* =========================================================
    CENTERED HEADER SYSTEM
-   ========================= */
+   ========================================================= */
 
 .centered-header {
   text-align: center;
@@ -95,7 +211,6 @@ text-decoration-color: rgba(111,143,106,0.7);
   font-family: Inter, sans-serif;
 }
 
-/* logo */
 .logo-wrap {
   margin-bottom: var(--space-sm);
 }
@@ -113,7 +228,6 @@ text-decoration-color: rgba(111,143,106,0.7);
   opacity: 1;
 }
 
-/* nav */
 .centered-header .nav {
   display: flex;
   justify-content: center;
@@ -142,9 +256,9 @@ text-decoration-color: rgba(111,143,106,0.7);
   width: 100%;
 }
 
-/* =========================
-   PAGE LAYOUT SYSTEM
-   ========================= */
+/* =========================================================
+   PAGE SYSTEM
+   ========================================================= */
 
 .page {
   max-width: 800px;
@@ -152,27 +266,42 @@ text-decoration-color: rgba(111,143,106,0.7);
   padding: var(--space-xl) 20px;
 }
 
-/* centered text mode */
 .page--centered {
   text-align: center;
 }
-/* =========================
-   ABOUT PAGE
-   ========================= */
 
-.about-substack {
-  margin-top: 80px;
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+p {
+  margin: 0 0 var(--space-sm);
 }
 
-.about-substack h2 {
-  font-size: 20px;
-  font-weight: 400;
-  margin-bottom: 16px;
+.page:not(.page--centered) p {
+  line-height: var(--line-height);
 }
 
-/* =========================
-   HERO (homepage)
-   ========================= */
+.article h1 {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: var(--space-lg);
+  letter-spacing: 0.2px;
+}
+
+.subtitle-title {
+  text-align: center;
+  font-style: italic;
+}
+
+.subtitle-subheading {
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+/* =========================================================
+   HERO SYSTEM
+   ========================================================= */
 
 .hero {
   margin-bottom: var(--space-lg);
@@ -189,55 +318,34 @@ text-decoration-color: rgba(111,143,106,0.7);
   font-size: var(--text-base);
 }
 
-.spacer {
-  height: var(--space-lg);
-}
-
+.spacer,
 .section-space {
   height: var(--space-lg);
 }
 
-/* CTA */
 .cta {
   margin-top: var(--space-lg);
   font-size: var(--text-base);
   color: var(--accent);
 }
 
-/* =========================
-   TYPOGRAPHY CONSISTENCY
-   ========================= */
+/* =========================================================
+   ABOUT SYSTEM
+   ========================================================= */
 
-/* paragraphs (for Invitations, Gather, etc.) */
-p {
-  margin: 0 0 var(--space-sm);
+.about-substack {
+  margin-top: 80px;
 }
 
-/* optional subtle refinement for long text pages */
-.page:not(.page--centered) p {
-  line-height: var(--line-height);
+.about-substack h2 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 16px;
 }
 
-.article h1 {
-  text-align: center;
-  font-weight: 500;
-  margin-bottom: var(--space-lg);
-  letter-spacing: 0.2px;
-}
-/* Page titles and subtitles */
-
-.subtitle-title {
-  text-align: center;
-  font-style: italic;
-}
-
-.subtitle-subheading {
-  font-style: italic;
-  font-size: 0.8rem;
-}
-/* =========================
+/* =========================================================
    FOOTER
-   ========================= */
+   ========================================================= */
 
 .footer {
   text-align: center;
@@ -250,12 +358,11 @@ p {
   margin-top: var(--space-xs);
 }
 
-/* =========================
+/* =========================================================
    RESPONSIVE
-   ========================= */
+   ========================================================= */
 
 @media (max-width: 700px) {
-
   .centered-header {
     padding: var(--space-sm) 16px var(--space-xs);
   }
@@ -274,102 +381,11 @@ p {
   }
 }
 
-/* =========================
-   HOMEPAGE INTELLIGENCE — UNIFIED SYSTEM
-   ========================= */
+/* =========================================================
+   DEBUG MODE (SEMANTIC INSPECTION LAYER)
+   ========================================================= */
 
-.arising-observations,
-.essential-inspirations {
-  margin-top: 90px;
-  text-align: center;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* identical headings */
-.arising-observations h2,
-.essential-inspirations h2 {
-  font-size: 20px;
-  font-weight: 400;
-  color: var(--muted);
-  opacity: 0.81;
-  margin-bottom: 24px;
-}
-
-/* SINGLE LAYOUT SYSTEM (this is the key) */
-.chip-cloud {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-}
-
-/* EVERYTHING becomes a chip */
-.chip {
-  display: inline-block;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: rgba(111, 143, 106, 0.08);
-  color: var(--muted);
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: transform 180ms ease, background 220ms ease, color 220ms ease;
-}
-
-/* hover identical for links + tags */
-.chip:hover {
-  background: rgba(111, 143, 106, 0.15);
-  color: var(--accent);
-  transform: translateY(-1px);
-  transition: transform 180ms ease, background 220ms ease, color 220ms ease;
-}
-
-/* muted fallback */
-.chip.muted {
-  opacity: 0.6;
-}
-
-/* =========================
-   RELATED CONTENT SYSTEM
-   ========================= */
-
-.related-paths {
-  margin-top: 90px;
-  text-align: center;
-}
-
-.related-paths h3 {
-  font-size: 20px;
-  font-weight: 400;
-  color: var(--muted);
-  opacity: 0.81;
-  margin-bottom: 24px;
-}
-
-.related-cloud {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-}
-
-.related-chip {
-  display: inline-block;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: rgba(111,143,106,0.08);
-  color: var(--muted);
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: transform 180ms ease, background 220ms ease, opacity 220ms ease;
-}
-
-.related-chip:hover {
-  background: rgba(111,143,106,0.15);
-  color: var(--accent);
-  
-}
-.related-chip:hover {
-  transform: translateY(-1px);
+[data-salience-debug="true"] {
+  border: 3px solid red;
+  padding: 20px;
 }
