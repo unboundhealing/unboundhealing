@@ -13,6 +13,38 @@ cd "$ROOT_DIR"
 echo "🌌 Building semantic truth layer (PRIMARY ARTIFACT)..."
 python3 scripts/build-semantic-salience.py
 
+echo ""
+echo "===== SALIENCE DEBUG ====="
+python3 - <<'PY'
+import json
+
+with open("semantic-salience.json","r",encoding="utf-8") as f:
+    data = json.load(f)
+
+print("TOP LEVEL KEYS:")
+print(list(data.keys()))
+
+pages = data.get("pages")
+
+if isinstance(pages, dict):
+    print()
+    print("PAGE COUNT:", len(pages))
+
+    first_url = next(iter(pages))
+    print()
+    print("FIRST URL:")
+    print(first_url)
+
+    print()
+    print("FIRST NODE:")
+    print(json.dumps(pages[first_url], indent=2)[:3000])
+else:
+    print()
+    print("NO 'pages' DICT FOUND")
+PY
+echo "=========================="
+echo ""
+
 # HARD GUARANTEE: semantic-salience MUST exist
 if [ ! -f "semantic-salience.json" ]; then
   echo "❌ semantic-salience.json missing — HARD STOP"
@@ -37,7 +69,7 @@ python3 scripts/build-homepage-intelligence.py || true
 # ---------------------------------------------------------
 
 echo "🧠 Enhancing pages (optional)"
-python3 scripts/enhance-pages.py || true
+python3 scripts/enhance-pages.py
 
 echo "📡 RSS (optional)"
 ./scripts/generate-rss.sh || true
