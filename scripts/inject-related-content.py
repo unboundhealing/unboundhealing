@@ -202,10 +202,11 @@ def inject_related_content(file_path):
             f.write(str(soup))
 
         print(f"🔗 Injected related paths into {file_path}")
+        print("LOOKUP URL:", url)
+        print("GRAPH MATCH:", url in PAGE_GRAPH)
 
     except Exception as e:
         print(f"⚠️ Skipped {file_path}: {e}")
-
 
 # =========================================================
 # ENTRYPOINT
