@@ -63,3 +63,4 @@ echo "🔎 Search index (optional)"
 # ---------------------------------------------------------
 
 echo "🧭 FINAL STATE: semantic-salience is the ONLY truth layer"
+echo "🧱 legacy semantic graph systems are archived / disabled"
