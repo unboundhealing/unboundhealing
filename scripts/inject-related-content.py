@@ -27,7 +27,7 @@ PAGE_GRAPH = semantic["page_graph"]
 
 
 # =========================================================
-# LOAD PAGE TITLES (OPTIONAL)
+# LOAD PAGE TITLES
 # =========================================================
 
 if os.path.exists(PAGE_TITLES_FILE):
@@ -45,6 +45,7 @@ def find_html_files():
     html_files = []
 
     for root, _, files in os.walk(ROOT):
+
         if "/assets/" in root.replace("\\", "/"):
             continue
 
@@ -56,25 +57,45 @@ def find_html_files():
 
 
 # =========================================================
-# URL RESOLUTION (MUST MATCH GRAPH KEYS)
+# URL RESOLUTION (CRITICAL: MUST MATCH SALIENCE KEYS)
 # =========================================================
 
 def get_url_from_file(file_path):
-    rel = file_path.replace(ROOT, "")
-    rel = rel.replace("\\", "/")
+    """
+    MUST MATCH semantic-salience generation EXACTLY.
 
-    rel = rel.replace("index.html", "")
-    rel = rel.replace(".html", "")
+    We normalize to:
+    https://domain/path/
+    (always trailing slash for consistency with page_graph keys)
+    """
+
+    rel = file_path.replace(ROOT, "").replace("\\", "/")
+
+    rel = rel.replace("index.html", "").replace(".html", "")
 
     if rel.startswith("/"):
         rel = rel[1:]
 
-    url = f"{DOMAIN}{rel}".rstrip("/")
-    return url
+    # ALWAYS trailing slash to match page_graph keys
+    if rel and not rel.endswith("/"):
+        rel += "/"
+
+    return f"{DOMAIN}{rel}"
 
 
 def normalize_url(url):
-    return url.rstrip("/")
+    """
+    Hardening: unify lookup across:
+    - trailing slash
+    - missing trailing slash
+    """
+    if not url:
+        return url
+
+    if url.endswith("/"):
+        return url
+
+    return url + "/"
 
 
 # =========================================================
@@ -97,14 +118,29 @@ def lookup_title(url):
 # =========================================================
 
 def get_related(url, limit=3):
-    url = normalize_url(url)
+    """
+    page_graph is the ONLY source of truth.
+    """
 
-    node = PAGE_GRAPH.get(url) or PAGE_GRAPH.get(url + "/")
+    candidates = [
+        url,
+        normalize_url(url),
+        url.rstrip("/")
+    ]
+
+    node = None
+
+    for c in candidates:
+        if c in PAGE_GRAPH:
+            node = PAGE_GRAPH[c]
+            break
 
     if not node:
         return []
 
     related = node.get("related", [])
+    if not isinstance(related, list):
+        return []
 
     cleaned = []
     seen = set()
@@ -137,6 +173,7 @@ def inject_related_content(file_path):
         with open(file_path, "r", encoding="utf-8") as f:
             soup = BeautifulSoup(f, "html.parser")
 
+        # remove old injections
         for old in soup.select("section.related-paths"):
             old.decompose()
 
@@ -159,11 +196,9 @@ def inject_related_content(file_path):
 
         for r in related_urls:
 
-            a = soup.new_tag(
-                "a",
-                href=r.replace(DOMAIN, "")
-            )
+            a = soup.new_tag("a")
 
+            a["href"] = r.replace(DOMAIN, "").rstrip("/")
             a["class"] = "related-chip"
             a.string = lookup_title(r)
 
@@ -199,7 +234,7 @@ def main():
     for file_path in html_files:
         inject_related_content(file_path)
 
-    print("✅ Related-content injection complete (page_graph single-truth consumer v4.2)")
+    print("✅ Related-content injection complete (page_graph hardened consumer v4.2)")
 
 
 if __name__ == "__main__":
