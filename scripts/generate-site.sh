@@ -45,9 +45,6 @@ echo "📡 RSS (optional)"
 echo "🗺 Sitemap (optional)"
 ./scripts/build-sitemap.sh || true
 
-echo "🏷 Tags (optional)"
-./scripts/build-tags.sh || true
-
 echo "🔎 Search index (optional)"
 ./scripts/build-search-index.sh || true
 
