@@ -23,9 +23,6 @@ fi
 echo "🏠 Homepage intelligence (derivative)"
 python3 scripts/build-homepage-intelligence.py || true
 
-echo "🔗 Internal links (optional)"
-./scripts/apply-internal-links.sh || true
-
 echo "🧠 Enhancing pages (optional)"
 python3 scripts/enhance-pages.py || true
 
