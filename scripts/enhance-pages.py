@@ -109,7 +109,7 @@ def run_plugin(name, fn, soup, url, salience):
 # =========================================================
 
 # ---------------------------------------------------------
-# RELATED CONTENT (direct graph interpretation)
+# RELATED CONTENT
 # ---------------------------------------------------------
 
 def plugin_related_content(soup, url, salience):
@@ -118,7 +118,7 @@ def plugin_related_content(soup, url, salience):
 
     pages = salience.get("pages", {})
     if not isinstance(pages, dict):
-        return {}
+        return
 
     node = pages.get(url, {})
     concepts = node.get("concepts", [])
@@ -151,7 +151,10 @@ def plugin_related_content(soup, url, salience):
         return
 
     block = soup.new_tag("section")
-    block["class"] = "related-paths"
+    block["class"] = ["semantic-block", "related-paths"]
+
+    block["style"] = "border: 3px solid red; padding: 20px;"
+    block["data-salience-debug"] = "true"
 
     h = soup.new_tag("h3")
     h.string = "Further paths to follow..."
@@ -168,10 +171,8 @@ def plugin_related_content(soup, url, salience):
 
     block.append(cloud)
 
-    if soup.body:
-        soup.body.append(block)
-    else:
-        soup.append(block)
+    container = soup.body.find("main") if soup.body and soup.body.find("main") else soup.body or soup
+    container.append(block)
 
 
 # ---------------------------------------------------------
@@ -185,14 +186,14 @@ def plugin_tracking(soup, url, salience):
     script = soup.new_tag("script", src=TRACKER_PATH)
     script["defer"] = True
 
-    if soup.body:
-        soup.body.append(script)
-    else:
-        soup.append(script)
+    script["data-salience-debug"] = "true"
+
+    container = soup.body.find("main") if soup.body and soup.body.find("main") else soup.body or soup
+    container.append(script)
 
 
 # ---------------------------------------------------------
-# HOMEPAGE INTELLIGENCE (RAW SALIENCE SCAN)
+# HOMEPAGE INTELLIGENCE
 # ---------------------------------------------------------
 
 def plugin_homepage_intelligence(soup, url, salience):
@@ -201,7 +202,7 @@ def plugin_homepage_intelligence(soup, url, salience):
 
     pages = salience.get("pages", {})
     if not isinstance(pages, dict):
-        return {}
+        return
 
     scored = []
 
@@ -225,7 +226,10 @@ def plugin_homepage_intelligence(soup, url, salience):
         return
 
     root = soup.new_tag("section")
-    root["class"] = "homepage-intelligence"
+    root["class"] = ["semantic-block", "homepage-intelligence"]
+
+    root["style"] = "border: 3px solid red; padding: 20px;"
+    root["data-salience-debug"] = "true"
 
     h = soup.new_tag("h2")
     h.string = "Homepage intelligence"
@@ -242,14 +246,12 @@ def plugin_homepage_intelligence(soup, url, salience):
 
     root.append(cloud)
 
-    if soup.body:
-        soup.body.append(root)
-    else:
-        soup.append(root)
+    container = soup.body.find("main") if soup.body and soup.body.find("main") else soup.body or soup
+    container.append(root)
 
 
 # =========================================================
-# PLUGIN REGISTRY (INTERNAL ONLY)
+# PLUGIN REGISTRY
 # =========================================================
 
 PLUGIN_ORDER = [
