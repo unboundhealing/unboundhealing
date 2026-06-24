@@ -7,14 +7,7 @@ ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
 
 # ---------------------------------------------------------
-# STEP 1 — REGISTRY (STRUCTURAL INPUT LAYER)
-# ---------------------------------------------------------
-
-echo "🧭 Building registry..."
-./scripts/build-content-registry.sh
-
-# ---------------------------------------------------------
-# STEP 2 — TRUTH LAYER (ONLY AUTHORITATIVE SOURCE)
+# STEP 1 — TRUTH LAYER (ONLY AUTHORITATIVE SOURCE)
 # ---------------------------------------------------------
 
 echo "🌌 Building semantic truth layer (PRIMARY ARTIFACT)..."
@@ -27,20 +20,20 @@ if [ ! -f "semantic-salience.json" ]; then
 fi
 
 # ---------------------------------------------------------
-# STEP 2.5 — SYSTEM INTROSPECTION (NON-BLOCKING)
+# STEP 1.5 — SYSTEM INTROSPECTION (NON-BLOCKING)
 # ---------------------------------------------------------
 echo "🧭 Dependency collapse analysis (optional)"
 python3 scripts/build-dependency-collapse-map.py || true
 
 # ---------------------------------------------------------
-# STEP 3 — DERIVATIVE LAYERS (TRUTH CONSUMERS ONLY)
+# STEP 2 — DERIVATIVE LAYERS (TRUTH CONSUMERS ONLY)
 # ---------------------------------------------------------
 
 echo "🏠 Homepage intelligence (derivative)"
 python3 scripts/build-homepage-intelligence.py || true
 
 # ---------------------------------------------------------
-# STEP 4 — PRESENTATION / RENDER LAYER
+# STEP 3 — PRESENTATION / RENDER LAYER
 # ---------------------------------------------------------
 
 echo "🧠 Enhancing pages (optional)"
