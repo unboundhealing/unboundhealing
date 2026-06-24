@@ -47,8 +47,10 @@ def find_html_files():
         normalized = root_dir.replace("\\", "/")
 
         # avoid assets + generated noise
-        if "/assets/" in normalized:
-            continue
+    parts = normalized.split("/")
+
+    if "assets" in parts:
+        continue
 
         for file_name in files:
             if file_name.endswith(".html"):
