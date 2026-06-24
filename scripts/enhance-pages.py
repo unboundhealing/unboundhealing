@@ -251,19 +251,19 @@ def plugin_future_magic(soup, url, salience):
 # PLUGIN REGISTRY
 # =========================================================
 
-PLUGIN_REGISTRY = {
-    "related_content": plugin_related_content,
-    "tracking": plugin_tracking,
-    "homepage_intelligence": plugin_homepage_intelligence,
-    "future_magic": plugin_future_magic,
-}
-
 PLUGIN_ORDER = [
     "related_content",
     "tracking",
     "homepage_intelligence",
     "future_magic",
 ]
+
+PLUGIN_REGISTRY = {
+    "related_content": plugin_related_content,
+    "tracking": plugin_tracking,
+    "homepage_intelligence": plugin_homepage_intelligence,
+    "future_magic": plugin_future_magic,
+}
 
 ACTIVE_PLUGINS = PLUGIN_ORDER
 
