@@ -21,6 +21,28 @@ import json
 with open("semantic-salience.json","r",encoding="utf-8") as f:
     data = json.load(f)
 
+print()
+print("===== SALIENCE STRUCTURE =====")
+print(data.keys())
+
+if "page_graph" in data:
+    print()
+    print("PAGE_GRAPH TYPE:")
+    print(type(data["page_graph"]))
+
+    if isinstance(data["page_graph"], dict):
+        first_key = next(iter(data["page_graph"]))
+        print()
+        print("FIRST PAGE_GRAPH KEY:")
+        print(first_key)
+
+        print()
+        print("FIRST PAGE_GRAPH VALUE:")
+        print(data["page_graph"][first_key])
+
+print("==============================")
+print()
+
 print("TOP LEVEL KEYS:")
 print(list(data.keys()))
 
