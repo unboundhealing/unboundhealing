@@ -245,50 +245,72 @@ def main():
     nodes = data.get("nodes", {})
     edges = data.get("edges", [])
 
-    print()
-    print("===== HOMEPAGE DEBUG =====")
 
-    print("NODE COUNT:", len(nodes))
-    print("EDGE COUNT:", len(edges))
 
-    print()
-    print("FIRST 10 NODE KEYS:")
+print("\n===== DEBUG NODES (SAMPLE) =====")
 
-    for i, k in enumerate(nodes.keys()):
-        if i >= 10:
-            break
+print("NODE COUNT:", len(nodes))
+print("EDGE COUNT:", len(edges))
+
+# show structure of first node
+if nodes:
+    first_key = next(iter(nodes))
+    print("\nFIRST NODE KEY:", first_key)
+    print("FIRST NODE VALUE:")
+    print(json.dumps(nodes[first_key], indent=2)[:2000])
+
+print("\nFIRST 5 EDGES:")
+for e in edges[:5]:
+    print(e)
+
+print("\n===== END DEBUG =====\n")
+    
+
+    
+print()
+print("===== HOMEPAGE DEBUG =====")
+
+print("NODE COUNT:", len(nodes))
+print("EDGE COUNT:", len(edges))
+
+print()
+print("FIRST 10 NODE KEYS:")
+
+for i, k in enumerate(nodes.keys()):
+    if i >= 10:
+        break
         print(" ", k)
 
-    print()
-    print("FIRST 5 NODE OBJECTS:")
+print()
+print("FIRST 5 NODE OBJECTS:")
 
-    for i, (k, v) in enumerate(nodes.items()):
-        if i >= 5:
-            break
-
-        print()
-        print("NODE:", k)
-
-        if isinstance(v, dict):
-            print("KEYS:", list(v.keys()))
-
-            if "title" in v:
-                print("TITLE:", v["title"])
-
-            if "url" in v:
-                print("URL:", v["url"])
-
-            if "concepts" in v:
-                print("CONCEPTS:", v["concepts"][:10])
+for i, (k, v) in enumerate(nodes.items()):
+    if i >= 5:
+        break
 
     print()
-    print("FIRST 10 EDGES:")
+    print("NODE:", k)
 
-    for e in edges[:10]:
-        print(e)
+    if isinstance(v, dict):
+        print("KEYS:", list(v.keys()))
 
-    print()
-    print("===== END DEBUG =====")
+        if "title" in v:
+            print("TITLE:", v["title"])
+
+        if "url" in v:
+            print("URL:", v["url"])
+
+        if "concepts" in v:
+            print("CONCEPTS:", v["concepts"][:10])
+
+print()
+print("FIRST 10 EDGES:")
+
+for e in edges[:10]:
+    print(e)
+
+print()
+print("===== END DEBUG =====")
     
     built = build(nodes, edges)
 
