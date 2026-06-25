@@ -2,6 +2,7 @@
 
 import os
 import json
+from pathlib import Path
 from collections import defaultdict
 
 # =========================================================
@@ -15,7 +16,7 @@ OUTPUT_FILE = os.path.join(ROOT, "homepage-intelligence.json")
 
 
 # =========================================================
-# LOADER (TRUTH LAYER ONLY)
+# LOADER
 # =========================================================
 
 def load_json(path):
@@ -24,16 +25,11 @@ def load_json(path):
 
 
 # =========================================================
-# SAFE ACCESSORS (NO REINTERPRETATION OF TRUTH)
+# SAFE ACCESSORS
 # =========================================================
 
 def get_nodes(data):
-    """
-    Nodes are authoritative from semantic-salience.
 
-    Expected format:
-        { url: { path, url, concepts } }
-    """
     nodes = data.get("nodes", {})
 
     if not isinstance(nodes, dict):
@@ -43,12 +39,7 @@ def get_nodes(data):
 
 
 def get_edges(data):
-    """
-    Edges are authoritative from semantic-salience.
 
-    Expected format:
-        [{a, b, weight}]
-    """
     edges = data.get("edges", [])
 
     if not isinstance(edges, list):
@@ -57,6 +48,7 @@ def get_edges(data):
     cleaned = []
 
     for e in edges:
+
         if not isinstance(e, dict):
             continue
 
@@ -76,26 +68,20 @@ def get_edges(data):
 
 
 # =========================================================
-# PURE DERIVATION (NO NEW SEMANTIC LAYERS)
+# HOMEPAGE INTELLIGENCE DERIVATION
 # =========================================================
 
 def build_homepage_intelligence(nodes, edges):
-    """
-    Consumer projection of semantic-salience.
-
-    IMPORTANT PRINCIPLE:
-    - This does NOT interpret meaning
-    - This does NOT redefine structure
-    - This only aggregates already-existing truth signals
-    """
 
     concept_frequency = defaultdict(int)
     node_degree = defaultdict(float)
 
-    # -------------------------------------------------
-    # derive concept frequency from truth-layer nodes
-    # -------------------------------------------------
+    # -----------------------------------------
+    # concept frequency
+    # -----------------------------------------
+
     for node in nodes.values():
+
         concepts = node.get("concepts", [])
 
         if not isinstance(concepts, list):
@@ -104,10 +90,12 @@ def build_homepage_intelligence(nodes, edges):
         for c in concepts:
             concept_frequency[c] += 1
 
-    # -------------------------------------------------
-    # derive node connectivity from truth-layer edges
-    # -------------------------------------------------
+    # -----------------------------------------
+    # connectivity
+    # -----------------------------------------
+
     for e in edges:
+
         a = e["a"]
         b = e["b"]
         w = e["weight"]
@@ -115,17 +103,19 @@ def build_homepage_intelligence(nodes, edges):
         node_degree[a] += w
         node_degree[b] += w
 
-    # -------------------------------------------------
-    # top concepts (frequency-based only)
-    # -------------------------------------------------
+    # -----------------------------------------
+    # top concepts
+    # -----------------------------------------
+
     top_concepts = sorted(
         concept_frequency.items(),
         key=lambda x: (-x[1], x[0])
     )[:10]
 
-    # -------------------------------------------------
-    # top hubs (connectivity-based only)
-    # -------------------------------------------------
+    # -----------------------------------------
+    # top hubs
+    # -----------------------------------------
+
     top_hubs = sorted(
         node_degree.items(),
         key=lambda x: (-x[1], x[0])
@@ -146,7 +136,103 @@ def build_homepage_intelligence(nodes, edges):
 
 
 # =========================================================
-# MAIN PIPELINE (PURE READ MODEL)
+# HOMEPAGE RENDERING
+# =========================================================
+
+def prettify_url(url):
+
+    if not url:
+        return "Untitled"
+
+    path = (
+        url.replace("https://unboundhealing.org", "")
+        .strip("/")
+    )
+
+    if not path:
+        return "Home"
+
+    slug = path.split("/")[-1]
+
+    return slug.replace("-", " ").title()
+
+
+def render_homepage(intel):
+
+    data = intel.get("homepage_intelligence", {})
+
+    concepts = data.get("top_concepts", [])
+    hubs = data.get("top_hubs", [])
+
+    concepts_html = "\n".join(
+        f'<span class="chip">{c["concept"]}</span>'
+        for c in concepts
+    )
+
+    hubs_html = "\n".join(
+        f'<a class="chip" href="{h["node"]}">{prettify_url(h["node"])}</a>'
+        for h in hubs
+    )
+
+    return f"""
+<section class="homepage-intelligence">
+
+  <h3>Arising Concepts</h3>
+
+  <div class="chip-cloud">
+    {concepts_html}
+  </div>
+
+  <h3>Structural Hubs</h3>
+
+  <div class="chip-cloud">
+    {hubs_html}
+  </div>
+
+</section>
+""".strip()
+
+
+# =========================================================
+# HOMEPAGE DETECTION
+# =========================================================
+
+def is_root_homepage(path: Path):
+
+    return path.resolve() == Path(ROOT, "index.html").resolve()
+
+
+# =========================================================
+# HOMEPAGE INJECTION
+# =========================================================
+
+def inject_homepage(block):
+
+    homepage_path = Path(ROOT) / "index.html"
+
+    if not homepage_path.exists():
+        print("⚠️ homepage missing")
+        return 0
+
+    html = homepage_path.read_text(encoding="utf-8")
+
+    placeholder = '<div id="homepage-intelligence"></div>'
+
+    if placeholder not in html:
+        print("⚠️ homepage placeholder missing")
+        return 0
+
+    html = html.replace(placeholder, block)
+
+    homepage_path.write_text(html, encoding="utf-8")
+
+    print("🏠 injected homepage intelligence:", homepage_path)
+
+    return 1
+
+
+# =========================================================
+# MAIN
 # =========================================================
 
 def main():
@@ -164,23 +250,47 @@ def main():
     nodes = get_nodes(data)
     edges = get_edges(data)
 
-    homepage = build_homepage_intelligence(nodes, edges)
+    homepage = build_homepage_intelligence(
+        nodes,
+        edges
+    )
 
     output = {
         "homepage_intelligence": homepage,
-
-        # explicit contract boundary
         "source": "semantic-salience",
         "consumer_model": "read-only-projection",
         "status": "ok"
     }
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
+        json.dump(
+            output,
+            f,
+            indent=2,
+            ensure_ascii=False
+        )
 
-    print("🏠 homepage-intelligence built successfully (v4.0 PURE CONSUMER)")
+    print()
+    print("🏠 homepage-intelligence built successfully")
     print(f"📦 nodes: {len(nodes)}")
     print(f"🔗 edges: {len(edges)}")
+
+    # -----------------------------------------
+    # render homepage block
+    # -----------------------------------------
+
+    homepage_block = render_homepage(output)
+
+    # -----------------------------------------
+    # inject homepage
+    # -----------------------------------------
+
+    updated = inject_homepage(homepage_block)
+
+    print()
+    print("========================")
+    print("HOMEPAGE COMPLETE")
+    print("PAGES UPDATED:", updated)
 
 
 if __name__ == "__main__":
