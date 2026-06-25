@@ -60,36 +60,44 @@ def valid_url(url):
 
 
 # =========================================================
-# TITLE SYSTEM (FIXED: NODE-AWARE, NOT SLUG-FORCED)
+# TITLE SYSTEM (TRUE NODE-FIRST RESOLUTION)
 # =========================================================
 
 def clean_title(t):
+    """
+    Minimal sanitization ONLY:
+    - remove ellipsis artifacts
+    - preserve punctuation, hyphens, casing
+    """
     if not isinstance(t, str):
         return ""
 
     t = t.strip()
 
-    # remove ellipses artifacts
+    # remove rendering artifacts only
     t = t.replace("...", "").replace("…", "")
 
-    # light cleanup only (DO NOT slugify)
     return t.strip()
 
 
 def title_from_node(url, nodes):
     """
-    Primary: use node title if it exists
-    Fallback: slug (preserving hyphens)
+    TRUTH PRIORITY:
+    1. node.title (authoritative)
+    2. node.h1 (if exists)
+    3. fallback: URL slug (last resort only)
     """
 
     node = nodes.get(url)
 
     if isinstance(node, dict):
-        title = node.get("title")
-        if isinstance(title, str) and title.strip():
-            return clean_title(title)
 
-    # fallback
+        for key in ("title", "h1", "label"):
+            val = node.get(key)
+            if isinstance(val, str) and val.strip():
+                return clean_title(val)
+
+    # fallback ONLY if node has no title data
     slug = url.rstrip("/").split("/")[-1]
     return clean_title(slug)
 
@@ -123,17 +131,14 @@ def debug(nodes, edges, data):
 
     print("\n===== HOMEPAGE DEBUG =====")
 
-    print("PAGE_GRAPH KEYS:")
     pg = data.get("page_graph", {})
-    print(len(pg))
+
+    print("PAGE_GRAPH SIZE:", len(pg))
 
     for i, k in enumerate(pg.keys()):
         print(k)
         if i >= 5:
             break
-
-    print("\nSALIENCE SAMPLE:")
-    print(list(data.get("salience", {}).items())[:10])
 
     print("\nNODE COUNT:", len(nodes))
     print("EDGE COUNT:", len(edges))
@@ -141,7 +146,7 @@ def debug(nodes, edges, data):
     if nodes:
         first_key = next(iter(nodes))
         print("\nFIRST NODE KEY:", first_key)
-        print(json.dumps(nodes[first_key], indent=2)[:1500])
+        print(json.dumps(nodes[first_key], indent=2)[:1200])
 
     print("\nFIRST 5 EDGES:")
     for e in edges[:5]:
@@ -151,7 +156,7 @@ def debug(nodes, edges, data):
 
 
 # =========================================================
-# CORE BUILDER (TRUTH = page_graph)
+# CORE BUILDER
 # =========================================================
 
 def build(nodes, edges, page_graph):
@@ -159,7 +164,7 @@ def build(nodes, edges, page_graph):
     concept_freq = defaultdict(int)
 
     # -------------------------
-    # concepts (from nodes only)
+    # concepts (truth layer metadata)
     # -------------------------
 
     for n in nodes.values():
@@ -173,7 +178,7 @@ def build(nodes, edges, page_graph):
                 concept_freq[c] += 1
 
     # -------------------------
-    # ARISINGS (PAGE_GRAPH IS TRUTH LAYER)
+    # ARISINGS (PAGE_GRAPH = TRUTH SOURCE)
     # -------------------------
 
     arisings = []
@@ -187,18 +192,11 @@ def build(nodes, edges, page_graph):
         if not url:
             continue
 
-        # scoring: lightweight salience proxy
         score = 0.0
 
         if isinstance(meta, dict):
-            related = meta.get("related", [])
-            concepts = meta.get("concepts", [])
-
-            if isinstance(related, list):
-                score += len(related) * 1.5
-
-            if isinstance(concepts, list):
-                score += len(concepts) * 1.0
+            score += len(meta.get("related", [])) * 1.5
+            score += len(meta.get("concepts", [])) * 1.0
 
         arisings.append({
             "url": url,
@@ -210,7 +208,7 @@ def build(nodes, edges, page_graph):
     arisings = arisings[:3]
 
     # -------------------------
-    # INSPIRATIONS (concept frequency)
+    # INSPIRATIONS
     # -------------------------
 
     inspirations = []
