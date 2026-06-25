@@ -112,9 +112,9 @@ jobs:
           # SAFE INLINE VALIDATION (NO HEREDOC)
           # -------------------------------------
           python3 -c "
-import json, sys
+          import json, sys
 
-print('🧠 Loading semantic-salience.json...')
+          print('🧠 Loading semantic-salience.json...')
 
 try:
     with open('semantic-salience.json','r',encoding='utf-8') as f:
