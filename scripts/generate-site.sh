@@ -93,9 +93,6 @@ python3 scripts/build-homepage-intelligence.py || true
 echo "🔗 building related content..."
 python3 scripts/build-related-content.py
 
-echo "🧠 Enhancing pages (optional)"
-python3 scripts/enhance-pages.py
-
 echo "📡 RSS (optional)"
 ./scripts/generate-rss.sh || true
 
