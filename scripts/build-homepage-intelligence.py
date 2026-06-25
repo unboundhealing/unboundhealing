@@ -24,6 +24,26 @@ def load_json(path):
         return json.load(f)
 
 
+
+
+print("\n===== HOMEPAGE DEBUG =====")
+
+print("PAGE_GRAPH KEYS:")
+print(len(data.get("page_graph", {})))
+
+for i, k in enumerate(data.get("page_graph", {}).keys()):
+    print(k)
+    if i >= 5:
+        break
+
+print("\nSALIENCE SAMPLE:")
+print(list(data.get("salience", {}).items())[:10])
+
+print("==========================\n")
+
+
+
+
 # =========================================================
 # NORMALIZATION LAYER
 # =========================================================
