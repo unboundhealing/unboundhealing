@@ -314,10 +314,10 @@ print("===== END DEBUG =====")
     
 built = build(nodes, edges)
 
-    output = {
-        "homepage_intelligence": built,
-        "source": "semantic-salience",
-        "status": "ok"
+output = {
+    "homepage_intelligence": built,
+    "source": "semantic-salience",
+    "status": "ok"
     }
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
