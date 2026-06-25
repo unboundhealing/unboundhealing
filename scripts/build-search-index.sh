@@ -35,7 +35,9 @@ result = {}
 if not isinstance(data, dict):
     raise SystemExit("semantic-salience must be a dict")
 
-for url, node in data.items():
+graph = data.get("page_graph", {})
+
+for url, node in graph.items():
 
     concepts = []
 
@@ -131,34 +133,41 @@ do
   # SAFE TAG EXTRACTION (no second Python pass)
   # -------------------------------------------------------
 
-  TAGS=$(python3 << EOF
-import json
+  TAGS=$(python3 - <<EOF
+  import json
 
-data = json.loads("""$CONCEPT_MAP""")
+  data = json.loads('''$CONCEPT_MAP''')
 
-url = "$URL"
+  url = "$URL"
 
-concepts = data.get(url, [])
+  node = data.get(url, {})
 
-clean = []
-seen = set()
+  # node is already normalized list from first pass
+  if isinstance(node, dict):
+      concepts = node.get("concepts", [])
+  elif isinstance(node, list):
+      concepts = node
+  else:
+      concepts = []
 
-for c in concepts:
-    if not isinstance(c, str):
-        continue
+  clean = []
+  seen = set()
 
-    c = c.strip().lower()
+  for c in concepts:
+      if not isinstance(c, str):
+          continue
 
-    if not c or c in seen:
-        continue
+      c = c.strip().lower()
 
-    seen.add(c)
-    clean.append(c)
+      if not c or c in seen:
+          continue
 
-print(",".join(clean[:10]))
-EOF
-)
+      seen.add(c)
+      clean.append(c)
 
+  print(",".join(clean[:10]))
+  EOF
+  )
   # -------------------------------------------------------
   # JSON ESCAPING (HARDENED)
   # -------------------------------------------------------
