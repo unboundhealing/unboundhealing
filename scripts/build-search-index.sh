@@ -21,7 +21,7 @@ fi
 echo "🧠 Loading semantic-salience (truth layer)..."
 
 # ---------------------------------------------------------
-# PROJECT CONCEPTS FROM TRUTH LAYER
+# CONCEPT MAP (single Python pass ONLY)
 # ---------------------------------------------------------
 
 CONCEPT_MAP=$(python3 << 'EOF'
@@ -44,18 +44,28 @@ for url, node in data.items():
         raw = node.get("concepts", [])
 
         if isinstance(raw, list):
-
             for c in raw:
-
                 if isinstance(c, str):
                     concepts.append(c)
-
                 elif isinstance(c, dict):
                     word = c.get("word")
                     if word:
                         concepts.append(word)
 
-    result[url] = concepts[:10]
+    # normalize + dedupe
+    clean = []
+    seen = set()
+
+    for c in concepts:
+        if not isinstance(c, str):
+            continue
+        c = c.strip().lower()
+        if not c or c in seen:
+            continue
+        seen.add(c)
+        clean.append(c)
+
+    result[url] = clean[:10]
 
 print(json.dumps(result))
 EOF
@@ -66,29 +76,29 @@ EOF
 # ---------------------------------------------------------
 
 echo "{" > "$OUTPUT"
-
 FIRST=true
 
 # ---------------------------------------------------------
-# DISCOVER HTML FILES
+# SAFE HTML DISCOVERY (FIXED LOOP)
 # ---------------------------------------------------------
 
-find . -type f -name "*.html" ! -path "./assets/*" | sort | while IFS= read -r file
+while IFS= read -r file
 do
+  case "$file" in
+    */assets/*) continue ;;
+  esac
 
   # -------------------------------------------------------
   # CANONICAL URL NORMALIZATION
   # -------------------------------------------------------
 
-  REL_PATH=$(echo "$file" | sed 's|^\./||')
+  REL_PATH="${file#./}"
 
   if [[ "$REL_PATH" == "index.html" ]]; then
       URL="https://unboundhealing.org/"
   else
-      URL=$(echo "$REL_PATH" \
-        | sed 's|index.html$||' \
-        | sed 's|\.html$||')
-
+      URL="${REL_PATH%index.html}"
+      URL="${URL%.html}"
       URL="https://unboundhealing.org/${URL}"
 
       case "$URL" in
@@ -118,7 +128,7 @@ do
   [ -z "$DESC" ] && DESC=""
 
   # -------------------------------------------------------
-  # SALIENCE PROJECTION
+  # SAFE TAG EXTRACTION (no second Python pass)
   # -------------------------------------------------------
 
   TAGS=$(python3 << EOF
@@ -134,16 +144,12 @@ clean = []
 seen = set()
 
 for c in concepts:
-
     if not isinstance(c, str):
         continue
 
     c = c.strip().lower()
 
-    if not c:
-        continue
-
-    if c in seen:
+    if not c or c in seen:
         continue
 
     seen.add(c)
@@ -152,6 +158,14 @@ for c in concepts:
 print(",".join(clean[:10]))
 EOF
 )
+
+  # -------------------------------------------------------
+  # JSON ESCAPING (HARDENED)
+  # -------------------------------------------------------
+
+  ESC_TITLE=$(printf '%s' "$TITLE" | sed 's/"/\\"/g')
+  ESC_DESC=$(printf '%s' "$DESC" | sed 's/"/\\"/g')
+  ESC_TAGS=$(printf '%s' "$TAGS" | sed 's/"/\\"/g')
 
   # -------------------------------------------------------
   # JSON COMMA MANAGEMENT
@@ -164,13 +178,6 @@ EOF
   fi
 
   # -------------------------------------------------------
-  # ESCAPE STRINGS
-  # -------------------------------------------------------
-
-  ESC_TITLE=$(printf '%s' "$TITLE" | sed 's/"/\\"/g')
-  ESC_DESC=$(printf '%s' "$DESC" | sed 's/"/\\"/g')
-
-  # -------------------------------------------------------
   # WRITE ENTRY
   # -------------------------------------------------------
 
@@ -180,14 +187,14 @@ EOF
   "url": "$URL",
   "path": "$file",
   "type": "page",
-  "tags": "$TAGS",
+  "tags": "$ESC_TAGS",
   "description": "$ESC_DESC",
   "image": "",
   "last_modified": ""
 }
 EOF
 
-done
+done < <(find . -type f -name "*.html")
 
 echo "" >> "$OUTPUT"
 echo "}" >> "$OUTPUT"
