@@ -27,7 +27,7 @@
   --line-height: 1.65;
 
   /* =========================
-     SEMANTIC SURFACE TOKENS
+     SURFACES
      ========================= */
   --surface-soft: rgba(111, 143, 106, 0.08);
   --surface-hover: rgba(111, 143, 106, 0.15);
@@ -56,7 +56,7 @@ a:hover {
 }
 
 /* =========================================================
-   CONTENT LINKS (semantic main content layer)
+   CONTENT LINKS (MAIN CONTENT ONLY)
    ========================================================= */
 
 main a {
@@ -71,16 +71,12 @@ main a:hover {
 }
 
 /* =========================================================
-   SEMANTIC BLOCK SYSTEM (NEW CORE)
+   SEMANTIC BLOCK SYSTEM (CORE LAYOUT FIX)
    ========================================================= */
 
-/*
-  ALL plugin outputs now inherit from this.
-  This replaces:
-  - homepage-intelligence
-  - related-paths
-*/
-.semantic-block {
+.semantic-block,
+.homepage-intelligence,
+.related-paths {
   margin-top: 90px;
   text-align: center;
   max-width: 700px;
@@ -89,23 +85,28 @@ main a:hover {
 }
 
 /* =========================================================
-   SEMANTIC HEADINGS (shared across plugins)
+   HEADINGS (FIXED SIZE + CONSISTENCY)
    ========================================================= */
 
 .semantic-block h2,
-.semantic-block h3 {
-  font-size: 20px;
+.semantic-block h3,
+.homepage-intelligence h3,
+.related-paths h3 {
+  font-size: 18px; /* FIX: was too large */
   font-weight: 400;
   color: var(--muted);
-  opacity: 0.81;
+  opacity: 0.85;
   margin-bottom: 24px;
+  letter-spacing: 0.2px;
 }
 
 /* =========================================================
-   SEMANTIC CLOUD SYSTEM (shared container)
+   CHIP CLOUD SYSTEM (FIXED - NO composes)
    ========================================================= */
 
-.semantic-cloud {
+.semantic-cloud,
+.chip-cloud,
+.related-cloud {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -113,10 +114,12 @@ main a:hover {
 }
 
 /* =========================================================
-   SEMANTIC CHIP SYSTEM (CRITICAL UNIFICATION)
+   CHIP SYSTEM (CRITICAL FIX - ACTUAL VISUAL STYLE)
    ========================================================= */
 
-.semantic-chip {
+.semantic-chip,
+.chip,
+.related-chip {
   display: inline-block;
   padding: 6px 12px;
   border-radius: 999px;
@@ -127,56 +130,30 @@ main a:hover {
   font-size: 0.9rem;
   text-decoration: none;
 
-  transition:
-    transform 180ms ease,
-    background 220ms ease,
-    color 220ms ease;
+  transition: transform 180ms ease,
+              background 220ms ease,
+              color 220ms ease;
 }
 
-.semantic-chip:hover {
+.semantic-chip:hover,
+.chip:hover,
+.related-chip:hover {
   background: var(--surface-hover);
   color: var(--accent);
   transform: translateY(-1px);
 }
 
-/* optional state */
-.semantic-chip.muted {
-  opacity: 0.6;
-}
-
 /* =========================================================
-   PLUGIN-SPECIFIC “ADAPTER LAYER” (VERY SMALL)
+   SAFETY FIX: EMPTY / BROKEN LINKS PREVENTION
    ========================================================= */
 
-/*
-  These are ONLY semantic adapters, not styling systems.
-  Plugins should NEVER define visual rules anymore.
-*/
-
-/* Related content */
-.related-paths {
-  /* inherits .semantic-block */
-}
-
-/* Homepage intelligence */
-.homepage-intelligence {
-  /* inherits .semantic-block */
-}
-
-/* Chip containers */
-.chip-cloud,
-.related-cloud {
-  composes: semantic-cloud;
-}
-
-/* Chip types */
-.chip,
-.related-chip {
-  composes: semantic-chip;
+.chip:empty,
+.semantic-chip:empty {
+  display: none;
 }
 
 /* =========================================================
-   ARTICLE SYSTEM
+   ARTICLE IMAGE SYSTEM
    ========================================================= */
 
 .article-image {
@@ -202,7 +179,7 @@ main a:hover {
 }
 
 /* =========================================================
-   CENTERED HEADER SYSTEM
+   HEADER SYSTEM
    ========================================================= */
 
 .centered-header {
@@ -211,49 +188,12 @@ main a:hover {
   font-family: Inter, sans-serif;
 }
 
-.logo-wrap {
-  margin-bottom: var(--space-sm);
-}
-
-.header-logo {
-  height: 44px;
-  width: auto;
-  display: inline-block;
-  opacity: 0.92;
-  transition: transform 0.2s ease, opacity 0.25s ease;
-}
-
-.header-logo:hover {
-  transform: scale(1.02);
-  opacity: 1;
-}
-
 .centered-header .nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: var(--space-md);
   font-size: var(--text-sm);
-}
-
-.centered-header .nav a {
-  position: relative;
-  padding: 4px 0;
-}
-
-.centered-header .nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0%;
-  height: 1px;
-  background: var(--accent);
-  transition: width 0.2s ease;
-}
-
-.centered-header .nav a:hover::after {
-  width: 100%;
 }
 
 /* =========================================================
@@ -271,76 +211,33 @@ main a:hover {
 }
 
 /* =========================================================
-   TYPOGRAPHY
+   TYPOGRAPHY FIXES
    ========================================================= */
 
 p {
   margin: 0 0 var(--space-sm);
 }
 
-.page:not(.page--centered) p {
-  line-height: var(--line-height);
-}
-
 .article h1 {
   text-align: center;
   font-weight: 500;
   margin-bottom: var(--space-lg);
-  letter-spacing: 0.2px;
-}
-
-.subtitle-title {
-  text-align: center;
-  font-style: italic;
-}
-
-.subtitle-subheading {
-  font-style: italic;
-  font-size: 0.8rem;
 }
 
 /* =========================================================
-   HERO SYSTEM
+   HOMEPAGE INTELLIGENCE (FINAL FIXED BEHAVIOR)
    ========================================================= */
 
-.hero {
-  margin-bottom: var(--space-lg);
+.homepage-intelligence {
+  padding: 10px 0;
 }
 
-.big-question {
-  font-size: var(--text-lg);
-  margin-bottom: var(--space-lg);
-  line-height: 1.5;
-}
-
-.line {
-  margin: var(--space-xs) 0;
-  font-size: var(--text-base);
-}
-
-.spacer,
-.section-space {
-  height: var(--space-lg);
-}
-
-.cta {
-  margin-top: var(--space-lg);
-  font-size: var(--text-base);
-  color: var(--accent);
-}
-
-/* =========================================================
-   ABOUT SYSTEM
-   ========================================================= */
-
-.about-substack {
-  margin-top: 80px;
-}
-
-.about-substack h2 {
-  font-size: 20px;
-  font-weight: 400;
-  margin-bottom: 16px;
+/* FORCE proper structure even if HTML is messy */
+.homepage-intelligence .chip-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
 }
 
 /* =========================================================
@@ -352,10 +249,6 @@ p {
   padding: var(--space-xl) 20px;
   font-size: var(--text-sm);
   color: var(--muted);
-}
-
-.footer .warm {
-  margin-top: var(--space-xs);
 }
 
 /* =========================================================
@@ -371,18 +264,10 @@ p {
     gap: var(--space-sm);
     font-size: 13px;
   }
-
-  .header-logo {
-    height: 38px;
-  }
-
-  .big-question {
-    font-size: 22px;
-  }
 }
 
 /* =========================================================
-   DEBUG MODE (SEMANTIC INSPECTION LAYER)
+   DEBUG MODE
    ========================================================= */
 
 [data-salience-debug="true"] {
