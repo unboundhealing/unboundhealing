@@ -7,7 +7,6 @@ from pathlib import Path
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
 HOME_INTEL = os.path.join(ROOT, "homepage-intelligence.json")
-SAL_FILE = os.path.join(ROOT, "semantic-salience.json")
 
 
 # =========================================================
@@ -20,14 +19,45 @@ def load_json(path):
 
 
 # =========================================================
+# URL LABEL HELPERS
+# =========================================================
+
+def prettify_url(url):
+    """
+    Convert:
+    https://unboundhealing.org/opening/this-morning/
+
+    into:
+
+    This Morning
+    """
+
+    if not url:
+        return "Untitled"
+
+    path = (
+        url.replace("https://unboundhealing.org", "")
+        .strip("/")
+    )
+
+    if not path:
+        return "Home"
+
+    slug = path.split("/")[-1]
+
+    return slug.replace("-", " ").title()
+
+
+# =========================================================
 # HOMEPAGE RENDERER
 # =========================================================
 
 def render_homepage(intel):
-    data = intel["homepage_intelligence"]
 
-    concepts = data["top_concepts"]
-    hubs = data["top_hubs"]
+    data = intel.get("homepage_intelligence", {})
+
+    concepts = data.get("top_concepts", [])
+    hubs = data.get("top_hubs", [])
 
     concepts_html = "".join(
         f'<span class="chip">{c["concept"]}</span>'
@@ -35,105 +65,101 @@ def render_homepage(intel):
     )
 
     hubs_html = "".join(
-        f'<span class="chip">{h["node"]}</span>'
+        f'''
+<a class="chip" href="{h["node"]}">
+  {prettify_url(h["node"])}
+</a>
+'''
         for h in hubs
     )
 
     return f"""
-<section class="intelligence homepage-intelligence">
+<section class="homepage-intelligence">
 
-  <h2>Arising Concepts</h2>
+  <h3>Arising Concepts</h3>
+
   <div class="chip-cloud">
     {concepts_html}
   </div>
 
-  <h2>Structural Hubs</h2>
+  <h3>Structural Hubs</h3>
+
   <div class="chip-cloud">
     {hubs_html}
   </div>
 
 </section>
-"""
+""".strip()
 
 
 # =========================================================
-# RELATED CONTENT RENDERER (ARTICLE PAGES)
+# HOMEPAGE DETECTION
 # =========================================================
 
-def render_related(salience):
-    sal = salience["salience"]
+def is_root_homepage(path: Path) -> bool:
+    """
+    ONLY inject into the actual site homepage.
 
-    # top concepts by frequency
-    top = sorted(
-        sal.items(),
-        key=lambda x: -(x[1]["frequency"] + x[1]["connectivity"])
-    )[:10]
+    Prevents accidental injection into:
 
-    chips = "".join(
-        f'<span class="chip">{c[0]}</span>'
-        for c in top
+        opening/index.html
+        concept/index.html
+        etc.
+    """
+
+    return path.resolve() == Path(ROOT, "index.html").resolve()
+
+
+# =========================================================
+# INJECTOR
+# =========================================================
+
+def inject(html, block):
+    return html.replace(
+        '<div id="homepage-intelligence"></div>',
+        block
     )
 
-    return f"""
-<section class="related-content">
-
-  <h2>Related</h2>
-
-  <div class="chip-cloud">
-    {chips}
-  </div>
-
-</section>
-"""
-
 
 # =========================================================
-# PAGE TYPE DETECTION
-# =========================================================
-
-def is_homepage(path: str) -> bool:
-    return path.endswith("index.html") or path == "index.html"
-
-
-def inject(html: str, block: str, selector: str) -> str:
-    return html.replace(selector, block)
-
-
-# =========================================================
-# MAIN INJECTOR
+# MAIN
 # =========================================================
 
 def main():
 
-    homepage_intel = load_json(HOME_INTEL)
-    salience = load_json(SAL_FILE)
+    if not os.path.exists(HOME_INTEL):
+        raise FileNotFoundError(
+            f"Missing homepage intelligence file:\n{HOME_INTEL}"
+        )
 
-    home_block = render_homepage(homepage_intel)
-    related_block = render_related(salience)
+    homepage_intel = load_json(HOME_INTEL)
+
+    homepage_block = render_homepage(homepage_intel)
+
+    injected = 0
 
     for path in Path(ROOT).rglob("*.html"):
 
+        if not is_root_homepage(path):
+            continue
+
         html = path.read_text(encoding="utf-8")
 
-        if is_homepage(str(path)):
-            if '<div id="homepage-intelligence"></div>' in html:
-                new_html = inject(
-                    html,
-                    home_block,
-                    '<div id="homepage-intelligence"></div>'
-                )
-                path.write_text(new_html, encoding="utf-8")
-                print("🏠 injected homepage:", path)
+        if '<div id="homepage-intelligence"></div>' not in html:
+            print("⚠️ homepage placeholder missing:", path)
+            continue
 
-        else:
-            if '<div class="related-content"></div>' in html:
-                new_html = inject(
-                    html,
-                    related_block,
-                    '<div class="related-content"></div>'
-                )
-                path.write_text(new_html, encoding="utf-8")
-                print("🔗 injected related:", path)
+        html = inject(html, homepage_block)
+
+        path.write_text(html, encoding="utf-8")
+
+        injected += 1
+        print("🏠 injected homepage intelligence:", path)
+
+    print()
+    print("========================")
+    print("HOMEPAGE INJECTION COMPLETE")
+    print("PAGES UPDATED:", injected)
 
 
 if __name__ == "__main__":
