@@ -225,6 +225,51 @@ def main():
     nodes = data.get("nodes", {})
     edges = data.get("edges", [])
 
+    print()
+    print("===== HOMEPAGE DEBUG =====")
+
+    print("NODE COUNT:", len(nodes))
+    print("EDGE COUNT:", len(edges))
+
+    print()
+    print("FIRST 10 NODE KEYS:")
+
+    for i, k in enumerate(nodes.keys()):
+        if i >= 10:
+            break
+        print(" ", k)
+
+    print()
+    print("FIRST 5 NODE OBJECTS:")
+
+    for i, (k, v) in enumerate(nodes.items()):
+        if i >= 5:
+            break
+
+        print()
+        print("NODE:", k)
+
+        if isinstance(v, dict):
+            print("KEYS:", list(v.keys()))
+
+            if "title" in v:
+                print("TITLE:", v["title"])
+
+            if "url" in v:
+                print("URL:", v["url"])
+
+            if "concepts" in v:
+                print("CONCEPTS:", v["concepts"][:10])
+
+    print()
+    print("FIRST 10 EDGES:")
+
+    for e in edges[:10]:
+        print(e)
+
+    print()
+    print("===== END DEBUG =====")
+    
     built = build(nodes, edges)
 
     output = {
