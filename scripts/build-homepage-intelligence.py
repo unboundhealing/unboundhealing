@@ -38,7 +38,6 @@ def get_edges(data):
         return []
 
     out = []
-
     for e in edges:
         if not isinstance(e, dict):
             continue
@@ -59,6 +58,55 @@ def get_edges(data):
 
 
 # =========================================================
+# URL NORMALIZATION (CRITICAL FIX)
+# =========================================================
+
+def normalize_url(url):
+    if not url or not isinstance(url, str):
+        return None
+
+    url = url.strip()
+
+    # absolute
+    if url.startswith("https://unboundhealing.org"):
+        return url
+
+    # relative
+    if url.startswith("/"):
+        return "https://unboundhealing.org" + url
+
+    return None
+
+
+def is_valid_url(url):
+    url = normalize_url(url)
+    if not url:
+        return False
+
+    if "assets" in url or "images" in url:
+        return False
+
+    last = url.rstrip("/").split("/")[-1]
+    if last.isdigit():
+        return False
+
+    return True
+
+
+def title_from_url(url):
+    url = normalize_url(url)
+    if not url:
+        return ""
+
+    path = url.replace("https://unboundhealing.org", "").strip("/")
+    if not path:
+        return "Home"
+
+    slug = path.split("/")[-1]
+    return slug.replace("-", " ").strip().title()
+
+
+# =========================================================
 # CLEANING
 # =========================================================
 
@@ -68,18 +116,17 @@ def clean_text(s):
 
     s = s.strip()
 
-    # remove junk artifact patterns
+    # remove artifact noise
     s = s.replace("(((", "").replace(")))", "")
+    s = s.replace("((", "").replace("))", "")
     s = s.replace("(( ))", "").replace("(())", "")
 
     if not s:
         return None
 
-    # remove pure numeric / junk tokens
     if s.isdigit():
         return None
 
-    # remove asset/image artifacts
     if s.lower() in {"assets", "images"}:
         return None
 
@@ -99,35 +146,6 @@ def clean_concept(c):
     return c
 
 
-def is_valid_url(url):
-    if not url or not isinstance(url, str):
-        return False
-
-    if "assets" in url or "images" in url:
-        return False
-
-    if not url.startswith("https://unboundhealing.org/"):
-        return False
-
-    # kill broken numeric tail pages
-    if url.rstrip("/").split("/")[-1].isdigit():
-        return False
-
-    return True
-
-
-def title_from_url(url):
-    if not url:
-        return ""
-
-    path = url.replace("https://unboundhealing.org", "").strip("/")
-    if not path:
-        return "Home"
-
-    slug = path.split("/")[-1]
-    return slug.replace("-", " ").strip().title()
-
-
 # =========================================================
 # INTELLIGENCE BUILD
 # =========================================================
@@ -138,7 +156,7 @@ def build_homepage_intelligence(nodes, edges):
     node_score = defaultdict(float)
 
     # -------------------------
-    # concepts (FROM ARTICLES ONLY)
+    # concepts (from nodes only)
     # -------------------------
 
     for node in nodes.values():
@@ -161,21 +179,23 @@ def build_homepage_intelligence(nodes, edges):
         node_score[b] += w
 
     # -------------------------
-    # ARISINGS (ARTICLE LINKS ONLY)
+    # ARISINGS (STRICT LINKS ONLY)
     # -------------------------
 
     arisings = []
     seen = set()
 
     for url, score in sorted(node_score.items(), key=lambda x: (-x[1], x[0])):
+
         if not is_valid_url(url):
+            continue
+
+        url = normalize_url(url)
+        if not url or url in seen:
             continue
 
         title = title_from_url(url)
         if not title:
-            continue
-
-        if url in seen:
             continue
 
         seen.add(url)
@@ -197,6 +217,7 @@ def build_homepage_intelligence(nodes, edges):
     seen_c = set()
 
     for c, f in sorted(concept_freq.items(), key=lambda x: (-x[1], x[0])):
+
         if c in seen_c:
             continue
 
@@ -219,7 +240,7 @@ def build_homepage_intelligence(nodes, edges):
 
 
 # =========================================================
-# RENDER (CSS SAFE STRUCTURE FIXED)
+# RENDER (CSS-COMPATIBLE + STRUCTURE FIXED)
 # =========================================================
 
 def section_title(text):
@@ -236,38 +257,44 @@ def render_homepage(intel):
     inspirations = data.get("essential_inspirations", [])
 
     # -------------------------
-    # ARTICLE LINKS (FIXED: real anchors)
+    # ARISINGS (REAL LINKS ONLY)
     # -------------------------
 
     arisings_html = "\n".join(
-        f'<a class="chip" href="{a["url"]}">{a["title"]}</a>'
+        f'<a class="chip semantic-chip" href="{a["url"]}">{a["title"]}</a>'
         for a in arisings
-        if is_valid_url(a.get("url"))
+        if normalize_url(a.get("url"))
     )
 
+    if not arisings_html:
+        arisings_html = '<span class="chip semantic-chip muted">No observations available</span>'
+
     # -------------------------
-    # CONCEPT CHIPS
+    # INSPIRATIONS (CONCEPTS)
     # -------------------------
 
     insp_html = "\n".join(
-        f'<span class="chip">{i["concept"]}</span>'
+        f'<span class="chip semantic-chip">{i["concept"]}</span>'
         for i in inspirations
     )
 
+    if not insp_html:
+        insp_html = '<span class="chip semantic-chip muted">No inspirations available</span>'
+
     return f"""
-<section class="homepage-intelligence">
+<section class="homepage-intelligence semantic-block">
 
-  <h3 class="intelligence-title">Arising observations</h3>
+  <h3>Arising observations</h3>
 
-  <div class="chip-cloud arising-cloud">
+  <div class="chip-cloud semantic-cloud">
     {arisings_html}
   </div>
 
-  <div style="height:24px"></div>
+  <div style="height:28px"></div>
 
-  <h3 class="intelligence-title">Essential inspirations</h3>
+  <h3>Essential inspirations</h3>
 
-  <div class="chip-cloud inspiration-cloud">
+  <div class="chip-cloud semantic-cloud">
     {insp_html}
   </div>
 
@@ -276,7 +303,7 @@ def render_homepage(intel):
 
 
 # =========================================================
-# INJECT
+# INJECTION
 # =========================================================
 
 def inject_homepage(block):
