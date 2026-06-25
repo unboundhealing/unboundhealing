@@ -24,16 +24,16 @@ echo "🧠 Loading semantic-salience (truth layer)..."
 # SINGLE PYTHON PASS: CONCEPT MAP ONLY
 # ---------------------------------------------------------
 
-CONCEPT_MAP=$(python3 << 'EOF'
+CONCEPT_MAP=$(python3 <<'EOF'
 import json
 
 with open("semantic-salience.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 if not isinstance(data, dict):
-    raise SystemExit("semantic-salience must be a dict")
+    raise SystemExit("semantic-salience must be dict")
 
-graph = data.get("page_graph", {})
+graph = data.get("page_graph", {}) or {}
 
 result = {}
 
@@ -42,17 +42,16 @@ for url, node in graph.items():
     concepts = []
 
     if isinstance(node, dict):
-        raw = node.get("concepts", [])
-        if isinstance(raw, list):
-            for c in raw:
-                if isinstance(c, str):
-                    concepts.append(c)
-                elif isinstance(c, dict):
-                    word = c.get("word")
-                    if word:
-                        concepts.append(word)
+        raw = node.get("concepts", []) or []
 
-    # normalize + dedupe
+        for c in raw:
+            if isinstance(c, str):
+                concepts.append(c)
+            elif isinstance(c, dict):
+                word = c.get("word")
+                if word:
+                    concepts.append(word)
+
     clean = []
     seen = set()
 
@@ -61,7 +60,6 @@ for url, node in graph.items():
             continue
 
         c = c.strip().lower()
-
         if not c or c in seen:
             continue
 
@@ -70,8 +68,7 @@ for url, node in graph.items():
 
     result[url] = clean[:10]
 
-import json as j
-print(j.dumps(result))
+print(json.dumps(result))
 EOF
 )
 
@@ -83,59 +80,58 @@ echo "{" > "$OUTPUT"
 FIRST=true
 
 # ---------------------------------------------------------
-# SAFE FILE DISCOVERY (FIXED LOOP - NO SUBSHELLS)
+# SAFE FILE DISCOVERY (NO SUBSHELL PIPELINE BUGS)
 # ---------------------------------------------------------
 
-find . -type f -name "*.html" ! -path "./assets/*" | sort | while IFS= read -r file
-do
+while IFS= read -r file; do
 
-# -------------------------------------------------------
-# URL NORMALIZATION
-# -------------------------------------------------------
+  case "$file" in
+    */assets/*) continue ;;
+  esac
 
-REL_PATH="${file#./}"
+  # -------------------------------------------------------
+  # URL NORMALIZATION
+  # -------------------------------------------------------
 
-if [[ "$REL_PATH" == "index.html" ]]; then
-    URL="https://unboundhealing.org/"
-else
-    URL="${REL_PATH%index.html}"
-    URL="${URL%.html}"
-    URL="https://unboundhealing.org/${URL}"
+  REL_PATH="${file#./}"
 
-    case "$URL" in
-        */) ;;
-        *) URL="${URL}/" ;;
-    esac
-fi
+  if [[ "$REL_PATH" == "index.html" ]]; then
+      URL="https://unboundhealing.org/"
+  else
+      URL="${REL_PATH%index.html}"
+      URL="${URL%.html}"
+      URL="https://unboundhealing.org/${URL}"
 
-# -------------------------------------------------------
-# TITLE
-# -------------------------------------------------------
+      case "$URL" in
+          */) ;;
+          *) URL="${URL}/" ;;
+      esac
+  fi
 
-TITLE=$(grep -m1 "<title>" "$file" \
-  | sed 's/<[^>]*>//g' \
-  || true)
+  # -------------------------------------------------------
+  # TITLE
+  # -------------------------------------------------------
 
-[ -z "$TITLE" ] && TITLE="Untitled"
+  TITLE=$(grep -m1 "<title>" "$file" | sed 's/<[^>]*>//g' || true)
+  [ -z "$TITLE" ] && TITLE="Untitled"
 
-# -------------------------------------------------------
-# DESCRIPTION
-# -------------------------------------------------------
+  # -------------------------------------------------------
+  # DESCRIPTION
+  # -------------------------------------------------------
 
-DESC=$(grep -m1 'name="description"' "$file" \
-  | sed -E 's/.*content="([^"]*)".*/\1/' \
-  || true)
+  DESC=$(grep -m1 'name="description"' "$file" \
+    | sed -E 's/.*content="([^"]*)".*/\1/' || true)
 
-[ -z "$DESC" ] && DESC=""
+  [ -z "$DESC" ] && DESC=""
 
-# -------------------------------------------------------
-# SAFE TAG EXTRACTION (NO JSON RE-PIPE, NO HEREDOC BRIDGING)
-# -------------------------------------------------------
+  # -------------------------------------------------------
+  # TAG EXTRACTION (SAFE + SIMPLE + RELIABLE)
+  # -------------------------------------------------------
 
-TAGS=$(printf "%s" "$CONCEPT_MAP" | python3 - "$URL" << 'EOF'
+  TAGS=$(python3 - "$URL" <<'EOF'
 import json, sys
 
-data = json.load(sys.stdin)
+data = json.loads(sys.stdin.read())
 url = sys.argv[1]
 
 node = data.get(url, [])
@@ -160,40 +156,41 @@ for c in node:
 
 print(",".join(clean[:10]))
 EOF
+<<< "$CONCEPT_MAP"
 )
 
-# -------------------------------------------------------
-# ESCAPING
-# -------------------------------------------------------
+  # -------------------------------------------------------
+  # ESCAPING
+  # -------------------------------------------------------
 
-ESC_TITLE=$(printf '%s' "$TITLE" | sed 's/"/\\"/g')
-ESC_DESC=$(printf '%s' "$DESC" | sed 's/"/\\"/g')
-ESC_TAGS=$(printf '%s' "$TAGS" | sed 's/"/\\"/g')
+  ESC_TITLE=$(printf '%s' "$TITLE" | sed 's/"/\\"/g')
+  ESC_DESC=$(printf '%s' "$DESC" | sed 's/"/\\"/g')
+  ESC_TAGS=$(printf '%s' "$TAGS" | sed 's/"/\\"/g')
 
-# -------------------------------------------------------
-# JSON OUTPUT
-# -------------------------------------------------------
+  # -------------------------------------------------------
+  # JSON OUTPUT
+  # -------------------------------------------------------
 
-if [ "$FIRST" = true ]; then
-    FIRST=false
-else
+  if [ "$FIRST" = true ]; then
+      FIRST=false
+  else
       echo "," >> "$OUTPUT"
-fi
+  fi
 
-cat <<EOF >> "$OUTPUT"
+  cat <<EOF >> "$OUTPUT"
 "$URL": {
-"title": "$ESC_TITLE",
-"url": "$URL",
-"path": "$file",
-"type": "page",
-"tags": "$ESC_TAGS",
-"description": "$ESC_DESC",
-"image": "",
-"last_modified": ""
+  "title": "$ESC_TITLE",
+  "url": "$URL",
+  "path": "$file",
+  "type": "page",
+  "tags": "$ESC_TAGS",
+  "description": "$ESC_DESC",
+  "image": "",
+  "last_modified": ""
 }
 EOF
 
-done
+done < <(find . -type f -name "*.html" ! -path "./assets/*" | sort)
 
 echo "" >> "$OUTPUT"
 echo "}" >> "$OUTPUT"
