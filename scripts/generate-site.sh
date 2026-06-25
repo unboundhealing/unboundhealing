@@ -93,6 +93,9 @@ python3 scripts/build-homepage-intelligence.py || true
 echo "🧠 Enhancing pages (optional)"
 python3 scripts/enhance-pages.py
 
+echo "🧩 injecting content into pages..."
+python3 scripts/inject-content.py
+
 echo "📡 RSS (optional)"
 ./scripts/generate-rss.sh || true
 
