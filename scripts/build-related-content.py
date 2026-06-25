@@ -5,24 +5,43 @@ import os
 from pathlib import Path
 from bs4 import BeautifulSoup
 
-ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
-SAL = os.path.join(ROOT, "semantic-salience.json")
+# =========================================================
+# ROOT / TRUTH SOURCE
+# =========================================================
+
+ROOT = Path(os.environ.get("GITHUB_WORKSPACE", os.getcwd()))
+SAL = ROOT / "semantic-salience.json"
 
 
-# ---------------------------------------------------------
+# =========================================================
 # LOAD TRUTH
-# ---------------------------------------------------------
+# =========================================================
 
 def load_json():
     with open(SAL, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-# ---------------------------------------------------------
-# SINGLE CANONICAL URL BUILDER
-# ---------------------------------------------------------
+# =========================================================
+# CENTRALIZED HTML PARSER (OPTION B HARDENING)
+# =========================================================
 
-def file_to_url(path):
+def get_soup(html: str) -> BeautifulSoup:
+    """
+    Single enforced HTML parser for the entire pipeline.
+
+    IMPORTANT:
+    - prevents accidental reintroduction of lxml
+    - guarantees deterministic parsing across CI environments
+    """
+    return BeautifulSoup(html, "html.parser")
+
+
+# =========================================================
+# CANONICAL URL BUILDER
+# =========================================================
+
+def file_to_url(path: Path) -> str:
     rel = str(path.relative_to(ROOT)).replace("\\", "/")
 
     if rel.endswith("index.html"):
@@ -38,11 +57,11 @@ def file_to_url(path):
     return "https://unboundhealing.org/"
 
 
-# ---------------------------------------------------------
+# =========================================================
 # HUMAN LABELS
-# ---------------------------------------------------------
+# =========================================================
 
-def url_to_label(url):
+def url_to_label(url: str) -> str:
     path = (
         url.replace("https://unboundhealing.org", "")
         .strip("/")
@@ -56,12 +75,11 @@ def url_to_label(url):
     return title.replace("-", " ").title()
 
 
-# ---------------------------------------------------------
+# =========================================================
 # RELATED BLOCK RENDERER
-# ---------------------------------------------------------
+# =========================================================
 
 def render_block(related_urls):
-
     if not related_urls:
         return """
 <section class="related-content">
@@ -70,12 +88,10 @@ def render_block(related_urls):
 </section>
 """.strip()
 
-    links = []
-
-    for url in related_urls:
-        links.append(
-            f'    <a class="chip" href="{url}">{url_to_label(url)}</a>'
-        )
+    links = [
+        f'    <a class="chip" href="{url}">{url_to_label(url)}</a>'
+        for url in related_urls
+    ]
 
     return f"""
 <section class="related-content">
@@ -87,27 +103,20 @@ def render_block(related_urls):
 """.strip()
 
 
-# ---------------------------------------------------------
+# =========================================================
 # PLACEHOLDER REPLACEMENT
-# ---------------------------------------------------------
+# =========================================================
 
 def replace_placeholder(html, block):
-
     try:
-        soup = BeautifulSoup(html, "html.parser")
+        soup = get_soup(html)
 
-        placeholder = soup.find(
-            "div",
-            class_="related-content"
-        )
+        placeholder = soup.find("div", class_="related-content")
 
         if placeholder is None:
             return html, False
 
-        replacement = BeautifulSoup(
-            block,
-            "html.parser"
-        )
+        replacement = get_soup(block)
 
         placeholder.replace_with(replacement)
 
@@ -118,12 +127,11 @@ def replace_placeholder(html, block):
         return html, False
 
 
-# ---------------------------------------------------------
+# =========================================================
 # MAIN
-# ---------------------------------------------------------
+# =========================================================
 
 def main():
-
     data = load_json()
 
     graph = data.get("page_graph", {})
@@ -131,18 +139,17 @@ def main():
     updated = 0
 
     html_files = [
-        p for p in Path(ROOT).rglob("*.html")
-        if "/assets/" not in str(p).replace("\\", "/")
+        p for p in ROOT.rglob("*.html")
+        if "assets" not in p.parts
     ]
 
     for path in html_files:
-
         url = file_to_url(path)
 
         node = graph.get(url)
 
         if node is None:
-            print("❌ NO NODE MATCH:", url)
+            print("❌ missing graph node:", url)
             continue
 
         related = node.get("related", [])
@@ -154,18 +161,12 @@ def main():
 
         block = render_block(related)
 
-        new_html, replaced = replace_placeholder(
-            html,
-            block
-        )
+        new_html, replaced = replace_placeholder(html, block)
 
         if not replaced:
             continue
 
-        path.write_text(
-            new_html,
-            encoding="utf-8"
-        )
+        path.write_text(new_html, encoding="utf-8")
 
         updated += 1
 
