@@ -6,48 +6,85 @@ ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 SAL = os.path.join(ROOT, "semantic-salience.json")
 
 
-def load():
+# -----------------------------
+# LOAD TRUTH
+# -----------------------------
+def load_json():
     with open(SAL, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-def clean(url):
-    return url.replace("https://unboundhealing.org", "").rstrip("/")
+# -----------------------------
+# URL NORMALIZATION (ABSOLUTE TRUTH)
+# -----------------------------
+def normalize(url: str) -> str:
+    """
+    Forces ALL URLs into canonical form:
+    https://unboundhealing.org/path/
+    """
+    if not url:
+        return None
+
+    url = url.replace("https://unboundhealing.org", "")
+    url = url.replace("index.html", "")
+    url = url.replace(".html", "")
+
+    if not url.startswith("/"):
+        url = "/" + url
+
+    if not url.endswith("/"):
+        url = url + "/"
+
+    return "https://unboundhealing.org" + url
 
 
-def build_related_html(related_urls):
+# -----------------------------
+# RENDER RELATED BLOCK
+# -----------------------------
+def render_block(related_urls):
     if not related_urls:
         return """
 <section class="related-content">
   <h2>Related</h2>
-  <p class="muted">No related content found.</p>
+  <p class="muted">No related content.</p>
 </section>
-"""
+""".strip()
 
-    items = "\n".join(
-        f'<a class="chip" href="{clean(u)}">{clean(u).strip("/") or "/"}</a>'
-        for u in related_urls
-    )
+    chips = []
+
+    for url in related_urls:
+        clean = normalize(url)
+        if not clean:
+            continue
+
+        label = clean.replace("https://unboundhealing.org", "").strip("/").replace("-", " ").title()
+        chips.append(f'<a class="chip" href="{clean}">{label}</a>')
 
     return f"""
 <section class="related-content">
   <h2>Related</h2>
   <div class="chip-cloud">
-    {items}
+    {''.join(chips)}
   </div>
 </section>
-"""
+""".strip()
 
 
+# -----------------------------
+# INJECTOR
+# -----------------------------
 def inject(html, block):
     return html.replace(
-        '<div id="related-content"></div>',
+        "<div id=\"related-content\"></div>",
         block
     )
 
 
+# -----------------------------
+# MAIN
+# -----------------------------
 def main():
-    data = load()
+    data = load_json()
     graph = data.get("page_graph", {})
 
     pages = Path(ROOT).rglob("*.html")
@@ -57,26 +94,41 @@ def main():
     for path in pages:
         html = path.read_text(encoding="utf-8")
 
-        # derive URL key from file path
-        rel = "/" + str(path.relative_to(ROOT)).replace("index.html", "").replace(".html", "").strip("/")
-        if not rel.startswith("/"):
-            rel = "/" + rel
+        if "<div id=\"related-content\"></div>" not in html:
+            continue
 
-        node = graph.get("https://unboundhealing.org" + rel)
+        # derive page URL from file path
+        rel = str(path.relative_to(ROOT))
+
+        url = "https://unboundhealing.org/" + rel
+        url = url.replace("index.html", "")
+        url = url.replace(".html", "")
+
+        if not url.endswith("/"):
+            url += "/"
+
+        node = graph.get(url)
 
         if not node:
+            # fallback: try normalized again just in case
+            node = graph.get(normalize(url))
+
+        if not node:
+            print("❌ NO NODE MATCH:", url)
             continue
 
         related = node.get("related", [])
 
-        block = build_related_html(related)
+        block = render_block(related)
 
-        if '<div id="related-content"></div>' in html:
-            new_html = inject(html, block)
-            path.write_text(new_html, encoding="utf-8")
-            updated += 1
+        new_html = inject(html, block)
+        path.write_text(new_html, encoding="utf-8")
 
-    print("🔗 RELATED CONTENT COMPLETE")
+        updated += 1
+        print("🔗 injected:", url)
+
+    print("\n========================")
+    print("RELATED CONTENT COMPLETE")
     print("PAGES UPDATED:", updated)
 
 
