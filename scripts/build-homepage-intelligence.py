@@ -4,9 +4,6 @@ import os
 import json
 from pathlib import Path
 from collections import defaultdict
-from html import escape
-from urllib.parse import urlparse
-
 
 # =========================================================
 # PATHS
@@ -52,12 +49,11 @@ def get_edges(data):
         if not a or not b:
             continue
 
-        try:
-            w = float(e.get("weight", 1))
-        except Exception:
-            w = 1.0
-
-        out.append({"a": str(a), "b": str(b), "weight": w})
+        out.append({
+            "a": str(a),
+            "b": str(b),
+            "weight": float(e.get("weight", 1))
+        })
 
     return out
 
@@ -66,22 +62,36 @@ def get_edges(data):
 # CLEANING
 # =========================================================
 
-def clean_concept(c):
-    if not isinstance(c, str):
+def clean_text(s):
+    if not isinstance(s, str):
         return None
 
-    c = c.strip().lower()
+    s = s.strip()
 
+    # remove junk artifact patterns
+    s = s.replace("(((", "").replace(")))", "")
+    s = s.replace("(( ))", "").replace("(())", "")
+
+    if not s:
+        return None
+
+    # remove pure numeric / junk tokens
+    if s.isdigit():
+        return None
+
+    # remove asset/image artifacts
+    if s.lower() in {"assets", "images"}:
+        return None
+
+    return s
+
+
+def clean_concept(c):
+    c = clean_text(c)
     if not c:
         return None
 
-    if c in {"assets", "images"}:
-        return None
-
-    if c.isdigit():
-        return None
-
-    c = c.replace("-", " ").strip()
+    c = c.lower().replace("-", " ").strip()
 
     if len(c) < 2:
         return None
@@ -90,57 +100,45 @@ def clean_concept(c):
 
 
 def is_valid_url(url):
-    if not isinstance(url, str) or not url:
-        return False
-
-    if not url.startswith("https://unboundhealing.org/"):
+    if not url or not isinstance(url, str):
         return False
 
     if "assets" in url or "images" in url:
         return False
 
-    # kill numeric dead-end pages like /1
-    path = urlparse(url).path.strip("/").split("/")
-    if path and path[-1].isdigit():
+    if not url.startswith("https://unboundhealing.org/"):
+        return False
+
+    # kill broken numeric tail pages
+    if url.rstrip("/").split("/")[-1].isdigit():
         return False
 
     return True
 
 
-def prettify_url(url):
-    if not is_valid_url(url):
+def title_from_url(url):
+    if not url:
         return ""
 
-    path = url.replace("https://unboundhealing.org/", "").strip("/")
+    path = url.replace("https://unboundhealing.org", "").strip("/")
     if not path:
         return "Home"
 
     slug = path.split("/")[-1]
-
-    if slug.isdigit():
-        return ""
-
-    return slug.replace("-", " ").title()
-
-
-def section_title(text):
-    if not text:
-        return ""
-    # proper UI casing
-    return text[0].upper() + text[1:]
+    return slug.replace("-", " ").strip().title()
 
 
 # =========================================================
-# BUILD INTELLIGENCE
+# INTELLIGENCE BUILD
 # =========================================================
 
 def build_homepage_intelligence(nodes, edges):
 
-    concept_frequency = defaultdict(int)
-    node_degree = defaultdict(float)
+    concept_freq = defaultdict(int)
+    node_score = defaultdict(float)
 
     # -------------------------
-    # concepts
+    # concepts (FROM ARTICLES ONLY)
     # -------------------------
 
     for node in nodes.values():
@@ -151,114 +149,126 @@ def build_homepage_intelligence(nodes, edges):
         for c in concepts:
             c = clean_concept(c)
             if c:
-                concept_frequency[c] += 1
+                concept_freq[c] += 1
 
     # -------------------------
-    # edges
+    # graph scoring
     # -------------------------
 
     for e in edges:
         a, b, w = e["a"], e["b"], e["weight"]
-        node_degree[a] += w
-        node_degree[b] += w
+        node_score[a] += w
+        node_score[b] += w
 
     # -------------------------
-    # TOP CONCEPTS (STRICT 3)
+    # ARISINGS (ARTICLE LINKS ONLY)
     # -------------------------
 
-    top_concepts = []
+    arisings = []
     seen = set()
 
-    for c, f in sorted(concept_frequency.items(), key=lambda x: (-x[1], x[0])):
-        if c in seen:
+    for url, score in sorted(node_score.items(), key=lambda x: (-x[1], x[0])):
+        if not is_valid_url(url):
             continue
-        seen.add(c)
 
-        top_concepts.append({
-            "label": c.title(),
-            "slug": c,
+        title = title_from_url(url)
+        if not title:
+            continue
+
+        if url in seen:
+            continue
+
+        seen.add(url)
+
+        arisings.append({
+            "url": url,
+            "title": title,
+            "score": score
+        })
+
+        if len(arisings) >= 3:
+            break
+
+    # -------------------------
+    # ESSENTIAL INSPIRATIONS (CONCEPTS ONLY)
+    # -------------------------
+
+    inspirations = []
+    seen_c = set()
+
+    for c, f in sorted(concept_freq.items(), key=lambda x: (-x[1], x[0])):
+        if c in seen_c:
+            continue
+
+        seen_c.add(c)
+
+        inspirations.append({
+            "concept": c.title(),
             "frequency": f
         })
 
-        if len(top_concepts) >= 3:
-            break
-
-    # -------------------------
-    # TOP HUBS (STRICT 3 VALID LINKS ONLY)
-    # -------------------------
-
-    top_hubs = []
-
-    for n, s in sorted(node_degree.items(), key=lambda x: (-x[1], x[0])):
-
-        if not is_valid_url(n):
-            continue
-
-        label = prettify_url(n)
-        if not label:
-            continue
-
-        top_hubs.append({
-            "url": n,
-            "label": label,
-            "score": s
-        })
-
-        if len(top_hubs) >= 3:
+        if len(inspirations) >= 3:
             break
 
     return {
-        "top_concepts": top_concepts,
-        "top_hubs": top_hubs,
+        "arising_observations": arisings,
+        "essential_inspirations": inspirations,
         "node_count": len(nodes),
         "edge_count": len(edges)
     }
 
 
 # =========================================================
-# RENDER (CSS SAFE + TRUE LINKS + NO SLUG LEAKS)
+# RENDER (CSS SAFE STRUCTURE FIXED)
 # =========================================================
+
+def section_title(text):
+    if not text:
+        return ""
+    return text.strip().capitalize()
+
 
 def render_homepage(intel):
 
     data = intel.get("homepage_intelligence", {})
 
-    concepts = data.get("top_concepts", [])
-    hubs = data.get("top_hubs", [])
+    arisings = data.get("arising_observations", [])
+    inspirations = data.get("essential_inspirations", [])
 
     # -------------------------
-    # CONCEPTS (TEXT ONLY, NOT LINKS)
+    # ARTICLE LINKS (FIXED: real anchors)
     # -------------------------
 
-    concepts_html = "\n".join(
-        f'<span class="chip">{escape(c["label"])}</span>'
-        for c in concepts
-        if isinstance(c.get("label"), str)
+    arisings_html = "\n".join(
+        f'<a class="chip" href="{a["url"]}">{a["title"]}</a>'
+        for a in arisings
+        if is_valid_url(a.get("url"))
     )
 
     # -------------------------
-    # HUBS (REAL LINKS ONLY)
+    # CONCEPT CHIPS
     # -------------------------
 
-    hubs_html = "\n".join(
-        f'<a class="chip" href="{escape(h["url"])}">{escape(h["label"])}</a>'
-        for h in hubs
-        if is_valid_url(h.get("url"))
+    insp_html = "\n".join(
+        f'<span class="chip">{i["concept"]}</span>'
+        for i in inspirations
     )
 
     return f"""
 <section class="homepage-intelligence">
 
-  <h3 class="intelligence-title">Arising Observations...</h3>
+  <h3 class="intelligence-title">Arising observations</h3>
 
-  <div class="chip-cloud">
-    {concepts_html}
+  <div class="chip-cloud arising-cloud">
+    {arisings_html}
   </div>
 
-  <h3 class="intelligence-title">Essential Inspirations...</h3>
+  <div style="height:24px"></div>
 
-  <div class="chip-cloud">
-    {hubs_html}
+  <h3 class="intelligence-title">Essential inspirations</h3>
+
+  <div class="chip-cloud inspiration-cloud">
+    {insp_html}
   </div>
 
 </section>
@@ -266,7 +276,7 @@ def render_homepage(intel):
 
 
 # =========================================================
-# INJECTION
+# INJECT
 # =========================================================
 
 def inject_homepage(block):
@@ -286,7 +296,6 @@ def inject_homepage(block):
         return 0
 
     html = html.replace(placeholder, block)
-
     homepage_path.write_text(html, encoding="utf-8")
 
     print("🏠 injected homepage intelligence:", homepage_path)
@@ -304,10 +313,10 @@ def main():
     nodes = get_nodes(data)
     edges = get_edges(data)
 
-    homepage = build_homepage_intelligence(nodes, edges)
+    intel = build_homepage_intelligence(nodes, edges)
 
     output = {
-        "homepage_intelligence": homepage,
+        "homepage_intelligence": intel,
         "source": "semantic-salience",
         "consumer_model": "read-only-projection",
         "status": "ok"
