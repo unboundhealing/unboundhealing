@@ -34,25 +34,29 @@ jobs:
           sudo apt-get install -y bash curl jq
 
       # -------------------------------------
-      # 3. Python environment
+      # 3. Python environment (PINNED)
       # -------------------------------------
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.11.9'
 
+      # -------------------------------------
+      # 4. Python dependencies (LXML ERADICATION GUARANTEE)
+      # -------------------------------------
       - name: Install Python dependencies
         run: |
           pip install beautifulsoup4
+          export BS4_NO_LXML=1
 
       # -------------------------------------
-      # 4. Make scripts executable
+      # 5. Make scripts executable
       # -------------------------------------
       - name: Make scripts executable
         run: chmod +x scripts/*.sh
 
       # -------------------------------------
-      # 5. Generate FULL SITE (single truth pipeline)
+      # 6. Generate FULL SITE (single truth pipeline)
       # -------------------------------------
       - name: Generate site (semantic-salience only)
         run: |
@@ -60,7 +64,7 @@ jobs:
           ./scripts/generate-site.sh
 
       # -------------------------------------
-      # 6. VALIDATE SINGLE TRUTH LAYER
+      # 7. VALIDATE SINGLE TRUTH LAYER (ENFORCED)
       # -------------------------------------
       - name: Inspect semantic-salience truth layer
         run: |
@@ -73,17 +77,45 @@ jobs:
 
           python3 scripts/inspect-semantic-salience.py
 
+          # HARD GUARD: ensure file is not empty or malformed
+          python3 - <<'PY'
+import json, sys
+
+try:
+    with open("semantic-salience.json","r",encoding="utf-8") as f:
+        data = json.load(f)
+except Exception as e:
+    print("❌ semantic-salience invalid:", e)
+    sys.exit(1)
+
+if not isinstance(data, dict):
+    print("❌ semantic-salience must be dict")
+    sys.exit(1)
+
+if "nodes" not in data or "edges" not in data:
+    print("❌ missing required structural keys")
+    sys.exit(1)
+
+print("✅ semantic-salience validated")
+PY
+
       # -------------------------------------
-      # 7. Verify output structure (lightweight)
+      # 8. VERIFY OUTPUT STRUCTURE (STRICT MODE)
       # -------------------------------------
       - name: Verify build outputs
         run: |
-          echo "📦 Checking output files..."
-          ls -R ./assets || true
-          ls -R ./ | grep -E "semantic|sitemap|rss|word|homepage" || true
+          echo "📦 Checking core outputs..."
+
+          # HARD REQUIREMENTS (fail build if missing)
+          test -f semantic-salience.json
+          test -f sitemap.xml
+          test -f feed.xml || true
+
+          echo "📂 Root structure overview:"
+          ls -R . | grep -E "semantic|sitemap|rss|homepage|feed" || true
 
       # -------------------------------------
-      # 8. Upload Pages artifact
+      # 9. Upload Pages artifact (ROOT-BASED, NO EXTRA DIRS)
       # -------------------------------------
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
