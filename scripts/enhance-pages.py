@@ -119,70 +119,6 @@ def run_plugin(name, fn, soup, url, salience):
 # =========================================================
 
 # ---------------------------------------------------------
-# RELATED CONTENT
-# ---------------------------------------------------------
-
-def plugin_related_content(soup, url, salience):
-    for old in soup.select("section.related-paths"):
-        old.decompose()
-
-    pages = salience.get("pages", {})
-    if not isinstance(pages, dict):
-        return
-
-    node = pages.get(url, {})
-    concepts = node.get("concepts", [])
-
-    if not concepts:
-        return
-
-    scores = {}
-
-    for concept in concepts:
-        word = concept.get("word") if isinstance(concept, dict) else concept
-        if not word:
-            continue
-
-        for other_url, other_node in pages.items():
-            if other_url == url:
-                continue
-
-            for oc in other_node.get("concepts", []):
-                oword = oc.get("word") if isinstance(oc, dict) else oc
-                if oword == word:
-                    scores[other_url] = scores.get(other_url, 0) + 1
-
-    ranked = sorted(scores.items(), key=lambda x: (-x[1], x[0]))[:5]
-    related = [u for u, _ in ranked]
-
-    if not related:
-        return
-
-    block = soup.new_tag("section")
-    block["class"] = ["semantic-block", "related-paths"]
-
-    block["style"] = "border: 3px solid red; padding: 20px;"
-    block["data-salience-debug"] = "true"
-
-    h = soup.new_tag("h3")
-    h.string = "Further paths to follow..."
-    block.append(h)
-
-    cloud = soup.new_tag("div")
-    cloud["class"] = "related-cloud"
-
-    for r in related:
-        a = soup.new_tag("a", href=r.replace("https://unboundhealing.org", ""))
-        a["class"] = "related-chip"
-        a.string = fallback_title(r)
-        cloud.append(a)
-
-    block.append(cloud)
-
-    append_block(soup, block)
-
-
-# ---------------------------------------------------------
 # TRACKING
 # ---------------------------------------------------------
 
@@ -197,74 +133,16 @@ def plugin_tracking(soup, url, salience):
     append_block(soup, script)
 
 
-# ---------------------------------------------------------
-# HOMEPAGE INTELLIGENCE
-# ---------------------------------------------------------
-
-def plugin_homepage_intelligence(soup, url, salience):
-    for old in soup.select("section.homepage-intelligence"):
-        old.decompose()
-
-    pages = salience.get("pages", {})
-    if not isinstance(pages, dict):
-        return
-
-    scored = []
-
-    for u, node in pages.items():
-        if u == url:
-            continue
-
-        weight = 0.0
-        for c in node.get("concepts", []):
-            weight += float(c.get("weight", 1.0)) if isinstance(c, dict) else 1.0
-
-        scored.append((u, weight))
-
-    scored.sort(key=lambda x: (-x[1], x[0]))
-    top = [u for u, _ in scored[:3]]
-
-    if not top:
-        return
-
-    root = soup.new_tag("section")
-    root["class"] = ["semantic-block", "homepage-intelligence"]
-
-    root["style"] = "border: 3px solid red; padding: 20px;"
-    root["data-salience-debug"] = "true"
-
-    h = soup.new_tag("h2")
-    h.string = "Homepage intelligence"
-    root.append(h)
-
-    cloud = soup.new_tag("div")
-    cloud["class"] = "chip-cloud"
-
-    for node_url in top:
-        a = soup.new_tag("a", href=node_url.replace("https://unboundhealing.org", ""))
-        a["class"] = "chip"
-        a.string = fallback_title(node_url)
-        cloud.append(a)
-
-    root.append(cloud)
-
-    append_block(soup, root)
-
-
 # =========================================================
 # REGISTRY
 # =========================================================
 
 PLUGIN_ORDER = [
-    "related_content",
     "tracking",
-    "homepage_intelligence",
 ]
 
 PLUGIN_REGISTRY = {
-    "related_content": plugin_related_content,
     "tracking": plugin_tracking,
-    "homepage_intelligence": plugin_homepage_intelligence,
 }
 
 ACTIVE_PLUGINS = PLUGIN_ORDER
