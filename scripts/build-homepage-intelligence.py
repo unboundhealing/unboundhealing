@@ -16,7 +16,7 @@ OUTPUT_FILE = os.path.join(ROOT, "homepage-intelligence.json")
 
 
 # =========================================================
-# LOADER
+# LOAD
 # =========================================================
 
 def load_json(path):
@@ -25,69 +25,35 @@ def load_json(path):
 
 
 # =========================================================
-# SAFE ACCESS
-# =========================================================
-
-def get_nodes(data):
-    return data.get("nodes", {}) if isinstance(data.get("nodes"), dict) else {}
-
-
-def get_edges(data):
-    edges = data.get("edges", [])
-    if not isinstance(edges, list):
-        return []
-
-    out = []
-    for e in edges:
-        if not isinstance(e, dict):
-            continue
-
-        a = e.get("a")
-        b = e.get("b")
-
-        if not a or not b:
-            continue
-
-        out.append({
-            "a": str(a),
-            "b": str(b),
-            "weight": float(e.get("weight", 1))
-        })
-
-    return out
-
-
-# =========================================================
-# URL NORMALIZATION (CRITICAL FIX)
+# NORMALIZATION LAYER
 # =========================================================
 
 def normalize_url(url):
-    if not url or not isinstance(url, str):
+    if not isinstance(url, str):
         return None
 
     url = url.strip()
 
-    # absolute
-    if url.startswith("https://unboundhealing.org"):
-        return url
-
-    # relative
     if url.startswith("/"):
-        return "https://unboundhealing.org" + url
+        url = "https://unboundhealing.org" + url
 
-    return None
+    if not url.startswith("https://unboundhealing.org/"):
+        return None
+
+    return url
 
 
-def is_valid_url(url):
+def valid_url(url):
     url = normalize_url(url)
     if not url:
         return False
 
-    if "assets" in url or "images" in url:
+    tail = url.rstrip("/").split("/")[-1]
+
+    if tail.isdigit():
         return False
 
-    last = url.rstrip("/").split("/")[-1]
-    if last.isdigit():
+    if "assets" in url or "images" in url:
         return False
 
     return True
@@ -98,69 +64,43 @@ def title_from_url(url):
     if not url:
         return ""
 
-    path = url.replace("https://unboundhealing.org", "").strip("/")
-    if not path:
-        return "Home"
-
-    slug = path.split("/")[-1]
-    return slug.replace("-", " ").strip().title()
+    slug = url.rstrip("/").split("/")[-1]
+    return slug.replace("-", " ").title()
 
 
 # =========================================================
-# CLEANING
+# CONCEPT CLEANER
 # =========================================================
-
-def clean_text(s):
-    if not isinstance(s, str):
-        return None
-
-    s = s.strip()
-
-    # remove artifact noise
-    s = s.replace("(((", "").replace(")))", "")
-    s = s.replace("((", "").replace("))", "")
-    s = s.replace("(( ))", "").replace("(())", "")
-
-    if not s:
-        return None
-
-    if s.isdigit():
-        return None
-
-    if s.lower() in {"assets", "images"}:
-        return None
-
-    return s
-
 
 def clean_concept(c):
-    c = clean_text(c)
+    if not isinstance(c, str):
+        return None
+
+    c = c.strip().lower()
     if not c:
         return None
 
-    c = c.lower().replace("-", " ").strip()
-
-    if len(c) < 2:
+    if c in {"assets", "images"}:
         return None
 
-    return c
+    if c.isdigit():
+        return None
+
+    return c.replace("-", " ")
 
 
 # =========================================================
-# INTELLIGENCE BUILD
+# CORE BUILDER
 # =========================================================
 
-def build_homepage_intelligence(nodes, edges):
+def build(nodes, edges):
 
     concept_freq = defaultdict(int)
-    node_score = defaultdict(float)
+    score = defaultdict(float)
 
-    # -------------------------
-    # concepts (from nodes only)
-    # -------------------------
-
-    for node in nodes.values():
-        concepts = node.get("concepts", [])
+    # concepts
+    for n in nodes.values():
+        concepts = n.get("concepts", [])
         if not isinstance(concepts, list):
             continue
 
@@ -169,66 +109,54 @@ def build_homepage_intelligence(nodes, edges):
             if c:
                 concept_freq[c] += 1
 
-    # -------------------------
-    # graph scoring
-    # -------------------------
-
+    # edges
     for e in edges:
         a, b, w = e["a"], e["b"], e["weight"]
-        node_score[a] += w
-        node_score[b] += w
+        score[a] += w
+        score[b] += w
 
-    # -------------------------
-    # ARISINGS (STRICT LINKS ONLY)
-    # -------------------------
+    # =====================================================
+    # ARISINGS (STRICT: real articles only)
+    # =====================================================
 
     arisings = []
     seen = set()
 
-    for url, score in sorted(node_score.items(), key=lambda x: (-x[1], x[0])):
+    for url, s in sorted(score.items(), key=lambda x: -x[1]):
 
-        if not is_valid_url(url):
+        if not valid_url(url):
             continue
 
         url = normalize_url(url)
-        if not url or url in seen:
-            continue
 
-        title = title_from_url(url)
-        if not title:
+        if url in seen:
             continue
 
         seen.add(url)
 
         arisings.append({
             "url": url,
-            "title": title,
-            "score": score
+            "title": title_from_url(url),
+            "score": s
         })
 
-        if len(arisings) >= 3:
+        if len(arisings) == 3:
             break
 
-    # -------------------------
-    # ESSENTIAL INSPIRATIONS (CONCEPTS ONLY)
-    # -------------------------
+    # =====================================================
+    # INSPIRATIONS (STRICT: concepts only)
+    # =====================================================
 
     inspirations = []
-    seen_c = set()
 
-    for c, f in sorted(concept_freq.items(), key=lambda x: (-x[1], x[0])):
-
-        if c in seen_c:
-            continue
-
-        seen_c.add(c)
+    for c, f in sorted(concept_freq.items(), key=lambda x: -x[1]):
 
         inspirations.append({
             "concept": c.title(),
             "frequency": f
         })
 
-        if len(inspirations) >= 3:
+        if len(inspirations) == 3:
             break
 
     return {
@@ -240,93 +168,50 @@ def build_homepage_intelligence(nodes, edges):
 
 
 # =========================================================
-# RENDER (CSS-COMPATIBLE + STRUCTURE FIXED)
+# RENDER (CSS CONTRACT FIXED)
 # =========================================================
 
-def section_title(text):
-    if not text:
-        return ""
-    return text.strip().capitalize()
-
-
-def render_homepage(intel):
-
-    data = intel.get("homepage_intelligence", {})
+def render(data):
 
     arisings = data.get("arising_observations", [])
-    inspirations = data.get("essential_inspirations", [])
+    insp = data.get("essential_inspirations", [])
 
-    # -------------------------
-    # ARISINGS (REAL LINKS ONLY)
-    # -------------------------
+    # ALWAYS guarantee content presence (fix empty section bug)
+    if not arisings:
+        arisings_html = '<span class="semantic-chip muted">No observations</span>'
+    else:
+        arisings_html = "\n".join(
+            f'<a class="semantic-chip" href="{a["url"]}">{a["title"]}</a>'
+            for a in arisings
+        )
 
-    arisings_html = "\n".join(
-        f'<a class="chip semantic-chip" href="{a["url"]}">{a["title"]}</a>'
-        for a in arisings
-        if normalize_url(a.get("url"))
-    )
-
-    if not arisings_html:
-        arisings_html = '<span class="chip semantic-chip muted">No observations available</span>'
-
-    # -------------------------
-    # INSPIRATIONS (CONCEPTS)
-    # -------------------------
-
-    insp_html = "\n".join(
-        f'<span class="chip semantic-chip">{i["concept"]}</span>'
-        for i in inspirations
-    )
-
-    if not insp_html:
-        insp_html = '<span class="chip semantic-chip muted">No inspirations available</span>'
+    if not insp:
+        insp_html = '<span class="semantic-chip muted">No inspirations</span>'
+    else:
+        insp_html = "\n".join(
+            f'<span class="semantic-chip">{i["concept"]}</span>'
+            for i in insp
+        )
 
     return f"""
-<section class="homepage-intelligence semantic-block">
+<section class="semantic-block homepage-intelligence">
 
   <h3>Arising observations</h3>
 
-  <div class="chip-cloud semantic-cloud">
+  <div class="semantic-cloud">
     {arisings_html}
   </div>
 
-  <div style="height:28px"></div>
+  <div style="height:42px"></div>
 
   <h3>Essential inspirations</h3>
 
-  <div class="chip-cloud semantic-cloud">
+  <div class="semantic-cloud">
     {insp_html}
   </div>
 
 </section>
 """.strip()
-
-
-# =========================================================
-# INJECTION
-# =========================================================
-
-def inject_homepage(block):
-
-    homepage_path = Path(ROOT) / "index.html"
-
-    if not homepage_path.exists():
-        print("⚠️ homepage missing")
-        return 0
-
-    html = homepage_path.read_text(encoding="utf-8")
-
-    placeholder = '<div id="homepage-intelligence"></div>'
-
-    if placeholder not in html:
-        print("⚠️ homepage placeholder missing")
-        return 0
-
-    html = html.replace(placeholder, block)
-    homepage_path.write_text(html, encoding="utf-8")
-
-    print("🏠 injected homepage intelligence:", homepage_path)
-    return 1
 
 
 # =========================================================
@@ -337,32 +222,34 @@ def main():
 
     data = load_json(SAL_FILE)
 
-    nodes = get_nodes(data)
-    edges = get_edges(data)
+    nodes = data.get("nodes", {})
+    edges = data.get("edges", [])
 
-    intel = build_homepage_intelligence(nodes, edges)
+    built = build(nodes, edges)
 
     output = {
-        "homepage_intelligence": intel,
+        "homepage_intelligence": built,
         "source": "semantic-salience",
-        "consumer_model": "read-only-projection",
         "status": "ok"
     }
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
-    print("🏠 homepage-intelligence built successfully")
-    print(f"📦 nodes: {len(nodes)}")
-    print(f"🔗 edges: {len(edges)}")
+    html_block = render(built)
 
-    block = render_homepage(output)
+    index = Path(ROOT) / "index.html"
 
-    updated = inject_homepage(block)
+    html = index.read_text(encoding="utf-8")
 
-    print("========================")
-    print("HOMEPAGE COMPLETE")
-    print("PAGES UPDATED:", updated)
+    html = html.replace(
+        '<div id="homepage-intelligence"></div>',
+        html_block
+    )
+
+    index.write_text(html, encoding="utf-8")
+
+    print("DONE")
 
 
 if __name__ == "__main__":
