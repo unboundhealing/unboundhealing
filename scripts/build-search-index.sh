@@ -1,56 +1,74 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "🔎 Building search index (v4.2 truth-layer consumer)"
+echo "🔎 Building search index (v5 unified python builder)"
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
 
-OUTPUT="search-index.json"
 SAL_FILE="semantic-salience.json"
-
-# ---------------------------------------------------------
-# HARD REQUIREMENT: TRUTH LAYER MUST EXIST
-# ---------------------------------------------------------
+OUTPUT="search-index.json"
 
 if [ ! -f "$SAL_FILE" ]; then
   echo "❌ semantic-salience.json missing — HARD STOP"
   exit 1
 fi
 
-echo "🧠 Loading semantic-salience (truth layer)..."
+if [ ! -s "$SAL_FILE" ]; then
+  echo "❌ semantic-salience.json is empty — HARD STOP (CI race detected)"
+  exit 1
+fi
 
-# ---------------------------------------------------------
-# SINGLE PYTHON PASS: CONCEPT MAP ONLY
-# ---------------------------------------------------------
+echo "🧠 Running unified index builder..."
 
-CONCEPT_MAP=$(python3 <<'EOF'
+python3 << 'EOF'
+import os
 import json
+import glob
+import re
+from pathlib import Path
 
-with open("semantic-salience.json", "r", encoding="utf-8") as f:
-    data = json.load(f)
+ROOT = Path(os.getcwd())
+SAL_FILE = ROOT / "semantic-salience.json"
+OUTPUT_FILE = ROOT / "search-index.json"
 
-if not isinstance(data, dict):
-    raise SystemExit("semantic-salience must be dict")
+# -------------------------------------------------------
+# SAFE LOAD (no silent failures)
+# -------------------------------------------------------
 
-graph = data.get("page_graph", {}) or {}
+try:
+    raw = SAL_FILE.read_text(encoding="utf-8").strip()
+    if not raw:
+        raise ValueError("semantic-salience.json is empty")
 
-result = {}
+    salience = json.loads(raw)
 
-for url, node in graph.items():
+except Exception as e:
+    raise SystemExit(f"❌ Failed to load semantic-salience.json: {e}")
 
+page_graph = salience.get("page_graph", {})
+if not isinstance(page_graph, dict):
+    raise SystemExit("❌ page_graph must be dict")
+
+# -------------------------------------------------------
+# BUILD CONCEPT MAP (in-memory, single pass)
+# -------------------------------------------------------
+
+concept_map = {}
+
+for url, node in page_graph.items():
     concepts = []
 
     if isinstance(node, dict):
-        raw = node.get("concepts", []) or []
-
-        for c in raw:
-            if isinstance(c, str):
-                concepts.append(c)
-            elif isinstance(c, dict):
-                word = c.get("word")
-                if word:
-                    concepts.append(word)
+        raw = node.get("concepts", [])
+        if isinstance(raw, list):
+            for c in raw:
+                if isinstance(c, str):
+                    concepts.append(c)
+                elif isinstance(c, dict):
+                    w = c.get("word")
+                    if w:
+                        concepts.append(w)
 
     clean = []
     seen = set()
@@ -58,142 +76,85 @@ for url, node in graph.items():
     for c in concepts:
         if not isinstance(c, str):
             continue
-
         c = c.strip().lower()
         if not c or c in seen:
             continue
-
         seen.add(c)
         clean.append(c)
 
-    result[url] = clean[:10]
+    concept_map[url] = clean[:10]
 
-print(json.dumps(result))
-EOF
+# -------------------------------------------------------
+# HTML DISCOVERY
+# -------------------------------------------------------
+
+html_files = [
+    p for p in ROOT.rglob("*.html")
+    if "/assets/" not in str(p)
+]
+
+# -------------------------------------------------------
+# INDEX BUILD
+# -------------------------------------------------------
+
+index = {}
+
+for file in sorted(html_files):
+    rel = file.relative_to(ROOT)
+
+    # URL normalization
+    if str(rel) == "index.html":
+        url = "https://unboundhealing.org/"
+    else:
+        url = str(rel).replace("index.html", "").replace(".html", "")
+        url = "https://unboundhealing.org/" + url
+        if not url.endswith("/"):
+            url += "/"
+
+    # TITLE
+    html = file.read_text(errors="ignore")
+
+    title_match = re.search(r"<title>(.*?)</title>", html, re.I)
+    title = title_match.group(1).strip() if title_match else "Untitled"
+
+    # DESCRIPTION
+    desc_match = re.search(
+        r'name="description"\s+content="(.*?)"',
+        html,
+        re.I
+    )
+    desc = desc_match.group(1).strip() if desc_match else ""
+
+    # TAGS (direct lookup, no subprocess, no pipe)
+    tags = concept_map.get(url, [])
+
+    index[url] = {
+        "title": title,
+        "url": url,
+        "path": str(file),
+        "type": "page",
+        "tags": ",".join(tags[:10]),
+        "description": desc,
+        "image": "",
+        "last_modified": ""
+    }
+
+# -------------------------------------------------------
+# ATOMIC WRITE (prevents CI partial writes)
+# -------------------------------------------------------
+
+tmp_path = OUTPUT_FILE.with_suffix(".tmp")
+
+tmp_path.write_text(
+    json.dumps(index, indent=2, ensure_ascii=False),
+    encoding="utf-8"
 )
 
-# ---------------------------------------------------------
-# BEGIN INDEX
-# ---------------------------------------------------------
+os.replace(tmp_path, OUTPUT_FILE)
 
-echo "{" > "$OUTPUT"
-FIRST=true
-
-# ---------------------------------------------------------
-# SAFE FILE DISCOVERY (NO SUBSHELL PIPELINE BUGS)
-# ---------------------------------------------------------
-
-while IFS= read -r file; do
-
-  case "$file" in
-    */assets/*) continue ;;
-  esac
-
-  # -------------------------------------------------------
-  # URL NORMALIZATION
-  # -------------------------------------------------------
-
-  REL_PATH="${file#./}"
-
-  if [[ "$REL_PATH" == "index.html" ]]; then
-      URL="https://unboundhealing.org/"
-  else
-      URL="${REL_PATH%index.html}"
-      URL="${URL%.html}"
-      URL="https://unboundhealing.org/${URL}"
-
-      case "$URL" in
-          */) ;;
-          *) URL="${URL}/" ;;
-      esac
-  fi
-
-  # -------------------------------------------------------
-  # TITLE
-  # -------------------------------------------------------
-
-  TITLE=$(grep -m1 "<title>" "$file" | sed 's/<[^>]*>//g' || true)
-  [ -z "$TITLE" ] && TITLE="Untitled"
-
-  # -------------------------------------------------------
-  # DESCRIPTION
-  # -------------------------------------------------------
-
-  DESC=$(grep -m1 'name="description"' "$file" \
-    | sed -E 's/.*content="([^"]*)".*/\1/' || true)
-
-  [ -z "$DESC" ] && DESC=""
-
-  # -------------------------------------------------------
-  # TAG EXTRACTION (SAFE + SIMPLE + RELIABLE)
-  # -------------------------------------------------------
-
-  TAGS=$(python3 - "$URL" <<'EOF'
-import json, sys
-
-data = json.loads(sys.stdin.read())
-url = sys.argv[1]
-
-node = data.get(url, [])
-
-if not isinstance(node, list):
-    node = []
-
-clean = []
-seen = set()
-
-for c in node:
-    if not isinstance(c, str):
-        continue
-
-    c = c.strip().lower()
-
-    if not c or c in seen:
-        continue
-
-    seen.add(c)
-    clean.append(c)
-
-print(",".join(clean[:10]))
-EOF
-<<< "$CONCEPT_MAP"
-)
-
-  # -------------------------------------------------------
-  # ESCAPING
-  # -------------------------------------------------------
-
-  ESC_TITLE=$(printf '%s' "$TITLE" | sed 's/"/\\"/g')
-  ESC_DESC=$(printf '%s' "$DESC" | sed 's/"/\\"/g')
-  ESC_TAGS=$(printf '%s' "$TAGS" | sed 's/"/\\"/g')
-
-  # -------------------------------------------------------
-  # JSON OUTPUT
-  # -------------------------------------------------------
-
-  if [ "$FIRST" = true ]; then
-      FIRST=false
-  else
-      echo "," >> "$OUTPUT"
-  fi
-
-  cat <<EOF >> "$OUTPUT"
-"$URL": {
-  "title": "$ESC_TITLE",
-  "url": "$URL",
-  "path": "$file",
-  "type": "page",
-  "tags": "$ESC_TAGS",
-  "description": "$ESC_DESC",
-  "image": "",
-  "last_modified": ""
-}
+print("✅ Search index built (v5 unified python builder)")
+print(f"📦 pages indexed: {len(index)}")
+print("🧠 semantic-salience is the single truth source")
 EOF
 
-done < <(find . -type f -name "*.html" ! -path "./assets/*" | sort)
-
-echo "" >> "$OUTPUT"
-echo "}" >> "$OUTPUT"
-
-echo "✅ Search index built (v4.2 truth-layer consumer)"
-echo "🧠 semantic-salience is the source of all semantic metadata"
+echo "🎉 Done."
