@@ -93,6 +93,9 @@ python3 scripts/build-homepage-intelligence.py || true
 echo "🧠 Enhancing pages (optional)"
 python3 scripts/enhance-pages.py
 
+echo "🔗 building related content..."
+python3 scripts/build-related-content.py
+
 echo "🧩 injecting content into pages..."
 python3 scripts/inject-content.py
 
