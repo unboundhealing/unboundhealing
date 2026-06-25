@@ -59,13 +59,39 @@ def valid_url(url):
     return True
 
 
-def title_from_url(url):
-    url = normalize_url(url)
-    if not url:
+# =========================================================
+# TITLE SYSTEM (FIXED: NODE-AWARE, NOT SLUG-FORCED)
+# =========================================================
+
+def clean_title(t):
+    if not isinstance(t, str):
         return ""
 
+    t = t.strip()
+
+    # remove ellipses artifacts
+    t = t.replace("...", "").replace("…", "")
+
+    # light cleanup only (DO NOT slugify)
+    return t.strip()
+
+
+def title_from_node(url, nodes):
+    """
+    Primary: use node title if it exists
+    Fallback: slug (preserving hyphens)
+    """
+
+    node = nodes.get(url)
+
+    if isinstance(node, dict):
+        title = node.get("title")
+        if isinstance(title, str) and title.strip():
+            return clean_title(title)
+
+    # fallback
     slug = url.rstrip("/").split("/")[-1]
-    return slug.replace("-", " ").title()
+    return clean_title(slug)
 
 
 # =========================================================
@@ -125,7 +151,7 @@ def debug(nodes, edges, data):
 
 
 # =========================================================
-# CORE BUILDER (FIXED: USE page_graph as truth source)
+# CORE BUILDER (TRUTH = page_graph)
 # =========================================================
 
 def build(nodes, edges, page_graph):
@@ -133,7 +159,7 @@ def build(nodes, edges, page_graph):
     concept_freq = defaultdict(int)
 
     # -------------------------
-    # concepts
+    # concepts (from nodes only)
     # -------------------------
 
     for n in nodes.values():
@@ -147,7 +173,7 @@ def build(nodes, edges, page_graph):
                 concept_freq[c] += 1
 
     # -------------------------
-    # ARISINGS (FIXED: FROM page_graph, NOT EDGE GUESSING)
+    # ARISINGS (PAGE_GRAPH IS TRUTH LAYER)
     # -------------------------
 
     arisings = []
@@ -161,14 +187,22 @@ def build(nodes, edges, page_graph):
         if not url:
             continue
 
-        score = 0
+        # scoring: lightweight salience proxy
+        score = 0.0
+
         if isinstance(meta, dict):
-            score += len(meta.get("related", []))
-            score += len(meta.get("concepts", []))
+            related = meta.get("related", [])
+            concepts = meta.get("concepts", [])
+
+            if isinstance(related, list):
+                score += len(related) * 1.5
+
+            if isinstance(concepts, list):
+                score += len(concepts) * 1.0
 
         arisings.append({
             "url": url,
-            "title": title_from_url(url),
+            "title": title_from_node(url, nodes),
             "score": score
         })
 
@@ -176,7 +210,7 @@ def build(nodes, edges, page_graph):
     arisings = arisings[:3]
 
     # -------------------------
-    # INSPIRATIONS
+    # INSPIRATIONS (concept frequency)
     # -------------------------
 
     inspirations = []
