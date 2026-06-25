@@ -89,109 +89,109 @@ FIRST=true
 find . -type f -name "*.html" ! -path "./assets/*" | sort | while IFS= read -r file
 do
 
-  # -------------------------------------------------------
-  # URL NORMALIZATION
-  # -------------------------------------------------------
+# -------------------------------------------------------
+# URL NORMALIZATION
+# -------------------------------------------------------
 
-  REL_PATH="${file#./}"
+REL_PATH="${file#./}"
 
-  if [[ "$REL_PATH" == "index.html" ]]; then
-      URL="https://unboundhealing.org/"
-  else
-      URL="${REL_PATH%index.html}"
-      URL="${URL%.html}"
-      URL="https://unboundhealing.org/${URL}"
+if [[ "$REL_PATH" == "index.html" ]]; then
+    URL="https://unboundhealing.org/"
+else
+    URL="${REL_PATH%index.html}"
+    URL="${URL%.html}"
+    URL="https://unboundhealing.org/${URL}"
 
-      case "$URL" in
-          */) ;;
-          *) URL="${URL}/" ;;
-      esac
-  fi
+    case "$URL" in
+        */) ;;
+        *) URL="${URL}/" ;;
+    esac
+fi
 
-  # -------------------------------------------------------
-  # TITLE
-  # -------------------------------------------------------
+# -------------------------------------------------------
+# TITLE
+# -------------------------------------------------------
 
-  TITLE=$(grep -m1 "<title>" "$file" \
-    | sed 's/<[^>]*>//g' \
-    || true)
+TITLE=$(grep -m1 "<title>" "$file" \
+  | sed 's/<[^>]*>//g' \
+  || true)
 
-  [ -z "$TITLE" ] && TITLE="Untitled"
+[ -z "$TITLE" ] && TITLE="Untitled"
 
-  # -------------------------------------------------------
-  # DESCRIPTION
-  # -------------------------------------------------------
+# -------------------------------------------------------
+# DESCRIPTION
+# -------------------------------------------------------
 
-  DESC=$(grep -m1 'name="description"' "$file" \
-    | sed -E 's/.*content="([^"]*)".*/\1/' \
-    || true)
+DESC=$(grep -m1 'name="description"' "$file" \
+  | sed -E 's/.*content="([^"]*)".*/\1/' \
+  || true)
 
-  [ -z "$DESC" ] && DESC=""
+[ -z "$DESC" ] && DESC=""
 
-  # -------------------------------------------------------
-  # SAFE TAG EXTRACTION (NO JSON RE-PIPE, NO HEREDOC BRIDGING)
-  # -------------------------------------------------------
+# -------------------------------------------------------
+# SAFE TAG EXTRACTION (NO JSON RE-PIPE, NO HEREDOC BRIDGING)
+# -------------------------------------------------------
 
-  TAGS=$(printf "%s" "$CONCEPT_MAP" | python3 - "$URL" << 'EOF'
-  import json, sys
+TAGS=$(printf "%s" "$CONCEPT_MAP" | python3 - "$URL" << 'EOF'
+import json, sys
 
-  data = json.load(sys.stdin)
-  url = sys.argv[1]
+data = json.load(sys.stdin)
+url = sys.argv[1]
 
-  node = data.get(url, [])
+node = data.get(url, [])
 
-  if not isinstance(node, list):
-      node = []
+if not isinstance(node, list):
+    node = []
 
-  clean = []
-  seen = set()
+clean = []
+seen = set()
 
-  for c in node:
-      if not isinstance(c, str):
-          continue
+for c in node:
+    if not isinstance(c, str):
+        continue
 
-      c = c.strip().lower()
+    c = c.strip().lower()
 
-      if not c or c in seen:
-          continue
+    if not c or c in seen:
+        continue
 
-      seen.add(c)
-      clean.append(c)
+    seen.add(c)
+    clean.append(c)
 
-  print(",".join(clean[:10]))
-  EOF
-  )
+print(",".join(clean[:10]))
+EOF
+)
 
-  # -------------------------------------------------------
-  # ESCAPING
-  # -------------------------------------------------------
+# -------------------------------------------------------
+# ESCAPING
+# -------------------------------------------------------
 
-  ESC_TITLE=$(printf '%s' "$TITLE" | sed 's/"/\\"/g')
-  ESC_DESC=$(printf '%s' "$DESC" | sed 's/"/\\"/g')
-  ESC_TAGS=$(printf '%s' "$TAGS" | sed 's/"/\\"/g')
+ESC_TITLE=$(printf '%s' "$TITLE" | sed 's/"/\\"/g')
+ESC_DESC=$(printf '%s' "$DESC" | sed 's/"/\\"/g')
+ESC_TAGS=$(printf '%s' "$TAGS" | sed 's/"/\\"/g')
 
-  # -------------------------------------------------------
-  # JSON OUTPUT
-  # -------------------------------------------------------
+# -------------------------------------------------------
+# JSON OUTPUT
+# -------------------------------------------------------
 
-  if [ "$FIRST" = true ]; then
-      FIRST=false
-  else
+if [ "$FIRST" = true ]; then
+    FIRST=false
+else
       echo "," >> "$OUTPUT"
-  fi
+fi
 
-  cat <<EOF >> "$OUTPUT"
-  "$URL": {
-  "title": "$ESC_TITLE",
-  "url": "$URL",
-  "path": "$file",
-  "type": "page",
-  "tags": "$ESC_TAGS",
-  "description": "$ESC_DESC",
-  "image": "",
-  "last_modified": ""
-  }
-  EOF
+cat <<EOF >> "$OUTPUT"
+"$URL": {
+"title": "$ESC_TITLE",
+"url": "$URL",
+"path": "$file",
+"type": "page",
+"tags": "$ESC_TAGS",
+"description": "$ESC_DESC",
+"image": "",
+"last_modified": ""
+}
+EOF
 
 done
 
