@@ -25,12 +25,11 @@ def load_json(path):
 
 
 # =========================================================
-# SAFE ACCESSORS
+# SAFE ACCESS
 # =========================================================
 
 def get_nodes(data):
-    nodes = data.get("nodes", {})
-    return nodes if isinstance(nodes, dict) else {}
+    return data.get("nodes", {}) if isinstance(data.get("nodes"), dict) else {}
 
 
 def get_edges(data):
@@ -38,7 +37,7 @@ def get_edges(data):
     if not isinstance(edges, list):
         return []
 
-    cleaned = []
+    out = []
 
     for e in edges:
         if not isinstance(e, dict):
@@ -50,17 +49,17 @@ def get_edges(data):
         if not a or not b:
             continue
 
-        cleaned.append({
+        out.append({
             "a": str(a),
             "b": str(b),
             "weight": float(e.get("weight", 1))
         })
 
-    return cleaned
+    return out
 
 
 # =========================================================
-# CLEANING
+# CLEANING LAYER (CRITICAL FIX)
 # =========================================================
 
 def clean_concept(c):
@@ -68,40 +67,66 @@ def clean_concept(c):
         return None
 
     c = c.strip().lower()
-    if not c:
-        return None
 
     # HARD FILTERS
+    if not c:
+        return None
     if c in {"assets", "images"}:
         return None
+    if c.isdigit():
+        return None
 
-    # slug normalization
-    c = c.replace("-", " ")
+    # normalize slug fragments
+    c = c.replace("-", " ").strip()
+
+    if len(c) < 2:
+        return None
 
     return c
 
 
-def section_title(text):
-    if not text:
-        return ""
-    return text[0].upper() + text[1:]
+def is_valid_url(url):
+    if not url or not isinstance(url, str):
+        return False
+
+    if "assets" in url or "images" in url:
+        return False
+
+    if url.rstrip("/").endswith("/1"):
+        return False
+
+    if not url.startswith("https://unboundhealing.org/"):
+        return False
+
+    return True
 
 
 def prettify_url(url):
     if not url:
-        return "Untitled"
+        return ""
 
+    url = str(url)
     path = url.replace("https://unboundhealing.org", "").strip("/")
 
     if not path:
         return "Home"
 
     slug = path.split("/")[-1]
+
+    if slug.isdigit() or slug in {"assets", "images"}:
+        return ""
+
     return slug.replace("-", " ").title()
 
 
+def section_title(text):
+    if not text:
+        return ""
+    return text[0].upper() + text[1:].lower()
+
+
 # =========================================================
-# HOMEPAGE INTELLIGENCE
+# BUILD INTELLIGENCE
 # =========================================================
 
 def build_homepage_intelligence(nodes, edges):
@@ -110,7 +135,7 @@ def build_homepage_intelligence(nodes, edges):
     node_degree = defaultdict(float)
 
     # -------------------------
-    # concepts
+    # concepts (cleaned)
     # -------------------------
 
     for node in nodes.values():
@@ -120,51 +145,59 @@ def build_homepage_intelligence(nodes, edges):
 
         for c in concepts:
             c = clean_concept(c)
-            if not c:
-                continue
-            concept_frequency[c] += 1
+            if c:
+                concept_frequency[c] += 1
 
     # -------------------------
-    # connectivity
+    # graph connectivity
     # -------------------------
 
     for e in edges:
-        a = e["a"]
-        b = e["b"]
-        w = e["weight"]
+        a, b, w = e["a"], e["b"], e["weight"]
 
         node_degree[a] += w
         node_degree[b] += w
 
     # -------------------------
-    # top concepts (STRICT CAP 3)
+    # TOP CONCEPTS (STRICT: 3 ONLY)
     # -------------------------
 
-    seen = set()
     top_concepts = []
+    seen = set()
 
     for c, f in sorted(concept_frequency.items(), key=lambda x: (-x[1], x[0])):
         if c in seen:
             continue
         seen.add(c)
-        top_concepts.append({"concept": c, "frequency": f})
+
+        top_concepts.append({
+            "concept": c,
+            "frequency": f
+        })
+
         if len(top_concepts) >= 3:
             break
 
     # -------------------------
-    # top hubs (STRICT CAP 3)
+    # TOP HUBS (STRICT: 3 ONLY + VALIDATED URLS)
     # -------------------------
 
     top_hubs = []
 
     for n, s in sorted(node_degree.items(), key=lambda x: (-x[1], x[0])):
-        label = prettify_url(n)
 
-        # filter noise labels
-        if any(x in label.lower() for x in ["assets", "images"]):
+        if not is_valid_url(n):
             continue
 
-        top_hubs.append({"node": n, "label": label, "score": s})
+        label = prettify_url(n)
+        if not label:
+            continue
+
+        top_hubs.append({
+            "node": n,
+            "label": label,
+            "score": s
+        })
 
         if len(top_hubs) >= 3:
             break
@@ -178,7 +211,7 @@ def build_homepage_intelligence(nodes, edges):
 
 
 # =========================================================
-# RENDERING
+# RENDER LAYER (CSS SAFE, STRUCTURED)
 # =========================================================
 
 def render_homepage(intel):
@@ -188,26 +221,36 @@ def render_homepage(intel):
     concepts = data.get("top_concepts", [])
     hubs = data.get("top_hubs", [])
 
+    # -------------------------
+    # concepts (safe chips)
+    # -------------------------
+
     concepts_html = "\n".join(
         f'<span class="chip">{c["concept"].title()}</span>'
         for c in concepts
+        if isinstance(c.get("concept"), str)
     )
 
+    # -------------------------
+    # hubs (safe links)
+    # -------------------------
+
     hubs_html = "\n".join(
-        f'<a class="chip" href="{h["node"]}">{h.get("label", "Untitled")}</a>'
+        f'<a class="chip" href="{h["node"]}">{h.get("label","")}</a>'
         for h in hubs
+        if is_valid_url(h.get("node"))
     )
 
     return f"""
 <section class="homepage-intelligence">
 
-  <h3>{section_title("arising concepts...")}</h3>
+  <h3 class="intelligence-title">{section_title("arising observations...")}</h3>
 
   <div class="chip-cloud">
     {concepts_html}
   </div>
 
-  <h3>{section_title("essential inspirations...")}</h3>
+  <h3 class="intelligence-title">{section_title("essential inspirations...")}</h3>
 
   <div class="chip-cloud">
     {hubs_html}
@@ -218,7 +261,7 @@ def render_homepage(intel):
 
 
 # =========================================================
-# OUTPUT
+# INJECTION
 # =========================================================
 
 def inject_homepage(block):
