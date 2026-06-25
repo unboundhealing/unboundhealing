@@ -1,14 +1,17 @@
+#!/usr/bin/env python3
+
 import os
+from pathlib import Path
 from bs4 import BeautifulSoup
 
 # =========================================================
 # ROOT
 # =========================================================
 
-ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
+ROOT = Path(os.environ.get("GITHUB_WORKSPACE", os.getcwd())).resolve()
 
 # =========================================================
-# TRACKING ASSET (CONFIGURATION, NOT TRUTH)
+# TRACKER CONFIG (SIDE-EFFECT ONLY)
 # =========================================================
 
 TRACKER_PATH = os.environ.get(
@@ -16,60 +19,59 @@ TRACKER_PATH = os.environ.get(
     "/assets/js/semantic-tracker.js"
 )
 
+PLACEHOLDER = "<!-- semantic-tracker -->"
+
 
 # =========================================================
-# FILE DISCOVERY
+# FILE DISCOVERY (PURE STRUCTURAL SCAN)
 # =========================================================
 
 def find_html_files():
     """
-    Pure structural scan.
-    No semantic interpretation.
-    No graph dependency.
+    Finds all HTML files except asset pipeline.
     """
 
     files = []
 
-    for root, _, fns in os.walk(ROOT):
+    for path in ROOT.rglob("*.html"):
 
-        # skip asset pipeline entirely
-        if "/assets/" in root.replace("\\", "/"):
+        if "/assets/" in str(path).replace("\\", "/"):
             continue
 
-        for f in fns:
-            if f.endswith(".html"):
-                files.append(os.path.join(root, f))
+        files.append(path)
 
     return files
 
 
 # =========================================================
-# TRACKING INJECTION (IDEMPOTENT SIDE EFFECT)
+# TRACKER INJECTION (IDEMPOTENT SIDE EFFECT)
 # =========================================================
 
 def inject_tracking_script(soup):
     """
-    PURE SIDE EFFECT:
+    Pure deterministic DOM injection.
 
-    - no salience dependency
-    - no graph dependency
-    - no page intelligence dependency
+    No dependencies on:
+    - semantic-salience
+    - homepage-intelligence
+    - related-content
     """
 
     # ---------------------------------------------
-    # HARD IDEMPOTENCY CHECK
+    # IDEMPOTENCY CHECK
     # ---------------------------------------------
-    existing = soup.find("script", {"src": TRACKER_PATH})
 
-    if existing:
+    if soup.find("script", {"src": TRACKER_PATH}):
         return
 
     script = soup.new_tag("script", src=TRACKER_PATH)
     script["defer"] = True
+    script["data-salience-tracking"] = "true"
 
     # ---------------------------------------------
-    # SAFE INSERTION STRATEGY
+    # INSERTION STRATEGY (SAFE ORDERED FALLBACK)
     # ---------------------------------------------
+
     if soup.body:
         soup.body.append(script)
     elif soup.head:
@@ -79,44 +81,40 @@ def inject_tracking_script(soup):
 
 
 # =========================================================
-# PROCESSOR (EXPLICIT ENTRYPOINT)
+# FILE PROCESSOR
 # =========================================================
 
-def process_file(file_path):
-    """
-    Isolated per-file operation for:
-    - CI safety
-    - future parallelization
-    - testability
-    """
+def process_file(path: Path):
 
     try:
-        with open(file_path, "r", encoding="utf-8") as f:
-            soup = BeautifulSoup(f, "html.parser")
+        html = path.read_text(encoding="utf-8")
+
+        soup = BeautifulSoup(html, "lxml")
 
         inject_tracking_script(soup)
 
-        with open(file_path, "w", encoding="utf-8") as f:
-            f.write(str(soup))
+        path.write_text(str(soup), encoding="utf-8")
 
-        print(f"📡 Injected tracker into {file_path}")
+        print(f"📡 injected tracking → {path}")
 
     except Exception as e:
-        print(f"⚠️ Skipped {file_path}: {e}")
+        print(f"⚠️ skipped {path}: {e}")
 
 
 # =========================================================
-# ENTRYPOINT
+# MAIN
 # =========================================================
 
 def main():
 
     html_files = find_html_files()
 
-    for file_path in html_files:
-        process_file(file_path)
+    print(f"🔎 tracking scan → {len(html_files)} files")
 
-    print("✅ Tracking injection complete (v4 consumer-safe, no-truth coupling)")
+    for path in html_files:
+        process_file(path)
+
+    print("✅ Tracking injection complete (v5 fully standalone consumer)")
 
 
 if __name__ == "__main__":
