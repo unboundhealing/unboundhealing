@@ -312,7 +312,7 @@ for e in edges[:10]:
 print()
 print("===== END DEBUG =====")
     
-    built = build(nodes, edges)
+built = build(nodes, edges)
 
     output = {
         "homepage_intelligence": built,
