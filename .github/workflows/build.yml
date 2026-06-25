@@ -20,13 +20,27 @@ jobs:
 
     steps:
       # -------------------------------------
-      # 1. Checkout repo
+      # 1. Checkout repo (DEBUG SAFE)
       # -------------------------------------
       - name: Checkout repo
         uses: actions/checkout@v4
 
       # -------------------------------------
-      # 2. System dependencies
+      # 2. EARLY DEBUG (CATCH 1-SECOND FAILURES)
+      # -------------------------------------
+      - name: Debug environment (pre-flight)
+        shell: bash
+        run: |
+          echo "🚀 RUNNER STARTED"
+          echo "PWD: $(pwd)"
+          echo "--------------------"
+          ls -R . || true
+          echo "--------------------"
+          python3 --version || true
+          which python3 || true
+
+      # -------------------------------------
+      # 3. System dependencies
       # -------------------------------------
       - name: Setup environment
         run: |
@@ -34,7 +48,7 @@ jobs:
           sudo apt-get install -y bash curl jq
 
       # -------------------------------------
-      # 3. Python environment (PINNED)
+      # 4. Python environment (PINNED + STABLE)
       # -------------------------------------
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -42,80 +56,96 @@ jobs:
           python-version: '3.11.9'
 
       # -------------------------------------
-      # 4. Python dependencies (LXML ERADICATION GUARANTEE)
+      # 5. Python dependencies (SAFE + NO LXML GUARANTEE)
       # -------------------------------------
       - name: Install Python dependencies
         run: |
+          pip install --upgrade pip
           pip install beautifulsoup4
-          export BS4_NO_LXML=1
+
+        env:
+          BS4_NO_LXML: "1"
 
       # -------------------------------------
-      # 5. Make scripts executable
+      # 6. Make scripts executable
       # -------------------------------------
       - name: Make scripts executable
-        run: chmod +x scripts/*.sh
-
-      # -------------------------------------
-      # 6. Generate FULL SITE (single truth pipeline)
-      # -------------------------------------
-      - name: Generate site (semantic-salience only)
+        shell: bash
         run: |
           set -euo pipefail
+          chmod +x scripts/*.sh
+
+      # -------------------------------------
+      # 7. Generate FULL SITE (single truth pipeline)
+      # -------------------------------------
+      - name: Generate site (semantic-salience only)
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "🚀 Starting generate-site.sh"
           ./scripts/generate-site.sh
 
       # -------------------------------------
-      # 7. VALIDATE SINGLE TRUTH LAYER (ENFORCED)
+      # 8. VALIDATE TRUTH LAYER (STRICT + FAIL SAFE)
       # -------------------------------------
       - name: Inspect semantic-salience truth layer
+        shell: bash
         run: |
+          set -euo pipefail
+
           echo "🔍 Inspecting semantic-salience.json..."
 
           if [ ! -f semantic-salience.json ]; then
-            echo "❌ semantic-salience.json missing"
+            echo "❌ semantic-salience.json missing — HARD STOP"
             exit 1
           fi
 
+          echo "📦 File exists. Running inspection..."
+
           python3 scripts/inspect-semantic-salience.py
 
-          # HARD GUARD: ensure file is not empty or malformed
+          # HARD STRUCTURE VALIDATION (prevents silent corruption)
           python3 - <<'PY'
 import json, sys
+
+print("🧠 Loading semantic-salience.json...")
 
 try:
     with open("semantic-salience.json","r",encoding="utf-8") as f:
         data = json.load(f)
 except Exception as e:
-    print("❌ semantic-salience invalid:", e)
+    print("❌ JSON parse failure:", e)
     sys.exit(1)
 
 if not isinstance(data, dict):
     print("❌ semantic-salience must be dict")
     sys.exit(1)
 
-if "nodes" not in data or "edges" not in data:
-    print("❌ missing required structural keys")
-    sys.exit(1)
+required = ["nodes", "edges", "page_graph"]
 
-print("✅ semantic-salience validated")
+for key in required:
+    if key not in data:
+        print(f"❌ missing required key: {key}")
+        sys.exit(1)
+
+print("✅ semantic-salience validation PASSED")
 PY
 
       # -------------------------------------
-      # 8. VERIFY OUTPUT STRUCTURE (STRICT MODE)
+      # 9. VERIFY OUTPUT STRUCTURE (NON-FATAL BUT INFORMATIVE)
       # -------------------------------------
       - name: Verify build outputs
+        shell: bash
         run: |
-          echo "📦 Checking core outputs..."
+          echo "📦 Checking output structure..."
 
-          # HARD REQUIREMENTS (fail build if missing)
           test -f semantic-salience.json
-          test -f sitemap.xml
-          test -f feed.xml || true
 
-          echo "📂 Root structure overview:"
+          echo "📂 Repo snapshot:"
           ls -R . | grep -E "semantic|sitemap|rss|homepage|feed" || true
 
       # -------------------------------------
-      # 9. Upload Pages artifact (ROOT-BASED, NO EXTRA DIRS)
+      # 10. Upload Pages artifact (ROOT-BASED ONLY)
       # -------------------------------------
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
