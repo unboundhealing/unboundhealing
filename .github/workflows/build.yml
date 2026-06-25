@@ -31,6 +31,7 @@ jobs:
       - name: Debug environment (pre-flight)
         shell: bash
         run: |
+          set -euo pipefail
           echo "🚀 RUNNER STARTED"
           echo "PWD: $(pwd)"
           echo "--------------------"
@@ -43,7 +44,9 @@ jobs:
       # 3. System dependencies
       # -------------------------------------
       - name: Setup environment
+        shell: bash
         run: |
+          set -euo pipefail
           sudo apt-get update
           sudo apt-get install -y bash curl jq
 
@@ -59,10 +62,11 @@ jobs:
       # 5. Python dependencies (SAFE + NO LXML GUARANTEE)
       # -------------------------------------
       - name: Install Python dependencies
+        shell: bash
         run: |
-          pip install --upgrade pip
-          pip install beautifulsoup4
-
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install beautifulsoup4
         env:
           BS4_NO_LXML: "1"
 
@@ -104,32 +108,34 @@ jobs:
 
           python3 scripts/inspect-semantic-salience.py
 
-          # HARD STRUCTURE VALIDATION (prevents silent corruption)
-          python3 - <<'PY'
+          # -------------------------------------
+          # SAFE INLINE VALIDATION (NO HEREDOC)
+          # -------------------------------------
+          python3 -c "
 import json, sys
 
-print("🧠 Loading semantic-salience.json...")
+print('🧠 Loading semantic-salience.json...')
 
 try:
-    with open("semantic-salience.json","r",encoding="utf-8") as f:
+    with open('semantic-salience.json','r',encoding='utf-8') as f:
         data = json.load(f)
 except Exception as e:
-    print("❌ JSON parse failure:", e)
+    print('❌ JSON parse failure:', e)
     sys.exit(1)
 
 if not isinstance(data, dict):
-    print("❌ semantic-salience must be dict")
+    print('❌ semantic-salience must be dict')
     sys.exit(1)
 
-required = ["nodes", "edges", "page_graph"]
+required = ['nodes','edges','page_graph']
 
 for key in required:
     if key not in data:
-        print(f"❌ missing required key: {key}")
+        print(f'❌ missing required key: {key}')
         sys.exit(1)
 
-print("✅ semantic-salience validation PASSED")
-PY
+print('✅ semantic-salience validation PASSED')
+"
 
       # -------------------------------------
       # 9. VERIFY OUTPUT STRUCTURE (NON-FATAL BUT INFORMATIVE)
@@ -137,6 +143,7 @@ PY
       - name: Verify build outputs
         shell: bash
         run: |
+          set -euo pipefail
           echo "📦 Checking output structure..."
 
           test -f semantic-salience.json
