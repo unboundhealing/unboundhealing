@@ -21,7 +21,7 @@ fi
 echo "🧠 Loading semantic-salience (truth layer)..."
 
 # ---------------------------------------------------------
-# CONCEPT MAP (single Python pass ONLY)
+# SINGLE PYTHON PASS: CONCEPT MAP ONLY
 # ---------------------------------------------------------
 
 CONCEPT_MAP=$(python3 << 'EOF'
@@ -30,21 +30,19 @@ import json
 with open("semantic-salience.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
-result = {}
-
 if not isinstance(data, dict):
     raise SystemExit("semantic-salience must be a dict")
 
 graph = data.get("page_graph", {})
+
+result = {}
 
 for url, node in graph.items():
 
     concepts = []
 
     if isinstance(node, dict):
-
         raw = node.get("concepts", [])
-
         if isinstance(raw, list):
             for c in raw:
                 if isinstance(c, str):
@@ -61,15 +59,19 @@ for url, node in graph.items():
     for c in concepts:
         if not isinstance(c, str):
             continue
+
         c = c.strip().lower()
+
         if not c or c in seen:
             continue
+
         seen.add(c)
         clean.append(c)
 
     result[url] = clean[:10]
 
-print(json.dumps(result))
+import json as j
+print(j.dumps(result))
 EOF
 )
 
@@ -81,17 +83,14 @@ echo "{" > "$OUTPUT"
 FIRST=true
 
 # ---------------------------------------------------------
-# SAFE HTML DISCOVERY (FIXED LOOP)
+# SAFE FILE DISCOVERY (FIXED LOOP - NO SUBSHELLS)
 # ---------------------------------------------------------
 
-while IFS= read -r file
+find . -type f -name "*.html" ! -path "./assets/*" | sort | while IFS= read -r file
 do
-  case "$file" in
-    */assets/*) continue ;;
-  esac
 
   # -------------------------------------------------------
-  # CANONICAL URL NORMALIZATION
+  # URL NORMALIZATION
   # -------------------------------------------------------
 
   REL_PATH="${file#./}"
@@ -130,30 +129,24 @@ do
   [ -z "$DESC" ] && DESC=""
 
   # -------------------------------------------------------
-  # SAFE TAG EXTRACTION (no second Python pass)
+  # SAFE TAG EXTRACTION (NO JSON RE-PIPE, NO HEREDOC BRIDGING)
   # -------------------------------------------------------
 
-  TAGS=$(python3 - <<EOF
-  import json
+  TAGS=$(printf "%s" "$CONCEPT_MAP" | python3 - "$URL" << 'EOF'
+  import json, sys
 
-  data = json.loads('''$CONCEPT_MAP''')
+  data = json.load(sys.stdin)
+  url = sys.argv[1]
 
-  url = "$URL"
+  node = data.get(url, [])
 
-  node = data.get(url, {})
-
-  # node is already normalized list from first pass
-  if isinstance(node, dict):
-      concepts = node.get("concepts", [])
-  elif isinstance(node, list):
-      concepts = node
-  else:
-      concepts = []
+  if not isinstance(node, list):
+      node = []
 
   clean = []
   seen = set()
 
-  for c in concepts:
+  for c in node:
       if not isinstance(c, str):
           continue
 
@@ -168,8 +161,9 @@ do
   print(",".join(clean[:10]))
   EOF
   )
+
   # -------------------------------------------------------
-  # JSON ESCAPING (HARDENED)
+  # ESCAPING
   # -------------------------------------------------------
 
   ESC_TITLE=$(printf '%s' "$TITLE" | sed 's/"/\\"/g')
@@ -177,7 +171,7 @@ do
   ESC_TAGS=$(printf '%s' "$TAGS" | sed 's/"/\\"/g')
 
   # -------------------------------------------------------
-  # JSON COMMA MANAGEMENT
+  # JSON OUTPUT
   # -------------------------------------------------------
 
   if [ "$FIRST" = true ]; then
@@ -186,12 +180,8 @@ do
       echo "," >> "$OUTPUT"
   fi
 
-  # -------------------------------------------------------
-  # WRITE ENTRY
-  # -------------------------------------------------------
-
   cat <<EOF >> "$OUTPUT"
-"$URL": {
+  "$URL": {
   "title": "$ESC_TITLE",
   "url": "$URL",
   "path": "$file",
@@ -200,10 +190,10 @@ do
   "description": "$ESC_DESC",
   "image": "",
   "last_modified": ""
-}
-EOF
+  }
+  EOF
 
-done < <(find . -type f -name "*.html")
+done
 
 echo "" >> "$OUTPUT"
 echo "}" >> "$OUTPUT"
