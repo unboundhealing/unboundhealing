@@ -90,14 +90,14 @@ python3 scripts/build-homepage-intelligence.py || true
 # STEP 3 — PRESENTATION / RENDER LAYER
 # ---------------------------------------------------------
 
-echo "🧠 Enhancing pages (optional)"
-python3 scripts/enhance-pages.py
-
 echo "🔗 building related content..."
 python3 scripts/build-related-content.py
 
 echo "🧩 injecting content into pages..."
 python3 scripts/inject-content.py
+
+echo "🧠 Enhancing pages (optional)"
+python3 scripts/enhance-pages.py
 
 echo "📡 RSS (optional)"
 ./scripts/generate-rss.sh || true
