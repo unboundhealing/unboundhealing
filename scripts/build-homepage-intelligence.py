@@ -24,28 +24,8 @@ def load_json(path):
         return json.load(f)
 
 
-
-
-print("\n===== HOMEPAGE DEBUG =====")
-
-print("PAGE_GRAPH KEYS:")
-print(len(data.get("page_graph", {})))
-
-for i, k in enumerate(data.get("page_graph", {}).keys()):
-    print(k)
-    if i >= 5:
-        break
-
-print("\nSALIENCE SAMPLE:")
-print(list(data.get("salience", {}).items())[:10])
-
-print("==========================\n")
-
-
-
-
 # =========================================================
-# NORMALIZATION LAYER
+# NORMALIZATION
 # =========================================================
 
 def normalize_url(url):
@@ -110,15 +90,52 @@ def clean_concept(c):
 
 
 # =========================================================
-# CORE BUILDER
+# DEBUG
 # =========================================================
 
-def build(nodes, edges):
+def debug(nodes, edges, data):
+
+    print("\n===== HOMEPAGE DEBUG =====")
+
+    print("PAGE_GRAPH KEYS:")
+    pg = data.get("page_graph", {})
+    print(len(pg))
+
+    for i, k in enumerate(pg.keys()):
+        print(k)
+        if i >= 5:
+            break
+
+    print("\nSALIENCE SAMPLE:")
+    print(list(data.get("salience", {}).items())[:10])
+
+    print("\nNODE COUNT:", len(nodes))
+    print("EDGE COUNT:", len(edges))
+
+    if nodes:
+        first_key = next(iter(nodes))
+        print("\nFIRST NODE KEY:", first_key)
+        print(json.dumps(nodes[first_key], indent=2)[:1500])
+
+    print("\nFIRST 5 EDGES:")
+    for e in edges[:5]:
+        print(e)
+
+    print("\n===== END DEBUG =====\n")
+
+
+# =========================================================
+# CORE BUILDER (FIXED: USE page_graph as truth source)
+# =========================================================
+
+def build(nodes, edges, page_graph):
 
     concept_freq = defaultdict(int)
-    score = defaultdict(float)
 
+    # -------------------------
     # concepts
+    # -------------------------
+
     for n in nodes.values():
         concepts = n.get("concepts", [])
         if not isinstance(concepts, list):
@@ -129,43 +146,38 @@ def build(nodes, edges):
             if c:
                 concept_freq[c] += 1
 
-    # edges
-    for e in edges:
-        a, b, w = e["a"], e["b"], e["weight"]
-        score[a] += w
-        score[b] += w
-
-    # =====================================================
-    # ARISINGS (STRICT: real articles only)
-    # =====================================================
+    # -------------------------
+    # ARISINGS (FIXED: FROM page_graph, NOT EDGE GUESSING)
+    # -------------------------
 
     arisings = []
-    seen = set()
 
-    for url, s in sorted(score.items(), key=lambda x: -x[1]):
+    for url, meta in page_graph.items():
 
         if not valid_url(url):
             continue
 
         url = normalize_url(url)
-
-        if url in seen:
+        if not url:
             continue
 
-        seen.add(url)
+        score = 0
+        if isinstance(meta, dict):
+            score += len(meta.get("related", []))
+            score += len(meta.get("concepts", []))
 
         arisings.append({
             "url": url,
             "title": title_from_url(url),
-            "score": s
+            "score": score
         })
 
-        if len(arisings) == 3:
-            break
+    arisings.sort(key=lambda x: -x["score"])
+    arisings = arisings[:3]
 
-    # =====================================================
-    # INSPIRATIONS (STRICT: concepts only)
-    # =====================================================
+    # -------------------------
+    # INSPIRATIONS
+    # -------------------------
 
     inspirations = []
 
@@ -188,7 +200,7 @@ def build(nodes, edges):
 
 
 # =========================================================
-# RENDER (CSS CONTRACT FIXED)
+# RENDER
 # =========================================================
 
 def render(data):
@@ -196,22 +208,21 @@ def render(data):
     arisings = data.get("arising_observations", [])
     insp = data.get("essential_inspirations", [])
 
-    # ALWAYS guarantee content presence (fix empty section bug)
-    if not arisings:
-        arisings_html = '<span class="semantic-chip muted">No observations</span>'
-    else:
+    if arisings:
         arisings_html = "\n".join(
             f'<a class="semantic-chip" href="{a["url"]}">{a["title"]}</a>'
             for a in arisings
         )
-
-    if not insp:
-        insp_html = '<span class="semantic-chip muted">No inspirations</span>'
     else:
+        arisings_html = '<span class="semantic-chip muted">No observations</span>'
+
+    if insp:
         insp_html = "\n".join(
             f'<span class="semantic-chip">{i["concept"]}</span>'
             for i in insp
         )
+    else:
+        insp_html = '<span class="semantic-chip muted">No inspirations</span>'
 
     return f"""
 <section class="semantic-block homepage-intelligence">
@@ -244,99 +255,35 @@ def main():
 
     nodes = data.get("nodes", {})
     edges = data.get("edges", [])
+    page_graph = data.get("page_graph", {})
 
+    debug(nodes, edges, data)
 
+    built = build(nodes, edges, page_graph)
 
-print("\n===== DEBUG NODES (SAMPLE) =====")
-
-print("NODE COUNT:", len(nodes))
-print("EDGE COUNT:", len(edges))
-
-# show structure of first node
-if nodes:
-    first_key = next(iter(nodes))
-    print("\nFIRST NODE KEY:", first_key)
-    print("FIRST NODE VALUE:")
-    print(json.dumps(nodes[first_key], indent=2)[:2000])
-
-print("\nFIRST 5 EDGES:")
-for e in edges[:5]:
-    print(e)
-
-print("\n===== END DEBUG =====\n")
-    
-
-    
-print()
-print("===== HOMEPAGE DEBUG =====")
-
-print("NODE COUNT:", len(nodes))
-print("EDGE COUNT:", len(edges))
-
-print()
-print("FIRST 10 NODE KEYS:")
-
-for i, k in enumerate(nodes.keys()):
-    if i >= 10:
-        break
-        print(" ", k)
-
-print()
-print("FIRST 5 NODE OBJECTS:")
-
-for i, (k, v) in enumerate(nodes.items()):
-    if i >= 5:
-        break
-
-    print()
-    print("NODE:", k)
-
-    if isinstance(v, dict):
-        print("KEYS:", list(v.keys()))
-
-        if "title" in v:
-            print("TITLE:", v["title"])
-
-        if "url" in v:
-            print("URL:", v["url"])
-
-        if "concepts" in v:
-            print("CONCEPTS:", v["concepts"][:10])
-
-print()
-print("FIRST 10 EDGES:")
-
-for e in edges[:10]:
-    print(e)
-
-print()
-print("===== END DEBUG =====")
-    
-built = build(nodes, edges)
-
-output = {
-    "homepage_intelligence": built,
-    "source": "semantic-salience",
-    "status": "ok"
+    output = {
+        "homepage_intelligence": built,
+        "source": "semantic-salience",
+        "status": "ok"
     }
 
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-    json.dump(output, f, indent=2, ensure_ascii=False)
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
 
-html_block = render(built)
+    html_block = render(built)
 
-index = Path(ROOT) / "index.html"
+    index = Path(ROOT) / "index.html"
 
-html = index.read_text(encoding="utf-8")
+    html = index.read_text(encoding="utf-8")
 
-html = html.replace(
-    '<div id="homepage-intelligence"></div>',
-    html_block
-)
+    html = html.replace(
+        '<div id="homepage-intelligence"></div>',
+        html_block
+    )
 
-index.write_text(html, encoding="utf-8")
+    index.write_text(html, encoding="utf-8")
 
-print("DONE")
+    print("DONE")
 
 
 if __name__ == "__main__":
