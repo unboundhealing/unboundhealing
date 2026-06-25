@@ -320,23 +320,23 @@ output = {
     "status": "ok"
     }
 
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
+with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    json.dump(output, f, indent=2, ensure_ascii=False)
 
-    html_block = render(built)
+html_block = render(built)
 
-    index = Path(ROOT) / "index.html"
+index = Path(ROOT) / "index.html"
 
-    html = index.read_text(encoding="utf-8")
+html = index.read_text(encoding="utf-8")
 
-    html = html.replace(
-        '<div id="homepage-intelligence"></div>',
-        html_block
-    )
+html = html.replace(
+    '<div id="homepage-intelligence"></div>',
+    html_block
+)
 
-    index.write_text(html, encoding="utf-8")
+index.write_text(html, encoding="utf-8")
 
-    print("DONE")
+print("DONE")
 
 
 if __name__ == "__main__":
