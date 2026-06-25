@@ -3,59 +3,42 @@ import os
 from pathlib import Path
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
-
 SAL = os.path.join(ROOT, "semantic-salience.json")
 
 
-# -----------------------------
-# LOAD TRUTH LAYER
-# -----------------------------
-def load_json(path):
-    with open(path, "r", encoding="utf-8") as f:
+def load():
+    with open(SAL, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-# -----------------------------
-# NORMALIZE URL MATCHING
-# -----------------------------
-def normalize(url):
-    return url.replace("https://unboundhealing.org", "").strip("/") or "/"
+def clean(url):
+    return url.replace("https://unboundhealing.org", "").rstrip("/")
 
 
-# -----------------------------
-# BUILD RELATED BLOCK
-# -----------------------------
-def render_related(page_url, page_graph):
-    node = page_graph.get(page_url, None)
+def build_related_html(related_urls):
+    if not related_urls:
+        return """
+<section class="related-content">
+  <h2>Related</h2>
+  <p class="muted">No related content found.</p>
+</section>
+"""
 
-    if not node:
-        return "<section class='related-content'><p class='muted'>No related content.</p></section>"
-
-    related = node.get("related", [])
-
-    if not related:
-        return "<section class='related-content'><p class='muted'>No related content.</p></section>"
-
-    chips = []
-
-    for r in related:
-        label = r.strip("/").split("/")[-1].replace("-", " ").title()
-        href = r
-        chips.append(f'<a class="chip" href="{href}">{label}</a>')
+    items = "\n".join(
+        f'<a class="chip" href="{clean(u)}">{clean(u).strip("/") or "/"}</a>'
+        for u in related_urls
+    )
 
     return f"""
 <section class="related-content">
   <h2>Related</h2>
   <div class="chip-cloud">
-    {''.join(chips)}
+    {items}
   </div>
 </section>
-""".strip()
+"""
 
 
-# -----------------------------
-# INJECT INTO HTML FILE
-# -----------------------------
 def inject(html, block):
     return html.replace(
         '<div id="related-content"></div>',
@@ -63,40 +46,38 @@ def inject(html, block):
     )
 
 
-# -----------------------------
-# MAIN BUILD
-# -----------------------------
 def main():
-    if not os.path.exists(SAL):
-        raise FileNotFoundError("semantic-salience.json missing")
+    data = load()
+    graph = data.get("page_graph", {})
 
-    data = load_json(SAL)
-    page_graph = data.get("page_graph", {})
+    pages = Path(ROOT).rglob("*.html")
 
-    replaced = 0
+    updated = 0
 
-    for path in Path(ROOT).rglob("*.html"):
+    for path in pages:
         html = path.read_text(encoding="utf-8")
 
-        if '<div id="related-content"></div>' not in html:
+        # derive URL key from file path
+        rel = "/" + str(path.relative_to(ROOT)).replace("index.html", "").replace(".html", "").strip("/")
+        if not rel.startswith("/"):
+            rel = "/" + rel
+
+        node = graph.get("https://unboundhealing.org" + rel)
+
+        if not node:
             continue
 
-        # derive URL key from file path
-        rel_path = "/" + str(path.relative_to(ROOT)).replace("index.html", "").replace(".html", "").strip("/")
-        if not rel_path.endswith("/"):
-            rel_path += "/"
+        related = node.get("related", [])
 
-        block = render_related(rel_path, page_graph)
-        new_html = inject(html, block)
+        block = build_related_html(related)
 
-        path.write_text(new_html, encoding="utf-8")
+        if '<div id="related-content"></div>' in html:
+            new_html = inject(html, block)
+            path.write_text(new_html, encoding="utf-8")
+            updated += 1
 
-        print("🔗 injected related:", path)
-        replaced += 1
-
-    print("\n========================")
-    print("RELATED CONTENT COMPLETE")
-    print("PAGES UPDATED:", replaced)
+    print("🔗 RELATED CONTENT COMPLETE")
+    print("PAGES UPDATED:", updated)
 
 
 if __name__ == "__main__":
