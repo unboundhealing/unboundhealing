@@ -89,7 +89,7 @@ def process_file(path: Path):
     try:
         html = path.read_text(encoding="utf-8")
 
-        soup = BeautifulSoup(html, "lxml")
+        soup = BeautifulSoup(html, "html.parser")
 
         inject_tracking_script(soup)
 
