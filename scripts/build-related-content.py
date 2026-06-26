@@ -80,28 +80,37 @@ def url_to_label(url: str) -> str:
 # =========================================================
 
 def render_block(related_urls):
+
     if not related_urls:
         return """
-<section class="related-content">
-  <h3 class="related-paths">Further paths to follow…</h3>
-  <p class="muted">No related content available.</p>
+<section class="semantic-block related-paths">
+
+  <h3>Further paths to follow...</h3>
+
+  <div class="semantic-cloud">
+    <span class="semantic-chip muted">No related content available.</span>
+  </div>
+
 </section>
 """.strip()
 
-    links = [
-        f'    <a class="chip" href="{url}">{url_to_label(url)}</a>'
-        for url in related_urls
-    ]
+    links = "\n".join(
+        f'    <a class="semantic-chip" href="{url}">{url_to_label(url)}</a>'
+        for url in related_urls[:3]
+    )
 
     return f"""
-<section class="related-content">
-  <h3>Further paths to follow…</h3>
-  <div class="chip-cloud">
-{chr(10).join(links)}
+<section class="semantic-block related-paths">
+
+  <h3>Further paths to follow...</h3>
+
+  <div class="semantic-cloud">
+{links}
   </div>
+
 </section>
 """.strip()
-
+    
 
 # =========================================================
 # PLACEHOLDER REPLACEMENT
