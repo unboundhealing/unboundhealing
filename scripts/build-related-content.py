@@ -162,16 +162,25 @@ def main():
             print("❌ missing graph node:", url)
             continue
 
-        related_urls = node.get("related", [])
+# convert URL list → node list (TRUTH ALIGNED)
 
-        related_nodes = [
-            n for u in related_urls
-            if (n := graph.get(u)) and isinstance(n, dict) and "url" in n
-        ]
+        def normalize_url_local(url: str) -> str:
+            if not isinstance(url, str):
+                return ""
+            url = url.strip()
+            if not url:
+                return ""
+            if not url.startswith("http"):
+                return ""
+            return url.rstrip("/") + "/"
+
+        related_urls = node.get("related", [])
 
         related_nodes = []
 
         for u in related_urls:
+
+            u = normalize_url_local(u)
             n = graph.get(u)
 
             if not isinstance(n, dict):
@@ -180,12 +189,11 @@ def main():
             if "url" not in n:
                 continue
 
-            # enforce title fallback at source (prevents slug fallback later)
             if not n.get("title"):
                 n["title"] = get_display_title(n)
 
             related_nodes.append(n)
-
+        
         html = path.read_text(
             encoding="utf-8",
             errors="ignore"
