@@ -218,6 +218,16 @@ def main():
     nodes = data["nodes"]
     page_graph = data["page_graph"]
 
+
+    # =====================================================
+    # FILE DISCOVERY (MUST EXIST BEFORE LOOP)
+    # =====================================================
+    html_files = [
+        p for p in ROOT.rglob("*.html")
+        if "assets" not in p.parts
+    ]
+
+    
     seen = set()
 
     for path in html_files:
