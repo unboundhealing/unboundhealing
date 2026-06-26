@@ -281,15 +281,15 @@ def main():
 
             key = normalize_url(u)
 
-            related_node = graph.get(key) or nodes.get(key)
+            candidate_node = graph.get(key) or nodes.get(key)
 
-            if not isinstance(related_node, dict):
+            if not isinstance(candidate_node, dict):
                 continue
 
-            related_nodes.append(related_node)
+            candidate_node.append(candidate_node)
 
-            print("append:", related_node.get("url"))
-            print("current length:", len(related_nodes_list))
+            print("append:", candidate_node.get("url"))
+            print("current length:", len(related_nodes))
         
         
         html = path.read_text(
