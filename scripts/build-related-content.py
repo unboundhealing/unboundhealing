@@ -85,30 +85,22 @@ def resolve_node(url, nodes, graph):
 # SCORING (PURE CONSUMER LOGIC)
 # =========================================================
 
-def score_node(candidate, seed, url, nodes, page_graph):
-
+def score_node(candidate, seed):
     if not candidate:
         return 0
 
     concepts = set(candidate.get("concepts", []))
-
     overlap = len(concepts & seed)
 
     connectivity = len(candidate.get("related", []))
-
-    # local structural alignment (important!)
-    same_prefix = candidate["url"].split("/")[3:5] == url.split("/")[3:5]
-
-    url_bonus = 2.0 if same_prefix else 0.0
-
     richness = len(concepts)
 
     return (
         overlap * 3.0 +
         connectivity * 1.5 +
-        richness * 0.5 +
-        url_bonus
+        richness * 0.5
     )
+    
 # =========================================================
 # RELATED CONTENT BUILDER
 # =========================================================
