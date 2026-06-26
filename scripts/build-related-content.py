@@ -181,7 +181,7 @@ def render_block_with_graph(related_nodes, graph, current_url):
     # TIER 2 — EMPTY STATE (TRUE DEAD END ONLY)
     # =========================================================
 
-    return """
+        return f"""
 <section class="semantic-block related-paths">
 
   <h3>Further paths to follow...</h3>
@@ -196,6 +196,7 @@ def render_block_with_graph(related_nodes, graph, current_url):
     # =========================================================
     # TIER 2: PURE EMPTY STATE (rare)
     # =========================================================
+        return f"""
 
 <section class="semantic-block related-paths">
 
@@ -207,7 +208,6 @@ def render_block_with_graph(related_nodes, graph, current_url):
 
 </section>
 """.strip()
-
 
 # =========================================================
 # PLACEHOLDER REPLACEMENT (FIX 2 APPLIED PROPERLY)
