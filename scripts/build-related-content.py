@@ -241,7 +241,12 @@ def main():
 
         related = get_related(url, nodes, page_graph)
 
-        html = path.read_text(...)
+
+def read_html(path):
+    return path.read_text(encoding="utf-8", errors="ignore")
+        
+        html = read_html(path)
+
 
         block = render_related(url, related)
 
