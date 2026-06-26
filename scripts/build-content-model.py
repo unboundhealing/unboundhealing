@@ -1,6 +1,8 @@
 import json
 import os
 from collections import Counter, defaultdict
+from semantic_salience import get_display_title
+
 
 # =========================================================
 # ROOT / SINGLE TRUTH SOURCE
@@ -10,6 +12,7 @@ ROOT_DIR = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
 SALIENCE_FILE = os.path.join(ROOT_DIR, "semantic-salience.json")
 OUTPUT_FILE = os.path.join(ROOT_DIR, "concept-model.json")
+
 
 # =========================================================
 # SAFE LOAD
@@ -31,6 +34,7 @@ if not semantic:
     print("❌ semantic-salience.json missing or unreadable")
     semantic = {"nodes": [], "edges": []}
 
+
 # =========================================================
 # SINGLE SOURCE EXTRACTION
 # =========================================================
@@ -38,6 +42,7 @@ if not semantic:
 
 nodes = semantic.get("nodes", {})
 edges = semantic.get("edges", [])
+
 
 # =========================================================
 # NORMALIZATION (light, defensive only)
@@ -57,6 +62,7 @@ def normalize_concept(c):
         return None
 
     return c
+
 
 # =========================================================
 # CONCEPT EXTRACTION (FROM NODES ONLY)
@@ -87,6 +93,7 @@ for url, node in nodes.items():
         concept_counter[c] += 1
         concept_to_pages[c].add(url)
 
+
 # =========================================================
 # EDGE WEIGHT ANALYSIS (DERIVATIVE ONLY)
 # =========================================================
@@ -109,13 +116,19 @@ for e in edges:
         "weight": float(e.get("weight", 1.0))
     })
 
+
 # =========================================================
 # BUILD CONCEPT INDEX (DERIVATIVE VIEW)
 # =========================================================
 
 concepts = []
 
+url_to_node = nodes  # already exists, but make explicit for clarity
+
 for concept, freq in concept_counter.items():
+
+    display = concept  # no node context at concept layer
+
     concepts.append({
         "concept": concept,
         "frequency": freq,
@@ -124,6 +137,7 @@ for concept, freq in concept_counter.items():
 
 # deterministic ordering = consumer stability
 concepts.sort(key=lambda x: (-x["frequency"], x["concept"]))
+
 
 # =========================================================
 # SAFE FALLBACK (pipeline stability)
@@ -138,6 +152,7 @@ if not concepts:
         "connected_pages": 0
     }]
 
+
 # =========================================================
 # DEBUG REPORT
 # =========================================================
@@ -151,6 +166,7 @@ print("\nTOP 20 CONCEPTS")
 
 for c in concepts[:20]:
     print(f"{c['concept']} → {c['frequency']}")
+
 
 # =========================================================
 # OUTPUT (DERIVED, NOT AUTHORITATIVE)
