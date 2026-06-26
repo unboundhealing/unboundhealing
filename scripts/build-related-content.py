@@ -202,7 +202,7 @@ def render_block_with_graph(related_nodes, graph, current_url):
   <h3>Further paths to follow...</h3>
 
   <div class="semantic-cloud">
-    <span class="semantic-chip muted">No related content available yet — this page stands alone.</span>
+    <span class="semantic-chip muted">No related content available yet - this page stands alone.</span>
   </div>
 
 </section>
