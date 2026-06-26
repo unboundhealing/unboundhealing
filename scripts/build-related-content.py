@@ -67,24 +67,28 @@ def get_title(node, url=None):
 # NODE RESOLUTION (CRITICAL FIX LAYER)
 # =========================================================
 
-def resolve_node(url, nodes, graph):
-    """
-    SINGLE SOURCE OF TRUTH PER URL
-    Never returns mixed structures.
-    """
-
+def get_node(url, nodes):
     url = normalize_url(url)
+    return nodes.get(url)
 
-    raw = graph.get(url) or nodes.get(url)
 
-    if not isinstance(raw, dict):
+def get_related_urls(url, graph):
+    url = normalize_url(url)
+    return graph.get(url, {}).get("related", [])
+
+
+def build_view(url, nodes, graph):
+    node = get_node(url, nodes)
+    if not node:
         return None
+
+    related_urls = get_related_urls(url, graph)
 
     return {
         "url": url,
-        "title": raw.get("title", ""),
-        "concepts": raw.get("concepts", []) or [],
-        "related": raw.get("related", []) or []
+        "title": node.get("title", ""),
+        "concepts": node.get("concepts", []),
+        "related": related_urls
     }
 
 
@@ -173,13 +177,13 @@ def get_related(url, nodes, page_graph):
 # HTML RENDER
 # =========================================================
 
-def render_block(nodes):
-    if not nodes:
+def render_block(related):
+    if not related:
         return ""
 
     links = "\n".join(
         f'    <a class="semantic-chip" href="{n["url"]}">{n["title"]}</a>'
-        for n in nodes.values()
+        for n in related if isinstance(n, dict)
     )
 
     return f"""
@@ -193,7 +197,6 @@ def render_block(nodes):
 
 </section>
 """.strip()
-
 
 # =========================================================
 # FILE URL RESOLUTION (OPTIONAL UTILITY)
