@@ -156,8 +156,14 @@ def get_related(url, nodes, page_graph):
 
     scored.sort(reverse=True)
 
-    result = [c for _, c in scored[:6]]
-
+    return [
+    {
+        "url": c,
+        "title": nodes.get(c, {}).get("title", c)
+    }
+    for _, c in scored[:6]
+    ]
+    
     CACHE[url] = result
 
     return result
