@@ -85,20 +85,43 @@ def resolve_node(url, nodes, graph):
 # SCORING (PURE CONSUMER LOGIC)
 # =========================================================
 
-def score_node(candidate, seed):
+def score_node(candidate, seed, url=None):
     if not candidate:
         return 0
 
+    # =========================================================
+    # 1. CONCEPT OVERLAP (semantic similarity core)
+    # =========================================================
     concepts = set(candidate.get("concepts", []))
     overlap = len(concepts & seed)
 
-    url_bonus = 1 if candidate.get("url") else 0
+    # =========================================================
+    # 2. CONNECTIVITY (graph centrality signal)
+    # how many pages this node is connected to
+    # =========================================================
+    connectivity = len(candidate.get("related", []))
 
+    # =========================================================
+    # 3. CONCEPT RICHNESS (semantic density bias)
+    # prevents flat nodes from winning equally
+    # =========================================================
+    concept_richness = len(candidate.get("concepts", []))
+
+    # =========================================================
+    # 4. PAGE IDENTITY BONUS (anti-collapse guard)
+    # ensures self / same-page relevance is properly prioritized
+    # =========================================================
+    page_bonus = 1.0 if url and candidate.get("url") == url else 0.0
+
+    # =========================================================
+    # FINAL SCORE COMPOSITION
+    # =========================================================
     return (
         overlap * 3.0 +
-        url_bonus * 1.0
+        connectivity * 1.5 +
+        concept_richness * 0.5 +
+        page_bonus * 10.0
     )
-
 
 # =========================================================
 # RELATED CONTENT BUILDER
