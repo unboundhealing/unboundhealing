@@ -218,7 +218,7 @@ def main():
         print("RELATED COUNT:", len(related))
 
         if not related:
-        continue
+            continue
 
         block = render_block(related)
 
