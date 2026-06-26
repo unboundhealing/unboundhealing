@@ -257,23 +257,23 @@ def read_html(path):
     print("CURRENT PAGE:", url)
     print("RELATED COUNT:", len(related))
 
-        if not related:
-            continue
+    if not related:
+        continue
 
-        block = render_block(related)
+    block = render_block(related)
 
-        if '<div id="related-content">' not in html:
-            continue
+    if '<div id="related-content">' not in html:
+        continue
 
-        new_html = html.replace(
-            '<div id="related-content"></div>',
-            block
-        )
+    new_html = html.replace(
+        '<div id="related-content"></div>',
+        block
+    )
 
-        path.write_text(new_html, encoding="utf-8")
+    path.write_text(new_html, encoding="utf-8")
 
-        updated += 1
-        print("🔗 injected:", url)
+    updated += 1
+    print("🔗 injected:", url)
 
     print("\n========================")
     print("RELATED CONTENT COMPLETE")
