@@ -187,7 +187,12 @@ def build_registry(root, html_files):
         registry[url] = {
             "path": path,
             "url": url,
-
+            "title": metadata.get("title", "").strip(),   # <-- ADD THIS (critical)
+            "description": metadata.get("description", ""),
+            "word_count": metadata.get("word_count", 0),
+            "concepts": concepts
+        }
+            
             # ✅ CANONICAL HUMAN TITLE (NEW PRIMARY FIX)
             "title": metadata.get("title", "").strip(),
 
@@ -222,9 +227,10 @@ def build_graph(registry):
         nodes[url] = {
             "path": data["path"],
             "url": data["url"],
+            "title": data.get("title", ""),   # <-- CRITICAL
             "concepts": data["concepts"]
         }
-
+        
         concepts = data["concepts"]
 
         for i in range(len(concepts)):
