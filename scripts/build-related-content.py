@@ -83,7 +83,7 @@ def render_block(related_urls):
     if not related_urls:
         return """
 <section class="related-content">
-  <h2>Related</h2>
+  <h3 class="related-paths">Further paths to follow…</h3>
   <p class="muted">No related content available.</p>
 </section>
 """.strip()
@@ -95,7 +95,7 @@ def render_block(related_urls):
 
     return f"""
 <section class="related-content">
-  <h2>Related</h2>
+  <h3>Further paths to follow…</h3>
   <div class="chip-cloud">
 {chr(10).join(links)}
   </div>
