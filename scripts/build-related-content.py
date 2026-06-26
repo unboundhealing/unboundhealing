@@ -248,14 +248,14 @@ def read_html(path):
     html = read_html(path)
 
 
-        block = render_related(url, related)
+    block = render_related(url, related)
 
-        html = inject(html, block)
+    html = inject(html, block)
 
-        path.write_text(html)
+    path.write_text(html)
 
-        print("CURRENT PAGE:", url)
-        print("RELATED COUNT:", len(related))
+    print("CURRENT PAGE:", url)
+    print("RELATED COUNT:", len(related))
 
         if not related:
             continue
