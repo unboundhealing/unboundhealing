@@ -258,7 +258,7 @@ def read_html(path):
     print("RELATED COUNT:", len(related))
 
     if not related:
-    continue
+        continue
 
     block = render_block(related)
 
