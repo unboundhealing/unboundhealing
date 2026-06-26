@@ -120,9 +120,9 @@ def replace_placeholder(html, block):
         if placeholder is None:
             return html, False
 
-        replacement = BeautifulSoup(block, "html.parser").contents[0]
+        replacement = BeautifulSoup(block, "html.parser")
 
-        placeholder.replace_with(replacement.contents[0])
+        placeholder.replace_with(replacement)
 
         return str(soup), True
 
