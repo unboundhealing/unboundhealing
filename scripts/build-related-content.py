@@ -21,12 +21,13 @@ def load_json():
     with open(SAL, "r", encoding="utf-8") as f:
         return json.load(f)
 
+
 # =========================================================
-# DISPLAY TITLE
+# DISPLAY TITLE (TRUTH-CONSUMER SAFE)
 # =========================================================
 
 def get_display_title(node):
-    if not node:
+    if not isinstance(node, dict):
         return ""
 
     title = node.get("title")
@@ -37,15 +38,12 @@ def get_display_title(node):
     url = node.get("url", "")
     return url.rstrip("/").split("/")[-1]
 
+
 # =========================================================
-# CENTRALIZED HTML PARSER (OPTION B HARDENING)
+# CENTRALIZED HTML PARSER
 # =========================================================
 
 def get_soup(html: str) -> BeautifulSoup:
-    """
-    Single enforced HTML parser for the entire pipeline.
-    Prevents parser drift across CI/runtime environments.
-    """
     return BeautifulSoup(html, "html.parser")
 
 
@@ -70,7 +68,7 @@ def file_to_url(path: Path) -> str:
 
 
 # =========================================================
-# RELATED BLOCK RENDERER (NODE-AWARE, TRUTH-ALIGNED)
+# RELATED BLOCK RENDERER
 # =========================================================
 
 def render_block(related_nodes):
@@ -108,7 +106,7 @@ def render_block(related_nodes):
 
 
 # =========================================================
-# PLACEHOLDER REPLACEMENT
+# PLACEHOLDER REPLACEMENT (FIX 2 APPLIED PROPERLY)
 # =========================================================
 
 def replace_placeholder(html, block):
@@ -120,9 +118,18 @@ def replace_placeholder(html, block):
         if placeholder is None:
             return html, False
 
-        replacement = BeautifulSoup(block, "html.parser")
+        # -----------------------------
+        # FIX 2: SAFE NODE EXTRACTION
+        # -----------------------------
 
-        placeholder.replace_with(replacement)
+        replacement_soup = BeautifulSoup(block, "html.parser")
+
+        replacement_node = replacement_soup.find()
+
+        if replacement_node is None:
+            return html, False
+
+        placeholder.replace_with(replacement_node)
 
         return str(soup), True
 
@@ -137,7 +144,6 @@ def replace_placeholder(html, block):
 
 def main():
     data = load_json()
-
     graph = data.get("page_graph", {})
 
     updated = 0
@@ -156,14 +162,13 @@ def main():
             print("❌ missing graph node:", url)
             continue
 
-        # convert URL list → node list (TRUTH ALIGNED)
         related_urls = node.get("related", [])
 
         related_nodes = [
             n for u in related_urls
             if (n := graph.get(u)) and isinstance(n, dict) and "url" in n
         ]
-        
+
         html = path.read_text(
             encoding="utf-8",
             errors="ignore"
@@ -179,7 +184,6 @@ def main():
         path.write_text(new_html, encoding="utf-8")
 
         updated += 1
-
         print("🔗 injected:", url)
 
     print()
