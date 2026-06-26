@@ -5,6 +5,7 @@ import re
 import json
 from collections import defaultdict
 from urllib.parse import urljoin
+from bs4 import BeautifulSoup
 
 # =========================================================
 # CONFIG — SINGLE TRUTH CONTEXT
@@ -186,7 +187,15 @@ def build_registry(root, html_files):
         registry[url] = {
             "path": path,
             "url": url,
-            **metadata,
+
+            # ✅ CANONICAL HUMAN TITLE (NEW PRIMARY FIX)
+            "title": metadata.get("title", "").strip(),
+
+            # optional but useful fallback surface field
+            "description": metadata.get("description", ""),
+
+            **metadata,  # keeps flexibility if you add more later
+
             "concepts": concepts
         }
 
