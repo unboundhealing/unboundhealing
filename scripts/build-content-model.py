@@ -1,8 +1,6 @@
 import json
 import os
 from collections import Counter, defaultdict
-from semantic_salience import get_display_title
-
 
 # =========================================================
 # ROOT / SINGLE TRUTH SOURCE
@@ -123,11 +121,7 @@ for e in edges:
 
 concepts = []
 
-url_to_node = nodes  # already exists, but make explicit for clarity
-
 for concept, freq in concept_counter.items():
-
-    display = concept  # no node context at concept layer
 
     concepts.append({
         "concept": concept,
