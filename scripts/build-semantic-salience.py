@@ -363,6 +363,23 @@ def build_semantic_salience(registry):
 
 
 # =========================================================
+# DISPLAY TITLE RESOLVER (NEW)
+# =========================================================
+
+def get_display_title(node):
+    if not node:
+        return ""
+
+    title = node.get("title")
+
+    if isinstance(title, str) and title.strip():
+        return title.strip()
+
+    url = node.get("url", "")
+    return url.rstrip("/").split("/")[-1]
+
+
+# =========================================================
 # FILE DISCOVERY
 # =========================================================
 
