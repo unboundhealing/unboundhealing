@@ -265,7 +265,7 @@ def main():
 
     
     graph = data.get("page_graph", {})
-    nodes = data.get("nodes", {})
+    nodes = data.get("page_nodes", {})
 
     
     print("\n🧭 GRAPH KEY SAMPLE (first 20 keys):")
@@ -355,7 +355,7 @@ def main():
             related_nodes.append(page_node)
 
 
-            print("append:", node.get("url"))
+            print("append:", page_node.get("url"))
             print("current length:", len(related_nodes))
             print("related_nodes length:", len(related_nodes))
         
