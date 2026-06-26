@@ -323,7 +323,8 @@ def main():
             n = graph.get(key)
 
             print("found :", n is not None)
-
+            if n is not None:
+                print("node keys:", list(n.keys()))
 
             
             if not isinstance(n, dict):
