@@ -101,16 +101,10 @@ def score_node(candidate, seed):
         return 0
 
     concepts = set(candidate.get("concepts", []))
-    overlap = len(concepts & seed)
 
-    connectivity = len(candidate.get("related", []))
-    richness = len(concepts)
+    overlap = len(seed & concepts)
 
-    return (
-        overlap * 3.0 +
-        connectivity * 1.5 +
-        richness * 0.5
-    )
+    return overlap * 3.0
 
 
 # =========================================================
