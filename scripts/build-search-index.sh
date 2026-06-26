@@ -27,8 +27,6 @@ import os
 import json
 from pathlib import Path
 
-from semantic_salience import get_display_title
-
 ROOT = Path(os.getcwd())
 SAL_FILE = ROOT / "semantic-salience.json"
 OUTPUT_FILE = ROOT / "search-index.json"
@@ -53,6 +51,22 @@ page_graph = salience.get("page_graph", {})
 if not isinstance(page_graph, dict):
     raise SystemExit("❌ page_graph must be dict")
 
+# -------------------------------------------------------
+# DISPLAY TITLE
+# -------------------------------------------------------
+
+def get_display_title(node):
+    if not node:
+        return ""
+
+    title = node.get("title")
+
+    if isinstance(title, str) and title.strip():
+        return title.strip()
+
+    url = node.get("url", "")
+    return url.rstrip("/").split("/")[-1]
+    
 # -------------------------------------------------------
 # BUILD CONCEPT MAP
 # -------------------------------------------------------
