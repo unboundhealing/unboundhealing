@@ -47,20 +47,43 @@ def get_display_title(node, url=None):
 # NORMALIZATION
 # =========================================================
 
-def normalize_url(url):
+def normalize_url_local(url: str) -> str:
     if not isinstance(url, str):
-        return None
+        return ""
 
     url = url.strip()
 
-    if url.startswith("/"):
-        url = "https://unboundhealing.org" + url
+    if not url:
+        return ""
 
-    if not url.startswith("https://unboundhealing.org/"):
-        return None
+    if not url.startswith("http"):
+        return ""
+
+    # normalize trailing slash
+    if not url.endswith("/"):
+        url = url + "/"
 
     return url
 
+
+related_nodes = []
+
+for u in related_urls:
+
+    u = normalize_url_local(u)
+    n = graph.get(u)
+
+    if not isinstance(n, dict):
+        continue
+
+    if "url" not in n:
+        continue
+
+    if not n.get("title"):
+        n["title"] = get_display_title(n)
+
+    related_nodes.append(n)
+    
 
 def valid_url(url):
     url = normalize_url(url)
