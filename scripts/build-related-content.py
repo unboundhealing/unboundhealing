@@ -355,7 +355,7 @@ def main():
             related_nodes.append(page_node)
 
 
-            print("append:", n.get("url"))
+            print("append:", node.get("url"))
             print("current length:", len(related_nodes))
             print("related_nodes length:", len(related_nodes))
         
