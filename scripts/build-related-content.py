@@ -73,16 +73,24 @@ def normalize_url(url: str) -> str:
 
     url = url.strip()
 
-    if not url.startswith("http"):
+    if not url:
         return ""
 
-    # collapse accidental duplicate slashes
-    url = re.sub(r"([^:])/+", r"\1/", url)
+    # handle absolute URLs
+    if url.startswith("http"):
+        path = urlparse(url).path
+        if not path.endswith("/"):
+            path += "/"
+        return path
 
-    # enforce trailing slash consistency
-    url = url.rstrip("/")
-    return url + "/"
+    # handle relative paths
+    if not url.startswith("/"):
+        url = "/" + url
 
+    if not url.endswith("/"):
+        url += "/"
+
+    return url
 
 # =========================================================
 # RELATED BLOCK RENDERER
@@ -297,12 +305,13 @@ def main():
         # HARD GUARD: do not render empty related sections
         if not related_nodes:
             print("⚠️ empty related section:", url)
-            continue
-        
-        block = render_block_with_graph(
+            return
+    
+        print("<h2>Further paths to follow</h2>")
+        render_block_with_graph(
             related_nodes,
             graph,
-            current_url=url  # REQUIRED: ensures correct context binding
+            current_url=current_url  # REQUIRED: ensures correct context binding
         )
         
         new_html, replaced = replace_placeholder(html, block)
