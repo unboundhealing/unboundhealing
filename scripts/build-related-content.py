@@ -82,13 +82,40 @@ def build_view(url, nodes, graph):
     if not node:
         return None
 
+    seed = set(node.get("concepts", []))
+
     related_urls = get_related_urls(url, graph)
+
+    candidates = []
+    
+    for u in related_urls:
+        n = nodes.get(u)
+        if not n:
+            continue
+
+        candidates.append({
+            "url": u,
+            "title": n.get("title", ""),
+            "concepts": n.get("concepts", []),
+            "graph_neighbors": len(graph.get(u, {}).get("related", [])),
+            "word_count": n.get("word_count", 0),
+            "depth": u.count("/")
+        })    
+        
+    scored = [
+        (score_node(c, seed), c)
+        for c in candidates
+    ]
+
+    scored.sort(key=lambda x: -x[0])
+
+    related = [c["url"] for _, c in scored[:6]]
 
     return {
         "url": url,
         "title": node.get("title", ""),
         "concepts": node.get("concepts", []),
-        "related": related_urls
+        "related": related
     }
 
 
@@ -97,15 +124,13 @@ def build_view(url, nodes, graph):
 # =========================================================
 
 def score_node(candidate, seed):
-    if not candidate:
-        return 0
+    overlap = len(seed & set(candidate["concepts"]))
 
-    concepts = set(candidate.get("concepts", []))
-
-    overlap = len(seed & concepts)
-
-    return overlap * 3.0
-
+    return (
+        overlap * 3.0 +
+        candidate["graph_neighbors"] * 1.5 +
+        candidate["depth"] * 0.8
+    )
 
 # =========================================================
 # RELATED CONTENT BUILDER
