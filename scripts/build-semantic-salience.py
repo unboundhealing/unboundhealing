@@ -147,19 +147,46 @@ def build_url(path: str) -> str:
 
 
 # =========================================================
+# PAGE METADATA EXTRACTION
+# =========================================================
+
+def extract_page_metadata(full_path):
+    """
+    Read a page and return observable metadata.
+
+    Version 1:
+      - title
+      - description
+      - word_count
+    """
+
+    return {
+        "title": "",
+        "description": "",
+        "word_count": 0
+    }
+
+
+# =========================================================
 # REGISTRY (STRUCTURAL REALITY INDEX)
 # =========================================================
 
-def build_registry(html_files):
+def build_registry(root, html_files):
     registry = {}
 
     for path in html_files:
+
+        full_path = os.path.join(root, path)
+
         url = build_url(path)
         concepts = extract_concepts(path)
+
+        metadata = extract_page_metadata(full_path)
 
         registry[url] = {
             "path": path,
             "url": url,
+            **metadata,
             "concepts": concepts
         }
 
@@ -356,7 +383,7 @@ def main():
     print("📂 scanning root:", root)
     print("📦 html files discovered:", len(html_files))
 
-    registry = build_registry(html_files)
+    registry = build_registry(root, html_files)
 
     print("📦 registry entries:", len(registry))
 
