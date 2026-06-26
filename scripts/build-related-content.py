@@ -165,9 +165,7 @@ def get_related(url, nodes, page_graph):
         if not n:
             continue
 
-        concepts = set(n.get("concepts", []))
-
-        overlap = len(seed & concepts)
+        overlap = len(seed & set(n.get("concepts", [])))
         graph_bonus = len(page_graph.get(c, {}).get("related", []))
 
         score = (
@@ -177,18 +175,17 @@ def get_related(url, nodes, page_graph):
 
         scored.append((score, c))
 
-    scored.sort(reverse=True)
+    scored.sort(key=lambda x: -x[0])
 
-    return [
-    {
-        "url": c,
-        "title": nodes.get(c, {}).get("title", c)
-    }
-    for _, c in scored[:6]
+    result = [
+        {
+            "url": c,
+            "title": nodes.get(c, {}).get("title", c)
+        }
+        for _, c in scored[:6]
     ]
-    
-    CACHE[url] = result
 
+    CACHE[url] = result
     return result
 
 
@@ -260,7 +257,7 @@ def main():
 
     for path in html_files:
 
-        url = resolve_file_url(path, nodes, page_graph)
+        url = resolve_file_url(path, page_graph, nodes)
 
         if not url or url in seen:
             continue
@@ -269,14 +266,10 @@ def main():
 
         related = get_related(url, nodes, page_graph)
 
-        html = read_html(path)
-
-        block = render_block(related)
-
-        path.write_text(html)
-
         print("CURRENT PAGE:", url)
         print("RELATED COUNT:", len(related))
+
+        html = read_html(path)
 
         if not related:
             continue
