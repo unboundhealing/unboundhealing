@@ -217,13 +217,13 @@ def main():
         print("\nCURRENT PAGE:", url)
         print("RELATED COUNT:", len(related))
 
-        if not related:
-            continue
+            if not related:
+                continue
 
         block = render_block(related)
 
-        if "<div id=\"related-content\">" not in html:
-            continue
+            if "<div id=\"related-content\">" not in html:
+                continue
 
         new_html = html.replace(
             '<div id="related-content"></div>',
