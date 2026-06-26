@@ -88,15 +88,31 @@ def normalize_url(url: str) -> str:
 # RELATED BLOCK RENDERER
 # =========================================================
 
-def render_block(related_nodes):
+def render_block_with_graph(related_nodes, graph, current_url):
 
     # =========================================================
-    # TIER 0: DIRECT RELATED (GRAPH LINKS)
+    # CURRENT PAGE CONTEXT (CRITICAL FIX)
+    # This anchors fallback logic properly
     # =========================================================
+
+    current_node = graph.get(current_url)
+
+    seed = set()
+    if isinstance(current_node, dict):
+        seed |= set(current_node.get("concepts", []))
+
+    # also include related node concepts (secondary signal)
+    for n in related_nodes:
+        if isinstance(n, dict):
+            seed |= set(n.get("concepts", []))
+
+    # =========================================================
+    # TIER 0 — DIRECT RELATED (GRAPH LINKS)
+    # =========================================================
+
     direct = [
         n for n in related_nodes
-        if isinstance(n, dict)
-        and n.get("url")
+        if isinstance(n, dict) and n.get("url")
     ][:6]
 
     if direct:
@@ -119,40 +135,19 @@ def render_block(related_nodes):
 """.strip()
 
     # =========================================================
-    # TIER 1: FALLBACK — CONCEPT-SHARED NODES
-    # (prevents dead-ends)
+    # TIER 1 — FALLBACK (CONCEPT OVERLAP WITH FULL GRAPH)
     # =========================================================
+
     fallback = []
 
-    try:
-        all_nodes = related_nodes[0].get("_graph_all_nodes") if related_nodes else None
-    except Exception:
-        all_nodes = None
-
-    # If we didn't pass full graph context, degrade gracefully
-    if not all_nodes:
-        return """
-<section class="semantic-block related-paths">
-
-  <h3>Further paths to follow...</h3>
-
-  <div class="semantic-cloud">
-    <span class="semantic-chip muted">No related content available yet — this page stands alone.</span>
-  </div>
-
-</section>
-""".strip()
-
-    seed_concepts = set()
-    for n in related_nodes:
-        if isinstance(n, dict):
-            seed_concepts |= set(n.get("concepts", []))
-
-    for n in all_nodes:
+    for n in graph.values():
         if not isinstance(n, dict):
             continue
 
-        if set(n.get("concepts", [])) & seed_concepts:
+        node_concepts = set(n.get("concepts", []))
+
+        # overlap strength signal
+        if node_concepts & seed:
             fallback.append(n)
 
     fallback = fallback[:6]
@@ -171,6 +166,22 @@ def render_block(related_nodes):
 
   <div class="semantic-cloud">
 {links}
+  </div>
+
+</section>
+""".strip()
+
+    # =========================================================
+    # TIER 2 — EMPTY STATE (TRUE DEAD END ONLY)
+    # =========================================================
+
+    return """
+<section class="semantic-block related-paths">
+
+  <h3>Further paths to follow...</h3>
+
+  <div class="semantic-cloud">
+    <span class="semantic-chip muted">No related content available yet — this page stands alone.</span>
   </div>
 
 </section>
@@ -283,7 +294,7 @@ def main():
             errors="ignore"
         )
 
-        block = render_block(related_nodes)
+        block = render_block_with_graph(related_nodes, graph)
 
         new_html, replaced = replace_placeholder(html, block)
 
