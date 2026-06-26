@@ -293,6 +293,13 @@ def main():
 
         
         related_urls = node.get("related", [])
+
+        
+        print("\n----------------")
+        print("CURRENT PAGE:", graph_key)
+        print("RELATED URLS:", related_urls)
+        
+        
         related_nodes = []
 
 
@@ -309,8 +316,13 @@ def main():
 
             key = normalize_url(u)
 
+ 
+            
+            print("lookup:", repr(key))
+
             n = graph.get(key)
 
+            print("found :", n is not None)
 
 
             
