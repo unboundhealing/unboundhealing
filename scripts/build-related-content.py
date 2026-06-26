@@ -337,6 +337,11 @@ def main():
 
             related_nodes.append(n)
 
+            
+            print("append:", n.get("url"))
+            print("current length:", len(related_nodes))
+            print("related_nodes length:", len(related_nodes))
+        
         
         html = path.read_text(
             encoding="utf-8",
