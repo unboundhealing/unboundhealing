@@ -4,6 +4,7 @@ import json
 import os
 from pathlib import Path
 from bs4 import BeautifulSoup
+from semantic_salience import get_display_title
 
 # =========================================================
 # ROOT / TRUTH SOURCE
@@ -29,10 +30,7 @@ def load_json():
 def get_soup(html: str) -> BeautifulSoup:
     """
     Single enforced HTML parser for the entire pipeline.
-
-    IMPORTANT:
-    - prevents accidental reintroduction of lxml
-    - guarantees deterministic parsing across CI environments
+    Prevents parser drift across CI/runtime environments.
     """
     return BeautifulSoup(html, "html.parser")
 
@@ -58,30 +56,12 @@ def file_to_url(path: Path) -> str:
 
 
 # =========================================================
-# HUMAN LABELS
+# RELATED BLOCK RENDERER (NODE-AWARE, TRUTH-ALIGNED)
 # =========================================================
 
-def url_to_label(url: str) -> str:
-    path = (
-        url.replace("https://unboundhealing.org", "")
-        .strip("/")
-    )
+def render_block(related_nodes):
 
-    if not path:
-        return "Home"
-
-    title = path.split("/")[-1]
-
-    return title.replace("-", " ").title()
-
-
-# =========================================================
-# RELATED BLOCK RENDERER
-# =========================================================
-
-def render_block(related_urls):
-
-    if not related_urls:
+    if not related_nodes:
         return """
 <section class="semantic-block related-paths">
 
@@ -95,8 +75,8 @@ def render_block(related_urls):
 """.strip()
 
     links = "\n".join(
-        f'    <a class="semantic-chip" href="{url}">{url_to_label(url)}</a>'
-        for url in related_urls[:3]
+        f'    <a class="semantic-chip" href="{n["url"]}">{get_display_title(n)}</a>'
+        for n in related_nodes[:3]
     )
 
     return f"""
@@ -110,7 +90,7 @@ def render_block(related_urls):
 
 </section>
 """.strip()
-    
+
 
 # =========================================================
 # PLACEHOLDER REPLACEMENT
@@ -161,14 +141,21 @@ def main():
             print("❌ missing graph node:", url)
             continue
 
-        related = node.get("related", [])
+        # convert URL list → node list (TRUTH ALIGNED)
+        related_urls = node.get("related", [])
+
+        related_nodes = [
+            graph.get(u)
+            for u in related_urls
+            if graph.get(u) is not None
+        ]
 
         html = path.read_text(
             encoding="utf-8",
             errors="ignore"
         )
 
-        block = render_block(related)
+        block = render_block(related_nodes)
 
         new_html, replaced = replace_placeholder(html, block)
 
