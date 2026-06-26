@@ -173,7 +173,7 @@ def render_block(nodes):
 
     links = "\n".join(
         f'    <a class="semantic-chip" href="{n["url"]}">{n["title"]}</a>'
-        for n in nodes
+        for n in nodes.values()
     )
 
     return f"""
