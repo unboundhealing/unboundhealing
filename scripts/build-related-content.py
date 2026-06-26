@@ -4,7 +4,6 @@ import json
 import os
 from pathlib import Path
 from bs4 import BeautifulSoup
-from semantic_salience import get_display_title
 
 # =========================================================
 # ROOT / TRUTH SOURCE
@@ -22,6 +21,21 @@ def load_json():
     with open(SAL, "r", encoding="utf-8") as f:
         return json.load(f)
 
+# =========================================================
+# DISPLAY TITLE
+# =========================================================
+
+def get_display_title(node):
+    if not node:
+        return ""
+
+    title = node.get("title")
+
+    if isinstance(title, str) and title.strip():
+        return title.strip()
+
+    url = node.get("url", "")
+    return url.rstrip("/").split("/")[-1]
 
 # =========================================================
 # CENTRALIZED HTML PARSER (OPTION B HARDENING)
