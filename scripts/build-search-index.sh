@@ -22,18 +22,19 @@ fi
 echo "🧠 Running unified index builder..."
 
 python3 << 'EOF'
+
 import os
 import json
-import glob
-import re
 from pathlib import Path
+
+from semantic_salience import get_display_title
 
 ROOT = Path(os.getcwd())
 SAL_FILE = ROOT / "semantic-salience.json"
 OUTPUT_FILE = ROOT / "search-index.json"
 
 # -------------------------------------------------------
-# SAFE LOAD (no silent failures)
+# SAFE LOAD
 # -------------------------------------------------------
 
 try:
@@ -46,17 +47,20 @@ try:
 except Exception as e:
     raise SystemExit(f"❌ Failed to load semantic-salience.json: {e}")
 
+nodes = salience.get("nodes", {})
 page_graph = salience.get("page_graph", {})
+
 if not isinstance(page_graph, dict):
     raise SystemExit("❌ page_graph must be dict")
 
 # -------------------------------------------------------
-# BUILD CONCEPT MAP (in-memory, single pass)
+# BUILD CONCEPT MAP
 # -------------------------------------------------------
 
 concept_map = {}
 
 for url, node in page_graph.items():
+
     concepts = []
 
     if isinstance(node, dict):
@@ -65,17 +69,11 @@ for url, node in page_graph.items():
             for c in raw:
                 if isinstance(c, str):
                     concepts.append(c)
-                elif isinstance(c, dict):
-                    w = c.get("word")
-                    if w:
-                        concepts.append(w)
 
     clean = []
     seen = set()
 
     for c in concepts:
-        if not isinstance(c, str):
-            continue
         c = c.strip().lower()
         if not c or c in seen:
             continue
@@ -85,53 +83,31 @@ for url, node in page_graph.items():
     concept_map[url] = clean[:10]
 
 # -------------------------------------------------------
-# HTML DISCOVERY
-# -------------------------------------------------------
-
-html_files = [
-    p for p in ROOT.rglob("*.html")
-    if "/assets/" not in str(p)
-]
-
-# -------------------------------------------------------
 # INDEX BUILD
 # -------------------------------------------------------
 
 index = {}
 
-for file in sorted(html_files):
-    rel = file.relative_to(ROOT)
+for url, node in nodes.items():
 
-    # URL normalization
-    if str(rel) == "index.html":
-        url = "https://unboundhealing.org/"
-    else:
-        url = str(rel).replace("index.html", "").replace(".html", "")
-        url = "https://unboundhealing.org/" + url
-        if not url.endswith("/"):
-            url += "/"
+    if not isinstance(node, dict):
+        continue
 
-    # TITLE
-    html = file.read_text(errors="ignore")
+    file_path = node.get("path", "")
+    path = ROOT / file_path if file_path else None
 
-    title_match = re.search(r"<title>(.*?)</title>", html, re.I)
-    title = title_match.group(1).strip() if title_match else "Untitled"
+    # title resolution (TRUTH LAYER ONLY)
+    title = get_display_title(node)
 
-    # DESCRIPTION
-    desc_match = re.search(
-        r'name="description"\s+content="(.*?)"',
-        html,
-        re.I
-    )
-    desc = desc_match.group(1).strip() if desc_match else ""
+    # description (optional passthrough from node if exists)
+    desc = node.get("description", "") if isinstance(node, dict) else ""
 
-    # TAGS (direct lookup, no subprocess, no pipe)
     tags = concept_map.get(url, [])
 
     index[url] = {
         "title": title,
         "url": url,
-        "path": str(file),
+        "path": file_path,
         "type": "page",
         "tags": ",".join(tags[:10]),
         "description": desc,
@@ -140,7 +116,7 @@ for file in sorted(html_files):
     }
 
 # -------------------------------------------------------
-# ATOMIC WRITE (prevents CI partial writes)
+# WRITE (atomic)
 # -------------------------------------------------------
 
 tmp_path = OUTPUT_FILE.with_suffix(".tmp")
