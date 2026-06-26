@@ -294,8 +294,17 @@ def main():
             errors="ignore"
         )
 
-        block = render_block_with_graph(related_nodes, graph, url)
-
+        # HARD GUARD: do not render empty related sections
+        if not related_nodes:
+            print("⚠️ empty related section:", url)
+            continue
+        
+        block = render_block_with_graph(
+            related_nodes,
+            graph,
+            current_url=url  # REQUIRED: ensures correct context binding
+        )
+        
         new_html, replaced = replace_placeholder(html, block)
 
         if not replaced:
