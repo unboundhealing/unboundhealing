@@ -154,7 +154,9 @@ def main():
     ]
 
     for path in html_files:
+
         url = file_to_url(path)
+        url = normalize_url(url)
 
         node = graph.get(url)
 
@@ -162,27 +164,14 @@ def main():
             print("❌ missing graph node:", url)
             continue
 
-# convert URL list → node list (TRUTH ALIGNED)
-
-        def normalize_url_local(url: str) -> str:
-            if not isinstance(url, str):
-                return ""
-            url = url.strip()
-            if not url:
-                return ""
-            if not url.startswith("http"):
-                return ""
-            return url.rstrip("/") + "/"
-
         related_urls = node.get("related", [])
-
         related_nodes = []
 
         for u in related_urls:
 
-            u = normalize_url_local(u)
+            u = normalize_url(u)
 
-            # 🚫 HARD EXCLUSION RULE (assets/images/etc are NOT graph nodes)
+            # 🚫 HARD EXCLUSION RULE
             if "/assets/" in u:
                 continue
 
@@ -198,7 +187,7 @@ def main():
                 n["title"] = get_display_title(n)
 
             related_nodes.append(n)
-        
+
         html = path.read_text(
             encoding="utf-8",
             errors="ignore"
