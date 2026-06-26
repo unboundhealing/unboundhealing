@@ -265,7 +265,9 @@ def main():
 
     
     graph = data.get("page_graph", {})
+    nodes = data.get("nodes", {})
 
+    
     print("\n🧭 GRAPH KEY SAMPLE (first 20 keys):")
     for i, k in enumerate(graph.keys()):
         print(" ", repr(k))
@@ -336,25 +338,20 @@ def main():
             
             print("lookup:", repr(key))
 
-            n = graph.get(key)
+            graph_node = graph.get(key)
+            page_node = nodes.get(key)
 
             print("found :", n is not None)
             if n is not None:
                 print(json.dumps(n, indent=2))
 
             
-            if not isinstance(n, dict):
+            if not isinstance(page_node, dict):
                 continue
 
-            if not n.get("url"):
-                continue
+            related_nodes.append(page_node)
 
-            if not n.get("title"):
-                n["title"] = get_display_title(n)
 
-            related_nodes.append(n)
-
-            
             print("append:", n.get("url"))
             print("current length:", len(related_nodes))
             print("related_nodes length:", len(related_nodes))
