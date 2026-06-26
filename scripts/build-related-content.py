@@ -90,32 +90,102 @@ def normalize_url(url: str) -> str:
 
 def render_block(related_nodes):
 
-    if not related_nodes:
-        return """
-<section class="semantic-block related-paths">
-
-  <h3>Further paths to follow...</h3>
-
-  <div class="semantic-cloud">
-    <span class="semantic-chip muted">No related content available.</span>
-  </div>
-
-</section>
-""".strip()
-
-    links = "\n".join(
-        f'    <a class="semantic-chip" href="{n.get("url", "#")}">{get_display_title(n)}</a>'
-        for n in related_nodes
+    # =========================================================
+    # TIER 0: DIRECT RELATED (GRAPH LINKS)
+    # =========================================================
+    direct = [
+        n for n in related_nodes
         if isinstance(n, dict)
-    )
+        and n.get("url")
+    ][:6]
 
-    return f"""
+    if direct:
+
+        links = "\n".join(
+            f'    <a class="semantic-chip" href="{n["url"]}">{get_display_title(n)}</a>'
+            for n in direct
+        )
+
+        return f"""
 <section class="semantic-block related-paths">
 
   <h3>Further paths to follow...</h3>
 
   <div class="semantic-cloud">
 {links}
+  </div>
+
+</section>
+""".strip()
+
+    # =========================================================
+    # TIER 1: FALLBACK — CONCEPT-SHARED NODES
+    # (prevents dead-ends)
+    # =========================================================
+    fallback = []
+
+    try:
+        all_nodes = related_nodes[0].get("_graph_all_nodes") if related_nodes else None
+    except Exception:
+        all_nodes = None
+
+    # If we didn't pass full graph context, degrade gracefully
+    if not all_nodes:
+        return """
+<section class="semantic-block related-paths">
+
+  <h3>Further paths to follow...</h3>
+
+  <div class="semantic-cloud">
+    <span class="semantic-chip muted">No related content available yet — this page stands alone.</span>
+  </div>
+
+</section>
+""".strip()
+
+    seed_concepts = set()
+    for n in related_nodes:
+        if isinstance(n, dict):
+            seed_concepts |= set(n.get("concepts", []))
+
+    for n in all_nodes:
+        if not isinstance(n, dict):
+            continue
+
+        if set(n.get("concepts", [])) & seed_concepts:
+            fallback.append(n)
+
+    fallback = fallback[:6]
+
+    if fallback:
+
+        links = "\n".join(
+            f'    <a class="semantic-chip" href="{n.get("url", "#")}">{get_display_title(n)}</a>'
+            for n in fallback
+        )
+
+        return f"""
+<section class="semantic-block related-paths">
+
+  <h3>Further paths to follow...</h3>
+
+  <div class="semantic-cloud">
+{links}
+  </div>
+
+</section>
+""".strip()
+
+    # =========================================================
+    # TIER 2: PURE EMPTY STATE (rare)
+    # =========================================================
+    return """
+<section class="semantic-block related-paths">
+
+  <h3>Further paths to follow...</h3>
+
+  <div class="semantic-cloud">
+    <span class="semantic-chip muted">No related content available yet — this page stands alone.</span>
   </div>
 
 </section>
