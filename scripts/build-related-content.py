@@ -301,13 +301,13 @@ def main():
         if not isinstance(candidate_node, dict):
             continue
 
-    print("found :", True)
-    print(json.dumps(candidate_node, indent=2))
+        print("found :", True)
+        print(json.dumps(candidate_node, indent=2))
 
-    related_nodes_list.append(candidate_node)
+        related_nodes_list.append(candidate_node)
 
-    print("append:", candidate_node.get("url"))
-    print("current length:", len(related_nodes_list))
+        print("append:", candidate_node.get("url"))
+        print("current length:", len(related_nodes_list))
 
         
         html = path.read_text(
