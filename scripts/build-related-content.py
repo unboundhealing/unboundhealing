@@ -294,7 +294,7 @@ def main():
             errors="ignore"
         )
 
-        block = render_block_with_graph(related_nodes, graph)
+        block = render_block_with_graph(related_nodes, graph, url)
 
         new_html, replaced = replace_placeholder(html, block)
 
