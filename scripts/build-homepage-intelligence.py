@@ -23,86 +23,51 @@ def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
-# =========================================================
-# DISPLAY TITLE
-# =========================================================
-
-def get_display_title(node, url=None):
-    if not node:
-        return url.rstrip("/").split("/")[-1] if url else ""
-
-    title = node.get("title")
-
-    if isinstance(title, str) and title.strip():
-        return title.strip()
-
-    # fallback to URL if present
-    node_url = node.get("url") if isinstance(node, dict) else None
-
-    final_url = node_url or url or ""
-
-    return final_url.rstrip("/").split("/")[-1]
 
 # =========================================================
-# NORMALIZATION
+# URL NORMALIZATION (CRITICAL FIX)
+# MUST MATCH semantic-salience graph keys EXACTLY
 # =========================================================
 
-def normalize_url_local(url: str) -> str:
+def normalize_url(url: str) -> str:
     if not isinstance(url, str):
         return ""
 
     url = url.strip()
-
     if not url:
         return ""
 
     if not url.startswith("http"):
         return ""
 
-    # normalize trailing slash
+    # enforce trailing slash consistency
     if not url.endswith("/"):
-        url = url + "/"
+        url += "/"
 
     return url
 
 
-related_nodes = []
+# =========================================================
+# DISPLAY TITLE (OPTION A FIX)
+# ALWAYS PREFER METADATA TITLE
+# =========================================================
 
-for u in related_urls:
+def get_display_title(node, url=None):
+    if isinstance(node, dict):
+        title = node.get("title")
 
-    u = normalize_url_local(u)
-    n = graph.get(u)
+        if isinstance(title, str) and title.strip():
+            return title.strip()
 
-    if not isinstance(n, dict):
-        continue
+    # ONLY fallback if metadata missing
+    if url:
+        return url.rstrip("/").split("/")[-1]
 
-    if "url" not in n:
-        continue
-
-    if not n.get("title"):
-        n["title"] = get_display_title(n)
-
-    related_nodes.append(n)
-    
-
-def valid_url(url):
-    url = normalize_url(url)
-    if not url:
-        return False
-
-    tail = url.rstrip("/").split("/")[-1]
-
-    if tail.isdigit():
-        return False
-
-    if "assets" in url or "images" in url:
-        return False
-
-    return True
+    return ""
 
 
 # =========================================================
-# CONCEPT CLEANER
+# CLEAN CONCEPT
 # =========================================================
 
 def clean_concept(c):
@@ -110,26 +75,47 @@ def clean_concept(c):
         return None
 
     c = c.strip().lower()
+
     if not c:
         return None
 
-    if c in {"assets", "images"}:
+    if c.isdigit():
         return None
 
-    if c.isdigit():
+    if c in {"assets", "images"}:
         return None
 
     return c.replace("-", " ")
 
 
 # =========================================================
-# DEBUG
+# VALID URL CHECK
+# =========================================================
+
+def valid_url(url):
+    if not isinstance(url, str):
+        return False
+
+    if not url.startswith("http"):
+        return False
+
+    if "assets" in url or "images" in url:
+        return False
+
+    tail = url.rstrip("/").split("/")[-1]
+
+    if tail.isdigit():
+        return False
+
+    return True
+
+
+# =========================================================
+# DEBUG (UNCHANGED BUT SAFE)
 # =========================================================
 
 def debug(nodes, edges, data):
-
     print("\n===== HOMEPAGE DEBUG =====")
-
     pg = data.get("page_graph", {})
 
     print("PAGE_GRAPH SIZE:", len(pg))
@@ -142,17 +128,6 @@ def debug(nodes, edges, data):
     print("\nNODE COUNT:", len(nodes))
     print("EDGE COUNT:", len(edges))
 
-    if nodes:
-        first_key = next(iter(nodes))
-        print("\nFIRST NODE KEY:", first_key)
-        print(json.dumps(nodes[first_key], indent=2)[:1200])
-
-    print("\nFIRST 5 EDGES:")
-    for e in edges[:5]:
-        print(e)
-
-    print("\n===== END DEBUG =====\n")
-
 
 # =========================================================
 # CORE BUILDER
@@ -163,41 +138,35 @@ def build(nodes, edges, page_graph):
     concept_freq = defaultdict(int)
 
     # -------------------------
-    # concepts (truth layer metadata)
+    # concept frequency
     # -------------------------
-
     for n in nodes.values():
         concepts = n.get("concepts", [])
-        if not isinstance(concepts, list):
-            continue
-
-        for c in concepts:
-            c = clean_concept(c)
-            if c:
-                concept_freq[c] += 1
+        if isinstance(concepts, list):
+            for c in concepts:
+                c = clean_concept(c)
+                if c:
+                    concept_freq[c] += 1
 
     # -------------------------
-    # ARISINGS (PAGE_GRAPH = TRUTH SOURCE)
+    # ARISINGS (FIXED)
     # -------------------------
-
     arisings = []
 
     for url, meta in page_graph.items():
 
+        url = normalize_url(url)
         if not valid_url(url):
             continue
 
-        url = normalize_url(url)
-        if not url:
+        node = nodes.get(url)
+
+        if not isinstance(meta, dict):
             continue
 
         score = 0.0
-
-        if isinstance(meta, dict):
-            score += len(meta.get("related", [])) * 1.5
-            score += len(meta.get("concepts", [])) * 1.0
-
-        node = nodes.get(url)
+        score += len(meta.get("related", [])) * 1.5
+        score += len(meta.get("concepts", [])) * 1.0
 
         arisings.append({
             "url": url,
@@ -211,16 +180,13 @@ def build(nodes, edges, page_graph):
     # -------------------------
     # INSPIRATIONS
     # -------------------------
-
     inspirations = []
 
     for c, f in sorted(concept_freq.items(), key=lambda x: -x[1]):
-
         inspirations.append({
             "concept": c.title(),
             "frequency": f
         })
-
         if len(inspirations) == 3:
             break
 
@@ -241,6 +207,10 @@ def render(data):
     arisings = data.get("arising_observations", [])
     insp = data.get("essential_inspirations", [])
 
+    # -------------------------
+    # ARISING OBSERVATIONS
+    # (FIX: always use proper title or fallback)
+    # -------------------------
     if arisings:
         arisings_html = "\n".join(
             f'<a class="semantic-chip" href="{a["url"]}">{a["title"]}</a>'
@@ -249,6 +219,9 @@ def render(data):
     else:
         arisings_html = '<span class="semantic-chip muted">No observations</span>'
 
+    # -------------------------
+    # INSPIRATIONS
+    # -------------------------
     if insp:
         insp_html = "\n".join(
             f'<span class="semantic-chip">{i["concept"]}</span>'
@@ -294,6 +267,7 @@ def main():
 
     built = build(nodes, edges, page_graph)
 
+    # save structured output
     output = {
         "homepage_intelligence": built,
         "source": "semantic-salience",
@@ -303,15 +277,14 @@ def main():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
-    html_block = render(built)
-
+    # inject into homepage
     index = Path(ROOT) / "index.html"
 
     html = index.read_text(encoding="utf-8")
 
     html = html.replace(
         '<div id="homepage-intelligence"></div>',
-        html_block
+        render(built)
     )
 
     index.write_text(html, encoding="utf-8")
