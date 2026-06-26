@@ -88,6 +88,9 @@ def normalize_url(url: str) -> str:
     if not url.endswith("/"):
         url += "/"
 
+    # enforce canonical trailing slash rule
+    url = url.rstrip("/") + "/"
+    
     return url
 
 # =========================================================
@@ -96,24 +99,14 @@ def normalize_url(url: str) -> str:
 
 def render_block_with_graph(related_nodes, graph, current_url):
 
-    # =========================================================
-    # CURRENT PAGE CONTEXT (CRITICAL FIX)
-    # This anchors fallback logic properly
-    # =========================================================
-
     current_graph_node = graph.get(current_url)
 
     seed = set()
     if isinstance(current_graph_node, dict):
         seed |= set(current_graph_node.get("concepts", []))
 
-    # also include related node concepts (secondary signal)
-    for n in related_nodes:
-        if isinstance(n, dict):
-            seed |= set(n.get("concepts", []))
-
     # =========================================================
-    # TIER 0 — DIRECT RELATED (GRAPH LINKS)
+    # TIER 0 — DIRECT RELATED
     # =========================================================
 
     direct = [
@@ -141,7 +134,7 @@ def render_block_with_graph(related_nodes, graph, current_url):
 """.strip()
 
     # =========================================================
-    # TIER 1 — FALLBACK (CONCEPT OVERLAP WITH FULL GRAPH)
+    # TIER 1 — FALLBACK
     # =========================================================
 
     fallback = []
@@ -152,11 +145,14 @@ def render_block_with_graph(related_nodes, graph, current_url):
 
         node_concepts = set(n.get("concepts", []))
 
-        # overlap strength signal
         if node_concepts & seed:
             fallback.append(n)
 
-    fallback = fallback[:6]
+    fallback = sorted(
+        fallback,
+        key=lambda n: len(set(n.get("concepts", [])) & seed),
+        reverse=True
+    )[:6]
 
     if fallback:
 
@@ -178,32 +174,16 @@ def render_block_with_graph(related_nodes, graph, current_url):
 """.strip()
 
     # =========================================================
-    # TIER 2 — EMPTY STATE (TRUE DEAD END ONLY)
+    # TIER 2 — EMPTY STATE
     # =========================================================
 
-        return f"""
+    return """
 <section class="semantic-block related-paths">
 
   <h3>Further paths to follow...</h3>
 
   <div class="semantic-cloud">
     <span class="semantic-chip muted">No related content available yet — this page stands alone.</span>
-  </div>
-
-</section>
-""".strip()
-
-    # =========================================================
-    # TIER 2: PURE EMPTY STATE (rare)
-    # =========================================================
-        return f"""
-
-<section class="semantic-block related-paths">
-
-  <h3>Further paths to follow...</h3>
-
-  <div class="semantic-cloud">
-    <span class="semantic-chip muted">No related content available yet - this page stands alone.</span>
   </div>
 
 </section>
@@ -222,24 +202,22 @@ def replace_placeholder(html, block):
         if placeholder is None:
             return html, False
 
-        # -----------------------------
-        # FIX 2: SAFE NODE EXTRACTION
-        # -----------------------------
-
         replacement_soup = BeautifulSoup(block, "html.parser")
 
-        replacement_node = replacement_soup.select_one("section.semantic-block")
+        replacement_node = replacement_soup.find("section", class_="semantic-block")
 
-        
         if replacement_node is None:
             return html, False
 
-        placeholder.replace_with(replacement_node)
+        # safer re-serialization boundary
+        safe_node = BeautifulSoup(str(replacement_node), "html.parser")
+
+        placeholder.replace_with(safe_node)
 
         return str(soup), True
 
     except Exception as e:
-        print("⚠️ replacement error:", e)
+        print("⚠️ replacement error in placeholder injection:", e)
         return html, False
 
 
@@ -249,7 +227,6 @@ def replace_placeholder(html, block):
 
 def main():
     data = load_json()
-
 
     print("\n===== FIRST NODE =====")
     nodes = data["nodes"]
@@ -264,17 +241,14 @@ def main():
     elif isinstance(nodes, list):
         print(json.dumps(nodes[0], indent=2))
 
-    
     graph = data.get("page_graph", {})
-    nodes = data.get("page_nodes", {})
 
-    
     print("\n🧭 GRAPH KEY SAMPLE (first 20 keys):")
     for i, k in enumerate(graph.keys()):
         print(" ", repr(k))
         if i > 20:
             break
-    
+
     updated = 0
 
     html_files = [
@@ -287,43 +261,34 @@ def main():
         url = file_to_url(path)
         graph_key = normalize_url(url)
 
-        node = graph.get(graph_key)
+        page_node = graph.get(graph_key) or nodes.get(graph_key)
 
-        
         print("\n📄 FILE → URL DEBUG")
         print("path:", path)
-        print("file_to_url:", file_to_url(path))
-        print("normalized:", normalize_url(file_to_url(path)))
+        print("file_to_url:", url)
+        print("normalized:", graph_key)
 
-        
-        if node is None:
+        if page_node is None:
             print("\n==============================")
             print("MISSING NODE")
             print("url       :", repr(url))
             print("graph_key :", repr(graph_key))
 
             print("\nClosest graph keys:")
-
             for k in list(graph.keys())[:10]:
                 print(repr(k))
 
             print("==============================\n")
             continue
 
-        
-        related_urls = node.get("related", [])
+        related_urls = page_node.get("related", [])
 
-        
         print("\n----------------")
         print("CURRENT PAGE:", graph_key)
         print("RELATED URLS:", related_urls)
-        
-        
+
         related_nodes = []
 
-
-
-        
         for u in related_urls:
 
             if not isinstance(u, str):
@@ -335,29 +300,24 @@ def main():
 
             key = normalize_url(u)
 
- 
-            
             print("lookup:", repr(key))
 
-            node = graph.get(key) or nodes.get(key)
+            related_node = graph.get(key) or nodes.get(key)
 
-            print("found :", node is not None)
+            print("found :", related_node is not None)
 
-            if not isinstance(node, dict):
+            if not isinstance(related_node, dict):
                 continue
-    
+
             print("found :", True)
-            print(json.dumps(node, indent=2))
+            print(json.dumps(related_node, indent=2))
 
-            
-            related_nodes.append(node)
+            related_nodes.append(related_node)
 
-
-            print("append:", node.get("url"))
+            print("append:", related_node.get("url"))
             print("current length:", len(related_nodes))
             print("related_nodes length:", len(related_nodes))
-        
-        
+
         html = path.read_text(
             encoding="utf-8",
             errors="ignore"
@@ -371,7 +331,7 @@ def main():
         block = render_block_with_graph(
             related_nodes,
             graph,
-            current_url=url  # REQUIRED: ensures correct context binding
+            current_url=url
         )
 
         new_html, replaced = replace_placeholder(html, block)
