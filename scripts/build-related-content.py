@@ -181,6 +181,11 @@ def main():
         for u in related_urls:
 
             u = normalize_url_local(u)
+
+            # 🚫 HARD EXCLUSION RULE (assets/images/etc are NOT graph nodes)
+            if "/assets/" in u:
+                continue
+
             n = graph.get(u)
 
             if not isinstance(n, dict):
