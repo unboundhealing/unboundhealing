@@ -114,14 +114,14 @@ def replace_placeholder(html, block):
     try:
         soup = get_soup(html)
 
-        placeholder = soup.find("div", class_="related-content")
+        placeholder = soup.select_one("div.related-content")
 
         if placeholder is None:
             return html, False
 
-        replacement = get_soup(block)
+        replacement = BeautifulSoup(block, "html.parser").contents[0]
 
-        placeholder.replace_with(replacement)
+        placeholder.replace_with(replacement.contents[0])
 
         return str(soup), True
 
