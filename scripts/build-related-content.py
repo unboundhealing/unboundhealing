@@ -218,7 +218,6 @@ def main():
     nodes = data["nodes"]
     page_graph = data["page_graph"]
 
-
     # =====================================================
     # FILE DISCOVERY (MUST EXIST BEFORE LOOP)
     # =====================================================
@@ -227,7 +226,6 @@ def main():
         if "assets" not in p.parts
     ]
 
-    
     seen = set()
 
     for path in html_files:
@@ -241,43 +239,42 @@ def main():
 
         related = get_related(url, nodes, page_graph)
 
+        html = read_html(path)
 
-def read_html(path):
-    return path.read_text(encoding="utf-8", errors="ignore")
-        
-    html = read_html(path)
+        block = render_related(url, related)
 
+        html = inject(html, block)
 
-    block = render_related(url, related)
+        path.write_text(html)
 
-    html = inject(html, block)
+        print("CURRENT PAGE:", url)
+        print("RELATED COUNT:", len(related))
 
-    path.write_text(html)
+        if not related:
+            continue
 
-    print("CURRENT PAGE:", url)
-    print("RELATED COUNT:", len(related))
+        block = render_block(related)
 
-    if not related:
-        continue
+        if '<div id="related-content">' not in html:
+            continue
 
-    block = render_block(related)
+        new_html = html.replace(
+            '<div id="related-content"></div>',
+            block
+        )
 
-    if '<div id="related-content">' not in html:
-        continue
+        path.write_text(new_html, encoding="utf-8")
 
-    new_html = html.replace(
-        '<div id="related-content"></div>',
-        block
-    )
-
-    path.write_text(new_html, encoding="utf-8")
-
-    updated += 1
-    print("🔗 injected:", url)
+        updated += 1
+        print("🔗 injected:", url)
 
     print("\n========================")
     print("RELATED CONTENT COMPLETE")
     print("PAGES UPDATED:", updated)
+
+
+def read_html(path):
+    return path.read_text(encoding="utf-8", errors="ignore")
 
 
 if __name__ == "__main__":
