@@ -164,12 +164,13 @@ def extract_page_metadata(full_path):
         # TITLE
         # -----------------------------
         title_tag = soup.find("title")
-        title = title_tag.get_text(strip=True) if title_tag else ""
+        title = title_tag.text.strip() if title_tag and title_tag.text else ""
 
         # -----------------------------
         # DESCRIPTION
         # -----------------------------
-        desc = ""
+        description_tag = soup.find("meta", attrs={"name": "description"})
+        description = description_tag["content"].strip() if description_tag and description_tag.get("content") else ""
 
         meta = soup.find("meta", attrs={"name": "description"})
         if meta and meta.get("content"):
