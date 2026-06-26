@@ -4,7 +4,6 @@ import os
 import json
 from pathlib import Path
 from collections import defaultdict
-from semantic_salience import get_display_title
 
 # =========================================================
 # PATHS
@@ -23,6 +22,22 @@ OUTPUT_FILE = os.path.join(ROOT, "homepage-intelligence.json")
 def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
+
+# =========================================================
+# DISPLAY TITLE
+# =========================================================
+
+def get_display_title(node):
+    if not node:
+        return ""
+
+    title = node.get("title")
+
+    if isinstance(title, str) and title.strip():
+        return title.strip()
+
+    url = node.get("url", "")
+    return url.rstrip("/").split("/")[-1]
 
 
 # =========================================================
@@ -58,27 +73,6 @@ def valid_url(url):
         return False
 
     return True
-
-
-# =========================================================
-# TITLE SYSTEM (TRUE NODE-FIRST RESOLUTION)
-# =========================================================
-
-def clean_title(t):
-    """
-    Minimal sanitization ONLY:
-    - remove ellipsis artifacts
-    - preserve punctuation, hyphens, casing
-    """
-    if not isinstance(t, str):
-        return ""
-
-    t = t.strip()
-
-    # remove rendering artifacts only
-    t = t.replace("...", "").replace("…", "")
-
-    return t.strip()
 
 
 # =========================================================
