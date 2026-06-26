@@ -13,6 +13,13 @@ SAL_FILE = ROOT / "semantic-salience.json"
 
 
 # =========================================================
+# CACHE (GLOBAL STATE)
+# =========================================================
+
+CACHE = {}
+
+
+# =========================================================
 # LOAD
 # =========================================================
 
@@ -100,42 +107,60 @@ def score_node(candidate, seed):
         connectivity * 1.5 +
         richness * 0.5
     )
-    
+
+
 # =========================================================
 # RELATED CONTENT BUILDER
 # =========================================================
 
-def build_related_for_page(url, nodes, graph):
-    current = resolve_node(url, nodes, graph)
+def get_related(url, nodes, page_graph):
 
-    if not current:
+    if url in CACHE:
+        return CACHE[url]
+
+    node = nodes.get(url)
+    if not node:
         return []
 
-    seed = set(current.get("concepts", []))
+    seed = set(node.get("concepts", []))
 
-    candidates = []
+    candidates = set()
 
-    # direct related
-    for u in current.get("related", []):
-        n = resolve_node(u, nodes, graph)
-        if n:
-            candidates.append(n)
+    meta = page_graph.get(url, {})
+    for r in meta.get("related", []):
+        candidates.add(r)
 
-    # fallback scan
-    if not candidates:
-        for u in graph.keys():
-            n = resolve_node(u, nodes, graph)
-            if n:
-                candidates.append(n)
+    for concept in seed:
+        for u, n in nodes.items():
+            if concept in n.get("concepts", []):
+                candidates.add(u)
 
-    scored = [
-        (score_node(n, seed), url)
-        for n in candidates
-    ]
+    scored = []
 
-    scored.sort(key=lambda x: -x[0])
+    for c in candidates:
+        n = nodes.get(c)
+        if not n:
+            continue
 
-    return [n for _, n in scored[:6]]
+        concepts = set(n.get("concepts", []))
+
+        overlap = len(seed & concepts)
+        graph_bonus = len(page_graph.get(c, {}).get("related", []))
+
+        score = (
+            overlap * 3.0 +
+            graph_bonus * 1.5
+        )
+
+        scored.append((score, c))
+
+    scored.sort(reverse=True)
+
+    result = [c for _, c in scored[:6]]
+
+    CACHE[url] = result
+
+    return result
 
 
 # =========================================================
@@ -187,40 +212,43 @@ def resolve_file_url(path, graph, nodes):
 # =========================================================
 
 def main():
+
     data = load_json(SAL_FILE)
 
-    nodes = data.get("nodes", {})
-    graph = data.get("page_graph", {})
+    nodes = data["nodes"]
+    page_graph = data["page_graph"]
 
-    html_files = [
-        p for p in ROOT.rglob("*.html")
-        if "assets" not in p.parts
-    ]
-
-    updated = 0
+    seen = set()
 
     for path in html_files:
 
-        html = path.read_text(encoding="utf-8", errors="ignore")
+        url = resolve_file_url(path, nodes, page_graph)
 
-        # derive URL properly (no guessing)
-        url = resolve_file_url(path, graph, nodes)
-
-        if not url:
+        if not url or url in seen:
             continue
 
-        related = build_related_for_page(url, nodes, graph)
+        seen.add(url)
 
-        print("\nCURRENT PAGE:", url)
+        related = get_related(url, nodes, page_graph)
+
+        html = path.read_text(...)
+
+        block = render_related(url, related)
+
+        html = inject(html, block)
+
+        path.write_text(html)
+
+        print("CURRENT PAGE:", url)
         print("RELATED COUNT:", len(related))
 
         if not related:
             continue
 
+        block = render_block(related)
+
         if '<div id="related-content">' not in html:
             continue
-
-        block = render_block(related)
 
         new_html = html.replace(
             '<div id="related-content"></div>',
