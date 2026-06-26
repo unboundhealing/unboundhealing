@@ -243,8 +243,6 @@ def main():
 
         block = render_block(related)
 
-        html = inject(html, block)
-
         path.write_text(html)
 
         print("CURRENT PAGE:", url)
