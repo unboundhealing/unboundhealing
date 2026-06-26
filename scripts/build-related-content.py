@@ -261,25 +261,17 @@ def main():
         url = file_to_url(path)
         graph_key = normalize_url(url)
 
-        page_node = graph.get(graph_key) or nodes.get(graph_key)
 
-        print("\n📄 FILE → URL DEBUG")
-        print("path:", path)
-        print("file_to_url:", url)
-        print("normalized:", graph_key)
+        
+        page_node = graph.get(graph_key) or nodes.get(graph_key)
 
         if page_node is None:
             print("\n==============================")
             print("MISSING NODE")
             print("url       :", repr(url))
             print("graph_key :", repr(graph_key))
-
-            print("\nClosest graph keys:")
-            for k in list(graph.keys())[:10]:
-                print(repr(k))
-
-            print("==============================\n")
             continue
+
 
         related_urls = page_node.get("related", [])
 
@@ -287,37 +279,37 @@ def main():
         print("CURRENT PAGE:", graph_key)
         print("RELATED URLS:", related_urls)
 
-        related_nodes = []
+        related_nodes_list = []
 
-        for u in related_urls:
+    for u in related_urls:
 
-            if not isinstance(u, str):
-                continue
+        if not isinstance(u, str):
+            continue
 
-            u = u.strip()
-            if not u:
-                continue
+        u = u.strip()
+        if not u:
+            continue
 
-            key = normalize_url(u)
+        key = normalize_url(u)
 
-            print("lookup:", repr(key))
+        print("lookup:", repr(key))
 
-            related_node = graph.get(key) or nodes.get(key)
+        candidate_node = graph.get(key) or nodes.get(key)
 
-            print("found :", related_node is not None)
+        print("found :", candidate_node is not None)
 
-            if not isinstance(related_node, dict):
-                continue
+        if not isinstance(candidate_node, dict):
+            continue
 
-            print("found :", True)
-            print(json.dumps(related_node, indent=2))
+    print("found :", True)
+    print(json.dumps(candidate_node, indent=2))
 
-            related_nodes.append(related_node)
+    related_nodes_list.append(candidate_node)
 
-            print("append:", related_node.get("url"))
-            print("current length:", len(related_nodes))
-            print("related_nodes length:", len(related_nodes))
+    print("append:", candidate_node.get("url"))
+    print("current length:", len(related_nodes_list))
 
+        
         html = path.read_text(
             encoding="utf-8",
             errors="ignore"
