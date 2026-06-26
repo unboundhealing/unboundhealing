@@ -203,13 +203,13 @@ def main():
         html = path.read_text(encoding="utf-8", errors="ignore")
 
 
-def resolve_file_url(path, graph, nodes):
-    # derive ALL truth from existing system
-    for url in graph.keys():
-        if path.as_posix().replace("index.html", "").endswith(url.replace("https://unboundhealing.org/", "")):
-            return url
+    def resolve_file_url(path, graph, nodes):
+        # derive ALL truth from existing system
+        for url in graph.keys():
+            if path.as_posix().replace("index.html", "").endswith(url.replace("https://unboundhealing.org/", "")):
+                return url
 
-    return None
+        return None
         
         
         related = build_related_for_page(url, nodes, graph)
