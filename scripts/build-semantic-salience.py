@@ -162,10 +162,30 @@ def extract_page_metadata(full_path):
 
         # -----------------------------
         # TITLE
+        # Prefer <h1>, then <title>
         # -----------------------------
-        title_tag = soup.find("title")
-        title = title_tag.text.strip() if title_tag and title_tag.text else ""
+        title = ""
 
+        h1 = soup.find("h1")
+        if h1:
+            title = h1.get_text(" ", strip=True)
+
+            # remove decorative parentheses used in rendered titles
+            title = re.sub(r"^\(+|\)+$", "", title).strip()
+
+        if not title:
+            title_tag = soup.find("title")
+            if title_tag and title_tag.text:
+                title = title_tag.text.strip()
+
+                # remove site suffix
+                title = re.sub(
+                    r"\s*\|\s*Unbound Healing Ministries\s*$",
+                    "",
+                    title,
+                    flags=re.I,
+                ).strip()
+    
         # -----------------------------
         # DESCRIPTION
         # -----------------------------
