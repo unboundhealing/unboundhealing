@@ -245,7 +245,7 @@ def main():
 def read_html(path):
     return path.read_text(encoding="utf-8", errors="ignore")
         
-        html = read_html(path)
+    html = read_html(path)
 
 
         block = render_related(url, related)
