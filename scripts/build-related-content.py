@@ -77,18 +77,14 @@ def normalize_url(url: str) -> str:
     if not url:
         return ""
 
-    # remove domain if present
-    if url.startswith("http"):
-        url = urlparse(url).path
+    # Relative URL → make canonical
+    if not url.startswith("http"):
+        url = "https://unboundhealing.org/" + url.lstrip("/")
 
-    # ensure leading slash
-    if not url.startswith("/"):
-        url = "/" + url
+    # Collapse duplicate slashes (not after https:)
+    url = re.sub(r"(?<!:)//+", "/", url)
 
-    # collapse duplicate slashes
-    url = re.sub(r"/+", "/", url)
-
-    # enforce trailing slash
+    # Trailing slash
     if not url.endswith("/"):
         url += "/"
 
