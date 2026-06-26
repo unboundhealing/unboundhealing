@@ -66,6 +66,22 @@ def file_to_url(path: Path) -> str:
 
     return "https://unboundhealing.org/"
 
+def normalize_url(url: str) -> str:
+    if not isinstance(url, str):
+        return ""
+
+    url = url.strip()
+
+    if not url.startswith("http"):
+        return ""
+
+    # collapse accidental duplicate slashes
+    url = re.sub(r"([^:])/+", r"\1/", url)
+
+    # enforce trailing slash consistency
+    url = url.rstrip("/")
+    return url + "/"
+
 
 # =========================================================
 # RELATED BLOCK RENDERER
