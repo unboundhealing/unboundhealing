@@ -27,18 +27,21 @@ def load_json(path):
 # DISPLAY TITLE
 # =========================================================
 
-def get_display_title(node):
+def get_display_title(node, url=None):
     if not node:
-        return ""
+        return url.rstrip("/").split("/")[-1] if url else ""
 
     title = node.get("title")
 
     if isinstance(title, str) and title.strip():
         return title.strip()
 
-    url = node.get("url", "")
-    return url.rstrip("/").split("/")[-1]
+    # fallback to URL if present
+    node_url = node.get("url") if isinstance(node, dict) else None
 
+    final_url = node_url or url or ""
+
+    return final_url.rstrip("/").split("/")[-1]
 
 # =========================================================
 # NORMALIZATION
@@ -175,7 +178,7 @@ def build(nodes, edges, page_graph):
 
         arisings.append({
             "url": url,
-            "title": get_display_title(node),
+            "title": get_display_title(node, url),
             "score": score
         })
 
