@@ -196,7 +196,7 @@ def render_block_with_graph(related_nodes, graph, current_url):
     # =========================================================
     # TIER 2: PURE EMPTY STATE (rare)
     # =========================================================
-    return """
+
 <section class="semantic-block related-paths">
 
   <h3>Further paths to follow...</h3>
@@ -228,8 +228,9 @@ def replace_placeholder(html, block):
 
         replacement_soup = BeautifulSoup(block, "html.parser")
 
-        replacement_node = replacement_soup.find()
+        replacement_node = replacement_soup.select_one("section.semantic-block")
 
+        
         if replacement_node is None:
             return html, False
 
@@ -338,24 +339,21 @@ def main():
             
             print("lookup:", repr(key))
 
-            graph_node = graph.get(key)
-            page_node = nodes.get(key)
+            node = graph.get(key) or nodes.get(key)
 
-            print("found :", page_node is not None)
-            if not isinstance(page_node, dict):
+            print("found :", node is not None)
+
+            if not isinstance(node, dict):
                 continue
-
+    
             print("found :", True)
-            print(json.dumps(page_node, indent=2))
+            print(json.dumps(node, indent=2))
 
             
-            if not isinstance(page_node, dict):
-                continue
-
-            related_nodes.append(page_node)
+            related_nodes.append(node)
 
 
-            print("append:", page_node.get("url"))
+            print("append:", node.get("url"))
             print("current length:", len(related_nodes))
             print("related_nodes length:", len(related_nodes))
         
