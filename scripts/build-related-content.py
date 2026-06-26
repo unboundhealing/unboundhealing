@@ -276,17 +276,39 @@ def main():
 
         for u in related_urls:
 
+
+
+
+            
             if not isinstance(u, str):
                 continue
 
             u = u.strip()
 
-            if not u or "/assets/" in u:
+            if not u:
                 continue
 
-            normalized = normalize_url(u)
-            n = graph.get(normalized)
+            # normalize early
+            u = normalize_url(u)
 
+            # handle root explicitly
+            if u == "/":
+                key = "/"
+            else:
+                # ensure leading slash consistency
+                if not u.startswith("/"):
+                    u = "/" + u
+
+                key = u
+
+            # final safety cleanup
+            key = key.rstrip("/") + "/"
+
+            n = graph.get(key)
+
+
+
+            
             if not isinstance(n, dict):
                 continue
 
