@@ -254,6 +254,12 @@ def main():
     data = load_json()
     graph = data.get("page_graph", {})
 
+    print("\n🧭 GRAPH KEY SAMPLE (first 20 keys):")
+    for i, k in enumerate(graph.keys()):
+        print(" ", repr(k))
+        if i > 20:
+            break
+    
     updated = 0
 
     html_files = [
@@ -268,26 +274,34 @@ def main():
 
         node = graph.get(graph_key)
 
+        
+        print("\n📄 FILE → URL DEBUG")
+        print("path:", path)
+        print("file_to_url:", file_to_url(path))
+        print("normalized:", normalize_url(file_to_url(path)))
+
+        
         if node is None:
-            print("❌ missing graph node:", url)
+            print("\n==============================")
+            print("MISSING NODE")
+            print("url       :", repr(url))
+            print("graph_key :", repr(graph_key))
+
+            print("\nClosest graph keys:")
+
+            for k in list(graph.keys())[:10]:
+                print(repr(k))
+
+            print("==============================\n")
             continue
 
+        
         related_urls = node.get("related", [])
         related_nodes = []
 
-        for u in related_urls:
 
 
-
-            
-            if not isinstance(u, str):
-                continue
-
-            u = u.strip()
-
-            if not u:
-                continue
-
+        
         for u in related_urls:
 
             if not isinstance(u, str):
