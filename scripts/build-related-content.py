@@ -173,6 +173,7 @@ def main():
     for path in html_files:
 
         url = file_to_url(path)
+        url = normalize_url(url)
 
         node = graph.get(url)
 
@@ -185,18 +186,21 @@ def main():
 
         for u in related_urls:
 
-            u = normalize_url_local(u)
+            if not isinstance(u, str):
+                continue
 
-            # =========================================================
-            # HARD CONSUMER FILTER (OPTION 2 FIX)
-            # =========================================================
+            u = u.strip()
+
             if not u or "/assets/" in u:
                 continue
 
-            # IMPORTANT: DO NOT re-normalize against different system
-            n = graph.get(u)
+            normalized = normalize_url(u)
+            n = graph.get(normalized)
 
             if not isinstance(n, dict):
+                continue
+
+            if not n.get("url"):
                 continue
 
             if not n.get("title"):
