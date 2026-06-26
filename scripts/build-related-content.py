@@ -241,7 +241,7 @@ def main():
 
         html = read_html(path)
 
-        block = render_related(url, related)
+        block = render_block(url, related)
 
         html = inject(html, block)
 
