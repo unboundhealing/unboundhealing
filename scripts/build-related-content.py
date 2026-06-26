@@ -86,11 +86,6 @@ def resolve_node(url, nodes, graph):
 # =========================================================
 
 def score_node(candidate, seed):
-    """
-    Fully ephemeral scoring layer.
-    Does NOT modify truth layer.
-    """
-
     if not candidate:
         return 0
 
@@ -110,11 +105,8 @@ def score_node(candidate, seed):
 # =========================================================
 
 def build_related_for_page(url, nodes, graph):
-    """
-    Resolve → score → return sorted candidates
-    """
-
     current = resolve_node(url, nodes, graph)
+
     if not current:
         return []
 
@@ -122,28 +114,18 @@ def build_related_for_page(url, nodes, graph):
 
     candidates = []
 
-    # -----------------------------------------------------
-    # expand via page_graph relationships
-    # -----------------------------------------------------
-
+    # direct related
     for u in current.get("related", []):
         n = resolve_node(u, nodes, graph)
         if n:
             candidates.append(n)
 
-    # -----------------------------------------------------
-    # fallback enrichment (graph-wide scan)
-    # -----------------------------------------------------
-
+    # fallback scan
     if not candidates:
         for u in graph.keys():
             n = resolve_node(u, nodes, graph)
             if n:
                 candidates.append(n)
-
-    # -----------------------------------------------------
-    # scoring
-    # -----------------------------------------------------
 
     scored = [
         (score_node(n, seed), n)
@@ -182,6 +164,24 @@ def render_block(nodes):
 
 
 # =========================================================
+# FILE URL RESOLUTION (OPTIONAL UTILITY)
+# =========================================================
+
+def resolve_file_url(path, graph, nodes):
+    """
+    OPTIONAL helper (NOT nested, NOT inside main).
+    """
+
+    for url in graph.keys():
+        if path.as_posix().replace("index.html", "").endswith(
+            url.replace("https://unboundhealing.org/", "")
+        ):
+            return url
+
+    return None
+
+
+# =========================================================
 # MAIN
 # =========================================================
 
@@ -202,28 +202,24 @@ def main():
 
         html = path.read_text(encoding="utf-8", errors="ignore")
 
+        # derive URL properly (no guessing)
+        url = resolve_file_url(path, graph, nodes)
 
-def resolve_file_url(path, graph, nodes):
-    # derive ALL truth from existing system
-    for url in graph.keys():
-        if path.as_posix().replace("index.html", "").endswith(url.replace("https://unboundhealing.org/", "")):
-            return url
+        if not url:
+            continue
 
-        return None
-        
-        
-    related = build_related_for_page(url, nodes, graph)
+        related = build_related_for_page(url, nodes, graph)
 
-    print("\nCURRENT PAGE:", url)
-    print("RELATED COUNT:", len(related))
+        print("\nCURRENT PAGE:", url)
+        print("RELATED COUNT:", len(related))
 
         if not related:
             continue
 
-    block = render_block(related)
-
-        if "<div id=\"related-content\">" not in html:
+        if '<div id="related-content">' not in html:
             continue
+
+        block = render_block(related)
 
         new_html = html.replace(
             '<div id="related-content"></div>',
