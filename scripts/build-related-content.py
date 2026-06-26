@@ -324,7 +324,7 @@ def main():
 
             print("found :", n is not None)
             if n is not None:
-                print("node keys:", list(n.keys()))
+                print(json.dumps(n, indent=2))
 
             
             if not isinstance(n, dict):
