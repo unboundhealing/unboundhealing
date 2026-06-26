@@ -4,6 +4,7 @@ import os
 import json
 from pathlib import Path
 from collections import defaultdict
+from semantic_salience import get_display_title
 
 # =========================================================
 # PATHS
@@ -78,28 +79,6 @@ def clean_title(t):
     t = t.replace("...", "").replace("…", "")
 
     return t.strip()
-
-
-def title_from_node(url, nodes):
-    """
-    TRUTH PRIORITY:
-    1. node.title (authoritative)
-    2. node.h1 (if exists)
-    3. fallback: URL slug (last resort only)
-    """
-
-    node = nodes.get(url)
-
-    if isinstance(node, dict):
-
-        for key in ("title", "h1", "label"):
-            val = node.get(key)
-            if isinstance(val, str) and val.strip():
-                return clean_title(val)
-
-    # fallback ONLY if node has no title data
-    slug = url.rstrip("/").split("/")[-1]
-    return clean_title(slug)
 
 
 # =========================================================
@@ -198,9 +177,11 @@ def build(nodes, edges, page_graph):
             score += len(meta.get("related", [])) * 1.5
             score += len(meta.get("concepts", [])) * 1.0
 
+        node = nodes.get(url)
+
         arisings.append({
             "url": url,
-            "title": title_from_node(url, nodes),
+            "title": get_display_title(node),
             "score": score
         })
 
