@@ -89,8 +89,9 @@ def render_block(related_nodes):
 """.strip()
 
     links = "\n".join(
-        f'    <a class="semantic-chip" href="{n["url"]}">{get_display_title(n)}</a>'
-        for n in related_nodes[:3]
+        f'    <a class="semantic-chip" href="{n.get("url", "#")}">{get_display_title(n)}</a>'
+        for n in related_nodes
+        if isinstance(n, dict)
     )
 
     return f"""
@@ -159,11 +160,10 @@ def main():
         related_urls = node.get("related", [])
 
         related_nodes = [
-            graph.get(u)
-            for u in related_urls
-            if graph.get(u) is not None
+            n for u in related_urls
+            if (n := graph.get(u)) and isinstance(n, dict) and "url" in n
         ]
-
+        
         html = path.read_text(
             encoding="utf-8",
             errors="ignore"
