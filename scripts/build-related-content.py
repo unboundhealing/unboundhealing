@@ -101,11 +101,11 @@ def render_block_with_graph(related_nodes, graph, current_url):
     # This anchors fallback logic properly
     # =========================================================
 
-    current_node = graph.get(current_url)
+    current_graph_node = graph.get(current_url)
 
     seed = set()
-    if isinstance(current_node, dict):
-        seed |= set(current_node.get("concepts", []))
+    if isinstance(current_graph_node, dict):
+        seed |= set(current_graph_node.get("concepts", []))
 
     # also include related node concepts (secondary signal)
     for n in related_nodes:
@@ -341,9 +341,12 @@ def main():
             graph_node = graph.get(key)
             page_node = nodes.get(key)
 
-            print("found :", n is not None)
-            if n is not None:
-                print(json.dumps(n, indent=2))
+            print("found :", page_node is not None)
+            if not isinstance(page_node, dict):
+                continue
+
+            print("found :", True)
+            print(json.dumps(page_node, indent=2))
 
             
             if not isinstance(page_node, dict):
