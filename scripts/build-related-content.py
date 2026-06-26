@@ -248,6 +248,22 @@ def replace_placeholder(html, block):
 
 def main():
     data = load_json()
+
+
+    print("\n===== FIRST NODE =====")
+    nodes = data["nodes"]
+
+    print(type(nodes))
+
+    if isinstance(nodes, dict):
+        first_key = next(iter(nodes))
+        print("key:", first_key)
+        print(json.dumps(nodes[first_key], indent=2))
+
+    elif isinstance(nodes, list):
+        print(json.dumps(nodes[0], indent=2))
+
+    
     graph = data.get("page_graph", {})
 
     print("\n🧭 GRAPH KEY SAMPLE (first 20 keys):")
