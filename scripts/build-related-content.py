@@ -169,6 +169,23 @@ def main():
             if (n := graph.get(u)) and isinstance(n, dict) and "url" in n
         ]
 
+        related_nodes = []
+
+        for u in related_urls:
+            n = graph.get(u)
+
+            if not isinstance(n, dict):
+                continue
+
+            if "url" not in n:
+                continue
+
+            # enforce title fallback at source (prevents slug fallback later)
+            if not n.get("title"):
+                n["title"] = get_display_title(n)
+
+            related_nodes.append(n)
+
         html = path.read_text(
             encoding="utf-8",
             errors="ignore"
