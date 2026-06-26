@@ -221,7 +221,9 @@ def resolve_file_url(path, graph, nodes):
 # =========================================================
 
 def main():
-
+    
+    updated = 0
+    
     data = load_json(SAL_FILE)
 
     nodes = data["nodes"]
