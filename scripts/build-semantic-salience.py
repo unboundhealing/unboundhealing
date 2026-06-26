@@ -133,9 +133,6 @@ def extract_concepts(path: str):
 # =========================================================
 
 def build_url(path: str) -> str:
-    """
-    Canonical URL builder.
-    """
 
     path = path.replace("\\", "/")
 
@@ -145,6 +142,22 @@ def build_url(path: str) -> str:
         path = path[:-5]
 
     return urljoin(DOMAIN, path.lstrip("/"))
+
+def canonicalize_url(url: str) -> str:
+    if not isinstance(url, str):
+        return ""
+
+    url = url.strip()
+
+    if not url.startswith("http"):
+        return ""
+
+    # collapse accidental duplicate slashes (except protocol)
+    url = re.sub(r"([^:])/+", r"\1/", url)
+
+    # remove trailing slash, re-add single consistent one
+    url = url.rstrip("/")
+    return url + "/"
 
 
 # =========================================================
@@ -227,7 +240,8 @@ def build_registry(root, html_files):
 
         full_path = os.path.join(root, path)
 
-        url = build_url(path)
+        url = canonicalize_url(build_url(path))
+
         concepts = extract_concepts(path)
 
         metadata = extract_page_metadata(full_path)
