@@ -192,17 +192,6 @@ def build_registry(root, html_files):
             "word_count": metadata.get("word_count", 0),
             "concepts": concepts
         }
-            
-            # ✅ CANONICAL HUMAN TITLE (NEW PRIMARY FIX)
-            "title": metadata.get("title", "").strip(),
-
-            # optional but useful fallback surface field
-            "description": metadata.get("description", ""),
-
-            **metadata,  # keeps flexibility if you add more later
-
-            "concepts": concepts
-        }
 
     return registry
 
