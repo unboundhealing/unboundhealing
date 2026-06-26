@@ -258,12 +258,12 @@ def read_html(path):
     print("RELATED COUNT:", len(related))
 
     if not related:
-        continue
+    continue
 
     block = render_block(related)
 
     if '<div id="related-content">' not in html:
-        continue
+    continue
 
     new_html = html.replace(
         '<div id="related-content"></div>',
