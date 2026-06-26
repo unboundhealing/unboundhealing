@@ -151,7 +151,7 @@ def build_related_for_page(url, nodes, graph):
                 candidates.append(n)
 
     scored = [
-        (score_node(n, seed), n)
+        (score_node(n, seed), url)
         for n in candidates
     ]
 
