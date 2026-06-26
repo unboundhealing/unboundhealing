@@ -153,19 +153,47 @@ def build_url(path: str) -> str:
 
 def extract_page_metadata(full_path):
     """
-    Read a page and return observable metadata.
-
-    Version 1:
-      - title
-      - description
-      - word_count
+    Extract real HTML metadata for truth-aligned rendering.
     """
 
-    return {
-        "title": "",
-        "description": "",
-        "word_count": 0
-    }
+    try:
+        with open(full_path, "r", encoding="utf-8", errors="ignore") as f:
+            soup = BeautifulSoup(f.read(), "html.parser")
+
+        # -----------------------------
+        # TITLE
+        # -----------------------------
+        title_tag = soup.find("title")
+        title = title_tag.get_text(strip=True) if title_tag else ""
+
+        # -----------------------------
+        # DESCRIPTION
+        # -----------------------------
+        desc = ""
+
+        meta = soup.find("meta", attrs={"name": "description"})
+        if meta and meta.get("content"):
+            desc = meta.get("content", "").strip()
+
+        # -----------------------------
+        # WORD COUNT (light heuristic)
+        # -----------------------------
+        text = soup.get_text(" ", strip=True)
+        word_count = len(text.split())
+
+        return {
+            "title": title,
+            "description": desc,
+            "word_count": word_count
+        }
+
+    except Exception as e:
+        print("⚠️ metadata extraction failed:", e)
+        return {
+            "title": "",
+            "description": "",
+            "word_count": 0
+        }
 
 
 # =========================================================
