@@ -85,44 +85,30 @@ def resolve_node(url, nodes, graph):
 # SCORING (PURE CONSUMER LOGIC)
 # =========================================================
 
-def score_node(candidate, seed, url=None):
+def score_node(candidate, seed, url, nodes, page_graph):
+
     if not candidate:
         return 0
 
-    # =========================================================
-    # 1. CONCEPT OVERLAP (semantic similarity core)
-    # =========================================================
     concepts = set(candidate.get("concepts", []))
+
     overlap = len(concepts & seed)
 
-    # =========================================================
-    # 2. CONNECTIVITY (graph centrality signal)
-    # how many pages this node is connected to
-    # =========================================================
     connectivity = len(candidate.get("related", []))
 
-    # =========================================================
-    # 3. CONCEPT RICHNESS (semantic density bias)
-    # prevents flat nodes from winning equally
-    # =========================================================
-    concept_richness = len(candidate.get("concepts", []))
+    # local structural alignment (important!)
+    same_prefix = candidate["url"].split("/")[3:5] == url.split("/")[3:5]
 
-    # =========================================================
-    # 4. PAGE IDENTITY BONUS (anti-collapse guard)
-    # ensures self / same-page relevance is properly prioritized
-    # =========================================================
-    page_bonus = 1.0 if url and candidate.get("url") == url else 0.0
+    url_bonus = 2.0 if same_prefix else 0.0
 
-    # =========================================================
-    # FINAL SCORE COMPOSITION
-    # =========================================================
+    richness = len(concepts)
+
     return (
         overlap * 3.0 +
         connectivity * 1.5 +
-        concept_richness * 0.5 +
-        page_bonus * 10.0
+        richness * 0.5 +
+        url_bonus
     )
-
 # =========================================================
 # RELATED CONTENT BUILDER
 # =========================================================
