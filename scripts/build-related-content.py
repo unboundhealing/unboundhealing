@@ -271,10 +271,10 @@ def main():
         node = graph.get(graph_key)
 
         
-        print("\n📄 FILE → URL DEBUG")
-        print("path:", path)
-        print("file_to_url:", file_to_url(path))
-        print("normalized:", normalize_url(file_to_url(path)))
+            print("\n📄 FILE → URL DEBUG")
+            print("path:", path)
+            print("file_to_url:", file_to_url(path))
+            print("normalized:", normalize_url(file_to_url(path)))
 
         
         if node is None:
@@ -295,9 +295,9 @@ def main():
         related_urls = node.get("related", [])
 
         
-        print("\n----------------")
-        print("CURRENT PAGE:", graph_key)
-        print("RELATED URLS:", related_urls)
+print("\n----------------")
+print("CURRENT PAGE:", graph_key)
+print("RELATED URLS:", related_urls)
         
         
         related_nodes = []
@@ -339,9 +339,9 @@ def main():
             related_nodes.append(n)
 
             
-            print("append:", n.get("url"))
-            print("current length:", len(related_nodes))
-            print("related_nodes length:", len(related_nodes))
+print("append:", n.get("url"))
+print("current length:", len(related_nodes))
+print("related_nodes length:", len(related_nodes))
         
         
         html = path.read_text(
