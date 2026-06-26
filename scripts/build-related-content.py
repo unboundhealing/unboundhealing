@@ -77,17 +77,18 @@ def normalize_url(url: str) -> str:
     if not url:
         return ""
 
-    # handle absolute URLs
+    # remove domain if present
     if url.startswith("http"):
-        path = urlparse(url).path
-        if not path.endswith("/"):
-            path += "/"
-        return path
+        url = urlparse(url).path
 
-    # handle relative paths
+    # ensure leading slash
     if not url.startswith("/"):
         url = "/" + url
 
+    # collapse duplicate slashes
+    url = re.sub(r"/+", "/", url)
+
+    # enforce trailing slash
     if not url.endswith("/"):
         url += "/"
 
@@ -263,9 +264,9 @@ def main():
     for path in html_files:
 
         url = file_to_url(path)
-        url = normalize_url(url)
+        graph_key = normalize_url(url)
 
-        node = graph.get(url)
+        node = graph.get(graph_key)
 
         if node is None:
             print("❌ missing graph node:", url)
@@ -278,7 +279,6 @@ def main():
 
 
 
-
             
             if not isinstance(u, str):
                 continue
@@ -288,21 +288,16 @@ def main():
             if not u:
                 continue
 
-            # normalize early
-            u = normalize_url(u)
+        for u in related_urls:
 
-            # handle root explicitly
-            if u == "/":
-                key = "/"
-            else:
-                # ensure leading slash consistency
-                if not u.startswith("/"):
-                    u = "/" + u
+            if not isinstance(u, str):
+                continue
 
-                key = u
+            u = u.strip()
+            if not u:
+                continue
 
-            # final safety cleanup
-            key = key.rstrip("/") + "/"
+            key = normalize_url(u)
 
             n = graph.get(key)
 
@@ -320,6 +315,7 @@ def main():
 
             related_nodes.append(n)
 
+        
         html = path.read_text(
             encoding="utf-8",
             errors="ignore"
@@ -328,15 +324,14 @@ def main():
         # HARD GUARD: do not render empty related sections
         if not related_nodes:
             print("⚠️ empty related section:", url)
-            return
-    
-        print("<h2>Further paths to follow</h2>")
-        render_block_with_graph(
+            continue
+
+        block = render_block_with_graph(
             related_nodes,
             graph,
-            current_url=current_url  # REQUIRED: ensures correct context binding
+            current_url=url  # REQUIRED: ensures correct context binding
         )
-        
+
         new_html, replaced = replace_placeholder(html, block)
 
         if not replaced:
