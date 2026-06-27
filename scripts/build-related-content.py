@@ -154,10 +154,14 @@ def get_related(url, nodes, page_graph):
         candidates.add(r)
 
     for concept in seed:
-        for u, n in nodes.items():
-            if concept in n.get("concepts", []):
-                candidates.add(u)
+        pool = [
+            u for u, n in nodes.items()
+            if concept in n.get("concepts", [])
+        ]
 
+        # LIMIT FAN-OUT PER CONCEPT
+        candidates.update(pool[:8])
+        
     scored = []
 
     for c in candidates:
@@ -166,7 +170,7 @@ def get_related(url, nodes, page_graph):
             continue
 
         overlap = len(seed & set(n.get("concepts", [])))
-        graph_bonus = len(page_graph.get(c, {}).get("related", []))
+        graph_bonus = 1 / (1 + len(page_graph.get(c, {}).get("related", [])))
 
         score = (
             overlap * 3.0 +
