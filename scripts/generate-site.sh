@@ -90,12 +90,6 @@ python3 scripts/build-homepage-intelligence.py || true
 # STEP 3 — PRESENTATION / RENDER LAYER
 # ---------------------------------------------------------
 
-echo "🔗 building related content..."
-python3 scripts/build-related-content.py
-
-echo "🔍 DEBUG: running related-content diagnostics..."
-python scripts/debug-related-content.py
-
 echo "📡 Tracking injection (standalone consumer)..."
 python3 scripts/build-tracking.py
 
