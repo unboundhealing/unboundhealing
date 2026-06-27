@@ -91,7 +91,7 @@ main a:hover {
 .semantic-block h2,
 .semantic-block h3,
 .homepage-intelligence h3,
-.related-paths h3 {
+.site-search h3 {
   font-size: 18px;
   font-weight: 400;
   color: var(--muted);
@@ -287,19 +287,14 @@ p {
 
 .site-search {
   max-width: 680px;
-  margin: 0.5rem auto;
+  margin: 0.33rem auto;
   padding: 1.5rem 1.25rem;
   text-align: center;
 }
 
 /* Prompt text */
 .site-search .chip-cloud + h3 {
-  font-family: "Crimson Pro", serif;
-  font-weight: 400;
-  font-size: 1.25rem;
-  color: var(--muted);
-  margin-bottom: 0.5rem;
-  opacity: 0.9;
+  margin-bottom: 0.33rem;
 }
 
 /* Input field */
