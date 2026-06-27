@@ -293,7 +293,7 @@ p {
 }
 
 /* Prompt text */
-.site-search h3 {
+.site-search .chip-cloud + h3 {
   font-family: "Crimson Pro", serif;
   font-weight: 400;
   font-size: 1.25rem;
