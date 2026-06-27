@@ -280,6 +280,81 @@ p {
   margin-top: 42px;
 }
 
+
+/* =========================================
+   SITE SEARCH (base component)
+   ========================================= */
+
+.site-search {
+  max-width: 680px;
+  margin: 2.5rem auto;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+}
+
+/* Prompt text */
+.site-search h3 {
+  font-family: "Crimson Pro", serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: var(--text);
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+/* Input field */
+.site-search input#site-search {
+  width: 100%;
+  max-width: 520px;
+  padding: 0.9rem 1rem;
+
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--text);
+
+  outline: none;
+
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focus state */
+.site-search input#site-search:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(111, 143, 106, 0.15);
+}
+
+/* Results container */
+#search-results {
+  margin-top: 1rem;
+  text-align: left;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Optional result items (future-proofing) */
+.search-result {
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.search-result a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.search-result a:hover {
+  text-decoration: underline;
+}
+
+
 /* =========================================================
    FOOTER
    ========================================================= */
