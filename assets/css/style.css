@@ -96,7 +96,7 @@ main a:hover {
   font-weight: 400;
   color: var(--muted);
   opacity: 0.85;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   letter-spacing: 0.2px;
 }
 
@@ -287,14 +287,14 @@ p {
 
 .site-search {
   max-width: 680px;
-  margin: 0.33rem auto;
+  margin: 0.11rem auto;
   padding: 1.5rem 1.25rem;
   text-align: center;
 }
 
 /* Prompt text */
 .site-search .chip-cloud + h3 {
-  margin-bottom: 0.33rem;
+  margin-bottom: 0.11rem;
 }
 
 /* Input field */
@@ -304,7 +304,7 @@ p {
   padding: 0.9rem 1rem;
 
   font-family: Inter, sans-serif;
-  font-size: 1rem;
+  font-size: .88rem;
 
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 10px;
