@@ -11,8 +11,8 @@ from collections import defaultdict
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
-SAL_FILE = os.path.join(ROOT, "semantic-salience.json")
-OUTPUT_FILE = os.path.join(ROOT, "homepage-intelligence.json")
+SAL_FILE = os.path.join(ROOT, "assets/semantic-salience.json")
+OUTPUT_FILE = os.path.join(ROOT, "assets/homepage-intelligence.json")
 
 
 # =========================================================
