@@ -17,7 +17,7 @@ jobs:
           python-version: "3.11"
 
       - name: Build search index
-        run: ./build-search-index.sh
+        run: ./scripts/build-search-index.sh
 
       - name: Run diagnostic
         run: python3 assets/diagnose-search-index.py
