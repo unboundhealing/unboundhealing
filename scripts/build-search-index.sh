@@ -66,6 +66,38 @@ def get_display_title(node):
 
     url = node.get("url", "")
     return url.rstrip("/").split("/")[-1]
+
+# -------------------------------------------------------
+# SECTION
+# -------------------------------------------------------
+
+def get_section(url):
+
+    path = url.replace("https://unboundhealing.org/", "").strip("/")
+
+    if path == "":
+        return "home"
+
+    return path.split("/")[0]
+
+# -------------------------------------------------------
+# KIND
+# -------------------------------------------------------
+
+def get_kind(section):
+
+    mapping = {
+        "home": "home",
+        "opening": "journal",
+        "concept": "concept",
+        "about": "about",
+        "gathering": "gathering",
+        "supporting": "supporting",
+        "listen": "listen",
+        "welcome": "welcome"
+    }
+
+    return mapping.get(section, "page")
     
 # -------------------------------------------------------
 # BUILD CONCEPT MAP
@@ -97,6 +129,26 @@ for url, node in page_graph.items():
     concept_map[url] = clean[:10]
 
 # -------------------------------------------------------
+# SEARCH TEXT
+# -------------------------------------------------------
+
+def build_search_text(title, description, tags, concepts, aliases):
+
+    fields = [
+        title,
+        description,
+        " ".join(tags),
+        " ".join(concepts),
+        " ".join(aliases)
+    ]
+
+    return " ".join(
+        str(x).strip().lower()
+        for x in fields
+        if x
+    )
+
+# -------------------------------------------------------
 # INDEX BUILD
 # -------------------------------------------------------
 
@@ -118,6 +170,18 @@ for url, node in nodes.items():
 
     tags = concept_map.get(url, [])
 
+    # -------------------------------------------------------
+    # Additional search metadata
+    # -------------------------------------------------------
+
+    excerpt = node.get("excerpt", "")
+    kind = node.get("kind", "page")
+
+    word_count = node.get("word_count", 0)
+    concept_count = len(tags)
+
+    related_count = len(page_graph.get(url, {}).get("related", []))
+
     index[url] = {
         "title": title,
         "url": url,
@@ -128,7 +192,7 @@ for url, node in nodes.items():
         "section": "",
 
         "tags": tags[:10],
-        "concepts": tags[:10],
+        "concepts": tags,
         "aliases": [],
 
         "description": desc,
