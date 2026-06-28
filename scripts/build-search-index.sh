@@ -124,27 +124,22 @@ for url, node in nodes.items():
         "path": file_path,
 
         "type": "page",
-
         "section": "",
 
         "tags": tags[:10],
-
         "concepts": tags[:10],
-
         "aliases": [],
 
         "description": desc,
-
+        "excerpt": "",
         "search_text": "",
 
         "word_count": 0,
-
         "reading_time": 0,
 
         "priority": 1.0,
 
         "image": "",
-
         "last_modified": ""
     }
 
