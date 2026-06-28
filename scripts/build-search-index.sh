@@ -6,8 +6,8 @@ echo "🔎 Building search index (v5 unified python builder)"
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
 
-SAL_FILE="semantic-salience.json"
-OUTPUT="search-index.json"
+SAL_FILE="assets/semantic-salience.json"
+OUTPUT="assets/search-index.json"
 
 if [ ! -f "$SAL_FILE" ]; then
   echo "❌ semantic-salience.json missing — HARD STOP"
@@ -28,8 +28,8 @@ import json
 from pathlib import Path
 
 ROOT = Path(os.getcwd())
-SAL_FILE = ROOT / "semantic-salience.json"
-OUTPUT_FILE = ROOT / "search-index.json"
+SAL_FILE = ROOT / "assets/semantic-salience.json"
+OUTPUT_FILE = ROOT / "assets/search-index.json"
 
 # -------------------------------------------------------
 # SAFE LOAD
