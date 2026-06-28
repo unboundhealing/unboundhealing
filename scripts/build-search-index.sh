@@ -124,6 +124,7 @@ for url, node in nodes.items():
         "path": file_path,
 
         "type": "page",
+        "kind": "page",
         "section": "",
 
         "tags": tags[:10],
