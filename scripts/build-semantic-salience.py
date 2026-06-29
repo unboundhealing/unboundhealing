@@ -471,33 +471,38 @@ def build_page_graph(registry):
     Not part of truth layer.
     """
 
-    concept_index = defaultdict(set)
-
-    for url, data in registry.items():
-        for c in data["concepts"]:
-            concept_index[c].add(url)
-
     page_graph = {}
 
     for url, data in registry.items():
 
-        related_scores = defaultdict(int)
+    related_scores = {}
 
-        for c in data["concepts"]:
-            for other in concept_index[c]:
-                if other != url:
-                    related_scores[other] += 1
+    for other_url, other_page in registry.items():
 
-        ranked = sorted(
-            related_scores.items(),
-            key=lambda x: (-x[1], x[0])
+        if other_url == url:
+            continue
+
+        similarity = compare_pages(data, other_page)
+
+        score = (
+            similarity["concept_overlap"] * 5
+            + similarity["search_similarity"] * 3
+            + similarity["excerpt_similarity"] * 2
         )
 
-        page_graph[url] = {
-            "concepts": data["concepts"],
-            "related": [r[0] for r in ranked[:10]]
-        }
+        if score > 0:
+            related_scores[other_url] = score
 
+    ranked = sorted(
+        related_scores.items(),
+        key=lambda x: (-x[1], x[0])
+    )
+
+    page_graph[url] = {
+        "concepts": data["concepts"],
+        "related": [u for u, _ in ranked[:10]]
+    }
+    
     return page_graph
 
 
