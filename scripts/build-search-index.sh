@@ -131,15 +131,16 @@ for url, node in page_graph.items():
 def build_search_text(
     title,
     description,
+    kind,
     excerpt,
     tags,
-    concepts,
-    aliases,
+    tags,
 ):
 
     fields = [
         title,
         description,
+        kind,
         excerpt,
         " ".join(tags),
         " ".join(concepts),
@@ -191,6 +192,7 @@ for url, node in nodes.items():
     search_text = build_search_text(
         title,
         desc,
+        kind,
         excerpt,
         tags,
         tags,
