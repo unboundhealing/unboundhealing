@@ -4814,62 +4814,6 @@
     }
   ],
   "salience": {
-    "evolving": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "day": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "pretender": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "good": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "assets": {
-      "frequency": 7,
-      "connectivity": 59,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 3
-    },
-    "opening-just-listening": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "gloomy": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "assets-updates-temp": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
     "zone": {
       "frequency": 1,
       "connectivity": 2,
@@ -4877,236 +4821,26 @@
       "excerpt_signal": 0,
       "word_signal": 1
     },
-    "liz": {
+    "yes-and-no": {
       "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "as": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "noticing-shared-experiences": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "another-yesterday": {
-      "frequency": 1,
-      "connectivity": 5,
+      "connectivity": 8,
       "search_signal": 0,
       "excerpt_signal": 0,
       "word_signal": 2
     },
-    "images": {
-      "frequency": 3,
-      "connectivity": 37,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "updates": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 1
-    },
-    "just-listening": {
+    "concept-website-building": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 0,
       "excerpt_signal": 0,
       "word_signal": 1
     },
-    "iced-coffee": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "skwintcheee": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-skwintcheee": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-lukewarm": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-sold": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "morning": {
-      "frequency": 3,
-      "connectivity": 11,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 6
-    },
-    "whatever-this": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "and-no": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-gloomy": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "lukewarm": {
+    "still": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 1,
       "word_signal": 2
-    },
-    "opening-open": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "images-foo": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "concept-iced": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-this-morning": {
-      "frequency": 3,
-      "connectivity": 11,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 6
-    },
-    "opening-tom": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "whatever-this-is": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "experimenting": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "lizzo-good": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "page-template": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "supporting": {
-      "frequency": 1,
-      "connectivity": 0,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "noticing": {
-      "frequency": 2,
-      "connectivity": 5,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-the": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-post": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-still-warm": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-the-day": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "the-pretender": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
     },
     "thinking": {
       "frequency": 1,
@@ -5115,90 +4849,6 @@
       "excerpt_signal": 0,
       "word_signal": 1
     },
-    "this-is": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-this-you": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "concept-iced-coffee": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-just": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "opening-whatever-this": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "the-pretender-1": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "assets-updates": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "opening-no-title": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-no": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "assets-homepage": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "this-morning": {
-      "frequency": 3,
-      "connectivity": 11,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 6
-    },
-    "test-image": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
     "entry": {
       "frequency": 1,
       "connectivity": 5,
@@ -5206,168 +4856,49 @@
       "excerpt_signal": 0,
       "word_signal": 1
     },
-    "yes-and": {
-      "frequency": 1,
-      "connectivity": 8,
+    "assets": {
+      "frequency": 7,
+      "connectivity": 59,
       "search_signal": 0,
       "excerpt_signal": 0,
-      "word_signal": 2
+      "word_signal": 3
     },
-    "morning-too": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-another-yesterday": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "morning-a": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "is": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "good-as-hell": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "and": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "fighters": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "hell-1": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "cooling-tea": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "lizzo": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "assets-homepage-intelligence": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "good-as": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "concept-just": {
+    "assets-updates-temp": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 0,
       "excerpt_signal": 0,
       "word_signal": 1
     },
-    "opening-cooling": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "template": {
-      "frequency": 2,
-      "connectivity": 9,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "this": {
-      "frequency": 6,
-      "connectivity": 25,
-      "search_signal": 10,
-      "excerpt_signal": 5,
-      "word_signal": 11
-    },
-    "experiences": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 0
-    },
-    "about-conversing": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "images-lizzo-good": {
+    "as": {
       "frequency": 1,
       "connectivity": 17,
       "search_signal": 0,
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "concept-origin": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "concept-ici": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "love": {
+    "entry-template": {
       "frequency": 1,
       "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
+      "search_signal": 0,
+      "excerpt_signal": 0,
       "word_signal": 1
     },
-    "opening-yes": {
+    "assets-images-test": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "too": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-the-day": {
       "frequency": 1,
       "connectivity": 8,
       "search_signal": 0,
@@ -5381,721 +4912,7 @@
       "excerpt_signal": 1,
       "word_signal": 1
     },
-    "opening-post-this": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "updates-temp": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "this-you": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "opening-this": {
-      "frequency": 4,
-      "connectivity": 14,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 7
-    },
-    "images-lizzo": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "foo": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "before": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "warm": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "concept": {
-      "frequency": 11,
-      "connectivity": 32,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 15
-    },
-    "just-thinking": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "decaf": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "still": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "the-day-before": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "concept-experimenting": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "welcome": {
-      "frequency": 1,
-      "connectivity": 0,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "foo-fighters": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "another": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "opening-lukewarm-decaf": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "title": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "shared": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 0
-    },
-    "images-foo-fighters": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "origin": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "as-hell-1": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "still-warm": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "tea": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "homepage-intelligence-blocks": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "homepage": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "as-hell": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "assets-entry": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "too": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "fighters-the-pretender": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "listening": {
-      "frequency": 2,
-      "connectivity": 5,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "test": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "whatever": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "opening-yes-and": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-whatever": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "foo-fighters-the": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "cooling": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "conversing": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "hell": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-yesterday": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "inviting": {
-      "frequency": 1,
-      "connectivity": 0,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "image": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "sold-out": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "homepage-intelligence": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "building": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "assets-images-lizzo": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "gathering": {
-      "frequency": 1,
-      "connectivity": 0,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "images-test-image": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "yes": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "concept-evolving": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "website-building": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "blocks": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-love": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "iced": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "a": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "concept-website-building": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "opening-another": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "day-before": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "this-morning-too": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "page": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "out": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-liz": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "shared-experiences": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "intelligence": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "intelligence-blocks": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "assets-entry-template": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "post-this": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "assets-images-test": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "assets-page-template": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "assets-page": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "concept-website": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "yes-and-no": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "post": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "concept-idea": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "noticing-shared": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "pretender-1": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-cooling-tea": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-sold-out": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "the-day": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "coffee": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "fighters-the": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "concept-zone": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "no": {
-      "frequency": 2,
-      "connectivity": 12,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 4
-    },
-    "ici": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening": {
-      "frequency": 23,
-      "connectivity": 91,
-      "search_signal": 46,
-      "excerpt_signal": 2,
-      "word_signal": 42
-    },
-    "lukewarm-decaf": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "assets-images-foo": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "about": {
-      "frequency": 2,
-      "connectivity": 2,
-      "search_signal": 4,
-      "excerpt_signal": 1,
-      "word_signal": 3
-    },
-    "assets-images": {
-      "frequency": 3,
-      "connectivity": 37,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "1": {
-      "frequency": 2,
-      "connectivity": 31,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "lizzo-good-as": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "website": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 1
-    },
-    "concept-just-thinking": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "no-title": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "images-test": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-love-concept": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "yesterday": {
-      "frequency": 2,
-      "connectivity": 6,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 4
-    },
-    "tom": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "just": {
-      "frequency": 2,
-      "connectivity": 10,
-      "search_signal": 4,
-      "excerpt_signal": 2,
-      "word_signal": 2
-    },
-    "entry-template": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "love-concept": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "open": {
+    "opening-open": {
       "frequency": 1,
       "connectivity": 2,
       "search_signal": 0,
@@ -6109,18 +4926,158 @@
       "excerpt_signal": 0,
       "word_signal": 1
     },
-    "you": {
+    "liz": {
       "frequency": 1,
-      "connectivity": 5,
+      "connectivity": 2,
       "search_signal": 2,
       "excerpt_signal": 1,
-      "word_signal": 1
+      "word_signal": 2
     },
-    "opening-still": {
+    "lizzo-good-as": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "before": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-this-you": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 0,
       "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "homepage-intelligence": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "homepage-intelligence-blocks": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "images-lizzo-good": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "a": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "about": {
+      "frequency": 2,
+      "connectivity": 2,
+      "search_signal": 4,
+      "excerpt_signal": 1,
+      "word_signal": 3
+    },
+    "yesterday": {
+      "frequency": 2,
+      "connectivity": 6,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 4
+    },
+    "about-conversing": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "experimenting": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "assets-entry-template": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "conversing": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "assets-images-lizzo": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "website-building": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "updates-temp": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "lukewarm-decaf": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "template": {
+      "frequency": 2,
+      "connectivity": 9,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "just-listening": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "opening-liz": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "sold-out": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
       "word_signal": 2
     },
     "this-morning-a": {
@@ -6130,6 +5087,139 @@
       "excerpt_signal": 0,
       "word_signal": 2
     },
+    "whatever-this-is": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "iced-coffee": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept": {
+      "frequency": 11,
+      "connectivity": 32,
+      "search_signal": 4,
+      "excerpt_signal": 0,
+      "word_signal": 15
+    },
+    "opening-post": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "love": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 1
+    },
+    "shared": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 0
+    },
+    "good-as": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "post": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "ici": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-this-morning": {
+      "frequency": 3,
+      "connectivity": 11,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 6
+    },
+    "fighters-the-pretender": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "just": {
+      "frequency": 2,
+      "connectivity": 10,
+      "search_signal": 4,
+      "excerpt_signal": 2,
+      "word_signal": 2
+    },
+    "opening-tom": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "gloomy": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "as-hell-1": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "assets-page": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "cooling": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "opening-lukewarm": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "love-concept": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
     "the": {
       "frequency": 2,
       "connectivity": 25,
@@ -6137,9 +5227,919 @@
       "excerpt_signal": 1,
       "word_signal": 2
     },
+    "cooling-tea": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "iced": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "assets-updates": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "opening-sold": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "image": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "fighters": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "concept-zone": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "images-foo-fighters": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "shared-experiences": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-another": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "intelligence-blocks": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-just": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "images-foo": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-still": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "foo-fighters": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "assets-page-template": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "warm": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-just-listening": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "good": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "skwintcheee": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "noticing-shared-experiences": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "page-template": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "this": {
+      "frequency": 6,
+      "connectivity": 25,
+      "search_signal": 10,
+      "excerpt_signal": 5,
+      "word_signal": 11
+    },
+    "fighters-the": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-another-yesterday": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "welcome": {
+      "frequency": 1,
+      "connectivity": 0,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "out": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-evolving": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "morning-too": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "another": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "this-is": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "the-day-before": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "images-test-image": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "this-you": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "supporting": {
+      "frequency": 1,
+      "connectivity": 0,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "open": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "the-day": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-website": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "lizzo": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "1": {
+      "frequency": 2,
+      "connectivity": 31,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "just-thinking": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "noticing": {
+      "frequency": 2,
+      "connectivity": 5,
+      "search_signal": 4,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "experiences": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 0
+    },
+    "concept-just": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "opening-no-title": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "test": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "foo-fighters-the": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "origin": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "day-before": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "hell": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "images-lizzo": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "is": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "pretender-1": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-gloomy": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "homepage": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "title": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "opening-cooling": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-love": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "morning-a": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "tom": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "no-title": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "and-no": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "this-morning-too": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "decaf": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "assets-images-foo": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "images-test": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-the": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-ici": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-this": {
+      "frequency": 4,
+      "connectivity": 14,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 7
+    },
+    "concept-iced": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "listening": {
+      "frequency": 2,
+      "connectivity": 5,
+      "search_signal": 4,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "assets-homepage-intelligence": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "images": {
+      "frequency": 3,
+      "connectivity": 37,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "concept-origin": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-cooling-tea": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "lizzo-good": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "concept-idea": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "the-pretender": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "whatever": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "yes-and": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-whatever": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-sold-out": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-experimenting": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "assets-homepage": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "foo": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "the-pretender-1": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "coffee": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "gathering": {
+      "frequency": 1,
+      "connectivity": 0,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "as-hell": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "building": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "updates": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 1
+    },
+    "concept-iced-coffee": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "inviting": {
+      "frequency": 1,
+      "connectivity": 0,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-love-concept": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "morning": {
+      "frequency": 3,
+      "connectivity": 11,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 6
+    },
+    "test-image": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "lukewarm": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "yes": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "another-yesterday": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
     "sold": {
       "frequency": 1,
       "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "good-as-hell": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "day": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "and": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "opening-yes": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "still-warm": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-yesterday": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-still-warm": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "page": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "assets-entry": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "pretender": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "whatever-this": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "post-this": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "noticing-shared": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "tea": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "opening-lukewarm-decaf": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "no": {
+      "frequency": 2,
+      "connectivity": 12,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 4
+    },
+    "opening-skwintcheee": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-yes-and": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-just-thinking": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "you": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 1
+    },
+    "intelligence": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "hell-1": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "blocks": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening": {
+      "frequency": 23,
+      "connectivity": 91,
+      "search_signal": 46,
+      "excerpt_signal": 2,
+      "word_signal": 42
+    },
+    "this-morning": {
+      "frequency": 3,
+      "connectivity": 11,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 6
+    },
+    "website": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 1
+    },
+    "opening-whatever-this": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-no": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "assets-images": {
+      "frequency": 3,
+      "connectivity": 37,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-post-this": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "evolving": {
+      "frequency": 1,
+      "connectivity": 2,
       "search_signal": 0,
       "excerpt_signal": 0,
       "word_signal": 2
