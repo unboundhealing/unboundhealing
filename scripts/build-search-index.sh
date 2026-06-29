@@ -10,12 +10,12 @@ SAL_FILE="assets/semantic-salience.json"
 OUTPUT="assets/search-index.json"
 
 if [ ! -f "$SAL_FILE" ]; then
-  echo "❌ semantic-salience.json missing — HARD STOP"
+  echo "❌ asset/semantic-salience.json missing — HARD STOP"
   exit 1
 fi
 
 if [ ! -s "$SAL_FILE" ]; then
-  echo "❌ semantic-salience.json is empty — HARD STOP (CI race detected)"
+  echo "❌ assets/semantic-salience.json is empty — HARD STOP (CI race detected)"
   exit 1
 fi
 
@@ -38,7 +38,7 @@ OUTPUT_FILE = ROOT / "assets/search-index.json"
 try:
     raw = SAL_FILE.read_text(encoding="utf-8").strip()
     if not raw:
-        raise ValueError("semantic-salience.json is empty")
+        raise ValueError("assets/semantic-salience.json is empty")
 
     salience = json.loads(raw)
 
@@ -128,18 +128,22 @@ for url, node in page_graph.items():
 
     concept_map[url] = clean[:10]
 
-# -------------------------------------------------------
-# SEARCH TEXT
-# -------------------------------------------------------
-
-def build_search_text(title, description, tags, concepts, aliases):
+def build_search_text(
+    title,
+    description,
+    excerpt,
+    tags,
+    concepts,
+    aliases,
+):
 
     fields = [
         title,
         description,
+        excerpt,
         " ".join(tags),
         " ".join(concepts),
-        " ".join(aliases)
+        " ".join(aliases),
     ]
 
     return " ".join(
@@ -147,7 +151,7 @@ def build_search_text(title, description, tags, concepts, aliases):
         for x in fields
         if x
     )
-
+    
 # -------------------------------------------------------
 # INDEX BUILD
 # -------------------------------------------------------
@@ -169,7 +173,9 @@ for url, node in nodes.items():
     desc = node.get("description", "") if isinstance(node, dict) else ""
 
     tags = concept_map.get(url, [])
-
+    section = get_section(url)
+    kind = get_kind(section)
+  
     # -------------------------------------------------------
     # Additional search metadata
     # -------------------------------------------------------
@@ -182,25 +188,34 @@ for url, node in nodes.items():
 
     related_count = len(page_graph.get(url, {}).get("related", []))
 
+    search_text = build_search_text(
+        title,
+        desc,
+        excerpt,
+        tags,
+        tags,
+        []
+    )
+    
     index[url] = {
         "title": title,
         "url": url,
         "path": file_path,
 
         "type": "page",
-        "kind": "page",
-        "section": "",
+        "section": section,
+        "kind": kind,
 
-        "tags": tags[:10],
+        "tags": tags,
         "concepts": tags,
         "aliases": [],
 
         "description": desc,
-        "excerpt": "",
-        "search_text": "",
+        "excerpt": excerpt,
+        "search_text": search_text,
 
-        "word_count": 0,
-        "reading_time": 0,
+        "word_count": word_count,
+        "reading_time": max(1, round(word_count / 200)),
 
         "priority": 1.0,
 
