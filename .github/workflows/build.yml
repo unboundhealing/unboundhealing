@@ -99,8 +99,8 @@ jobs:
 
           echo "🔍 Inspecting semantic-salience.json..."
 
-          if [ ! -f semantic-salience.json ]; then
-            echo "❌ semantic-salience.json missing — HARD STOP"
+          if [ ! -f assets/semantic-salience.json ]; then
+            echo "❌ assets/semantic-salience.json missing — HARD STOP"
             exit 1
           fi
 
@@ -115,17 +115,17 @@ jobs:
           import json
           import sys
 
-          print("🧠 Loading semantic-salience.json...")
+          print("🧠 Loading assets/semantic-salience.json...")
 
           try:
-              with open("semantic-salience.json", "r", encoding="utf-8") as f:
+              with open("assets/semantic-salience.json", "r", encoding="utf-8") as f:
                   data = json.load(f)
           except Exception as e:
               print("❌ JSON parse failure:", e)
               sys.exit(1)
 
           if not isinstance(data, dict):
-              print("❌ semantic-salience must be dict")
+              print("❌ assets/semantic-salience must be dict")
               sys.exit(1)
 
           required = ["nodes", "edges", "page_graph"]
@@ -136,7 +136,7 @@ jobs:
               print("❌ missing required keys:", ", ".join(missing))
               sys.exit(1)
 
-          print("✅ semantic-salience validation PASSED")
+          print("✅ assets/semantic-salience validation PASSED")
           PY
 
       # -------------------------------------
@@ -148,7 +148,7 @@ jobs:
           set -euo pipefail
           echo "📦 Checking output structure..."
 
-          test -f semantic-salience.json
+          test -f assets/semantic-salience.json
 
           echo "📂 Repo snapshot:"
           ls -R . | grep -E "semantic|sitemap|rss|homepage|feed" || true
