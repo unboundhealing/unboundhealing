@@ -475,7 +475,7 @@ def build_page_graph(registry):
 
     for url, data in registry.items():
 
-    related_scores = {}
+        related_scores = {}
 
     for other_url, other_page in registry.items():
 
