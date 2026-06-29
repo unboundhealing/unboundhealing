@@ -50,6 +50,8 @@ for url in sorted(page_graph.keys()):
         )
         print(f"    {related}")
 
+print("node count:", len(nodes))
+print("page_graph count:", len(page_graph))
 print()
 print("=" * 80)
 print(f"Pages: {len(page_graph)}")
