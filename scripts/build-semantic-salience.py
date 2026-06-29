@@ -107,8 +107,8 @@ def get_kind(section):
 
 def build_search_text(
     title,
-    description,
     kind,
+    description,
     excerpt,
     tags,
     concepts,
@@ -304,11 +304,12 @@ def extract_page_metadata(full_path, url):
         words = re.findall(r"\b\w+\b", text.lower())
         word_count = len(words)
 
-        excerpt = " ".join(text.split()[:60])
+        
 
-        concepts = extract_concepts(full_path, url)
         section = get_section(url)
         kind = get_kind(section)
+        excerpt = " ".join(text.split()[:60])
+        concepts = extract_concepts(path)
 
         search_text = build_search_text(
             title,
@@ -329,7 +330,19 @@ def extract_page_metadata(full_path, url):
             "concepts": concepts,
             "word_count": word_count
         }
-
+        
+        except Exception as e:
+            print("⚠️ metadata extraction failed:", e)
+            return {
+                "title": "",
+                "kind": "",
+                "description": "",
+                "excerpt": "",
+                "search_text": "",
+                "concepts": [],
+                "word_count": 0,
+    }
+            
 # =========================================================
 # REGISTRY (STRUCTURAL REALITY INDEX)
 # =========================================================
