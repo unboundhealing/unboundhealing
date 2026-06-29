@@ -173,9 +173,9 @@ for url, node in nodes.items():
     # -------------------------------------------------------
 
     title = get_display_title(node)
-    desc = node.get("description", "") if isinstance(node, dict) else ""
     section = get_section(url)
     kind = get_kind(section)
+    desc = node.get("description", "") if isinstance(node, dict) else ""
     excerpt = node.get("excerpt", "")
     tags = concept_map.get(url, [])
     concepts = node.get("concepts", tags)  # fallback safety
@@ -186,8 +186,8 @@ for url, node in nodes.items():
 
     search_text = build_search_text(
         title,
-        desc,
         kind,
+        desc,
         excerpt,
         tags,
         concepts,
@@ -203,13 +203,13 @@ for url, node in nodes.items():
         "section": section,
         "kind": kind,
 
-        "tags": tags,
-        "concepts": concepts,
-        "aliases": [],
-
         "description": desc,
         "excerpt": excerpt,
         "search_text": search_text,
+
+        "tags": tags,
+        "concepts": concepts,
+        "aliases": [],
 
         "word_count": word_count,
         "reading_time": max(1, round(word_count / 200)),
