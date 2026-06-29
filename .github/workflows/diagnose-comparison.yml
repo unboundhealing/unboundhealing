@@ -1,0 +1,30 @@
+name: Diagnose Page Similarity
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  diagnose-comparison:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ---------------------------------------
+      # VERIFY REQUIRED ARTIFACT
+      # ---------------------------------------
+      - name: Check semantic-salience exists
+        run: |
+          test -f assets/semantic-salience.json
+          echo "✅ semantic-salience.json found"
+
+      # ---------------------------------------
+      # RUN COMPARISON DIAGNOSTIC
+      # ---------------------------------------
+      - name: Run page comparison diagnostics
+        run: |
+          python3 assets/diagnose-comparison.py
