@@ -209,10 +209,18 @@ def extract_page_metadata(full_path):
             desc = meta.get("content", "").strip()
 
         # -----------------------------
-        # WORD COUNT (light heuristic)
+        # WORD COUNT (robust heuristic)
         # -----------------------------
-        text = soup.get_text(" ", strip=True)
-        word_count = len(text.split())
+        main = soup.find("main")
+
+        if main:
+            text = main.get_text(" ", strip=True)
+        else:
+            text = soup.get_text(" ", strip=True)
+
+        text = re.sub(r"\s+", " ", text).strip()
+
+        word_count = len(text.split()) if text else 0
 
         # -----------------------------
         # EXCERPT (NEW)
@@ -433,8 +441,39 @@ def concept_overlap(a, b):
 
     return len(ca & cb)
 
+def word_similarity(a, b):
+
+    wa = a.get("word_count", 0)
+    wb = b.get("word_count", 0)
+
+    if wa == 0 and wb == 0:
+        return 0
+
+    return 1 - abs(wa - wb) / max(wa, wb)
+
 def compare_pages(page_a, page_b):
 
+    concept = len(set(page_a.get("concepts", [])) & set(page_b.get("concepts", [])))
+
+    search = token_overlap(
+        page_a.get("search_text", ""),
+        page_b.get("search_text", "")
+    )
+
+    excerpt = token_overlap(
+        page_a.get("excerpt", ""),
+        page_b.get("excerpt", "")
+    )
+
+    wa = page_a.get("word_count", 0)
+    wb = page_b.get("word_count", 0)
+
+    word_similarity = 0
+    if max(wa, wb) > 0:
+        word_similarity = 1 - abs(wa - wb) / max(wa, wb)
+
+    semantic_overlap = concept_overlap  # placeholder for future expansion
+    
     return {
 
         "concept_overlap":
@@ -451,14 +490,11 @@ def compare_pages(page_a, page_b):
                 page_a.get("excerpt", ""),
                 page_b.get("excerpt", "")
             ),
-
-        "word_similarity":
-            abs(
-                page_a.get("word_count", 0)
-                -
-                page_b.get("word_count", 0)
+        "word_similarity": 
+            word_similarity(
+                page_a, 
+                page_b
             )
-
     }
 
 # =========================================================
