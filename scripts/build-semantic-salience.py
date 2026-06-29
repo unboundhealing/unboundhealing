@@ -217,6 +217,7 @@ def extract_page_metadata(full_path):
         # -----------------------------
         # EXCERPT (NEW)
         # -----------------------------
+        text = soup.get_text(" ", strip=True)
         excerpt = " ".join(text.split()[:60])
 
         # -----------------------------
