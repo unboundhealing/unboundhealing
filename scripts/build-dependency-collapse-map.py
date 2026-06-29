@@ -6,7 +6,7 @@ from collections import defaultdict
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
-OUTPUT_FILE = os.path.join(ROOT, "dependency-collapse-map.json")
+OUTPUT_FILE = os.path.join(ROOT, "assets/dependency-collapse-map.json")
 
 # ---------------------------------------------------------
 # FILE DISCOVERY
@@ -31,7 +31,7 @@ def find_files():
 # CLASSIFIERS
 # ---------------------------------------------------------
 
-TRUTH_LAYER = "semantic-salience.json"
+TRUTH_LAYER = "assets/semantic-salience.json"
 
 LEGACY_LAYERS = {
     "semantic-graph.json",
