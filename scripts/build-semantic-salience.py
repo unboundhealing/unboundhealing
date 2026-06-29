@@ -231,7 +231,7 @@ def extract_page_metadata(full_path):
         return {
             "title": title,
             "description": desc,
-            "word_count": word_count
+            "word_count": word_count,
             "excerpt": excerpt,
             "search_text": search_text
         }
