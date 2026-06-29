@@ -1,81 +1,340 @@
 {
-"https://unboundhealing.org/noticing/": "noticing"
-,
-"https://unboundhealing.org/noticing/shared-experiences/": "noticing,shared-experiences"
-,
-"https://unboundhealing.org/inviting/": "inviting"
-,
-"https://unboundhealing.org/welcome/": "welcome"
-,
-"https://unboundhealing.org/assets/entry-template/": "assets,entry-template"
-,
-"https://unboundhealing.org/assets/updates-temp/": "assets,updates-temp"
-,
-"https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1": "assets,images"
-,
-"https://unboundhealing.org/assets/images/_html/test_image": "assets,images"
-,
-"https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1": "assets,images"
-,
-"https://unboundhealing.org/assets/page-template/": "assets,page-template"
-,
-"https://unboundhealing.org/concept/just-thinking/": "concept,just-thinking"
-,
-"https://unboundhealing.org/concept/zone/": "concept,zone"
-,
-"https://unboundhealing.org/concept/ici/": "concept,ici"
-,
-"https://unboundhealing.org/concept/origin/": "concept,origin"
-,
-"https://unboundhealing.org/concept/idea/": "concept,idea"
-,
-"https://unboundhealing.org/concept/website-building/": "concept,website-building"
-,
-"https://unboundhealing.org/concept/iced-coffee/": "concept,iced-coffee"
-,
-"https://unboundhealing.org/concept/experimenting/": "concept,experimenting"
-,
-"https://unboundhealing.org/concept/": "concept"
-,
-"https://unboundhealing.org/concept/evolving/": "concept,evolving"
-,
-"https://unboundhealing.org/opening/post-this/": "opening,post-this"
-,
-"https://unboundhealing.org/opening/love-concept/": "opening,love-concept"
-,
-"https://unboundhealing.org/opening/open/": "opening,open"
-,
-"https://unboundhealing.org/opening/yes-and-no/": "opening,yes-and-no"
-,
-"https://unboundhealing.org/opening/this-you/": "opening,this-you"
-,
-"https://unboundhealing.org/opening/this-morning/": "opening,this-morning"
-,
-"https://unboundhealing.org/opening/just-listening/": "opening,just-listening"
-,
-"https://unboundhealing.org/opening/this-morning-a/": "opening,this-morning-a"
-,
-"https://unboundhealing.org/opening/cooling-tea/": "opening,cooling-tea"
-,
-"https://unboundhealing.org/opening/this-morning-too/": "opening,this-morning-too"
-,
-"https://unboundhealing.org/opening/": "opening"
-,
-"https://unboundhealing.org/opening/liz/": "opening,liz"
-,
-"https://unboundhealing.org/opening/tom/": "opening,tom"
-,
-"https://unboundhealing.org/opening/sold-out/": "opening,sold-out"
-,
-"https://unboundhealing.org/about/": "about"
-,
-"https://unboundhealing.org/about/conversing/": "about,conversing"
-,
-"https://unboundhealing.org/listening/": "listening"
-,
-"https://unboundhealing.org/": ""
-,
-"https://unboundhealing.org/gathering/": "gathering"
-,
-"https://unboundhealing.org/supporting/": "supporting"
+  "https://unboundhealing.org/about/conversing/": [
+    "about",
+    "conversing",
+    "about-conversing"
+  ],
+  "https://unboundhealing.org/about/": [
+    "about"
+  ],
+  "https://unboundhealing.org/assets/entry-template/": [
+    "assets",
+    "entry",
+    "template",
+    "assets-entry",
+    "entry-template",
+    "assets-entry-template"
+  ],
+  "https://unboundhealing.org/assets/homepage-intelligence-blocks/": [
+    "assets",
+    "homepage",
+    "intelligence",
+    "blocks",
+    "assets-homepage",
+    "homepage-intelligence",
+    "intelligence-blocks",
+    "assets-homepage-intelligence",
+    "homepage-intelligence-blocks"
+  ],
+  "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/": [
+    "assets",
+    "images",
+    "foo",
+    "fighters",
+    "the",
+    "pretender",
+    "1",
+    "assets-images",
+    "images-foo",
+    "foo-fighters"
+  ],
+  "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/": [
+    "assets",
+    "images",
+    "lizzo",
+    "good",
+    "as",
+    "hell",
+    "1",
+    "assets-images",
+    "images-lizzo",
+    "lizzo-good"
+  ],
+  "https://unboundhealing.org/assets/images/_html/test_image/": [
+    "assets",
+    "images",
+    "test",
+    "image",
+    "assets-images",
+    "images-test",
+    "test-image",
+    "assets-images-test",
+    "images-test-image"
+  ],
+  "https://unboundhealing.org/assets/page-template/": [
+    "assets",
+    "page",
+    "template",
+    "assets-page",
+    "page-template",
+    "assets-page-template"
+  ],
+  "https://unboundhealing.org/assets/updates-temp/": [
+    "assets",
+    "updates",
+    "temp",
+    "assets-updates",
+    "updates-temp",
+    "assets-updates-temp"
+  ],
+  "https://unboundhealing.org/concept/evolving/": [
+    "concept",
+    "evolving",
+    "concept-evolving"
+  ],
+  "https://unboundhealing.org/concept/experimenting/": [
+    "concept",
+    "experimenting",
+    "concept-experimenting"
+  ],
+  "https://unboundhealing.org/concept/iced-coffee/": [
+    "concept",
+    "iced",
+    "coffee",
+    "concept-iced",
+    "iced-coffee",
+    "concept-iced-coffee"
+  ],
+  "https://unboundhealing.org/concept/ici/": [
+    "concept",
+    "ici",
+    "concept-ici"
+  ],
+  "https://unboundhealing.org/concept/idea/": [
+    "concept",
+    "idea",
+    "concept-idea"
+  ],
+  "https://unboundhealing.org/concept/": [
+    "concept"
+  ],
+  "https://unboundhealing.org/concept/just-thinking/": [
+    "concept",
+    "just",
+    "thinking",
+    "concept-just",
+    "just-thinking",
+    "concept-just-thinking"
+  ],
+  "https://unboundhealing.org/concept/origin/": [
+    "concept",
+    "origin",
+    "concept-origin"
+  ],
+  "https://unboundhealing.org/concept/website-building/": [
+    "concept",
+    "website",
+    "building",
+    "concept-website",
+    "website-building",
+    "concept-website-building"
+  ],
+  "https://unboundhealing.org/concept/zone/": [
+    "concept",
+    "zone",
+    "concept-zone"
+  ],
+  "https://unboundhealing.org/gathering/": [
+    "gathering"
+  ],
+  "https://unboundhealing.org/": [],
+  "https://unboundhealing.org/inviting/": [
+    "inviting"
+  ],
+  "https://unboundhealing.org/listening/": [
+    "listening"
+  ],
+  "https://unboundhealing.org/noticing/": [
+    "noticing"
+  ],
+  "https://unboundhealing.org/noticing/shared-experiences/": [
+    "noticing",
+    "shared",
+    "experiences",
+    "noticing-shared",
+    "shared-experiences",
+    "noticing-shared-experiences"
+  ],
+  "https://unboundhealing.org/opening/another-yesterday/": [
+    "opening",
+    "another",
+    "yesterday",
+    "opening-another",
+    "another-yesterday",
+    "opening-another-yesterday"
+  ],
+  "https://unboundhealing.org/opening/cooling-tea/": [
+    "opening",
+    "cooling",
+    "tea",
+    "opening-cooling",
+    "cooling-tea",
+    "opening-cooling-tea"
+  ],
+  "https://unboundhealing.org/opening/gloomy/": [
+    "opening",
+    "gloomy",
+    "opening-gloomy"
+  ],
+  "https://unboundhealing.org/opening/": [
+    "opening"
+  ],
+  "https://unboundhealing.org/opening/just-listening/": [
+    "opening",
+    "just",
+    "listening",
+    "opening-just",
+    "just-listening",
+    "opening-just-listening"
+  ],
+  "https://unboundhealing.org/opening/liz/": [
+    "opening",
+    "liz",
+    "opening-liz"
+  ],
+  "https://unboundhealing.org/opening/love-concept/": [
+    "opening",
+    "love",
+    "concept",
+    "opening-love",
+    "love-concept",
+    "opening-love-concept"
+  ],
+  "https://unboundhealing.org/opening/lukewarm-decaf/": [
+    "opening",
+    "lukewarm",
+    "decaf",
+    "opening-lukewarm",
+    "lukewarm-decaf",
+    "opening-lukewarm-decaf"
+  ],
+  "https://unboundhealing.org/opening/no-title/": [
+    "opening",
+    "no",
+    "title",
+    "opening-no",
+    "no-title",
+    "opening-no-title"
+  ],
+  "https://unboundhealing.org/opening/open/": [
+    "opening",
+    "open",
+    "opening-open"
+  ],
+  "https://unboundhealing.org/opening/post-this/": [
+    "opening",
+    "post",
+    "this",
+    "opening-post",
+    "post-this",
+    "opening-post-this"
+  ],
+  "https://unboundhealing.org/opening/skwintcheee/": [
+    "opening",
+    "skwintcheee",
+    "opening-skwintcheee"
+  ],
+  "https://unboundhealing.org/opening/sold-out/": [
+    "opening",
+    "sold",
+    "out",
+    "opening-sold",
+    "sold-out",
+    "opening-sold-out"
+  ],
+  "https://unboundhealing.org/opening/still-warm/": [
+    "opening",
+    "still",
+    "warm",
+    "opening-still",
+    "still-warm",
+    "opening-still-warm"
+  ],
+  "https://unboundhealing.org/opening/the-day-before/": [
+    "opening",
+    "the",
+    "day",
+    "before",
+    "opening-the",
+    "the-day",
+    "day-before",
+    "opening-the-day",
+    "the-day-before"
+  ],
+  "https://unboundhealing.org/opening/this-morning-a/": [
+    "opening",
+    "this",
+    "morning",
+    "a",
+    "opening-this",
+    "this-morning",
+    "morning-a",
+    "opening-this-morning",
+    "this-morning-a"
+  ],
+  "https://unboundhealing.org/opening/this-morning-too/": [
+    "opening",
+    "this",
+    "morning",
+    "too",
+    "opening-this",
+    "this-morning",
+    "morning-too",
+    "opening-this-morning",
+    "this-morning-too"
+  ],
+  "https://unboundhealing.org/opening/this-morning/": [
+    "opening",
+    "this",
+    "morning",
+    "opening-this",
+    "this-morning",
+    "opening-this-morning"
+  ],
+  "https://unboundhealing.org/opening/this-you/": [
+    "opening",
+    "this",
+    "you",
+    "opening-this",
+    "this-you",
+    "opening-this-you"
+  ],
+  "https://unboundhealing.org/opening/tom/": [
+    "opening",
+    "tom",
+    "opening-tom"
+  ],
+  "https://unboundhealing.org/opening/whatever-this-is/": [
+    "opening",
+    "whatever",
+    "this",
+    "is",
+    "opening-whatever",
+    "whatever-this",
+    "this-is",
+    "opening-whatever-this",
+    "whatever-this-is"
+  ],
+  "https://unboundhealing.org/opening/yes-and-no/": [
+    "opening",
+    "yes",
+    "and",
+    "no",
+    "opening-yes",
+    "yes-and",
+    "and-no",
+    "opening-yes-and",
+    "yes-and-no"
+  ],
+  "https://unboundhealing.org/opening/yesterday/": [
+    "opening",
+    "yesterday",
+    "opening-yesterday"
+  ],
+  "https://unboundhealing.org/supporting/": [
+    "supporting"
+  ],
+  "https://unboundhealing.org/welcome/": [
+    "welcome"
+  ]
 }

@@ -1,0 +1,6407 @@
+{
+  "version": "4.2",
+  "philosophy": {
+    "graph": "structure of reality",
+    "salience": "weighting of reality",
+    "consumers": "read only"
+  },
+  "nodes": {
+    "https://unboundhealing.org/about/conversing/": {
+      "path": "about/conversing/index.html",
+      "url": "https://unboundhealing.org/about/conversing/",
+      "title": "Conversing",
+      "concepts": [
+        "about",
+        "conversing",
+        "about-conversing"
+      ]
+    },
+    "https://unboundhealing.org/about/": {
+      "path": "about/index.html",
+      "url": "https://unboundhealing.org/about/",
+      "title": "About",
+      "concepts": [
+        "about"
+      ]
+    },
+    "https://unboundhealing.org/assets/entry-template/": {
+      "path": "assets/entry-template/index.html",
+      "url": "https://unboundhealing.org/assets/entry-template/",
+      "title": "TITLE",
+      "concepts": [
+        "assets",
+        "entry",
+        "template",
+        "assets-entry",
+        "entry-template",
+        "assets-entry-template"
+      ]
+    },
+    "https://unboundhealing.org/assets/homepage-intelligence-blocks/": {
+      "path": "assets/homepage-intelligence-blocks.html",
+      "url": "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
+      "title": "",
+      "concepts": [
+        "assets",
+        "homepage",
+        "intelligence",
+        "blocks",
+        "assets-homepage",
+        "homepage-intelligence",
+        "intelligence-blocks",
+        "assets-homepage-intelligence",
+        "homepage-intelligence-blocks"
+      ]
+    },
+    "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/": {
+      "path": "assets/images/_html/foo_fighters_the_pretender_1.html",
+      "url": "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
+      "title": "",
+      "concepts": [
+        "assets",
+        "images",
+        "foo",
+        "fighters",
+        "the",
+        "pretender",
+        "1",
+        "assets-images",
+        "images-foo",
+        "foo-fighters",
+        "fighters-the",
+        "the-pretender",
+        "pretender-1",
+        "assets-images-foo",
+        "images-foo-fighters",
+        "foo-fighters-the",
+        "fighters-the-pretender",
+        "the-pretender-1"
+      ]
+    },
+    "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/": {
+      "path": "assets/images/_html/lizzo_good_as_hell_1.html",
+      "url": "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
+      "title": "",
+      "concepts": [
+        "assets",
+        "images",
+        "lizzo",
+        "good",
+        "as",
+        "hell",
+        "1",
+        "assets-images",
+        "images-lizzo",
+        "lizzo-good",
+        "good-as",
+        "as-hell",
+        "hell-1",
+        "assets-images-lizzo",
+        "images-lizzo-good",
+        "lizzo-good-as",
+        "good-as-hell",
+        "as-hell-1"
+      ]
+    },
+    "https://unboundhealing.org/assets/images/_html/test_image/": {
+      "path": "assets/images/_html/test_image.html",
+      "url": "https://unboundhealing.org/assets/images/_html/test_image/",
+      "title": "",
+      "concepts": [
+        "assets",
+        "images",
+        "test",
+        "image",
+        "assets-images",
+        "images-test",
+        "test-image",
+        "assets-images-test",
+        "images-test-image"
+      ]
+    },
+    "https://unboundhealing.org/assets/page-template/": {
+      "path": "assets/page-template/index.html",
+      "url": "https://unboundhealing.org/assets/page-template/",
+      "title": "FOLDER",
+      "concepts": [
+        "assets",
+        "page",
+        "template",
+        "assets-page",
+        "page-template",
+        "assets-page-template"
+      ]
+    },
+    "https://unboundhealing.org/assets/updates-temp/": {
+      "path": "assets/updates-temp/index.html",
+      "url": "https://unboundhealing.org/assets/updates-temp/",
+      "title": "",
+      "concepts": [
+        "assets",
+        "updates",
+        "temp",
+        "assets-updates",
+        "updates-temp",
+        "assets-updates-temp"
+      ]
+    },
+    "https://unboundhealing.org/concept/evolving/": {
+      "path": "concept/evolving/index.html",
+      "url": "https://unboundhealing.org/concept/evolving/",
+      "title": "Evolving…",
+      "concepts": [
+        "concept",
+        "evolving",
+        "concept-evolving"
+      ]
+    },
+    "https://unboundhealing.org/concept/experimenting/": {
+      "path": "concept/experimenting/index.html",
+      "url": "https://unboundhealing.org/concept/experimenting/",
+      "title": "Experimenting",
+      "concepts": [
+        "concept",
+        "experimenting",
+        "concept-experimenting"
+      ]
+    },
+    "https://unboundhealing.org/concept/iced-coffee/": {
+      "path": "concept/iced-coffee/index.html",
+      "url": "https://unboundhealing.org/concept/iced-coffee/",
+      "title": "iced coffee",
+      "concepts": [
+        "concept",
+        "iced",
+        "coffee",
+        "concept-iced",
+        "iced-coffee",
+        "concept-iced-coffee"
+      ]
+    },
+    "https://unboundhealing.org/concept/ici/": {
+      "path": "concept/ici/index.html",
+      "url": "https://unboundhealing.org/concept/ici/",
+      "title": "Interconnected Content Initiative™ (ICI",
+      "concepts": [
+        "concept",
+        "ici",
+        "concept-ici"
+      ]
+    },
+    "https://unboundhealing.org/concept/idea/": {
+      "path": "concept/idea/index.html",
+      "url": "https://unboundhealing.org/concept/idea/",
+      "title": "idea",
+      "concepts": [
+        "concept",
+        "idea",
+        "concept-idea"
+      ]
+    },
+    "https://unboundhealing.org/concept/": {
+      "path": "concept/index.html",
+      "url": "https://unboundhealing.org/concept/",
+      "title": "Concept",
+      "concepts": [
+        "concept"
+      ]
+    },
+    "https://unboundhealing.org/concept/just-thinking/": {
+      "path": "concept/just-thinking/index.html",
+      "url": "https://unboundhealing.org/concept/just-thinking/",
+      "title": "so i was just thinking…",
+      "concepts": [
+        "concept",
+        "just",
+        "thinking",
+        "concept-just",
+        "just-thinking",
+        "concept-just-thinking"
+      ]
+    },
+    "https://unboundhealing.org/concept/origin/": {
+      "path": "concept/origin/index.html",
+      "url": "https://unboundhealing.org/concept/origin/",
+      "title": "Almost-Origin Story",
+      "concepts": [
+        "concept",
+        "origin",
+        "concept-origin"
+      ]
+    },
+    "https://unboundhealing.org/concept/website-building/": {
+      "path": "concept/website-building/index.html",
+      "url": "https://unboundhealing.org/concept/website-building/",
+      "title": "website building:",
+      "concepts": [
+        "concept",
+        "website",
+        "building",
+        "concept-website",
+        "website-building",
+        "concept-website-building"
+      ]
+    },
+    "https://unboundhealing.org/concept/zone/": {
+      "path": "concept/zone/index.html",
+      "url": "https://unboundhealing.org/concept/zone/",
+      "title": "zone?",
+      "concepts": [
+        "concept",
+        "zone",
+        "concept-zone"
+      ]
+    },
+    "https://unboundhealing.org/gathering/": {
+      "path": "gathering/index.html",
+      "url": "https://unboundhealing.org/gathering/",
+      "title": "Gathering",
+      "concepts": [
+        "gathering"
+      ]
+    },
+    "https://unboundhealing.org/": {
+      "path": "index.html",
+      "url": "https://unboundhealing.org/",
+      "title": "Unbound Healing Ministries",
+      "concepts": []
+    },
+    "https://unboundhealing.org/inviting/": {
+      "path": "inviting/index.html",
+      "url": "https://unboundhealing.org/inviting/",
+      "title": "Inviting",
+      "concepts": [
+        "inviting"
+      ]
+    },
+    "https://unboundhealing.org/listening/": {
+      "path": "listening/index.html",
+      "url": "https://unboundhealing.org/listening/",
+      "title": "Listening",
+      "concepts": [
+        "listening"
+      ]
+    },
+    "https://unboundhealing.org/noticing/": {
+      "path": "noticing/index.html",
+      "url": "https://unboundhealing.org/noticing/",
+      "title": "Noticing",
+      "concepts": [
+        "noticing"
+      ]
+    },
+    "https://unboundhealing.org/noticing/shared-experiences/": {
+      "path": "noticing/shared-experiences/index.html",
+      "url": "https://unboundhealing.org/noticing/shared-experiences/",
+      "title": "Shared Experiences",
+      "concepts": [
+        "noticing",
+        "shared",
+        "experiences",
+        "noticing-shared",
+        "shared-experiences",
+        "noticing-shared-experiences"
+      ]
+    },
+    "https://unboundhealing.org/opening/another-yesterday/": {
+      "path": "opening/another-yesterday/index.html",
+      "url": "https://unboundhealing.org/opening/another-yesterday/",
+      "title": "another yesterday…",
+      "concepts": [
+        "opening",
+        "another",
+        "yesterday",
+        "opening-another",
+        "another-yesterday",
+        "opening-another-yesterday"
+      ]
+    },
+    "https://unboundhealing.org/opening/cooling-tea/": {
+      "path": "opening/cooling-tea/index.html",
+      "url": "https://unboundhealing.org/opening/cooling-tea/",
+      "title": "cooling tea",
+      "concepts": [
+        "opening",
+        "cooling",
+        "tea",
+        "opening-cooling",
+        "cooling-tea",
+        "opening-cooling-tea"
+      ]
+    },
+    "https://unboundhealing.org/opening/gloomy/": {
+      "path": "opening/gloomy/index.html",
+      "url": "https://unboundhealing.org/opening/gloomy/",
+      "title": "gloomy…",
+      "concepts": [
+        "opening",
+        "gloomy",
+        "opening-gloomy"
+      ]
+    },
+    "https://unboundhealing.org/opening/": {
+      "path": "opening/index.html",
+      "url": "https://unboundhealing.org/opening/",
+      "title": "Opening…",
+      "concepts": [
+        "opening"
+      ]
+    },
+    "https://unboundhealing.org/opening/just-listening/": {
+      "path": "opening/just-listening/index.html",
+      "url": "https://unboundhealing.org/opening/just-listening/",
+      "title": "just listening…",
+      "concepts": [
+        "opening",
+        "just",
+        "listening",
+        "opening-just",
+        "just-listening",
+        "opening-just-listening"
+      ]
+    },
+    "https://unboundhealing.org/opening/liz/": {
+      "path": "opening/liz/index.html",
+      "url": "https://unboundhealing.org/opening/liz/",
+      "title": "liz",
+      "concepts": [
+        "opening",
+        "liz",
+        "opening-liz"
+      ]
+    },
+    "https://unboundhealing.org/opening/love-concept/": {
+      "path": "opening/love-concept/index.html",
+      "url": "https://unboundhealing.org/opening/love-concept/",
+      "title": "love is just a concept…",
+      "concepts": [
+        "opening",
+        "love",
+        "concept",
+        "opening-love",
+        "love-concept",
+        "opening-love-concept"
+      ]
+    },
+    "https://unboundhealing.org/opening/lukewarm-decaf/": {
+      "path": "opening/lukewarm-decaf/index.html",
+      "url": "https://unboundhealing.org/opening/lukewarm-decaf/",
+      "title": "i love you (,/?) lukewarm strong decaf coffee…",
+      "concepts": [
+        "opening",
+        "lukewarm",
+        "decaf",
+        "opening-lukewarm",
+        "lukewarm-decaf",
+        "opening-lukewarm-decaf"
+      ]
+    },
+    "https://unboundhealing.org/opening/no-title/": {
+      "path": "opening/no-title/index.html",
+      "url": "https://unboundhealing.org/opening/no-title/",
+      "title": "no title",
+      "concepts": [
+        "opening",
+        "no",
+        "title",
+        "opening-no",
+        "no-title",
+        "opening-no-title"
+      ]
+    },
+    "https://unboundhealing.org/opening/open/": {
+      "path": "opening/open/index.html",
+      "url": "https://unboundhealing.org/opening/open/",
+      "title": "open…",
+      "concepts": [
+        "opening",
+        "open",
+        "opening-open"
+      ]
+    },
+    "https://unboundhealing.org/opening/post-this/": {
+      "path": "opening/post-this/index.html",
+      "url": "https://unboundhealing.org/opening/post-this/",
+      "title": "post this?",
+      "concepts": [
+        "opening",
+        "post",
+        "this",
+        "opening-post",
+        "post-this",
+        "opening-post-this"
+      ]
+    },
+    "https://unboundhealing.org/opening/skwintcheee/": {
+      "path": "opening/skwintcheee/index.html",
+      "url": "https://unboundhealing.org/opening/skwintcheee/",
+      "title": "skwintcheee…",
+      "concepts": [
+        "opening",
+        "skwintcheee",
+        "opening-skwintcheee"
+      ]
+    },
+    "https://unboundhealing.org/opening/sold-out/": {
+      "path": "opening/sold-out/index.html",
+      "url": "https://unboundhealing.org/opening/sold-out/",
+      "title": "sold-out…",
+      "concepts": [
+        "opening",
+        "sold",
+        "out",
+        "opening-sold",
+        "sold-out",
+        "opening-sold-out"
+      ]
+    },
+    "https://unboundhealing.org/opening/still-warm/": {
+      "path": "opening/still-warm/index.html",
+      "url": "https://unboundhealing.org/opening/still-warm/",
+      "title": "the tea is still warm! 🤯",
+      "concepts": [
+        "opening",
+        "still",
+        "warm",
+        "opening-still",
+        "still-warm",
+        "opening-still-warm"
+      ]
+    },
+    "https://unboundhealing.org/opening/the-day-before/": {
+      "path": "opening/the-day-before/index.html",
+      "url": "https://unboundhealing.org/opening/the-day-before/",
+      "title": "the day before…",
+      "concepts": [
+        "opening",
+        "the",
+        "day",
+        "before",
+        "opening-the",
+        "the-day",
+        "day-before",
+        "opening-the-day",
+        "the-day-before"
+      ]
+    },
+    "https://unboundhealing.org/opening/this-morning-a/": {
+      "path": "opening/this-morning-a/index.html",
+      "url": "https://unboundhealing.org/opening/this-morning-a/",
+      "title": "this morning…",
+      "concepts": [
+        "opening",
+        "this",
+        "morning",
+        "a",
+        "opening-this",
+        "this-morning",
+        "morning-a",
+        "opening-this-morning",
+        "this-morning-a"
+      ]
+    },
+    "https://unboundhealing.org/opening/this-morning-too/": {
+      "path": "opening/this-morning-too/index.html",
+      "url": "https://unboundhealing.org/opening/this-morning-too/",
+      "title": "this morning…",
+      "concepts": [
+        "opening",
+        "this",
+        "morning",
+        "too",
+        "opening-this",
+        "this-morning",
+        "morning-too",
+        "opening-this-morning",
+        "this-morning-too"
+      ]
+    },
+    "https://unboundhealing.org/opening/this-morning/": {
+      "path": "opening/this-morning/index.html",
+      "url": "https://unboundhealing.org/opening/this-morning/",
+      "title": "this morning...",
+      "concepts": [
+        "opening",
+        "this",
+        "morning",
+        "opening-this",
+        "this-morning",
+        "opening-this-morning"
+      ]
+    },
+    "https://unboundhealing.org/opening/this-you/": {
+      "path": "opening/this-you/index.html",
+      "url": "https://unboundhealing.org/opening/this-you/",
+      "title": "this you…",
+      "concepts": [
+        "opening",
+        "this",
+        "you",
+        "opening-this",
+        "this-you",
+        "opening-this-you"
+      ]
+    },
+    "https://unboundhealing.org/opening/tom/": {
+      "path": "opening/tom/index.html",
+      "url": "https://unboundhealing.org/opening/tom/",
+      "title": "coffee with tom",
+      "concepts": [
+        "opening",
+        "tom",
+        "opening-tom"
+      ]
+    },
+    "https://unboundhealing.org/opening/whatever-this-is/": {
+      "path": "opening/whatever-this-is/index.html",
+      "url": "https://unboundhealing.org/opening/whatever-this-is/",
+      "title": "whatever this is…",
+      "concepts": [
+        "opening",
+        "whatever",
+        "this",
+        "is",
+        "opening-whatever",
+        "whatever-this",
+        "this-is",
+        "opening-whatever-this",
+        "whatever-this-is"
+      ]
+    },
+    "https://unboundhealing.org/opening/yes-and-no/": {
+      "path": "opening/yes-and-no/index.html",
+      "url": "https://unboundhealing.org/opening/yes-and-no/",
+      "title": "yes and no…",
+      "concepts": [
+        "opening",
+        "yes",
+        "and",
+        "no",
+        "opening-yes",
+        "yes-and",
+        "and-no",
+        "opening-yes-and",
+        "yes-and-no"
+      ]
+    },
+    "https://unboundhealing.org/opening/yesterday/": {
+      "path": "opening/yesterday/index.html",
+      "url": "https://unboundhealing.org/opening/yesterday/",
+      "title": "yesterday…",
+      "concepts": [
+        "opening",
+        "yesterday",
+        "opening-yesterday"
+      ]
+    },
+    "https://unboundhealing.org/supporting/": {
+      "path": "supporting/index.html",
+      "url": "https://unboundhealing.org/supporting/",
+      "title": "Supporting",
+      "concepts": [
+        "supporting"
+      ]
+    },
+    "https://unboundhealing.org/welcome/": {
+      "path": "welcome/index.html",
+      "url": "https://unboundhealing.org/welcome/",
+      "title": "Welcome in…",
+      "concepts": [
+        "welcome"
+      ]
+    }
+  },
+  "edges": [
+    {
+      "a": "about",
+      "b": "conversing",
+      "weight": 1
+    },
+    {
+      "a": "about",
+      "b": "about-conversing",
+      "weight": 1
+    },
+    {
+      "a": "about-conversing",
+      "b": "conversing",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "entry",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "template",
+      "weight": 2
+    },
+    {
+      "a": "assets",
+      "b": "assets-entry",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "entry-template",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "assets-entry-template",
+      "weight": 1
+    },
+    {
+      "a": "entry",
+      "b": "template",
+      "weight": 1
+    },
+    {
+      "a": "assets-entry",
+      "b": "entry",
+      "weight": 1
+    },
+    {
+      "a": "entry",
+      "b": "entry-template",
+      "weight": 1
+    },
+    {
+      "a": "assets-entry-template",
+      "b": "entry",
+      "weight": 1
+    },
+    {
+      "a": "assets-entry",
+      "b": "template",
+      "weight": 1
+    },
+    {
+      "a": "entry-template",
+      "b": "template",
+      "weight": 1
+    },
+    {
+      "a": "assets-entry-template",
+      "b": "template",
+      "weight": 1
+    },
+    {
+      "a": "assets-entry",
+      "b": "entry-template",
+      "weight": 1
+    },
+    {
+      "a": "assets-entry",
+      "b": "assets-entry-template",
+      "weight": 1
+    },
+    {
+      "a": "assets-entry-template",
+      "b": "entry-template",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "homepage",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "intelligence",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "blocks",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "assets-homepage",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "homepage-intelligence",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "intelligence-blocks",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "assets-homepage-intelligence",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "homepage-intelligence-blocks",
+      "weight": 1
+    },
+    {
+      "a": "homepage",
+      "b": "intelligence",
+      "weight": 1
+    },
+    {
+      "a": "blocks",
+      "b": "homepage",
+      "weight": 1
+    },
+    {
+      "a": "assets-homepage",
+      "b": "homepage",
+      "weight": 1
+    },
+    {
+      "a": "homepage",
+      "b": "homepage-intelligence",
+      "weight": 1
+    },
+    {
+      "a": "homepage",
+      "b": "intelligence-blocks",
+      "weight": 1
+    },
+    {
+      "a": "assets-homepage-intelligence",
+      "b": "homepage",
+      "weight": 1
+    },
+    {
+      "a": "homepage",
+      "b": "homepage-intelligence-blocks",
+      "weight": 1
+    },
+    {
+      "a": "blocks",
+      "b": "intelligence",
+      "weight": 1
+    },
+    {
+      "a": "assets-homepage",
+      "b": "intelligence",
+      "weight": 1
+    },
+    {
+      "a": "homepage-intelligence",
+      "b": "intelligence",
+      "weight": 1
+    },
+    {
+      "a": "intelligence",
+      "b": "intelligence-blocks",
+      "weight": 1
+    },
+    {
+      "a": "assets-homepage-intelligence",
+      "b": "intelligence",
+      "weight": 1
+    },
+    {
+      "a": "homepage-intelligence-blocks",
+      "b": "intelligence",
+      "weight": 1
+    },
+    {
+      "a": "assets-homepage",
+      "b": "blocks",
+      "weight": 1
+    },
+    {
+      "a": "blocks",
+      "b": "homepage-intelligence",
+      "weight": 1
+    },
+    {
+      "a": "blocks",
+      "b": "intelligence-blocks",
+      "weight": 1
+    },
+    {
+      "a": "assets-homepage-intelligence",
+      "b": "blocks",
+      "weight": 1
+    },
+    {
+      "a": "blocks",
+      "b": "homepage-intelligence-blocks",
+      "weight": 1
+    },
+    {
+      "a": "assets-homepage",
+      "b": "homepage-intelligence",
+      "weight": 1
+    },
+    {
+      "a": "assets-homepage",
+      "b": "intelligence-blocks",
+      "weight": 1
+    },
+    {
+      "a": "assets-homepage",
+      "b": "assets-homepage-intelligence",
+      "weight": 1
+    },
+    {
+      "a": "assets-homepage",
+      "b": "homepage-intelligence-blocks",
+      "weight": 1
+    },
+    {
+      "a": "homepage-intelligence",
+      "b": "intelligence-blocks",
+      "weight": 1
+    },
+    {
+      "a": "assets-homepage-intelligence",
+      "b": "homepage-intelligence",
+      "weight": 1
+    },
+    {
+      "a": "homepage-intelligence",
+      "b": "homepage-intelligence-blocks",
+      "weight": 1
+    },
+    {
+      "a": "assets-homepage-intelligence",
+      "b": "intelligence-blocks",
+      "weight": 1
+    },
+    {
+      "a": "homepage-intelligence-blocks",
+      "b": "intelligence-blocks",
+      "weight": 1
+    },
+    {
+      "a": "assets-homepage-intelligence",
+      "b": "homepage-intelligence-blocks",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "images",
+      "weight": 3
+    },
+    {
+      "a": "assets",
+      "b": "foo",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "fighters",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "pretender",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "assets",
+      "weight": 2
+    },
+    {
+      "a": "assets",
+      "b": "assets-images",
+      "weight": 3
+    },
+    {
+      "a": "assets",
+      "b": "images-foo",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "fighters-the",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "assets-images-foo",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "images-foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "foo-fighters-the",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "fighters-the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "the-pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "foo",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "fighters",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "images",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "images",
+      "b": "pretender",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "images",
+      "weight": 2
+    },
+    {
+      "a": "assets-images",
+      "b": "images",
+      "weight": 3
+    },
+    {
+      "a": "images",
+      "b": "images-foo",
+      "weight": 1
+    },
+    {
+      "a": "foo-fighters",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "images",
+      "b": "the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "images",
+      "b": "pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-foo",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "images",
+      "b": "images-foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "foo-fighters-the",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the-pretender",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "images",
+      "b": "the-pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "fighters",
+      "b": "foo",
+      "weight": 1
+    },
+    {
+      "a": "foo",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "foo",
+      "b": "pretender",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "foo",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "foo",
+      "weight": 1
+    },
+    {
+      "a": "foo",
+      "b": "images-foo",
+      "weight": 1
+    },
+    {
+      "a": "foo",
+      "b": "foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the",
+      "b": "foo",
+      "weight": 1
+    },
+    {
+      "a": "foo",
+      "b": "the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "foo",
+      "b": "pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-foo",
+      "b": "foo",
+      "weight": 1
+    },
+    {
+      "a": "foo",
+      "b": "images-foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "foo",
+      "b": "foo-fighters-the",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the-pretender",
+      "b": "foo",
+      "weight": 1
+    },
+    {
+      "a": "foo",
+      "b": "the-pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "fighters",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "fighters",
+      "b": "pretender",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "fighters",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "fighters",
+      "weight": 1
+    },
+    {
+      "a": "fighters",
+      "b": "images-foo",
+      "weight": 1
+    },
+    {
+      "a": "fighters",
+      "b": "foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "fighters",
+      "b": "fighters-the",
+      "weight": 1
+    },
+    {
+      "a": "fighters",
+      "b": "the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "fighters",
+      "b": "pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-foo",
+      "b": "fighters",
+      "weight": 1
+    },
+    {
+      "a": "fighters",
+      "b": "images-foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "fighters",
+      "b": "foo-fighters-the",
+      "weight": 1
+    },
+    {
+      "a": "fighters",
+      "b": "fighters-the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "fighters",
+      "b": "the-pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "pretender",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "images-foo",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "foo-fighters",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "the",
+      "b": "the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "pretender-1",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-foo",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "images-foo-fighters",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "foo-fighters-the",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the-pretender",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "the",
+      "b": "the-pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "pretender",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "pretender",
+      "weight": 1
+    },
+    {
+      "a": "images-foo",
+      "b": "pretender",
+      "weight": 1
+    },
+    {
+      "a": "foo-fighters",
+      "b": "pretender",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the",
+      "b": "pretender",
+      "weight": 1
+    },
+    {
+      "a": "pretender",
+      "b": "the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "pretender",
+      "b": "pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-foo",
+      "b": "pretender",
+      "weight": 1
+    },
+    {
+      "a": "images-foo-fighters",
+      "b": "pretender",
+      "weight": 1
+    },
+    {
+      "a": "foo-fighters-the",
+      "b": "pretender",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the-pretender",
+      "b": "pretender",
+      "weight": 1
+    },
+    {
+      "a": "pretender",
+      "b": "the-pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "assets-images",
+      "weight": 2
+    },
+    {
+      "a": "1",
+      "b": "images-foo",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "fighters-the",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "assets-images-foo",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "images-foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "foo-fighters-the",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "fighters-the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "the-pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "images-foo",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "fighters-the",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "assets-images-foo",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "images-foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "foo-fighters-the",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "fighters-the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "the-pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "foo-fighters",
+      "b": "images-foo",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the",
+      "b": "images-foo",
+      "weight": 1
+    },
+    {
+      "a": "images-foo",
+      "b": "the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "images-foo",
+      "b": "pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-foo",
+      "b": "images-foo",
+      "weight": 1
+    },
+    {
+      "a": "images-foo",
+      "b": "images-foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "foo-fighters-the",
+      "b": "images-foo",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the-pretender",
+      "b": "images-foo",
+      "weight": 1
+    },
+    {
+      "a": "images-foo",
+      "b": "the-pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the",
+      "b": "foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "foo-fighters",
+      "b": "the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "foo-fighters",
+      "b": "pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-foo",
+      "b": "foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "foo-fighters",
+      "b": "images-foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "foo-fighters",
+      "b": "foo-fighters-the",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the-pretender",
+      "b": "foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "foo-fighters",
+      "b": "the-pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the",
+      "b": "the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the",
+      "b": "pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-foo",
+      "b": "fighters-the",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the",
+      "b": "images-foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the",
+      "b": "foo-fighters-the",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the",
+      "b": "fighters-the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the",
+      "b": "the-pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "pretender-1",
+      "b": "the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-foo",
+      "b": "the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "images-foo-fighters",
+      "b": "the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "foo-fighters-the",
+      "b": "the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the-pretender",
+      "b": "the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "the-pretender",
+      "b": "the-pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-foo",
+      "b": "pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "images-foo-fighters",
+      "b": "pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "foo-fighters-the",
+      "b": "pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the-pretender",
+      "b": "pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "pretender-1",
+      "b": "the-pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-foo",
+      "b": "images-foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-foo",
+      "b": "foo-fighters-the",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-foo",
+      "b": "fighters-the-pretender",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-foo",
+      "b": "the-pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "foo-fighters-the",
+      "b": "images-foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the-pretender",
+      "b": "images-foo-fighters",
+      "weight": 1
+    },
+    {
+      "a": "images-foo-fighters",
+      "b": "the-pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the-pretender",
+      "b": "foo-fighters-the",
+      "weight": 1
+    },
+    {
+      "a": "foo-fighters-the",
+      "b": "the-pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "fighters-the-pretender",
+      "b": "the-pretender-1",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "lizzo",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "good",
+      "weight": 1
+    },
+    {
+      "a": "as",
+      "b": "assets",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "hell",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "good-as",
+      "weight": 1
+    },
+    {
+      "a": "as-hell",
+      "b": "assets",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "hell-1",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "assets-images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "images-lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "lizzo-good-as",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "good-as-hell",
+      "weight": 1
+    },
+    {
+      "a": "as-hell-1",
+      "b": "assets",
+      "weight": 1
+    },
+    {
+      "a": "images",
+      "b": "lizzo",
+      "weight": 1
+    },
+    {
+      "a": "good",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "as",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "hell",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "images",
+      "b": "images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "images",
+      "b": "lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "good-as",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "as-hell",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "hell-1",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-lizzo",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "images",
+      "b": "images-lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "images",
+      "b": "lizzo-good-as",
+      "weight": 1
+    },
+    {
+      "a": "good-as-hell",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "as-hell-1",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "good",
+      "b": "lizzo",
+      "weight": 1
+    },
+    {
+      "a": "as",
+      "b": "lizzo",
+      "weight": 1
+    },
+    {
+      "a": "hell",
+      "b": "lizzo",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "lizzo",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "lizzo",
+      "weight": 1
+    },
+    {
+      "a": "images-lizzo",
+      "b": "lizzo",
+      "weight": 1
+    },
+    {
+      "a": "lizzo",
+      "b": "lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "good-as",
+      "b": "lizzo",
+      "weight": 1
+    },
+    {
+      "a": "as-hell",
+      "b": "lizzo",
+      "weight": 1
+    },
+    {
+      "a": "hell-1",
+      "b": "lizzo",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-lizzo",
+      "b": "lizzo",
+      "weight": 1
+    },
+    {
+      "a": "images-lizzo-good",
+      "b": "lizzo",
+      "weight": 1
+    },
+    {
+      "a": "lizzo",
+      "b": "lizzo-good-as",
+      "weight": 1
+    },
+    {
+      "a": "good-as-hell",
+      "b": "lizzo",
+      "weight": 1
+    },
+    {
+      "a": "as-hell-1",
+      "b": "lizzo",
+      "weight": 1
+    },
+    {
+      "a": "as",
+      "b": "good",
+      "weight": 1
+    },
+    {
+      "a": "good",
+      "b": "hell",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "good",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "good",
+      "weight": 1
+    },
+    {
+      "a": "good",
+      "b": "images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "good",
+      "b": "lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "good",
+      "b": "good-as",
+      "weight": 1
+    },
+    {
+      "a": "as-hell",
+      "b": "good",
+      "weight": 1
+    },
+    {
+      "a": "good",
+      "b": "hell-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-lizzo",
+      "b": "good",
+      "weight": 1
+    },
+    {
+      "a": "good",
+      "b": "images-lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "good",
+      "b": "lizzo-good-as",
+      "weight": 1
+    },
+    {
+      "a": "good",
+      "b": "good-as-hell",
+      "weight": 1
+    },
+    {
+      "a": "as-hell-1",
+      "b": "good",
+      "weight": 1
+    },
+    {
+      "a": "as",
+      "b": "hell",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "as",
+      "weight": 1
+    },
+    {
+      "a": "as",
+      "b": "assets-images",
+      "weight": 1
+    },
+    {
+      "a": "as",
+      "b": "images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "as",
+      "b": "lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "as",
+      "b": "good-as",
+      "weight": 1
+    },
+    {
+      "a": "as",
+      "b": "as-hell",
+      "weight": 1
+    },
+    {
+      "a": "as",
+      "b": "hell-1",
+      "weight": 1
+    },
+    {
+      "a": "as",
+      "b": "assets-images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "as",
+      "b": "images-lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "as",
+      "b": "lizzo-good-as",
+      "weight": 1
+    },
+    {
+      "a": "as",
+      "b": "good-as-hell",
+      "weight": 1
+    },
+    {
+      "a": "as",
+      "b": "as-hell-1",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "hell",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "hell",
+      "weight": 1
+    },
+    {
+      "a": "hell",
+      "b": "images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "hell",
+      "b": "lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "good-as",
+      "b": "hell",
+      "weight": 1
+    },
+    {
+      "a": "as-hell",
+      "b": "hell",
+      "weight": 1
+    },
+    {
+      "a": "hell",
+      "b": "hell-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-lizzo",
+      "b": "hell",
+      "weight": 1
+    },
+    {
+      "a": "hell",
+      "b": "images-lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "hell",
+      "b": "lizzo-good-as",
+      "weight": 1
+    },
+    {
+      "a": "good-as-hell",
+      "b": "hell",
+      "weight": 1
+    },
+    {
+      "a": "as-hell-1",
+      "b": "hell",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "good-as",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "as-hell",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "hell-1",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "assets-images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "images-lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "lizzo-good-as",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "good-as-hell",
+      "weight": 1
+    },
+    {
+      "a": "1",
+      "b": "as-hell-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "good-as",
+      "weight": 1
+    },
+    {
+      "a": "as-hell",
+      "b": "assets-images",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "hell-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "assets-images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "images-lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "lizzo-good-as",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "good-as-hell",
+      "weight": 1
+    },
+    {
+      "a": "as-hell-1",
+      "b": "assets-images",
+      "weight": 1
+    },
+    {
+      "a": "images-lizzo",
+      "b": "lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "good-as",
+      "b": "images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "as-hell",
+      "b": "images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "hell-1",
+      "b": "images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-lizzo",
+      "b": "images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "images-lizzo",
+      "b": "images-lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "images-lizzo",
+      "b": "lizzo-good-as",
+      "weight": 1
+    },
+    {
+      "a": "good-as-hell",
+      "b": "images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "as-hell-1",
+      "b": "images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "good-as",
+      "b": "lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "as-hell",
+      "b": "lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "hell-1",
+      "b": "lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-lizzo",
+      "b": "lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "images-lizzo-good",
+      "b": "lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "lizzo-good",
+      "b": "lizzo-good-as",
+      "weight": 1
+    },
+    {
+      "a": "good-as-hell",
+      "b": "lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "as-hell-1",
+      "b": "lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "as-hell",
+      "b": "good-as",
+      "weight": 1
+    },
+    {
+      "a": "good-as",
+      "b": "hell-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-lizzo",
+      "b": "good-as",
+      "weight": 1
+    },
+    {
+      "a": "good-as",
+      "b": "images-lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "good-as",
+      "b": "lizzo-good-as",
+      "weight": 1
+    },
+    {
+      "a": "good-as",
+      "b": "good-as-hell",
+      "weight": 1
+    },
+    {
+      "a": "as-hell-1",
+      "b": "good-as",
+      "weight": 1
+    },
+    {
+      "a": "as-hell",
+      "b": "hell-1",
+      "weight": 1
+    },
+    {
+      "a": "as-hell",
+      "b": "assets-images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "as-hell",
+      "b": "images-lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "as-hell",
+      "b": "lizzo-good-as",
+      "weight": 1
+    },
+    {
+      "a": "as-hell",
+      "b": "good-as-hell",
+      "weight": 1
+    },
+    {
+      "a": "as-hell",
+      "b": "as-hell-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-lizzo",
+      "b": "hell-1",
+      "weight": 1
+    },
+    {
+      "a": "hell-1",
+      "b": "images-lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "hell-1",
+      "b": "lizzo-good-as",
+      "weight": 1
+    },
+    {
+      "a": "good-as-hell",
+      "b": "hell-1",
+      "weight": 1
+    },
+    {
+      "a": "as-hell-1",
+      "b": "hell-1",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-lizzo",
+      "b": "images-lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-lizzo",
+      "b": "lizzo-good-as",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-lizzo",
+      "b": "good-as-hell",
+      "weight": 1
+    },
+    {
+      "a": "as-hell-1",
+      "b": "assets-images-lizzo",
+      "weight": 1
+    },
+    {
+      "a": "images-lizzo-good",
+      "b": "lizzo-good-as",
+      "weight": 1
+    },
+    {
+      "a": "good-as-hell",
+      "b": "images-lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "as-hell-1",
+      "b": "images-lizzo-good",
+      "weight": 1
+    },
+    {
+      "a": "good-as-hell",
+      "b": "lizzo-good-as",
+      "weight": 1
+    },
+    {
+      "a": "as-hell-1",
+      "b": "lizzo-good-as",
+      "weight": 1
+    },
+    {
+      "a": "as-hell-1",
+      "b": "good-as-hell",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "test",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "image",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "images-test",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "test-image",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "assets-images-test",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "images-test-image",
+      "weight": 1
+    },
+    {
+      "a": "images",
+      "b": "test",
+      "weight": 1
+    },
+    {
+      "a": "image",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "images",
+      "b": "images-test",
+      "weight": 1
+    },
+    {
+      "a": "images",
+      "b": "test-image",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-test",
+      "b": "images",
+      "weight": 1
+    },
+    {
+      "a": "images",
+      "b": "images-test-image",
+      "weight": 1
+    },
+    {
+      "a": "image",
+      "b": "test",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "test",
+      "weight": 1
+    },
+    {
+      "a": "images-test",
+      "b": "test",
+      "weight": 1
+    },
+    {
+      "a": "test",
+      "b": "test-image",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-test",
+      "b": "test",
+      "weight": 1
+    },
+    {
+      "a": "images-test-image",
+      "b": "test",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "image",
+      "weight": 1
+    },
+    {
+      "a": "image",
+      "b": "images-test",
+      "weight": 1
+    },
+    {
+      "a": "image",
+      "b": "test-image",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-test",
+      "b": "image",
+      "weight": 1
+    },
+    {
+      "a": "image",
+      "b": "images-test-image",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "images-test",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "test-image",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "assets-images-test",
+      "weight": 1
+    },
+    {
+      "a": "assets-images",
+      "b": "images-test-image",
+      "weight": 1
+    },
+    {
+      "a": "images-test",
+      "b": "test-image",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-test",
+      "b": "images-test",
+      "weight": 1
+    },
+    {
+      "a": "images-test",
+      "b": "images-test-image",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-test",
+      "b": "test-image",
+      "weight": 1
+    },
+    {
+      "a": "images-test-image",
+      "b": "test-image",
+      "weight": 1
+    },
+    {
+      "a": "assets-images-test",
+      "b": "images-test-image",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "page",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "assets-page",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "page-template",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "assets-page-template",
+      "weight": 1
+    },
+    {
+      "a": "page",
+      "b": "template",
+      "weight": 1
+    },
+    {
+      "a": "assets-page",
+      "b": "page",
+      "weight": 1
+    },
+    {
+      "a": "page",
+      "b": "page-template",
+      "weight": 1
+    },
+    {
+      "a": "assets-page-template",
+      "b": "page",
+      "weight": 1
+    },
+    {
+      "a": "assets-page",
+      "b": "template",
+      "weight": 1
+    },
+    {
+      "a": "page-template",
+      "b": "template",
+      "weight": 1
+    },
+    {
+      "a": "assets-page-template",
+      "b": "template",
+      "weight": 1
+    },
+    {
+      "a": "assets-page",
+      "b": "page-template",
+      "weight": 1
+    },
+    {
+      "a": "assets-page",
+      "b": "assets-page-template",
+      "weight": 1
+    },
+    {
+      "a": "assets-page-template",
+      "b": "page-template",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "updates",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "temp",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "assets-updates",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "updates-temp",
+      "weight": 1
+    },
+    {
+      "a": "assets",
+      "b": "assets-updates-temp",
+      "weight": 1
+    },
+    {
+      "a": "temp",
+      "b": "updates",
+      "weight": 1
+    },
+    {
+      "a": "assets-updates",
+      "b": "updates",
+      "weight": 1
+    },
+    {
+      "a": "updates",
+      "b": "updates-temp",
+      "weight": 1
+    },
+    {
+      "a": "assets-updates-temp",
+      "b": "updates",
+      "weight": 1
+    },
+    {
+      "a": "assets-updates",
+      "b": "temp",
+      "weight": 1
+    },
+    {
+      "a": "temp",
+      "b": "updates-temp",
+      "weight": 1
+    },
+    {
+      "a": "assets-updates-temp",
+      "b": "temp",
+      "weight": 1
+    },
+    {
+      "a": "assets-updates",
+      "b": "updates-temp",
+      "weight": 1
+    },
+    {
+      "a": "assets-updates",
+      "b": "assets-updates-temp",
+      "weight": 1
+    },
+    {
+      "a": "assets-updates-temp",
+      "b": "updates-temp",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "evolving",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "concept-evolving",
+      "weight": 1
+    },
+    {
+      "a": "concept-evolving",
+      "b": "evolving",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "experimenting",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "concept-experimenting",
+      "weight": 1
+    },
+    {
+      "a": "concept-experimenting",
+      "b": "experimenting",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "iced",
+      "weight": 1
+    },
+    {
+      "a": "coffee",
+      "b": "concept",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "concept-iced",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "iced-coffee",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "concept-iced-coffee",
+      "weight": 1
+    },
+    {
+      "a": "coffee",
+      "b": "iced",
+      "weight": 1
+    },
+    {
+      "a": "concept-iced",
+      "b": "iced",
+      "weight": 1
+    },
+    {
+      "a": "iced",
+      "b": "iced-coffee",
+      "weight": 1
+    },
+    {
+      "a": "concept-iced-coffee",
+      "b": "iced",
+      "weight": 1
+    },
+    {
+      "a": "coffee",
+      "b": "concept-iced",
+      "weight": 1
+    },
+    {
+      "a": "coffee",
+      "b": "iced-coffee",
+      "weight": 1
+    },
+    {
+      "a": "coffee",
+      "b": "concept-iced-coffee",
+      "weight": 1
+    },
+    {
+      "a": "concept-iced",
+      "b": "iced-coffee",
+      "weight": 1
+    },
+    {
+      "a": "concept-iced",
+      "b": "concept-iced-coffee",
+      "weight": 1
+    },
+    {
+      "a": "concept-iced-coffee",
+      "b": "iced-coffee",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "ici",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "concept-ici",
+      "weight": 1
+    },
+    {
+      "a": "concept-ici",
+      "b": "ici",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "idea",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "concept-idea",
+      "weight": 1
+    },
+    {
+      "a": "concept-idea",
+      "b": "idea",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "just",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "thinking",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "concept-just",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "just-thinking",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "concept-just-thinking",
+      "weight": 1
+    },
+    {
+      "a": "just",
+      "b": "thinking",
+      "weight": 1
+    },
+    {
+      "a": "concept-just",
+      "b": "just",
+      "weight": 1
+    },
+    {
+      "a": "just",
+      "b": "just-thinking",
+      "weight": 1
+    },
+    {
+      "a": "concept-just-thinking",
+      "b": "just",
+      "weight": 1
+    },
+    {
+      "a": "concept-just",
+      "b": "thinking",
+      "weight": 1
+    },
+    {
+      "a": "just-thinking",
+      "b": "thinking",
+      "weight": 1
+    },
+    {
+      "a": "concept-just-thinking",
+      "b": "thinking",
+      "weight": 1
+    },
+    {
+      "a": "concept-just",
+      "b": "just-thinking",
+      "weight": 1
+    },
+    {
+      "a": "concept-just",
+      "b": "concept-just-thinking",
+      "weight": 1
+    },
+    {
+      "a": "concept-just-thinking",
+      "b": "just-thinking",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "origin",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "concept-origin",
+      "weight": 1
+    },
+    {
+      "a": "concept-origin",
+      "b": "origin",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "website",
+      "weight": 1
+    },
+    {
+      "a": "building",
+      "b": "concept",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "concept-website",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "website-building",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "concept-website-building",
+      "weight": 1
+    },
+    {
+      "a": "building",
+      "b": "website",
+      "weight": 1
+    },
+    {
+      "a": "concept-website",
+      "b": "website",
+      "weight": 1
+    },
+    {
+      "a": "website",
+      "b": "website-building",
+      "weight": 1
+    },
+    {
+      "a": "concept-website-building",
+      "b": "website",
+      "weight": 1
+    },
+    {
+      "a": "building",
+      "b": "concept-website",
+      "weight": 1
+    },
+    {
+      "a": "building",
+      "b": "website-building",
+      "weight": 1
+    },
+    {
+      "a": "building",
+      "b": "concept-website-building",
+      "weight": 1
+    },
+    {
+      "a": "concept-website",
+      "b": "website-building",
+      "weight": 1
+    },
+    {
+      "a": "concept-website",
+      "b": "concept-website-building",
+      "weight": 1
+    },
+    {
+      "a": "concept-website-building",
+      "b": "website-building",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "zone",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "concept-zone",
+      "weight": 1
+    },
+    {
+      "a": "concept-zone",
+      "b": "zone",
+      "weight": 1
+    },
+    {
+      "a": "noticing",
+      "b": "shared",
+      "weight": 1
+    },
+    {
+      "a": "experiences",
+      "b": "noticing",
+      "weight": 1
+    },
+    {
+      "a": "noticing",
+      "b": "noticing-shared",
+      "weight": 1
+    },
+    {
+      "a": "noticing",
+      "b": "shared-experiences",
+      "weight": 1
+    },
+    {
+      "a": "noticing",
+      "b": "noticing-shared-experiences",
+      "weight": 1
+    },
+    {
+      "a": "experiences",
+      "b": "shared",
+      "weight": 1
+    },
+    {
+      "a": "noticing-shared",
+      "b": "shared",
+      "weight": 1
+    },
+    {
+      "a": "shared",
+      "b": "shared-experiences",
+      "weight": 1
+    },
+    {
+      "a": "noticing-shared-experiences",
+      "b": "shared",
+      "weight": 1
+    },
+    {
+      "a": "experiences",
+      "b": "noticing-shared",
+      "weight": 1
+    },
+    {
+      "a": "experiences",
+      "b": "shared-experiences",
+      "weight": 1
+    },
+    {
+      "a": "experiences",
+      "b": "noticing-shared-experiences",
+      "weight": 1
+    },
+    {
+      "a": "noticing-shared",
+      "b": "shared-experiences",
+      "weight": 1
+    },
+    {
+      "a": "noticing-shared",
+      "b": "noticing-shared-experiences",
+      "weight": 1
+    },
+    {
+      "a": "noticing-shared-experiences",
+      "b": "shared-experiences",
+      "weight": 1
+    },
+    {
+      "a": "another",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "yesterday",
+      "weight": 2
+    },
+    {
+      "a": "opening",
+      "b": "opening-another",
+      "weight": 1
+    },
+    {
+      "a": "another-yesterday",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-another-yesterday",
+      "weight": 1
+    },
+    {
+      "a": "another",
+      "b": "yesterday",
+      "weight": 1
+    },
+    {
+      "a": "another",
+      "b": "opening-another",
+      "weight": 1
+    },
+    {
+      "a": "another",
+      "b": "another-yesterday",
+      "weight": 1
+    },
+    {
+      "a": "another",
+      "b": "opening-another-yesterday",
+      "weight": 1
+    },
+    {
+      "a": "opening-another",
+      "b": "yesterday",
+      "weight": 1
+    },
+    {
+      "a": "another-yesterday",
+      "b": "yesterday",
+      "weight": 1
+    },
+    {
+      "a": "opening-another-yesterday",
+      "b": "yesterday",
+      "weight": 1
+    },
+    {
+      "a": "another-yesterday",
+      "b": "opening-another",
+      "weight": 1
+    },
+    {
+      "a": "opening-another",
+      "b": "opening-another-yesterday",
+      "weight": 1
+    },
+    {
+      "a": "another-yesterday",
+      "b": "opening-another-yesterday",
+      "weight": 1
+    },
+    {
+      "a": "cooling",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "tea",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-cooling",
+      "weight": 1
+    },
+    {
+      "a": "cooling-tea",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-cooling-tea",
+      "weight": 1
+    },
+    {
+      "a": "cooling",
+      "b": "tea",
+      "weight": 1
+    },
+    {
+      "a": "cooling",
+      "b": "opening-cooling",
+      "weight": 1
+    },
+    {
+      "a": "cooling",
+      "b": "cooling-tea",
+      "weight": 1
+    },
+    {
+      "a": "cooling",
+      "b": "opening-cooling-tea",
+      "weight": 1
+    },
+    {
+      "a": "opening-cooling",
+      "b": "tea",
+      "weight": 1
+    },
+    {
+      "a": "cooling-tea",
+      "b": "tea",
+      "weight": 1
+    },
+    {
+      "a": "opening-cooling-tea",
+      "b": "tea",
+      "weight": 1
+    },
+    {
+      "a": "cooling-tea",
+      "b": "opening-cooling",
+      "weight": 1
+    },
+    {
+      "a": "opening-cooling",
+      "b": "opening-cooling-tea",
+      "weight": 1
+    },
+    {
+      "a": "cooling-tea",
+      "b": "opening-cooling-tea",
+      "weight": 1
+    },
+    {
+      "a": "gloomy",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-gloomy",
+      "weight": 1
+    },
+    {
+      "a": "gloomy",
+      "b": "opening-gloomy",
+      "weight": 1
+    },
+    {
+      "a": "just",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "listening",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-just",
+      "weight": 1
+    },
+    {
+      "a": "just-listening",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-just-listening",
+      "weight": 1
+    },
+    {
+      "a": "just",
+      "b": "listening",
+      "weight": 1
+    },
+    {
+      "a": "just",
+      "b": "opening-just",
+      "weight": 1
+    },
+    {
+      "a": "just",
+      "b": "just-listening",
+      "weight": 1
+    },
+    {
+      "a": "just",
+      "b": "opening-just-listening",
+      "weight": 1
+    },
+    {
+      "a": "listening",
+      "b": "opening-just",
+      "weight": 1
+    },
+    {
+      "a": "just-listening",
+      "b": "listening",
+      "weight": 1
+    },
+    {
+      "a": "listening",
+      "b": "opening-just-listening",
+      "weight": 1
+    },
+    {
+      "a": "just-listening",
+      "b": "opening-just",
+      "weight": 1
+    },
+    {
+      "a": "opening-just",
+      "b": "opening-just-listening",
+      "weight": 1
+    },
+    {
+      "a": "just-listening",
+      "b": "opening-just-listening",
+      "weight": 1
+    },
+    {
+      "a": "liz",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-liz",
+      "weight": 1
+    },
+    {
+      "a": "liz",
+      "b": "opening-liz",
+      "weight": 1
+    },
+    {
+      "a": "love",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-love",
+      "weight": 1
+    },
+    {
+      "a": "love-concept",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-love-concept",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "love",
+      "weight": 1
+    },
+    {
+      "a": "love",
+      "b": "opening-love",
+      "weight": 1
+    },
+    {
+      "a": "love",
+      "b": "love-concept",
+      "weight": 1
+    },
+    {
+      "a": "love",
+      "b": "opening-love-concept",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "opening-love",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "love-concept",
+      "weight": 1
+    },
+    {
+      "a": "concept",
+      "b": "opening-love-concept",
+      "weight": 1
+    },
+    {
+      "a": "love-concept",
+      "b": "opening-love",
+      "weight": 1
+    },
+    {
+      "a": "opening-love",
+      "b": "opening-love-concept",
+      "weight": 1
+    },
+    {
+      "a": "love-concept",
+      "b": "opening-love-concept",
+      "weight": 1
+    },
+    {
+      "a": "lukewarm",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "decaf",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-lukewarm",
+      "weight": 1
+    },
+    {
+      "a": "lukewarm-decaf",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-lukewarm-decaf",
+      "weight": 1
+    },
+    {
+      "a": "decaf",
+      "b": "lukewarm",
+      "weight": 1
+    },
+    {
+      "a": "lukewarm",
+      "b": "opening-lukewarm",
+      "weight": 1
+    },
+    {
+      "a": "lukewarm",
+      "b": "lukewarm-decaf",
+      "weight": 1
+    },
+    {
+      "a": "lukewarm",
+      "b": "opening-lukewarm-decaf",
+      "weight": 1
+    },
+    {
+      "a": "decaf",
+      "b": "opening-lukewarm",
+      "weight": 1
+    },
+    {
+      "a": "decaf",
+      "b": "lukewarm-decaf",
+      "weight": 1
+    },
+    {
+      "a": "decaf",
+      "b": "opening-lukewarm-decaf",
+      "weight": 1
+    },
+    {
+      "a": "lukewarm-decaf",
+      "b": "opening-lukewarm",
+      "weight": 1
+    },
+    {
+      "a": "opening-lukewarm",
+      "b": "opening-lukewarm-decaf",
+      "weight": 1
+    },
+    {
+      "a": "lukewarm-decaf",
+      "b": "opening-lukewarm-decaf",
+      "weight": 1
+    },
+    {
+      "a": "no",
+      "b": "opening",
+      "weight": 2
+    },
+    {
+      "a": "opening",
+      "b": "title",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-no",
+      "weight": 1
+    },
+    {
+      "a": "no-title",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-no-title",
+      "weight": 1
+    },
+    {
+      "a": "no",
+      "b": "title",
+      "weight": 1
+    },
+    {
+      "a": "no",
+      "b": "opening-no",
+      "weight": 1
+    },
+    {
+      "a": "no",
+      "b": "no-title",
+      "weight": 1
+    },
+    {
+      "a": "no",
+      "b": "opening-no-title",
+      "weight": 1
+    },
+    {
+      "a": "opening-no",
+      "b": "title",
+      "weight": 1
+    },
+    {
+      "a": "no-title",
+      "b": "title",
+      "weight": 1
+    },
+    {
+      "a": "opening-no-title",
+      "b": "title",
+      "weight": 1
+    },
+    {
+      "a": "no-title",
+      "b": "opening-no",
+      "weight": 1
+    },
+    {
+      "a": "opening-no",
+      "b": "opening-no-title",
+      "weight": 1
+    },
+    {
+      "a": "no-title",
+      "b": "opening-no-title",
+      "weight": 1
+    },
+    {
+      "a": "open",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-open",
+      "weight": 1
+    },
+    {
+      "a": "open",
+      "b": "opening-open",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "post",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "this",
+      "weight": 6
+    },
+    {
+      "a": "opening",
+      "b": "opening-post",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "post-this",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-post-this",
+      "weight": 1
+    },
+    {
+      "a": "post",
+      "b": "this",
+      "weight": 1
+    },
+    {
+      "a": "opening-post",
+      "b": "post",
+      "weight": 1
+    },
+    {
+      "a": "post",
+      "b": "post-this",
+      "weight": 1
+    },
+    {
+      "a": "opening-post-this",
+      "b": "post",
+      "weight": 1
+    },
+    {
+      "a": "opening-post",
+      "b": "this",
+      "weight": 1
+    },
+    {
+      "a": "post-this",
+      "b": "this",
+      "weight": 1
+    },
+    {
+      "a": "opening-post-this",
+      "b": "this",
+      "weight": 1
+    },
+    {
+      "a": "opening-post",
+      "b": "post-this",
+      "weight": 1
+    },
+    {
+      "a": "opening-post",
+      "b": "opening-post-this",
+      "weight": 1
+    },
+    {
+      "a": "opening-post-this",
+      "b": "post-this",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "skwintcheee",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-skwintcheee",
+      "weight": 1
+    },
+    {
+      "a": "opening-skwintcheee",
+      "b": "skwintcheee",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "sold",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "out",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-sold",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "sold-out",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-sold-out",
+      "weight": 1
+    },
+    {
+      "a": "out",
+      "b": "sold",
+      "weight": 1
+    },
+    {
+      "a": "opening-sold",
+      "b": "sold",
+      "weight": 1
+    },
+    {
+      "a": "sold",
+      "b": "sold-out",
+      "weight": 1
+    },
+    {
+      "a": "opening-sold-out",
+      "b": "sold",
+      "weight": 1
+    },
+    {
+      "a": "opening-sold",
+      "b": "out",
+      "weight": 1
+    },
+    {
+      "a": "out",
+      "b": "sold-out",
+      "weight": 1
+    },
+    {
+      "a": "opening-sold-out",
+      "b": "out",
+      "weight": 1
+    },
+    {
+      "a": "opening-sold",
+      "b": "sold-out",
+      "weight": 1
+    },
+    {
+      "a": "opening-sold",
+      "b": "opening-sold-out",
+      "weight": 1
+    },
+    {
+      "a": "opening-sold-out",
+      "b": "sold-out",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "still",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "warm",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-still",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "still-warm",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-still-warm",
+      "weight": 1
+    },
+    {
+      "a": "still",
+      "b": "warm",
+      "weight": 1
+    },
+    {
+      "a": "opening-still",
+      "b": "still",
+      "weight": 1
+    },
+    {
+      "a": "still",
+      "b": "still-warm",
+      "weight": 1
+    },
+    {
+      "a": "opening-still-warm",
+      "b": "still",
+      "weight": 1
+    },
+    {
+      "a": "opening-still",
+      "b": "warm",
+      "weight": 1
+    },
+    {
+      "a": "still-warm",
+      "b": "warm",
+      "weight": 1
+    },
+    {
+      "a": "opening-still-warm",
+      "b": "warm",
+      "weight": 1
+    },
+    {
+      "a": "opening-still",
+      "b": "still-warm",
+      "weight": 1
+    },
+    {
+      "a": "opening-still",
+      "b": "opening-still-warm",
+      "weight": 1
+    },
+    {
+      "a": "opening-still-warm",
+      "b": "still-warm",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "day",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "before",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-the",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "the-day",
+      "weight": 1
+    },
+    {
+      "a": "day-before",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-the-day",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "the-day-before",
+      "weight": 1
+    },
+    {
+      "a": "day",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "before",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "opening-the",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "the",
+      "b": "the-day",
+      "weight": 1
+    },
+    {
+      "a": "day-before",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "opening-the-day",
+      "b": "the",
+      "weight": 1
+    },
+    {
+      "a": "the",
+      "b": "the-day-before",
+      "weight": 1
+    },
+    {
+      "a": "before",
+      "b": "day",
+      "weight": 1
+    },
+    {
+      "a": "day",
+      "b": "opening-the",
+      "weight": 1
+    },
+    {
+      "a": "day",
+      "b": "the-day",
+      "weight": 1
+    },
+    {
+      "a": "day",
+      "b": "day-before",
+      "weight": 1
+    },
+    {
+      "a": "day",
+      "b": "opening-the-day",
+      "weight": 1
+    },
+    {
+      "a": "day",
+      "b": "the-day-before",
+      "weight": 1
+    },
+    {
+      "a": "before",
+      "b": "opening-the",
+      "weight": 1
+    },
+    {
+      "a": "before",
+      "b": "the-day",
+      "weight": 1
+    },
+    {
+      "a": "before",
+      "b": "day-before",
+      "weight": 1
+    },
+    {
+      "a": "before",
+      "b": "opening-the-day",
+      "weight": 1
+    },
+    {
+      "a": "before",
+      "b": "the-day-before",
+      "weight": 1
+    },
+    {
+      "a": "opening-the",
+      "b": "the-day",
+      "weight": 1
+    },
+    {
+      "a": "day-before",
+      "b": "opening-the",
+      "weight": 1
+    },
+    {
+      "a": "opening-the",
+      "b": "opening-the-day",
+      "weight": 1
+    },
+    {
+      "a": "opening-the",
+      "b": "the-day-before",
+      "weight": 1
+    },
+    {
+      "a": "day-before",
+      "b": "the-day",
+      "weight": 1
+    },
+    {
+      "a": "opening-the-day",
+      "b": "the-day",
+      "weight": 1
+    },
+    {
+      "a": "the-day",
+      "b": "the-day-before",
+      "weight": 1
+    },
+    {
+      "a": "day-before",
+      "b": "opening-the-day",
+      "weight": 1
+    },
+    {
+      "a": "day-before",
+      "b": "the-day-before",
+      "weight": 1
+    },
+    {
+      "a": "opening-the-day",
+      "b": "the-day-before",
+      "weight": 1
+    },
+    {
+      "a": "morning",
+      "b": "opening",
+      "weight": 3
+    },
+    {
+      "a": "a",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-this",
+      "weight": 4
+    },
+    {
+      "a": "opening",
+      "b": "this-morning",
+      "weight": 3
+    },
+    {
+      "a": "morning-a",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-this-morning",
+      "weight": 3
+    },
+    {
+      "a": "opening",
+      "b": "this-morning-a",
+      "weight": 1
+    },
+    {
+      "a": "morning",
+      "b": "this",
+      "weight": 3
+    },
+    {
+      "a": "a",
+      "b": "this",
+      "weight": 1
+    },
+    {
+      "a": "opening-this",
+      "b": "this",
+      "weight": 4
+    },
+    {
+      "a": "this",
+      "b": "this-morning",
+      "weight": 3
+    },
+    {
+      "a": "morning-a",
+      "b": "this",
+      "weight": 1
+    },
+    {
+      "a": "opening-this-morning",
+      "b": "this",
+      "weight": 3
+    },
+    {
+      "a": "this",
+      "b": "this-morning-a",
+      "weight": 1
+    },
+    {
+      "a": "a",
+      "b": "morning",
+      "weight": 1
+    },
+    {
+      "a": "morning",
+      "b": "opening-this",
+      "weight": 3
+    },
+    {
+      "a": "morning",
+      "b": "this-morning",
+      "weight": 3
+    },
+    {
+      "a": "morning",
+      "b": "morning-a",
+      "weight": 1
+    },
+    {
+      "a": "morning",
+      "b": "opening-this-morning",
+      "weight": 3
+    },
+    {
+      "a": "morning",
+      "b": "this-morning-a",
+      "weight": 1
+    },
+    {
+      "a": "a",
+      "b": "opening-this",
+      "weight": 1
+    },
+    {
+      "a": "a",
+      "b": "this-morning",
+      "weight": 1
+    },
+    {
+      "a": "a",
+      "b": "morning-a",
+      "weight": 1
+    },
+    {
+      "a": "a",
+      "b": "opening-this-morning",
+      "weight": 1
+    },
+    {
+      "a": "a",
+      "b": "this-morning-a",
+      "weight": 1
+    },
+    {
+      "a": "opening-this",
+      "b": "this-morning",
+      "weight": 3
+    },
+    {
+      "a": "morning-a",
+      "b": "opening-this",
+      "weight": 1
+    },
+    {
+      "a": "opening-this",
+      "b": "opening-this-morning",
+      "weight": 3
+    },
+    {
+      "a": "opening-this",
+      "b": "this-morning-a",
+      "weight": 1
+    },
+    {
+      "a": "morning-a",
+      "b": "this-morning",
+      "weight": 1
+    },
+    {
+      "a": "opening-this-morning",
+      "b": "this-morning",
+      "weight": 3
+    },
+    {
+      "a": "this-morning",
+      "b": "this-morning-a",
+      "weight": 1
+    },
+    {
+      "a": "morning-a",
+      "b": "opening-this-morning",
+      "weight": 1
+    },
+    {
+      "a": "morning-a",
+      "b": "this-morning-a",
+      "weight": 1
+    },
+    {
+      "a": "opening-this-morning",
+      "b": "this-morning-a",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "too",
+      "weight": 1
+    },
+    {
+      "a": "morning-too",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "this-morning-too",
+      "weight": 1
+    },
+    {
+      "a": "this",
+      "b": "too",
+      "weight": 1
+    },
+    {
+      "a": "morning-too",
+      "b": "this",
+      "weight": 1
+    },
+    {
+      "a": "this",
+      "b": "this-morning-too",
+      "weight": 1
+    },
+    {
+      "a": "morning",
+      "b": "too",
+      "weight": 1
+    },
+    {
+      "a": "morning",
+      "b": "morning-too",
+      "weight": 1
+    },
+    {
+      "a": "morning",
+      "b": "this-morning-too",
+      "weight": 1
+    },
+    {
+      "a": "opening-this",
+      "b": "too",
+      "weight": 1
+    },
+    {
+      "a": "this-morning",
+      "b": "too",
+      "weight": 1
+    },
+    {
+      "a": "morning-too",
+      "b": "too",
+      "weight": 1
+    },
+    {
+      "a": "opening-this-morning",
+      "b": "too",
+      "weight": 1
+    },
+    {
+      "a": "this-morning-too",
+      "b": "too",
+      "weight": 1
+    },
+    {
+      "a": "morning-too",
+      "b": "opening-this",
+      "weight": 1
+    },
+    {
+      "a": "opening-this",
+      "b": "this-morning-too",
+      "weight": 1
+    },
+    {
+      "a": "morning-too",
+      "b": "this-morning",
+      "weight": 1
+    },
+    {
+      "a": "this-morning",
+      "b": "this-morning-too",
+      "weight": 1
+    },
+    {
+      "a": "morning-too",
+      "b": "opening-this-morning",
+      "weight": 1
+    },
+    {
+      "a": "morning-too",
+      "b": "this-morning-too",
+      "weight": 1
+    },
+    {
+      "a": "opening-this-morning",
+      "b": "this-morning-too",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "you",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "this-you",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-this-you",
+      "weight": 1
+    },
+    {
+      "a": "this",
+      "b": "you",
+      "weight": 1
+    },
+    {
+      "a": "this",
+      "b": "this-you",
+      "weight": 1
+    },
+    {
+      "a": "opening-this-you",
+      "b": "this",
+      "weight": 1
+    },
+    {
+      "a": "opening-this",
+      "b": "you",
+      "weight": 1
+    },
+    {
+      "a": "this-you",
+      "b": "you",
+      "weight": 1
+    },
+    {
+      "a": "opening-this-you",
+      "b": "you",
+      "weight": 1
+    },
+    {
+      "a": "opening-this",
+      "b": "this-you",
+      "weight": 1
+    },
+    {
+      "a": "opening-this",
+      "b": "opening-this-you",
+      "weight": 1
+    },
+    {
+      "a": "opening-this-you",
+      "b": "this-you",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "tom",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-tom",
+      "weight": 1
+    },
+    {
+      "a": "opening-tom",
+      "b": "tom",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "whatever",
+      "weight": 1
+    },
+    {
+      "a": "is",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-whatever",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "whatever-this",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "this-is",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-whatever-this",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "whatever-this-is",
+      "weight": 1
+    },
+    {
+      "a": "this",
+      "b": "whatever",
+      "weight": 1
+    },
+    {
+      "a": "is",
+      "b": "whatever",
+      "weight": 1
+    },
+    {
+      "a": "opening-whatever",
+      "b": "whatever",
+      "weight": 1
+    },
+    {
+      "a": "whatever",
+      "b": "whatever-this",
+      "weight": 1
+    },
+    {
+      "a": "this-is",
+      "b": "whatever",
+      "weight": 1
+    },
+    {
+      "a": "opening-whatever-this",
+      "b": "whatever",
+      "weight": 1
+    },
+    {
+      "a": "whatever",
+      "b": "whatever-this-is",
+      "weight": 1
+    },
+    {
+      "a": "is",
+      "b": "this",
+      "weight": 1
+    },
+    {
+      "a": "opening-whatever",
+      "b": "this",
+      "weight": 1
+    },
+    {
+      "a": "this",
+      "b": "whatever-this",
+      "weight": 1
+    },
+    {
+      "a": "this",
+      "b": "this-is",
+      "weight": 1
+    },
+    {
+      "a": "opening-whatever-this",
+      "b": "this",
+      "weight": 1
+    },
+    {
+      "a": "this",
+      "b": "whatever-this-is",
+      "weight": 1
+    },
+    {
+      "a": "is",
+      "b": "opening-whatever",
+      "weight": 1
+    },
+    {
+      "a": "is",
+      "b": "whatever-this",
+      "weight": 1
+    },
+    {
+      "a": "is",
+      "b": "this-is",
+      "weight": 1
+    },
+    {
+      "a": "is",
+      "b": "opening-whatever-this",
+      "weight": 1
+    },
+    {
+      "a": "is",
+      "b": "whatever-this-is",
+      "weight": 1
+    },
+    {
+      "a": "opening-whatever",
+      "b": "whatever-this",
+      "weight": 1
+    },
+    {
+      "a": "opening-whatever",
+      "b": "this-is",
+      "weight": 1
+    },
+    {
+      "a": "opening-whatever",
+      "b": "opening-whatever-this",
+      "weight": 1
+    },
+    {
+      "a": "opening-whatever",
+      "b": "whatever-this-is",
+      "weight": 1
+    },
+    {
+      "a": "this-is",
+      "b": "whatever-this",
+      "weight": 1
+    },
+    {
+      "a": "opening-whatever-this",
+      "b": "whatever-this",
+      "weight": 1
+    },
+    {
+      "a": "whatever-this",
+      "b": "whatever-this-is",
+      "weight": 1
+    },
+    {
+      "a": "opening-whatever-this",
+      "b": "this-is",
+      "weight": 1
+    },
+    {
+      "a": "this-is",
+      "b": "whatever-this-is",
+      "weight": 1
+    },
+    {
+      "a": "opening-whatever-this",
+      "b": "whatever-this-is",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "yes",
+      "weight": 1
+    },
+    {
+      "a": "and",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-yes",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "yes-and",
+      "weight": 1
+    },
+    {
+      "a": "and-no",
+      "b": "opening",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-yes-and",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "yes-and-no",
+      "weight": 1
+    },
+    {
+      "a": "and",
+      "b": "yes",
+      "weight": 1
+    },
+    {
+      "a": "no",
+      "b": "yes",
+      "weight": 1
+    },
+    {
+      "a": "opening-yes",
+      "b": "yes",
+      "weight": 1
+    },
+    {
+      "a": "yes",
+      "b": "yes-and",
+      "weight": 1
+    },
+    {
+      "a": "and-no",
+      "b": "yes",
+      "weight": 1
+    },
+    {
+      "a": "opening-yes-and",
+      "b": "yes",
+      "weight": 1
+    },
+    {
+      "a": "yes",
+      "b": "yes-and-no",
+      "weight": 1
+    },
+    {
+      "a": "and",
+      "b": "no",
+      "weight": 1
+    },
+    {
+      "a": "and",
+      "b": "opening-yes",
+      "weight": 1
+    },
+    {
+      "a": "and",
+      "b": "yes-and",
+      "weight": 1
+    },
+    {
+      "a": "and",
+      "b": "and-no",
+      "weight": 1
+    },
+    {
+      "a": "and",
+      "b": "opening-yes-and",
+      "weight": 1
+    },
+    {
+      "a": "and",
+      "b": "yes-and-no",
+      "weight": 1
+    },
+    {
+      "a": "no",
+      "b": "opening-yes",
+      "weight": 1
+    },
+    {
+      "a": "no",
+      "b": "yes-and",
+      "weight": 1
+    },
+    {
+      "a": "and-no",
+      "b": "no",
+      "weight": 1
+    },
+    {
+      "a": "no",
+      "b": "opening-yes-and",
+      "weight": 1
+    },
+    {
+      "a": "no",
+      "b": "yes-and-no",
+      "weight": 1
+    },
+    {
+      "a": "opening-yes",
+      "b": "yes-and",
+      "weight": 1
+    },
+    {
+      "a": "and-no",
+      "b": "opening-yes",
+      "weight": 1
+    },
+    {
+      "a": "opening-yes",
+      "b": "opening-yes-and",
+      "weight": 1
+    },
+    {
+      "a": "opening-yes",
+      "b": "yes-and-no",
+      "weight": 1
+    },
+    {
+      "a": "and-no",
+      "b": "yes-and",
+      "weight": 1
+    },
+    {
+      "a": "opening-yes-and",
+      "b": "yes-and",
+      "weight": 1
+    },
+    {
+      "a": "yes-and",
+      "b": "yes-and-no",
+      "weight": 1
+    },
+    {
+      "a": "and-no",
+      "b": "opening-yes-and",
+      "weight": 1
+    },
+    {
+      "a": "and-no",
+      "b": "yes-and-no",
+      "weight": 1
+    },
+    {
+      "a": "opening-yes-and",
+      "b": "yes-and-no",
+      "weight": 1
+    },
+    {
+      "a": "opening",
+      "b": "opening-yesterday",
+      "weight": 1
+    },
+    {
+      "a": "opening-yesterday",
+      "b": "yesterday",
+      "weight": 1
+    }
+  ],
+  "salience": {
+    "opening-just-listening": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "assets-page-template": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "opening-lukewarm": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "tea": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "concept-website": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "opening-lukewarm-decaf": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "yesterday": {
+      "frequency": 2,
+      "connectivity": 6
+    },
+    "sold": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "foo": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "before": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "opening-whatever-this": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "origin": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "website": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "good": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "concept": {
+      "frequency": 11,
+      "connectivity": 32
+    },
+    "lukewarm-decaf": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "opening-open": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "whatever": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "images-foo-fighters": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "test-image": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "images-test-image": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "tom": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "whatever-this": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "as": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "entry": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "assets-images-lizzo": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "this-you": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "thinking": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "as-hell-1": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "still": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "images-foo": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "experimenting": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "the-day-before": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "opening-another": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "open": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "updates": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "experiences": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "too": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "opening-gloomy": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "lizzo-good": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "images-test": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "yes-and": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "love": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "homepage-intelligence-blocks": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "coffee": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "assets-entry-template": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "the-pretender": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "concept-just": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "love-concept": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "1": {
+      "frequency": 2,
+      "connectivity": 31
+    },
+    "morning": {
+      "frequency": 3,
+      "connectivity": 11
+    },
+    "opening-just": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "opening-cooling": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "updates-temp": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "post-this": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "fighters-the-pretender": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "just-thinking": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "opening-the-day": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "listening": {
+      "frequency": 2,
+      "connectivity": 5
+    },
+    "sold-out": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "building": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "test": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "temp": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "opening-this": {
+      "frequency": 4,
+      "connectivity": 14
+    },
+    "assets-images-foo": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "concept-ici": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "assets-homepage": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "evolving": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "foo-fighters": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "page-template": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "gathering": {
+      "frequency": 1,
+      "connectivity": 0
+    },
+    "lizzo": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "a": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "pretender-1": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "concept-iced-coffee": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "the": {
+      "frequency": 2,
+      "connectivity": 25
+    },
+    "pretender": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "concept-iced": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "opening-post-this": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "shared": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "cooling-tea": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "this-morning": {
+      "frequency": 3,
+      "connectivity": 11
+    },
+    "yes-and-no": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "you": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "no-title": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "supporting": {
+      "frequency": 1,
+      "connectivity": 0
+    },
+    "template": {
+      "frequency": 2,
+      "connectivity": 9
+    },
+    "noticing": {
+      "frequency": 2,
+      "connectivity": 5
+    },
+    "assets-homepage-intelligence": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "intelligence": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "noticing-shared-experiences": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "intelligence-blocks": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "opening-sold": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "opening-skwintcheee": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "concept-origin": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "fighters": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "morning-a": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "opening-yes-and": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "good-as-hell": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "iced-coffee": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "post": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "lukewarm": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "opening-love-concept": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "concept-website-building": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "and-no": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "concept-zone": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "the-pretender-1": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "assets-entry": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "website-building": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "shared-experiences": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "opening-cooling-tea": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "opening": {
+      "frequency": 23,
+      "connectivity": 91
+    },
+    "noticing-shared": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "hell-1": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "lizzo-good-as": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "day-before": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "assets-page": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "images": {
+      "frequency": 3,
+      "connectivity": 37
+    },
+    "opening-liz": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "this": {
+      "frequency": 6,
+      "connectivity": 25
+    },
+    "iced": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "good-as": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "still-warm": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "opening-yes": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "opening-this-morning": {
+      "frequency": 3,
+      "connectivity": 11
+    },
+    "images-lizzo": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "skwintcheee": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "warm": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "hell": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "no": {
+      "frequency": 2,
+      "connectivity": 12
+    },
+    "liz": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "title": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "idea": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "assets-images": {
+      "frequency": 3,
+      "connectivity": 37
+    },
+    "opening-post": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "opening-whatever": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "concept-idea": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "about": {
+      "frequency": 2,
+      "connectivity": 2
+    },
+    "zone": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "homepage-intelligence": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "opening-no": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "opening-no-title": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "opening-love": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "entry-template": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "opening-the": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "image": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "decaf": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "this-morning-too": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "opening-tom": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "opening-this-you": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "opening-still": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "out": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "conversing": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "the-day": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "whatever-this-is": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "assets-images-test": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "assets-updates-temp": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "page": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "homepage": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "ici": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "concept-just-thinking": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "cooling": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "day": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "and": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "foo-fighters-the": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "just": {
+      "frequency": 2,
+      "connectivity": 10
+    },
+    "opening-another-yesterday": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "about-conversing": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "assets-updates": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "this-morning-a": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "opening-sold-out": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "morning-too": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "opening-yesterday": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "inviting": {
+      "frequency": 1,
+      "connectivity": 0
+    },
+    "yes": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "this-is": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "opening-still-warm": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "fighters-the": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "another": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "blocks": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "another-yesterday": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "concept-evolving": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "gloomy": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "concept-experimenting": {
+      "frequency": 1,
+      "connectivity": 2
+    },
+    "is": {
+      "frequency": 1,
+      "connectivity": 8
+    },
+    "assets": {
+      "frequency": 7,
+      "connectivity": 59
+    },
+    "just-listening": {
+      "frequency": 1,
+      "connectivity": 5
+    },
+    "welcome": {
+      "frequency": 1,
+      "connectivity": 0
+    },
+    "as-hell": {
+      "frequency": 1,
+      "connectivity": 17
+    },
+    "images-lizzo-good": {
+      "frequency": 1,
+      "connectivity": 17
+    }
+  },
+  "page_graph": {
+    "https://unboundhealing.org/about/conversing/": {
+      "concepts": [
+        "about",
+        "conversing",
+        "about-conversing"
+      ],
+      "related": [
+        "https://unboundhealing.org/about/"
+      ]
+    },
+    "https://unboundhealing.org/about/": {
+      "concepts": [
+        "about"
+      ],
+      "related": [
+        "https://unboundhealing.org/about/conversing/"
+      ]
+    },
+    "https://unboundhealing.org/assets/entry-template/": {
+      "concepts": [
+        "assets",
+        "entry",
+        "template",
+        "assets-entry",
+        "entry-template",
+        "assets-entry-template"
+      ],
+      "related": [
+        "https://unboundhealing.org/assets/page-template/",
+        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
+        "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
+        "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
+        "https://unboundhealing.org/assets/images/_html/test_image/",
+        "https://unboundhealing.org/assets/updates-temp/"
+      ]
+    },
+    "https://unboundhealing.org/assets/homepage-intelligence-blocks/": {
+      "concepts": [
+        "assets",
+        "homepage",
+        "intelligence",
+        "blocks",
+        "assets-homepage",
+        "homepage-intelligence",
+        "intelligence-blocks",
+        "assets-homepage-intelligence",
+        "homepage-intelligence-blocks"
+      ],
+      "related": [
+        "https://unboundhealing.org/assets/entry-template/",
+        "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
+        "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
+        "https://unboundhealing.org/assets/images/_html/test_image/",
+        "https://unboundhealing.org/assets/page-template/",
+        "https://unboundhealing.org/assets/updates-temp/"
+      ]
+    },
+    "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/": {
+      "concepts": [
+        "assets",
+        "images",
+        "foo",
+        "fighters",
+        "the",
+        "pretender",
+        "1",
+        "assets-images",
+        "images-foo",
+        "foo-fighters",
+        "fighters-the",
+        "the-pretender",
+        "pretender-1",
+        "assets-images-foo",
+        "images-foo-fighters",
+        "foo-fighters-the",
+        "fighters-the-pretender",
+        "the-pretender-1"
+      ],
+      "related": [
+        "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
+        "https://unboundhealing.org/assets/images/_html/test_image/",
+        "https://unboundhealing.org/assets/entry-template/",
+        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
+        "https://unboundhealing.org/assets/page-template/",
+        "https://unboundhealing.org/assets/updates-temp/",
+        "https://unboundhealing.org/opening/the-day-before/"
+      ]
+    },
+    "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/": {
+      "concepts": [
+        "assets",
+        "images",
+        "lizzo",
+        "good",
+        "as",
+        "hell",
+        "1",
+        "assets-images",
+        "images-lizzo",
+        "lizzo-good",
+        "good-as",
+        "as-hell",
+        "hell-1",
+        "assets-images-lizzo",
+        "images-lizzo-good",
+        "lizzo-good-as",
+        "good-as-hell",
+        "as-hell-1"
+      ],
+      "related": [
+        "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
+        "https://unboundhealing.org/assets/images/_html/test_image/",
+        "https://unboundhealing.org/assets/entry-template/",
+        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
+        "https://unboundhealing.org/assets/page-template/",
+        "https://unboundhealing.org/assets/updates-temp/"
+      ]
+    },
+    "https://unboundhealing.org/assets/images/_html/test_image/": {
+      "concepts": [
+        "assets",
+        "images",
+        "test",
+        "image",
+        "assets-images",
+        "images-test",
+        "test-image",
+        "assets-images-test",
+        "images-test-image"
+      ],
+      "related": [
+        "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
+        "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
+        "https://unboundhealing.org/assets/entry-template/",
+        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
+        "https://unboundhealing.org/assets/page-template/",
+        "https://unboundhealing.org/assets/updates-temp/"
+      ]
+    },
+    "https://unboundhealing.org/assets/page-template/": {
+      "concepts": [
+        "assets",
+        "page",
+        "template",
+        "assets-page",
+        "page-template",
+        "assets-page-template"
+      ],
+      "related": [
+        "https://unboundhealing.org/assets/entry-template/",
+        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
+        "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
+        "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
+        "https://unboundhealing.org/assets/images/_html/test_image/",
+        "https://unboundhealing.org/assets/updates-temp/"
+      ]
+    },
+    "https://unboundhealing.org/assets/updates-temp/": {
+      "concepts": [
+        "assets",
+        "updates",
+        "temp",
+        "assets-updates",
+        "updates-temp",
+        "assets-updates-temp"
+      ],
+      "related": [
+        "https://unboundhealing.org/assets/entry-template/",
+        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
+        "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
+        "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
+        "https://unboundhealing.org/assets/images/_html/test_image/",
+        "https://unboundhealing.org/assets/page-template/"
+      ]
+    },
+    "https://unboundhealing.org/concept/evolving/": {
+      "concepts": [
+        "concept",
+        "evolving",
+        "concept-evolving"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/concept/experimenting/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/ici/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/concept/zone/",
+        "https://unboundhealing.org/opening/love-concept/"
+      ]
+    },
+    "https://unboundhealing.org/concept/experimenting/": {
+      "concepts": [
+        "concept",
+        "experimenting",
+        "concept-experimenting"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/concept/evolving/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/ici/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/concept/zone/",
+        "https://unboundhealing.org/opening/love-concept/"
+      ]
+    },
+    "https://unboundhealing.org/concept/iced-coffee/": {
+      "concepts": [
+        "concept",
+        "iced",
+        "coffee",
+        "concept-iced",
+        "iced-coffee",
+        "concept-iced-coffee"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/concept/evolving/",
+        "https://unboundhealing.org/concept/experimenting/",
+        "https://unboundhealing.org/concept/ici/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/concept/zone/",
+        "https://unboundhealing.org/opening/love-concept/"
+      ]
+    },
+    "https://unboundhealing.org/concept/ici/": {
+      "concepts": [
+        "concept",
+        "ici",
+        "concept-ici"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/concept/evolving/",
+        "https://unboundhealing.org/concept/experimenting/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/concept/zone/",
+        "https://unboundhealing.org/opening/love-concept/"
+      ]
+    },
+    "https://unboundhealing.org/concept/idea/": {
+      "concepts": [
+        "concept",
+        "idea",
+        "concept-idea"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/concept/evolving/",
+        "https://unboundhealing.org/concept/experimenting/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/ici/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/concept/zone/",
+        "https://unboundhealing.org/opening/love-concept/"
+      ]
+    },
+    "https://unboundhealing.org/concept/": {
+      "concepts": [
+        "concept"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/evolving/",
+        "https://unboundhealing.org/concept/experimenting/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/ici/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/concept/zone/",
+        "https://unboundhealing.org/opening/love-concept/"
+      ]
+    },
+    "https://unboundhealing.org/concept/just-thinking/": {
+      "concepts": [
+        "concept",
+        "just",
+        "thinking",
+        "concept-just",
+        "just-thinking",
+        "concept-just-thinking"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/concept/evolving/",
+        "https://unboundhealing.org/concept/experimenting/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/ici/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/concept/zone/",
+        "https://unboundhealing.org/opening/just-listening/"
+      ]
+    },
+    "https://unboundhealing.org/concept/origin/": {
+      "concepts": [
+        "concept",
+        "origin",
+        "concept-origin"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/concept/evolving/",
+        "https://unboundhealing.org/concept/experimenting/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/ici/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/concept/zone/",
+        "https://unboundhealing.org/opening/love-concept/"
+      ]
+    },
+    "https://unboundhealing.org/concept/website-building/": {
+      "concepts": [
+        "concept",
+        "website",
+        "building",
+        "concept-website",
+        "website-building",
+        "concept-website-building"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/concept/evolving/",
+        "https://unboundhealing.org/concept/experimenting/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/ici/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/concept/zone/",
+        "https://unboundhealing.org/opening/love-concept/"
+      ]
+    },
+    "https://unboundhealing.org/concept/zone/": {
+      "concepts": [
+        "concept",
+        "zone",
+        "concept-zone"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/concept/evolving/",
+        "https://unboundhealing.org/concept/experimenting/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/ici/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/opening/love-concept/"
+      ]
+    },
+    "https://unboundhealing.org/gathering/": {
+      "concepts": [
+        "gathering"
+      ],
+      "related": []
+    },
+    "https://unboundhealing.org/": {
+      "concepts": [],
+      "related": []
+    },
+    "https://unboundhealing.org/inviting/": {
+      "concepts": [
+        "inviting"
+      ],
+      "related": []
+    },
+    "https://unboundhealing.org/listening/": {
+      "concepts": [
+        "listening"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/just-listening/"
+      ]
+    },
+    "https://unboundhealing.org/noticing/": {
+      "concepts": [
+        "noticing"
+      ],
+      "related": [
+        "https://unboundhealing.org/noticing/shared-experiences/"
+      ]
+    },
+    "https://unboundhealing.org/noticing/shared-experiences/": {
+      "concepts": [
+        "noticing",
+        "shared",
+        "experiences",
+        "noticing-shared",
+        "shared-experiences",
+        "noticing-shared-experiences"
+      ],
+      "related": [
+        "https://unboundhealing.org/noticing/"
+      ]
+    },
+    "https://unboundhealing.org/opening/another-yesterday/": {
+      "concepts": [
+        "opening",
+        "another",
+        "yesterday",
+        "opening-another",
+        "another-yesterday",
+        "opening-another-yesterday"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/yesterday/",
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/open/"
+      ]
+    },
+    "https://unboundhealing.org/opening/cooling-tea/": {
+      "concepts": [
+        "opening",
+        "cooling",
+        "tea",
+        "opening-cooling",
+        "cooling-tea",
+        "opening-cooling-tea"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/post-this/"
+      ]
+    },
+    "https://unboundhealing.org/opening/gloomy/": {
+      "concepts": [
+        "opening",
+        "gloomy",
+        "opening-gloomy"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/post-this/"
+      ]
+    },
+    "https://unboundhealing.org/opening/": {
+      "concepts": [
+        "opening"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/post-this/"
+      ]
+    },
+    "https://unboundhealing.org/opening/just-listening/": {
+      "concepts": [
+        "opening",
+        "just",
+        "listening",
+        "opening-just",
+        "just-listening",
+        "opening-just-listening"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/listening/",
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/no-title/"
+      ]
+    },
+    "https://unboundhealing.org/opening/liz/": {
+      "concepts": [
+        "opening",
+        "liz",
+        "opening-liz"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/post-this/"
+      ]
+    },
+    "https://unboundhealing.org/opening/love-concept/": {
+      "concepts": [
+        "opening",
+        "love",
+        "concept",
+        "opening-love",
+        "love-concept",
+        "opening-love-concept"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/concept/evolving/",
+        "https://unboundhealing.org/concept/experimenting/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/ici/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/concept/zone/"
+      ]
+    },
+    "https://unboundhealing.org/opening/lukewarm-decaf/": {
+      "concepts": [
+        "opening",
+        "lukewarm",
+        "decaf",
+        "opening-lukewarm",
+        "lukewarm-decaf",
+        "opening-lukewarm-decaf"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/post-this/"
+      ]
+    },
+    "https://unboundhealing.org/opening/no-title/": {
+      "concepts": [
+        "opening",
+        "no",
+        "title",
+        "opening-no",
+        "no-title",
+        "opening-no-title"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/open/"
+      ]
+    },
+    "https://unboundhealing.org/opening/open/": {
+      "concepts": [
+        "opening",
+        "open",
+        "opening-open"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/post-this/"
+      ]
+    },
+    "https://unboundhealing.org/opening/post-this/": {
+      "concepts": [
+        "opening",
+        "post",
+        "this",
+        "opening-post",
+        "post-this",
+        "opening-post-this"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/whatever-this-is/",
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/"
+      ]
+    },
+    "https://unboundhealing.org/opening/skwintcheee/": {
+      "concepts": [
+        "opening",
+        "skwintcheee",
+        "opening-skwintcheee"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/open/"
+      ]
+    },
+    "https://unboundhealing.org/opening/sold-out/": {
+      "concepts": [
+        "opening",
+        "sold",
+        "out",
+        "opening-sold",
+        "sold-out",
+        "opening-sold-out"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/open/"
+      ]
+    },
+    "https://unboundhealing.org/opening/still-warm/": {
+      "concepts": [
+        "opening",
+        "still",
+        "warm",
+        "opening-still",
+        "still-warm",
+        "opening-still-warm"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/open/"
+      ]
+    },
+    "https://unboundhealing.org/opening/the-day-before/": {
+      "concepts": [
+        "opening",
+        "the",
+        "day",
+        "before",
+        "opening-the",
+        "the-day",
+        "day-before",
+        "opening-the-day",
+        "the-day-before"
+      ],
+      "related": [
+        "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/no-title/"
+      ]
+    },
+    "https://unboundhealing.org/opening/this-morning-a/": {
+      "concepts": [
+        "opening",
+        "this",
+        "morning",
+        "a",
+        "opening-this",
+        "this-morning",
+        "morning-a",
+        "opening-this-morning",
+        "this-morning-a"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/whatever-this-is/",
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/"
+      ]
+    },
+    "https://unboundhealing.org/opening/this-morning-too/": {
+      "concepts": [
+        "opening",
+        "this",
+        "morning",
+        "too",
+        "opening-this",
+        "this-morning",
+        "morning-too",
+        "opening-this-morning",
+        "this-morning-too"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/whatever-this-is/",
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/"
+      ]
+    },
+    "https://unboundhealing.org/opening/this-morning/": {
+      "concepts": [
+        "opening",
+        "this",
+        "morning",
+        "opening-this",
+        "this-morning",
+        "opening-this-morning"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/whatever-this-is/",
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/"
+      ]
+    },
+    "https://unboundhealing.org/opening/this-you/": {
+      "concepts": [
+        "opening",
+        "this",
+        "you",
+        "opening-this",
+        "this-you",
+        "opening-this-you"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/whatever-this-is/",
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/"
+      ]
+    },
+    "https://unboundhealing.org/opening/tom/": {
+      "concepts": [
+        "opening",
+        "tom",
+        "opening-tom"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/open/"
+      ]
+    },
+    "https://unboundhealing.org/opening/whatever-this-is/": {
+      "concepts": [
+        "opening",
+        "whatever",
+        "this",
+        "is",
+        "opening-whatever",
+        "whatever-this",
+        "this-is",
+        "opening-whatever-this",
+        "whatever-this-is"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/"
+      ]
+    },
+    "https://unboundhealing.org/opening/yes-and-no/": {
+      "concepts": [
+        "opening",
+        "yes",
+        "and",
+        "no",
+        "opening-yes",
+        "yes-and",
+        "and-no",
+        "opening-yes-and",
+        "yes-and-no"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/open/"
+      ]
+    },
+    "https://unboundhealing.org/opening/yesterday/": {
+      "concepts": [
+        "opening",
+        "yesterday",
+        "opening-yesterday"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/open/"
+      ]
+    },
+    "https://unboundhealing.org/supporting/": {
+      "concepts": [
+        "supporting"
+      ],
+      "related": []
+    },
+    "https://unboundhealing.org/welcome/": {
+      "concepts": [
+        "welcome"
+      ],
+      "related": []
+    }
+  }
+}

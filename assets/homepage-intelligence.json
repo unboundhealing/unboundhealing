@@ -1,10 +1,39 @@
 {
-  "featured_pages": [
-    { "url": "https://unboundhealing.org/opening/" },
-    { "url": "https://unboundhealing.org/listening/" }
-  ],
-  "top_concepts": [
-    { "concept": "presence" },
-    { "concept": "attention" }
-  ]
+  "homepage_intelligence": {
+    "arising_observations": [
+      {
+        "url": "https://unboundhealing.org/opening/the-day-before/",
+        "title": "the day before…",
+        "score": 24.0
+      },
+      {
+        "url": "https://unboundhealing.org/opening/this-morning-a/",
+        "title": "this morning…",
+        "score": 24.0
+      },
+      {
+        "url": "https://unboundhealing.org/opening/this-morning-too/",
+        "title": "this morning…",
+        "score": 24.0
+      }
+    ],
+    "essential_inspirations": [
+      {
+        "concept": "Opening",
+        "frequency": 23
+      },
+      {
+        "concept": "Concept",
+        "frequency": 11
+      },
+      {
+        "concept": "This",
+        "frequency": 6
+      }
+    ],
+    "node_count": 50,
+    "edge_count": 820
+  },
+  "source": "semantic-salience",
+  "status": "ok"
 }
