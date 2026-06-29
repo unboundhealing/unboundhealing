@@ -50,109 +50,6 @@ page_graph = salience.get("page_graph", {})
 
 if not isinstance(page_graph, dict):
     raise SystemExit("❌ page_graph must be dict")
-
-# -------------------------------------------------------
-# DISPLAY TITLE
-# -------------------------------------------------------
-
-def get_display_title(node):
-    if not node:
-        return ""
-
-    title = node.get("title")
-
-    if isinstance(title, str) and title.strip():
-        return title.strip()
-
-    url = node.get("url", "")
-    return url.rstrip("/").split("/")[-1]
-
-# -------------------------------------------------------
-# SECTION
-# -------------------------------------------------------
-
-def get_section(url):
-
-    path = url.replace("https://unboundhealing.org/", "").strip("/")
-
-    if path == "":
-        return "home"
-
-    return path.split("/")[0]
-
-# -------------------------------------------------------
-# KIND
-# -------------------------------------------------------
-
-def get_kind(section):
-
-    mapping = {
-        "home": "home",
-        "opening": "journal", 
-        "welcome": "journal",
-        "concept": "concept",
-        "about": "about",
-        "gathering": "gathering",
-        "supporting": "supporting",
-        "listen": "listen"
-    }
-
-    section = (section or "").strip().lower()
-    return mapping.get(section, "page")
-    
-# -------------------------------------------------------
-# BUILD CONCEPT MAP
-# -------------------------------------------------------
-
-concept_map = {}
-
-for url, node in page_graph.items():
-
-    concepts = []
-
-    if isinstance(node, dict):
-        raw = node.get("concepts", [])
-        if isinstance(raw, list):
-            for c in raw:
-                if isinstance(c, str):
-                    concepts.append(c)
-
-    clean = []
-    seen = set()
-
-    for c in concepts:
-        c = c.strip().lower()
-        if not c or c in seen:
-            continue
-        seen.add(c)
-        clean.append(c)
-
-    concept_map[url] = clean[:10]
-
-def build_search_text(
-    title,
-    description,
-    kind,
-    excerpt,
-    tags,
-    concepts,
-    aliases
-):
-
-    fields = [
-        title,
-        description,
-        kind,
-        excerpt,
-        " ".join(tags),
-        " ".join(concepts)
-    ]
-
-    return " ".join(
-        str(x).strip().lower()
-        for x in fields
-        if x
-    )
     
 # -------------------------------------------------------
 # INDEX BUILD
@@ -172,28 +69,18 @@ for url, node in nodes.items():
     # Additional search metadata
     # -------------------------------------------------------
 
-    title = get_display_title(node)
-    section = get_section(url)
-    kind = get_kind(section)
-    desc = node.get("description", "") if isinstance(node, dict) else ""
+    title = node.get("title", "")
+    section = node.get("section", "")
+    kind = node.get("kind", "")
+    desc = node.get("description", "")
     excerpt = node.get("excerpt", "")
-    tags = concept_map.get(url, [])
-    concepts = node.get("concepts", tags)  # fallback safety
+    tags = node.get("concepts", [])
+    concepts = tags
     aliases = []
     word_count = node.get("word_count", 0)
-    concept_count = len(tags)
-    related_count = len(page_graph.get(url, {}).get("related", []))
 
-    search_text = build_search_text(
-        title,
-        kind,
-        desc,
-        excerpt,
-        tags,
-        concepts,
-        []
-    )
-    
+    search_text = node.get("search_text", "")
+
     index[url] = {
         "title": title,
         "url": url,
