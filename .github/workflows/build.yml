@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -97,7 +97,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          echo "🔍 Inspecting semantic-salience.json..."
+          echo "🔍 Inspecting assets/semantic-salience.json..."
 
           if [ ! -f assets/semantic-salience.json ]; then
             echo "❌ assets/semantic-salience.json missing — HARD STOP"
