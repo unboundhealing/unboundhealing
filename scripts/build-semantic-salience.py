@@ -107,8 +107,8 @@ def get_kind(section):
 
 def build_search_text(
     title,
-    kind,
     description,
+    kind,
     excerpt,
     tags,
     concepts,
@@ -309,12 +309,11 @@ def extract_page_metadata(full_path, url):
         section = get_section(url)
         kind = get_kind(section)
         excerpt = " ".join(text.split()[:60])
-        concepts = extract_concepts(path)
 
         search_text = build_search_text(
             title,
-            kind,
             desc,
+            kind,
             excerpt,
             tags,
             concepts,
@@ -323,11 +322,10 @@ def extract_page_metadata(full_path, url):
 
         return {
             "title": title,
-            "kind": kind,
             "description": desc,
+            "kind": kind,
             "excerpt": excerpt,
             "search_text": search_text,
-            "concepts": concepts,
             "word_count": word_count
         }
         
@@ -335,11 +333,10 @@ def extract_page_metadata(full_path, url):
         print("⚠️ metadata extraction failed:", e)
         return {
             "title": "",
-            "kind": "",
             "description": "",
+            "kind": "",
             "excerpt": "",
             "search_text": "",
-            "concepts": [],
             "word_count": 0,
     }
             
@@ -354,19 +351,19 @@ def build_registry(root, html_files):
 
         full_path = os.path.join(root, path)
 
-        url = canonicalize_url(build_url(path))
-    
         metadata = extract_page_metadata(full_path, url)
+        url = canonicalize_url(build_url(path))
+        concepts = extract_concepts(path)    
 
         registry[url] = {
             "path": path,
             "url": url,
             "title": metadata["title"].strip(),   # <-- ADD THIS (critical)
-            "kind": metadata["kind"],
             "description": metadata["description"],
+            "kind": metadata["kind"],
             "excerpt": metadata["excerpt"],
             "search_text": metadata["search_text"],
-            "concepts": metadata["concepts"],
+            "concepts": concepts,
             "word_count": metadata["word_count"]
         }
 
@@ -394,8 +391,8 @@ def build_graph(registry):
             "path": data["path"],
             "url": data["url"],
             "title": data["title"],
-            "kind": data["kind"],
             "description": data["description"],
+            "kind": data["kind"],
             "excerpt": data["excerpt"],
             "search_text": data["search_text"],
             "concepts": data.get("concepts", []),
