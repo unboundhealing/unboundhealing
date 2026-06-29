@@ -6,6 +6,9 @@
     "type": "page",
     "section": "about",
     "kind": "about",
+    "description": "",
+    "excerpt": "",
+    "search_text": "conversing about about conversing about-conversing about conversing about-conversing",
     "tags": [
       "about",
       "conversing",
@@ -17,9 +20,6 @@
       "about-conversing"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "conversing about about conversing about-conversing about conversing about-conversing",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -33,6 +33,9 @@
     "type": "page",
     "section": "about",
     "kind": "about",
+    "description": "",
+    "excerpt": "",
+    "search_text": "about about about about",
     "tags": [
       "about"
     ],
@@ -40,9 +43,6 @@
       "about"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "about about about about",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -56,6 +56,9 @@
     "type": "page",
     "section": "assets",
     "kind": "page",
+    "description": "",
+    "excerpt": "",
+    "search_text": "entry-template page assets entry template assets-entry entry-template assets-entry-template assets entry template assets-entry entry-template assets-entry-template",
     "tags": [
       "assets",
       "entry",
@@ -73,9 +76,6 @@
       "assets-entry-template"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "entry-template page assets entry template assets-entry entry-template assets-entry-template assets entry template assets-entry entry-template assets-entry-template",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -89,6 +89,9 @@
     "type": "page",
     "section": "assets",
     "kind": "page",
+    "description": "",
+    "excerpt": "",
+    "search_text": "homepage-intelligence-blocks page assets homepage intelligence blocks assets-homepage homepage-intelligence intelligence-blocks assets-homepage-intelligence homepage-intelligence-blocks assets homepage intelligence blocks assets-homepage homepage-intelligence intelligence-blocks assets-homepage-intelligence homepage-intelligence-blocks",
     "tags": [
       "assets",
       "homepage",
@@ -112,9 +115,6 @@
       "homepage-intelligence-blocks"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "homepage-intelligence-blocks page assets homepage intelligence blocks assets-homepage homepage-intelligence intelligence-blocks assets-homepage-intelligence homepage-intelligence-blocks assets homepage intelligence blocks assets-homepage homepage-intelligence intelligence-blocks assets-homepage-intelligence homepage-intelligence-blocks",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -128,6 +128,9 @@
     "type": "page",
     "section": "assets",
     "kind": "page",
+    "description": "",
+    "excerpt": "",
+    "search_text": "foo_fighters_the_pretender_1 page assets images foo fighters the pretender 1 assets-images images-foo foo-fighters assets images foo fighters the pretender 1 assets-images images-foo foo-fighters fighters-the the-pretender pretender-1 assets-images-foo images-foo-fighters foo-fighters-the fighters-the-pretender the-pretender-1",
     "tags": [
       "assets",
       "images",
@@ -161,9 +164,6 @@
       "the-pretender-1"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "foo_fighters_the_pretender_1 page assets images foo fighters the pretender 1 assets-images images-foo foo-fighters assets images foo fighters the pretender 1 assets-images images-foo foo-fighters fighters-the the-pretender pretender-1 assets-images-foo images-foo-fighters foo-fighters-the fighters-the-pretender the-pretender-1",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -177,6 +177,9 @@
     "type": "page",
     "section": "assets",
     "kind": "page",
+    "description": "",
+    "excerpt": "",
+    "search_text": "lizzo_good_as_hell_1 page assets images lizzo good as hell 1 assets-images images-lizzo lizzo-good assets images lizzo good as hell 1 assets-images images-lizzo lizzo-good good-as as-hell hell-1 assets-images-lizzo images-lizzo-good lizzo-good-as good-as-hell as-hell-1",
     "tags": [
       "assets",
       "images",
@@ -210,9 +213,6 @@
       "as-hell-1"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "lizzo_good_as_hell_1 page assets images lizzo good as hell 1 assets-images images-lizzo lizzo-good assets images lizzo good as hell 1 assets-images images-lizzo lizzo-good good-as as-hell hell-1 assets-images-lizzo images-lizzo-good lizzo-good-as good-as-hell as-hell-1",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -226,6 +226,9 @@
     "type": "page",
     "section": "assets",
     "kind": "page",
+    "description": "",
+    "excerpt": "",
+    "search_text": "test_image page assets images test image assets-images images-test test-image assets-images-test images-test-image assets images test image assets-images images-test test-image assets-images-test images-test-image",
     "tags": [
       "assets",
       "images",
@@ -249,9 +252,6 @@
       "images-test-image"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "test_image page assets images test image assets-images images-test test-image assets-images-test images-test-image assets images test image assets-images images-test test-image assets-images-test images-test-image",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -265,6 +265,9 @@
     "type": "page",
     "section": "assets",
     "kind": "page",
+    "description": "",
+    "excerpt": "",
+    "search_text": "page-template page assets page template assets-page page-template assets-page-template assets page template assets-page page-template assets-page-template",
     "tags": [
       "assets",
       "page",
@@ -282,9 +285,6 @@
       "assets-page-template"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "page-template page assets page template assets-page page-template assets-page-template assets page template assets-page page-template assets-page-template",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -298,6 +298,9 @@
     "type": "page",
     "section": "assets",
     "kind": "page",
+    "description": "",
+    "excerpt": "",
+    "search_text": "updates-temp page assets updates temp assets-updates updates-temp assets-updates-temp assets updates temp assets-updates updates-temp assets-updates-temp",
     "tags": [
       "assets",
       "updates",
@@ -315,9 +318,6 @@
       "assets-updates-temp"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "updates-temp page assets updates temp assets-updates updates-temp assets-updates-temp assets updates temp assets-updates updates-temp assets-updates-temp",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -331,6 +331,9 @@
     "type": "page",
     "section": "concept",
     "kind": "concept",
+    "description": "",
+    "excerpt": "",
+    "search_text": "evolving concept concept evolving concept-evolving concept evolving concept-evolving",
     "tags": [
       "concept",
       "evolving",
@@ -342,9 +345,6 @@
       "concept-evolving"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "evolving concept concept evolving concept-evolving concept evolving concept-evolving",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -358,6 +358,9 @@
     "type": "page",
     "section": "concept",
     "kind": "concept",
+    "description": "",
+    "excerpt": "",
+    "search_text": "experimenting concept concept experimenting concept-experimenting concept experimenting concept-experimenting",
     "tags": [
       "concept",
       "experimenting",
@@ -369,9 +372,6 @@
       "concept-experimenting"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "experimenting concept concept experimenting concept-experimenting concept experimenting concept-experimenting",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -385,6 +385,9 @@
     "type": "page",
     "section": "concept",
     "kind": "concept",
+    "description": "",
+    "excerpt": "",
+    "search_text": "iced-coffee concept concept iced coffee concept-iced iced-coffee concept-iced-coffee concept iced coffee concept-iced iced-coffee concept-iced-coffee",
     "tags": [
       "concept",
       "iced",
@@ -402,9 +405,6 @@
       "concept-iced-coffee"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "iced-coffee concept concept iced coffee concept-iced iced-coffee concept-iced-coffee concept iced coffee concept-iced iced-coffee concept-iced-coffee",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -418,6 +418,9 @@
     "type": "page",
     "section": "concept",
     "kind": "concept",
+    "description": "",
+    "excerpt": "",
+    "search_text": "ici concept concept ici concept-ici concept ici concept-ici",
     "tags": [
       "concept",
       "ici",
@@ -429,9 +432,6 @@
       "concept-ici"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "ici concept concept ici concept-ici concept ici concept-ici",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -445,6 +445,9 @@
     "type": "page",
     "section": "concept",
     "kind": "concept",
+    "description": "",
+    "excerpt": "",
+    "search_text": "idea concept concept idea concept-idea concept idea concept-idea",
     "tags": [
       "concept",
       "idea",
@@ -456,9 +459,6 @@
       "concept-idea"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "idea concept concept idea concept-idea concept idea concept-idea",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -472,6 +472,9 @@
     "type": "page",
     "section": "concept",
     "kind": "concept",
+    "description": "",
+    "excerpt": "",
+    "search_text": "concept concept concept concept",
     "tags": [
       "concept"
     ],
@@ -479,9 +482,6 @@
       "concept"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "concept concept concept concept",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -495,6 +495,9 @@
     "type": "page",
     "section": "concept",
     "kind": "concept",
+    "description": "",
+    "excerpt": "",
+    "search_text": "just-thinking concept concept just thinking concept-just just-thinking concept-just-thinking concept just thinking concept-just just-thinking concept-just-thinking",
     "tags": [
       "concept",
       "just",
@@ -512,9 +515,6 @@
       "concept-just-thinking"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "just-thinking concept concept just thinking concept-just just-thinking concept-just-thinking concept just thinking concept-just just-thinking concept-just-thinking",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -528,6 +528,9 @@
     "type": "page",
     "section": "concept",
     "kind": "concept",
+    "description": "",
+    "excerpt": "",
+    "search_text": "origin concept concept origin concept-origin concept origin concept-origin",
     "tags": [
       "concept",
       "origin",
@@ -539,9 +542,6 @@
       "concept-origin"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "origin concept concept origin concept-origin concept origin concept-origin",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -555,6 +555,9 @@
     "type": "page",
     "section": "concept",
     "kind": "concept",
+    "description": "",
+    "excerpt": "",
+    "search_text": "website-building concept concept website building concept-website website-building concept-website-building concept website building concept-website website-building concept-website-building",
     "tags": [
       "concept",
       "website",
@@ -572,9 +575,6 @@
       "concept-website-building"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "website-building concept concept website building concept-website website-building concept-website-building concept website building concept-website website-building concept-website-building",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -588,6 +588,9 @@
     "type": "page",
     "section": "concept",
     "kind": "concept",
+    "description": "",
+    "excerpt": "",
+    "search_text": "zone concept concept zone concept-zone concept zone concept-zone",
     "tags": [
       "concept",
       "zone",
@@ -599,9 +602,6 @@
       "concept-zone"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "zone concept concept zone concept-zone concept zone concept-zone",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -615,6 +615,9 @@
     "type": "page",
     "section": "gathering",
     "kind": "gathering",
+    "description": "",
+    "excerpt": "",
+    "search_text": "gathering gathering gathering gathering",
     "tags": [
       "gathering"
     ],
@@ -622,9 +625,6 @@
       "gathering"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "gathering gathering gathering gathering",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -638,12 +638,12 @@
     "type": "page",
     "section": "home",
     "kind": "home",
-    "tags": [],
-    "concepts": [],
-    "aliases": [],
     "description": "",
     "excerpt": "",
     "search_text": "unboundhealing.org home",
+    "tags": [],
+    "concepts": [],
+    "aliases": [],
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -657,6 +657,9 @@
     "type": "page",
     "section": "inviting",
     "kind": "page",
+    "description": "",
+    "excerpt": "",
+    "search_text": "inviting page inviting inviting",
     "tags": [
       "inviting"
     ],
@@ -664,9 +667,6 @@
       "inviting"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "inviting page inviting inviting",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -680,6 +680,9 @@
     "type": "page",
     "section": "listening",
     "kind": "page",
+    "description": "",
+    "excerpt": "",
+    "search_text": "listening page listening listening",
     "tags": [
       "listening"
     ],
@@ -687,9 +690,6 @@
       "listening"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "listening page listening listening",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -703,6 +703,9 @@
     "type": "page",
     "section": "noticing",
     "kind": "page",
+    "description": "",
+    "excerpt": "",
+    "search_text": "noticing page noticing noticing",
     "tags": [
       "noticing"
     ],
@@ -710,9 +713,6 @@
       "noticing"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "noticing page noticing noticing",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -726,6 +726,9 @@
     "type": "page",
     "section": "noticing",
     "kind": "page",
+    "description": "",
+    "excerpt": "",
+    "search_text": "shared-experiences page noticing shared experiences noticing-shared shared-experiences noticing-shared-experiences noticing shared experiences noticing-shared shared-experiences noticing-shared-experiences",
     "tags": [
       "noticing",
       "shared",
@@ -743,9 +746,6 @@
       "noticing-shared-experiences"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "shared-experiences page noticing shared experiences noticing-shared shared-experiences noticing-shared-experiences noticing shared experiences noticing-shared shared-experiences noticing-shared-experiences",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -759,6 +759,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "another-yesterday journal opening another yesterday opening-another another-yesterday opening-another-yesterday opening another yesterday opening-another another-yesterday opening-another-yesterday",
     "tags": [
       "opening",
       "another",
@@ -776,9 +779,6 @@
       "opening-another-yesterday"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "another-yesterday journal opening another yesterday opening-another another-yesterday opening-another-yesterday opening another yesterday opening-another another-yesterday opening-another-yesterday",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -792,6 +792,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "cooling-tea journal opening cooling tea opening-cooling cooling-tea opening-cooling-tea opening cooling tea opening-cooling cooling-tea opening-cooling-tea",
     "tags": [
       "opening",
       "cooling",
@@ -809,9 +812,6 @@
       "opening-cooling-tea"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "cooling-tea journal opening cooling tea opening-cooling cooling-tea opening-cooling-tea opening cooling tea opening-cooling cooling-tea opening-cooling-tea",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -825,6 +825,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "gloomy journal opening gloomy opening-gloomy opening gloomy opening-gloomy",
     "tags": [
       "opening",
       "gloomy",
@@ -836,9 +839,6 @@
       "opening-gloomy"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "gloomy journal opening gloomy opening-gloomy opening gloomy opening-gloomy",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -852,6 +852,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "opening journal opening opening",
     "tags": [
       "opening"
     ],
@@ -859,9 +862,6 @@
       "opening"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "opening journal opening opening",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -875,6 +875,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "just-listening journal opening just listening opening-just just-listening opening-just-listening opening just listening opening-just just-listening opening-just-listening",
     "tags": [
       "opening",
       "just",
@@ -892,9 +895,6 @@
       "opening-just-listening"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "just-listening journal opening just listening opening-just just-listening opening-just-listening opening just listening opening-just just-listening opening-just-listening",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -908,6 +908,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "liz journal opening liz opening-liz opening liz opening-liz",
     "tags": [
       "opening",
       "liz",
@@ -919,9 +922,6 @@
       "opening-liz"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "liz journal opening liz opening-liz opening liz opening-liz",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -935,6 +935,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "love-concept journal opening love concept opening-love love-concept opening-love-concept opening love concept opening-love love-concept opening-love-concept",
     "tags": [
       "opening",
       "love",
@@ -952,9 +955,6 @@
       "opening-love-concept"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "love-concept journal opening love concept opening-love love-concept opening-love-concept opening love concept opening-love love-concept opening-love-concept",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -968,6 +968,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "lukewarm-decaf journal opening lukewarm decaf opening-lukewarm lukewarm-decaf opening-lukewarm-decaf opening lukewarm decaf opening-lukewarm lukewarm-decaf opening-lukewarm-decaf",
     "tags": [
       "opening",
       "lukewarm",
@@ -985,9 +988,6 @@
       "opening-lukewarm-decaf"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "lukewarm-decaf journal opening lukewarm decaf opening-lukewarm lukewarm-decaf opening-lukewarm-decaf opening lukewarm decaf opening-lukewarm lukewarm-decaf opening-lukewarm-decaf",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -1001,6 +1001,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "no-title journal opening no title opening-no no-title opening-no-title opening no title opening-no no-title opening-no-title",
     "tags": [
       "opening",
       "no",
@@ -1018,9 +1021,6 @@
       "opening-no-title"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "no-title journal opening no title opening-no no-title opening-no-title opening no title opening-no no-title opening-no-title",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -1034,6 +1034,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "open journal opening open opening-open opening open opening-open",
     "tags": [
       "opening",
       "open",
@@ -1045,9 +1048,6 @@
       "opening-open"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "open journal opening open opening-open opening open opening-open",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -1061,6 +1061,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "post-this journal opening post this opening-post post-this opening-post-this opening post this opening-post post-this opening-post-this",
     "tags": [
       "opening",
       "post",
@@ -1078,9 +1081,6 @@
       "opening-post-this"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "post-this journal opening post this opening-post post-this opening-post-this opening post this opening-post post-this opening-post-this",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -1094,6 +1094,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "skwintcheee journal opening skwintcheee opening-skwintcheee opening skwintcheee opening-skwintcheee",
     "tags": [
       "opening",
       "skwintcheee",
@@ -1105,9 +1108,6 @@
       "opening-skwintcheee"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "skwintcheee journal opening skwintcheee opening-skwintcheee opening skwintcheee opening-skwintcheee",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -1121,6 +1121,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "sold-out journal opening sold out opening-sold sold-out opening-sold-out opening sold out opening-sold sold-out opening-sold-out",
     "tags": [
       "opening",
       "sold",
@@ -1138,9 +1141,6 @@
       "opening-sold-out"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "sold-out journal opening sold out opening-sold sold-out opening-sold-out opening sold out opening-sold sold-out opening-sold-out",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -1154,6 +1154,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "still-warm journal opening still warm opening-still still-warm opening-still-warm opening still warm opening-still still-warm opening-still-warm",
     "tags": [
       "opening",
       "still",
@@ -1171,9 +1174,6 @@
       "opening-still-warm"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "still-warm journal opening still warm opening-still still-warm opening-still-warm opening still warm opening-still still-warm opening-still-warm",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -1187,6 +1187,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "the-day-before journal opening the day before opening-the the-day day-before opening-the-day the-day-before opening the day before opening-the the-day day-before opening-the-day the-day-before",
     "tags": [
       "opening",
       "the",
@@ -1210,9 +1213,6 @@
       "the-day-before"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "the-day-before journal opening the day before opening-the the-day day-before opening-the-day the-day-before opening the day before opening-the the-day day-before opening-the-day the-day-before",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -1226,6 +1226,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "this-morning-a journal opening this morning a opening-this this-morning morning-a opening-this-morning this-morning-a opening this morning a opening-this this-morning morning-a opening-this-morning this-morning-a",
     "tags": [
       "opening",
       "this",
@@ -1249,9 +1252,6 @@
       "this-morning-a"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "this-morning-a journal opening this morning a opening-this this-morning morning-a opening-this-morning this-morning-a opening this morning a opening-this this-morning morning-a opening-this-morning this-morning-a",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -1265,6 +1265,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "this-morning-too journal opening this morning too opening-this this-morning morning-too opening-this-morning this-morning-too opening this morning too opening-this this-morning morning-too opening-this-morning this-morning-too",
     "tags": [
       "opening",
       "this",
@@ -1288,9 +1291,6 @@
       "this-morning-too"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "this-morning-too journal opening this morning too opening-this this-morning morning-too opening-this-morning this-morning-too opening this morning too opening-this this-morning morning-too opening-this-morning this-morning-too",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -1304,6 +1304,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "this-morning journal opening this morning opening-this this-morning opening-this-morning opening this morning opening-this this-morning opening-this-morning",
     "tags": [
       "opening",
       "this",
@@ -1321,9 +1324,6 @@
       "opening-this-morning"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "this-morning journal opening this morning opening-this this-morning opening-this-morning opening this morning opening-this this-morning opening-this-morning",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -1337,6 +1337,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "this-you journal opening this you opening-this this-you opening-this-you opening this you opening-this this-you opening-this-you",
     "tags": [
       "opening",
       "this",
@@ -1354,9 +1357,6 @@
       "opening-this-you"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "this-you journal opening this you opening-this this-you opening-this-you opening this you opening-this this-you opening-this-you",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -1370,6 +1370,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "tom journal opening tom opening-tom opening tom opening-tom",
     "tags": [
       "opening",
       "tom",
@@ -1381,9 +1384,6 @@
       "opening-tom"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "tom journal opening tom opening-tom opening tom opening-tom",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -1397,6 +1397,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "whatever-this-is journal opening whatever this is opening-whatever whatever-this this-is opening-whatever-this whatever-this-is opening whatever this is opening-whatever whatever-this this-is opening-whatever-this whatever-this-is",
     "tags": [
       "opening",
       "whatever",
@@ -1420,9 +1423,6 @@
       "whatever-this-is"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "whatever-this-is journal opening whatever this is opening-whatever whatever-this this-is opening-whatever-this whatever-this-is opening whatever this is opening-whatever whatever-this this-is opening-whatever-this whatever-this-is",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -1436,6 +1436,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "yes-and-no journal opening yes and no opening-yes yes-and and-no opening-yes-and yes-and-no opening yes and no opening-yes yes-and and-no opening-yes-and yes-and-no",
     "tags": [
       "opening",
       "yes",
@@ -1459,9 +1462,6 @@
       "yes-and-no"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "yes-and-no journal opening yes and no opening-yes yes-and and-no opening-yes-and yes-and-no opening yes and no opening-yes yes-and and-no opening-yes-and yes-and-no",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -1475,6 +1475,9 @@
     "type": "page",
     "section": "opening",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "yesterday journal opening yesterday opening-yesterday opening yesterday opening-yesterday",
     "tags": [
       "opening",
       "yesterday",
@@ -1486,9 +1489,6 @@
       "opening-yesterday"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "yesterday journal opening yesterday opening-yesterday opening yesterday opening-yesterday",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -1502,6 +1502,9 @@
     "type": "page",
     "section": "supporting",
     "kind": "supporting",
+    "description": "",
+    "excerpt": "",
+    "search_text": "supporting supporting supporting supporting",
     "tags": [
       "supporting"
     ],
@@ -1509,9 +1512,6 @@
       "supporting"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "supporting supporting supporting supporting",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
@@ -1525,6 +1525,9 @@
     "type": "page",
     "section": "welcome",
     "kind": "journal",
+    "description": "",
+    "excerpt": "",
+    "search_text": "welcome journal welcome welcome",
     "tags": [
       "welcome"
     ],
@@ -1532,9 +1535,6 @@
       "welcome"
     ],
     "aliases": [],
-    "description": "",
-    "excerpt": "",
-    "search_text": "welcome journal welcome welcome",
     "word_count": 0,
     "reading_time": 1,
     "priority": 1.0,
