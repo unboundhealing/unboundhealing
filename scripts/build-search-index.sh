@@ -168,21 +168,18 @@ for url, node in nodes.items():
     file_path = node.get("path", "")
     path = ROOT / file_path if file_path else None
 
-    # title resolution (TRUTH LAYER ONLY)
-    title = get_display_title(node)
-
-    # description (optional passthrough from node if exists)
-    desc = node.get("description", "") if isinstance(node, dict) else ""
-
-    tags = concept_map.get(url, [])
-    section = get_section(url)
-    kind = get_kind(section)
-  
     # -------------------------------------------------------
     # Additional search metadata
     # -------------------------------------------------------
 
+    title = get_display_title(node)
+    desc = node.get("description", "") if isinstance(node, dict) else ""
+    section = get_section(url)
+    kind = get_kind(section)
     excerpt = node.get("excerpt", "")
+    tags = concept_map.get(url, [])
+    concepts = node.get("concepts", tags)  # fallback safety
+    aliases = []
     word_count = node.get("word_count", 0)
     concept_count = len(tags)
     related_count = len(page_graph.get(url, {}).get("related", []))
@@ -207,7 +204,7 @@ for url, node in nodes.items():
         "kind": kind,
 
         "tags": tags,
-        "concepts": tags,
+        "concepts": concepts,
         "aliases": [],
 
         "description": desc,
