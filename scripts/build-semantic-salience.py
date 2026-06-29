@@ -46,7 +46,92 @@ def canonicalize_concept(text: str) -> str:
 
     return text
 
+# =========================================================
+# DISPLAY TITLE
+# =========================================================
 
+def get_display_title(node, url=None):
+    if not node:
+        return ""
+
+    title = node.get("title")
+
+    if isinstance(title, str) and title.strip():
+        return title.strip()
+
+    url = url or node.get("url", "")
+
+    if not url:
+        return ""
+
+    slug = url.rstrip("/").split("/")[-1]
+
+    return slug if slug else ""
+
+# -------------------------------------------------------
+# SECTION
+# -------------------------------------------------------
+
+def get_section(url):
+
+    path = url.replace("https://unboundhealing.org/", "").strip("/")
+
+    if path == "":
+        return "home"
+
+    return path.split("/")[0]
+
+# -------------------------------------------------------
+# KIND
+# -------------------------------------------------------
+
+def get_kind(section):
+
+    mapping = {
+        "home": "home",
+        "opening": "journal", 
+        "welcome": "journal",
+        "concept": "concept",
+        "about": "about",
+        "gathering": "gathering",
+        "supporting": "supporting",
+        "listen": "listen"
+    }
+
+    section = (section or "").strip().lower()
+    return mapping.get(section, "page")
+    
+# -------------------------------------------------------
+# BUILD SEARCH TEXT
+# -------------------------------------------------------
+
+def build_search_text(
+    title,
+    description,
+    kind,
+    excerpt,
+    tags,
+    concepts,
+    aliases=None,
+):
+    aliases = aliases or []
+    
+    fields = [
+        title,
+        description,
+        kind,
+        excerpt,
+        " ".join(tags),
+        " ".join(concepts),
+        " ".join(aliases),
+    ]
+
+    return " ".join(
+        str(x).strip().lower()
+        for x in fields
+        if x
+    )
+    
 # =========================================================
 # NORMALIZATION (RAW STRUCTURAL CLEANING)
 # =========================================================
@@ -164,7 +249,7 @@ def canonicalize_url(url: str) -> str:
 # PAGE METADATA EXTRACTION
 # =========================================================
 
-def extract_page_metadata(full_path):
+def extract_page_metadata(full_path, url):
     """
     Extract real HTML metadata for truth-aligned rendering.
     """
@@ -209,61 +294,41 @@ def extract_page_metadata(full_path):
             desc = meta.get("content", "").strip()
 
         # -----------------------------
-        # WORD COUNT (robust heuristic)
-        # -----------------------------
+        # WORD COUNT + EXCERPT
+        # ----------------------
         main = soup.find("main")
 
-        if main:
-            text = main.get_text(" ", strip=True)
-        else:
-            text = soup.get_text(" ", strip=True)
-
+        text = main.get_text(" ", strip=True) if main else soup.get_text(" ", strip=True)
         text = re.sub(r"\s+", " ", text).strip()
 
-        word_count = len(text.split()) if text else 0
-
-        # -----------------------------
-        # EXCERPT (NEW)
-        # -----------------------------
-        main = soup.find("main")
-        if main:
-            text = main.get_text(" ", strip=True)
-        else:
-            text = soup.get_text(" ", strip=True)
+        words = re.findall(r"\b\w+\b", text.lower())
+        word_count = len(words)
 
         excerpt = " ".join(text.split()[:60])
 
-        # -----------------------------
-        # SEARCH TEXT (NEW)
-        # -----------------------------
-        search_text = " ".join(filter(None, [
+        concepts = extract_concepts(full_path, url)
+        section = get_section(url)
+        kind = get_kind(section)
+
+        search_text = build_search_text(
             title,
-            title,          # intentional boost
+            kind,
             desc,
             excerpt,
-            excerpt,        # intentional boost
-        ])).lower()
+            tags,
+            concepts,
+            []
+        )
 
         return {
             "title": title,
+            "kind": kind,
             "description": desc,
-            "word_count": word_count,
             "excerpt": excerpt,
             "search_text": search_text,
-            "kind": kind
-        }
-
-    except Exception as e:
-        print("⚠️ metadata extraction failed:", e)
-        return {
-            "title": "",
-            "description": "",
-            "word_count": 0,
-            "excerpt": "",
-            "search_text": "",
-            "kind": ""
-        }
-
+            "concepts": concepts,
+            "word_count": word_count
+}
 
 # =========================================================
 # REGISTRY (STRUCTURAL REALITY INDEX)
@@ -277,21 +342,19 @@ def build_registry(root, html_files):
         full_path = os.path.join(root, path)
 
         url = canonicalize_url(build_url(path))
-
-        concepts = extract_concepts(path)
-
-        metadata = extract_page_metadata(full_path)
+    
+        metadata = extract_page_metadata(full_path, url)
 
         registry[url] = {
             "path": path,
             "url": url,
-            "title": metadata.get("title", "").strip(),   # <-- ADD THIS (critical)
-            "kind": metadata.get("kind", ""),
-            "description": metadata.get("description", ""),
-            "word_count": metadata.get("word_count", 0),
-            "excerpt": metadata.get("excerpt", ""),
-            "search_text": metadata.get("search_text", ""),
-            "concepts": concepts
+            "title": metadata["title"].strip(),   # <-- ADD THIS (critical)
+            "kind": metadata["kind"],
+            "description": metadata["description"],
+            "excerpt": metadata["excerpt"],
+            "search_text": metadata["search_text"],
+            "concepts": metadata["concepts"],
+            "word_count": metadata["word_count"]
         }
 
     return registry
@@ -317,13 +380,13 @@ def build_graph(registry):
         nodes[url] = {
             "path": data["path"],
             "url": data["url"],
-            "title": data.get("title", ""),
-            "kind": data.get("kind", ""),
-            "description": data.get("description", ""),
-            "word_count": data.get("word_count", 0),
-            "excerpt": data.get("excerpt", ""),
-            "search_text": data.get("search_text", ""),
-            "concepts": data.get("concepts", [])
+            "title": data["title"],
+            "kind": data["kind"],
+            "description": data["description"],
+            "excerpt": data["excerpt"],
+            "search_text": data["search_text"],
+            "concepts": data.get("concepts", []),
+            "word_count": data.get("word_count", 0)
         }
         
         concepts = data["concepts"]
@@ -616,7 +679,7 @@ def main():
     print("📦 nodes:", len(semantic["nodes"]))
     print("📦 edges:", len(semantic["edges"]))
     print("🧠 salience concepts:", len(semantic["salience"]))
-
+    print("WORD SAMPLE:", url, len(text), text[:200])
 
 if __name__ == "__main__":
     main()
