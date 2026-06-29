@@ -10,8 +10,8 @@ from collections import Counter
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 
 # IMPORTANT: now anchored directly to semantic-salience
-INPUT_FILE = os.path.join(ROOT, "semantic-salience.json")
-OUTPUT_FILE = os.path.join(ROOT, "semantic-words.json")
+INPUT_FILE = os.path.join(ROOT, "assets/semantic-salience.json")
+OUTPUT_FILE = os.path.join(ROOT, "assets/semantic-words.json")
 
 # =========================================================
 # STOPWORDS (LEXICAL NOISE FILTER)
