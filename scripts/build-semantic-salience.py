@@ -328,7 +328,7 @@ def extract_page_metadata(full_path, url):
             "search_text": search_text,
             "concepts": concepts,
             "word_count": word_count
-}
+        }
 
 # =========================================================
 # REGISTRY (STRUCTURAL REALITY INDEX)
