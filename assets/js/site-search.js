@@ -7,11 +7,14 @@ let SEARCH_INDEX = {};
 
 /* -----------------------------------------
    LOAD INDEX
------------------------------------------ */
+   ----------------------------------------- */
 
 async function loadSearchIndex() {
   try {
-    const res = await fetch('/assets/search-index.json');
+    const SEARCH_CONFIG = {
+        index: "/assets/search-index.json"
+    };
+    const res = await fetch(SEARCH_CONFIG.index);
     SEARCH_INDEX = await res.json();
     console.log("🔎 search index loaded:", Object.keys(SEARCH_INDEX).length);
   } catch (err) {
@@ -21,7 +24,7 @@ async function loadSearchIndex() {
 
 /* -----------------------------------------
    NORMALIZE QUERY
------------------------------------------ */
+   ----------------------------------------- */
 
 function normalize(str) {
   return (str || "")
@@ -32,7 +35,7 @@ function normalize(str) {
 
 /* -----------------------------------------
    SCORE FUNCTION (v1 simple lexical)
------------------------------------------ */
+   ----------------------------------------- */
 
 function scoreEntry(query, entry) {
   const q = normalize(query);
@@ -67,7 +70,7 @@ function scoreEntry(query, entry) {
 
 /* -----------------------------------------
    SEARCH ENGINE
------------------------------------------ */
+   ----------------------------------------- */
 
 function searchSite(query) {
   const results = [];
@@ -92,7 +95,7 @@ function searchSite(query) {
 
 /* -----------------------------------------
    RENDER RESULTS
------------------------------------------ */
+   ----------------------------------------- */
 
 function renderResults(results) {
   const container = document.getElementById("search-results");
@@ -118,7 +121,7 @@ function renderResults(results) {
 
 /* -----------------------------------------
    INPUT HANDLER
------------------------------------------ */
+   ----------------------------------------- */
 
 function attachSearchInput() {
   const input = document.getElementById("site-search");
@@ -136,7 +139,7 @@ function attachSearchInput() {
 
 /* -----------------------------------------
    INIT
------------------------------------------ */
+   ----------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", async () => {
   await loadSearchIndex();
