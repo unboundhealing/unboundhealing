@@ -109,6 +109,17 @@ echo "🗺 Sitemap (optional)"
 echo "🔎 Search index (optional)"
 ./scripts/build-search-index.sh || true
 
+echo "💾 Committing generated assets..."
+
+git config user.name "github-actions"
+git config user.email "github-actions@github.com"
+
+git add assets/*.json || true
+
+git commit -m "🔄 update generated site assets" || exit 0
+
+git push
+
 # ---------------------------------------------------------
 # FINAL STATE DECLARATION
 # ---------------------------------------------------------
