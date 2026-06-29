@@ -219,13 +219,13 @@ def canonicalize_url(url: str) -> str:
 # PAGE METADATA EXTRACTION
 # =========================================================
 
-def extract_page_metadata(full_path, url):
+def extract_page_metadata(path, url):
     """
     Extract real HTML metadata for truth-aligned rendering.
     """
 
     try:
-        with open(full_path, "r", encoding="utf-8", errors="ignore") as f:
+        with open(path, "r", encoding="utf-8", errors="ignore") as f:
             soup = BeautifulSoup(f.read(), "html.parser")
 
         # -----------------------------
@@ -292,7 +292,7 @@ def extract_page_metadata(full_path, url):
             []
         )
 
-        print("READING:", full_path)
+        print("READING:", path)
         print("TITLE RAW:", title)
         print("DESC RAW:", desc)
 
@@ -329,9 +329,9 @@ def build_registry(root, html_files):
         full_path = os.path.join(root, path)
 
         url = canonicalize_url(build_url(path))
-        concepts = extract_concepts(full_path)    
-        metadata = extract_page_metadata(full_path, url)
-        concepts = extract_concepts(full_path)
+        concepts = extract_concepts(path)    
+        metadata = extract_page_metadata(path, url)
+        concepts = extract_concepts(path)
         section = get_section(url)
         kind = get_kind(section)
         
@@ -342,7 +342,7 @@ def build_registry(root, html_files):
             "kind": get_kind(section),
             "excerpt": metadata.get("excerpt", ""),
             "search_text": metadata.get("search_text", ""),
-            "concepts": extract_concepts(full_path),
+            "concepts": extract_concepts(path),
             "word_count": metadata.get("word_count", 0),
             "tags": metadata.get("tags", []),
             "aliases": metadata.get("aliases", [])
