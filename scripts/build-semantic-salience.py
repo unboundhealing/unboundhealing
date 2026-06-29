@@ -351,9 +351,9 @@ def build_registry(root, html_files):
 
         full_path = os.path.join(root, path)
 
-        metadata = extract_page_metadata(full_path, url)
         url = canonicalize_url(build_url(path))
         concepts = extract_concepts(path)    
+        metadata = extract_page_metadata(full_path, url)
 
         registry[url] = {
             "path": path,
@@ -689,7 +689,6 @@ def main():
     print("📦 nodes:", len(semantic["nodes"]))
     print("📦 edges:", len(semantic["edges"]))
     print("🧠 salience concepts:", len(semantic["salience"]))
-    print("WORD SAMPLE:", url, len(text), text[:200])
 
 if __name__ == "__main__":
     main()
