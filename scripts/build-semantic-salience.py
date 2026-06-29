@@ -270,6 +270,8 @@ def build_registry(root, html_files):
             "title": metadata.get("title", "").strip(),   # <-- ADD THIS (critical)
             "description": metadata.get("description", ""),
             "word_count": metadata.get("word_count", 0),
+            "excerpt": metadata.get("excerpt", ""),
+            "search_text": metadata.get("search_text", ""),
             "concepts": concepts
         }
 
@@ -297,6 +299,8 @@ def build_graph(registry):
             "path": data["path"],
             "url": data["url"],
             "title": data.get("title", ""),   # <-- CRITICAL
+            "excerpt": data["excerpt"],
+            "search_text": data["search_text"],
             "concepts": data["concepts"]
         }
         
