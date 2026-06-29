@@ -331,23 +331,56 @@ def build_graph(registry):
 def build_salience(registry, edges):
     """
     SALIENCE = observable signals only
-
-    RULES:
-    - no ranking
-    - no scoring
-    - no normalization
-    - only measurable counts
     """
 
     frequency = defaultdict(int)
     connectivity = defaultdict(int)
 
-    # frequency from registry
+    search_signal = defaultdict(int)
+    excerpt_signal = defaultdict(int)
+    word_signal = defaultdict(int)
+
+    # ----------------------------------------------------
+    # concept frequency (existing)
+    # ----------------------------------------------------
     for page in registry.values():
         for concept in page["concepts"]:
             frequency[concept] += 1
 
-    # connectivity from edges
+        # ------------------------------------------------
+        # NEW: text-based signals per page
+        # ------------------------------------------------
+
+        text = page.get("search_text", "")
+        excerpt = page.get("excerpt", "")
+        wc = page.get("word_count", 0)
+
+        # crude tokenization (intentionally lightweight)
+        text_tokens = set(text.split())
+        excerpt_tokens = set(excerpt.split())
+
+        for concept in page["concepts"]:
+            ct = concept.lower()
+
+            # search_text reinforcement
+            if ct in text_tokens:
+                search_signal[ct] += 2
+            else:
+                search_signal[ct] += 0
+
+            # excerpt reinforcement (lighter)
+            if ct in excerpt_tokens:
+                excerpt_signal[ct] += 1
+
+            # word count signal (normalize banding)
+            if wc > 150:
+                word_signal[ct] += 2
+            elif wc > 50:
+                word_signal[ct] += 1
+
+    # ----------------------------------------------------
+    # connectivity (existing)
+    # ----------------------------------------------------
     neighbors = defaultdict(set)
 
     for edge in edges:
@@ -359,18 +392,74 @@ def build_salience(registry, edges):
     for concept, neigh in neighbors.items():
         connectivity[concept] = len(neigh)
 
+    # ----------------------------------------------------
+    # FINAL SALIENCE OBJECT
+    # ----------------------------------------------------
     salience = {}
-
     all_concepts = set(frequency) | set(connectivity)
 
     for c in all_concepts:
         salience[c] = {
             "frequency": frequency[c],
-            "connectivity": connectivity[c]
+            "connectivity": connectivity[c],
+
+            # NEW SIGNALS
+            "search_signal": search_signal[c],
+            "excerpt_signal": excerpt_signal[c],
+            "word_signal": word_signal[c],
         }
 
     return salience
 
+
+# =========================================================
+# PAGE COMPARISON ENGINE
+# =========================================================
+
+def token_overlap(a, b):
+
+    if not a or not b:
+        return 0
+
+    ta = set(a.lower().split())
+    tb = set(b.lower().split())
+
+    return len(ta & tb)
+
+def concept_overlap(a, b):
+
+    ca = set(a.get("concepts", []))
+    cb = set(b.get("concepts", []))
+
+    return len(ca & cb)
+
+def compare_pages(page_a, page_b):
+
+    return {
+
+        "concept_overlap":
+            concept_overlap(page_a, page_b),
+
+        "search_similarity":
+            token_overlap(
+                page_a.get("search_text", ""),
+                page_b.get("search_text", "")
+            ),
+
+        "excerpt_similarity":
+            token_overlap(
+                page_a.get("excerpt", ""),
+                page_b.get("excerpt", "")
+            ),
+
+        "word_similarity":
+            abs(
+                page_a.get("word_count", 0)
+                -
+                page_b.get("word_count", 0)
+            )
+
+    }
 
 # =========================================================
 # PAGE GRAPH (CONSUMER LAYER ONLY)
