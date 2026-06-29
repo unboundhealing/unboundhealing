@@ -475,26 +475,10 @@ def compare_pages(page_a, page_b):
     semantic_overlap = concept_overlap  # placeholder for future expansion
     
     return {
-
-        "concept_overlap":
-            concept_overlap(page_a, page_b),
-
-        "search_similarity":
-            token_overlap(
-                page_a.get("search_text", ""),
-                page_b.get("search_text", "")
-            ),
-
-        "excerpt_similarity":
-            token_overlap(
-                page_a.get("excerpt", ""),
-                page_b.get("excerpt", "")
-            ),
-        "word_similarity": 
-            word_similarity(
-                page_a, 
-                page_b
-            )
+        "concept_overlap": concept,
+        "search_similarity": search,
+        "excerpt_similarity": excerpt,
+        "word_similarity": word_similarity
     }
 
 # =========================================================
