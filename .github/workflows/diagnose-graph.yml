@@ -1,0 +1,21 @@
+name: Diagnose Page Graph
+
+on:
+  workflow_dispatch:
+
+jobs:
+  diagnose-page-graph:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify semantic-salience exists
+        run: |
+          test -f assets/semantic-salience.json
+          echo "✅ assets/semantic-salience.json found"
+
+      - name: Run page graph diagnostic
+        run: |
+          python3 assets/diagnose-page-graph.py
