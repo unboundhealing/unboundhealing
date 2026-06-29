@@ -18,7 +18,7 @@ echo "===== SALIENCE DEBUG ====="
 python3 - <<'PY'
 import json
 
-with open("semantic-salience.json","r",encoding="utf-8") as f:
+with open("assets/semantic-salience.json","r",encoding="utf-8") as f:
     data = json.load(f)
 
 print()
@@ -68,8 +68,8 @@ echo "=========================="
 echo ""
 
 # HARD GUARANTEE: semantic-salience MUST exist
-if [ ! -f "semantic-salience.json" ]; then
-  echo "❌ semantic-salience.json missing — HARD STOP"
+if [ ! -f "assets/semantic-salience.json" ]; then
+  echo "❌ assets/semantic-salience.json missing — HARD STOP"
   exit 1
 fi
 
@@ -87,7 +87,14 @@ echo "🏠 Homepage intelligence (derivative)"
 python3 scripts/build-homepage-intelligence.py || true
 
 # ---------------------------------------------------------
-# STEP 3 — PRESENTATION / RENDER LAYER
+# STEP 3 — TAGS / RENDER LAYER
+# ---------------------------------------------------------
+
+echo "🏷️ Building tags index..."
+python3 scripts/build-tags.py
+
+# ---------------------------------------------------------
+# STEP 4 — PRESENTATION / RENDER LAYER
 # ---------------------------------------------------------
 
 echo "📡 Tracking injection (standalone consumer)..."
