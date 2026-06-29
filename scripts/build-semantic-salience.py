@@ -331,17 +331,17 @@ def extract_page_metadata(full_path, url):
             "word_count": word_count
         }
         
-        except Exception as e:
-            print("⚠️ metadata extraction failed:", e)
-            return {
-                "title": "",
-                "kind": "",
-                "description": "",
-                "excerpt": "",
-                "search_text": "",
-                "concepts": [],
-                "word_count": 0,
-        }
+    except Exception as e:
+        print("⚠️ metadata extraction failed:", e)
+        return {
+            "title": "",
+            "kind": "",
+            "description": "",
+            "excerpt": "",
+            "search_text": "",
+            "concepts": [],
+            "word_count": 0,
+    }
             
 # =========================================================
 # REGISTRY (STRUCTURAL REALITY INDEX)
