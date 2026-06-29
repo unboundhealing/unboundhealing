@@ -88,15 +88,15 @@ def get_kind(section):
 
     mapping = {
         "home": "home",
-        "opening": "journal",
+        "opening", "welcome": "journal",
         "concept": "concept",
         "about": "about",
         "gathering": "gathering",
         "supporting": "supporting",
-        "listen": "listen",
-        "welcome": "welcome"
+        "listen": "listen"
     }
 
+    section = (section or "").strip().lower()
     return mapping.get(section, "page")
     
 # -------------------------------------------------------
