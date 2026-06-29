@@ -4814,12 +4814,208 @@
     }
   ],
   "salience": {
-    "open": {
+    "assets-entry-template": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "updates-temp": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "day-before": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-post-this": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "gathering": {
+      "frequency": 1,
+      "connectivity": 0,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "assets-images": {
+      "frequency": 3,
+      "connectivity": 37,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "1": {
+      "frequency": 2,
+      "connectivity": 31,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "assets-updates-temp": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "title": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "cooling-tea": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-this-morning": {
+      "frequency": 3,
+      "connectivity": 11,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 6
+    },
+    "skwintcheee": {
       "frequency": 1,
       "connectivity": 2,
       "search_signal": 0,
       "excerpt_signal": 0,
       "word_signal": 2
+    },
+    "pretender-1": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-sold-out": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-experimenting": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "liz": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "thinking": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "idea": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 1
+    },
+    "assets-homepage-intelligence": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "lizzo-good": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "about": {
+      "frequency": 2,
+      "connectivity": 2,
+      "search_signal": 4,
+      "excerpt_signal": 1,
+      "word_signal": 3
+    },
+    "inviting": {
+      "frequency": 1,
+      "connectivity": 0,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "hell": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "page-template": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "opening-gloomy": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "homepage-intelligence-blocks": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "is": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "yesterday": {
+      "frequency": 2,
+      "connectivity": 6,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 4
+    },
+    "opening": {
+      "frequency": 23,
+      "connectivity": 91,
+      "search_signal": 46,
+      "excerpt_signal": 2,
+      "word_signal": 43
     },
     "morning-a": {
       "frequency": 1,
@@ -4828,12 +5024,187 @@
       "excerpt_signal": 0,
       "word_signal": 2
     },
-    "assets-page-template": {
+    "concept-idea": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "the-pretender": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "updates": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 1
+    },
+    "opening-just-listening": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 0,
       "excerpt_signal": 0,
       "word_signal": 1
+    },
+    "lukewarm": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "images": {
+      "frequency": 3,
+      "connectivity": 37,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "before": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "a": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "entry": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "the-day-before": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept": {
+      "frequency": 11,
+      "connectivity": 32,
+      "search_signal": 4,
+      "excerpt_signal": 0,
+      "word_signal": 18
+    },
+    "shared": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 1
+    },
+    "zone": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-ici": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "yes": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "assets-entry": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "experiences": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 1
+    },
+    "experimenting": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "temp": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "opening-lukewarm-decaf": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-post": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "another": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "foo-fighters": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-yes-and": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "decaf": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "good-as-hell": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
     },
     "opening-just": {
       "frequency": 1,
@@ -4849,600 +5220,12 @@
       "excerpt_signal": 0,
       "word_signal": 2
     },
-    "the-pretender-1": {
+    "images-foo-fighters": {
       "frequency": 1,
       "connectivity": 17,
       "search_signal": 0,
       "excerpt_signal": 0,
       "word_signal": 0
-    },
-    "just-thinking": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "iced-coffee": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "conversing": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "assets-images": {
-      "frequency": 3,
-      "connectivity": 37,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "images": {
-      "frequency": 3,
-      "connectivity": 37,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "thinking": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "images-test": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "coffee": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "assets-updates": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "assets-homepage-intelligence": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "images-lizzo-good": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "concept-idea": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "images-lizzo": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "concept-iced": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "hell-1": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "assets-images-lizzo": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "concept": {
-      "frequency": 11,
-      "connectivity": 32,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 18
-    },
-    "opening-no-title": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "another-yesterday": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "intelligence-blocks": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-love-concept": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "morning-too": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "still": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "template": {
-      "frequency": 2,
-      "connectivity": 9,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "whatever-this": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "foo": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "morning": {
-      "frequency": 3,
-      "connectivity": 11,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 6
-    },
-    "tea": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "images-foo": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "good-as-hell": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "blocks": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "concept-just-thinking": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "assets-entry-template": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "concept-website-building": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "homepage-intelligence": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "gathering": {
-      "frequency": 1,
-      "connectivity": 0,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "good": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "before": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "out": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "test-image": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "assets-updates-temp": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "concept-evolving": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "concept-zone": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "about": {
-      "frequency": 2,
-      "connectivity": 2,
-      "search_signal": 4,
-      "excerpt_signal": 1,
-      "word_signal": 3
-    },
-    "concept-website": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "whatever-this-is": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "this-morning-a": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "title": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "foo-fighters-the": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "and-no": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "concept-origin": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "assets-entry": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "fighters": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "noticing-shared-experiences": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "and": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "opening-open": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-lukewarm-decaf": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-yes": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-this": {
-      "frequency": 4,
-      "connectivity": 14,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 7
-    },
-    "opening-this-you": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "hell": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "cooling-tea": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "pretender": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "website-building": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "opening-cooling": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "homepage": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "assets-homepage": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "noticing": {
-      "frequency": 2,
-      "connectivity": 5,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-the-day": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-liz": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "you": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 1
-    },
-    "a": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-gloomy": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "foo-fighters": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "image": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "cooling": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "lukewarm-decaf": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "yesterday": {
-      "frequency": 2,
-      "connectivity": 6,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 4
-    },
-    "assets-images-test": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "good-as": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "too": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "is": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "as": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "evolving": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
     },
     "tom": {
       "frequency": 1,
@@ -5451,61 +5234,12 @@
       "excerpt_signal": 1,
       "word_signal": 2
     },
-    "entry": {
+    "sold": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 0,
       "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "concept-ici": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
       "word_signal": 2
-    },
-    "whatever": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "opening": {
-      "frequency": 23,
-      "connectivity": 91,
-      "search_signal": 46,
-      "excerpt_signal": 2,
-      "word_signal": 43
-    },
-    "lukewarm": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "page": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "supporting": {
-      "frequency": 1,
-      "connectivity": 0,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "temp": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
     },
     "building": {
       "frequency": 1,
@@ -5513,454 +5247,6 @@
       "search_signal": 0,
       "excerpt_signal": 0,
       "word_signal": 1
-    },
-    "opening-another": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "this-morning-too": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "images-foo-fighters": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "post": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "fighters-the-pretender": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "homepage-intelligence-blocks": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "test": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "just-listening": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "assets-page": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "pretender-1": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "images-test-image": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-tom": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "love": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "intelligence": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "love-concept": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "inviting": {
-      "frequency": 1,
-      "connectivity": 0,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-yesterday": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "the-day": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-sold-out": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "1": {
-      "frequency": 2,
-      "connectivity": 31,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "no-title": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-another-yesterday": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "this-is": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-yes-and": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "shared-experiences": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "opening-whatever": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "yes": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "updates-temp": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "opening-just-listening": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "still-warm": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "updates": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 1
-    },
-    "gloomy": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "the": {
-      "frequency": 2,
-      "connectivity": 25,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "no": {
-      "frequency": 2,
-      "connectivity": 12,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 4
-    },
-    "lizzo": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "the-pretender": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "about-conversing": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "post-this": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "the-day-before": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-post": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-the": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "zone": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-this-morning": {
-      "frequency": 3,
-      "connectivity": 11,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 6
-    },
-    "this-you": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "sold-out": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "concept-iced-coffee": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "experimenting": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "assets": {
-      "frequency": 7,
-      "connectivity": 59,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 3
-    },
-    "experiences": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 1
-    },
-    "skwintcheee": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-still-warm": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "day-before": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-sold": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "warm": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "as-hell-1": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-whatever-this": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "lizzo-good": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "lizzo-good-as": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "iced": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "concept-experimenting": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "concept-just": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "listening": {
-      "frequency": 2,
-      "connectivity": 5,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-skwintcheee": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "sold": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
     },
     "yes-and-no": {
       "frequency": 1,
@@ -5976,54 +5262,33 @@
       "excerpt_signal": 0,
       "word_signal": 2
     },
-    "opening-still": {
+    "love-concept": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 0,
       "excerpt_signal": 0,
       "word_signal": 2
     },
-    "just": {
-      "frequency": 2,
-      "connectivity": 10,
-      "search_signal": 4,
-      "excerpt_signal": 2,
-      "word_signal": 2
-    },
-    "opening-cooling-tea": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "origin": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "this-morning": {
-      "frequency": 3,
-      "connectivity": 11,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 6
-    },
-    "welcome": {
-      "frequency": 1,
-      "connectivity": 0,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "noticing-shared": {
+    "opening-this-you": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 0,
       "excerpt_signal": 0,
       "word_signal": 1
+    },
+    "tea": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "lizzo-good-as": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
     },
     "this": {
       "frequency": 6,
@@ -6032,86 +5297,23 @@
       "excerpt_signal": 5,
       "word_signal": 11
     },
-    "shared": {
+    "origin": {
       "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 1
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
     },
-    "as-hell": {
+    "assets-homepage": {
       "frequency": 1,
-      "connectivity": 17,
+      "connectivity": 8,
       "search_signal": 0,
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "decaf": {
+    "opening-yes": {
       "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "opening-love": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "another": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "page-template": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "website": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 1
-    },
-    "idea": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 1
-    },
-    "entry-template": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "liz": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "assets-images-foo": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 0,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-post-this": {
-      "frequency": 1,
-      "connectivity": 5,
+      "connectivity": 8,
       "search_signal": 0,
       "excerpt_signal": 0,
       "word_signal": 2
@@ -6123,12 +5325,278 @@
       "excerpt_signal": 0,
       "word_signal": 2
     },
-    "day": {
+    "good-as": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "no-title": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "this-morning": {
+      "frequency": 3,
+      "connectivity": 11,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 6
+    },
+    "too": {
       "frequency": 1,
       "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "foo": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "still": {
+      "frequency": 1,
+      "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 1,
       "word_signal": 2
+    },
+    "opening-cooling-tea": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "post": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "lizzo": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "just": {
+      "frequency": 2,
+      "connectivity": 10,
+      "search_signal": 4,
+      "excerpt_signal": 2,
+      "word_signal": 2
+    },
+    "intelligence-blocks": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "images-foo": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "intelligence": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-love": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-tom": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-whatever-this": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "cooling": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "still-warm": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "iced": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "whatever-this-is": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "as-hell": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-love-concept": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "this-morning-a": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "about-conversing": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "homepage": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "the-pretender-1": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-this": {
+      "frequency": 4,
+      "connectivity": 14,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 7
+    },
+    "another-yesterday": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "this-you": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "just-thinking": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "listening": {
+      "frequency": 2,
+      "connectivity": 5,
+      "search_signal": 4,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "assets-page": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "noticing-shared": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "and-no": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "coffee": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "opening-whatever": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "pretender": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "noticing": {
+      "frequency": 2,
+      "connectivity": 5,
+      "search_signal": 4,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "noticing-shared-experiences": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
     },
     "fighters-the": {
       "frequency": 1,
@@ -6137,15 +5605,1569 @@
       "excerpt_signal": 0,
       "word_signal": 0
     },
+    "the": {
+      "frequency": 2,
+      "connectivity": 25,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "warm": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "entry-template": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "sold-out": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "this-is": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-no-title": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-another-yesterday": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "fighters-the-pretender": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "concept-just": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "opening-still-warm": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-website": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "morning": {
+      "frequency": 3,
+      "connectivity": 11,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 6
+    },
+    "images-lizzo": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "as-hell-1": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "gloomy": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "whatever": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "assets-images-lizzo": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "this-morning-too": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-evolving": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "morning-too": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "hell-1": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "as": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "out": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "template": {
+      "frequency": 2,
+      "connectivity": 9,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "good": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "concept-zone": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "test": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-yesterday": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "homepage-intelligence": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "assets-updates": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "conversing": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "concept-iced-coffee": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-another": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "post-this": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "assets": {
+      "frequency": 7,
+      "connectivity": 59,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 3
+    },
+    "opening-the": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "iced-coffee": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "assets-page-template": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "no": {
+      "frequency": 2,
+      "connectivity": 12,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 4
+    },
+    "lukewarm-decaf": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-just-thinking": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "opening-liz": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "the-day": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
     "opening-no": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 0,
       "excerpt_signal": 0,
       "word_signal": 2
+    },
+    "evolving": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-skwintcheee": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "love": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "open": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-sold": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "supporting": {
+      "frequency": 1,
+      "connectivity": 0,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "and": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "concept-website-building": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "fighters": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "blocks": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "foo-fighters-the": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "welcome": {
+      "frequency": 1,
+      "connectivity": 0,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "whatever-this": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "you": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 1
+    },
+    "website": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 1
+    },
+    "opening-open": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-the-day": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "image": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "assets-images-foo": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "images-test-image": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-cooling": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "just-listening": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "test-image": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-still": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "website-building": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "assets-images-test": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "images-test": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "concept-iced": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "day": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "concept-origin": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "shared-experiences": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "page": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "images-lizzo-good": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 0,
+      "excerpt_signal": 0,
+      "word_signal": 0
     }
   },
   "page_graph": {
+    "https://unboundhealing.org/about/conversing/": {
+      "concepts": [
+        "about",
+        "conversing",
+        "about-conversing"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/gathering/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/about/",
+        "https://unboundhealing.org/welcome/"
+      ]
+    },
+    "https://unboundhealing.org/about/": {
+      "concepts": [
+        "about"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/supporting/",
+        "https://unboundhealing.org/opening/open/"
+      ]
+    },
+    "https://unboundhealing.org/assets/entry-template/": {
+      "concepts": [
+        "assets",
+        "entry",
+        "template",
+        "assets-entry",
+        "entry-template",
+        "assets-entry-template"
+      ],
+      "related": [
+        "https://unboundhealing.org/assets/page-template/",
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/gathering/",
+        "https://unboundhealing.org/noticing/",
+        "https://unboundhealing.org/noticing/shared-experiences/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/origin/"
+      ]
+    },
+    "https://unboundhealing.org/assets/homepage-intelligence-blocks/": {
+      "concepts": [
+        "assets",
+        "homepage",
+        "intelligence",
+        "blocks",
+        "assets-homepage",
+        "homepage-intelligence",
+        "intelligence-blocks",
+        "assets-homepage-intelligence",
+        "homepage-intelligence-blocks"
+      ],
+      "related": [
+        "https://unboundhealing.org/assets/entry-template/",
+        "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
+        "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
+        "https://unboundhealing.org/assets/images/_html/test_image/",
+        "https://unboundhealing.org/assets/page-template/",
+        "https://unboundhealing.org/assets/updates-temp/"
+      ]
+    },
+    "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/": {
+      "concepts": [
+        "assets",
+        "images",
+        "foo",
+        "fighters",
+        "the",
+        "pretender",
+        "1",
+        "assets-images",
+        "images-foo",
+        "foo-fighters",
+        "fighters-the",
+        "the-pretender",
+        "pretender-1",
+        "assets-images-foo",
+        "images-foo-fighters",
+        "foo-fighters-the",
+        "fighters-the-pretender",
+        "the-pretender-1"
+      ],
+      "related": [
+        "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
+        "https://unboundhealing.org/assets/images/_html/test_image/",
+        "https://unboundhealing.org/assets/entry-template/",
+        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
+        "https://unboundhealing.org/assets/page-template/",
+        "https://unboundhealing.org/assets/updates-temp/",
+        "https://unboundhealing.org/opening/the-day-before/"
+      ]
+    },
+    "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/": {
+      "concepts": [
+        "assets",
+        "images",
+        "lizzo",
+        "good",
+        "as",
+        "hell",
+        "1",
+        "assets-images",
+        "images-lizzo",
+        "lizzo-good",
+        "good-as",
+        "as-hell",
+        "hell-1",
+        "assets-images-lizzo",
+        "images-lizzo-good",
+        "lizzo-good-as",
+        "good-as-hell",
+        "as-hell-1"
+      ],
+      "related": [
+        "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
+        "https://unboundhealing.org/assets/images/_html/test_image/",
+        "https://unboundhealing.org/assets/entry-template/",
+        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
+        "https://unboundhealing.org/assets/page-template/",
+        "https://unboundhealing.org/assets/updates-temp/"
+      ]
+    },
+    "https://unboundhealing.org/assets/images/_html/test_image/": {
+      "concepts": [
+        "assets",
+        "images",
+        "test",
+        "image",
+        "assets-images",
+        "images-test",
+        "test-image",
+        "assets-images-test",
+        "images-test-image"
+      ],
+      "related": [
+        "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
+        "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
+        "https://unboundhealing.org/assets/entry-template/",
+        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
+        "https://unboundhealing.org/assets/page-template/",
+        "https://unboundhealing.org/assets/updates-temp/"
+      ]
+    },
+    "https://unboundhealing.org/assets/page-template/": {
+      "concepts": [
+        "assets",
+        "page",
+        "template",
+        "assets-page",
+        "page-template",
+        "assets-page-template"
+      ],
+      "related": [
+        "https://unboundhealing.org/assets/entry-template/",
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/gathering/",
+        "https://unboundhealing.org/noticing/",
+        "https://unboundhealing.org/noticing/shared-experiences/",
+        "https://unboundhealing.org/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/"
+      ]
+    },
+    "https://unboundhealing.org/assets/updates-temp/": {
+      "concepts": [
+        "assets",
+        "updates",
+        "temp",
+        "assets-updates",
+        "updates-temp",
+        "assets-updates-temp"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/the-day-before/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/no-title/"
+      ]
+    },
+    "https://unboundhealing.org/concept/evolving/": {
+      "concepts": [
+        "concept",
+        "evolving",
+        "concept-evolving"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/gloomy/"
+      ]
+    },
+    "https://unboundhealing.org/concept/experimenting/": {
+      "concepts": [
+        "concept",
+        "experimenting",
+        "concept-experimenting"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/zone/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/concept/website-building/"
+      ]
+    },
+    "https://unboundhealing.org/concept/iced-coffee/": {
+      "concepts": [
+        "concept",
+        "iced",
+        "coffee",
+        "concept-iced",
+        "iced-coffee",
+        "concept-iced-coffee"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/still-warm/",
+        "https://unboundhealing.org/opening/this-you/"
+      ]
+    },
+    "https://unboundhealing.org/concept/ici/": {
+      "concepts": [
+        "concept",
+        "ici",
+        "concept-ici"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/the-day-before/"
+      ]
+    },
+    "https://unboundhealing.org/concept/idea/": {
+      "concepts": [
+        "concept",
+        "idea",
+        "concept-idea"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/concept/evolving/",
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/open/"
+      ]
+    },
+    "https://unboundhealing.org/concept/": {
+      "concepts": [
+        "concept"
+      ],
+      "related": [
+        "https://unboundhealing.org/noticing/",
+        "https://unboundhealing.org/",
+        "https://unboundhealing.org/inviting/",
+        "https://unboundhealing.org/listening/",
+        "https://unboundhealing.org/gathering/",
+        "https://unboundhealing.org/noticing/shared-experiences/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/zone/"
+      ]
+    },
+    "https://unboundhealing.org/concept/just-thinking/": {
+      "concepts": [
+        "concept",
+        "just",
+        "thinking",
+        "concept-just",
+        "just-thinking",
+        "concept-just-thinking"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/concept/experimenting/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/opening/open/"
+      ]
+    },
+    "https://unboundhealing.org/concept/origin/": {
+      "concepts": [
+        "concept",
+        "origin",
+        "concept-origin"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/evolving/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/gathering/",
+        "https://unboundhealing.org/opening/cooling-tea/"
+      ]
+    },
+    "https://unboundhealing.org/concept/website-building/": {
+      "concepts": [
+        "concept",
+        "website",
+        "building",
+        "concept-website",
+        "website-building",
+        "concept-website-building"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/about/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/no-title/"
+      ]
+    },
+    "https://unboundhealing.org/concept/zone/": {
+      "concepts": [
+        "concept",
+        "zone",
+        "concept-zone"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/experimenting/",
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/inviting/",
+        "https://unboundhealing.org/opening/liz/"
+      ]
+    },
+    "https://unboundhealing.org/gathering/": {
+      "concepts": [
+        "gathering"
+      ],
+      "related": [
+        "https://unboundhealing.org/noticing/",
+        "https://unboundhealing.org/",
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/listening/",
+        "https://unboundhealing.org/inviting/",
+        "https://unboundhealing.org/noticing/shared-experiences/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/opening/cooling-tea/"
+      ]
+    },
+    "https://unboundhealing.org/": {
+      "concepts": [],
+      "related": [
+        "https://unboundhealing.org/noticing/",
+        "https://unboundhealing.org/inviting/",
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/listening/",
+        "https://unboundhealing.org/gathering/",
+        "https://unboundhealing.org/noticing/shared-experiences/",
+        "https://unboundhealing.org/about/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/just-listening/"
+      ]
+    },
+    "https://unboundhealing.org/inviting/": {
+      "concepts": [
+        "inviting"
+      ],
+      "related": [
+        "https://unboundhealing.org/",
+        "https://unboundhealing.org/listening/",
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/noticing/",
+        "https://unboundhealing.org/gathering/",
+        "https://unboundhealing.org/noticing/shared-experiences/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/"
+      ]
+    },
+    "https://unboundhealing.org/listening/": {
+      "concepts": [
+        "listening"
+      ],
+      "related": [
+        "https://unboundhealing.org/inviting/",
+        "https://unboundhealing.org/noticing/",
+        "https://unboundhealing.org/",
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/gathering/",
+        "https://unboundhealing.org/noticing/shared-experiences/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/iced-coffee/"
+      ]
+    },
+    "https://unboundhealing.org/noticing/": {
+      "concepts": [
+        "noticing"
+      ],
+      "related": [
+        "https://unboundhealing.org/",
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/inviting/",
+        "https://unboundhealing.org/gathering/",
+        "https://unboundhealing.org/noticing/shared-experiences/",
+        "https://unboundhealing.org/listening/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/yes-and-no/"
+      ]
+    },
+    "https://unboundhealing.org/noticing/shared-experiences/": {
+      "concepts": [
+        "noticing",
+        "shared",
+        "experiences",
+        "noticing-shared",
+        "shared-experiences",
+        "noticing-shared-experiences"
+      ],
+      "related": [
+        "https://unboundhealing.org/noticing/",
+        "https://unboundhealing.org/gathering/",
+        "https://unboundhealing.org/concept/",
+        "https://unboundhealing.org/listening/",
+        "https://unboundhealing.org/",
+        "https://unboundhealing.org/inviting/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/idea/"
+      ]
+    },
+    "https://unboundhealing.org/opening/another-yesterday/": {
+      "concepts": [
+        "opening",
+        "another",
+        "yesterday",
+        "opening-another",
+        "another-yesterday",
+        "opening-another-yesterday"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/opening/yesterday/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/"
+      ]
+    },
+    "https://unboundhealing.org/opening/cooling-tea/": {
+      "concepts": [
+        "opening",
+        "cooling",
+        "tea",
+        "opening-cooling",
+        "cooling-tea",
+        "opening-cooling-tea"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/concept/evolving/",
+        "https://unboundhealing.org/inviting/",
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/gathering/",
+        "https://unboundhealing.org/noticing/"
+      ]
+    },
+    "https://unboundhealing.org/opening/gloomy/": {
+      "concepts": [
+        "opening",
+        "gloomy",
+        "opening-gloomy"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/still-warm/",
+        "https://unboundhealing.org/opening/the-day-before/"
+      ]
+    },
+    "https://unboundhealing.org/opening/": {
+      "concepts": [
+        "opening"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/inviting/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/noticing/shared-experiences/"
+      ]
+    },
+    "https://unboundhealing.org/opening/just-listening/": {
+      "concepts": [
+        "opening",
+        "just",
+        "listening",
+        "opening-just",
+        "just-listening",
+        "opening-just-listening"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/concept/origin/"
+      ]
+    },
+    "https://unboundhealing.org/opening/liz/": {
+      "concepts": [
+        "opening",
+        "liz",
+        "opening-liz"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/still-warm/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/cooling-tea/"
+      ]
+    },
+    "https://unboundhealing.org/opening/love-concept/": {
+      "concepts": [
+        "opening",
+        "love",
+        "concept",
+        "opening-love",
+        "love-concept",
+        "opening-love-concept"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/still-warm/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/yes-and-no/"
+      ]
+    },
+    "https://unboundhealing.org/opening/lukewarm-decaf/": {
+      "concepts": [
+        "opening",
+        "lukewarm",
+        "decaf",
+        "opening-lukewarm",
+        "lukewarm-decaf",
+        "opening-lukewarm-decaf"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/still-warm/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/just-listening/"
+      ]
+    },
+    "https://unboundhealing.org/opening/no-title/": {
+      "concepts": [
+        "opening",
+        "no",
+        "title",
+        "opening-no",
+        "no-title",
+        "opening-no-title"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/still-warm/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/the-day-before/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/cooling-tea/"
+      ]
+    },
+    "https://unboundhealing.org/opening/open/": {
+      "concepts": [
+        "opening",
+        "open",
+        "opening-open"
+      ],
+      "related": [
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/supporting/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/the-day-before/"
+      ]
+    },
+    "https://unboundhealing.org/opening/post-this/": {
+      "concepts": [
+        "opening",
+        "post",
+        "this",
+        "opening-post",
+        "post-this",
+        "opening-post-this"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/supporting/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/whatever-this-is/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/sold-out/"
+      ]
+    },
+    "https://unboundhealing.org/opening/skwintcheee/": {
+      "concepts": [
+        "opening",
+        "skwintcheee",
+        "opening-skwintcheee"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/still-warm/"
+      ]
+    },
+    "https://unboundhealing.org/opening/sold-out/": {
+      "concepts": [
+        "opening",
+        "sold",
+        "out",
+        "opening-sold",
+        "sold-out",
+        "opening-sold-out"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/the-day-before/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/still-warm/"
+      ]
+    },
+    "https://unboundhealing.org/opening/still-warm/": {
+      "concepts": [
+        "opening",
+        "still",
+        "warm",
+        "opening-still",
+        "still-warm",
+        "opening-still-warm"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/the-day-before/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/gloomy/"
+      ]
+    },
+    "https://unboundhealing.org/opening/the-day-before/": {
+      "concepts": [
+        "opening",
+        "the",
+        "day",
+        "before",
+        "opening-the",
+        "the-day",
+        "day-before",
+        "opening-the-day",
+        "the-day-before"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/still-warm/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/"
+      ]
+    },
+    "https://unboundhealing.org/opening/this-morning-a/": {
+      "concepts": [
+        "opening",
+        "this",
+        "morning",
+        "a",
+        "opening-this",
+        "this-morning",
+        "morning-a",
+        "opening-this-morning",
+        "this-morning-a"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/supporting/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/whatever-this-is/"
+      ]
+    },
+    "https://unboundhealing.org/opening/this-morning-too/": {
+      "concepts": [
+        "opening",
+        "this",
+        "morning",
+        "too",
+        "opening-this",
+        "this-morning",
+        "morning-too",
+        "opening-this-morning",
+        "this-morning-too"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/supporting/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/skwintcheee/"
+      ]
+    },
+    "https://unboundhealing.org/opening/this-morning/": {
+      "concepts": [
+        "opening",
+        "this",
+        "morning",
+        "opening-this",
+        "this-morning",
+        "opening-this-morning"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/whatever-this-is/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/the-day-before/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/"
+      ]
+    },
+    "https://unboundhealing.org/opening/this-you/": {
+      "concepts": [
+        "opening",
+        "this",
+        "you",
+        "opening-this",
+        "this-you",
+        "opening-this-you"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/still-warm/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/love-concept/"
+      ]
+    },
+    "https://unboundhealing.org/opening/tom/": {
+      "concepts": [
+        "opening",
+        "tom",
+        "opening-tom"
+      ],
+      "related": [
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/concept/evolving/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/concept/idea/"
+      ]
+    },
+    "https://unboundhealing.org/opening/whatever-this-is/": {
+      "concepts": [
+        "opening",
+        "whatever",
+        "this",
+        "is",
+        "opening-whatever",
+        "whatever-this",
+        "this-is",
+        "opening-whatever-this",
+        "whatever-this-is"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/tom/"
+      ]
+    },
+    "https://unboundhealing.org/opening/yes-and-no/": {
+      "concepts": [
+        "opening",
+        "yes",
+        "and",
+        "no",
+        "opening-yes",
+        "yes-and",
+        "and-no",
+        "opening-yes-and",
+        "yes-and-no"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/supporting/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/love-concept/"
+      ]
+    },
+    "https://unboundhealing.org/opening/yesterday/": {
+      "concepts": [
+        "opening",
+        "yesterday",
+        "opening-yesterday"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/still-warm/",
+        "https://unboundhealing.org/concept/zone/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/opening/just-listening/"
+      ]
+    },
+    "https://unboundhealing.org/supporting/": {
+      "concepts": [
+        "supporting"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/concept/iced-coffee/"
+      ]
+    },
     "https://unboundhealing.org/welcome/": {
       "concepts": [
         "welcome"

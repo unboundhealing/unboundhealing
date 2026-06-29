@@ -2,9 +2,19 @@
   "homepage_intelligence": {
     "arising_observations": [
       {
-        "url": "https://unboundhealing.org/welcome/",
-        "title": "Welcome in…",
-        "score": 16.0
+        "url": "https://unboundhealing.org/opening/the-day-before/",
+        "title": "the day before…",
+        "score": 24.0
+      },
+      {
+        "url": "https://unboundhealing.org/opening/this-morning-a/",
+        "title": "this morning…",
+        "score": 24.0
+      },
+      {
+        "url": "https://unboundhealing.org/opening/this-morning-too/",
+        "title": "this morning…",
+        "score": 24.0
       }
     ],
     "essential_inspirations": [
