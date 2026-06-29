@@ -1,6 +1,6 @@
 import json
 
-with open("search-index.json", "r", encoding="utf-8") as f:
+with open("assets/search-index.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 sample = next(iter(data.values()))
