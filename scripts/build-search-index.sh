@@ -136,6 +136,7 @@ def build_search_text(
     excerpt,
     tags,
     concepts,
+    []
 ):
 
     fields = [
@@ -193,7 +194,7 @@ for url, node in nodes.items():
         excerpt,
         tags,
         concepts,
-        []
+        aliases
     )
     
     index[url] = {
