@@ -339,7 +339,12 @@ def extract_page_metadata(full_path, url):
             "search_text": "",
             "word_count": 0,
     }
-            
+
+    print("READING:", full_path)
+    print("TITLE RAW:", title)
+    print("DESC RAW:", desc)
+
+
 # =========================================================
 # REGISTRY (STRUCTURAL REALITY INDEX)
 # =========================================================
