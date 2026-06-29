@@ -214,10 +214,26 @@ def extract_page_metadata(full_path):
         text = soup.get_text(" ", strip=True)
         word_count = len(text.split())
 
+        # -----------------------------
+        # EXCERPT (NEW)
+        # -----------------------------
+        excerpt = " ".join(text.split()[:60])
+
+        # -----------------------------
+        # SEARCH TEXT (NEW)
+        # -----------------------------
+        search_text = " ".join(filter(None, [
+            title,
+            desc,
+            excerpt
+        ])).lower()
+
         return {
             "title": title,
             "description": desc,
             "word_count": word_count
+            "excerpt": excerpt,
+            "search_text": search_text
         }
 
     except Exception as e:
@@ -226,6 +242,8 @@ def extract_page_metadata(full_path):
             "title": "",
             "description": "",
             "word_count": 0
+            "excerpt": "",
+            "search_text": ""
         }
 
 
