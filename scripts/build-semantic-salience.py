@@ -508,6 +508,7 @@ def build_page_graph(registry):
                 similarity["concept_overlap"] * 5
                 + similarity["search_similarity"] * 3
                 + similarity["excerpt_similarity"] * 2
+                + similarity["word_similarity"] * 1
             )
 
             if score > 0:
