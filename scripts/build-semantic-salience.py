@@ -477,32 +477,32 @@ def build_page_graph(registry):
 
         related_scores = {}
 
-    for other_url, other_page in registry.items():
+        for other_url, other_page in registry.items():
 
-        if other_url == url:
-            continue
+            if other_url == url:
+                continue
 
-        similarity = compare_pages(data, other_page)
+            similarity = compare_pages(data, other_page)
 
-        score = (
-            similarity["concept_overlap"] * 5
-            + similarity["search_similarity"] * 3
-            + similarity["excerpt_similarity"] * 2
+            score = (
+                similarity["concept_overlap"] * 5
+                + similarity["search_similarity"] * 3
+                + similarity["excerpt_similarity"] * 2
+            )
+
+            if score > 0:
+                related_scores[other_url] = score
+
+        ranked = sorted(
+            related_scores.items(),
+            key=lambda x: (-x[1], x[0])
         )
 
-        if score > 0:
-            related_scores[other_url] = score
+        page_graph[url] = {
+            "concepts": data["concepts"],
+            "related": [u for u, _ in ranked[:10]]
+        }
 
-    ranked = sorted(
-        related_scores.items(),
-        key=lambda x: (-x[1], x[0])
-    )
-
-    page_graph[url] = {
-        "concepts": data["concepts"],
-        "related": [u for u, _ in ranked[:10]]
-    }
-    
     return page_graph
 
 
