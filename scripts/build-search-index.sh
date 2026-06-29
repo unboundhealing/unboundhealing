@@ -182,11 +182,8 @@ for url, node in nodes.items():
     # -------------------------------------------------------
 
     excerpt = node.get("excerpt", "")
-    kind = node.get("kind", "page")
-
     word_count = node.get("word_count", 0)
     concept_count = len(tags)
-
     related_count = len(page_graph.get(url, {}).get("related", []))
 
     search_text = build_search_text(
