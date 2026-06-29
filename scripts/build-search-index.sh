@@ -135,7 +135,7 @@ def build_search_text(
     kind,
     excerpt,
     tags,
-    tags,
+    concepts,
 ):
 
     fields = [
@@ -144,8 +144,7 @@ def build_search_text(
         kind,
         excerpt,
         " ".join(tags),
-        " ".join(concepts),
-        " ".join(aliases),
+        " ".join(concepts)
     ]
 
     return " ".join(
@@ -193,7 +192,7 @@ for url, node in nodes.items():
         kind,
         excerpt,
         tags,
-        tags,
+        concepts,
         []
     )
     
