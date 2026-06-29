@@ -242,7 +242,8 @@ def extract_page_metadata(full_path):
             "description": desc,
             "word_count": word_count,
             "excerpt": excerpt,
-            "search_text": search_text
+            "search_text": search_text,
+            "kind": kind
         }
 
     except Exception as e:
@@ -252,7 +253,8 @@ def extract_page_metadata(full_path):
             "description": "",
             "word_count": 0,
             "excerpt": "",
-            "search_text": ""
+            "search_text": "",
+            "kind": ""
         }
 
 
@@ -277,6 +279,7 @@ def build_registry(root, html_files):
             "path": path,
             "url": url,
             "title": metadata.get("title", "").strip(),   # <-- ADD THIS (critical)
+            "kind": metadata.get("kind", ""),
             "description": metadata.get("description", ""),
             "word_count": metadata.get("word_count", 0),
             "excerpt": metadata.get("excerpt", ""),
@@ -307,10 +310,13 @@ def build_graph(registry):
         nodes[url] = {
             "path": data["path"],
             "url": data["url"],
-            "title": data.get("title", ""),   # <-- CRITICAL
-            "excerpt": data["excerpt"],
-            "search_text": data["search_text"],
-            "concepts": data["concepts"]
+            "title": data.get("title", ""),
+            "kind": data.get("kind", ""),
+            "description": data.get("description", ""),
+            "word_count": data.get("word_count", 0),
+            "excerpt": data.get("excerpt", ""),
+            "search_text": data.get("search_text", ""),
+            "concepts": data.get("concepts", [])
         }
         
         concepts = data["concepts"]
