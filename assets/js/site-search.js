@@ -4,16 +4,15 @@
    ========================================================= */
 
 let SEARCH_INDEX = {};
-
+    const SEARCH_CONFIG = {
+        index: "/assets/search-index.json"
+    };
 /* -----------------------------------------
    LOAD INDEX
    ----------------------------------------- */
 
 async function loadSearchIndex() {
   try {
-    const SEARCH_CONFIG = {
-        index: "/assets/search-index.json"
-    };
     const res = await fetch(SEARCH_CONFIG.index);
     SEARCH_INDEX = await res.json();
     console.log("🔎 search index loaded:", Object.keys(SEARCH_INDEX).length);
