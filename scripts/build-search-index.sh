@@ -88,7 +88,8 @@ def get_kind(section):
 
     mapping = {
         "home": "home",
-        "opening", "welcome": "journal",
+        "opening": "journal", 
+        "welcome": "journal",
         "concept": "concept",
         "about": "about",
         "gathering": "gathering",
