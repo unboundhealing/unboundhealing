@@ -101,37 +101,7 @@ def get_kind(section):
     section = (section or "").strip().lower()
     return mapping.get(section, "page")
     
-# -------------------------------------------------------
-# BUILD SEARCH TEXT
-# -------------------------------------------------------
 
-def build_search_text(
-    title,
-    description,
-    kind,
-    excerpt,
-    tags,
-    concepts,
-    aliases=None,
-):
-    aliases = aliases or []
-    
-    fields = [
-        title,
-        description,
-        kind,
-        excerpt,
-        " ".join(tags),
-        " ".join(concepts),
-        " ".join(aliases),
-    ]
-
-    return " ".join(
-        str(x).strip().lower()
-        for x in fields
-        if x
-    )
-    
 # =========================================================
 # NORMALIZATION (RAW STRUCTURAL CLEANING)
 # =========================================================
@@ -305,10 +275,12 @@ def extract_page_metadata(full_path, url):
         word_count = len(words)
 
         
-
         section = get_section(url)
         kind = get_kind(section)
         excerpt = " ".join(text.split()[:60])
+        tags = []
+        concepts = []
+        aliases = []
 
         search_text = build_search_text(
             title,
@@ -357,19 +329,23 @@ def build_registry(root, html_files):
         full_path = os.path.join(root, path)
 
         url = canonicalize_url(build_url(path))
-        concepts = extract_concepts(path)    
+        concepts = extract_concepts(full_path)    
         metadata = extract_page_metadata(full_path, url)
-
+        concepts = extract_concepts(full_path)
+        section = get_section(url)
+        kind = get_kind(section)
+        
         registry[url] = {
-            "path": path,
-            "url": url,
-            "title": metadata["title"].strip(),   # <-- ADD THIS (critical)
-            "description": metadata["description"],
-            "kind": metadata["kind"],
-            "excerpt": metadata["excerpt"],
-            "search_text": metadata["search_text"],
-            "concepts": concepts,
-            "word_count": metadata["word_count"]
+            "title": metadata.get("title", ""),
+            "description": metadata.get("description", ""),
+            "section": get_section(url)
+            "kind": get_kind(section),
+            "excerpt": metadata.get("excerpt", ""),
+            "search_text": metadata.get("search_text", ""),
+            "concepts": extract_concepts(full_path),
+            "word_count": metadata.get("word_count", 0),
+            "tags": metadata.get("tags", []),
+            "aliases": metadata.get("aliases", [])
         }
 
     return registry
@@ -664,6 +640,35 @@ def find_html_files(root):
 
     return sorted(html_files)
 
+
+# -------------------------------------------------------
+# BUILD SEARCH TEXT
+# -------------------------------------------------------
+
+def build_search_text(
+    title,
+    description,
+    kind,
+    excerpt,
+    tags,
+    concepts,
+    aliases=None,
+):
+    aliases = aliases or []
+    
+    return " ".join(
+        str(x).strip().lower()
+        for x in [
+            title,
+            description,
+            kind,
+            excerpt,
+            " ".join(tags),
+            " ".join(concepts),
+            " ".join(aliases),
+        ]
+        if x
+    )
 
 # =========================================================
 # MAIN
