@@ -225,7 +225,12 @@ def extract_page_metadata(full_path):
         # -----------------------------
         # EXCERPT (NEW)
         # -----------------------------
-        text = soup.get_text(" ", strip=True)
+        main = soup.find("main")
+        if main:
+            text = main.get_text(" ", strip=True)
+        else:
+            text = soup.get_text(" ", strip=True)
+
         excerpt = " ".join(text.split()[:60])
 
         # -----------------------------
@@ -233,8 +238,10 @@ def extract_page_metadata(full_path):
         # -----------------------------
         search_text = " ".join(filter(None, [
             title,
+            title,          # intentional boost
             desc,
-            excerpt
+            excerpt,
+            excerpt,        # intentional boost
         ])).lower()
 
         return {
