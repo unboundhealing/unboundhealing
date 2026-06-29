@@ -3,16 +3,16 @@ import json
 import os
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
-PATH = os.path.join(ROOT, "semantic-salience.json")
+PATH = os.path.join(ROOT, "assets/semantic-salience.json")
 
-print("🔍 Inspecting semantic-salience.json...")
+print("🔍 Inspecting assets/semantic-salience.json...")
 
 # =========================================================
 # FILE SAFETY CHECK
 # =========================================================
 
 if not os.path.exists(PATH):
-    print("❌ semantic-salience.json missing")
+    print("❌ assets/semantic-salience.json missing")
     exit(1)
 
 with open(PATH, "r", encoding="utf-8") as f:
