@@ -11,7 +11,7 @@ let SEARCH_INDEX = {};
 
 async function loadSearchIndex() {
   try {
-    const res = await fetch('/search-index.json');
+    const res = await fetch('/assets/search-index.json');
     SEARCH_INDEX = await res.json();
     console.log("🔎 search index loaded:", Object.keys(SEARCH_INDEX).length);
   } catch (err) {
