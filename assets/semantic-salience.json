@@ -2817,19 +2817,593 @@
     }
   ],
   "salience": {
-    "supporting": {
-      "frequency": 1,
-      "connectivity": 0,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-still": {
+    "no-title": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 2
+    },
+    "gathering": {
+      "frequency": 1,
+      "connectivity": 0,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "lukewarm-decaf": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-ici": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "is": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "too": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "before": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-website-building": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "liz": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "love-concept": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "idea": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "opening-lukewarm": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "lukewarm": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "archive": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-iced-coffee": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "whatever-this-is": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "love": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "opening-whatever": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "day": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "opening-the-day": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "whatever-this": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-no-title": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "noticing-shared-experiences": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "concept-evolving": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "iced-coffee": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-this-morning": {
+      "frequency": 3,
+      "connectivity": 11,
+      "search_signal": 6,
+      "excerpt_signal": 0,
+      "word_signal": 6
+    },
+    "this-morning-a": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "morning": {
+      "frequency": 3,
+      "connectivity": 11,
+      "search_signal": 6,
+      "excerpt_signal": 0,
+      "word_signal": 6
+    },
+    "evolving": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "website": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 1
+    },
+    "opening-cooling": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-iced": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "building": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "concept-experimenting": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "sold": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "decaf": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "zone": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "and": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "another-yesterday": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-no": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "open": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-idea": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "experimenting": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "this-morning-too": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "tea": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "just-listening": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "iced": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-skwintcheee": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-cooling-tea": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "shared-experiences": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "a": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "the-day-before": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "and-no": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "post-this": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-yes-and": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "brittany": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "another": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "yesterday": {
+      "frequency": 2,
+      "connectivity": 6,
+      "search_signal": 4,
+      "excerpt_signal": 0,
+      "word_signal": 4
+    },
+    "opening-yesterday": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "this": {
+      "frequency": 6,
+      "connectivity": 25,
+      "search_signal": 12,
+      "excerpt_signal": 5,
+      "word_signal": 11
+    },
+    "opening-just": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "still": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "opening-sold-out": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "tom": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "post": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-this-you": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "opening-liz": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "inviting": {
+      "frequency": 1,
+      "connectivity": 0,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening": {
+      "frequency": 23,
+      "connectivity": 91,
+      "search_signal": 46,
+      "excerpt_signal": 3,
+      "word_signal": 42
+    },
+    "gloomy": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "just": {
+      "frequency": 2,
+      "connectivity": 10,
+      "search_signal": 4,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "warm": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-lukewarm-decaf": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-just-thinking": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "concept-origin": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-the": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "you": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 1
+    },
+    "noticing": {
+      "frequency": 2,
+      "connectivity": 5,
+      "search_signal": 4,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-whatever-this": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-sold": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "sold-out": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "opening-love-concept": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "opening-another": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-love": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
     },
     "opening-just-listening": {
       "frequency": 1,
@@ -2845,275 +3419,23 @@
       "excerpt_signal": 0,
       "word_signal": 2
     },
-    "noticing": {
-      "frequency": 2,
-      "connectivity": 5,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "yesterday": {
-      "frequency": 2,
-      "connectivity": 6,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 4
-    },
-    "yes-and-no": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-love-concept": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "idea": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "opening-the-day": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-still-warm": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "yes": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "too": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "experiences": {
+    "shared": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 1,
       "word_signal": 0
     },
-    "you": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 1
-    },
-    "opening-another": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-just": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "title": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening": {
-      "frequency": 23,
-      "connectivity": 91,
-      "search_signal": 46,
-      "excerpt_signal": 3,
-      "word_signal": 42
-    },
-    "archive": {
+    "origin": {
       "frequency": 1,
       "connectivity": 2,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 2
     },
-    "ici": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "still-warm": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-lukewarm": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "love-concept": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "out": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-sold": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "noticing-shared": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-this-you": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "tea": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-whatever": {
+    "whatever": {
       "frequency": 1,
       "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "this-is": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "gloomy": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "cooling": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "a": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "website-building": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "concept-zone": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "inviting": {
-      "frequency": 1,
-      "connectivity": 0,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "lukewarm": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "concept-iced": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-open": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "brittany": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "is": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "concept-evolving": {
-      "frequency": 1,
-      "connectivity": 2,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 2
@@ -3125,301 +3447,14 @@
       "excerpt_signal": 1,
       "word_signal": 2
     },
-    "this-morning-a": {
+    "yes": {
       "frequency": 1,
       "connectivity": 8,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 2
     },
-    "opening-liz": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-yes-and": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "conversing": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "opening-cooling": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "concept": {
-      "frequency": 11,
-      "connectivity": 32,
-      "search_signal": 22,
-      "excerpt_signal": 0,
-      "word_signal": 15
-    },
-    "cooling-tea": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "just-listening": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "concept-just-thinking": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "opening-sold-out": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "gathering": {
-      "frequency": 1,
-      "connectivity": 0,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-post-this": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "this-morning-too": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-skwintcheee": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "just": {
-      "frequency": 2,
-      "connectivity": 10,
-      "search_signal": 4,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "sold": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "website": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 1
-    },
-    "noticing-shared-experiences": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "morning-a": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "concept-ici": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "thinking": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "open": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "day-before": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "archive-brittany": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-this-morning": {
-      "frequency": 3,
-      "connectivity": 11,
-      "search_signal": 6,
-      "excerpt_signal": 0,
-      "word_signal": 6
-    },
-    "warm": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "sold-out": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "before": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "morning": {
-      "frequency": 3,
-      "connectivity": 11,
-      "search_signal": 6,
-      "excerpt_signal": 0,
-      "word_signal": 6
-    },
-    "opening-love": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "opening-the": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "building": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "another": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-this": {
-      "frequency": 4,
-      "connectivity": 14,
-      "search_signal": 8,
-      "excerpt_signal": 0,
-      "word_signal": 7
-    },
-    "concept-iced-coffee": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "concept-experimenting": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "post": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "still": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "morning-too": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "concept-origin": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "this-you": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "opening-gloomy": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "origin": {
+    "ici": {
       "frequency": 1,
       "connectivity": 2,
       "search_signal": 2,
@@ -3433,254 +3468,16 @@
       "excerpt_signal": 0,
       "word_signal": 2
     },
-    "this": {
-      "frequency": 6,
-      "connectivity": 25,
-      "search_signal": 12,
-      "excerpt_signal": 5,
-      "word_signal": 11
-    },
-    "this-morning": {
-      "frequency": 3,
-      "connectivity": 11,
-      "search_signal": 6,
-      "excerpt_signal": 0,
-      "word_signal": 6
-    },
-    "whatever-this": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "yes-and": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "iced-coffee": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-no-title": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "listening": {
-      "frequency": 2,
-      "connectivity": 5,
-      "search_signal": 4,
-      "excerpt_signal": 1,
-      "word_signal": 1
-    },
-    "about": {
-      "frequency": 2,
-      "connectivity": 2,
-      "search_signal": 4,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "liz": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "decaf": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "opening-no": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "about-conversing": {
+    "concept-zone": {
       "frequency": 1,
       "connectivity": 2,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 1
-    },
-    "post-this": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-tom": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "no-title": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "concept-website": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "concept-website-building": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "opening-cooling-tea": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "tom": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "another-yesterday": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "welcome": {
-      "frequency": 1,
-      "connectivity": 0,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "and": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "evolving": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "whatever-this-is": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "iced": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "shared": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 0
-    },
-    "day": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 2
-    },
-    "zone": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 1
-    },
-    "and-no": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "experimenting": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
     },
     "the-day": {
       "frequency": 1,
       "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "whatever": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-yesterday": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "no": {
-      "frequency": 2,
-      "connectivity": 12,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 4
-    },
-    "shared-experiences": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-post": {
-      "frequency": 1,
-      "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 2
@@ -3692,47 +3489,47 @@
       "excerpt_signal": 0,
       "word_signal": 1
     },
-    "concept-idea": {
+    "morning-too": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "conversing": {
       "frequency": 1,
       "connectivity": 2,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 1
     },
-    "opening-whatever-this": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
+    "opening-this": {
+      "frequency": 4,
+      "connectivity": 14,
+      "search_signal": 8,
       "excerpt_signal": 0,
-      "word_signal": 2
+      "word_signal": 7
     },
-    "the-day-before": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "lukewarm-decaf": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "opening-lukewarm-decaf": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 2
-    },
-    "love": {
+    "website-building": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 1
+    },
+    "this-morning": {
+      "frequency": 3,
+      "connectivity": 11,
+      "search_signal": 6,
+      "excerpt_signal": 0,
+      "word_signal": 6
+    },
+    "no": {
+      "frequency": 2,
+      "connectivity": 12,
+      "search_signal": 4,
+      "excerpt_signal": 0,
+      "word_signal": 4
     },
     "the": {
       "frequency": 1,
@@ -3741,6 +3538,48 @@
       "excerpt_signal": 1,
       "word_signal": 2
     },
+    "concept": {
+      "frequency": 11,
+      "connectivity": 32,
+      "search_signal": 22,
+      "excerpt_signal": 0,
+      "word_signal": 15
+    },
+    "thinking": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "opening-open": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "archive-brittany": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-post-this": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "noticing-shared": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
     "skwintcheee": {
       "frequency": 1,
       "connectivity": 2,
@@ -3748,7 +3587,168 @@
       "excerpt_signal": 0,
       "word_signal": 2
     },
+    "supporting": {
+      "frequency": 1,
+      "connectivity": 0,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "out": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
     "just-thinking": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "morning-a": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "about-conversing": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "listening": {
+      "frequency": 2,
+      "connectivity": 5,
+      "search_signal": 4,
+      "excerpt_signal": 1,
+      "word_signal": 1
+    },
+    "opening-still": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-still-warm": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "cooling-tea": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "yes-and-no": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-post": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "experiences": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 0
+    },
+    "yes-and": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-tom": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-gloomy": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "day-before": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "cooling": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "still-warm": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "title": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "about": {
+      "frequency": 2,
+      "connectivity": 2,
+      "search_signal": 4,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "this-you": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "this-is": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "welcome": {
+      "frequency": 1,
+      "connectivity": 0,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-website": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
