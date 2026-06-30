@@ -342,15 +342,16 @@ def build_registry(root, html_files):
         concepts = extract_concepts(path)    
         section = get_section(url)
         kind = get_kind(section)
+        tags = concepts
 
         search_text = build_search_text(
             title = metadata["title"],
             description = metadata["description"],
             kind = kind,
             excerpt = metadata["excerpt"],
-            tags = tags,
+            tags = concepts,
             concepts = concepts,
-            aliases=[]
+            aliases = []
         )
 
         registry[url] = {
