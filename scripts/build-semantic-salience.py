@@ -224,10 +224,11 @@ def build_search_text(
     description,
     kind,
     excerpt,
-    tags,
     concepts,
-    aliases=None,
+    tags = None,
+    aliases = None,
 ):
+    tags = tags or []
     aliases = aliases or []
     
     return " ".join(
@@ -237,9 +238,9 @@ def build_search_text(
             description,
             kind,
             excerpt,
-            " ".join(tags),
             " ".join(concepts),
-            " ".join(aliases),
+            " ".join(tags),
+            " ".join(aliases)
         ]
         if x
     )
@@ -344,13 +345,13 @@ def build_registry(root, html_files):
         kind = get_kind(section)
 
         search_text = build_search_text(
-            title = metadata["title"],
-            description = metadata["description"],
-            kind = kind,
-            excerpt = metadata["excerpt"],
-            tags = [],
-            concepts = concepts,
-            aliases = []
+            metadata["title"],
+            metadata["description"],
+            kind,
+            metadata["excerpt"],
+            concepts,
+            [],
+            []
         )
 
         registry[url] = {
