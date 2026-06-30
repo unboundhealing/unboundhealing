@@ -111,25 +111,6 @@ def valid_url(url):
 
 
 # =========================================================
-# DEBUG (UNCHANGED BUT SAFE)
-# =========================================================
-
-def debug(nodes, edges, data):
-    print("\n===== HOMEPAGE DEBUG =====")
-    pg = data.get("page_graph", {})
-
-    print("PAGE_GRAPH SIZE:", len(pg))
-
-    for i, k in enumerate(pg.keys()):
-        print(k)
-        if i >= 5:
-            break
-
-    print("\nNODE COUNT:", len(nodes))
-    print("EDGE COUNT:", len(edges))
-
-
-# =========================================================
 # CORE BUILDER
 # =========================================================
 
