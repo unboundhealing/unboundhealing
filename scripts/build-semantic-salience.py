@@ -354,6 +354,8 @@ def build_registry(root, html_files):
             []
         )
 
+        print("SEARCH_TEXT:", repr(search_text[:120]))
+        
         registry[url] = {
             "title": metadata.get("title", ""),
             "description": metadata.get("description", ""),
@@ -367,6 +369,8 @@ def build_registry(root, html_files):
             "aliases": []
         }
 
+        print("REGISTRY SEARCH:", repr(registry[url]["search_text"][:120]))
+    
     return registry
 
 
@@ -670,16 +674,16 @@ def main():
     root = os.getcwd()
 
     html_files = find_html_files(root)
-
     print("📂 scanning root:", root)
     print("📦 html files discovered:", len(html_files))
 
     registry = build_registry(root, html_files)
-
     print("📦 registry entries:", len(registry))
 
     semantic = build_semantic_salience(registry)
-
+    sample = next(iter(semantic["nodes"].values()))
+    print("NODE SEARCH:", repr(sample["search_text"]))
+    
     output_path = os.path.join(root, "assets/semantic-salience.json")
 
     with open(output_path, "w", encoding="utf-8") as f:
