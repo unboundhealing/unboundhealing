@@ -342,14 +342,13 @@ def build_registry(root, html_files):
         concepts = extract_concepts(path)    
         section = get_section(url)
         kind = get_kind(section)
-        tags = concepts
 
         search_text = build_search_text(
             title = metadata["title"],
             description = metadata["description"],
             kind = kind,
             excerpt = metadata["excerpt"],
-            tags = concepts,
+            tags = [],
             concepts = concepts,
             aliases = []
         )
@@ -358,13 +357,13 @@ def build_registry(root, html_files):
             "title": metadata.get("title", ""),
             "description": metadata.get("description", ""),
             "section": get_section(url),
-            "kind": metadata.get("kind", ""),
+            "kind": get_kind(get_section(url)),
             "excerpt": metadata.get("excerpt", ""),
             "search_text": metadata.get("search_text", ""),
             "concepts": extract_concepts(path),
             "word_count": metadata.get("word_count", 0),
-            "tags": metadata.get("tags", []),
-            "aliases": metadata.get("aliases", [])
+            "tags": [],
+            "aliases": []
         }
 
     return registry
@@ -400,7 +399,7 @@ def build_graph(registry):
             "word_count": data.get("word_count", 0)
         }
         
-        concepts = data["concepts"]
+        concepts = data.get("concepts", [])
 
         for i in range(len(concepts)):
             for j in range(i + 1, len(concepts)):
