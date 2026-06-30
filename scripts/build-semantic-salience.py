@@ -357,6 +357,8 @@ def build_registry(root, html_files):
         print("SEARCH_TEXT:", repr(search_text[:120]))
         
         registry[url] = {
+            "path": path,
+            "url": url,
             "title": metadata.get("title", ""),
             "description": metadata.get("description", ""),
             "section": section,
