@@ -7,6 +7,11 @@
   "https://unboundhealing.org/about/": [
     "about"
   ],
+  "https://unboundhealing.org/archive/brittany/": [
+    "archive",
+    "brittany",
+    "archive-brittany"
+  ],
   "https://unboundhealing.org/assets/entry-template/": [
     "assets",
     "entry",

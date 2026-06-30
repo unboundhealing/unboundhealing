@@ -31,8 +31,8 @@
         "frequency": 6
       }
     ],
-    "node_count": 50,
-    "edge_count": 820
+    "node_count": 51,
+    "edge_count": 823
   },
   "source": "semantic-salience",
   "status": "ok"
