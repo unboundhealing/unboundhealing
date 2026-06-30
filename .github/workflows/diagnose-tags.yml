@@ -1,0 +1,48 @@
+name: Diagnose Tags Index
+
+on:
+  push:
+    paths:
+      - "assets/tags.json"
+      - "scripts/build-tags.py"
+      - "assets/diagnose-tags.py"
+  workflow_dispatch:
+
+jobs:
+  diagnose-tags:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies (if needed)
+        run: |
+          set -euo pipefail
+          echo "📦 No dependencies required for tags diagnostic"
+
+      - name: Run tags diagnostic
+        run: |
+          set -euo pipefail
+          echo "🧪 Running diagnose-tags.py..."
+          python3 assets/diagnose-tags.py
+
+      # -----------------------------------------
+      # OPTIONAL: CI SAFETY LAYER (COMMENTED OUT)
+      # -----------------------------------------
+      #
+      # If later you want CI to fail on structural issues:
+      #
+      # - empty tags
+      # - missing concepts mapping
+      # - tag explosion (>10 per node)
+      #
+      # you would add:
+      #
+      # - name: Enforce tag integrity (strict mode)
+      #   run: python3 assets/diagnose-tags.py --strict
