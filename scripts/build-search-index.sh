@@ -70,32 +70,32 @@ for url, node in nodes.items():
     # -------------------------------------------------------
 
     title = node.get("title", "")
+    description = node.get("description", "")
     section = node.get("section", "")
     kind = node.get("kind", "")
-    desc = node.get("description", "")
     excerpt = node.get("excerpt", "")
-    tags = node.get("concepts", [])
-    concepts = tags
+    search_text = node.get("search_text", "")
+    concepts = node.get("concepts", [])
+    tags = concepts
     aliases = []
+    
     word_count = node.get("word_count", 0)
 
-    search_text = node.get("search_text", "")
-
     index[url] = {
-        "title": title,
         "url": url,
-        "path": file_path,
+        "path": path,
+        "title": title,
+        "description": description,
 
         "type": "page",
         "section": section,
         "kind": kind,
 
-        "description": desc,
         "excerpt": excerpt,
         "search_text": search_text,
 
-        "tags": tags,
         "concepts": concepts,
+        "tags": [],
         "aliases": [],
 
         "word_count": word_count,
