@@ -319,7 +319,7 @@ def build_registry(root, html_files):
         registry[url] = {
             "title": metadata.get("title", ""),
             "description": metadata.get("description", ""),
-            "kind": get_kind(section),
+            "kind": metadata.get("kind", ""),
             "section": get_section(url),
             "excerpt": metadata.get("excerpt", ""),
             "search_text": metadata.get("search_text", ""),
