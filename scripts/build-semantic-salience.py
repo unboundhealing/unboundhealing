@@ -649,15 +649,41 @@ def build_semantic_salience(registry):
 def find_html_files(root):
     html_files = []
 
-    for dirpath, _, filenames in os.walk(root):
+    EXCLUDED_DIRS = {
+        "assets",
+        "scripts",
+        ".github"
+    }
+
+    EXCLUDED_FILES = {
+        os.path.join("assets", "homepage-intelligence-blocks.html")
+    }
+
+    for dirpath, dirnames, filenames in os.walk(root):
+
+        rel_dir = os.path.relpath(dirpath, root)
+
+        # Don't descend into excluded directories
+        if rel_dir in EXCLUDED_DIRS:
+            dirnames[:] = []
+            continue
+
         for filename in filenames:
-            if filename.endswith(".html"):
-                full = os.path.join(dirpath, filename)
-                rel = os.path.relpath(full, root)
-                html_files.append(rel)
+
+            if not filename.endswith(".html"):
+                continue
+
+            rel = os.path.relpath(
+                os.path.join(dirpath, filename),
+                root
+            )
+
+            if rel in EXCLUDED_FILES:
+                continue
+
+            html_files.append(rel)
 
     return sorted(html_files)
-
 
 # =========================================================
 # MAIN
