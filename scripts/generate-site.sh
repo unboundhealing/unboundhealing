@@ -20,12 +20,6 @@ if [ ! -f "assets/semantic-salience.json" ]; then
 fi
 
 # ---------------------------------------------------------
-# STEP 1.5 — SYSTEM INTROSPECTION (NON-BLOCKING)
-# ---------------------------------------------------------
-echo "🧭 Dependency collapse analysis (optional)"
-python3 scripts/build-dependency-collapse-map.py || true
-
-# ---------------------------------------------------------
 # STEP 2 — DERIVATIVE LAYERS (TRUTH CONSUMERS ONLY)
 # ---------------------------------------------------------
 
