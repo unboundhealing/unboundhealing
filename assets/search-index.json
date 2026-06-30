@@ -2,7 +2,7 @@
   "https://unboundhealing.org/about/conversing/": {
     "title": "Conversing",
     "url": "https://unboundhealing.org/about/conversing/",
-    "path": "",
+    "path": "about/conversing/index.html",
     "type": "page",
     "section": "about",
     "kind": "about",
@@ -29,7 +29,7 @@
   "https://unboundhealing.org/about/": {
     "title": "About",
     "url": "https://unboundhealing.org/about/",
-    "path": "",
+    "path": "about/index.html",
     "type": "page",
     "section": "about",
     "kind": "about",
@@ -52,7 +52,7 @@
   "https://unboundhealing.org/assets/entry-template/": {
     "title": "TITLE",
     "url": "https://unboundhealing.org/assets/entry-template/",
-    "path": "",
+    "path": "assets/entry-template/index.html",
     "type": "page",
     "section": "assets",
     "kind": "page",
@@ -85,7 +85,7 @@
   "https://unboundhealing.org/assets/homepage-intelligence-blocks/": {
     "title": "",
     "url": "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
-    "path": "",
+    "path": "assets/homepage-intelligence-blocks.html",
     "type": "page",
     "section": "assets",
     "kind": "page",
@@ -124,7 +124,7 @@
   "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/": {
     "title": "",
     "url": "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
-    "path": "",
+    "path": "assets/images/_html/foo_fighters_the_pretender_1.html",
     "type": "page",
     "section": "assets",
     "kind": "page",
@@ -181,7 +181,7 @@
   "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/": {
     "title": "",
     "url": "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
-    "path": "",
+    "path": "assets/images/_html/lizzo_good_as_hell_1.html",
     "type": "page",
     "section": "assets",
     "kind": "page",
@@ -238,7 +238,7 @@
   "https://unboundhealing.org/assets/images/_html/test_image/": {
     "title": "",
     "url": "https://unboundhealing.org/assets/images/_html/test_image/",
-    "path": "",
+    "path": "assets/images/_html/test_image.html",
     "type": "page",
     "section": "assets",
     "kind": "page",
@@ -277,7 +277,7 @@
   "https://unboundhealing.org/assets/page-template/": {
     "title": "FOLDER",
     "url": "https://unboundhealing.org/assets/page-template/",
-    "path": "",
+    "path": "assets/page-template/index.html",
     "type": "page",
     "section": "assets",
     "kind": "page",
@@ -310,7 +310,7 @@
   "https://unboundhealing.org/assets/updates-temp/": {
     "title": "",
     "url": "https://unboundhealing.org/assets/updates-temp/",
-    "path": "",
+    "path": "assets/updates-temp/index.html",
     "type": "page",
     "section": "assets",
     "kind": "page",
@@ -343,7 +343,7 @@
   "https://unboundhealing.org/concept/evolving/": {
     "title": "Evolving…",
     "url": "https://unboundhealing.org/concept/evolving/",
-    "path": "",
+    "path": "concept/evolving/index.html",
     "type": "page",
     "section": "concept",
     "kind": "concept",
@@ -370,7 +370,7 @@
   "https://unboundhealing.org/concept/experimenting/": {
     "title": "Experimenting",
     "url": "https://unboundhealing.org/concept/experimenting/",
-    "path": "",
+    "path": "concept/experimenting/index.html",
     "type": "page",
     "section": "concept",
     "kind": "concept",
@@ -397,7 +397,7 @@
   "https://unboundhealing.org/concept/iced-coffee/": {
     "title": "iced coffee",
     "url": "https://unboundhealing.org/concept/iced-coffee/",
-    "path": "",
+    "path": "concept/iced-coffee/index.html",
     "type": "page",
     "section": "concept",
     "kind": "concept",
@@ -430,7 +430,7 @@
   "https://unboundhealing.org/concept/ici/": {
     "title": "Interconnected Content Initiative™ (ICI",
     "url": "https://unboundhealing.org/concept/ici/",
-    "path": "",
+    "path": "concept/ici/index.html",
     "type": "page",
     "section": "concept",
     "kind": "concept",
@@ -457,7 +457,7 @@
   "https://unboundhealing.org/concept/idea/": {
     "title": "idea",
     "url": "https://unboundhealing.org/concept/idea/",
-    "path": "",
+    "path": "concept/idea/index.html",
     "type": "page",
     "section": "concept",
     "kind": "concept",
@@ -484,7 +484,7 @@
   "https://unboundhealing.org/concept/": {
     "title": "Concept",
     "url": "https://unboundhealing.org/concept/",
-    "path": "",
+    "path": "concept/index.html",
     "type": "page",
     "section": "concept",
     "kind": "concept",
@@ -507,7 +507,7 @@
   "https://unboundhealing.org/concept/just-thinking/": {
     "title": "so i was just thinking…",
     "url": "https://unboundhealing.org/concept/just-thinking/",
-    "path": "",
+    "path": "concept/just-thinking/index.html",
     "type": "page",
     "section": "concept",
     "kind": "concept",
@@ -540,7 +540,7 @@
   "https://unboundhealing.org/concept/origin/": {
     "title": "Almost-Origin Story",
     "url": "https://unboundhealing.org/concept/origin/",
-    "path": "",
+    "path": "concept/origin/index.html",
     "type": "page",
     "section": "concept",
     "kind": "concept",
@@ -567,7 +567,7 @@
   "https://unboundhealing.org/concept/website-building/": {
     "title": "website building:",
     "url": "https://unboundhealing.org/concept/website-building/",
-    "path": "",
+    "path": "concept/website-building/index.html",
     "type": "page",
     "section": "concept",
     "kind": "concept",
@@ -600,7 +600,7 @@
   "https://unboundhealing.org/concept/zone/": {
     "title": "zone?",
     "url": "https://unboundhealing.org/concept/zone/",
-    "path": "",
+    "path": "concept/zone/index.html",
     "type": "page",
     "section": "concept",
     "kind": "concept",
@@ -627,7 +627,7 @@
   "https://unboundhealing.org/gathering/": {
     "title": "Gathering",
     "url": "https://unboundhealing.org/gathering/",
-    "path": "",
+    "path": "gathering/index.html",
     "type": "page",
     "section": "gathering",
     "kind": "gathering",
@@ -650,7 +650,7 @@
   "https://unboundhealing.org/": {
     "title": "Unbound Healing Ministries",
     "url": "https://unboundhealing.org/",
-    "path": "",
+    "path": "index.html",
     "type": "page",
     "section": "home",
     "kind": "home",
@@ -669,7 +669,7 @@
   "https://unboundhealing.org/inviting/": {
     "title": "Inviting",
     "url": "https://unboundhealing.org/inviting/",
-    "path": "",
+    "path": "inviting/index.html",
     "type": "page",
     "section": "inviting",
     "kind": "page",
@@ -692,7 +692,7 @@
   "https://unboundhealing.org/listening/": {
     "title": "Listening",
     "url": "https://unboundhealing.org/listening/",
-    "path": "",
+    "path": "listening/index.html",
     "type": "page",
     "section": "listening",
     "kind": "page",
@@ -715,7 +715,7 @@
   "https://unboundhealing.org/noticing/": {
     "title": "Noticing",
     "url": "https://unboundhealing.org/noticing/",
-    "path": "",
+    "path": "noticing/index.html",
     "type": "page",
     "section": "noticing",
     "kind": "page",
@@ -738,7 +738,7 @@
   "https://unboundhealing.org/noticing/shared-experiences/": {
     "title": "Shared Experiences",
     "url": "https://unboundhealing.org/noticing/shared-experiences/",
-    "path": "",
+    "path": "noticing/shared-experiences/index.html",
     "type": "page",
     "section": "noticing",
     "kind": "page",
@@ -771,7 +771,7 @@
   "https://unboundhealing.org/opening/another-yesterday/": {
     "title": "another yesterday…",
     "url": "https://unboundhealing.org/opening/another-yesterday/",
-    "path": "",
+    "path": "opening/another-yesterday/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -804,7 +804,7 @@
   "https://unboundhealing.org/opening/cooling-tea/": {
     "title": "cooling tea",
     "url": "https://unboundhealing.org/opening/cooling-tea/",
-    "path": "",
+    "path": "opening/cooling-tea/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -837,7 +837,7 @@
   "https://unboundhealing.org/opening/gloomy/": {
     "title": "gloomy…",
     "url": "https://unboundhealing.org/opening/gloomy/",
-    "path": "",
+    "path": "opening/gloomy/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -864,7 +864,7 @@
   "https://unboundhealing.org/opening/": {
     "title": "Opening…",
     "url": "https://unboundhealing.org/opening/",
-    "path": "",
+    "path": "opening/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -887,7 +887,7 @@
   "https://unboundhealing.org/opening/just-listening/": {
     "title": "just listening…",
     "url": "https://unboundhealing.org/opening/just-listening/",
-    "path": "",
+    "path": "opening/just-listening/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -920,7 +920,7 @@
   "https://unboundhealing.org/opening/liz/": {
     "title": "liz",
     "url": "https://unboundhealing.org/opening/liz/",
-    "path": "",
+    "path": "opening/liz/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -947,7 +947,7 @@
   "https://unboundhealing.org/opening/love-concept/": {
     "title": "love is just a concept…",
     "url": "https://unboundhealing.org/opening/love-concept/",
-    "path": "",
+    "path": "opening/love-concept/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -980,7 +980,7 @@
   "https://unboundhealing.org/opening/lukewarm-decaf/": {
     "title": "i love you (,/?) lukewarm strong decaf coffee…",
     "url": "https://unboundhealing.org/opening/lukewarm-decaf/",
-    "path": "",
+    "path": "opening/lukewarm-decaf/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -1013,7 +1013,7 @@
   "https://unboundhealing.org/opening/no-title/": {
     "title": "no title",
     "url": "https://unboundhealing.org/opening/no-title/",
-    "path": "",
+    "path": "opening/no-title/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -1046,7 +1046,7 @@
   "https://unboundhealing.org/opening/open/": {
     "title": "open…",
     "url": "https://unboundhealing.org/opening/open/",
-    "path": "",
+    "path": "opening/open/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -1073,7 +1073,7 @@
   "https://unboundhealing.org/opening/post-this/": {
     "title": "post this?",
     "url": "https://unboundhealing.org/opening/post-this/",
-    "path": "",
+    "path": "opening/post-this/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -1106,7 +1106,7 @@
   "https://unboundhealing.org/opening/skwintcheee/": {
     "title": "skwintcheee…",
     "url": "https://unboundhealing.org/opening/skwintcheee/",
-    "path": "",
+    "path": "opening/skwintcheee/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -1133,7 +1133,7 @@
   "https://unboundhealing.org/opening/sold-out/": {
     "title": "sold-out…",
     "url": "https://unboundhealing.org/opening/sold-out/",
-    "path": "",
+    "path": "opening/sold-out/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -1166,7 +1166,7 @@
   "https://unboundhealing.org/opening/still-warm/": {
     "title": "the tea is still warm! 🤯",
     "url": "https://unboundhealing.org/opening/still-warm/",
-    "path": "",
+    "path": "opening/still-warm/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -1199,7 +1199,7 @@
   "https://unboundhealing.org/opening/the-day-before/": {
     "title": "the day before…",
     "url": "https://unboundhealing.org/opening/the-day-before/",
-    "path": "",
+    "path": "opening/the-day-before/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -1238,7 +1238,7 @@
   "https://unboundhealing.org/opening/this-morning-a/": {
     "title": "this morning…",
     "url": "https://unboundhealing.org/opening/this-morning-a/",
-    "path": "",
+    "path": "opening/this-morning-a/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -1277,7 +1277,7 @@
   "https://unboundhealing.org/opening/this-morning-too/": {
     "title": "this morning…",
     "url": "https://unboundhealing.org/opening/this-morning-too/",
-    "path": "",
+    "path": "opening/this-morning-too/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -1316,7 +1316,7 @@
   "https://unboundhealing.org/opening/this-morning/": {
     "title": "this morning...",
     "url": "https://unboundhealing.org/opening/this-morning/",
-    "path": "",
+    "path": "opening/this-morning/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -1349,7 +1349,7 @@
   "https://unboundhealing.org/opening/this-you/": {
     "title": "this you…",
     "url": "https://unboundhealing.org/opening/this-you/",
-    "path": "",
+    "path": "opening/this-you/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -1382,7 +1382,7 @@
   "https://unboundhealing.org/opening/tom/": {
     "title": "coffee with tom",
     "url": "https://unboundhealing.org/opening/tom/",
-    "path": "",
+    "path": "opening/tom/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -1409,7 +1409,7 @@
   "https://unboundhealing.org/opening/whatever-this-is/": {
     "title": "whatever this is…",
     "url": "https://unboundhealing.org/opening/whatever-this-is/",
-    "path": "",
+    "path": "opening/whatever-this-is/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -1448,7 +1448,7 @@
   "https://unboundhealing.org/opening/yes-and-no/": {
     "title": "yes and no…",
     "url": "https://unboundhealing.org/opening/yes-and-no/",
-    "path": "",
+    "path": "opening/yes-and-no/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -1487,7 +1487,7 @@
   "https://unboundhealing.org/opening/yesterday/": {
     "title": "yesterday…",
     "url": "https://unboundhealing.org/opening/yesterday/",
-    "path": "",
+    "path": "opening/yesterday/index.html",
     "type": "page",
     "section": "opening",
     "kind": "journal",
@@ -1514,7 +1514,7 @@
   "https://unboundhealing.org/supporting/": {
     "title": "Supporting",
     "url": "https://unboundhealing.org/supporting/",
-    "path": "",
+    "path": "supporting/index.html",
     "type": "page",
     "section": "supporting",
     "kind": "supporting",
@@ -1537,7 +1537,7 @@
   "https://unboundhealing.org/welcome/": {
     "title": "Welcome in…",
     "url": "https://unboundhealing.org/welcome/",
-    "path": "",
+    "path": "welcome/index.html",
     "type": "page",
     "section": "welcome",
     "kind": "journal",
