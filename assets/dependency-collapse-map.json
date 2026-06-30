@@ -1,23 +1,23 @@
 {
   "summary": {
-    "CORE_CONSUMER": 6,
     "UNKNOWN": 3,
+    "CORE_CONSUMER": 6,
     "ORPHAN_CANDIDATE": 6,
     "LEGACY_BRIDGE": 2
   },
   "buckets": {
-    "CORE_CONSUMER": [
-      "/scripts/inspect-semantic-salience.py",
-      "/scripts/generate-site.sh",
-      "/scripts/build-search-index.sh",
-      "/scripts/build-semantic-salience.py",
-      "/scripts/build-tags.py",
-      "/scripts/build-homepage-intelligence.py"
-    ],
     "UNKNOWN": [
       "/scripts/generate-snippet.sh",
       "/scripts/build-tracking.py",
       "/assets/diagnose-opengraph.py"
+    ],
+    "CORE_CONSUMER": [
+      "/scripts/generate-site.sh",
+      "/scripts/build-search-index.sh",
+      "/scripts/build-semantic-salience.py",
+      "/scripts/build-tags.py",
+      "/scripts/build-homepage-intelligence.py",
+      "/assets/diagnose-semantic-salience.py"
     ],
     "ORPHAN_CANDIDATE": [
       "/scripts/build-sitemap.sh",
@@ -33,13 +33,6 @@
     ]
   },
   "files": [
-    {
-      "file": "/scripts/inspect-semantic-salience.py",
-      "classification": "CORE_CONSUMER",
-      "reads_salience": true,
-      "reads_legacy_graph": false,
-      "writes_output": true
-    },
     {
       "file": "/scripts/generate-snippet.sh",
       "classification": "UNKNOWN",
@@ -149,6 +142,13 @@
       "file": "/assets/diagnose-search-index.py",
       "classification": "ORPHAN_CANDIDATE",
       "reads_salience": false,
+      "reads_legacy_graph": false,
+      "writes_output": true
+    },
+    {
+      "file": "/assets/diagnose-semantic-salience.py",
+      "classification": "CORE_CONSUMER",
+      "reads_salience": true,
       "reads_legacy_graph": false,
       "writes_output": true
     }
