@@ -1,0 +1,156 @@
+{
+  "summary": {
+    "UNKNOWN": 3,
+    "CORE_CONSUMER": 6,
+    "ORPHAN_CANDIDATE": 6,
+    "LEGACY_BRIDGE": 2
+  },
+  "buckets": {
+    "UNKNOWN": [
+      "/scripts/audit-opengraph.sh",
+      "/scripts/generate-snippet.sh",
+      "/scripts/build-tracking.py"
+    ],
+    "CORE_CONSUMER": [
+      "/scripts/inspect-semantic-salience.py",
+      "/scripts/generate-site.sh",
+      "/scripts/build-search-index.sh",
+      "/scripts/build-semantic-salience.py",
+      "/scripts/build-tags.py",
+      "/scripts/build-homepage-intelligence.py"
+    ],
+    "ORPHAN_CANDIDATE": [
+      "/scripts/build-sitemap.sh",
+      "/scripts/build-content-model.py",
+      "/scripts/generate-rss.sh",
+      "/assets/diagnose-page-graph.py",
+      "/assets/diagnose-comparison.py",
+      "/assets/diagnose-search-index.py"
+    ],
+    "LEGACY_BRIDGE": [
+      "/scripts/build-dependency-collapse-map.py",
+      "/scripts/build-semantic-words.py"
+    ]
+  },
+  "files": [
+    {
+      "file": "/scripts/audit-opengraph.sh",
+      "classification": "UNKNOWN",
+      "reads_salience": false,
+      "reads_legacy_graph": false,
+      "writes_output": false
+    },
+    {
+      "file": "/scripts/inspect-semantic-salience.py",
+      "classification": "CORE_CONSUMER",
+      "reads_salience": true,
+      "reads_legacy_graph": false,
+      "writes_output": true
+    },
+    {
+      "file": "/scripts/generate-snippet.sh",
+      "classification": "UNKNOWN",
+      "reads_salience": false,
+      "reads_legacy_graph": false,
+      "writes_output": true
+    },
+    {
+      "file": "/scripts/generate-site.sh",
+      "classification": "CORE_CONSUMER",
+      "reads_salience": true,
+      "reads_legacy_graph": false,
+      "writes_output": true
+    },
+    {
+      "file": "/scripts/build-sitemap.sh",
+      "classification": "ORPHAN_CANDIDATE",
+      "reads_salience": false,
+      "reads_legacy_graph": false,
+      "writes_output": true
+    },
+    {
+      "file": "/scripts/build-dependency-collapse-map.py",
+      "classification": "LEGACY_BRIDGE",
+      "reads_salience": true,
+      "reads_legacy_graph": true,
+      "writes_output": true
+    },
+    {
+      "file": "/scripts/build-search-index.sh",
+      "classification": "CORE_CONSUMER",
+      "reads_salience": true,
+      "reads_legacy_graph": false,
+      "writes_output": true
+    },
+    {
+      "file": "/scripts/build-semantic-salience.py",
+      "classification": "CORE_CONSUMER",
+      "reads_salience": true,
+      "reads_legacy_graph": false,
+      "writes_output": true
+    },
+    {
+      "file": "/scripts/build-content-model.py",
+      "classification": "ORPHAN_CANDIDATE",
+      "reads_salience": false,
+      "reads_legacy_graph": false,
+      "writes_output": true
+    },
+    {
+      "file": "/scripts/build-semantic-words.py",
+      "classification": "LEGACY_BRIDGE",
+      "reads_salience": true,
+      "reads_legacy_graph": true,
+      "writes_output": true
+    },
+    {
+      "file": "/scripts/build-tags.py",
+      "classification": "CORE_CONSUMER",
+      "reads_salience": true,
+      "reads_legacy_graph": false,
+      "writes_output": true
+    },
+    {
+      "file": "/scripts/build-tracking.py",
+      "classification": "UNKNOWN",
+      "reads_salience": false,
+      "reads_legacy_graph": false,
+      "writes_output": true
+    },
+    {
+      "file": "/scripts/build-homepage-intelligence.py",
+      "classification": "CORE_CONSUMER",
+      "reads_salience": true,
+      "reads_legacy_graph": false,
+      "writes_output": true
+    },
+    {
+      "file": "/scripts/generate-rss.sh",
+      "classification": "ORPHAN_CANDIDATE",
+      "reads_salience": false,
+      "reads_legacy_graph": false,
+      "writes_output": true
+    },
+    {
+      "file": "/assets/diagnose-page-graph.py",
+      "classification": "ORPHAN_CANDIDATE",
+      "reads_salience": false,
+      "reads_legacy_graph": false,
+      "writes_output": true
+    },
+    {
+      "file": "/assets/diagnose-comparison.py",
+      "classification": "ORPHAN_CANDIDATE",
+      "reads_salience": false,
+      "reads_legacy_graph": false,
+      "writes_output": true
+    },
+    {
+      "file": "/assets/diagnose-search-index.py",
+      "classification": "ORPHAN_CANDIDATE",
+      "reads_salience": false,
+      "reads_legacy_graph": false,
+      "writes_output": true
+    }
+  ]
+}
