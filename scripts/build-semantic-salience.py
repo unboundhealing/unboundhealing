@@ -215,6 +215,35 @@ def canonicalize_url(url: str) -> str:
     return url + "/"
 
 
+# -------------------------------------------------------
+# BUILD SEARCH TEXT
+# -------------------------------------------------------
+
+def build_search_text(
+    title,
+    description,
+    kind,
+    excerpt,
+    tags,
+    concepts,
+    aliases=None,
+):
+    aliases = aliases or []
+    
+    return " ".join(
+        str(x).strip().lower()
+        for x in [
+            title,
+            description,
+            kind,
+            excerpt,
+            " ".join(tags),
+            " ".join(concepts),
+            " ".join(aliases),
+        ]
+        if x
+    )
+
 # =========================================================
 # PAGE METADATA EXTRACTION
 # =========================================================
@@ -284,7 +313,6 @@ def extract_page_metadata(path, url):
             "title": title,
             "description": desc,
             "excerpt": excerpt,
-            "search_text": search_text,
             "word_count": word_count
         }
         
@@ -294,7 +322,6 @@ def extract_page_metadata(path, url):
             "title": "",
             "description": "",
             "excerpt": "",
-            "search_text": "",
             "word_count": 0,
     }
 
@@ -315,7 +342,17 @@ def build_registry(root, html_files):
         concepts = extract_concepts(path)    
         section = get_section(url)
         kind = get_kind(section)
-        
+
+        search_text = build_search_text(
+            title = metadata["title"],
+            description = metadata["description"],
+            kind = kind,
+            excerpt = metadata["excerpt"],
+            tags = tags,
+            concepts = concepts,
+            aliases=[]
+        )
+
         registry[url] = {
             "title": metadata.get("title", ""),
             "description": metadata.get("description", ""),
@@ -622,35 +659,6 @@ def find_html_files(root):
 
     return sorted(html_files)
 
-
-# -------------------------------------------------------
-# BUILD SEARCH TEXT
-# -------------------------------------------------------
-
-def build_search_text(
-    title,
-    description,
-    kind,
-    excerpt,
-    tags,
-    concepts,
-    aliases=None,
-):
-    aliases = aliases or []
-    
-    return " ".join(
-        str(x).strip().lower()
-        for x in [
-            title,
-            description,
-            kind,
-            excerpt,
-            " ".join(tags),
-            " ".join(concepts),
-            " ".join(aliases),
-        ]
-        if x
-    )
 
 # =========================================================
 # MAIN
