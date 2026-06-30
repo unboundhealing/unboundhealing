@@ -313,14 +313,14 @@ def build_registry(root, html_files):
         url = canonicalize_url(build_url(path))
         metadata = extract_page_metadata(path, url)
         concepts = extract_concepts(path)    
-        kind = get_kind(section)
         section = get_section(url)
+        kind = get_kind(section)
         
         registry[url] = {
             "title": metadata.get("title", ""),
             "description": metadata.get("description", ""),
-            "kind": metadata.get("kind", ""),
             "section": get_section(url),
+            "kind": metadata.get("kind", ""),
             "excerpt": metadata.get("excerpt", ""),
             "search_text": metadata.get("search_text", ""),
             "concepts": extract_concepts(path),
