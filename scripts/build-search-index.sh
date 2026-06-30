@@ -43,7 +43,7 @@ try:
     salience = json.loads(raw)
 
 except Exception as e:
-    raise SystemExit(f"❌ Failed to load semantic-salience.json: {e}")
+    raise SystemExit(f"❌ Failed to load assets/semantic-salience.json: {e}")
 
 nodes = salience.get("nodes", {})
 page_graph = salience.get("page_graph", {})
@@ -69,6 +69,7 @@ for url, node in nodes.items():
     # Additional search metadata
     # -------------------------------------------------------
 
+    path = path.as_posix()
     title = node.get("title", "")
     description = node.get("description", "")
     section = node.get("section", "")
