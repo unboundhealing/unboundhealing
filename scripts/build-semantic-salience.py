@@ -274,23 +274,7 @@ def extract_page_metadata(path, url):
         words = re.findall(r"\b\w+\b", text.lower())
         word_count = len(words)
 
-        
-        section = get_section(url)
-        kind = get_kind(section)
         excerpt = " ".join(text.split()[:60])
-        tags = []
-        concepts = []
-        aliases = []
-
-        search_text = build_search_text(
-            title,
-            desc,
-            kind,
-            excerpt,
-            tags,
-            concepts,
-            []
-        )
 
         print("READING:", path)
         print("TITLE RAW:", title)
@@ -299,7 +283,6 @@ def extract_page_metadata(path, url):
         return {
             "title": title,
             "description": desc,
-            "kind": kind,
             "excerpt": excerpt,
             "search_text": search_text,
             "word_count": word_count
@@ -310,7 +293,6 @@ def extract_page_metadata(path, url):
         return {
             "title": "",
             "description": "",
-            "kind": "",
             "excerpt": "",
             "search_text": "",
             "word_count": 0,
@@ -329,17 +311,16 @@ def build_registry(root, html_files):
         full_path = os.path.join(root, path)
 
         url = canonicalize_url(build_url(path))
-        concepts = extract_concepts(path)    
         metadata = extract_page_metadata(path, url)
-        concepts = extract_concepts(path)
-        section = get_section(url)
+        concepts = extract_concepts(path)    
         kind = get_kind(section)
+        section = get_section(url)
         
         registry[url] = {
             "title": metadata.get("title", ""),
             "description": metadata.get("description", ""),
-            "section": get_section(url),
             "kind": get_kind(section),
+            "section": get_section(url),
             "excerpt": metadata.get("excerpt", ""),
             "search_text": metadata.get("search_text", ""),
             "concepts": extract_concepts(path),
@@ -369,14 +350,14 @@ def build_graph(registry):
     for url, data in registry.items():
 
         nodes[url] = {
-            "path": data["path"],
-            "url": data["url"],
-            "title": data["title"],
-            "description": data["description"],
+            "path": data.get("path", ""),
+            "url": data.get("url", ""),
+            "title": data.get("title", ""),
+            "description": data.get("description", ""),
             "section": data.get("section", ""),
-            "kind": data["kind"],
-            "excerpt": data["excerpt"],
-            "search_text": data["search_text"],
+            "kind": data.get("kind", ""),
+            "excerpt": data.get("excerpt", ""),
+            "search_text": data.get("search_text", ""),
             "concepts": data.get("concepts", []),
             "word_count": data.get("word_count", 0)
         }
