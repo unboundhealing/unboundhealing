@@ -338,7 +338,7 @@ def build_registry(root, html_files):
         registry[url] = {
             "title": metadata.get("title", ""),
             "description": metadata.get("description", ""),
-            "section": get_section(url)
+            "section": get_section(url),
             "kind": get_kind(section),
             "excerpt": metadata.get("excerpt", ""),
             "search_text": metadata.get("search_text", ""),
@@ -373,6 +373,7 @@ def build_graph(registry):
             "url": data["url"],
             "title": data["title"],
             "description": data["description"],
+            "section": data.get("section", ""),
             "kind": data["kind"],
             "excerpt": data["excerpt"],
             "search_text": data["search_text"],
