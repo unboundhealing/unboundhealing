@@ -13,60 +13,6 @@ cd "$ROOT_DIR"
 echo "🌌 Building semantic truth layer (PRIMARY ARTIFACT)..."
 python3 scripts/build-semantic-salience.py
 
-echo ""
-echo "===== SALIENCE DEBUG ====="
-python3 - <<'PY'
-import json
-
-with open("assets/semantic-salience.json","r",encoding="utf-8") as f:
-    data = json.load(f)
-
-print()
-print("===== SALIENCE STRUCTURE =====")
-print(data.keys())
-
-if "page_graph" in data:
-    print()
-    print("PAGE_GRAPH TYPE:")
-    print(type(data["page_graph"]))
-
-    if isinstance(data["page_graph"], dict):
-        first_key = next(iter(data["page_graph"]))
-        print()
-        print("FIRST PAGE_GRAPH KEY:")
-        print(first_key)
-
-        print()
-        print("FIRST PAGE_GRAPH VALUE:")
-        print(data["page_graph"][first_key])
-
-print("==============================")
-print()
-
-print("TOP LEVEL KEYS:")
-print(list(data.keys()))
-
-pages = data.get("pages")
-
-if isinstance(pages, dict):
-    print()
-    print("PAGE COUNT:", len(pages))
-
-    first_url = next(iter(pages))
-    print()
-    print("FIRST URL:")
-    print(first_url)
-
-    print()
-    print("FIRST NODE:")
-    print(json.dumps(pages[first_url], indent=2)[:3000])
-else:
-    print()
-    print("NO 'pages' DICT FOUND")
-PY
-echo "=========================="
-echo ""
-
 # HARD GUARANTEE: semantic-salience MUST exist
 if [ ! -f "assets/semantic-salience.json" ]; then
   echo "❌ assets/semantic-salience.json missing — HARD STOP"
