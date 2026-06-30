@@ -249,7 +249,7 @@ def build_search_text(
 # PAGE METADATA EXTRACTION
 # =========================================================
 
-def extract_page_metadata(full_path, url):
+def extract_page_metadata(path, url):
     """
     Extract real HTML metadata for truth-aligned rendering.
     """
@@ -339,7 +339,7 @@ def build_registry(root, html_files):
         full_path = os.path.join(root, path)
 
         url = canonicalize_url(build_url(path))
-        metadata = extract_page_metadata(full_path, url)
+        metadata = extract_page_metadata(path, url)
         section = get_section(url)
         kind = get_kind(section)
         concepts = extract_concepts(path)    
