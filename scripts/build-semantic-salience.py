@@ -306,10 +306,6 @@ def extract_page_metadata(path, url):
 
         excerpt = " ".join(text.split()[:60])
 
-        print("READING:", path)
-        print("TITLE RAW:", title)
-        print("DESC RAW:", desc)
-
         return {
             "title": title,
             "description": desc,
@@ -353,8 +349,6 @@ def build_registry(root, html_files):
             [],
             []
         )
-
-        print("SEARCH_TEXT:", repr(search_text[:120]))
         
         registry[url] = {
             "path": path,
@@ -370,8 +364,6 @@ def build_registry(root, html_files):
             "tags": [],
             "aliases": []
         }
-
-        print("REGISTRY SEARCH:", repr(registry[url]["search_text"][:120]))
     
     return registry
 
@@ -683,8 +675,6 @@ def main():
     print("📦 registry entries:", len(registry))
 
     semantic = build_semantic_salience(registry)
-    sample = next(iter(semantic["nodes"].values()))
-    print("NODE SEARCH:", repr(sample["search_text"]))
     
     output_path = os.path.join(root, "assets/semantic-salience.json")
 
