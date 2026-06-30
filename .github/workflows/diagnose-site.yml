@@ -1,0 +1,52 @@
+name: Diagnose Site Integrity
+
+on:
+  push:
+    paths:
+      - "assets/semantic-salience.json"
+      - "assets/tags.json"
+      - "assets/homepage-intelligence.json"
+      - "assets/search-index.json"
+      - "scripts/**"
+      - "assets/diagnose-site-integrity.py"
+  workflow_dispatch:
+
+jobs:
+  site-integrity:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # -----------------------------------------------------
+      # RUN FULL SYSTEM DIAGNOSTIC
+      # -----------------------------------------------------
+
+      - name: Run site integrity diagnostic
+        run: |
+          set -euo pipefail
+          echo "🧭 Running full site integrity diagnostic..."
+          python3 assets/diagnose-site-integrity.py
+
+      # -----------------------------------------------------
+      # OPTIONAL FUTURE STRICT MODE (COMMENTED OUT)
+      # -----------------------------------------------------
+      #
+      # When you're ready to enforce structural consistency:
+      #
+      # - missing nodes across systems → fail
+      # - concept/tag drift → fail
+      # - missing search_text → fail
+      #
+      # you can activate:
+      #
+      # - name: Enforce strict site integrity
+      #   run: |
+      #     set -euo pipefail
+      #     python3 assets/diagnose-site-integrity.py --strict
