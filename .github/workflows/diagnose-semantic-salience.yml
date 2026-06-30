@@ -1,0 +1,44 @@
+name: Diagnose Semantic Salience
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "assets/semantic-salience.json"
+      - "scripts/**"
+      - "assets/**"
+
+jobs:
+  diagnose-semantic-salience:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ---------------------------------------------
+      # Checkout repo
+      # ---------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ---------------------------------------------
+      # Setup Python
+      # ---------------------------------------------
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # ---------------------------------------------
+      # Install dependencies (keep minimal)
+      # ---------------------------------------------
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+
+      # ---------------------------------------------
+      # RUN DIAGNOSTIC (STRICT VALIDATION ONLY)
+      # ---------------------------------------------
+      - name: Run semantic-salience diagnostic
+        run: |
+          set -euo pipefail
+          echo "🧠 Running semantic-salience diagnostic..."
+          python3 assets/diagnose-semantic-salience.py
