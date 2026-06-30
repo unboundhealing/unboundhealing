@@ -655,10 +655,6 @@ def find_html_files(root):
         ".github"
     }
 
-    EXCLUDED_FILES = {
-        os.path.join("assets", "homepage-intelligence-blocks.html")
-    }
-
     for dirpath, dirnames, filenames in os.walk(root):
 
         rel_dir = os.path.relpath(dirpath, root)
