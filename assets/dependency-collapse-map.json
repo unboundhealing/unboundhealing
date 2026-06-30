@@ -1,16 +1,11 @@
 {
   "summary": {
-    "UNKNOWN": 3,
     "CORE_CONSUMER": 6,
     "ORPHAN_CANDIDATE": 6,
-    "LEGACY_BRIDGE": 2
+    "LEGACY_BRIDGE": 2,
+    "UNKNOWN": 3
   },
   "buckets": {
-    "UNKNOWN": [
-      "/scripts/generate-snippet.sh",
-      "/scripts/build-tracking.py",
-      "/assets/diagnose-opengraph.py"
-    ],
     "CORE_CONSUMER": [
       "/scripts/generate-site.sh",
       "/scripts/build-search-index.sh",
@@ -30,16 +25,14 @@
     "LEGACY_BRIDGE": [
       "/scripts/build-dependency-collapse-map.py",
       "/archive/build-semantic-words.py"
+    ],
+    "UNKNOWN": [
+      "/scripts/build-tracking.py",
+      "/assets/diagnose-opengraph.py",
+      "/archive/generate-snippet.sh"
     ]
   },
   "files": [
-    {
-      "file": "/scripts/generate-snippet.sh",
-      "classification": "UNKNOWN",
-      "reads_salience": false,
-      "reads_legacy_graph": false,
-      "writes_output": true
-    },
     {
       "file": "/scripts/generate-site.sh",
       "classification": "CORE_CONSUMER",
@@ -135,6 +128,13 @@
       "file": "/assets/diagnose-semantic-salience.py",
       "classification": "CORE_CONSUMER",
       "reads_salience": true,
+      "reads_legacy_graph": false,
+      "writes_output": true
+    },
+    {
+      "file": "/archive/generate-snippet.sh",
+      "classification": "UNKNOWN",
+      "reads_salience": false,
       "reads_legacy_graph": false,
       "writes_output": true
     },
