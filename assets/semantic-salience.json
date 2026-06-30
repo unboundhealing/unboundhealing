@@ -9,42 +9,42 @@
     "https://unboundhealing.org/about/conversing/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "Conversing",
+      "description": "An invitation to converse about healing, spirituality, suffering, curiosity, or whatever appears present.",
       "section": "about",
       "kind": "about",
-      "excerpt": "",
-      "search_text": "about about conversing about-conversing",
+      "excerpt": "Conversing Occasionally someone reaches out with a question, a curiosity, a difficulty, or simply a sense that a conversation might be welcome. This space exists for that possibility. There is no particular agenda, method, or outcome being offered here. Sometimes a conversation explores healing. Sometimes spirituality. Sometimes suffering. Sometimes nothing especially profound at all. The invitation is simply to look",
+      "search_text": "conversing an invitation to converse about healing, spirituality, suffering, curiosity, or whatever appears present. about conversing occasionally someone reaches out with a question, a curiosity, a difficulty, or simply a sense that a conversation might be welcome. this space exists for that possibility. there is no particular agenda, method, or outcome being offered here. sometimes a conversation explores healing. sometimes spirituality. sometimes suffering. sometimes nothing especially profound at all. the invitation is simply to look about conversing about-conversing",
       "concepts": [
         "about",
         "conversing",
         "about-conversing"
       ],
-      "word_count": 0
+      "word_count": 66
     },
     "https://unboundhealing.org/about/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "About",
+      "description": "About Unbound Healing Ministries, its intention, and the perspective behind the work and invitations offered here.",
       "section": "about",
       "kind": "about",
-      "excerpt": "",
-      "search_text": "about about",
+      "excerpt": "About Unbound Healing Ministries is an ongoing exploration of healing, wonder, attention, and the extraordinary nature of ordinary experience. Through reflection, conversation, compassionate service, and shared inquiry, we invite deeper curiosity about what it means to be alive. We do not claim to possess answers. We remain fascinated by questions. Much of what appears here emerges from journals, conversations, observations,",
+      "search_text": "about about unbound healing ministries, its intention, and the perspective behind the work and invitations offered here. about about unbound healing ministries is an ongoing exploration of healing, wonder, attention, and the extraordinary nature of ordinary experience. through reflection, conversation, compassionate service, and shared inquiry, we invite deeper curiosity about what it means to be alive. we do not claim to possess answers. we remain fascinated by questions. much of what appears here emerges from journals, conversations, observations, about",
       "concepts": [
         "about"
       ],
-      "word_count": 0
+      "word_count": 148
     },
     "https://unboundhealing.org/assets/entry-template/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "TITLE",
+      "description": "DESCRIPTION",
       "section": "assets",
       "kind": "page",
-      "excerpt": "",
-      "search_text": "page assets entry template assets-entry entry-template assets-entry-template",
+      "excerpt": "(((TITLE))) Subtitle (for titles) Primary Subheading Subtitle (for subheadings) Secondary Subheading First paragraph… Secondary lines… Second paragraph… Secondary lines… Third paragraph… Secondary lines… [ INSIDE LINK TEXT 1 (FRAMEWORK) ] (((INSIDE LINK TEXT 2 (ENTRY)))) OUTSIDE LINK TEXT (NEW TAB/PAGE) TEXT EFFECTS independent centering italicized text emphasized text struck through text underlined text bold text small text line break (without",
+      "search_text": "title description page (((title))) subtitle (for titles) primary subheading subtitle (for subheadings) secondary subheading first paragraph… secondary lines… second paragraph… secondary lines… third paragraph… secondary lines… [ inside link text 1 (framework) ] (((inside link text 2 (entry)))) outside link text (new tab/page) text effects independent centering italicized text emphasized text struck through text underlined text bold text small text line break (without assets entry template assets-entry entry-template assets-entry-template",
       "concepts": [
         "assets",
         "entry",
@@ -53,7 +53,7 @@
         "entry-template",
         "assets-entry-template"
       ],
-      "word_count": 0
+      "word_count": 65
     },
     "https://unboundhealing.org/assets/homepage-intelligence-blocks/": {
       "path": "",
@@ -146,8 +146,8 @@
       "description": "",
       "section": "assets",
       "kind": "page",
-      "excerpt": "",
-      "search_text": "page assets images test image assets-images images-test test-image assets-images-test images-test-image",
+      "excerpt": "CAPTION_TEXT",
+      "search_text": "page caption_text assets images test image assets-images images-test test-image assets-images-test images-test-image",
       "concepts": [
         "assets",
         "images",
@@ -159,17 +159,17 @@
         "assets-images-test",
         "images-test-image"
       ],
-      "word_count": 0
+      "word_count": 1
     },
     "https://unboundhealing.org/assets/page-template/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "FOLDER",
+      "description": "DESCRIPTION",
       "section": "assets",
       "kind": "page",
-      "excerpt": "",
-      "search_text": "page assets page template assets-page page-template assets-page-template",
+      "excerpt": "FOLDER Subtitle (for titles) Primary Subheading Subtitle (for subheadings) Secondary Subheading First paragraph… Secondary lines… Second paragraph… Secondary lines… Third paragraph… Secondary lines… [ INSIDE LINK TEXT 1 (FRAMEWORK) ] (((INSIDE LINK TEXT 2 (ENTRY)))) OUTSIDE LINK TEXT (NEW TAB/PAGE) TEXT EFFECTS independent centering italicized text emphasized text struck through text underlined text bold text small text line break (without",
+      "search_text": "folder description page folder subtitle (for titles) primary subheading subtitle (for subheadings) secondary subheading first paragraph… secondary lines… second paragraph… secondary lines… third paragraph… secondary lines… [ inside link text 1 (framework) ] (((inside link text 2 (entry)))) outside link text (new tab/page) text effects independent centering italicized text emphasized text struck through text underlined text bold text small text line break (without assets page template assets-page page-template assets-page-template",
       "concepts": [
         "assets",
         "page",
@@ -178,7 +178,7 @@
         "page-template",
         "assets-page-template"
       ],
-      "word_count": 0
+      "word_count": 65
     },
     "https://unboundhealing.org/assets/updates-temp/": {
       "path": "",
@@ -187,8 +187,8 @@
       "description": "",
       "section": "assets",
       "kind": "page",
-      "excerpt": "",
-      "search_text": "page assets updates temp assets-updates updates-temp assets-updates-temp",
+      "excerpt": "paste code updates here for easy back-and-forth copy/pasting... here's the current FILE: keeping in mind the goal of unhindered (as much as possible) access and reference to a single truth layer - semantic-salience (graph = structure of reality, salience = weighting of reality, everything else = consumers only) - please correct, update and rebuild as one single whole complete copy/paste",
+      "search_text": "page paste code updates here for easy back-and-forth copy/pasting... here's the current file: keeping in mind the goal of unhindered (as much as possible) access and reference to a single truth layer - semantic-salience (graph = structure of reality, salience = weighting of reality, everything else = consumers only) - please correct, update and rebuild as one single whole complete copy/paste assets updates temp assets-updates updates-temp assets-updates-temp",
       "concepts": [
         "assets",
         "updates",
@@ -197,49 +197,49 @@
         "updates-temp",
         "assets-updates-temp"
       ],
-      "word_count": 0
+      "word_count": 74
     },
     "https://unboundhealing.org/concept/evolving/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "Evolving…",
+      "description": "A reconstructed conversation about cats, coffee, journals, websites, memory, knowing, openness, and ordinary experience.",
       "section": "concept",
       "kind": "concept",
-      "excerpt": "",
-      "search_text": "concept concept evolving concept-evolving",
+      "excerpt": "Evolving… (A transcript of a conversation, reconstructed from memory, notes, coffee, cats, philosophy, website design, and ordinary experience.) User: The tea is finished. Assistant: ... User: The cat is sleeping. Assistant: ... User: I find myself wondering if SubStack is the best platform for this type of content... User: I find myself wondering if this type of content is worth",
+      "search_text": "evolving… a reconstructed conversation about cats, coffee, journals, websites, memory, knowing, openness, and ordinary experience. concept evolving… (a transcript of a conversation, reconstructed from memory, notes, coffee, cats, philosophy, website design, and ordinary experience.) user: the tea is finished. assistant: ... user: the cat is sleeping. assistant: ... user: i find myself wondering if substack is the best platform for this type of content... user: i find myself wondering if this type of content is worth concept evolving concept-evolving",
       "concepts": [
         "concept",
         "evolving",
         "concept-evolving"
       ],
-      "word_count": 0
+      "word_count": 788
     },
     "https://unboundhealing.org/concept/experimenting/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "Experimenting",
+      "description": "Thinking about whether ideas can be linked together into a living system of references, while also remembering to drink coffee.",
       "section": "concept",
       "kind": "concept",
-      "excerpt": "",
-      "search_text": "concept concept experimenting concept-experimenting",
+      "excerpt": "Experimenting thinking about pieces that cross-reference each other with embedded (originally spelled 'imbedded' because i couldn't be bother to look it up) links… like if i mention ‘ zone? ’ or ‘ liz ’ or ‘ Welcome in… ’, they all show up as links to themselves, creating a kind of maze of context… maybe not as a permanent exercise,",
+      "search_text": "experimenting thinking about whether ideas can be linked together into a living system of references, while also remembering to drink coffee. concept experimenting thinking about pieces that cross-reference each other with embedded (originally spelled 'imbedded' because i couldn't be bother to look it up) links… like if i mention ‘ zone? ’ or ‘ liz ’ or ‘ welcome in… ’, they all show up as links to themselves, creating a kind of maze of context… maybe not as a permanent exercise, concept experimenting concept-experimenting",
       "concepts": [
         "concept",
         "experimenting",
         "concept-experimenting"
       ],
-      "word_count": 0
+      "word_count": 161
     },
     "https://unboundhealing.org/concept/iced-coffee/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "iced coffee",
+      "description": "Coffee cooling. An idea arriving. A website unfolding. A brief reflection on beginnings, links, and the newness of each moment.",
       "section": "concept",
       "kind": "concept",
-      "excerpt": "",
-      "search_text": "concept concept iced coffee concept-iced iced-coffee concept-iced-coffee",
+      "excerpt": "(((iced coffee))) coffee is cooling; tasted it to see if i could use “it needs to cool” as an excuse (for who?) to begin this writing, but i can’t honestly do that - it’s perfect. and yet here i am anyway… distracted by the arrival of another ‘big’ website idea that i won’t be able to really get into today…",
+      "search_text": "iced coffee coffee cooling. an idea arriving. a website unfolding. a brief reflection on beginnings, links, and the newness of each moment. concept (((iced coffee))) coffee is cooling; tasted it to see if i could use “it needs to cool” as an excuse (for who?) to begin this writing, but i can’t honestly do that - it’s perfect. and yet here i am anyway… distracted by the arrival of another ‘big’ website idea that i won’t be able to really get into today… concept iced coffee concept-iced iced-coffee concept-iced-coffee",
       "concepts": [
         "concept",
         "iced",
@@ -248,63 +248,63 @@
         "iced-coffee",
         "concept-iced-coffee"
       ],
-      "word_count": 0
+      "word_count": 166
     },
     "https://unboundhealing.org/concept/ici/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "Interconnected Content Initiative™ (ICI",
+      "description": "A playful experiment in contextual linking, discovery, and wandering through interconnected reflections, questions, and conversations.",
       "section": "concept",
       "kind": "concept",
-      "excerpt": "",
-      "search_text": "concept concept ici concept-ici",
+      "excerpt": "Interconnected Content Initiative™ (ICI) A playful experiment in contextual linking, discovery, and wandering. The purpose is not organization. The purpose is exploration. Current Structure Content Nodes — articles, reflections, questions, observations Concept Nodes — pages describing ideas, experiments, or themes Navigation Nodes — invitations, pathways, and points of entry Current Nodes experimenting… First ICI experiment. A reflection on the possibility",
+      "search_text": "interconnected content initiative™ (ici a playful experiment in contextual linking, discovery, and wandering through interconnected reflections, questions, and conversations. concept interconnected content initiative™ (ici) a playful experiment in contextual linking, discovery, and wandering. the purpose is not organization. the purpose is exploration. current structure content nodes — articles, reflections, questions, observations concept nodes — pages describing ideas, experiments, or themes navigation nodes — invitations, pathways, and points of entry current nodes experimenting… first ici experiment. a reflection on the possibility concept ici concept-ici",
       "concepts": [
         "concept",
         "ici",
         "concept-ici"
       ],
-      "word_count": 0
+      "word_count": 296
     },
     "https://unboundhealing.org/concept/idea/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "idea",
+      "description": "A journal entry about ideas forming while writing, and the sense of thoughts becoming part of an interconnected web of pages.",
       "section": "concept",
       "kind": "concept",
-      "excerpt": "",
-      "search_text": "concept concept idea concept-idea",
+      "excerpt": "(((idea))) today's journaling: (after \"mantra\" phrases ; spacing added here for pacing) Busy morning. Busy morning? Understatement. Mental website building-out. Already (seeming) hard to keep track of various ideas and their elements. ChatGPT (Or AI? So as not to promote even though it’s the one I use) is in-sanely helpful for (with?) that, but it’s fun to (just?) remember too.",
+      "search_text": "idea a journal entry about ideas forming while writing, and the sense of thoughts becoming part of an interconnected web of pages. concept (((idea))) today's journaling: (after \"mantra\" phrases ; spacing added here for pacing) busy morning. busy morning? understatement. mental website building-out. already (seeming) hard to keep track of various ideas and their elements. chatgpt (or ai? so as not to promote even though it’s the one i use) is in-sanely helpful for (with?) that, but it’s fun to (just?) remember too. concept idea concept-idea",
       "concepts": [
         "concept",
         "idea",
         "concept-idea"
       ],
-      "word_count": 0
+      "word_count": 111
     },
     "https://unboundhealing.org/concept/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "Concept",
+      "description": "A collection of concepts, experiments, conversations, and connective threads exploring how ideas emerge, relate, and evolve.",
       "section": "concept",
       "kind": "concept",
-      "excerpt": "",
-      "search_text": "concept concept",
+      "excerpt": "Concept [ Interconnected Content Initiative ] [ Almost-Origin Story ] [ Experimenting ] [ Evolving… ] (((idea))) (((zone?))) (((so i was just thinking…))) (((iced coffee))) (((website building:)))",
+      "search_text": "concept a collection of concepts, experiments, conversations, and connective threads exploring how ideas emerge, relate, and evolve. concept concept [ interconnected content initiative ] [ almost-origin story ] [ experimenting ] [ evolving… ] (((idea))) (((zone?))) (((so i was just thinking…))) (((iced coffee))) (((website building:))) concept",
       "concepts": [
         "concept"
       ],
-      "word_count": 0
+      "word_count": 20
     },
     "https://unboundhealing.org/concept/just-thinking/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "so i was just thinking…",
+      "description": "A small observation discovered somewhere between coffee beans, dishes, and being right here the whole time.",
       "section": "concept",
       "kind": "concept",
-      "excerpt": "",
-      "search_text": "concept concept just thinking concept-just just-thinking concept-just-thinking",
+      "excerpt": "(((so i was just thinking…))) about a recent piece called ‘ zone? ’ while grinding up morning coffee beans and unloading dishes… and i had to write this down… (whatever the emoji is for ‘i dunno?’) oh! adding a line to it! “whatever - it’s fun and good exercise.” Whooo… right here the whole time. 😂",
+      "search_text": "so i was just thinking… a small observation discovered somewhere between coffee beans, dishes, and being right here the whole time. concept (((so i was just thinking…))) about a recent piece called ‘ zone? ’ while grinding up morning coffee beans and unloading dishes… and i had to write this down… (whatever the emoji is for ‘i dunno?’) oh! adding a line to it! “whatever - it’s fun and good exercise.” whooo… right here the whole time. 😂 concept just thinking concept-just just-thinking concept-just-thinking",
       "concepts": [
         "concept",
         "just",
@@ -313,33 +313,33 @@
         "just-thinking",
         "concept-just-thinking"
       ],
-      "word_count": 0
+      "word_count": 53
     },
     "https://unboundhealing.org/concept/origin/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "Almost-Origin Story",
+      "description": "An edited conversation about hyperlinks, writing, coffee, and how an idea called the Interconnected Content Initiative™ somehow came into existence.",
       "section": "concept",
       "kind": "concept",
-      "excerpt": "",
-      "search_text": "concept concept origin concept-origin",
+      "excerpt": "Almost-Origin Story (A transcript of a conversation about vitamins, coffee, cats, hyperlinks, experimentation, and the accidental formation of the Interconnected Content Initiative™.) Clint: Boom. 🤩 ChatGPT: I think something may have just clicked. Not necessarily a new title to put on a profile somewhere—but a recognition of the shape of the thing. Clint: This is going to be posted as",
+      "search_text": "almost-origin story an edited conversation about hyperlinks, writing, coffee, and how an idea called the interconnected content initiative™ somehow came into existence. concept almost-origin story (a transcript of a conversation about vitamins, coffee, cats, hyperlinks, experimentation, and the accidental formation of the interconnected content initiative™.) clint: boom. 🤩 chatgpt: i think something may have just clicked. not necessarily a new title to put on a profile somewhere—but a recognition of the shape of the thing. clint: this is going to be posted as concept origin concept-origin",
       "concepts": [
         "concept",
         "origin",
         "concept-origin"
       ],
-      "word_count": 0
+      "word_count": 520
     },
     "https://unboundhealing.org/concept/website-building/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "website building:",
+      "description": "A reflection on curiosity, website building, connection, and the tendency to wonder what might be possible next.",
       "section": "concept",
       "kind": "concept",
-      "excerpt": "",
-      "search_text": "concept concept website building concept-website website-building concept-website-building",
+      "excerpt": "((( website building: ))) making it better…((?)) “what about things (cool little tricks) i might not even know exist yet?””what if it could just be easier to find, navigate, read?””do i really want anyone reading through this?””ehh…””some concern about the content contributing to negative perceptions. (of ‘me’)””some interest in the possibility of others finding the same content interesting, entertaining, perhaps",
+      "search_text": "website building: a reflection on curiosity, website building, connection, and the tendency to wonder what might be possible next. concept ((( website building: ))) making it better…((?)) “what about things (cool little tricks) i might not even know exist yet?””what if it could just be easier to find, navigate, read?””do i really want anyone reading through this?””ehh…””some concern about the content contributing to negative perceptions. (of ‘me’)””some interest in the possibility of others finding the same content interesting, entertaining, perhaps concept website building concept-website website-building concept-website-building",
       "concepts": [
         "concept",
         "website",
@@ -348,101 +348,101 @@
         "website-building",
         "concept-website-building"
       ],
-      "word_count": 0
+      "word_count": 106
     },
     "https://unboundhealing.org/concept/zone/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "zone?",
+      "description": "An exploration of attention, activity, and whatever might be meant by 'being in the zone'.",
       "section": "concept",
       "kind": "concept",
-      "excerpt": "",
-      "search_text": "concept concept zone concept-zone",
+      "excerpt": "(((zone?))) thinking about writing about thinking about writing about playing BeatSaber while playing BeatSaber … i mean… kinda, maybe? songs including Tempo and Good as Hell by Lizzo, Abracadabra by Lady Gaga, Radioactive by Imagine Dragons… (to all of which i’m sure i perform with absolute precision, grace, and rhythm… 😂😳😊 … time for remaining morning routines…) ((whether you caught",
+      "search_text": "zone? an exploration of attention, activity, and whatever might be meant by 'being in the zone'. concept (((zone?))) thinking about writing about thinking about writing about playing beatsaber while playing beatsaber … i mean… kinda, maybe? songs including tempo and good as hell by lizzo, abracadabra by lady gaga, radioactive by imagine dragons… (to all of which i’m sure i perform with absolute precision, grace, and rhythm… 😂😳😊 … time for remaining morning routines…) ((whether you caught concept zone concept-zone",
       "concepts": [
         "concept",
         "zone",
         "concept-zone"
       ],
-      "word_count": 0
+      "word_count": 122
     },
     "https://unboundhealing.org/gathering/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "Gathering",
+      "description": "A space for shared attention and gathering—reflections on connection, presence, and being together.",
       "section": "gathering",
       "kind": "gathering",
-      "excerpt": "",
-      "search_text": "gathering gathering",
+      "excerpt": "Gathering Possible future gatherings: Coffee & Conversation Community Walks Shared Inquiry Quiet Reflection Online Gatherings Something not yet imagined Have an idea? We'd love to hear it. [ Suggest a Gathering ]",
+      "search_text": "gathering a space for shared attention and gathering—reflections on connection, presence, and being together. gathering gathering possible future gatherings: coffee & conversation community walks shared inquiry quiet reflection online gatherings something not yet imagined have an idea? we'd love to hear it. [ suggest a gathering ] gathering",
       "concepts": [
         "gathering"
       ],
-      "word_count": 0
+      "word_count": 30
     },
     "https://unboundhealing.org/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "Unbound Healing Ministries",
+      "description": "Unbound Healing is a space of reflection, presence, and invitation into deeper awareness through writing, listening, and shared attention.",
       "section": "home",
       "kind": "home",
-      "excerpt": "",
-      "search_text": "home",
+      "excerpt": "Have you ever noticed how extraordinary it is that anything is happening at all? This thought. This sensation. This breath. This experience. This life. (((Welcome in…))) [ Meander… ]",
+      "search_text": "unbound healing ministries unbound healing is a space of reflection, presence, and invitation into deeper awareness through writing, listening, and shared attention. home have you ever noticed how extraordinary it is that anything is happening at all? this thought. this sensation. this breath. this experience. this life. (((welcome in…))) [ meander… ]",
       "concepts": [],
-      "word_count": 0
+      "word_count": 27
     },
     "https://unboundhealing.org/inviting/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "Inviting",
+      "description": "A collection of invitations into reflection, attention, and lived experience—each offering a different doorway into presence.",
       "section": "inviting",
       "kind": "page",
-      "excerpt": "",
-      "search_text": "page inviting",
+      "excerpt": "Inviting This page is archived for historical context. Content can now be found here …",
+      "search_text": "inviting a collection of invitations into reflection, attention, and lived experience—each offering a different doorway into presence. page inviting this page is archived for historical context. content can now be found here … inviting",
       "concepts": [
         "inviting"
       ],
-      "word_count": 0
+      "word_count": 14
     },
     "https://unboundhealing.org/listening/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "Listening",
+      "description": "Audio reflections and spoken explorations into awareness, presence, and lived experience.",
       "section": "listening",
       "kind": "page",
-      "excerpt": "",
-      "search_text": "page listening",
+      "excerpt": "Listening (((still too nervous to try podcasting, but thinking about it))) Conversations may appear here someday. Or not. We'll see.",
+      "search_text": "listening audio reflections and spoken explorations into awareness, presence, and lived experience. page listening (((still too nervous to try podcasting, but thinking about it))) conversations may appear here someday. or not. we'll see. listening",
       "concepts": [
         "listening"
       ],
-      "word_count": 0
+      "word_count": 21
     },
     "https://unboundhealing.org/noticing/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "Noticing",
+      "description": "A space for noticing—subtle observations, reflections, and the quiet unfolding of awareness in everyday life.",
       "section": "noticing",
       "kind": "page",
-      "excerpt": "",
-      "search_text": "page noticing",
+      "excerpt": "Noticing A thought. A feeling. A question. A memory. A smile. A confusion. [ Share Publicly / Share Privately ] [ Read Shared Experiences ]",
+      "search_text": "noticing a space for noticing—subtle observations, reflections, and the quiet unfolding of awareness in everyday life. page noticing a thought. a feeling. a question. a memory. a smile. a confusion. [ share publicly / share privately ] [ read shared experiences ] noticing",
       "concepts": [
         "noticing"
       ],
-      "word_count": 0
+      "word_count": 20
     },
     "https://unboundhealing.org/noticing/shared-experiences/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "Shared Experiences",
+      "description": "A collection of observations, questions, and moments generously shared by visitors.",
       "section": "noticing",
       "kind": "page",
-      "excerpt": "",
-      "search_text": "page noticing shared experiences noticing-shared shared-experiences noticing-shared-experiences",
+      "excerpt": "Shared Experiences A collection of observations, questions, and moments generously shared by visitors. (Shared experiences will appear here as they are received and only with expressed permission.) [ Share Publicly / Share Privately ] [ Return to Noticing ]",
+      "search_text": "shared experiences a collection of observations, questions, and moments generously shared by visitors. page shared experiences a collection of observations, questions, and moments generously shared by visitors. (shared experiences will appear here as they are received and only with expressed permission.) [ share publicly / share privately ] [ return to noticing ] noticing shared experiences noticing-shared shared-experiences noticing-shared-experiences",
       "concepts": [
         "noticing",
         "shared",
@@ -451,17 +451,17 @@
         "shared-experiences",
         "noticing-shared-experiences"
       ],
-      "word_count": 0
+      "word_count": 34
     },
     "https://unboundhealing.org/opening/another-yesterday/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "another yesterday…",
+      "description": "Cats, consciousness, stretching, and BeatSaber become unexpected companions in an exploration of awareness, perception, and the extraordinary hidden within ordinary experience.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening another yesterday opening-another another-yesterday opening-another-yesterday",
+      "excerpt": "(((another yesterday…))) are cats friends? ownership/possesion? feeding? grooming? frequent cuddles, scratches, rubdowns? exceptforspontaneouslynotthistime! does that sound like “friends”? (😂) I seem to exist. what I think most people are probably referring to when they speak of god or whatever — presence, awareness, etc. (which seems to somehow exist/not-exist/both/neither/all that — beyond even — inconceivable, apparently) — seems, somewhat experientially(, but",
+      "search_text": "another yesterday… cats, consciousness, stretching, and beatsaber become unexpected companions in an exploration of awareness, perception, and the extraordinary hidden within ordinary experience. journal (((another yesterday…))) are cats friends? ownership/possesion? feeding? grooming? frequent cuddles, scratches, rubdowns? exceptforspontaneouslynotthistime! does that sound like “friends”? (😂) i seem to exist. what i think most people are probably referring to when they speak of god or whatever — presence, awareness, etc. (which seems to somehow exist/not-exist/both/neither/all that — beyond even — inconceivable, apparently) — seems, somewhat experientially(, but opening another yesterday opening-another another-yesterday opening-another-yesterday",
       "concepts": [
         "opening",
         "another",
@@ -470,17 +470,17 @@
         "another-yesterday",
         "opening-another-yesterday"
       ],
-      "word_count": 0
+      "word_count": 511
     },
     "https://unboundhealing.org/opening/cooling-tea/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "cooling tea",
+      "description": "An invitation into slowness and simplicity through the ordinary act of making and experiencing tea.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening cooling tea opening-cooling cooling-tea opening-cooling-tea",
+      "excerpt": "(((cooling tea))) (i’m typing this into the Notes app on my phone now…) ((parentheses above just added)) I’m calling this “cooling tea” for now, inspired by a conversation with ChatGPT . burning journals (maybe a good subtitle). pages and pages of incomplete experience held (edited from ‘experience held incompletely’) in notebook form. this is not the direction intended. the idea",
+      "search_text": "cooling tea an invitation into slowness and simplicity through the ordinary act of making and experiencing tea. journal (((cooling tea))) (i’m typing this into the notes app on my phone now…) ((parentheses above just added)) i’m calling this “cooling tea” for now, inspired by a conversation with chatgpt . burning journals (maybe a good subtitle). pages and pages of incomplete experience held (edited from ‘experience held incompletely’) in notebook form. this is not the direction intended. the idea opening cooling tea opening-cooling cooling-tea opening-cooling-tea",
       "concepts": [
         "opening",
         "cooling",
@@ -489,47 +489,47 @@
         "cooling-tea",
         "opening-cooling-tea"
       ],
-      "word_count": 0
+      "word_count": 647
     },
     "https://unboundhealing.org/opening/gloomy/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "gloomy…",
+      "description": "A grey morning, warm tea, thoughts about memory, perspective, and the quiet experience of being exactly who you are.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening gloomy opening-gloomy",
+      "excerpt": "(((gloomy…))) <another two sips of actually-still-hot tea … (only steeped for 16 minutes (laughing)((😂)))> (don’t forget opening …) (i cannot attest to the any accuracy of memory by which to compare any other; wandered off down ‘self-editing lane’… let’s go with:) this you , now, is almost certainly not (exactly) how i remember you, and even if… (clears imaginary throat",
+      "search_text": "gloomy… a grey morning, warm tea, thoughts about memory, perspective, and the quiet experience of being exactly who you are. journal (((gloomy…))) <another two sips of actually-still-hot tea … (only steeped for 16 minutes (laughing)((😂)))> (don’t forget opening …) (i cannot attest to the any accuracy of memory by which to compare any other; wandered off down ‘self-editing lane’… let’s go with:) this you , now, is almost certainly not (exactly) how i remember you, and even if… (clears imaginary throat opening gloomy opening-gloomy",
       "concepts": [
         "opening",
         "gloomy",
         "opening-gloomy"
       ],
-      "word_count": 0
+      "word_count": 507
     },
     "https://unboundhealing.org/opening/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "Opening…",
+      "description": "A collection of observations, stories, and questions—each a doorway into lived experience.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening",
+      "excerpt": "Opening… Some observations arrive as questions. Some as stories. Some as tea. (((cooling tea))) (((coffee with tom))) (((liz))) (((love is just a concept…))) (((just listening…))) (((open…))) (((opening…))) (((this morning…))) (((this morning…))) (((sold-out…))) (((this you…))) (((this morning…))) (((post-this?))) (((yes and no…))) (((i love you (,/?) strong lukewarm decaf coffee…))) (((whatever this is…))) (((yesterday…))) (((the day before…))) (((the tea is still warm!",
+      "search_text": "opening… a collection of observations, stories, and questions—each a doorway into lived experience. journal opening… some observations arrive as questions. some as stories. some as tea. (((cooling tea))) (((coffee with tom))) (((liz))) (((love is just a concept…))) (((just listening…))) (((open…))) (((opening…))) (((this morning…))) (((this morning…))) (((sold-out…))) (((this you…))) (((this morning…))) (((post-this?))) (((yes and no…))) (((i love you (,/?) strong lukewarm decaf coffee…))) (((whatever this is…))) (((yesterday…))) (((the day before…))) (((the tea is still warm! opening",
       "concepts": [
         "opening"
       ],
-      "word_count": 0
+      "word_count": 67
     },
     "https://unboundhealing.org/opening/just-listening/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "just listening…",
+      "description": "A reflection on conversation, attention, and the possibility that listening may not require knowing what to say.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening just listening opening-just just-listening opening-just-listening",
+      "excerpt": "(((just listening…))) “i don’t know what to say” and “i have nothing to say” - common (recurring) enough thoughts; almost a felt state of questioning in conversation. not “what do i want to say?” so much as “what am i supposed to say? anything specific? anything at all? what (content) am i listening for? anything specific? anything at all? am",
+      "search_text": "just listening… a reflection on conversation, attention, and the possibility that listening may not require knowing what to say. journal (((just listening…))) “i don’t know what to say” and “i have nothing to say” - common (recurring) enough thoughts; almost a felt state of questioning in conversation. not “what do i want to say?” so much as “what am i supposed to say? anything specific? anything at all? what (content) am i listening for? anything specific? anything at all? am opening just listening opening-just just-listening opening-just-listening",
       "concepts": [
         "opening",
         "just",
@@ -538,33 +538,33 @@
         "just-listening",
         "opening-just-listening"
       ],
-      "word_count": 0
+      "word_count": 102
     },
     "https://unboundhealing.org/opening/liz/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "liz",
+      "description": "A brief reflection on shared attention, everyday moments, and love.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening liz opening-liz",
+      "excerpt": "(((liz))) “write about Liz” noticed this thought, we’ll say, several times now… once while making a hard boiled egg and avocado salad for later; again after a whiff of fresh cat coop in the litter box in the bathroom which i ultimately scooped, cause dang… we share a sort of private captive audience with one another, a little confined-feeling sometimes",
+      "search_text": "liz a brief reflection on shared attention, everyday moments, and love. journal (((liz))) “write about liz” noticed this thought, we’ll say, several times now… once while making a hard boiled egg and avocado salad for later; again after a whiff of fresh cat coop in the litter box in the bathroom which i ultimately scooped, cause dang… we share a sort of private captive audience with one another, a little confined-feeling sometimes opening liz opening-liz",
       "concepts": [
         "opening",
         "liz",
         "opening-liz"
       ],
-      "word_count": 0
+      "word_count": 179
     },
     "https://unboundhealing.org/opening/love-concept/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "love is just a concept…",
+      "description": "A reflection on togetherness, attraction, existence, and why love may be a name for what already holds everything together.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening love concept opening-love love-concept opening-love-concept",
+      "excerpt": "(((love is just a concept…))) but this is all being held together somehow… is that what matters… the how? why not call it love? a fundamental attraction to beingness… existence essentially (subjectively) ‘wanting’ or ‘choosing’ to exist in some way, on some level… but maybe not… maybe that’s just its nature all the way down at its most measurable fundamental…",
+      "search_text": "love is just a concept… a reflection on togetherness, attraction, existence, and why love may be a name for what already holds everything together. journal (((love is just a concept…))) but this is all being held together somehow… is that what matters… the how? why not call it love? a fundamental attraction to beingness… existence essentially (subjectively) ‘wanting’ or ‘choosing’ to exist in some way, on some level… but maybe not… maybe that’s just its nature all the way down at its most measurable fundamental… opening love concept opening-love love-concept opening-love-concept",
       "concepts": [
         "opening",
         "love",
@@ -573,17 +573,17 @@
         "love-concept",
         "opening-love-concept"
       ],
-      "word_count": 0
+      "word_count": 120
     },
     "https://unboundhealing.org/opening/lukewarm-decaf/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "i love you (,/?) lukewarm strong decaf coffee…",
+      "description": "Coffee cools. Cats wander through. A conversation appears. The morning unfolds. A reflection on noticing what happens when nothing important seems to be happening at all.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening lukewarm decaf opening-lukewarm lukewarm-decaf opening-lukewarm-decaf",
+      "excerpt": "(((i love you (,/?) lukewarm strong decaf coffee…))) (((((had to type up this title idea… now to continue with morning reading…))))) (how to begin? <a few sips of (strong) hot (decaf) coffee, at least…> tasted and enjoyed. (if there is a smiley for ‘mmm”…)((😋)) (don’t forget the opening (( link ))…) thoughts, sens(“it’s okay D ( link )”; explain later",
+      "search_text": "i love you (,/?) lukewarm strong decaf coffee… coffee cools. cats wander through. a conversation appears. the morning unfolds. a reflection on noticing what happens when nothing important seems to be happening at all. journal (((i love you (,/?) lukewarm strong decaf coffee…))) (((((had to type up this title idea… now to continue with morning reading…))))) (how to begin? <a few sips of (strong) hot (decaf) coffee, at least…> tasted and enjoyed. (if there is a smiley for ‘mmm”…)((😋)) (don’t forget the opening (( link ))…) thoughts, sens(“it’s okay d ( link )”; explain later opening lukewarm decaf opening-lukewarm lukewarm-decaf opening-lukewarm-decaf",
       "concepts": [
         "opening",
         "lukewarm",
@@ -592,17 +592,17 @@
         "lukewarm-decaf",
         "opening-lukewarm-decaf"
       ],
-      "word_count": 0
+      "word_count": 1129
     },
     "https://unboundhealing.org/opening/no-title/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "no title",
+      "description": "Coffee cools. Thoughts wander. A reflection on details, wholeness, and the impossibility of ever fully describing what it is like to be here.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening no title opening-no no-title opening-no-title",
+      "excerpt": "(((no title))) on my the phone now, after morning routines , but before a single sip of coffee or any handwriting — everything’s already all out of order any way doing things in the middle ( link ) of other things again, but this time like, a single thing interrupting a different single thing… anyway… while pouring coffee, a thought",
+      "search_text": "no title coffee cools. thoughts wander. a reflection on details, wholeness, and the impossibility of ever fully describing what it is like to be here. journal (((no title))) on my the phone now, after morning routines , but before a single sip of coffee or any handwriting — everything’s already all out of order any way doing things in the middle ( link ) of other things again, but this time like, a single thing interrupting a different single thing… anyway… while pouring coffee, a thought opening no title opening-no no-title opening-no-title",
       "concepts": [
         "opening",
         "no",
@@ -611,33 +611,33 @@
         "no-title",
         "opening-no-title"
       ],
-      "word_count": 0
+      "word_count": 425
     },
     "https://unboundhealing.org/opening/open/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "open…",
+      "description": "Reflections on awareness, writing, embarrassment, tea, wandering attention, and the possibility that every room of experience can remain open.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening open opening-open",
+      "excerpt": "(((open…))) thoughts, sensations, perceptions - phenomena… breathe. notice. rest in awareness… open, aware, present… whatever is happening… nothing excluded… here/now/this… being is enough… an unconditional ‘yes’ to the fact of experiencing at all is there a less… culturally appropriated(?) word for “mantra”? thinking about that while rinsing out a bottle (over the kitchen sink). is that what the above is?",
+      "search_text": "open… reflections on awareness, writing, embarrassment, tea, wandering attention, and the possibility that every room of experience can remain open. journal (((open…))) thoughts, sensations, perceptions - phenomena… breathe. notice. rest in awareness… open, aware, present… whatever is happening… nothing excluded… here/now/this… being is enough… an unconditional ‘yes’ to the fact of experiencing at all is there a less… culturally appropriated(?) word for “mantra”? thinking about that while rinsing out a bottle (over the kitchen sink). is that what the above is? opening open opening-open",
       "concepts": [
         "opening",
         "open",
         "opening-open"
       ],
-      "word_count": 0
+      "word_count": 812
     },
     "https://unboundhealing.org/opening/post-this/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "post this?",
+      "description": "A stream-of-consciousness reflection on awareness, thinking, breathing, and lived experience unfolding in real time.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening post this opening-post post-this opening-post-this",
+      "excerpt": "(((post this?))) <thinking, writing, breathing…> < slightly warm tea > (fucking mantra! ((title? (laughing emoji)((😂)))) thoughts, sensations, perceptions… phenomena… (do you ever just get…) breathe. notice. rest in… awareness… (… tired of thinking? (almost bored?)) … awareness… open, aware, present… whatever is happening… nothing excluded… here/now/this… being is enough… (“get to the good stuff!””is this not already it?”) … an",
+      "search_text": "post this? a stream-of-consciousness reflection on awareness, thinking, breathing, and lived experience unfolding in real time. journal (((post this?))) <thinking, writing, breathing…> < slightly warm tea > (fucking mantra! ((title? (laughing emoji)((😂)))) thoughts, sensations, perceptions… phenomena… (do you ever just get…) breathe. notice. rest in… awareness… (… tired of thinking? (almost bored?)) … awareness… open, aware, present… whatever is happening… nothing excluded… here/now/this… being is enough… (“get to the good stuff!””is this not already it?”) … an opening post this opening-post post-this opening-post-this",
       "concepts": [
         "opening",
         "post",
@@ -646,33 +646,33 @@
         "post-this",
         "opening-post-this"
       ],
-      "word_count": 0
+      "word_count": 467
     },
     "https://unboundhealing.org/opening/skwintcheee/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "skwintcheee…",
+      "description": "A lingering cup of decaf coffee opens into a playful meditation on flavor, perception, attention, and the experience of simply being here.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening skwintcheee opening-skwintcheee",
+      "excerpt": "(((skwintcheee…))) don’t really feel much like writing right now… (and yes, the irony (i think that’s what this is) is clear, but then, i don’t think i know the actual definition of irony (whatever it is to be currently writing this after explicitly stating not wanting to; whatever this is… ironic?)) … but remember thinking some version of “might be",
+      "search_text": "skwintcheee… a lingering cup of decaf coffee opens into a playful meditation on flavor, perception, attention, and the experience of simply being here. journal (((skwintcheee…))) don’t really feel much like writing right now… (and yes, the irony (i think that’s what this is) is clear, but then, i don’t think i know the actual definition of irony (whatever it is to be currently writing this after explicitly stating not wanting to; whatever this is… ironic?)) … but remember thinking some version of “might be opening skwintcheee opening-skwintcheee",
       "concepts": [
         "opening",
         "skwintcheee",
         "opening-skwintcheee"
       ],
-      "word_count": 0
+      "word_count": 710
     },
     "https://unboundhealing.org/opening/sold-out/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "sold-out…",
+      "description": "A reflection on thought as a crowded inner stadium—countless voices appearing and dissolving in awareness, each one only ever happening in the present moment of “now.”",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening sold out opening-sold sold-out opening-sold-out",
+      "excerpt": "(((sold-out…))) it seems like a sold-out stadium sometimes - thinking… countless thoughts all clamoring for their ten seconds… whatever version of “look at me, i exist too!” they happen to be… even the above… even this… look: i exist ( now ) mid-construction, writing itself (like a finger in wet cement) into the foundation of all experience: “ thinking is",
+      "search_text": "sold-out… a reflection on thought as a crowded inner stadium—countless voices appearing and dissolving in awareness, each one only ever happening in the present moment of “now.” journal (((sold-out…))) it seems like a sold-out stadium sometimes - thinking… countless thoughts all clamoring for their ten seconds… whatever version of “look at me, i exist too!” they happen to be… even the above… even this… look: i exist ( now ) mid-construction, writing itself (like a finger in wet cement) into the foundation of all experience: “ thinking is opening sold out opening-sold sold-out opening-sold-out",
       "concepts": [
         "opening",
         "sold",
@@ -681,17 +681,17 @@
         "sold-out",
         "opening-sold-out"
       ],
-      "word_count": 0
+      "word_count": 219
     },
     "https://unboundhealing.org/opening/still-warm/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "the tea is still warm! 🤯",
+      "description": "Morning routines drift off script. Tea waits. Exercise moves. Thoughts wander. A reflection on awareness, perception, togetherness, and what it means to say “I love you.”",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening still warm opening-still still-warm opening-still-warm",
+      "excerpt": "(((the tea is still warm! 🤯))) <morning routines (cat - food clean(space?)up, dishwasher, critter food (squirrels & birds mostly, but this morning (also) a chipmunk and a couple of chickens, and sometimes a couple of different blue (one word? ((yep))) jays bluejays visit), litter box maintenance, even a little laundry into the dryer) except vitamins and tea… “those can come",
+      "search_text": "the tea is still warm! 🤯 morning routines drift off script. tea waits. exercise moves. thoughts wander. a reflection on awareness, perception, togetherness, and what it means to say “i love you.” journal (((the tea is still warm! 🤯))) <morning routines (cat - food clean(space?)up, dishwasher, critter food (squirrels & birds mostly, but this morning (also) a chipmunk and a couple of chickens, and sometimes a couple of different blue (one word? ((yep))) jays bluejays visit), litter box maintenance, even a little laundry into the dryer) except vitamins and tea… “those can come opening still warm opening-still still-warm opening-still-warm",
       "concepts": [
         "opening",
         "still",
@@ -700,17 +700,17 @@
         "still-warm",
         "opening-still-warm"
       ],
-      "word_count": 0
+      "word_count": 841
     },
     "https://unboundhealing.org/opening/the-day-before/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "the day before…",
+      "description": "Tea cools while thoughts wander through music, awareness, memory, and meaning. Reflections on experience, description, and the impossibility of capturing everything at once.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening the day before opening-the the-day day-before opening-the-day the-day-before",
+      "excerpt": "(((the day before…))) attempting to describe the flavor of green tea: two stories dead-hang pull-up bittersweet - Sherri already fed the birds - is everything (not?) a little of both? Zeke ’s eye drops ant mass genocide (is mass genocide redundant? whatever… it sounds BIG) phone in the kitchen on purpose sleeping in… (5:15am coding this website (😳😆) exercising second",
+      "search_text": "the day before… tea cools while thoughts wander through music, awareness, memory, and meaning. reflections on experience, description, and the impossibility of capturing everything at once. journal (((the day before…))) attempting to describe the flavor of green tea: two stories dead-hang pull-up bittersweet - sherri already fed the birds - is everything (not?) a little of both? zeke ’s eye drops ant mass genocide (is mass genocide redundant? whatever… it sounds big) phone in the kitchen on purpose sleeping in… (5:15am coding this website (😳😆) exercising second opening the day before opening-the the-day day-before opening-the-day the-day-before",
       "concepts": [
         "opening",
         "the",
@@ -722,17 +722,17 @@
         "opening-the-day",
         "the-day-before"
       ],
-      "word_count": 0
+      "word_count": 877
     },
     "https://unboundhealing.org/opening/this-morning-a/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "this morning…",
+      "description": "A reflection on awareness, uncertainty, website building, and the surprising excitement of watching ideas become interconnected.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening this morning a opening-this this-morning morning-a opening-this-morning this-morning-a",
+      "excerpt": "(((this morning…))) ((<first two sips of coffee… >)) thoughts, sensations, perceptions — phenomena… (let’s just get through one…) breathe. notice. rest in awareness… (okay…) open, aware, present… whatever is happening… nothing excluded… here/now/this… ( nothing ? are you sure ? nope. (laughing emoji)((😂))) being is enough… (is it, though?) … an unconditional ‘yes’ to experiencing at all… (i mean, it",
+      "search_text": "this morning… a reflection on awareness, uncertainty, website building, and the surprising excitement of watching ideas become interconnected. journal (((this morning…))) ((<first two sips of coffee… >)) thoughts, sensations, perceptions — phenomena… (let’s just get through one…) breathe. notice. rest in awareness… (okay…) open, aware, present… whatever is happening… nothing excluded… here/now/this… ( nothing ? are you sure ? nope. (laughing emoji)((😂))) being is enough… (is it, though?) … an unconditional ‘yes’ to experiencing at all… (i mean, it opening this morning a opening-this this-morning morning-a opening-this-morning this-morning-a",
       "concepts": [
         "opening",
         "this",
@@ -744,17 +744,17 @@
         "opening-this-morning",
         "this-morning-a"
       ],
-      "word_count": 0
+      "word_count": 175
     },
     "https://unboundhealing.org/opening/this-morning-too/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "this morning…",
+      "description": "A stream-of-consciousness reflection moving through coffee, chores, music, thought, and awareness—an ordinary morning noticed as it unfolds.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening this morning too opening-this this-morning morning-too opening-this-morning this-morning-too",
+      "excerpt": "(((this morning…))) <two sips of hot coffee> (how to begin?)((good subtitle!)) thoughts, sensations, perceptions — phenomena… breathe. notice. rest in awareness… open, aware, present… whatever is happening… nothing excluded… here/now/this… being is enough… (here… this… even this pen which continues sputtering(sp?) even though i know there’s ink in there… should i just start typing now or am i determined to",
+      "search_text": "this morning… a stream-of-consciousness reflection moving through coffee, chores, music, thought, and awareness—an ordinary morning noticed as it unfolds. journal (((this morning…))) <two sips of hot coffee> (how to begin?)((good subtitle!)) thoughts, sensations, perceptions — phenomena… breathe. notice. rest in awareness… open, aware, present… whatever is happening… nothing excluded… here/now/this… being is enough… (here… this… even this pen which continues sputtering(sp?) even though i know there’s ink in there… should i just start typing now or am i determined to opening this morning too opening-this this-morning morning-too opening-this-morning this-morning-too",
       "concepts": [
         "opening",
         "this",
@@ -766,17 +766,17 @@
         "opening-this-morning",
         "this-morning-too"
       ],
-      "word_count": 0
+      "word_count": 471
     },
     "https://unboundhealing.org/opening/this-morning/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "this morning...",
+      "description": "A wandering account of an ordinary morning—Beat Saber, cats, tea, towels, routines, interruptions, attention, memory, and the surprising amount contained within a few hours.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening this morning opening-this this-morning opening-this-morning",
+      "excerpt": "(((this morning...))) (preparing for mundanity 😂 (finally figured out some smileys in Notes!)) ((7:46pm as this transcription of this morning’s handwritten entry is beginning making the title now seem a little bit ironic (not sure that’s the correct word for it, but amusing regardless); most of a day being devoted to writing about a couple of hours of a relatively",
+      "search_text": "this morning... a wandering account of an ordinary morning—beat saber, cats, tea, towels, routines, interruptions, attention, memory, and the surprising amount contained within a few hours. journal (((this morning...))) (preparing for mundanity 😂 (finally figured out some smileys in notes!)) ((7:46pm as this transcription of this morning’s handwritten entry is beginning making the title now seem a little bit ironic (not sure that’s the correct word for it, but amusing regardless); most of a day being devoted to writing about a couple of hours of a relatively opening this morning opening-this this-morning opening-this-morning",
       "concepts": [
         "opening",
         "this",
@@ -785,17 +785,17 @@
         "this-morning",
         "opening-this-morning"
       ],
-      "word_count": 0
+      "word_count": 3669
     },
     "https://unboundhealing.org/opening/this-you/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "this you…",
+      "description": "A reflection on meeting one another anew, beyond memory, expectation, and the stories we carry about who someone has been.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening this you opening-this this-you opening-this-you",
+      "excerpt": "(((this you…))) (this… you…) ((text Alfie)) this you is entirely new to me… a discovery… sure, there are memories and things, but none of them are this you… this one right here and now … reading this … entirely new… (to me…) this you is entirely new to me… a discovery… (so much new to see!) sure, there are memories",
+      "search_text": "this you… a reflection on meeting one another anew, beyond memory, expectation, and the stories we carry about who someone has been. journal (((this you…))) (this… you…) ((text alfie)) this you is entirely new to me… a discovery… sure, there are memories and things, but none of them are this you… this one right here and now … reading this … entirely new… (to me…) this you is entirely new to me… a discovery… (so much new to see!) sure, there are memories opening this you opening-this this-you opening-this-you",
       "concepts": [
         "opening",
         "this",
@@ -804,33 +804,33 @@
         "this-you",
         "opening-this-you"
       ],
-      "word_count": 0
+      "word_count": 94
     },
     "https://unboundhealing.org/opening/tom/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "coffee with tom",
+      "description": "A reflective invitation centered around presence, relationship, and the subtle unfolding of experience.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening tom opening-tom",
+      "excerpt": "(((coffee with tom))) walking down a sidewalk on a mid-June morning, warmth emanating from the still rising sun, on the way to meet a friend for coffee and conversation… an idea early on… if i am listening without thinking about what is being said, without trying to figure out what is meant, whether or not a certain response is warranted",
+      "search_text": "coffee with tom a reflective invitation centered around presence, relationship, and the subtle unfolding of experience. journal (((coffee with tom))) walking down a sidewalk on a mid-june morning, warmth emanating from the still rising sun, on the way to meet a friend for coffee and conversation… an idea early on… if i am listening without thinking about what is being said, without trying to figure out what is meant, whether or not a certain response is warranted opening tom opening-tom",
       "concepts": [
         "opening",
         "tom",
         "opening-tom"
       ],
-      "word_count": 0
+      "word_count": 418
     },
     "https://unboundhealing.org/opening/whatever-this-is/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "whatever this is…",
+      "description": "Four sips of coffee, a little frustration, and a question: if this is, and I am, what could possibly set us apart?",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening whatever this is opening-whatever whatever-this this-is opening-whatever-this whatever-this-is",
+      "excerpt": "(((whatever this is…))) enough. < two sips of coffee > (wondering if that’s all i’ll ever get…> < two more sips …> (ha ha! breaking cycles, patterns; building neurons and all that…) this beginning was planned in advance while still in the kitchen, moments ago now ((couple of hours now)), cleaning and putting(sp? two t’s? ((yep))) away coffee-making supplies, including",
+      "search_text": "whatever this is… four sips of coffee, a little frustration, and a question: if this is, and i am, what could possibly set us apart? journal (((whatever this is…))) enough. < two sips of coffee > (wondering if that’s all i’ll ever get…> < two more sips …> (ha ha! breaking cycles, patterns; building neurons and all that…) this beginning was planned in advance while still in the kitchen, moments ago now ((couple of hours now)), cleaning and putting(sp? two t’s? ((yep))) away coffee-making supplies, including opening whatever this is opening-whatever whatever-this this-is opening-whatever-this whatever-this-is",
       "concepts": [
         "opening",
         "whatever",
@@ -842,17 +842,17 @@
         "opening-whatever-this",
         "whatever-this-is"
       ],
-      "word_count": 0
+      "word_count": 449
     },
     "https://unboundhealing.org/opening/yes-and-no/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "yes and no…",
+      "description": "A reflection on yes and no, comfort and discomfort, certainty and uncertainty—and the curious impossibility of fully knowing where any choice may lead.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening yes and no opening-yes yes-and and-no opening-yes-and yes-and-no",
+      "excerpt": "(((yes and no…))) <swimming in uncertainty…> <two sips of actually-hot tea so far…> (don’t forget the opening …) thoughts, sensations, perceptions — phenomena… breathe. notice. resting awareness… (background-noise thinking, like quiet radio static (except for that and this obviously)) open, aware, present… whatever is happening… nothing excluded… here/now/this… (all one and the same? should i say that?)) being is enough…",
+      "search_text": "yes and no… a reflection on yes and no, comfort and discomfort, certainty and uncertainty—and the curious impossibility of fully knowing where any choice may lead. journal (((yes and no…))) <swimming in uncertainty…> <two sips of actually-hot tea so far…> (don’t forget the opening …) thoughts, sensations, perceptions — phenomena… breathe. notice. resting awareness… (background-noise thinking, like quiet radio static (except for that and this obviously)) open, aware, present… whatever is happening… nothing excluded… here/now/this… (all one and the same? should i say that?)) being is enough… opening yes and no opening-yes yes-and and-no opening-yes-and yes-and-no",
       "concepts": [
         "opening",
         "yes",
@@ -864,51 +864,51 @@
         "opening-yes-and",
         "yes-and-no"
       ],
-      "word_count": 0
+      "word_count": 630
     },
     "https://unboundhealing.org/opening/yesterday/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "yesterday…",
+      "description": "Thoughts about thoughts. Memories of memories. Songs, tea, curiosity, and the recognition that most paths remain mysterious—however intimately related.",
       "section": "opening",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal opening yesterday opening-yesterday",
+      "excerpt": "(((yesterday…))) exercise notes: BeatSaber Expert+ practice mode 60% on all levels Following intuition Houdini Eminem Similar thinking styles in terms of seemingly multiple coexisting streams or “voices” “think that shit, I’m’a say that shit…” love that line egoism of such deep (and honestly extremely self-complimentary) personal application of such things - “oooh… look how this is like me and this",
+      "search_text": "yesterday… thoughts about thoughts. memories of memories. songs, tea, curiosity, and the recognition that most paths remain mysterious—however intimately related. journal (((yesterday…))) exercise notes: beatsaber expert+ practice mode 60% on all levels following intuition houdini eminem similar thinking styles in terms of seemingly multiple coexisting streams or “voices” “think that shit, i’m’a say that shit…” love that line egoism of such deep (and honestly extremely self-complimentary) personal application of such things - “oooh… look how this is like me and this opening yesterday opening-yesterday",
       "concepts": [
         "opening",
         "yesterday",
         "opening-yesterday"
       ],
-      "word_count": 0
+      "word_count": 570
     },
     "https://unboundhealing.org/supporting/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "Supporting",
+      "description": "Ways to support the ongoing work of Unbound Healing and its continued offering of reflective content.",
       "section": "supporting",
       "kind": "supporting",
-      "excerpt": "",
-      "search_text": "supporting supporting",
+      "excerpt": "Supporting thoughts, sensations, perceptions - phenomena… breathe, notice, rest in awareness… open, aware, present… whatever is happening… nothing excluded… here/now…this… being is enough. an unconditional ‘yes’ to the fact that experiencing is happening at all. “that mantra again” a thought begins… “don’t forget that other ‘thing’ you wanted to remember… that phrase…” “thats’s some strong decaf!” Ha! even that is",
+      "search_text": "supporting ways to support the ongoing work of unbound healing and its continued offering of reflective content. supporting supporting thoughts, sensations, perceptions - phenomena… breathe, notice, rest in awareness… open, aware, present… whatever is happening… nothing excluded… here/now…this… being is enough. an unconditional ‘yes’ to the fact that experiencing is happening at all. “that mantra again” a thought begins… “don’t forget that other ‘thing’ you wanted to remember… that phrase…” “thats’s some strong decaf!” ha! even that is supporting",
       "concepts": [
         "supporting"
       ],
-      "word_count": 0
+      "word_count": 562
     },
     "https://unboundhealing.org/welcome/": {
       "path": "",
       "url": "",
-      "title": "",
-      "description": "",
+      "title": "Welcome in…",
+      "description": "A welcoming introduction to Unbound Healing Ministries: awareness, ordinary experience, curiosity, coffee, birds, and being.",
       "section": "welcome",
       "kind": "journal",
-      "excerpt": "",
-      "search_text": "journal welcome",
+      "excerpt": "Welcome in… Thoughts, sensations, perceptions — phenomena. Breathe. Notice. Rest in awareness… Open, aware, present… whatever is happening… nothing excluded… (here/now/this…) Being is enough… An unconditional ‘yes’ to the fact of experiencing at all. Am I going to start including the above in all of these that may eventually be typed and posted? I could — like a welcoming in…",
+      "search_text": "welcome in… a welcoming introduction to unbound healing ministries: awareness, ordinary experience, curiosity, coffee, birds, and being. journal welcome in… thoughts, sensations, perceptions — phenomena. breathe. notice. rest in awareness… open, aware, present… whatever is happening… nothing excluded… (here/now/this…) being is enough… an unconditional ‘yes’ to the fact of experiencing at all. am i going to start including the above in all of these that may eventually be typed and posted? i could — like a welcoming in… welcome",
       "concepts": [
         "welcome"
       ],
-      "word_count": 0
+      "word_count": 311
     }
   },
   "edges": [
@@ -5014,68 +5014,12 @@
     }
   ],
   "salience": {
-    "whatever": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "images-foo-fighters": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "images-test": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "image": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "concept-website": {
+    "warm": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "yesterday": {
-      "frequency": 2,
-      "connectivity": 6,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "assets-updates-temp": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "iced": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "website": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
     "foo": {
       "frequency": 1,
@@ -5084,191 +5028,51 @@
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "noticing-shared-experiences": {
+    "and-no": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "iced": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "fighters": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "still": {
+    "opening-still-warm": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "opening-this-you": {
+    "opening-yes": {
       "frequency": 1,
-      "connectivity": 5,
+      "connectivity": 8,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "love": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "origin": {
+    "evolving": {
       "frequency": 1,
       "connectivity": 2,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-just": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-post-this": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "assets-entry-template": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "assets-images": {
-      "frequency": 3,
-      "connectivity": 37,
-      "search_signal": 6,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "updates": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "yes-and-no": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "supporting": {
-      "frequency": 1,
-      "connectivity": 0,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-this-morning": {
-      "frequency": 3,
-      "connectivity": 11,
-      "search_signal": 6,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "foo-fighters": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "experiences": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "decaf": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "out": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "a": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
     "another": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "open": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-post": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "yes-and": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "fighters-the": {
+    "images-foo-fighters": {
       "frequency": 1,
       "connectivity": 17,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "about": {
-      "frequency": 2,
-      "connectivity": 2,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-love-concept": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-just-listening": {
-      "frequency": 1,
-      "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
@@ -5280,72 +5084,135 @@
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "opening-gloomy": {
+    "welcome": {
       "frequency": 1,
-      "connectivity": 2,
+      "connectivity": 0,
       "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "you": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 1
+    },
+    "images": {
+      "frequency": 3,
+      "connectivity": 37,
+      "search_signal": 6,
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "homepage": {
+    "supporting": {
+      "frequency": 1,
+      "connectivity": 0,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "intelligence-blocks": {
       "frequency": 1,
       "connectivity": 8,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "assets-homepage": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "is": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "thinking": {
+    "lukewarm-decaf": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "about-conversing": {
+    "test-image": {
       "frequency": 1,
-      "connectivity": 2,
+      "connectivity": 8,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "opening-sold-out": {
+    "opening-still": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "website": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 1
+    },
+    "gathering": {
+      "frequency": 1,
+      "connectivity": 0,
+      "search_signal": 2,
+      "excerpt_signal": 0,
       "word_signal": 0
     },
-    "assets-homepage-intelligence": {
+    "listening": {
+      "frequency": 2,
+      "connectivity": 5,
+      "search_signal": 4,
+      "excerpt_signal": 1,
+      "word_signal": 1
+    },
+    "assets-images-test": {
       "frequency": 1,
       "connectivity": 8,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "the-day": {
+    "opening-no-title": {
       "frequency": 1,
-      "connectivity": 8,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "images-lizzo": {
+      "frequency": 1,
+      "connectivity": 17,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "opening-skwintcheee": {
+    "whatever-this": {
       "frequency": 1,
-      "connectivity": 2,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-this": {
+      "frequency": 4,
+      "connectivity": 14,
+      "search_signal": 8,
+      "excerpt_signal": 0,
+      "word_signal": 7
+    },
+    "opening-post": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "fighters-the-pretender": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "foo-fighters-the": {
+      "frequency": 1,
+      "connectivity": 17,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
@@ -5355,60 +5222,123 @@
       "connectivity": 2,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "opening-this": {
-      "frequency": 4,
-      "connectivity": 14,
-      "search_signal": 8,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "tea": {
+    "opening-no": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "morning-a": {
+    "still": {
       "frequency": 1,
-      "connectivity": 8,
+      "connectivity": 5,
       "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
+      "excerpt_signal": 1,
+      "word_signal": 2
     },
-    "still-warm": {
+    "concept-just-thinking": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 1
     },
-    "opening-yes-and": {
+    "no": {
+      "frequency": 2,
+      "connectivity": 12,
+      "search_signal": 4,
+      "excerpt_signal": 0,
+      "word_signal": 4
+    },
+    "and": {
       "frequency": 1,
       "connectivity": 8,
       "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
+      "excerpt_signal": 1,
+      "word_signal": 2
     },
-    "as-hell": {
+    "website-building": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "no-title": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "as-hell-1": {
       "frequency": 1,
       "connectivity": 17,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "love-concept": {
+    "conversing": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "assets-entry": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 1
     },
-    "assets-images-test": {
+    "still-warm": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "whatever-this-is": {
       "frequency": 1,
       "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-idea": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "post-this": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept": {
+      "frequency": 11,
+      "connectivity": 32,
+      "search_signal": 22,
+      "excerpt_signal": 0,
+      "word_signal": 15
+    },
+    "assets-page-template": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "lizzo-good-as": {
+      "frequency": 1,
+      "connectivity": 17,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
@@ -5420,44 +5350,65 @@
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "concept-experimenting": {
+    "opening-love": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "liz": {
       "frequency": 1,
       "connectivity": 2,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "the-pretender": {
+    "opening": {
+      "frequency": 23,
+      "connectivity": 91,
+      "search_signal": 46,
+      "excerpt_signal": 3,
+      "word_signal": 42
+    },
+    "assets": {
+      "frequency": 7,
+      "connectivity": 59,
+      "search_signal": 14,
+      "excerpt_signal": 0,
+      "word_signal": 3
+    },
+    "good": {
       "frequency": 1,
       "connectivity": 17,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "concept-iced": {
+    "sold": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "images-lizzo": {
+    "about-conversing": {
       "frequency": 1,
-      "connectivity": 17,
+      "connectivity": 2,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 1
     },
-    "lizzo": {
+    "yes-and-no": {
       "frequency": 1,
-      "connectivity": 17,
+      "connectivity": 8,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "assets-updates": {
+    "pretender-1": {
       "frequency": 1,
-      "connectivity": 5,
+      "connectivity": 17,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
@@ -5469,47 +5420,131 @@
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "homepage-intelligence": {
+    "decaf": {
       "frequency": 1,
-      "connectivity": 8,
+      "connectivity": 5,
       "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
+      "excerpt_signal": 1,
+      "word_signal": 2
     },
-    "post-this": {
+    "opening-post-this": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "blocks": {
+    "building": {
       "frequency": 1,
-      "connectivity": 8,
+      "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 1
     },
-    "opening-tom": {
+    "origin": {
       "frequency": 1,
       "connectivity": 2,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "concept-just": {
+    "template": {
+      "frequency": 2,
+      "connectivity": 9,
+      "search_signal": 4,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "another-yesterday": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "this-you": {
+    "opening-sold-out": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "assets-images-foo": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 2,
+      "excerpt_signal": 0,
       "word_signal": 0
+    },
+    "pretender": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "just": {
+      "frequency": 2,
+      "connectivity": 10,
+      "search_signal": 4,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "opening-cooling-tea": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "the-pretender": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "gloomy": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "cooling": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-yes-and": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "a": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-iced": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "the-day-before": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
     },
     "inviting": {
       "frequency": 1,
@@ -5518,49 +5553,7 @@
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "concept-idea": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-love": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "too": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "concept-zone": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-still-warm": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "concept-website-building": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-whatever": {
+    "homepage-intelligence": {
       "frequency": 1,
       "connectivity": 8,
       "search_signal": 2,
@@ -5574,336 +5567,49 @@
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "concept-origin": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "noticing": {
-      "frequency": 2,
-      "connectivity": 5,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "template": {
-      "frequency": 2,
-      "connectivity": 9,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "listening": {
-      "frequency": 2,
-      "connectivity": 5,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "pretender": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "this": {
-      "frequency": 6,
-      "connectivity": 25,
-      "search_signal": 12,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "sold": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening": {
-      "frequency": 23,
-      "connectivity": 91,
-      "search_signal": 46,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "concept-evolving": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
     "this-is": {
       "frequency": 1,
       "connectivity": 8,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "cooling-tea": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "test": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "skwintcheee": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "gloomy": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-another-yesterday": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "just-thinking": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-another": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "intelligence": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "the": {
-      "frequency": 2,
-      "connectivity": 25,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "hell": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-whatever-this": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "just-listening": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "fighters-the-pretender": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "shared": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-the-day": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-yes": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "day-before": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "page": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "gathering": {
-      "frequency": 1,
-      "connectivity": 0,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "noticing-shared": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "images": {
+    "this-morning": {
       "frequency": 3,
-      "connectivity": 37,
+      "connectivity": 11,
       "search_signal": 6,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 6
     },
-    "entry": {
+    "opening-open": {
       "frequency": 1,
-      "connectivity": 5,
+      "connectivity": 2,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "the-day-before": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "no-title": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "assets-entry": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "title": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-the": {
+    "yes-and": {
       "frequency": 1,
       "connectivity": 8,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "test-image": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "iced-coffee": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "foo-fighters-the": {
+    "lizzo-good": {
       "frequency": 1,
       "connectivity": 17,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "ici": {
+    "image": {
       "frequency": 1,
-      "connectivity": 2,
+      "connectivity": 8,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "concept-ici": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "1": {
-      "frequency": 2,
-      "connectivity": 31,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "pretender-1": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "temp": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "concept-iced-coffee": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-sold": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "day": {
+    "assets-homepage": {
       "frequency": 1,
       "connectivity": 8,
       "search_signal": 2,
@@ -5917,58 +5623,226 @@
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "liz": {
+    "concept-evolving": {
       "frequency": 1,
       "connectivity": 2,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "concept": {
-      "frequency": 11,
-      "connectivity": 32,
-      "search_signal": 22,
+    "opening-gloomy": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
+    },
+    "before": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
     },
     "yes": {
       "frequency": 1,
       "connectivity": 8,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "coffee": {
+    "opening-another-yesterday": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "cooling": {
+    "opening-love-concept": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 1
     },
-    "concept-just-thinking": {
+    "opening-this-you": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "whatever": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "blocks": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
       "word_signal": 0
     },
-    "good": {
+    "lizzo": {
       "frequency": 1,
       "connectivity": 17,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "evolving": {
+    "just-thinking": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "day": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "the": {
+      "frequency": 2,
+      "connectivity": 25,
+      "search_signal": 4,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "concept-zone": {
       "frequency": 1,
       "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "skwintcheee": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "assets-updates-temp": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "entry": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "images-test-image": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "concept-website": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "opening-whatever": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "concept-experimenting": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "updates-temp": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "foo-fighters": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-just-listening": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "temp": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "morning": {
+      "frequency": 3,
+      "connectivity": 11,
+      "search_signal": 6,
+      "excerpt_signal": 0,
+      "word_signal": 6
+    },
+    "images-lizzo-good": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "zone": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "concept-origin": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "intelligence": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-sold": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "images-test": {
+      "frequency": 1,
+      "connectivity": 8,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
@@ -5980,101 +5854,269 @@
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "as": {
+    "idea": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "entry-template": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "this-morning-too": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "assets-images": {
+      "frequency": 3,
+      "connectivity": 37,
+      "search_signal": 6,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "is": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "assets-updates": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "this-you": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "opening-just": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "ici": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "fighters": {
       "frequency": 1,
       "connectivity": 17,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "assets-page": {
+    "hell": {
       "frequency": 1,
-      "connectivity": 5,
+      "connectivity": 17,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "lukewarm-decaf": {
+    "opening-yesterday": {
       "frequency": 1,
-      "connectivity": 5,
+      "connectivity": 2,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
     "opening-lukewarm-decaf": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "conversing": {
+    "assets-images-lizzo": {
       "frequency": 1,
-      "connectivity": 2,
+      "connectivity": 17,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "intelligence-blocks": {
+    "concept-ici": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "noticing-shared-experiences": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "love": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "cooling-tea": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "too": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "love-concept": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "tea": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "this-morning-a": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "homepage": {
       "frequency": 1,
       "connectivity": 8,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
+    },
+    "post": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "yesterday": {
+      "frequency": 2,
+      "connectivity": 6,
+      "search_signal": 4,
+      "excerpt_signal": 0,
+      "word_signal": 4
     },
     "opening-lukewarm": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "fighters-the": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 2,
+      "excerpt_signal": 0,
       "word_signal": 0
     },
-    "this-morning": {
+    "page": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "the-day": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-this-morning": {
       "frequency": 3,
       "connectivity": 11,
       "search_signal": 6,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 6
     },
-    "warm": {
+    "thinking": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 1
     },
-    "page-template": {
+    "out": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "you": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "sold-out": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "welcome": {
-      "frequency": 1,
-      "connectivity": 0,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "whatever-this-is": {
+    "assets-homepage-intelligence": {
       "frequency": 1,
       "connectivity": 8,
       "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "noticing-shared": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "opening-skwintcheee": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "this": {
+      "frequency": 6,
+      "connectivity": 25,
+      "search_signal": 12,
+      "excerpt_signal": 5,
+      "word_signal": 11
+    },
+    "as-hell": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0
+    },
+    "1": {
+      "frequency": 2,
+      "connectivity": 31,
+      "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 0
     },
@@ -6085,264 +6127,222 @@
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "just": {
-      "frequency": 2,
-      "connectivity": 10,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-no-title": {
+    "assets-entry-template": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "experiences": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
       "word_signal": 0
     },
-    "website-building": {
+    "page-template": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 1
     },
-    "opening-yesterday": {
+    "coffee": {
       "frequency": 1,
-      "connectivity": 2,
+      "connectivity": 5,
       "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
+      "excerpt_signal": 1,
+      "word_signal": 2
     },
-    "updates-temp": {
+    "concept-iced-coffee": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "opening-cooling-tea": {
+    "title": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "post": {
+    "assets-page": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 1
     },
     "tom": {
       "frequency": 1,
       "connectivity": 2,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "another-yesterday": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "before": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "no": {
-      "frequency": 2,
-      "connectivity": 12,
-      "search_signal": 4,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "morning": {
-      "frequency": 3,
-      "connectivity": 11,
-      "search_signal": 6,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "zone": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "and": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "this-morning-too": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "as-hell-1": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "whatever-this": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-open": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "images-test-image": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "morning-too": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "assets-page-template": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "lizzo-good": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-liz": {
-      "frequency": 1,
-      "connectivity": 2,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "lizzo-good-as": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "building": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "opening-no": {
-      "frequency": 1,
-      "connectivity": 5,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "and-no": {
-      "frequency": 1,
-      "connectivity": 8,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "images-lizzo-good": {
-      "frequency": 1,
-      "connectivity": 17,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
     "opening-cooling": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
     },
-    "assets": {
-      "frequency": 7,
-      "connectivity": 59,
-      "search_signal": 14,
-      "excerpt_signal": 0,
-      "word_signal": 0
-    },
-    "assets-images-foo": {
+    "concept-website-building": {
       "frequency": 1,
-      "connectivity": 17,
+      "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 1
     },
-    "assets-images-lizzo": {
+    "updates": {
       "frequency": 1,
-      "connectivity": 17,
+      "connectivity": 5,
       "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 1
+    },
+    "opening-the": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "noticing": {
+      "frequency": 2,
+      "connectivity": 5,
+      "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "idea": {
+    "opening-tom": {
       "frequency": 1,
       "connectivity": 2,
       "search_signal": 2,
       "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "as": {
+      "frequency": 1,
+      "connectivity": 17,
+      "search_signal": 2,
+      "excerpt_signal": 0,
       "word_signal": 0
     },
-    "this-morning-a": {
+    "test": {
       "frequency": 1,
       "connectivity": 8,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0
     },
-    "opening-still": {
+    "shared": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
-      "excerpt_signal": 0,
+      "excerpt_signal": 1,
       "word_signal": 0
     },
-    "entry-template": {
+    "opening-another": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
+    },
+    "opening-the-day": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "just-listening": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "iced-coffee": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "morning-too": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "opening-liz": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
     },
     "lukewarm": {
       "frequency": 1,
       "connectivity": 5,
       "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "sold-out": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "day-before": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 0
+      "word_signal": 2
+    },
+    "concept-just": {
+      "frequency": 1,
+      "connectivity": 5,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 1
+    },
+    "open": {
+      "frequency": 1,
+      "connectivity": 2,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "about": {
+      "frequency": 2,
+      "connectivity": 2,
+      "search_signal": 4,
+      "excerpt_signal": 1,
+      "word_signal": 2
+    },
+    "opening-whatever-this": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
+    },
+    "morning-a": {
+      "frequency": 1,
+      "connectivity": 8,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2
     }
   },
   "page_graph": {
@@ -6353,7 +6353,16 @@
         "about-conversing"
       ],
       "related": [
-        "https://unboundhealing.org/about/"
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/supporting/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/about/",
+        "https://unboundhealing.org/opening/sold-out/"
       ]
     },
     "https://unboundhealing.org/about/": {
@@ -6361,7 +6370,16 @@
         "about"
       ],
       "related": [
-        "https://unboundhealing.org/about/conversing/"
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/concept/evolving/"
       ]
     },
     "https://unboundhealing.org/assets/entry-template/": {
@@ -6375,15 +6393,15 @@
       ],
       "related": [
         "https://unboundhealing.org/assets/page-template/",
-        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
         "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
         "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
-        "https://unboundhealing.org/assets/images/_html/test_image/",
-        "https://unboundhealing.org/assets/updates-temp/",
-        "https://unboundhealing.org/inviting/",
-        "https://unboundhealing.org/listening/",
+        "https://unboundhealing.org/noticing/shared-experiences/",
+        "https://unboundhealing.org/",
         "https://unboundhealing.org/noticing/",
-        "https://unboundhealing.org/noticing/shared-experiences/"
+        "https://unboundhealing.org/assets/updates-temp/",
+        "https://unboundhealing.org/concept/ici/",
+        "https://unboundhealing.org/assets/images/_html/test_image/",
+        "https://unboundhealing.org/assets/homepage-intelligence-blocks/"
       ]
     },
     "https://unboundhealing.org/assets/homepage-intelligence-blocks/": {
@@ -6436,13 +6454,13 @@
         "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
         "https://unboundhealing.org/assets/images/_html/test_image/",
         "https://unboundhealing.org/assets/entry-template/",
-        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
         "https://unboundhealing.org/assets/page-template/",
         "https://unboundhealing.org/assets/updates-temp/",
+        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
         "https://unboundhealing.org/opening/the-day-before/",
-        "https://unboundhealing.org/inviting/",
-        "https://unboundhealing.org/listening/",
-        "https://unboundhealing.org/noticing/"
+        "https://unboundhealing.org/noticing/",
+        "https://unboundhealing.org/about/",
+        "https://unboundhealing.org/about/conversing/"
       ]
     },
     "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/": {
@@ -6470,13 +6488,13 @@
         "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
         "https://unboundhealing.org/assets/images/_html/test_image/",
         "https://unboundhealing.org/assets/entry-template/",
-        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
         "https://unboundhealing.org/assets/page-template/",
         "https://unboundhealing.org/assets/updates-temp/",
-        "https://unboundhealing.org/inviting/",
-        "https://unboundhealing.org/listening/",
-        "https://unboundhealing.org/noticing/",
-        "https://unboundhealing.org/noticing/shared-experiences/"
+        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
+        "https://unboundhealing.org/concept/zone/",
+        "https://unboundhealing.org/noticing/shared-experiences/",
+        "https://unboundhealing.org/concept/experimenting/",
+        "https://unboundhealing.org/concept/iced-coffee/"
       ]
     },
     "https://unboundhealing.org/assets/images/_html/test_image/": {
@@ -6495,12 +6513,12 @@
         "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
         "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
         "https://unboundhealing.org/assets/entry-template/",
-        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
         "https://unboundhealing.org/assets/page-template/",
         "https://unboundhealing.org/assets/updates-temp/",
+        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
         "https://unboundhealing.org/inviting/",
-        "https://unboundhealing.org/listening/",
         "https://unboundhealing.org/noticing/",
+        "https://unboundhealing.org/listening/",
         "https://unboundhealing.org/noticing/shared-experiences/"
       ]
     },
@@ -6515,15 +6533,15 @@
       ],
       "related": [
         "https://unboundhealing.org/assets/entry-template/",
-        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
         "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
         "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
-        "https://unboundhealing.org/assets/images/_html/test_image/",
-        "https://unboundhealing.org/assets/updates-temp/",
-        "https://unboundhealing.org/inviting/",
-        "https://unboundhealing.org/listening/",
+        "https://unboundhealing.org/noticing/shared-experiences/",
+        "https://unboundhealing.org/",
         "https://unboundhealing.org/noticing/",
-        "https://unboundhealing.org/noticing/shared-experiences/"
+        "https://unboundhealing.org/assets/updates-temp/",
+        "https://unboundhealing.org/assets/images/_html/test_image/",
+        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
+        "https://unboundhealing.org/gathering/"
       ]
     },
     "https://unboundhealing.org/assets/updates-temp/": {
@@ -6536,16 +6554,16 @@
         "assets-updates-temp"
       ],
       "related": [
-        "https://unboundhealing.org/assets/entry-template/",
-        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
-        "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
-        "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
-        "https://unboundhealing.org/assets/images/_html/test_image/",
-        "https://unboundhealing.org/assets/page-template/",
-        "https://unboundhealing.org/inviting/",
-        "https://unboundhealing.org/listening/",
-        "https://unboundhealing.org/noticing/",
-        "https://unboundhealing.org/noticing/shared-experiences/"
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/the-day-before/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/liz/"
       ]
     },
     "https://unboundhealing.org/concept/evolving/": {
@@ -6555,16 +6573,16 @@
         "concept-evolving"
       ],
       "related": [
-        "https://unboundhealing.org/concept/",
-        "https://unboundhealing.org/concept/experimenting/",
-        "https://unboundhealing.org/concept/iced-coffee/",
-        "https://unboundhealing.org/concept/ici/",
-        "https://unboundhealing.org/concept/idea/",
-        "https://unboundhealing.org/concept/just-thinking/",
         "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/concept/idea/",
         "https://unboundhealing.org/concept/website-building/",
-        "https://unboundhealing.org/concept/zone/",
-        "https://unboundhealing.org/opening/love-concept/"
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/opening/this-morning/"
       ]
     },
     "https://unboundhealing.org/concept/experimenting/": {
@@ -6574,16 +6592,16 @@
         "concept-experimenting"
       ],
       "related": [
-        "https://unboundhealing.org/concept/",
-        "https://unboundhealing.org/concept/evolving/",
         "https://unboundhealing.org/concept/iced-coffee/",
-        "https://unboundhealing.org/concept/ici/",
-        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/sold-out/",
         "https://unboundhealing.org/concept/just-thinking/",
-        "https://unboundhealing.org/concept/origin/",
-        "https://unboundhealing.org/concept/website-building/",
         "https://unboundhealing.org/concept/zone/",
-        "https://unboundhealing.org/opening/love-concept/"
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/opening/skwintcheee/"
       ]
     },
     "https://unboundhealing.org/concept/iced-coffee/": {
@@ -6596,16 +6614,16 @@
         "concept-iced-coffee"
       ],
       "related": [
-        "https://unboundhealing.org/concept/",
-        "https://unboundhealing.org/concept/evolving/",
-        "https://unboundhealing.org/concept/experimenting/",
-        "https://unboundhealing.org/concept/ici/",
         "https://unboundhealing.org/concept/idea/",
-        "https://unboundhealing.org/concept/just-thinking/",
         "https://unboundhealing.org/concept/origin/",
         "https://unboundhealing.org/concept/website-building/",
-        "https://unboundhealing.org/concept/zone/",
-        "https://unboundhealing.org/opening/love-concept/"
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/concept/experimenting/"
       ]
     },
     "https://unboundhealing.org/concept/ici/": {
@@ -6615,16 +6633,16 @@
         "concept-ici"
       ],
       "related": [
-        "https://unboundhealing.org/concept/",
-        "https://unboundhealing.org/concept/evolving/",
-        "https://unboundhealing.org/concept/experimenting/",
-        "https://unboundhealing.org/concept/iced-coffee/",
-        "https://unboundhealing.org/concept/idea/",
-        "https://unboundhealing.org/concept/just-thinking/",
         "https://unboundhealing.org/concept/origin/",
         "https://unboundhealing.org/concept/website-building/",
-        "https://unboundhealing.org/concept/zone/",
-        "https://unboundhealing.org/opening/love-concept/"
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/opening/the-day-before/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/opening/this-morning-a/"
       ]
     },
     "https://unboundhealing.org/concept/idea/": {
@@ -6634,16 +6652,16 @@
         "concept-idea"
       ],
       "related": [
-        "https://unboundhealing.org/concept/",
-        "https://unboundhealing.org/concept/evolving/",
-        "https://unboundhealing.org/concept/experimenting/",
         "https://unboundhealing.org/concept/iced-coffee/",
-        "https://unboundhealing.org/concept/ici/",
-        "https://unboundhealing.org/concept/just-thinking/",
         "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/opening/this-morning/",
         "https://unboundhealing.org/concept/website-building/",
-        "https://unboundhealing.org/concept/zone/",
-        "https://unboundhealing.org/opening/love-concept/"
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/concept/evolving/"
       ]
     },
     "https://unboundhealing.org/concept/": {
@@ -6651,16 +6669,16 @@
         "concept"
       ],
       "related": [
-        "https://unboundhealing.org/concept/evolving/",
-        "https://unboundhealing.org/concept/experimenting/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/website-building/",
         "https://unboundhealing.org/concept/iced-coffee/",
         "https://unboundhealing.org/concept/ici/",
-        "https://unboundhealing.org/concept/idea/",
-        "https://unboundhealing.org/concept/just-thinking/",
-        "https://unboundhealing.org/concept/origin/",
-        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/concept/evolving/",
+        "https://unboundhealing.org/concept/experimenting/",
         "https://unboundhealing.org/concept/zone/",
-        "https://unboundhealing.org/opening/love-concept/"
+        "https://unboundhealing.org/"
       ]
     },
     "https://unboundhealing.org/concept/just-thinking/": {
@@ -6673,16 +6691,16 @@
         "concept-just-thinking"
       ],
       "related": [
-        "https://unboundhealing.org/concept/",
-        "https://unboundhealing.org/concept/evolving/",
-        "https://unboundhealing.org/concept/experimenting/",
-        "https://unboundhealing.org/concept/iced-coffee/",
-        "https://unboundhealing.org/concept/ici/",
         "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/concept/iced-coffee/",
         "https://unboundhealing.org/concept/origin/",
-        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/concept/experimenting/",
         "https://unboundhealing.org/concept/zone/",
-        "https://unboundhealing.org/opening/just-listening/"
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/this-morning/"
       ]
     },
     "https://unboundhealing.org/concept/origin/": {
@@ -6692,16 +6710,16 @@
         "concept-origin"
       ],
       "related": [
-        "https://unboundhealing.org/concept/",
         "https://unboundhealing.org/concept/evolving/",
-        "https://unboundhealing.org/concept/experimenting/",
         "https://unboundhealing.org/concept/iced-coffee/",
-        "https://unboundhealing.org/concept/ici/",
         "https://unboundhealing.org/concept/idea/",
-        "https://unboundhealing.org/concept/just-thinking/",
         "https://unboundhealing.org/concept/website-building/",
-        "https://unboundhealing.org/concept/zone/",
-        "https://unboundhealing.org/opening/love-concept/"
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/concept/ici/"
       ]
     },
     "https://unboundhealing.org/concept/website-building/": {
@@ -6714,16 +6732,16 @@
         "concept-website-building"
       ],
       "related": [
-        "https://unboundhealing.org/concept/",
-        "https://unboundhealing.org/concept/evolving/",
-        "https://unboundhealing.org/concept/experimenting/",
         "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/skwintcheee/",
         "https://unboundhealing.org/concept/ici/",
         "https://unboundhealing.org/concept/idea/",
-        "https://unboundhealing.org/concept/just-thinking/",
-        "https://unboundhealing.org/concept/origin/",
-        "https://unboundhealing.org/concept/zone/",
-        "https://unboundhealing.org/opening/love-concept/"
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/concept/experimenting/",
+        "https://unboundhealing.org/opening/this-morning-a/"
       ]
     },
     "https://unboundhealing.org/concept/zone/": {
@@ -6733,43 +6751,65 @@
         "concept-zone"
       ],
       "related": [
-        "https://unboundhealing.org/concept/",
-        "https://unboundhealing.org/concept/evolving/",
         "https://unboundhealing.org/concept/experimenting/",
-        "https://unboundhealing.org/concept/iced-coffee/",
-        "https://unboundhealing.org/concept/ici/",
-        "https://unboundhealing.org/concept/idea/",
         "https://unboundhealing.org/concept/just-thinking/",
-        "https://unboundhealing.org/concept/origin/",
-        "https://unboundhealing.org/concept/website-building/",
-        "https://unboundhealing.org/opening/love-concept/"
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/concept/iced-coffee/"
       ]
     },
     "https://unboundhealing.org/gathering/": {
       "concepts": [
         "gathering"
       ],
-      "related": []
+      "related": [
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/noticing/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/noticing/shared-experiences/"
+      ]
     },
     "https://unboundhealing.org/": {
       "concepts": [],
-      "related": []
+      "related": [
+        "https://unboundhealing.org/about/",
+        "https://unboundhealing.org/supporting/",
+        "https://unboundhealing.org/noticing/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/"
+      ]
     },
     "https://unboundhealing.org/inviting/": {
       "concepts": [
         "inviting"
       ],
       "related": [
-        "https://unboundhealing.org/assets/entry-template/",
-        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
-        "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
-        "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
-        "https://unboundhealing.org/assets/images/_html/test_image/",
-        "https://unboundhealing.org/assets/page-template/",
-        "https://unboundhealing.org/assets/updates-temp/",
-        "https://unboundhealing.org/listening/",
-        "https://unboundhealing.org/noticing/",
-        "https://unboundhealing.org/noticing/shared-experiences/"
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/about/",
+        "https://unboundhealing.org/opening/still-warm/",
+        "https://unboundhealing.org/opening/gloomy/"
       ]
     },
     "https://unboundhealing.org/listening/": {
@@ -6777,16 +6817,16 @@
         "listening"
       ],
       "related": [
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/concept/experimenting/",
+        "https://unboundhealing.org/noticing/shared-experiences/",
+        "https://unboundhealing.org/concept/just-thinking/",
+        "https://unboundhealing.org/opening/this-you/",
         "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/assets/entry-template/",
-        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
-        "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
-        "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
-        "https://unboundhealing.org/assets/images/_html/test_image/",
-        "https://unboundhealing.org/assets/page-template/",
-        "https://unboundhealing.org/assets/updates-temp/",
-        "https://unboundhealing.org/inviting/",
-        "https://unboundhealing.org/noticing/"
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/opening/love-concept/"
       ]
     },
     "https://unboundhealing.org/noticing/": {
@@ -6795,15 +6835,15 @@
       ],
       "related": [
         "https://unboundhealing.org/noticing/shared-experiences/",
-        "https://unboundhealing.org/assets/entry-template/",
-        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
-        "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
-        "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
-        "https://unboundhealing.org/assets/images/_html/test_image/",
-        "https://unboundhealing.org/assets/page-template/",
+        "https://unboundhealing.org/",
+        "https://unboundhealing.org/gathering/",
+        "https://unboundhealing.org/opening/liz/",
         "https://unboundhealing.org/assets/updates-temp/",
-        "https://unboundhealing.org/inviting/",
-        "https://unboundhealing.org/listening/"
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/concept/ici/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/opening/cooling-tea/"
       ]
     },
     "https://unboundhealing.org/noticing/shared-experiences/": {
@@ -6817,15 +6857,15 @@
       ],
       "related": [
         "https://unboundhealing.org/noticing/",
-        "https://unboundhealing.org/assets/entry-template/",
-        "https://unboundhealing.org/assets/homepage-intelligence-blocks/",
-        "https://unboundhealing.org/assets/images/_html/foo_fighters_the_pretender_1/",
-        "https://unboundhealing.org/assets/images/_html/lizzo_good_as_hell_1/",
-        "https://unboundhealing.org/assets/images/_html/test_image/",
-        "https://unboundhealing.org/assets/page-template/",
+        "https://unboundhealing.org/about/",
         "https://unboundhealing.org/assets/updates-temp/",
-        "https://unboundhealing.org/inviting/",
-        "https://unboundhealing.org/listening/"
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/concept/experimenting/",
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/gathering/",
+        "https://unboundhealing.org/concept/idea/"
       ]
     },
     "https://unboundhealing.org/opening/another-yesterday/": {
@@ -6838,16 +6878,16 @@
         "opening-another-yesterday"
       ],
       "related": [
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/skwintcheee/",
         "https://unboundhealing.org/opening/yesterday/",
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/opening/liz/",
-        "https://unboundhealing.org/opening/love-concept/",
-        "https://unboundhealing.org/opening/lukewarm-decaf/",
-        "https://unboundhealing.org/opening/no-title/",
-        "https://unboundhealing.org/opening/open/"
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/love-concept/"
       ]
     },
     "https://unboundhealing.org/opening/cooling-tea/": {
@@ -6860,16 +6900,16 @@
         "opening-cooling-tea"
       ],
       "related": [
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/opening/post-this/",
         "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/opening/liz/",
-        "https://unboundhealing.org/opening/love-concept/",
-        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/",
         "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/love-concept/",
         "https://unboundhealing.org/opening/open/",
-        "https://unboundhealing.org/opening/post-this/"
+        "https://unboundhealing.org/opening/the-day-before/",
+        "https://unboundhealing.org/concept/origin/",
+        "https://unboundhealing.org/opening/this-morning/"
       ]
     },
     "https://unboundhealing.org/opening/gloomy/": {
@@ -6879,16 +6919,16 @@
         "opening-gloomy"
       ],
       "related": [
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/opening/liz/",
-        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/yes-and-no/",
         "https://unboundhealing.org/opening/lukewarm-decaf/",
-        "https://unboundhealing.org/opening/no-title/",
-        "https://unboundhealing.org/opening/open/",
-        "https://unboundhealing.org/opening/post-this/"
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/concept/idea/",
+        "https://unboundhealing.org/opening/still-warm/",
+        "https://unboundhealing.org/opening/this-you/"
       ]
     },
     "https://unboundhealing.org/opening/": {
@@ -6896,15 +6936,15 @@
         "opening"
       ],
       "related": [
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/opening/liz/",
-        "https://unboundhealing.org/opening/love-concept/",
         "https://unboundhealing.org/opening/lukewarm-decaf/",
-        "https://unboundhealing.org/opening/no-title/",
-        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/still-warm/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/the-day-before/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/this-morning-a/",
         "https://unboundhealing.org/opening/post-this/"
       ]
     },
@@ -6918,16 +6958,16 @@
         "opening-just-listening"
       ],
       "related": [
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/liz/",
-        "https://unboundhealing.org/opening/love-concept/",
-        "https://unboundhealing.org/opening/lukewarm-decaf/",
-        "https://unboundhealing.org/opening/no-title/",
         "https://unboundhealing.org/opening/open/",
-        "https://unboundhealing.org/opening/post-this/"
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/concept/website-building/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/concept/iced-coffee/"
       ]
     },
     "https://unboundhealing.org/opening/liz/": {
@@ -6937,16 +6977,16 @@
         "opening-liz"
       ],
       "related": [
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/still-warm/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/sold-out/",
         "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/opening/love-concept/",
-        "https://unboundhealing.org/opening/lukewarm-decaf/",
         "https://unboundhealing.org/opening/no-title/",
         "https://unboundhealing.org/opening/open/",
-        "https://unboundhealing.org/opening/post-this/"
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/tom/"
       ]
     },
     "https://unboundhealing.org/opening/love-concept/": {
@@ -6959,16 +6999,16 @@
         "opening-love-concept"
       ],
       "related": [
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/opening/liz/",
-        "https://unboundhealing.org/opening/lukewarm-decaf/",
         "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/opening/this-morning/",
         "https://unboundhealing.org/opening/open/",
-        "https://unboundhealing.org/opening/post-this/"
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/the-day-before/",
+        "https://unboundhealing.org/opening/just-listening/"
       ]
     },
     "https://unboundhealing.org/opening/lukewarm-decaf/": {
@@ -6981,16 +7021,16 @@
         "opening-lukewarm-decaf"
       ],
       "related": [
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/opening/liz/",
-        "https://unboundhealing.org/opening/love-concept/",
         "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/sold-out/",
         "https://unboundhealing.org/opening/open/",
-        "https://unboundhealing.org/opening/post-this/"
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/this-you/"
       ]
     },
     "https://unboundhealing.org/opening/no-title/": {
@@ -7003,16 +7043,16 @@
         "opening-no-title"
       ],
       "related": [
-        "https://unboundhealing.org/opening/yes-and-no/",
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/opening/liz/",
-        "https://unboundhealing.org/opening/love-concept/",
         "https://unboundhealing.org/opening/lukewarm-decaf/",
-        "https://unboundhealing.org/opening/open/"
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/still-warm/",
+        "https://unboundhealing.org/opening/the-day-before/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/whatever-this-is/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/tom/"
       ]
     },
     "https://unboundhealing.org/opening/open/": {
@@ -7022,16 +7062,16 @@
         "opening-open"
       ],
       "related": [
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/opening/liz/",
-        "https://unboundhealing.org/opening/love-concept/",
-        "https://unboundhealing.org/opening/lukewarm-decaf/",
-        "https://unboundhealing.org/opening/no-title/",
-        "https://unboundhealing.org/opening/post-this/"
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/supporting/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/tom/",
+        "https://unboundhealing.org/opening/love-concept/"
       ]
     },
     "https://unboundhealing.org/opening/post-this/": {
@@ -7045,15 +7085,15 @@
       ],
       "related": [
         "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/open/",
         "https://unboundhealing.org/opening/this-morning-too/",
-        "https://unboundhealing.org/opening/this-morning/",
-        "https://unboundhealing.org/opening/this-you/",
-        "https://unboundhealing.org/opening/whatever-this-is/",
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/supporting/",
         "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/"
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/the-day-before/"
       ]
     },
     "https://unboundhealing.org/opening/skwintcheee/": {
@@ -7063,16 +7103,16 @@
         "opening-skwintcheee"
       ],
       "related": [
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/sold-out/",
         "https://unboundhealing.org/opening/love-concept/",
-        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/gloomy/",
         "https://unboundhealing.org/opening/no-title/",
-        "https://unboundhealing.org/opening/open/"
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/tom/"
       ]
     },
     "https://unboundhealing.org/opening/sold-out/": {
@@ -7085,16 +7125,16 @@
         "opening-sold-out"
       ],
       "related": [
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/opening/liz/",
-        "https://unboundhealing.org/opening/love-concept/",
-        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/open/",
         "https://unboundhealing.org/opening/no-title/",
-        "https://unboundhealing.org/opening/open/"
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/still-warm/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/the-day-before/"
       ]
     },
     "https://unboundhealing.org/opening/still-warm/": {
@@ -7107,16 +7147,16 @@
         "opening-still-warm"
       ],
       "related": [
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/opening/liz/",
-        "https://unboundhealing.org/opening/love-concept/",
-        "https://unboundhealing.org/opening/lukewarm-decaf/",
         "https://unboundhealing.org/opening/no-title/",
-        "https://unboundhealing.org/opening/open/"
+        "https://unboundhealing.org/opening/the-day-before/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/gloomy/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/"
       ]
     },
     "https://unboundhealing.org/opening/the-day-before/": {
@@ -7132,16 +7172,16 @@
         "the-day-before"
       ],
       "related": [
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/opening/liz/",
-        "https://unboundhealing.org/opening/love-concept/",
-        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/still-warm/",
         "https://unboundhealing.org/opening/no-title/",
-        "https://unboundhealing.org/opening/open/"
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/gloomy/"
       ]
     },
     "https://unboundhealing.org/opening/this-morning-a/": {
@@ -7158,15 +7198,15 @@
       ],
       "related": [
         "https://unboundhealing.org/opening/this-morning-too/",
-        "https://unboundhealing.org/opening/this-morning/",
-        "https://unboundhealing.org/opening/this-you/",
         "https://unboundhealing.org/opening/post-this/",
-        "https://unboundhealing.org/opening/whatever-this-is/",
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/"
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/supporting/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/the-day-before/"
       ]
     },
     "https://unboundhealing.org/opening/this-morning-too/": {
@@ -7183,15 +7223,15 @@
       ],
       "related": [
         "https://unboundhealing.org/opening/this-morning-a/",
-        "https://unboundhealing.org/opening/this-morning/",
-        "https://unboundhealing.org/opening/this-you/",
+        "https://unboundhealing.org/opening/yes-and-no/",
         "https://unboundhealing.org/opening/post-this/",
-        "https://unboundhealing.org/opening/whatever-this-is/",
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/"
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/supporting/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/this-you/"
       ]
     },
     "https://unboundhealing.org/opening/this-morning/": {
@@ -7206,14 +7246,14 @@
       "related": [
         "https://unboundhealing.org/opening/this-morning-a/",
         "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/open/",
         "https://unboundhealing.org/opening/this-you/",
-        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/skwintcheee/",
         "https://unboundhealing.org/opening/whatever-this-is/",
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/"
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/the-day-before/"
       ]
     },
     "https://unboundhealing.org/opening/this-you/": {
@@ -7227,15 +7267,15 @@
       ],
       "related": [
         "https://unboundhealing.org/opening/this-morning-a/",
-        "https://unboundhealing.org/opening/this-morning-too/",
         "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/skwintcheee/",
         "https://unboundhealing.org/opening/post-this/",
-        "https://unboundhealing.org/opening/whatever-this-is/",
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
         "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/"
+        "https://unboundhealing.org/opening/still-warm/",
+        "https://unboundhealing.org/opening/liz/",
+        "https://unboundhealing.org/opening/sold-out/"
       ]
     },
     "https://unboundhealing.org/opening/tom/": {
@@ -7245,16 +7285,16 @@
         "opening-tom"
       ],
       "related": [
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/love-concept/",
         "https://unboundhealing.org/opening/cooling-tea/",
         "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/opening/liz/",
-        "https://unboundhealing.org/opening/love-concept/",
-        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/skwintcheee/",
         "https://unboundhealing.org/opening/no-title/",
-        "https://unboundhealing.org/opening/open/"
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/just-listening/",
+        "https://unboundhealing.org/opening/this-morning/",
+        "https://unboundhealing.org/concept/iced-coffee/"
       ]
     },
     "https://unboundhealing.org/opening/whatever-this-is/": {
@@ -7270,16 +7310,16 @@
         "whatever-this-is"
       ],
       "related": [
-        "https://unboundhealing.org/opening/post-this/",
-        "https://unboundhealing.org/opening/this-morning-a/",
-        "https://unboundhealing.org/opening/this-morning-too/",
         "https://unboundhealing.org/opening/this-morning/",
-        "https://unboundhealing.org/opening/this-you/",
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/"
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/still-warm/"
       ]
     },
     "https://unboundhealing.org/opening/yes-and-no/": {
@@ -7295,16 +7335,16 @@
         "yes-and-no"
       ],
       "related": [
-        "https://unboundhealing.org/opening/no-title/",
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/supporting/",
         "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/opening/liz/",
-        "https://unboundhealing.org/opening/love-concept/",
         "https://unboundhealing.org/opening/lukewarm-decaf/",
-        "https://unboundhealing.org/opening/open/"
+        "https://unboundhealing.org/opening/no-title/",
+        "https://unboundhealing.org/opening/sold-out/"
       ]
     },
     "https://unboundhealing.org/opening/yesterday/": {
@@ -7314,39 +7354,50 @@
         "opening-yesterday"
       ],
       "related": [
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/opening/liz/",
-        "https://unboundhealing.org/opening/love-concept/",
-        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/open/",
         "https://unboundhealing.org/opening/no-title/",
-        "https://unboundhealing.org/opening/open/"
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/another-yesterday/",
+        "https://unboundhealing.org/opening/still-warm/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/the-day-before/",
+        "https://unboundhealing.org/opening/gloomy/"
       ]
     },
     "https://unboundhealing.org/supporting/": {
       "concepts": [
         "supporting"
       ],
-      "related": []
+      "related": [
+        "https://unboundhealing.org/welcome/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/love-concept/",
+        "https://unboundhealing.org/about/conversing/"
+      ]
     },
     "https://unboundhealing.org/welcome/": {
       "concepts": [
         "welcome"
       ],
       "related": [
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/another-yesterday/",
-        "https://unboundhealing.org/opening/cooling-tea/",
-        "https://unboundhealing.org/opening/gloomy/",
-        "https://unboundhealing.org/opening/just-listening/",
-        "https://unboundhealing.org/opening/liz/",
-        "https://unboundhealing.org/opening/love-concept/",
-        "https://unboundhealing.org/opening/lukewarm-decaf/",
-        "https://unboundhealing.org/opening/no-title/",
-        "https://unboundhealing.org/opening/open/"
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/supporting/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/about/conversing/",
+        "https://unboundhealing.org/concept/iced-coffee/",
+        "https://unboundhealing.org/opening/lukewarm-decaf/"
       ]
     }
   }
