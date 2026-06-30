@@ -29,7 +29,7 @@
     ],
     "LEGACY_BRIDGE": [
       "/scripts/build-dependency-collapse-map.py",
-      "/scripts/build-semantic-words.py"
+      "/archive/build-semantic-words.py"
     ]
   },
   "files": [
@@ -73,13 +73,6 @@
       "classification": "CORE_CONSUMER",
       "reads_salience": true,
       "reads_legacy_graph": false,
-      "writes_output": true
-    },
-    {
-      "file": "/scripts/build-semantic-words.py",
-      "classification": "LEGACY_BRIDGE",
-      "reads_salience": true,
-      "reads_legacy_graph": true,
       "writes_output": true
     },
     {
@@ -150,6 +143,13 @@
       "classification": "ORPHAN_CANDIDATE",
       "reads_salience": false,
       "reads_legacy_graph": false,
+      "writes_output": true
+    },
+    {
+      "file": "/archive/build-semantic-words.py",
+      "classification": "LEGACY_BRIDGE",
+      "reads_salience": true,
+      "reads_legacy_graph": true,
       "writes_output": true
     }
   ]
