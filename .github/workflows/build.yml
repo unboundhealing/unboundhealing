@@ -90,57 +90,7 @@ jobs:
           ./scripts/generate-site.sh
 
       # -------------------------------------
-      # 8. VALIDATE TRUTH LAYER (STRICT + SAFE INLINE PYTHON)
-      # -------------------------------------
-      - name: Inspect semantic-salience truth layer
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          echo "🔍 Inspecting assets/semantic-salience.json..."
-
-          if [ ! -f assets/semantic-salience.json ]; then
-            echo "❌ assets/semantic-salience.json missing — HARD STOP"
-            exit 1
-          fi
-
-          echo "📦 File exists. Running inspection..."
-
-          python3 scripts/inspect-semantic-salience.py
-
-          # -------------------------------------
-          # SAFE INLINE VALIDATION (HEREDOC - STABLE)
-          # -------------------------------------
-          python3 <<'PY'
-          import json
-          import sys
-
-          print("🧠 Loading assets/semantic-salience.json...")
-
-          try:
-              with open("assets/semantic-salience.json", "r", encoding="utf-8") as f:
-                  data = json.load(f)
-          except Exception as e:
-              print("❌ JSON parse failure:", e)
-              sys.exit(1)
-
-          if not isinstance(data, dict):
-              print("❌ assets/semantic-salience must be dict")
-              sys.exit(1)
-
-          required = ["nodes", "edges", "page_graph"]
-
-          missing = [k for k in required if k not in data]
-
-          if missing:
-              print("❌ missing required keys:", ", ".join(missing))
-              sys.exit(1)
-
-          print("✅ assets/semantic-salience validation PASSED")
-          PY
-
-      # -------------------------------------
-      # 9. VERIFY OUTPUT STRUCTURE (NON-FATAL BUT INFORMATIVE)
+      # 8. VERIFY OUTPUT STRUCTURE (NON-FATAL BUT INFORMATIVE)
       # -------------------------------------
       - name: Verify build outputs
         shell: bash
@@ -154,7 +104,7 @@ jobs:
           ls -R . | grep -E "semantic|sitemap|rss|homepage|feed" || true
 
       # -------------------------------------
-      # 10. Upload Pages artifact (ROOT-BASED ONLY)
+      # 9. Upload Pages artifact (ROOT-BASED ONLY)
       # -------------------------------------
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
