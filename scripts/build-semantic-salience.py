@@ -189,9 +189,9 @@ def extract_concepts(path: str, url: str = "", title: str = "", description: str
             seen.add(canon)
             concepts.append(canon)
 
-    if is_homepage:
-        print("🏠 HOMEPAGE TOKENS:", tokens)
-        print("🏠 HOMEPAGE CONCEPTS:", concepts)
+        if is_homepage:
+            print("🏠 HOMEPAGE TOKENS:", tokens)
+            print("🏠 HOMEPAGE CONCEPTS:", concepts)
     
     return concepts
 
