@@ -124,67 +124,63 @@ def normalize(text: str) -> str:
 # CONCEPT EXTRACTION (STRUCTURAL REALITY + LIGHT PHRASES)
 # =========================================================
 
-def extract_concepts(path: str):
+def extract_concepts(path: str, url: str = "", title: str = "", description: str = "", excerpt: str = ""):
     """
-    Extract concepts from structural reality.
+    Extract concepts from structural + semantic signals.
 
-    SOURCES:
-    - URL/path structure
-    - token segmentation
-    - phrase adjacency
-
-    IMPORTANT:
-    Canonicalization is applied BEFORE storage.
+    Anchor pages (welcome/index) receive relaxed extraction rules.
     """
 
-    if "welcome" in url or "index.html" in url:
-        print("🏠 HOMEPAGE RAW TEXT:", excerpt[:200])
-    
     base = normalize(path)
+
+    is_anchor_page = (
+        path.endswith("index.html")
+        or "welcome" in path.lower()
+        or "welcome" in url.lower()
+    )
 
     tokens = [
         t for t in re.split(r"[/_\-\s]+", base)
         if t and t not in STOPWORDS
     ]
 
+    # -------------------------------------------------
+    # ANCHOR PAGE ENHANCEMENT
+    # -------------------------------------------------
+
+    if is_anchor_page:
+        anchor_text = " ".join([title, description, excerpt])
+        anchor_tokens = [
+            t for t in re.split(r"[/_\-\s]+", normalize(anchor_text))
+            if t and t not in STOPWORDS
+        ]
+        tokens += anchor_tokens
+
     raw_concepts = []
 
-    # -----------------------------
-    # 1. single-token concepts
-    # -----------------------------
+    # single-token
     for t in tokens:
         raw_concepts.append(t)
 
-    # -----------------------------
-    # 2. phrase concepts (2-token)
-    # -----------------------------
+    # 2-token phrases
     for i in range(len(tokens) - 1):
         raw_concepts.append(f"{tokens[i]} {tokens[i+1]}")
 
-    # -----------------------------
-    # 3. phrase concepts (3-token)
-    # -----------------------------
+    # 3-token phrases
     for i in range(len(tokens) - 2):
         raw_concepts.append(f"{tokens[i]} {tokens[i+1]} {tokens[i+2]}")
 
-    # -----------------------------
-    # CANONICALIZATION STEP
-    # -----------------------------
+    # canonicalization
     seen = set()
     concepts = []
 
     for c in raw_concepts:
         canon = canonicalize_concept(c)
-
-        if not canon:
-            continue
-
-        if canon not in seen:
+        if canon and canon not in seen:
             seen.add(canon)
             concepts.append(canon)
 
     return concepts
-
 
 # =========================================================
 # URL RESOLUTION
