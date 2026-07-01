@@ -2,11 +2,6 @@ name: Diagnose Homepage Intelligence
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - "assets/homepage-intelligence.json"
-      - "scripts/build-homepage-intelligence.py"
-      - "assets/diagnose-homepage.py"
 
 jobs:
   diagnose:
