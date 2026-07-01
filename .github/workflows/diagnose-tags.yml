@@ -1,12 +1,12 @@
 name: Diagnose Tags Index
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - "assets/tags.json"
       - "scripts/build-tags.py"
       - "assets/diagnose-tags.py"
-  workflow_dispatch:
 
 jobs:
   diagnose-tags:
