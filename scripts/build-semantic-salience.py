@@ -17,7 +17,7 @@ STOPWORDS = {
     "https", "http", "www", "com", "org", "html", "indexhtml", "index",
     "a", "an", "the", "and", "or", "of", "to", "in", "on", "at", "for", "with", "from", 
     "is", "are", "was", "were", "be", "been", "that", "these", "those", "it", "its", "it's",
-    "as", "by", "into", "though", "through"
+    "as", "by", "into", "though", "through", "i", "me", "my", "myself"
 }
 
 # =========================================================
