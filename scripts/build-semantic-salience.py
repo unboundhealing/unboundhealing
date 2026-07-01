@@ -329,9 +329,12 @@ def extract_page_metadata(path, url):
 def build_registry(root, html_files):
     registry = {}
 
+    if path == "https://unboundhealing.org/":
+        print("ROOT CONCEPTS DURING BUILD:", concepts)
+    
     for path in html_files:
 
-        full_path = os.path.join(root, path)
+        path = os.path.join(root, path)
 
         url = canonicalize_url(build_url(path))
         metadata = extract_page_metadata(path, url)
