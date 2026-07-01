@@ -339,10 +339,10 @@ def build_registry(root, html_files):
         kind = get_kind(section)
         concepts = extract_concepts(path)    
 
-        if url == "https://unboundhealing.org/":
-            print("ROOT PATH:", path)
-            print("ROOT CONCEPTS:", concepts)
-        
+        if "unboundhealing.org" in url:
+            print("DEBUG URL:", repr(url))
+            print("DEBUG PATH:", path)
+    
         search_text = build_search_text(
             metadata["title"],
             metadata["description"],
