@@ -244,8 +244,6 @@ def main():
     edges = data.get("edges", [])
     page_graph = data.get("page_graph", {})
 
-    debug(nodes, edges, data)
-
     built = build(nodes, edges, page_graph)
 
     # save structured output
