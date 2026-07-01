@@ -350,8 +350,14 @@ def build_registry(root, html_files):
         metadata = extract_page_metadata(path, url)
         section = get_section(url)
         kind = get_kind(section)
-        concepts = extract_concepts(path)    
-    
+        concepts = extract_concepts(
+            path,
+            url,
+            metadata["title"],
+            metadata["description"],
+            metadata["excerpt"],
+        )
+        
         search_text = build_search_text(
             metadata["title"],
             metadata["description"],
