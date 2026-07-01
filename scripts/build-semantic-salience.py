@@ -133,14 +133,23 @@ def extract_concepts(path: str, url: str = "", title: str = "", description: str
 
     base = normalize(path)
 
+    is_homepage = url.rstrip("/") == "https://unboundhealing.org"
+    
     is_anchor_page = (
         path.endswith("index.html")
         or "welcome" in path.lower()
         or "welcome" in url.lower()
     )
 
+    source_text = " ".join([base, title, description, excerpt])
+
+    if is_homepage:
+        source_text = normalize(source_text)
+    else:
+        source_text = base
+
     tokens = [
-        t for t in re.split(r"[/_\-\s]+", base)
+        t for t in re.split(r"[/_\-\s]+", source_text)
         if t and t not in STOPWORDS
     ]
 
@@ -148,7 +157,7 @@ def extract_concepts(path: str, url: str = "", title: str = "", description: str
     # ANCHOR PAGE ENHANCEMENT
     # -------------------------------------------------
 
-    if is_anchor_page:
+    if is_anchor_page and not is_homepage:
         anchor_text = " ".join([title, description, excerpt])
         anchor_tokens = [
             t for t in re.split(r"[/_\-\s]+", normalize(anchor_text))
@@ -180,6 +189,10 @@ def extract_concepts(path: str, url: str = "", title: str = "", description: str
             seen.add(canon)
             concepts.append(canon)
 
+    if is_homepage:
+        print("🏠 HOMEPAGE TOKENS:", tokens)
+        print("🏠 HOMEPAGE CONCEPTS:", concepts)
+    
     return concepts
 
 # =========================================================
