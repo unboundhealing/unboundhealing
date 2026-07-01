@@ -1,6 +1,5 @@
 {
   "https://unboundhealing.org/about/conversing/": [
-    "about",
     "conversing",
     "invitation",
     "converse",
@@ -9,10 +8,10 @@
     "suffering",
     "curiosity",
     "whatever",
-    "appears"
+    "appears",
+    "present"
   ],
   "https://unboundhealing.org/about/": [
-    "about",
     "unbound",
     "healing",
     "ministries",
@@ -21,7 +20,8 @@
     "behind",
     "work",
     "invitations",
-    "offered"
+    "offered",
+    "here"
   ],
   "https://unboundhealing.org/archive/brittany/": [
     "archive",
@@ -40,24 +40,24 @@
     "evolving",
     "reconstructed",
     "conversation",
-    "about",
     "cats",
     "coffee",
     "journals",
     "websites",
-    "memory"
+    "memory",
+    "knowing"
   ],
   "https://unboundhealing.org/concept/experimenting/": [
     "concept",
     "experimenting",
     "thinking",
-    "about",
     "whether",
     "ideas",
-    "can",
     "linked",
     "together",
-    "living"
+    "living",
+    "system",
+    "references"
   ],
   "https://unboundhealing.org/concept/iced-coffee/": [
     "concept",
@@ -88,12 +88,12 @@
     "idea",
     "journal",
     "entry",
-    "about",
     "ideas",
     "forming",
     "while",
     "writing",
-    "sense"
+    "sense",
+    "thoughts"
   ],
   "https://unboundhealing.org/concept/": [
     "concept",
@@ -109,7 +109,6 @@
   ],
   "https://unboundhealing.org/concept/just-thinking/": [
     "concept",
-    "just",
     "thinking",
     "so",
     "small",
@@ -117,7 +116,8 @@
     "discovered",
     "somewhere",
     "between",
-    "coffee"
+    "coffee",
+    "beans"
   ],
   "https://unboundhealing.org/concept/origin/": [
     "concept",
@@ -126,10 +126,10 @@
     "story",
     "edited",
     "conversation",
-    "about",
     "hyperlinks",
     "writing",
-    "coffee"
+    "coffee",
+    "how"
   ],
   "https://unboundhealing.org/concept/website-building/": [
     "concept",
@@ -141,7 +141,7 @@
     "tendency",
     "wonder",
     "what",
-    "might"
+    "possible"
   ],
   "https://unboundhealing.org/concept/zone/": [
     "concept",
@@ -150,10 +150,10 @@
     "attention",
     "activity",
     "whatever",
-    "might",
     "meant",
     "being",
-    "thinking"
+    "thinking",
+    "writing"
   ],
   "https://unboundhealing.org/gathering/": [
     "gathering",
@@ -225,7 +225,7 @@
     "moments",
     "generously",
     "visitors",
-    "will"
+    "appear"
   ],
   "https://unboundhealing.org/opening/another-yesterday/": [
     "opening",
@@ -259,9 +259,9 @@
     "warm",
     "tea",
     "thoughts",
-    "about",
     "memory",
-    "perspective"
+    "perspective",
+    "quiet"
   ],
   "https://unboundhealing.org/opening/": [
     "opening",
@@ -277,15 +277,15 @@
   ],
   "https://unboundhealing.org/opening/just-listening/": [
     "opening",
-    "just",
     "listening",
     "reflection",
     "conversation",
     "attention",
     "possibility",
-    "may",
     "not",
-    "require"
+    "require",
+    "knowing",
+    "what"
   ],
   "https://unboundhealing.org/opening/liz/": [
     "opening",
@@ -303,13 +303,13 @@
     "opening",
     "love",
     "concept",
-    "just",
     "reflection",
     "togetherness",
     "attraction",
     "existence",
     "why",
-    "may"
+    "name",
+    "what"
   ],
   "https://unboundhealing.org/opening/lukewarm-decaf/": [
     "opening",
@@ -495,13 +495,13 @@
     "opening",
     "yesterday",
     "thoughts",
-    "about",
     "memories",
     "songs",
     "tea",
     "curiosity",
     "recognition",
-    "most"
+    "most",
+    "paths"
   ],
   "https://unboundhealing.org/supporting/": [
     "supporting",
