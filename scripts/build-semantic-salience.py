@@ -137,6 +137,9 @@ def extract_concepts(path: str):
     Canonicalization is applied BEFORE storage.
     """
 
+        if "welcome" in url or "index.html" in url:
+            print("🏠 HOMEPAGE RAW TEXT:", excerpt[:200])
+    
     base = normalize(path)
 
     tokens = [
