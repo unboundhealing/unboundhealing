@@ -2,11 +2,6 @@ name: Diagnose Semantic Salience
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - "assets/semantic-salience.json"
-      - "scripts/**"
-      - "assets/**"
 
 jobs:
   diagnose-semantic-salience:
