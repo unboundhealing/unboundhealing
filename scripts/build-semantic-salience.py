@@ -334,15 +334,15 @@ def build_registry(root, html_files):
         path = os.path.join(root, path)
 
         url = canonicalize_url(build_url(path))
-
-        if url == "https://unboundhealing.org/":
-            print("ROOT CONCEPTS DURING BUILD:", concepts)
-
         metadata = extract_page_metadata(path, url)
         section = get_section(url)
         kind = get_kind(section)
         concepts = extract_concepts(path)    
 
+        if url == "https://unboundhealing.org/":
+            print("ROOT PATH:", path)
+            print("ROOT CONCEPTS:", concepts)
+        
         search_text = build_search_text(
             metadata["title"],
             metadata["description"],
