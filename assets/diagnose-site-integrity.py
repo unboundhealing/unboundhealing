@@ -103,6 +103,18 @@ def main():
     drift = 0
 
     for url, node in sal_nodes.items():
+
+        # -------------------------------------------------
+        # STRUCTURAL VALIDATION (early visibility)
+        # -------------------------------------------------
+
+        if not node.get("concepts"):
+            print("⚠️ empty concepts:", url)
+
+        # -------------------------------------------------
+        # ALIGNMENT LOGIC
+        # -------------------------------------------------      
+        
         concepts = set(node.get("concepts", []))
         t = set(tags.get(url, []))
 
