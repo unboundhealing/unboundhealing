@@ -2,274 +2,529 @@
   "https://unboundhealing.org/about/conversing/": [
     "about",
     "conversing",
-    "about-conversing"
+    "an",
+    "invitation",
+    "to",
+    "converse",
+    "healing",
+    "spirituality",
+    "suffering",
+    "curiosity"
   ],
   "https://unboundhealing.org/about/": [
-    "about"
+    "about",
+    "unbound",
+    "healing",
+    "ministries",
+    "its",
+    "intention",
+    "and",
+    "the",
+    "perspective",
+    "behind"
   ],
   "https://unboundhealing.org/archive/brittany/": [
     "archive",
     "brittany",
-    "archive-brittany"
+    "a",
+    "morning",
+    "reflection",
+    "on",
+    "calling",
+    "sister",
+    "becomes",
+    "an"
   ],
   "https://unboundhealing.org/concept/evolving/": [
     "concept",
     "evolving",
-    "concept-evolving"
+    "a",
+    "reconstructed",
+    "conversation",
+    "about",
+    "cats",
+    "coffee",
+    "journals",
+    "websites"
   ],
   "https://unboundhealing.org/concept/experimenting/": [
     "concept",
     "experimenting",
-    "concept-experimenting"
+    "thinking",
+    "about",
+    "whether",
+    "ideas",
+    "can",
+    "be",
+    "linked",
+    "together"
   ],
   "https://unboundhealing.org/concept/iced-coffee/": [
     "concept",
     "iced",
     "coffee",
-    "concept-iced",
-    "iced-coffee",
-    "concept-iced-coffee"
+    "cooling",
+    "an",
+    "idea",
+    "arriving",
+    "a",
+    "website",
+    "unfolding"
   ],
   "https://unboundhealing.org/concept/ici/": [
     "concept",
     "ici",
-    "concept-ici"
+    "interconnected",
+    "content",
+    "initiative",
+    "a",
+    "playful",
+    "experiment",
+    "in",
+    "contextual"
   ],
   "https://unboundhealing.org/concept/idea/": [
     "concept",
     "idea",
-    "concept-idea"
+    "a",
+    "journal",
+    "entry",
+    "about",
+    "ideas",
+    "forming",
+    "while",
+    "writing"
   ],
   "https://unboundhealing.org/concept/": [
-    "concept"
+    "concept",
+    "a",
+    "collection",
+    "of",
+    "concepts",
+    "experiments",
+    "conversations",
+    "and",
+    "connective",
+    "threads"
   ],
   "https://unboundhealing.org/concept/just-thinking/": [
     "concept",
     "just",
     "thinking",
-    "concept-just",
-    "just-thinking",
-    "concept-just-thinking"
+    "so",
+    "i",
+    "was",
+    "a",
+    "small",
+    "observation",
+    "discovered"
   ],
   "https://unboundhealing.org/concept/origin/": [
     "concept",
     "origin",
-    "concept-origin"
+    "almost",
+    "story",
+    "an",
+    "edited",
+    "conversation",
+    "about",
+    "hyperlinks",
+    "writing"
   ],
   "https://unboundhealing.org/concept/website-building/": [
     "concept",
     "website",
     "building",
-    "concept-website",
-    "website-building",
-    "concept-website-building"
+    "a",
+    "reflection",
+    "on",
+    "curiosity",
+    "connection",
+    "and",
+    "the"
   ],
   "https://unboundhealing.org/concept/zone/": [
     "concept",
     "zone",
-    "concept-zone"
+    "an",
+    "exploration",
+    "of",
+    "attention",
+    "activity",
+    "and",
+    "whatever",
+    "might"
   ],
   "https://unboundhealing.org/gathering/": [
-    "gathering"
+    "gathering",
+    "a",
+    "space",
+    "for",
+    "shared",
+    "attention",
+    "and",
+    "gatheringreflections",
+    "on",
+    "connection"
   ],
-  "https://unboundhealing.org/": [],
+  "https://unboundhealing.org/": [
+    "unbound",
+    "healing",
+    "ministries",
+    "is",
+    "a",
+    "space",
+    "of",
+    "reflection",
+    "presence",
+    "and"
+  ],
   "https://unboundhealing.org/inviting/": [
-    "inviting"
+    "inviting",
+    "a",
+    "collection",
+    "of",
+    "invitations",
+    "into",
+    "reflection",
+    "attention",
+    "and",
+    "lived"
   ],
   "https://unboundhealing.org/listening/": [
-    "listening"
+    "listening",
+    "audio",
+    "reflections",
+    "and",
+    "spoken",
+    "explorations",
+    "into",
+    "awareness",
+    "presence",
+    "lived"
   ],
   "https://unboundhealing.org/noticing/": [
-    "noticing"
+    "noticing",
+    "a",
+    "space",
+    "for",
+    "noticingsubtle",
+    "observations",
+    "reflections",
+    "and",
+    "the",
+    "quiet"
   ],
   "https://unboundhealing.org/noticing/shared-experiences/": [
     "noticing",
     "shared",
     "experiences",
-    "noticing-shared",
-    "shared-experiences",
-    "noticing-shared-experiences"
+    "a",
+    "collection",
+    "of",
+    "observations",
+    "questions",
+    "and",
+    "moments"
   ],
   "https://unboundhealing.org/opening/another-yesterday/": [
     "opening",
     "another",
     "yesterday",
-    "opening-another",
-    "another-yesterday",
-    "opening-another-yesterday"
+    "cats",
+    "consciousness",
+    "stretching",
+    "and",
+    "beatsaber",
+    "become",
+    "unexpected"
   ],
   "https://unboundhealing.org/opening/cooling-tea/": [
     "opening",
     "cooling",
     "tea",
-    "opening-cooling",
-    "cooling-tea",
-    "opening-cooling-tea"
+    "an",
+    "invitation",
+    "into",
+    "slowness",
+    "and",
+    "simplicity",
+    "through"
   ],
   "https://unboundhealing.org/opening/gloomy/": [
     "opening",
     "gloomy",
-    "opening-gloomy"
+    "a",
+    "grey",
+    "morning",
+    "warm",
+    "tea",
+    "thoughts",
+    "about",
+    "memory"
   ],
   "https://unboundhealing.org/opening/": [
-    "opening"
+    "opening",
+    "a",
+    "collection",
+    "of",
+    "observations",
+    "stories",
+    "and",
+    "questionseach",
+    "doorway",
+    "into"
   ],
   "https://unboundhealing.org/opening/just-listening/": [
     "opening",
     "just",
     "listening",
-    "opening-just",
-    "just-listening",
-    "opening-just-listening"
+    "a",
+    "reflection",
+    "on",
+    "conversation",
+    "attention",
+    "and",
+    "the"
   ],
   "https://unboundhealing.org/opening/liz/": [
     "opening",
     "liz",
-    "opening-liz"
+    "a",
+    "brief",
+    "reflection",
+    "on",
+    "shared",
+    "attention",
+    "everyday",
+    "moments"
   ],
   "https://unboundhealing.org/opening/love-concept/": [
     "opening",
     "love",
     "concept",
-    "opening-love",
-    "love-concept",
-    "opening-love-concept"
+    "is",
+    "just",
+    "a",
+    "reflection",
+    "on",
+    "togetherness",
+    "attraction"
   ],
   "https://unboundhealing.org/opening/lukewarm-decaf/": [
     "opening",
     "lukewarm",
     "decaf",
-    "opening-lukewarm",
-    "lukewarm-decaf",
-    "opening-lukewarm-decaf"
+    "i",
+    "love",
+    "you",
+    "strong",
+    "coffee",
+    "cools",
+    "cats"
   ],
   "https://unboundhealing.org/opening/no-title/": [
     "opening",
     "no",
     "title",
-    "opening-no",
-    "no-title",
-    "opening-no-title"
+    "coffee",
+    "cools",
+    "thoughts",
+    "wander",
+    "a",
+    "reflection",
+    "on"
   ],
   "https://unboundhealing.org/opening/open/": [
     "opening",
     "open",
-    "opening-open"
+    "reflections",
+    "on",
+    "awareness",
+    "writing",
+    "embarrassment",
+    "tea",
+    "wandering",
+    "attention"
   ],
   "https://unboundhealing.org/opening/post-this/": [
     "opening",
     "post",
     "this",
-    "opening-post",
-    "post-this",
-    "opening-post-this"
+    "a",
+    "stream",
+    "of",
+    "consciousness",
+    "reflection",
+    "on",
+    "awareness"
   ],
   "https://unboundhealing.org/opening/skwintcheee/": [
     "opening",
     "skwintcheee",
-    "opening-skwintcheee"
+    "a",
+    "lingering",
+    "cup",
+    "of",
+    "decaf",
+    "coffee",
+    "opens",
+    "into"
   ],
   "https://unboundhealing.org/opening/sold-out/": [
     "opening",
     "sold",
     "out",
-    "opening-sold",
-    "sold-out",
-    "opening-sold-out"
+    "a",
+    "reflection",
+    "on",
+    "thought",
+    "as",
+    "crowded",
+    "inner"
   ],
   "https://unboundhealing.org/opening/still-warm/": [
     "opening",
     "still",
     "warm",
-    "opening-still",
-    "still-warm",
-    "opening-still-warm"
+    "the",
+    "tea",
+    "is",
+    "morning",
+    "routines",
+    "drift",
+    "off"
   ],
   "https://unboundhealing.org/opening/the-day-before/": [
     "opening",
     "the",
     "day",
     "before",
-    "opening-the",
-    "the-day",
-    "day-before",
-    "opening-the-day",
-    "the-day-before"
+    "tea",
+    "cools",
+    "while",
+    "thoughts",
+    "wander",
+    "through"
   ],
   "https://unboundhealing.org/opening/this-morning-a/": [
     "opening",
     "this",
     "morning",
     "a",
-    "opening-this",
-    "this-morning",
-    "morning-a",
-    "opening-this-morning",
-    "this-morning-a"
+    "reflection",
+    "on",
+    "awareness",
+    "uncertainty",
+    "website",
+    "building"
   ],
   "https://unboundhealing.org/opening/this-morning-too/": [
     "opening",
     "this",
     "morning",
     "too",
-    "opening-this",
-    "this-morning",
-    "morning-too",
-    "opening-this-morning",
-    "this-morning-too"
+    "a",
+    "stream",
+    "of",
+    "consciousness",
+    "reflection",
+    "moving"
   ],
   "https://unboundhealing.org/opening/this-morning/": [
     "opening",
     "this",
     "morning",
-    "opening-this",
-    "this-morning",
-    "opening-this-morning"
+    "a",
+    "wandering",
+    "account",
+    "of",
+    "an",
+    "ordinary",
+    "morningbeat"
   ],
   "https://unboundhealing.org/opening/this-you/": [
     "opening",
     "this",
     "you",
-    "opening-this",
-    "this-you",
-    "opening-this-you"
+    "a",
+    "reflection",
+    "on",
+    "meeting",
+    "one",
+    "another",
+    "anew"
   ],
   "https://unboundhealing.org/opening/tom/": [
     "opening",
     "tom",
-    "opening-tom"
+    "coffee",
+    "with",
+    "a",
+    "reflective",
+    "invitation",
+    "centered",
+    "around",
+    "presence"
   ],
   "https://unboundhealing.org/opening/whatever-this-is/": [
     "opening",
     "whatever",
     "this",
     "is",
-    "opening-whatever",
-    "whatever-this",
-    "this-is",
-    "opening-whatever-this",
-    "whatever-this-is"
+    "four",
+    "sips",
+    "of",
+    "coffee",
+    "a",
+    "little"
   ],
   "https://unboundhealing.org/opening/yes-and-no/": [
     "opening",
     "yes",
     "and",
     "no",
-    "opening-yes",
-    "yes-and",
-    "and-no",
-    "opening-yes-and",
-    "yes-and-no"
+    "a",
+    "reflection",
+    "on",
+    "comfort",
+    "discomfort",
+    "certainty"
   ],
   "https://unboundhealing.org/opening/yesterday/": [
     "opening",
     "yesterday",
-    "opening-yesterday"
+    "thoughts",
+    "about",
+    "memories",
+    "of",
+    "songs",
+    "tea",
+    "curiosity",
+    "and"
   ],
   "https://unboundhealing.org/supporting/": [
-    "supporting"
+    "supporting",
+    "ways",
+    "to",
+    "support",
+    "the",
+    "ongoing",
+    "work",
+    "of",
+    "unbound",
+    "healing"
   ],
   "https://unboundhealing.org/welcome/": [
-    "welcome"
+    "welcome",
+    "in",
+    "a",
+    "welcoming",
+    "introduction",
+    "to",
+    "unbound",
+    "healing",
+    "ministries",
+    "awareness"
   ]
 }

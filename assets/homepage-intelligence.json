@@ -2,37 +2,37 @@
   "homepage_intelligence": {
     "arising_observations": [
       {
-        "url": "https://unboundhealing.org/opening/the-day-before/",
-        "title": "the day before…",
-        "score": 24.0
+        "url": "https://unboundhealing.org/opening/yes-and-no/",
+        "title": "yes and no…",
+        "score": 259.0
       },
       {
-        "url": "https://unboundhealing.org/opening/this-morning-a/",
-        "title": "this morning…",
-        "score": 24.0
+        "url": "https://unboundhealing.org/opening/another-yesterday/",
+        "title": "another yesterday…",
+        "score": 254.0
       },
       {
-        "url": "https://unboundhealing.org/opening/this-morning-too/",
-        "title": "this morning…",
-        "score": 24.0
+        "url": "https://unboundhealing.org/opening/sold-out/",
+        "title": "sold-out…",
+        "score": 254.0
       }
     ],
     "essential_inspirations": [
       {
-        "concept": "Opening",
-        "frequency": 23
+        "concept": "And",
+        "frequency": 42
       },
       {
-        "concept": "Concept",
-        "frequency": 11
+        "concept": "A",
+        "frequency": 39
       },
       {
-        "concept": "This",
-        "frequency": 6
+        "concept": "Of",
+        "frequency": 39
       }
     ],
     "node_count": 44,
-    "edge_count": 410
+    "edge_count": 854011
   },
   "source": "semantic-salience",
   "status": "ok"
