@@ -329,7 +329,7 @@ def extract_page_metadata(path, url):
 def build_registry(root, html_files):
     registry = {}
 
-    if path == "https://unboundhealing.org/":
+    if url == "https://unboundhealing.org/":
         print("ROOT CONCEPTS DURING BUILD:", concepts)
     
     for path in html_files:
