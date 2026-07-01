@@ -4,17 +4,17 @@
       {
         "url": "https://unboundhealing.org/opening/yes-and-no/",
         "title": "yes and no…",
-        "score": 214.0
+        "score": 211.0
       },
       {
         "url": "https://unboundhealing.org/opening/another-yesterday/",
         "title": "another yesterday…",
-        "score": 213.0
+        "score": 208.0
       },
       {
-        "url": "https://unboundhealing.org/opening/this-morning-too/",
-        "title": "this morning…",
-        "score": 209.0
+        "url": "https://unboundhealing.org/archive/brittany/",
+        "title": "brittany",
+        "score": 203.0
       }
     ],
     "essential_inspirations": [
@@ -23,16 +23,16 @@
         "frequency": 29
       },
       {
-        "concept": "I",
-        "frequency": 25
-      },
-      {
         "concept": "Opening",
         "frequency": 24
+      },
+      {
+        "concept": "Reflection",
+        "frequency": 20
       }
     ],
     "node_count": 44,
-    "edge_count": 520776
+    "edge_count": 500380
   },
   "source": "semantic-salience",
   "status": "ok"
