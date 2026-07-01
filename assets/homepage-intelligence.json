@@ -24,15 +24,15 @@
       },
       {
         "concept": "Opening",
-        "frequency": 24
+        "frequency": 25
       },
       {
         "concept": "Reflection",
         "frequency": 20
       }
     ],
-    "node_count": 44,
-    "edge_count": 469226
+    "node_count": 45,
+    "edge_count": 469229
   },
   "source": "semantic-salience",
   "status": "ok"
