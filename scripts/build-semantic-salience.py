@@ -331,7 +331,7 @@ def build_registry(root, html_files):
         
     for path in html_files:
 
-        path = os.path.join(root, path)
+        full_path = os.path.join(root, path)
 
         url = canonicalize_url(build_url(path))
         metadata = extract_page_metadata(path, url)
