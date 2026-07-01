@@ -2,14 +2,6 @@ name: Diagnose Site Integrity
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - "assets/semantic-salience.json"
-      - "assets/tags.json"
-      - "assets/homepage-intelligence.json"
-      - "assets/search-index.json"
-      - "scripts/**"
-      - "assets/diagnose-site-integrity.py"
 
 jobs:
   site-integrity:
