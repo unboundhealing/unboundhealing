@@ -227,6 +227,18 @@
     "visitors",
     "appear"
   ],
+  "https://unboundhealing.org/opening/another-another-day-before/": [
+    "opening",
+    "another",
+    "day",
+    "before",
+    "description",
+    "subtitle",
+    "titles",
+    "primary",
+    "subheading",
+    "subheadings"
+  ],
   "https://unboundhealing.org/opening/another-another-yesterday/": [
     "opening",
     "another",
@@ -490,18 +502,6 @@
     "movementbetween",
     "boredom",
     "curiosity"
-  ],
-  "https://unboundhealing.org/opening/untitled-2/": [
-    "opening",
-    "untitled",
-    "2",
-    "title",
-    "description",
-    "subtitle",
-    "titles",
-    "primary",
-    "subheading",
-    "subheadings"
   ],
   "https://unboundhealing.org/opening/whatever-this-is/": [
     "opening",
