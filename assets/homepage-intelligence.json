@@ -2,9 +2,9 @@
   "homepage_intelligence": {
     "arising_observations": [
       {
-        "url": "https://unboundhealing.org/opening/untitled-1/",
+        "url": "https://unboundhealing.org/opening/another-another-yesterday/",
         "title": "another yesterday…",
-        "score": 225.0
+        "score": 224.0
       },
       {
         "url": "https://unboundhealing.org/opening/another-yesterday/",
@@ -32,7 +32,7 @@
       }
     ],
     "node_count": 47,
-    "edge_count": 510366
+    "edge_count": 510129
   },
   "source": "semantic-salience",
   "status": "ok"
