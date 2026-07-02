@@ -2,6 +2,11 @@
   "homepage_intelligence": {
     "arising_observations": [
       {
+        "url": "https://unboundhealing.org/opening/untitled-1/",
+        "title": "another yesterday…",
+        "score": 225.0
+      },
+      {
         "url": "https://unboundhealing.org/opening/another-yesterday/",
         "title": "another yesterday…",
         "score": 205.0
@@ -10,29 +15,24 @@
         "url": "https://unboundhealing.org/opening/yes-and-no/",
         "title": "yes and no…",
         "score": 205.0
-      },
-      {
-        "url": "https://unboundhealing.org/opening/the-day-before/",
-        "title": "the day before…",
-        "score": 199.0
       }
     ],
     "essential_inspirations": [
       {
         "concept": "This",
-        "frequency": 30
+        "frequency": 31
       },
       {
         "concept": "Opening",
         "frequency": 27
       },
       {
-        "concept": "Reflection",
+        "concept": "Here",
         "frequency": 20
       }
     ],
     "node_count": 47,
-    "edge_count": 491322
+    "edge_count": 510366
   },
   "source": "semantic-salience",
   "status": "ok"
