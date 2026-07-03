@@ -27,12 +27,12 @@
         "frequency": 28
       },
       {
-        "concept": "Here",
-        "frequency": 20
+        "concept": "Reflection",
+        "frequency": 21
       }
     ],
     "node_count": 48,
-    "edge_count": 512689
+    "edge_count": 519074
   },
   "source": "semantic-salience",
   "status": "ok"
