@@ -24,15 +24,15 @@
       },
       {
         "concept": "Opening",
-        "frequency": 27
+        "frequency": 28
       },
       {
         "concept": "Here",
         "frequency": 20
       }
     ],
-    "node_count": 47,
-    "edge_count": 510255
+    "node_count": 48,
+    "edge_count": 512689
   },
   "source": "semantic-salience",
   "status": "ok"
