@@ -7,13 +7,13 @@
         "score": 224.0
       },
       {
-        "url": "https://unboundhealing.org/opening/another-yesterday/",
-        "title": "another yesterday…",
-        "score": 205.0
+        "url": "https://unboundhealing.org/opening/another-another-day-before/",
+        "title": "another day before…",
+        "score": 210.0
       },
       {
-        "url": "https://unboundhealing.org/opening/yes-and-no/",
-        "title": "yes and no…",
+        "url": "https://unboundhealing.org/opening/another-yesterday/",
+        "title": "another yesterday…",
         "score": 205.0
       }
     ],
@@ -32,7 +32,7 @@
       }
     ],
     "node_count": 48,
-    "edge_count": 519074
+    "edge_count": 525957
   },
   "source": "semantic-salience",
   "status": "ok"
