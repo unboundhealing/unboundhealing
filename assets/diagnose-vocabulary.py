@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 
 ROOT = Path(os.environ.get("GITHUB_WORKSPACE", os.getcwd()))
-FILE = ROOT / "assets/tags.json"
+FILE = ROOT / "assets/vocabulary.json"
 
 # -----------------------------
 # LOAD
@@ -12,12 +12,12 @@ FILE = ROOT / "assets/tags.json"
 
 def load():
     if not FILE.exists():
-        print("❌ tags.json missing")
+        print("❌ vocabulary.json missing")
         return None
     try:
         return json.loads(FILE.read_text(encoding="utf-8"))
     except Exception as e:
-        print("❌ failed to load tags.json:", e)
+        print("❌ failed to load vocabulary.json:", e)
         return None
 
 
@@ -34,7 +34,7 @@ def safe_list(x):
 # -----------------------------
 
 def main():
-    print("🧪 Running tags diagnostic...")
+    print("🧪 Running vocabulary diagnostic...")
 
     data = load()
     if not data:
@@ -43,17 +43,22 @@ def main():
 
     total = len(data)
     missing_tags = 0
-    missing_concepts = 0
     empty_nodes = 0
 
-    mismatch_nodes = 0
     heavy_nodes = 0
+    empty_aliases = 0
+    heavy_alias_nodes = 0
 
     print(f"📦 nodes: {total}")
 
-    for url, tags in data.items():
+    for url, entry in data.items():
 
-        tags = safe_list(tags)
+        if not isinstance(entry, dict):
+            print("⚠️ malformed vocabulary entry:", url)
+            continue
+
+        tags = safe_list(entry.get("tags"))
+        aliases = safe_list(entry.get("aliases"))
 
         if not tags:
             empty_nodes += 1
@@ -65,6 +70,12 @@ def main():
         if len(tags) > 6:
             heavy_nodes += 1
 
+        if not aliases:
+            empty_aliases += 1
+
+        if len(aliases) > 10:
+            heavy_alias_nodes += 1
+            
         # NOTE: we cannot directly compare concepts here
         # unless semantic-salience is loaded — so we only infer structure
 
@@ -76,12 +87,14 @@ def main():
     # SUMMARY
     # -----------------------------
 
-    print("\n📊 TAGS DIAGNOSTIC SUMMARY")
+    print("\n📊 VOCABULARY DIAGNOSTIC SUMMARY")
     print("==========================")
     print("nodes:", total)
     print("empty tag lists:", empty_nodes)
     print("missing tags:", missing_tags)
     print("heavy tag nodes (>6):", heavy_nodes)
+    print("empty alias lists:", empty_aliases)
+    print("heavy alias nodes (>10):", heavy_alias_nodes)
 
     print("\n🧭 interpretation:")
     print("- tags are derived from concepts (expected)")
