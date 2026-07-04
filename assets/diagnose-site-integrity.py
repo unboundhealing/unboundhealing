@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(os.environ.get("GITHUB_WORKSPACE", os.getcwd()))
 
 SAL = ROOT / "assets/semantic-salience.json"
-TAGS = ROOT / "assets/tags.json"
+VOCAB = ROOT / "assets/vocabulary.json"
 HOMEPAGE = ROOT / "assets/homepage-intelligence.json"
 
 # ---------------------------------------------------------
@@ -31,7 +31,7 @@ def main():
     print("🧭 Running site integrity diagnostic...\n")
 
     sal = load(SAL)
-    tags = load(TAGS)
+    vocabulary = load(VOCAB)
     home = load(HOMEPAGE)
 
     if not sal:
@@ -41,7 +41,7 @@ def main():
     sal_nodes = sal.get("nodes", {})
     sal_urls = set(sal_nodes.keys())
 
-    tag_urls = set(tags.keys()) if tags else set()
+    vocab_urls = set(vocabulary.keys()) if vocabulary else set()
     home_urls = set()
 
     if home and isinstance(home.get("homepage_intelligence"), dict):
@@ -54,17 +54,17 @@ def main():
 
     print("🔗 node parity check...")
 
-    missing_in_tags = sal_urls - tag_urls
-    missing_in_sal = tag_urls - sal_urls
+    missing_in_vocab = sal_urls - vocab_urls
+    missing_in_sal = vocab_urls - sal_urls
     missing_in_home = sal_urls - home_urls if home_urls else set()
 
     print(f"nodes in salience: {len(sal_urls)}")
-    print(f"nodes in tags: {len(tag_urls)}")
+    print(f"nodes in vocabulary: {len(vocab_urls)}")
     print(f"nodes in homepage: {len(home_urls)}")
 
-    if missing_in_tags:
-        print("\n⚠️ missing in tags:", len(missing_in_tags))
-        for u in list(missing_in_tags)[:5]:
+    if missing_in_vocab:
+        print("\n⚠️ missing in vocabulary:", len(missing_in_vocab))
+        for u in list(missing_in_vocab)[:5]:
             print("  -", u)
 
     if missing_in_home:
@@ -116,14 +116,19 @@ def main():
         # -------------------------------------------------      
         
         concepts = set(node.get("concepts", []))
-        t = set(tags.get(url, []))
+        entry = vocabulary.get(url, {}) if vocabulary else {}
 
-        if concepts and not t:
+        tags = set(entry.get("tags", []))
+        aliases = set(entry.get("aliases", []))
+
+        v = tags | aliases
+
+        if concepts and not v:
             drift += 1
-        elif t and not concepts:
+        elif v and not concepts:
             drift += 1
-        elif concepts and t:
-            if len(concepts & t) == 0:
+        elif concepts and v:
+            if len(concepts & v) == 0:
                 drift += 1
 
     print("drifted nodes:", drift)
@@ -150,16 +155,16 @@ def main():
     print("\n📊 FINAL SUMMARY")
     print("================")
     print("salience nodes:", len(sal_urls))
-    print("tag nodes:", len(tag_urls))
+    print("vocabulary nodes:", len(vocab_urls))
     print("homepage nodes:", len(home_urls))
-    print("missing tag coverage:", len(missing_in_tags))
+    print("missing vocabulary coverage:", len(missing_in_vocab))
     print("missing homepage coverage:", len(missing_in_home))
     print("field gaps:", sum(missing_fields.values()))
     print("concept/tag drift:", drift)
 
     print("\n🧭 interpretation:")
     print("- salience is truth layer")
-    print("- tags + homepage + search index are projections")
+    print("- vocabulary + homepage + search index are projections")
     print("- drift indicates semantic inconsistency")
 
     print("\n✅ site integrity diagnostic complete")
