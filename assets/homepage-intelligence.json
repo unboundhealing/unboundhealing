@@ -9,7 +9,7 @@
       {
         "url": "https://unboundhealing.org/opening/another-another-day-before/",
         "title": "another day before…",
-        "score": 210.0
+        "score": 207.0
       },
       {
         "url": "https://unboundhealing.org/opening/another-yesterday/",
@@ -32,7 +32,7 @@
       }
     ],
     "node_count": 48,
-    "edge_count": 525957
+    "edge_count": 525433
   },
   "source": "semantic-salience",
   "status": "ok"
