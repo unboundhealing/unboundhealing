@@ -41,27 +41,24 @@ def normalize_tag(tag):
 # =========================================================
 
 def generate_aliases(tags):
-
     aliases = set()
 
     for tag in tags:
 
-        if "-" in tag:
-
-            parts = tag.split("-")
-
-            # full phrase
+        parts = tag.split("-")
+        if len(parts) > 1:
             aliases.add(" ".join(parts))
 
-            # progressively peel left
+            # progressive collapse
             while len(parts) > 1:
                 parts = parts[1:]
                 aliases.add(" ".join(parts))
 
-        if "_" in tag:
+        parts = tag.split("_")
+        if len(parts) > 1:
+            aliases.add(" ".join(parts))
 
-            aliases.add(tag.replace("_", " "))
-
+    # remove redundancy
     aliases -= set(tags)
 
     return sorted(a for a in aliases if a)
