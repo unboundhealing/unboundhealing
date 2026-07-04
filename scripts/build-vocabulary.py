@@ -79,14 +79,7 @@ def main():
     if not isinstance(nodes, dict):
         raise SystemExit("❌ nodes must be dict")
 
-    tags = cleaned[:10]
-
-    tags_index[url] = {
-        "version": 2,
-        "generated": True,
-        "tags": tags,
-        "aliases": generate_aliases(tags)
-    }
+    tags_index = {}
 
     for url, node in nodes.items():
 
@@ -107,7 +100,14 @@ def main():
             seen.add(t)
             cleaned.append(t)
 
-        tags_index[url] = cleaned[:10]
+        tags = cleaned[:10]
+
+        tags_index[url] = {
+            "version": 2,
+            "generated": True,
+            "tags": tags,
+            "aliases": generate_aliases(tags)
+        }
 
     # =====================================================
     # WRITE (atomic)
