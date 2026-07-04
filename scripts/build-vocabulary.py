@@ -58,9 +58,6 @@ def generate_aliases(tags):
         if len(parts) > 1:
             aliases.add(" ".join(parts))
 
-        if not generate_aliases(tags):
-            print("⚠️ no aliases:", url)
-
     # remove redundancy
     aliases -= set(tags)
 
@@ -100,12 +97,17 @@ def main():
             cleaned.append(t)
 
         tags = cleaned[:10]
+        aliases = generate_aliases(tags)
 
+        if url == "https://unboundhealing.org/":
+            print("🏠 ROOT TAGS:", tags)
+            print("🏠 ROOT ALIASES:", aliases)
+            
         tags_index[url] = {
             "version": 2,
             "generated": True,
             "tags": tags,
-            "aliases": generate_aliases(tags)
+            "aliases": aliases
         }
 
     # =====================================================
