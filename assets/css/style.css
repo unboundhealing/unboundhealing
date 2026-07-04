@@ -41,7 +41,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: Inter, sans-serif;
+  font-family: "Crimson Pro", serif;
   line-height: var(--line-height);
   font-size: var(--text-base);
 }
@@ -182,7 +182,7 @@ main a:hover {
 .centered-header {
   text-align: center;
   padding: var(--space-md) 20px var(--space-xs);
-  font-family: Inter, sans-serif;
+  font-family: "Crimson Pro", serif;
 }
 
 .logo-wrap {
@@ -303,7 +303,7 @@ p {
   max-width: 333px;
   padding: 0.9rem 1rem;
 
-  font-family: Inter, sans-serif;
+  font-family: "Crimson Pro", serif;
   font-size: .88rem;
 
   border: 1px solid rgba(0, 0, 0, 0.12);
