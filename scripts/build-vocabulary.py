@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(os.environ.get("GITHUB_WORKSPACE", os.getcwd()))
 
 SAL_FILE = ROOT / "assets/semantic-salience.json"
-OUTPUT_FILE = ROOT / "assets/tags.json"
+OUTPUT_FILE = ROOT / "assets/vocabulary.json"
 
 # =========================================================
 # LOAD
@@ -37,6 +37,37 @@ def normalize_tag(tag):
     return tag if tag else None
 
 # =========================================================
+# GENERATED ALIASES
+# =========================================================
+
+def generate_aliases(tags):
+
+    aliases = set()
+
+    for tag in tags:
+
+        if "-" in tag:
+
+            parts = tag.split("-")
+
+            # full phrase
+            aliases.add(" ".join(parts))
+
+            # progressively peel left
+            while len(parts) > 1:
+                parts = parts[1:]
+                aliases.add(" ".join(parts))
+
+        if "_" in tag:
+
+            aliases.add(tag.replace("_", " "))
+
+    aliases -= set(tags)
+
+    return sorted(a for a in aliases if a)
+
+
+# =========================================================
 # MAIN
 # =========================================================
 
@@ -48,7 +79,14 @@ def main():
     if not isinstance(nodes, dict):
         raise SystemExit("❌ nodes must be dict")
 
-    tags_index = {}
+    tags = cleaned[:10]
+
+    tags_index[url] = {
+        "version": 2,
+        "generated": True,
+        "tags": tags,
+        "aliases": generate_aliases(tags)
+    }
 
     for url, node in nodes.items():
 
@@ -86,8 +124,8 @@ def main():
 
     os.replace(tmp, OUTPUT_FILE)
 
-    print("✅ Tags index built")
-    print(f"📦 pages indexed: {len(tags_index)}")
+    print("✅ Vocabulary built")
+    print(f"📦 vocabulary entries: {len(tags_index)}")
 
 # =========================================================
 
