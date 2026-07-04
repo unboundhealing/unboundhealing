@@ -30,8 +30,8 @@ python3 scripts/build-homepage-intelligence.py || true
 # STEP 3 — TAGS / RENDER LAYER
 # ---------------------------------------------------------
 
-echo "🏷️ Building tags index..."
-python3 scripts/build-tags.py
+echo "🏷️ Building vocabulary..."
+python3 scripts/build-vocabulary.py
 
 # ---------------------------------------------------------
 # STEP 4 — PRESENTATION / RENDER LAYER
