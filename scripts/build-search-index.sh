@@ -97,7 +97,7 @@ for url, node in nodes.items():
     # Additional search metadata
     # -------------------------------------------------------
 
-    path = path.as_posix()
+    path = path.as_posix() if path else ""
     title = node.get("title", "")
     description = node.get("description", "")
     section = node.get("section", "")
