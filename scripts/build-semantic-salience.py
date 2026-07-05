@@ -235,8 +235,8 @@ def build_search_text(
     kind,
     excerpt,
     concepts,
-    tags = None,
-    aliases = None,
+    tags=None,
+    aliases=None,
 ):
     tags = tags or []
     aliases = aliases or []
@@ -345,7 +345,7 @@ def build_registry(root, html_files):
         full_path = os.path.join(root, path)
 
         url = canonicalize_url(build_url(path))
-        metadata = extract_page_metadata(path, url)
+        metadata = extract_page_metadata(full_path, url)
         section = get_section(url)
         kind = get_kind(section)
         concepts = extract_concepts(
@@ -362,8 +362,6 @@ def build_registry(root, html_files):
             kind,
             metadata["excerpt"],
             concepts,
-            [],
-            []
         )
         
         registry[url] = {
