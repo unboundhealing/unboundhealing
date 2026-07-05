@@ -68,5 +68,7 @@ git push
 # FINAL STATE DECLARATION
 # ---------------------------------------------------------
 
+echo "📜 DEBUG: printing embedded python script"
+
 echo "🧭 FINAL STATE: semantic-salience is the ONLY truth layer"
 echo "🧱 legacy semantic graph systems are archived / disabled"
