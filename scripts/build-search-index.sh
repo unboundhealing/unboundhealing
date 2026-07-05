@@ -103,13 +103,6 @@ for url, node in nodes.items():
     section = node.get("section", "")
     kind = node.get("kind", "")
     excerpt = node.get("excerpt", "")
-    
-    search_text = " ".join([
-        node.get("search_text", ""),
-        " ".join(tags),
-        " ".join(aliases)
-    ]).strip()
-    
     concepts = node.get("concepts", [])
 
     vocab = vocabulary.get(url, {})
@@ -117,7 +110,13 @@ for url, node in nodes.items():
     print("VOCAB HIT  :", vocab)
     
     tags = vocab.get("tags", [])
-    aliases = vocab.get("aliases", [])
+    aliases = vocab.get("aliases", [])    
+    search_text = " ".join([
+        node.get("search_text", ""),
+        " ".join(tags),
+        " ".join(aliases)
+    ]).strip()
+    
     word_count = node.get("word_count", 0)
 
     index[url] = {
