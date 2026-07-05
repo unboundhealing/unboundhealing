@@ -62,8 +62,10 @@
     "aliases": [
       "consideration",
       "contemplation",
+      "curiosity",
       "introspection",
-      "pondering"
+      "pondering",
+      "thinking"
     ]
   },
   "https://unboundhealing.org/concept/evolving/": {
@@ -127,7 +129,8 @@
       "consideration",
       "contemplation",
       "introspection",
-      "pondering"
+      "pondering",
+      "thinking"
     ]
   },
   "https://unboundhealing.org/concept/ici/": {
@@ -250,7 +253,8 @@
       "exploration",
       "interest",
       "introspection",
-      "pondering"
+      "pondering",
+      "thinking"
     ]
   },
   "https://unboundhealing.org/concept/zone/": {
@@ -269,10 +273,13 @@
       "writing"
     ],
     "aliases": [
+      "awareness",
       "contemplation",
+      "curiosity",
       "essays",
       "journal",
       "journaling",
+      "presence",
       "reflection",
       "thought"
     ]
@@ -325,6 +332,7 @@
       "pondering",
       "recovery",
       "restoration",
+      "thinking",
       "wholeness"
     ]
   },
@@ -344,10 +352,13 @@
       "doorway"
     ],
     "aliases": [
+      "awareness",
       "consideration",
       "contemplation",
       "introspection",
-      "pondering"
+      "pondering",
+      "presence",
+      "thinking"
     ]
   },
   "https://unboundhealing.org/listening/": {
@@ -389,7 +400,8 @@
     "aliases": [
       "attention",
       "mindfulness",
-      "presence"
+      "presence",
+      "stillness"
     ]
   },
   "https://unboundhealing.org/noticing/shared-experiences/": {
@@ -407,7 +419,9 @@
       "visitors",
       "appear"
     ],
-    "aliases": []
+    "aliases": [
+      "awareness"
+    ]
   },
   "https://unboundhealing.org/opening/another-another-day-before/": {
     "version": 2,
@@ -492,7 +506,9 @@
       "perspective",
       "quiet"
     ],
-    "aliases": []
+    "aliases": [
+      "stillness"
+    ]
   },
   "https://unboundhealing.org/opening/": {
     "version": 2,
@@ -527,13 +543,16 @@
       "what"
     ],
     "aliases": [
+      "awareness",
       "consideration",
       "contemplation",
       "dialogue",
       "discussion",
       "introspection",
       "pondering",
-      "talk"
+      "presence",
+      "talk",
+      "thinking"
     ]
   },
   "https://unboundhealing.org/opening/liz/": {
@@ -552,10 +571,13 @@
       "write"
     ],
     "aliases": [
+      "awareness",
       "consideration",
       "contemplation",
       "introspection",
-      "pondering"
+      "pondering",
+      "presence",
+      "thinking"
     ]
   },
   "https://unboundhealing.org/opening/love-concept/": {
@@ -577,7 +599,8 @@
       "consideration",
       "contemplation",
       "introspection",
-      "pondering"
+      "pondering",
+      "thinking"
     ]
   },
   "https://unboundhealing.org/opening/lukewarm-decaf/": {
@@ -615,8 +638,10 @@
     "aliases": [
       "consideration",
       "contemplation",
+      "healing",
       "introspection",
-      "pondering"
+      "pondering",
+      "thinking"
     ]
   },
   "https://unboundhealing.org/opening/noticing/": {
@@ -635,10 +660,13 @@
       "what"
     ],
     "aliases": [
+      "awareness",
       "consideration",
       "contemplation",
       "introspection",
-      "pondering"
+      "pondering",
+      "stillness",
+      "thinking"
     ]
   },
   "https://unboundhealing.org/opening/open/": {
@@ -728,7 +756,8 @@
       "consideration",
       "contemplation",
       "introspection",
-      "pondering"
+      "pondering",
+      "thinking"
     ]
   },
   "https://unboundhealing.org/opening/still-warm/": {
@@ -793,7 +822,8 @@
       "mindfulness",
       "noticing",
       "pondering",
-      "presence"
+      "presence",
+      "thinking"
     ]
   },
   "https://unboundhealing.org/opening/this-morning-too/": {
@@ -815,7 +845,8 @@
       "consideration",
       "contemplation",
       "introspection",
-      "pondering"
+      "pondering",
+      "thinking"
     ]
   },
   "https://unboundhealing.org/opening/this-morning/": {
@@ -854,7 +885,8 @@
       "consideration",
       "contemplation",
       "introspection",
-      "pondering"
+      "pondering",
+      "thinking"
     ]
   },
   "https://unboundhealing.org/opening/tom/": {
@@ -894,8 +926,10 @@
       "curiosity"
     ],
     "aliases": [
+      "awareness",
       "exploration",
       "interest",
+      "thinking",
       "wonder"
     ]
   },
@@ -935,7 +969,8 @@
       "consideration",
       "contemplation",
       "introspection",
-      "pondering"
+      "pondering",
+      "thinking"
     ]
   },
   "https://unboundhealing.org/opening/yesterday/": {
