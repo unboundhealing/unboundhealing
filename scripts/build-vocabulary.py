@@ -11,6 +11,7 @@ from pathlib import Path
 ROOT = Path(os.environ.get("GITHUB_WORKSPACE", os.getcwd()))
 
 SAL_FILE = ROOT / "assets/semantic-salience.json"
+ALIASES_FILE = ROOT / "assets/semantic-aliases.json"
 OUTPUT_FILE = ROOT / "assets/vocabulary.json"
 
 # =========================================================
@@ -27,6 +28,19 @@ def load_json(path):
         raise SystemExit(f"❌ Failed to load {path}: {e}")
 
 # =========================================================
+# LOAD SEMANTIC ALIASES
+# =========================================================
+
+def load_aliases():
+    if not ALIASES_FILE.exists():
+        return {}
+
+    try:
+        return json.loads(ALIASES_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+# =========================================================
 # NORMALIZE TAGS
 # =========================================================
 
@@ -40,25 +54,25 @@ def normalize_tag(tag):
 # GENERATED ALIASES
 # =========================================================
 
-def generate_aliases(tags):
+def generate_aliases(tags, semantic_aliases):
+
     aliases = set()
 
     for tag in tags:
 
+        # structural aliases
         parts = tag.split("-")
         if len(parts) > 1:
             aliases.add(" ".join(parts))
-
-            # progressive collapse
-            while len(parts) > 1:
-                parts = parts[1:]
-                aliases.add(" ".join(parts))
 
         parts = tag.split("_")
         if len(parts) > 1:
             aliases.add(" ".join(parts))
 
-    # remove redundancy
+        # semantic aliases
+        for alias in semantic_aliases.get(tag, []):
+            aliases.add(normalize_tag(alias))
+
     aliases -= set(tags)
 
     return sorted(a for a in aliases if a)
@@ -70,7 +84,8 @@ def generate_aliases(tags):
 def main():
 
     salience = load_json(SAL_FILE)
-
+    semantic_aliases = load_aliases()
+    
     nodes = salience.get("nodes", {})
     if not isinstance(nodes, dict):
         raise SystemExit("❌ nodes must be dict")
@@ -97,7 +112,7 @@ def main():
             cleaned.append(t)
 
         tags = cleaned[:10]
-        aliases = generate_aliases(tags)
+        aliases = generate_aliases(tags, semantic_aliases)
 
         if url == "https://unboundhealing.org/":
             print("🏠 ROOT TAGS:", tags)
@@ -107,7 +122,7 @@ def main():
             "version": 2,
             "generated": True,
             "tags": tags,
-            "aliases": aliases
+            "aliases": aliases,
         }
 
     # =====================================================
