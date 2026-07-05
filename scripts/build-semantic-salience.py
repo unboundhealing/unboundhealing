@@ -374,9 +374,9 @@ def build_registry(root, html_files):
             "excerpt": metadata.get("excerpt", ""),
             "search_text": search_text,
             "concepts": concepts,
-            "word_count": metadata.get("word_count", 0),
             "tags": [],
             "aliases": []
+            "word_count": metadata.get("word_count", 0),
         }
     
     return registry
@@ -409,6 +409,8 @@ def build_graph(registry):
             "excerpt": data.get("excerpt", ""),
             "search_text": data.get("search_text", ""),
             "concepts": data.get("concepts", []),
+            "tags": [],
+            "aliases": [],
             "word_count": data.get("word_count", 0)
         }
         
