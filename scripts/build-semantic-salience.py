@@ -375,7 +375,7 @@ def build_registry(root, html_files):
             "search_text": search_text,
             "concepts": concepts,
             "tags": [],
-            "aliases": []
+            "aliases": [],
             "word_count": metadata.get("word_count", 0),
         }
     
@@ -411,7 +411,7 @@ def build_graph(registry):
             "concepts": data.get("concepts", []),
             "tags": [],
             "aliases": [],
-            "word_count": data.get("word_count", 0)
+            "word_count": data.get("word_count", 0),
         }
         
         concepts = data.get("concepts", [])
