@@ -7,6 +7,7 @@ ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
 
 SAL_FILE="assets/semantic-salience.json"
+VOCAB_FILE ="assets/vocabulary.json"
 OUTPUT="assets/search-index.json"
 
 if [ ! -f "$SAL_FILE" ]; then
@@ -29,6 +30,7 @@ from pathlib import Path
 
 ROOT = Path(os.getcwd())
 SAL_FILE = ROOT / "assets/semantic-salience.json"
+VOCAB_FILE = ROOT/ "assets/vocabulary.json"
 OUTPUT_FILE = ROOT / "assets/search-index.json"
 
 # -------------------------------------------------------
@@ -50,7 +52,21 @@ page_graph = salience.get("page_graph", {})
 
 if not isinstance(page_graph, dict):
     raise SystemExit("❌ page_graph must be dict")
-    
+
+# -------------------------------------------------------
+# LOAD VOCABULARY
+# -------------------------------------------------------
+
+try:
+    raw = VOCAB_FILE.read_text(encoding="utf-8").strip()
+    if not raw:
+        raise ValueError("assets/vocabulary.json is empty")
+
+    vocabulary = json.loads(raw)
+
+except Exception as e:
+    raise SystemExit(f"❌ Failed to load assets/vocabulary.json: {e}")
+
 # -------------------------------------------------------
 # INDEX BUILD
 # -------------------------------------------------------
@@ -75,11 +91,17 @@ for url, node in nodes.items():
     section = node.get("section", "")
     kind = node.get("kind", "")
     excerpt = node.get("excerpt", "")
-    search_text = node.get("search_text", "")
-    concepts = node.get("concepts", [])
-    tags = concepts
-    aliases = []
     
+    search_text = " ".join([
+        node.get("search_text", ""),
+        " ".join(tags),
+        " ".join(aliases)
+    ]).strip()
+    
+    concepts = node.get("concepts", [])
+    vocab = vocabulary.get(url, {})
+    tags = vocab.get("tags", [])
+    aliases = vocab.get("aliases", [])
     word_count = node.get("word_count", 0)
 
     index[url] = {
@@ -96,8 +118,8 @@ for url, node in nodes.items():
         "search_text": search_text,
 
         "concepts": concepts,
-        "tags": [],
-        "aliases": [],
+        "tags": tags,
+        "aliases": aliases,
 
         "word_count": word_count,
         "reading_time": max(1, round(word_count / 200)),
