@@ -7,7 +7,7 @@ ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
 
 SAL_FILE="assets/semantic-salience.json"
-VOCAB_FILE ="assets/vocabulary.json"
+VOCAB_FILE="assets/vocabulary.json"
 OUTPUT="assets/search-index.json"
 
 if [ ! -f "$SAL_FILE" ]; then
@@ -17,6 +17,16 @@ fi
 
 if [ ! -s "$SAL_FILE" ]; then
   echo "❌ assets/semantic-salience.json is empty — HARD STOP (CI race detected)"
+  exit 1
+fi
+
+if [ ! -f "$VOCAB_FILE" ]; then
+  echo "❌ assets/vocabulary.json missing — HARD STOP"
+  exit 1
+fi
+
+if [ ! -s "$VOCAB_FILE" ]; then
+  echo "❌ assets/vocabulary.json is empty — HARD STOP"
   exit 1
 fi
 
@@ -30,7 +40,7 @@ from pathlib import Path
 
 ROOT = Path(os.getcwd())
 SAL_FILE = ROOT / "assets/semantic-salience.json"
-VOCAB_FILE = ROOT/ "assets/vocabulary.json"
+VOCAB_FILE = ROOT / "assets/vocabulary.json"
 OUTPUT_FILE = ROOT / "assets/search-index.json"
 
 # -------------------------------------------------------
@@ -63,6 +73,8 @@ try:
         raise ValueError("assets/vocabulary.json is empty")
 
     vocabulary = json.loads(raw)
+    
+    print("FIRST VOCAB KEY:", next(iter(vocabulary.keys())))
 
 except Exception as e:
     raise SystemExit(f"❌ Failed to load assets/vocabulary.json: {e}")
@@ -99,7 +111,11 @@ for url, node in nodes.items():
     ]).strip()
     
     concepts = node.get("concepts", [])
+
     vocab = vocabulary.get(url, {})
+    print("SEARCH URL :", url)
+    print("VOCAB HIT  :", vocab)
+    
     tags = vocab.get("tags", [])
     aliases = vocab.get("aliases", [])
     word_count = node.get("word_count", 0)
@@ -153,6 +169,7 @@ os.replace(tmp_path, OUTPUT_FILE)
 print("✅ Search index built (v5 unified python builder)")
 print(f"📦 pages indexed: {len(index)}")
 print("🧠 semantic-salience is the single truth source")
+
 EOF
 
 echo "🎉 Done."
