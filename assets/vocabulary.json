@@ -14,7 +14,14 @@
       "appears",
       "present"
     ],
-    "aliases": []
+    "aliases": [
+      "exploration",
+      "interest",
+      "recovery",
+      "restoration",
+      "wholeness",
+      "wonder"
+    ]
   },
   "https://unboundhealing.org/about/": {
     "version": 2,
@@ -31,7 +38,11 @@
       "offered",
       "here"
     ],
-    "aliases": []
+    "aliases": [
+      "recovery",
+      "restoration",
+      "wholeness"
+    ]
   },
   "https://unboundhealing.org/archive/brittany/": {
     "version": 2,
@@ -48,7 +59,12 @@
       "family",
       "memory"
     ],
-    "aliases": []
+    "aliases": [
+      "consideration",
+      "contemplation",
+      "introspection",
+      "pondering"
+    ]
   },
   "https://unboundhealing.org/concept/evolving/": {
     "version": 2,
@@ -65,7 +81,11 @@
       "memory",
       "knowing"
     ],
-    "aliases": []
+    "aliases": [
+      "dialogue",
+      "discussion",
+      "talk"
+    ]
   },
   "https://unboundhealing.org/concept/experimenting/": {
     "version": 2,
@@ -82,7 +102,11 @@
       "system",
       "references"
     ],
-    "aliases": []
+    "aliases": [
+      "contemplation",
+      "reflection",
+      "thought"
+    ]
   },
   "https://unboundhealing.org/concept/iced-coffee/": {
     "version": 2,
@@ -99,7 +123,12 @@
       "brief",
       "reflection"
     ],
-    "aliases": []
+    "aliases": [
+      "consideration",
+      "contemplation",
+      "introspection",
+      "pondering"
+    ]
   },
   "https://unboundhealing.org/concept/ici/": {
     "version": 2,
@@ -133,7 +162,10 @@
       "sense",
       "thoughts"
     ],
-    "aliases": []
+    "aliases": [
+      "essays",
+      "journaling"
+    ]
   },
   "https://unboundhealing.org/concept/": {
     "version": 2,
@@ -167,7 +199,11 @@
       "coffee",
       "beans"
     ],
-    "aliases": []
+    "aliases": [
+      "contemplation",
+      "reflection",
+      "thought"
+    ]
   },
   "https://unboundhealing.org/concept/origin/": {
     "version": 2,
@@ -184,7 +220,14 @@
       "coffee",
       "how"
     ],
-    "aliases": []
+    "aliases": [
+      "dialogue",
+      "discussion",
+      "essays",
+      "journal",
+      "journaling",
+      "talk"
+    ]
   },
   "https://unboundhealing.org/concept/website-building/": {
     "version": 2,
@@ -201,7 +244,14 @@
       "what",
       "possible"
     ],
-    "aliases": []
+    "aliases": [
+      "consideration",
+      "contemplation",
+      "exploration",
+      "interest",
+      "introspection",
+      "pondering"
+    ]
   },
   "https://unboundhealing.org/concept/zone/": {
     "version": 2,
@@ -218,7 +268,14 @@
       "thinking",
       "writing"
     ],
-    "aliases": []
+    "aliases": [
+      "contemplation",
+      "essays",
+      "journal",
+      "journaling",
+      "reflection",
+      "thought"
+    ]
   },
   "https://unboundhealing.org/gathering/": {
     "version": 2,
@@ -235,7 +292,10 @@
       "together",
       "possible"
     ],
-    "aliases": []
+    "aliases": [
+      "awareness",
+      "mindfulness"
+    ]
   },
   "https://unboundhealing.org/": {
     "version": 2,
@@ -252,7 +312,21 @@
       "awareness",
       "writing"
     ],
-    "aliases": []
+    "aliases": [
+      "attention",
+      "consideration",
+      "contemplation",
+      "essays",
+      "introspection",
+      "journal",
+      "journaling",
+      "mindfulness",
+      "noticing",
+      "pondering",
+      "recovery",
+      "restoration",
+      "wholeness"
+    ]
   },
   "https://unboundhealing.org/inviting/": {
     "version": 2,
@@ -269,7 +343,12 @@
       "different",
       "doorway"
     ],
-    "aliases": []
+    "aliases": [
+      "consideration",
+      "contemplation",
+      "introspection",
+      "pondering"
+    ]
   },
   "https://unboundhealing.org/listening/": {
     "version": 2,
@@ -286,7 +365,11 @@
       "experience",
       "still"
     ],
-    "aliases": []
+    "aliases": [
+      "attention",
+      "mindfulness",
+      "noticing"
+    ]
   },
   "https://unboundhealing.org/noticing/": {
     "version": 2,
@@ -303,7 +386,11 @@
       "everyday",
       "life"
     ],
-    "aliases": []
+    "aliases": [
+      "attention",
+      "mindfulness",
+      "presence"
+    ]
   },
   "https://unboundhealing.org/noticing/shared-experiences/": {
     "version": 2,
@@ -439,7 +526,15 @@
       "knowing",
       "what"
     ],
-    "aliases": []
+    "aliases": [
+      "consideration",
+      "contemplation",
+      "dialogue",
+      "discussion",
+      "introspection",
+      "pondering",
+      "talk"
+    ]
   },
   "https://unboundhealing.org/opening/liz/": {
     "version": 2,
@@ -456,7 +551,12 @@
       "love",
       "write"
     ],
-    "aliases": []
+    "aliases": [
+      "consideration",
+      "contemplation",
+      "introspection",
+      "pondering"
+    ]
   },
   "https://unboundhealing.org/opening/love-concept/": {
     "version": 2,
@@ -473,7 +573,12 @@
       "name",
       "what"
     ],
-    "aliases": []
+    "aliases": [
+      "consideration",
+      "contemplation",
+      "introspection",
+      "pondering"
+    ]
   },
   "https://unboundhealing.org/opening/lukewarm-decaf/": {
     "version": 2,
@@ -507,7 +612,12 @@
       "details",
       "wholeness"
     ],
-    "aliases": []
+    "aliases": [
+      "consideration",
+      "contemplation",
+      "introspection",
+      "pondering"
+    ]
   },
   "https://unboundhealing.org/opening/noticing/": {
     "version": 2,
@@ -524,7 +634,12 @@
       "explores",
       "what"
     ],
-    "aliases": []
+    "aliases": [
+      "consideration",
+      "contemplation",
+      "introspection",
+      "pondering"
+    ]
   },
   "https://unboundhealing.org/opening/open/": {
     "version": 2,
@@ -541,7 +656,14 @@
       "attention",
       "possibility"
     ],
-    "aliases": []
+    "aliases": [
+      "essays",
+      "journal",
+      "journaling",
+      "mindfulness",
+      "noticing",
+      "presence"
+    ]
   },
   "https://unboundhealing.org/opening/post-this/": {
     "version": 2,
@@ -558,7 +680,17 @@
       "breathing",
       "lived"
     ],
-    "aliases": []
+    "aliases": [
+      "attention",
+      "consideration",
+      "contemplation",
+      "introspection",
+      "mindfulness",
+      "noticing",
+      "pondering",
+      "presence",
+      "thought"
+    ]
   },
   "https://unboundhealing.org/opening/skwintcheee/": {
     "version": 2,
@@ -592,7 +724,12 @@
       "voices",
       "appearing"
     ],
-    "aliases": []
+    "aliases": [
+      "consideration",
+      "contemplation",
+      "introspection",
+      "pondering"
+    ]
   },
   "https://unboundhealing.org/opening/still-warm/": {
     "version": 2,
@@ -626,7 +763,12 @@
       "music",
       "awareness"
     ],
-    "aliases": []
+    "aliases": [
+      "attention",
+      "mindfulness",
+      "noticing",
+      "presence"
+    ]
   },
   "https://unboundhealing.org/opening/this-morning-a/": {
     "version": 2,
@@ -643,7 +785,16 @@
       "surprising",
       "excitement"
     ],
-    "aliases": []
+    "aliases": [
+      "attention",
+      "consideration",
+      "contemplation",
+      "introspection",
+      "mindfulness",
+      "noticing",
+      "pondering",
+      "presence"
+    ]
   },
   "https://unboundhealing.org/opening/this-morning-too/": {
     "version": 2,
@@ -660,7 +811,12 @@
       "coffee",
       "chores"
     ],
-    "aliases": []
+    "aliases": [
+      "consideration",
+      "contemplation",
+      "introspection",
+      "pondering"
+    ]
   },
   "https://unboundhealing.org/opening/this-morning/": {
     "version": 2,
@@ -694,7 +850,12 @@
       "beyond",
       "memory"
     ],
-    "aliases": []
+    "aliases": [
+      "consideration",
+      "contemplation",
+      "introspection",
+      "pondering"
+    ]
   },
   "https://unboundhealing.org/opening/tom/": {
     "version": 2,
@@ -711,7 +872,11 @@
       "relationship",
       "subtle"
     ],
-    "aliases": []
+    "aliases": [
+      "attention",
+      "awareness",
+      "mindfulness"
+    ]
   },
   "https://unboundhealing.org/opening/undecided/": {
     "version": 2,
@@ -728,7 +893,11 @@
       "boredom",
       "curiosity"
     ],
-    "aliases": []
+    "aliases": [
+      "exploration",
+      "interest",
+      "wonder"
+    ]
   },
   "https://unboundhealing.org/opening/whatever-this-is/": {
     "version": 2,
@@ -762,7 +931,12 @@
       "curious",
       "impossibility"
     ],
-    "aliases": []
+    "aliases": [
+      "consideration",
+      "contemplation",
+      "introspection",
+      "pondering"
+    ]
   },
   "https://unboundhealing.org/opening/yesterday/": {
     "version": 2,
@@ -779,7 +953,11 @@
       "most",
       "paths"
     ],
-    "aliases": []
+    "aliases": [
+      "exploration",
+      "interest",
+      "wonder"
+    ]
   },
   "https://unboundhealing.org/supporting/": {
     "version": 2,
@@ -796,7 +974,11 @@
       "offering",
       "reflective"
     ],
-    "aliases": []
+    "aliases": [
+      "recovery",
+      "restoration",
+      "wholeness"
+    ]
   },
   "https://unboundhealing.org/welcome/": {
     "version": 2,
@@ -813,6 +995,17 @@
       "experience",
       "curiosity"
     ],
-    "aliases": []
+    "aliases": [
+      "attention",
+      "exploration",
+      "interest",
+      "mindfulness",
+      "noticing",
+      "presence",
+      "recovery",
+      "restoration",
+      "wholeness",
+      "wonder"
+    ]
   }
 }
