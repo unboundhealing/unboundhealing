@@ -474,6 +474,33 @@
     ],
     "aliases": []
   },
+  "https://unboundhealing.org/opening/coffee-and-quiet/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "opening",
+      "coffee",
+      "quiet",
+      "time",
+      "reflection",
+      "presence",
+      "noticing",
+      "thoughts",
+      "sensations",
+      "small"
+    ],
+    "aliases": [
+      "attention",
+      "awareness",
+      "consideration",
+      "contemplation",
+      "introspection",
+      "mindfulness",
+      "pondering",
+      "stillness",
+      "thinking"
+    ]
+  },
   "https://unboundhealing.org/opening/cooling-tea/": {
     "version": 2,
     "generated": true,
