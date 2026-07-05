@@ -41,6 +41,26 @@ def load_aliases():
         return {}
 
 # =========================================================
+# EXPAND REVERSE ALIASES
+# =========================================================
+
+def expand_reverse_aliases(alias_map):
+
+    expanded = {}
+
+    for tag, aliases in alias_map.items():
+
+        expanded.setdefault(tag, set()).update(aliases)
+
+        for alias in aliases:
+            expanded.setdefault(alias, set()).add(tag)
+
+    return {
+        k: sorted(v)
+        for k, v in expanded.items()
+    }
+
+# =========================================================
 # NORMALIZE TAGS
 # =========================================================
 
@@ -85,6 +105,7 @@ def main():
 
     salience = load_json(SAL_FILE)
     semantic_aliases = load_aliases()
+    semantic_aliases = expand_reverse_aliases(semantic_aliases)
     
     nodes = salience.get("nodes", {})
     if not isinstance(nodes, dict):
