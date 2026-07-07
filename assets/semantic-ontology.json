@@ -1,0 +1,106 @@
+{
+  "healing": {
+    "parents": [],
+    "children": [
+      "recovery",
+      "restoration",
+      "wholeness",
+      "integration",
+      "growth"
+    ]
+  },
+
+  "awareness": {
+    "parents": [],
+    "children": [
+      "presence",
+      "attention",
+      "mindfulness",
+      "noticing",
+      "observation"
+    ]
+  },
+
+  "reflection": {
+    "parents": [],
+    "children": [
+      "thinking",
+      "contemplation",
+      "pondering",
+      "journaling",
+      "memory"
+    ]
+  },
+
+  "relationship": {
+    "parents": [],
+    "children": [
+      "conversation",
+      "connection",
+      "listening",
+      "family",
+      "community"
+    ]
+  },
+
+  "nature": {
+    "parents": [],
+    "children": [
+      "forest",
+      "earth",
+      "river",
+      "tree",
+      "garden"
+    ]
+  },
+
+  "stillness": {
+    "parents": [],
+    "children": [
+      "quiet",
+      "silence",
+      "rest",
+      "waiting"
+    ]
+  },
+
+  "curiosity": {
+    "parents": [],
+    "children": [
+      "wonder",
+      "exploration",
+      "experiment",
+      "question"
+    ]
+  },
+
+  "writing": {
+    "parents": [],
+    "children": [
+      "essay",
+      "journal",
+      "story",
+      "reflection"
+    ]
+  },
+
+  "faith": {
+    "parents": [],
+    "children": [
+      "spirituality",
+      "prayer",
+      "trust",
+      "mystery"
+    ]
+  },
+
+  "invitation": {
+    "parents": [],
+    "children": [
+      "welcome",
+      "gather",
+      "participation",
+      "sharing"
+    ]
+  }
+}
