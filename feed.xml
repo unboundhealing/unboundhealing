@@ -13,13 +13,13 @@
   <link>https://unboundhealing.org/</link>
 </image>
 
-<lastBuildDate>Wed, 8 Jul 2026 14:32:53 -0400</lastBuildDate>
+<lastBuildDate>Wed, 8 Jul 2026 14:44:49 -0400</lastBuildDate>
 
 <item>
-  <title>Conversing | __protected_unbound healing__ ministries</title>
-  <link>https://unboundhealing.org/about/conversing/</link>
-  <guid>https://unboundhealing.org/about/conversing/</guid>
-  <description><![CDATA[]]></description>
+  <title>  __protected_unbound healing__ ministries</title>
+  <link>https://unboundhealing.org/</link>
+  <guid>https://unboundhealing.org/</guid>
+  <description><![CDATA[Unbound Healing is a space of reflection, presence, and invitation into deeper awareness through writing, listening, and shared attention.]]></description>
 </item>
 
 <item>
@@ -30,9 +30,23 @@
 </item>
 
 <item>
+  <title>Conversing | __protected_unbound healing__ ministries</title>
+  <link>https://unboundhealing.org/about/conversing/</link>
+  <guid>https://unboundhealing.org/about/conversing/</guid>
+  <description><![CDATA[]]></description>
+</item>
+
+<item>
   <title>Brittany | __protected_unbound healing__ ministries</title>
   <link>https://unboundhealing.org/archive/brittany/</link>
   <guid>https://unboundhealing.org/archive/brittany/</guid>
+  <description><![CDATA[]]></description>
+</item>
+
+<item>
+  <title>Concept | __protected_unbound healing__ ministries</title>
+  <link>https://unboundhealing.org/concept/</link>
+  <guid>https://unboundhealing.org/concept/</guid>
   <description><![CDATA[]]></description>
 </item>
 
@@ -72,13 +86,6 @@
 </item>
 
 <item>
-  <title>Concept | __protected_unbound healing__ ministries</title>
-  <link>https://unboundhealing.org/concept/</link>
-  <guid>https://unboundhealing.org/concept/</guid>
-  <description><![CDATA[]]></description>
-</item>
-
-<item>
   <title>So i was just thinking… | __protected_unbound healing__ ministries</title>
   <link>https://unboundhealing.org/concept/just-thinking/</link>
   <guid>https://unboundhealing.org/concept/just-thinking/</guid>
@@ -114,13 +121,6 @@
 </item>
 
 <item>
-  <title>  __protected_unbound healing__ ministries</title>
-  <link>https://unboundhealing.org/</link>
-  <guid>https://unboundhealing.org/</guid>
-  <description><![CDATA[Unbound Healing is a space of reflection, presence, and invitation into deeper awareness through writing, listening, and shared attention.]]></description>
-</item>
-
-<item>
   <title>Inviting | __protected_unbound healing__ ministries</title>
   <link>https://unboundhealing.org/inviting/</link>
   <guid>https://unboundhealing.org/inviting/</guid>
@@ -145,6 +145,13 @@
   <title>Shared experiences | __protected_unbound healing__ ministries</title>
   <link>https://unboundhealing.org/noticing/shared-experiences/</link>
   <guid>https://unboundhealing.org/noticing/shared-experiences/</guid>
+  <description><![CDATA[]]></description>
+</item>
+
+<item>
+  <title>Opening… | __protected_unbound healing__ ministries</title>
+  <link>https://unboundhealing.org/opening/</link>
+  <guid>https://unboundhealing.org/opening/</guid>
   <description><![CDATA[]]></description>
 </item>
 
@@ -187,13 +194,6 @@
   <title>Gloomy… | __protected_unbound healing__ ministries</title>
   <link>https://unboundhealing.org/opening/gloomy/</link>
   <guid>https://unboundhealing.org/opening/gloomy/</guid>
-  <description><![CDATA[]]></description>
-</item>
-
-<item>
-  <title>Opening… | __protected_unbound healing__ ministries</title>
-  <link>https://unboundhealing.org/opening/</link>
-  <guid>https://unboundhealing.org/opening/</guid>
   <description><![CDATA[]]></description>
 </item>
 
