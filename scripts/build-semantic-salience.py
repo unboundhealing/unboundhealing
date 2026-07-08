@@ -6,6 +6,7 @@ import json
 from collections import defaultdict
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
+from pathlib import Path
 
 # =========================================================
 # CONFIG — SINGLE TRUTH CONTEXT
@@ -20,6 +21,46 @@ STOPWORDS = {
     "as", "by", "into", "though", "through", "i", "me", "my", "myself", "have", "has", "had",
     "do", "does", "did", "will", "would", "can", "could", "should", "may", "might", "very", "just", "about"
 }
+
+ROOT = Path(os.getcwd())
+ONTOLOGY_FILE = ROOT / "assets/semantic-ontology.json"
+
+# =========================================================
+# LOAD ONTOLOGY
+# =========================================================
+
+def load_ontology():
+
+    if not ONTOLOGY_FILE.exists():
+        return {}
+
+    try:
+        return json.loads(
+            ONTOLOGY_FILE.read_text(encoding="utf-8")
+        )
+
+    except Exception:
+        return {}
+
+# =========================================================
+# BUILD ONTOLOGY LOOKUPS
+# =========================================================
+
+def build_ontology_maps(ontology):
+
+    parents = {}
+    children = defaultdict(list)
+
+    for concept, info in ontology.items():
+
+        plist = info.get("parents", [])
+
+        parents[concept] = plist
+
+        for parent in plist:
+            children[parent].append(concept)
+
+    return parents, children
 
 # =========================================================
 # CANONICALIZATION (STRUCTURAL NORMALIZATION ONLY)
@@ -355,6 +396,7 @@ def build_registry(root, html_files):
             metadata["description"],
             metadata["excerpt"],
         )
+        concepts = expand_parent_concepts(concepts, ontology)
         
         search_text = build_search_text(
             metadata["title"],
@@ -535,12 +577,33 @@ def token_overlap(a, b):
 
     return len(ta & tb)
 
-def concept_overlap(a, b):
+def concept_overlap(a, b, parents):
 
     ca = set(a.get("concepts", []))
     cb = set(b.get("concepts", []))
 
-    return len(ca & cb)
+    score = 0
+
+    # exact matches
+    score += len(ca & cb) * 1.0
+
+    # ontology matches
+
+    for c in ca:
+
+        for p in parents.get(c, []):
+
+            if p in cb:
+                score += 0.60
+
+    for c in cb:
+
+        for p in parents.get(c, []):
+
+            if p in ca:
+                score += 0.60
+
+    return score
 
 def word_similarity(a, b):
 
@@ -552,9 +615,9 @@ def word_similarity(a, b):
 
     return 1 - abs(wa - wb) / max(wa, wb)
 
-def compare_pages(page_a, page_b):
+    compare_pages(page_a, page_b, parents):
 
-    concept = len(set(page_a.get("concepts", [])) & set(page_b.get("concepts", [])))
+    concept = concept_overlap(page_a, page_b, parents)
 
     search = token_overlap(
         page_a.get("search_text", ""),
@@ -572,8 +635,6 @@ def compare_pages(page_a, page_b):
     word_similarity = 0
     if max(wa, wb) > 0:
         word_similarity = 1 - abs(wa - wb) / max(wa, wb)
-
-    semantic_overlap = concept_overlap  # placeholder for future expansion
     
     return {
         "concept_overlap": concept,
@@ -586,7 +647,7 @@ def compare_pages(page_a, page_b):
 # PAGE GRAPH (CONSUMER LAYER ONLY)
 # =========================================================
 
-def build_page_graph(registry):
+def build_page_graph(registry, parents):
     """
     Derived navigation layer only.
     Not part of truth layer.
@@ -603,7 +664,7 @@ def build_page_graph(registry):
             if other_url == url:
                 continue
 
-            similarity = compare_pages(data, other_page)
+            similarity = compare_pages(data, other_page, parents)
 
             score = (
                 similarity["concept_overlap"] * 5
@@ -632,13 +693,13 @@ def build_page_graph(registry):
 # TRUTH LAYER ASSEMBLY
 # =========================================================
 
-def build_semantic_salience(registry):
+def build_semantic_salience(registry, parent_lookup):
 
     nodes, edges = build_graph(registry)
 
     salience = build_salience(registry, edges)
 
-    page_graph = build_page_graph(registry)
+    page_graph = build_page_graph(registry, parent_lookup)
 
     return {
         "version": "4.2",
@@ -708,6 +769,10 @@ def main():
 
     root = os.getcwd()
 
+    ontology = load_ontology()
+    parent_lookup = build_parent_lookup(ontology)
+    parent_map, child_map = build_ontology_maps(ontology)
+    
     html_files = find_html_files(root)
     print("📂 scanning root:", root)
     print("📦 html files discovered:", len(html_files))
@@ -715,7 +780,7 @@ def main():
     registry = build_registry(root, html_files)
     print("📦 registry entries:", len(registry))
 
-    semantic = build_semantic_salience(registry)
+    semantic = build_semantic_salience(registry, parent_lookup)
     
     output_path = os.path.join(root, "assets/semantic-salience.json")
 
