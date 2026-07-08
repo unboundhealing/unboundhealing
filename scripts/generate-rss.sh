@@ -9,6 +9,7 @@ cd "$ROOT_DIR"
 SITEMAP="sitemap.xml"
 OUTPUT="feed.xml"
 BASE_URL="https://unboundhealing.org"
+LAST_BUILD_DATE=$(git log -1 --format="%aD")
 
 # =========================
 # PROPER NOUNS
@@ -87,7 +88,7 @@ cat > "$OUTPUT" <<EOF
   <link>$BASE_URL/</link>
 </image>
 
-<lastBuildDate>$(git log -1 --format=%cD)</lastBuildDate>
+<lastBuildDate>$LAST_BUILD_DATE</lastBuildDate>
 EOF
 
 # =========================
