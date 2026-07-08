@@ -89,14 +89,6 @@ jobs:
           echo "🚀 Starting generate-site.sh"
           ./scripts/generate-site.sh
 
-
-      - name: Show homepage diff
-        shell: bash
-        run: |
-          echo "========== index.html diff =========="
-          git diff -- index.html || true
-      
-      
       # -------------------------------------
       # 8. VERIFY OUTPUT STRUCTURE (NON-FATAL BUT INFORMATIVE)
       # -------------------------------------
