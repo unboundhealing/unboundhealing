@@ -439,7 +439,7 @@ def extract_page_metadata(path, url):
 # REGISTRY (STRUCTURAL REALITY INDEX)
 # =========================================================
 
-def build_registry(root, html_files):
+def build_registry(root, html_files, ontology):
     registry = {}
         
     for path in html_files:
@@ -837,7 +837,7 @@ def main():
     print("📂 scanning root:", root)
     print("📦 html files discovered:", len(html_files))
 
-    registry = build_registry(root, html_files)
+    registry = build_registry(root, html_files, ontology)
     print("📦 registry entries:", len(registry))
 
     semantic = build_semantic_salience(registry, parent_lookup)
