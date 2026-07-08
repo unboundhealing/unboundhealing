@@ -98,7 +98,7 @@ def expand_parent_concepts(concepts, ontology):
 
     expanded = set()
 
-    for concept in concepts:
+    for concept in sorted(concepts):
 
         concept = canonicalize_concept(concept)
 
@@ -831,7 +831,7 @@ def main():
     parent_lookup = build_parent_lookup(ontology)
     parent_map, child_map = build_ontology_maps(ontology)
     
-    html_files = find_html_files(root)
+    html_files = sorted(find_html_files(root))
     print("📂 scanning root:", root)
     print("📦 html files discovered:", len(html_files))
 
