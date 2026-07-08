@@ -3,720 +3,832 @@
     "version": 2,
     "generated": true,
     "tags": [
-      "conversing",
-      "invitation",
-      "converse",
-      "healing",
-      "spirituality",
-      "suffering",
-      "curiosity",
-      "whatever",
+      "agenda",
+      "agenda-method",
+      "agenda-method-outcome",
+      "all",
+      "all-invitation",
+      "all-invitation-simply",
       "appears",
-      "present"
+      "appears-present",
+      "appears-present-conversing",
+      "being"
     ],
     "aliases": [
-      "exploration",
-      "interest",
-      "recovery",
-      "restoration",
-      "wholeness",
-      "wonder"
+      "agenda method",
+      "agenda method outcome",
+      "all invitation",
+      "all invitation simply",
+      "appears present",
+      "appears present conversing"
     ]
   },
   "https://unboundhealing.org/about/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "unbound",
-      "healing",
-      "ministries",
-      "intention",
-      "perspective",
-      "behind",
-      "work",
-      "invitations",
-      "offered",
-      "here"
+      "alive",
+      "alive-we",
+      "alive-we-not",
+      "answers",
+      "answers-we",
+      "answers-we-remain",
+      "appears",
+      "appears-here",
+      "appears-here-emerges",
+      "attention"
     ],
     "aliases": [
-      "recovery",
-      "restoration",
-      "wholeness"
+      "alive we",
+      "alive we not",
+      "answers we",
+      "answers we remain",
+      "appears here",
+      "appears here emerges",
+      "awareness",
+      "presence"
     ]
   },
   "https://unboundhealing.org/archive/brittany/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "archive",
-      "brittany",
-      "morning",
-      "reflection",
-      "calling",
-      "sister",
-      "becomes",
-      "exploration",
-      "family",
-      "memory"
+      "achieve",
+      "achieve-something",
+      "achieve-something-afraid",
+      "afraid",
+      "afraid-what",
+      "afraid-what-come",
+      "all",
+      "all-dont",
+      "all-dont-forget",
+      "am"
     ],
     "aliases": [
-      "consideration",
-      "contemplation",
-      "curiosity",
-      "introspection",
-      "pondering",
-      "thinking"
+      "achieve something",
+      "achieve something afraid",
+      "afraid what",
+      "afraid what come",
+      "all dont",
+      "all dont forget"
     ]
   },
   "https://unboundhealing.org/concept/evolving/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "concept",
-      "evolving",
-      "reconstructed",
-      "conversation",
-      "cats",
-      "coffee",
-      "journals",
-      "websites",
-      "memory",
-      "knowing"
+      "assistant",
+      "assistant-user",
+      "assistant-user-cat",
+      "assistant-user-find",
+      "best",
+      "best-platform",
+      "best-platform-this",
+      "cat",
+      "cat-sleeping",
+      "cat-sleeping-assistant"
     ],
     "aliases": [
-      "dialogue",
-      "discussion",
-      "talk"
+      "assistant user",
+      "assistant user cat",
+      "assistant user find",
+      "best platform",
+      "best platform this",
+      "cat sleeping",
+      "cat sleeping assistant"
     ]
   },
   "https://unboundhealing.org/concept/experimenting/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "concept",
-      "experimenting",
-      "thinking",
-      "whether",
-      "ideas",
-      "linked",
-      "together",
-      "living",
-      "system",
-      "references"
+      "all",
+      "all-show",
+      "all-show-up",
+      "also",
+      "also-remembering",
+      "also-remembering-drink",
+      "because",
+      "because-couldnt",
+      "because-couldnt-bother",
+      "bother"
     ],
     "aliases": [
-      "contemplation",
-      "reflection",
-      "thought"
+      "all show",
+      "all show up",
+      "also remembering",
+      "also remembering drink",
+      "because couldnt",
+      "because couldnt bother"
     ]
   },
   "https://unboundhealing.org/concept/iced-coffee/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "concept",
-      "iced",
-      "coffee",
-      "cooling",
-      "idea",
-      "arriving",
-      "website",
-      "unfolding",
-      "brief",
-      "reflection"
+      "able",
+      "able-really",
+      "able-really-get",
+      "am",
+      "am-anyway",
+      "am-anyway-distracted",
+      "another",
+      "another-big",
+      "another-big-website",
+      "anyway"
     ],
     "aliases": [
-      "consideration",
-      "contemplation",
-      "introspection",
-      "pondering",
-      "thinking"
+      "able really",
+      "able really get",
+      "am anyway",
+      "am anyway distracted",
+      "another big",
+      "another big website"
     ]
   },
   "https://unboundhealing.org/concept/ici/": {
     "version": 2,
     "generated": true,
     "tags": [
+      "articles",
+      "articles-reflections",
+      "articles-reflections-questions",
       "concept",
-      "ici",
-      "interconnected",
+      "concept-ici",
+      "concept-ici-interconnected",
+      "concept-nodes",
+      "concept-nodes-pages",
       "content",
-      "initiative",
-      "playful",
-      "experiment",
-      "contextual",
-      "linking",
-      "discovery"
+      "content-initiative"
     ],
-    "aliases": []
+    "aliases": [
+      "articles reflections",
+      "articles reflections questions",
+      "concept ici",
+      "concept ici interconnected",
+      "concept nodes",
+      "concept nodes pages",
+      "content initiative"
+    ]
   },
   "https://unboundhealing.org/concept/idea/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "concept",
-      "idea",
-      "journal",
-      "entry",
-      "ideas",
-      "forming",
-      "while",
-      "writing",
-      "sense",
-      "thoughts"
+      "added",
+      "added-here",
+      "added-here-pacing",
+      "after",
+      "after-mantra",
+      "after-mantra-phrases",
+      "ai",
+      "ai-so",
+      "ai-so-not",
+      "already"
     ],
     "aliases": [
-      "essays",
-      "journaling"
+      "added here",
+      "added here pacing",
+      "after mantra",
+      "after mantra phrases",
+      "ai so",
+      "ai so not"
     ]
   },
   "https://unboundhealing.org/concept/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "concept",
+      "almost",
+      "almost-origin",
+      "almost-origin-story",
+      "building",
+      "coffee",
+      "coffee-website",
+      "coffee-website-building",
       "collection",
-      "concepts",
-      "experiments",
-      "conversations",
-      "connective",
-      "threads",
-      "exploring",
-      "how",
-      "ideas"
+      "collection-concepts",
+      "collection-concepts-experiments"
     ],
-    "aliases": []
+    "aliases": [
+      "almost origin",
+      "almost origin story",
+      "coffee website",
+      "coffee website building",
+      "collection concepts",
+      "collection concepts experiments"
+    ]
   },
   "https://unboundhealing.org/concept/just-thinking/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "concept",
-      "thinking",
-      "so",
-      "small",
-      "observation",
-      "discovered",
-      "somewhere",
-      "between",
-      "coffee",
-      "beans"
+      "adding",
+      "adding-line",
+      "adding-line-whatever",
+      "beans",
+      "beans-dishes",
+      "beans-dishes-being",
+      "beans-unloading",
+      "beans-unloading-dishes",
+      "being",
+      "being-right"
     ],
     "aliases": [
-      "contemplation",
-      "reflection",
-      "thought"
+      "adding line",
+      "adding line whatever",
+      "beans dishes",
+      "beans dishes being",
+      "beans unloading",
+      "beans unloading dishes",
+      "being right"
     ]
   },
   "https://unboundhealing.org/concept/origin/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "concept",
-      "origin",
+      "accidental",
+      "accidental-formation",
+      "accidental-formation-interconnected",
       "almost",
-      "story",
-      "edited",
-      "conversation",
-      "hyperlinks",
-      "writing",
-      "coffee",
-      "how"
+      "almost-origin",
+      "almost-origin-story",
+      "boom",
+      "boom-chatgpt",
+      "boom-chatgpt-think",
+      "called"
     ],
     "aliases": [
-      "dialogue",
-      "discussion",
-      "essays",
-      "journal",
-      "journaling",
-      "talk"
+      "accidental formation",
+      "accidental formation interconnected",
+      "almost origin",
+      "almost origin story",
+      "boom chatgpt",
+      "boom chatgpt think"
     ]
   },
   "https://unboundhealing.org/concept/website-building/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "concept",
-      "website",
+      "anyone",
+      "anyone-reading",
+      "anyone-reading-thisehhsome",
+      "better",
+      "better-what",
+      "better-what-things",
       "building",
-      "reflection",
-      "curiosity",
-      "connection",
-      "tendency",
-      "wonder",
-      "what",
-      "possible"
+      "building-connection",
+      "building-connection-tendency",
+      "building-making"
     ],
     "aliases": [
-      "consideration",
-      "contemplation",
-      "exploration",
-      "interest",
-      "introspection",
-      "pondering",
-      "thinking"
+      "anyone reading",
+      "anyone reading thisehhsome",
+      "better what",
+      "better what things",
+      "building connection",
+      "building connection tendency",
+      "building making"
     ]
   },
   "https://unboundhealing.org/concept/zone/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "concept",
-      "zone",
-      "exploration",
-      "attention",
+      "abracadabra",
+      "abracadabra-lady",
+      "abracadabra-lady-gaga",
+      "absolute",
+      "absolute-precision",
+      "absolute-precision-grace",
       "activity",
-      "whatever",
-      "meant",
-      "being",
-      "thinking",
-      "writing"
+      "activity-whatever",
+      "activity-whatever-meant",
+      "all"
     ],
     "aliases": [
-      "awareness",
-      "contemplation",
-      "curiosity",
-      "essays",
-      "journal",
-      "journaling",
-      "presence",
-      "reflection",
-      "thought"
+      "abracadabra lady",
+      "abracadabra lady gaga",
+      "absolute precision",
+      "absolute precision grace",
+      "activity whatever",
+      "activity whatever meant"
     ]
   },
   "https://unboundhealing.org/gathering/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "gathering",
-      "space",
-      "shared",
       "attention",
-      "gatheringreflections",
-      "connection",
-      "presence",
+      "attention-gatheringreflections",
+      "attention-gatheringreflections-connection",
       "being",
-      "together",
-      "possible"
+      "being-together",
+      "being-together-gathering",
+      "coffee",
+      "coffee-conversation",
+      "coffee-conversation-community",
+      "community"
     ],
     "aliases": [
+      "attention gatheringreflections",
+      "attention gatheringreflections connection",
       "awareness",
-      "mindfulness"
+      "being together",
+      "being together gathering",
+      "coffee conversation",
+      "coffee conversation community",
+      "presence"
     ]
   },
   "https://unboundhealing.org/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "unbound",
-      "healing",
-      "ministries",
-      "space",
-      "reflection",
-      "presence",
-      "invitation",
-      "deeper",
-      "awareness",
-      "writing"
+      "all",
+      "all-this",
+      "all-this-thought",
+      "anything",
+      "anything-happening",
+      "anything-happening-all",
+      "attention",
+      "attention-you",
+      "attention-you-ever",
+      "awareness"
     ],
     "aliases": [
-      "attention",
-      "consideration",
-      "contemplation",
-      "essays",
-      "introspection",
-      "journal",
-      "journaling",
+      "all this",
+      "all this thought",
+      "anything happening",
+      "anything happening all",
+      "attention you",
+      "attention you ever",
       "mindfulness",
       "noticing",
-      "pondering",
-      "recovery",
-      "restoration",
-      "thinking",
-      "wholeness"
+      "presence"
     ]
   },
   "https://unboundhealing.org/inviting/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "inviting",
-      "collection",
-      "invitations",
-      "reflection",
+      "archived",
+      "archived-historical",
+      "archived-historical-context",
       "attention",
-      "lived",
-      "experienceeach",
-      "offering",
-      "different",
-      "doorway"
+      "attention-lived",
+      "attention-lived-experienceeach",
+      "collection",
+      "collection-invitations",
+      "collection-invitations-reflection",
+      "content"
     ],
     "aliases": [
+      "archived historical",
+      "archived historical context",
+      "attention lived",
+      "attention lived experienceeach",
       "awareness",
-      "consideration",
-      "contemplation",
-      "introspection",
-      "pondering",
-      "presence",
-      "thinking"
+      "collection invitations",
+      "collection invitations reflection",
+      "presence"
     ]
   },
   "https://unboundhealing.org/listening/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "listening",
+      "appear",
+      "appear-here",
+      "appear-here-someday",
       "audio",
-      "reflections",
-      "spoken",
-      "explorations",
+      "audio-reflections",
+      "audio-reflections-spoken",
       "awareness",
-      "presence",
-      "lived",
-      "experience",
-      "still"
+      "awareness-presence",
+      "awareness-presence-lived",
+      "but"
     ],
     "aliases": [
+      "appear here",
+      "appear here someday",
       "attention",
+      "audio reflections",
+      "audio reflections spoken",
+      "awareness presence",
+      "awareness presence lived",
       "mindfulness",
-      "noticing"
+      "noticing",
+      "presence"
     ]
   },
   "https://unboundhealing.org/noticing/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "noticing",
-      "space",
-      "noticingsubtle",
-      "observations",
-      "reflections",
-      "quiet",
-      "unfolding",
       "awareness",
+      "awareness-everyday",
+      "awareness-everyday-life",
+      "confusion",
+      "confusion-share",
+      "confusion-share-publicly",
       "everyday",
-      "life"
+      "everyday-life",
+      "everyday-life-noticing",
+      "experiences"
     ],
     "aliases": [
       "attention",
+      "awareness everyday",
+      "awareness everyday life",
+      "confusion share",
+      "confusion share publicly",
+      "everyday life",
+      "everyday life noticing",
       "mindfulness",
-      "presence",
-      "stillness"
+      "noticing",
+      "presence"
     ]
   },
   "https://unboundhealing.org/noticing/shared-experiences/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "noticing",
-      "shared",
-      "experiences",
+      "appear",
+      "appear-here",
+      "appear-here-they",
       "collection",
-      "observations",
-      "questions",
-      "moments",
-      "generously",
-      "visitors",
-      "appear"
+      "collection-observations",
+      "collection-observations-questions",
+      "experiences",
+      "experiences-appear",
+      "experiences-appear-here",
+      "experiences-collection"
     ],
     "aliases": [
-      "awareness"
+      "appear here",
+      "appear here they",
+      "collection observations",
+      "collection observations questions",
+      "experiences appear",
+      "experiences appear here",
+      "experiences collection"
     ]
   },
   "https://unboundhealing.org/opening/another-another-day-before/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
+      "amin",
+      "amin-mix",
+      "amin-mix-link",
       "another",
-      "day",
-      "before",
-      "morning",
-      "wanders",
-      "tea",
-      "glowing",
-      "strangers",
-      "website"
+      "another-another",
+      "another-another-day",
+      "another-day",
+      "another-day-before",
+      "awareness",
+      "awareness-bless"
     ],
-    "aliases": []
+    "aliases": [
+      "amin mix",
+      "amin mix link",
+      "another another",
+      "another another day",
+      "another day",
+      "another day before",
+      "attention",
+      "awareness bless",
+      "mindfulness",
+      "noticing",
+      "presence"
+    ]
   },
   "https://unboundhealing.org/opening/another-another-yesterday/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
+      "affairs",
+      "affairs-social",
+      "affairs-social-support",
+      "after",
+      "after-phenomena",
+      "after-phenomena-yes",
       "another",
-      "yesterday",
-      "thoughts",
-      "worthiness",
-      "disability",
-      "work",
-      "shame",
-      "slowly",
-      "unfold"
+      "another-another",
+      "another-another-yesterday",
+      "another-yesterday"
     ],
-    "aliases": []
+    "aliases": [
+      "affairs social",
+      "affairs social support",
+      "after phenomena",
+      "after phenomena yes",
+      "another another",
+      "another another yesterday",
+      "another yesterday"
+    ]
   },
   "https://unboundhealing.org/opening/another-yesterday/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
+      "all",
+      "all-beyond",
+      "all-beyond-even",
       "another",
-      "yesterday",
-      "cats",
-      "consciousness",
-      "stretching",
-      "beatsaber",
-      "become",
-      "unexpected",
-      "companions"
+      "another-yesterday",
+      "another-yesterday-another",
+      "another-yesterday-cats",
+      "apparently",
+      "apparently-seems",
+      "apparently-seems-somewhat"
     ],
-    "aliases": []
+    "aliases": [
+      "all beyond",
+      "all beyond even",
+      "another yesterday",
+      "another yesterday another",
+      "another yesterday cats",
+      "apparently seems",
+      "apparently seems somewhat"
+    ]
   },
   "https://unboundhealing.org/opening/coffee-and-quiet/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "coffee",
-      "quiet",
-      "time",
-      "reflection",
-      "presence",
-      "noticing",
-      "thoughts",
-      "sensations",
-      "small"
+      "arise",
+      "arise-awareness",
+      "arise-awareness-coffee",
+      "awareness",
+      "awareness-coffee",
+      "awareness-coffee-quiet",
+      "awareness-some",
+      "awareness-some-edits",
+      "because",
+      "because-uncertainty"
     ],
     "aliases": [
+      "arise awareness",
+      "arise awareness coffee",
       "attention",
-      "awareness",
-      "consideration",
-      "contemplation",
-      "introspection",
+      "awareness coffee",
+      "awareness coffee quiet",
+      "awareness some",
+      "awareness some edits",
+      "because uncertainty",
       "mindfulness",
-      "pondering",
-      "stillness",
-      "thinking"
+      "noticing",
+      "presence"
     ]
   },
   "https://unboundhealing.org/opening/cooling-tea/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "cooling",
-      "tea",
-      "invitation",
-      "slowness",
-      "simplicity",
-      "ordinary",
+      "above",
+      "above-added",
+      "above-added-im",
       "act",
-      "making",
-      "experiencing"
+      "act-making",
+      "act-making-experiencing",
+      "added",
+      "added-im",
+      "added-im-calling",
+      "app"
     ],
-    "aliases": []
+    "aliases": [
+      "above added",
+      "above added im",
+      "act making",
+      "act making experiencing",
+      "added im",
+      "added im calling"
+    ]
   },
   "https://unboundhealing.org/opening/gloomy/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "gloomy",
-      "grey",
-      "morning",
-      "warm",
-      "tea",
-      "thoughts",
-      "memory",
-      "perspective",
-      "quiet"
+      "16",
+      "16-minutes",
+      "16-minutes-laughing",
+      "accuracy",
+      "accuracy-memory",
+      "accuracy-memory-which",
+      "actually",
+      "actually-still",
+      "actually-still-hot",
+      "almost"
     ],
     "aliases": [
-      "stillness"
+      "16 minutes",
+      "16 minutes laughing",
+      "accuracy memory",
+      "accuracy memory which",
+      "actually still",
+      "actually still hot"
     ]
   },
   "https://unboundhealing.org/opening/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "collection",
-      "observations",
-      "stories",
-      "questionseach",
-      "doorway",
-      "lived",
-      "experience",
-      "some",
-      "arrive"
+      "arrive",
+      "arrive-questions",
+      "arrive-questions-some",
+      "before",
+      "before-tea",
+      "before-tea-still",
+      "coffee",
+      "coffee-tom",
+      "coffee-tom-liz",
+      "coffee-whatever"
     ],
-    "aliases": []
+    "aliases": [
+      "arrive questions",
+      "arrive questions some",
+      "before tea",
+      "before tea still",
+      "coffee tom",
+      "coffee tom liz",
+      "coffee whatever"
+    ]
   },
   "https://unboundhealing.org/opening/just-listening/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "listening",
-      "reflection",
-      "conversation",
-      "attention",
-      "possibility",
-      "not",
-      "require",
-      "knowing",
-      "what"
+      "all",
+      "all-am",
+      "all-what",
+      "all-what-content",
+      "almost",
+      "almost-felt",
+      "almost-felt-state",
+      "am",
+      "am-listening",
+      "am-listening-anything"
     ],
     "aliases": [
-      "awareness",
-      "consideration",
-      "contemplation",
-      "dialogue",
-      "discussion",
-      "introspection",
-      "pondering",
-      "presence",
-      "talk",
-      "thinking"
+      "all am",
+      "all what",
+      "all what content",
+      "almost felt",
+      "almost felt state",
+      "am listening",
+      "am listening anything"
     ]
   },
   "https://unboundhealing.org/opening/liz/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "liz",
-      "brief",
-      "reflection",
-      "shared",
-      "attention",
-      "everyday",
-      "moments",
-      "love",
-      "write"
+      "after",
+      "after-whiff",
+      "after-whiff-fresh",
+      "again",
+      "again-after",
+      "again-after-whiff",
+      "another",
+      "another-little",
+      "another-little-confined",
+      "attention"
     ],
     "aliases": [
+      "after whiff",
+      "after whiff fresh",
+      "again after",
+      "again after whiff",
+      "another little",
+      "another little confined",
       "awareness",
-      "consideration",
-      "contemplation",
-      "introspection",
-      "pondering",
-      "presence",
-      "thinking"
+      "presence"
     ]
   },
   "https://unboundhealing.org/opening/love-concept/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "love",
-      "concept",
-      "reflection",
-      "togetherness",
+      "all",
+      "all-being",
+      "all-being-held",
+      "all-way",
+      "all-way-down",
+      "already",
+      "already-holds",
+      "already-holds-everything",
       "attraction",
-      "existence",
-      "why",
-      "name",
-      "what"
+      "attraction-beingness"
     ],
     "aliases": [
-      "consideration",
-      "contemplation",
-      "introspection",
-      "pondering",
-      "thinking"
+      "all being",
+      "all being held",
+      "all way",
+      "all way down",
+      "already holds",
+      "already holds everything",
+      "attraction beingness"
     ]
   },
   "https://unboundhealing.org/opening/lukewarm-decaf/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "lukewarm",
-      "decaf",
-      "love",
-      "you",
-      "strong",
-      "coffee",
-      "cools",
-      "cats",
-      "wander"
+      "all",
+      "all-love",
+      "all-love-you",
+      "appears",
+      "appears-morning",
+      "appears-morning-unfolds",
+      "begin",
+      "begin-few",
+      "begin-few-sips",
+      "cats"
     ],
-    "aliases": []
+    "aliases": [
+      "all love",
+      "all love you",
+      "appears morning",
+      "appears morning unfolds",
+      "begin few",
+      "begin few sips"
+    ]
   },
   "https://unboundhealing.org/opening/no-title/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "no",
-      "title",
-      "coffee",
-      "cools",
-      "thoughts",
-      "wander",
-      "reflection",
-      "details",
-      "wholeness"
+      "after",
+      "after-morning",
+      "after-morning-routines",
+      "again",
+      "again-but",
+      "again-but-this",
+      "all",
+      "all-out",
+      "all-out-order",
+      "already"
     ],
     "aliases": [
-      "consideration",
-      "contemplation",
-      "healing",
-      "introspection",
-      "pondering",
-      "thinking"
+      "after morning",
+      "after morning routines",
+      "again but",
+      "again but this",
+      "all out",
+      "all out order"
     ]
   },
   "https://unboundhealing.org/opening/noticing/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "noticing",
-      "quiet",
-      "reflection",
-      "relationship",
-      "reciprocity",
-      "expression",
-      "gently",
-      "explores",
-      "what"
+      "anything",
+      "anything-so",
+      "anything-so-try",
+      "certainty",
+      "certainty-expectation",
+      "certainty-expectation-resistance",
+      "desire",
+      "desire-more",
+      "desire-more-you",
+      "desired"
     ],
     "aliases": [
-      "awareness",
-      "consideration",
-      "contemplation",
-      "introspection",
-      "pondering",
-      "stillness",
-      "thinking"
+      "anything so",
+      "anything so try",
+      "certainty expectation",
+      "certainty expectation resistance",
+      "desire more",
+      "desire more you"
     ]
   },
   "https://unboundhealing.org/opening/open/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "open",
-      "reflections",
-      "awareness",
-      "writing",
-      "embarrassment",
-      "tea",
-      "wandering",
+      "above",
+      "all",
+      "all-there",
+      "all-there-less",
+      "appropriated",
+      "appropriated-word",
+      "appropriated-word-mantra",
       "attention",
-      "possibility"
+      "attention-possibility",
+      "attention-possibility-every"
     ],
     "aliases": [
-      "essays",
-      "journal",
-      "journaling",
-      "mindfulness",
-      "noticing",
+      "all there",
+      "all there less",
+      "appropriated word",
+      "appropriated word mantra",
+      "attention possibility",
+      "attention possibility every",
+      "awareness",
       "presence"
     ]
   },
@@ -724,394 +836,464 @@
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "p",
-      "unusual",
-      "dream",
+      "15",
+      "15-minutes",
+      "15-minutes-steeping",
+      "15-minutes-tea",
       "accidentally",
-      "well",
-      "timed",
-      "tea",
-      "morning",
-      "noticing"
+      "accidentally-well",
+      "accidentally-well-timed",
+      "accurately",
+      "accurately-wrong",
+      "accurately-wrong-burner"
     ],
     "aliases": [
-      "awareness"
+      "15 minutes",
+      "15 minutes steeping",
+      "15 minutes tea",
+      "accidentally well",
+      "accidentally well timed",
+      "accurately wrong",
+      "accurately wrong burner"
     ]
   },
   "https://unboundhealing.org/opening/post-this/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "post",
-      "this",
-      "stream",
-      "consciousness",
-      "reflection",
+      "almost",
+      "almost-bored",
+      "almost-bored-awareness",
+      "already",
+      "aware",
+      "aware-present",
+      "aware-present-whatever",
       "awareness",
-      "thinking",
-      "breathing",
-      "lived"
+      "awareness-open",
+      "awareness-open-aware"
     ],
     "aliases": [
+      "almost bored",
+      "almost bored awareness",
       "attention",
-      "consideration",
-      "contemplation",
-      "introspection",
+      "aware present",
+      "aware present whatever",
+      "awareness open",
+      "awareness open aware",
       "mindfulness",
       "noticing",
-      "pondering",
-      "presence",
-      "thought"
+      "presence"
     ]
   },
   "https://unboundhealing.org/opening/seriously/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "seriously",
-      "contemplative",
-      "reflection",
-      "thought",
+      "also",
+      "always",
+      "always-taken",
+      "always-taken-so",
+      "arises",
+      "arises-seriously",
+      "arises-seriously-dont",
       "awareness",
-      "presence",
-      "exploring",
-      "simplicity",
-      "noticing"
+      "awareness-presence",
+      "awareness-presence-exploring"
     ],
     "aliases": [
+      "always taken",
+      "always taken so",
+      "arises seriously",
+      "arises seriously dont",
       "attention",
-      "consideration",
-      "contemplation",
-      "introspection",
+      "awareness presence",
+      "awareness presence exploring",
       "mindfulness",
-      "pondering",
-      "thinking"
+      "noticing",
+      "presence"
     ]
   },
   "https://unboundhealing.org/opening/skwintcheee/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "skwintcheee",
-      "lingering",
-      "cup",
-      "decaf",
-      "coffee",
-      "opens",
-      "playful",
-      "meditation",
-      "flavor"
+      "actual",
+      "actual-definition",
+      "actual-definition-irony",
+      "after",
+      "after-explicitly",
+      "after-explicitly-stating",
+      "attention",
+      "attention-experience",
+      "attention-experience-simply",
+      "being"
     ],
-    "aliases": []
+    "aliases": [
+      "actual definition",
+      "actual definition irony",
+      "after explicitly",
+      "after explicitly stating",
+      "attention experience",
+      "attention experience simply",
+      "awareness",
+      "presence"
+    ]
   },
   "https://unboundhealing.org/opening/sold-out/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "sold",
-      "out",
-      "reflection",
-      "thought",
-      "crowded",
-      "inner",
-      "stadiumcountless",
-      "voices",
-      "appearing"
+      "above",
+      "above-even",
+      "above-even-this",
+      "all",
+      "all-clamoring",
+      "all-clamoring-their",
+      "all-experience",
+      "all-experience-thinking",
+      "appearing",
+      "appearing-dissolving"
     ],
     "aliases": [
-      "consideration",
-      "contemplation",
-      "introspection",
-      "pondering",
-      "thinking"
+      "above even",
+      "above even this",
+      "all clamoring",
+      "all clamoring their",
+      "all experience",
+      "all experience thinking",
+      "appearing dissolving"
     ]
   },
   "https://unboundhealing.org/opening/still-warm/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "still",
-      "warm",
-      "tea",
-      "morning",
-      "routines",
-      "drift",
-      "off",
-      "script",
-      "waits"
+      "also",
+      "also-chipmunk",
+      "also-chipmunk-couple",
+      "awareness",
+      "awareness-perception",
+      "awareness-perception-togetherness",
+      "birds",
+      "birds-mostly",
+      "birds-mostly-but",
+      "blue"
     ],
-    "aliases": []
+    "aliases": [
+      "also chipmunk",
+      "also chipmunk couple",
+      "attention",
+      "awareness perception",
+      "awareness perception togetherness",
+      "birds mostly",
+      "birds mostly but",
+      "mindfulness",
+      "noticing",
+      "presence"
+    ]
   },
   "https://unboundhealing.org/opening/the-day-before/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "day",
-      "before",
-      "tea",
-      "cools",
-      "while",
-      "thoughts",
-      "wander",
-      "music",
-      "awareness"
+      "515am",
+      "515am-coding",
+      "515am-coding-this",
+      "already",
+      "already-fed",
+      "already-fed-birds",
+      "ant",
+      "ant-mass",
+      "ant-mass-genocide",
+      "attempting"
     ],
     "aliases": [
-      "attention",
-      "mindfulness",
-      "noticing",
-      "presence"
+      "515am coding",
+      "515am coding this",
+      "already fed",
+      "already fed birds",
+      "ant mass",
+      "ant mass genocide"
     ]
   },
   "https://unboundhealing.org/opening/this-morning-a/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "this",
-      "morning",
-      "reflection",
+      "all",
+      "all-mean",
+      "aware",
+      "aware-present",
+      "aware-present-whatever",
       "awareness",
-      "uncertainty",
-      "website",
-      "building",
-      "surprising",
-      "excitement"
+      "awareness-okay",
+      "awareness-okay-open",
+      "awareness-uncertainty",
+      "awareness-uncertainty-website"
     ],
     "aliases": [
+      "all mean",
       "attention",
-      "consideration",
-      "contemplation",
-      "introspection",
+      "aware present",
+      "aware present whatever",
+      "awareness okay",
+      "awareness okay open",
+      "awareness uncertainty",
+      "awareness uncertainty website",
       "mindfulness",
       "noticing",
-      "pondering",
-      "presence",
-      "thinking"
+      "presence"
     ]
   },
   "https://unboundhealing.org/opening/this-morning-too/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "this",
-      "morning",
-      "too",
-      "stream",
-      "consciousness",
-      "reflection",
-      "moving",
-      "coffee",
-      "chores"
+      "am",
+      "am-determined",
+      "aware",
+      "aware-present",
+      "aware-present-whatever",
+      "awareness",
+      "awareness-open",
+      "awareness-open-aware",
+      "awarenessan",
+      "awarenessan-ordinary"
     ],
     "aliases": [
-      "consideration",
-      "contemplation",
-      "introspection",
-      "pondering",
-      "thinking"
+      "am determined",
+      "attention",
+      "aware present",
+      "aware present whatever",
+      "awareness open",
+      "awareness open aware",
+      "awarenessan ordinary",
+      "mindfulness",
+      "noticing",
+      "presence"
     ]
   },
   "https://unboundhealing.org/opening/this-morning/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "this",
-      "morning",
-      "wandering",
+      "746pm",
+      "746pm-this",
+      "746pm-this-transcription",
       "account",
-      "ordinary",
-      "morningbeat",
-      "saber",
-      "cats",
-      "tea"
+      "account-ordinary",
+      "account-ordinary-morningbeat",
+      "amount",
+      "amount-contained",
+      "amount-contained-within",
+      "amusing"
     ],
-    "aliases": []
+    "aliases": [
+      "746pm this",
+      "746pm this transcription",
+      "account ordinary",
+      "account ordinary morningbeat",
+      "amount contained",
+      "amount contained within"
+    ]
   },
   "https://unboundhealing.org/opening/this-you/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "this",
-      "you",
-      "reflection",
-      "meeting",
-      "one",
-      "another",
+      "alfie",
+      "alfie-this",
+      "alfie-this-you",
       "anew",
-      "beyond",
-      "memory"
+      "anew-beyond",
+      "anew-beyond-memory",
+      "another",
+      "another-anew",
+      "another-anew-beyond",
+      "beyond"
     ],
     "aliases": [
-      "consideration",
-      "contemplation",
-      "introspection",
-      "pondering",
-      "thinking"
+      "alfie this",
+      "alfie this you",
+      "anew beyond",
+      "anew beyond memory",
+      "another anew",
+      "another anew beyond"
     ]
   },
   "https://unboundhealing.org/opening/tom/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "tom",
-      "coffee",
-      "reflective",
-      "invitation",
-      "centered",
+      "am",
+      "am-listening",
+      "am-listening-without",
       "around",
-      "presence",
-      "relationship",
-      "subtle"
+      "around-presence",
+      "around-presence-relationship",
+      "being",
+      "being-said",
+      "being-said-without",
+      "centered"
     ],
     "aliases": [
-      "attention",
-      "awareness",
-      "mindfulness"
+      "am listening",
+      "am listening without",
+      "around presence",
+      "around presence relationship",
+      "being said",
+      "being said without"
     ]
   },
   "https://unboundhealing.org/opening/undecided/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "undecided",
-      "reflective",
-      "unfolding",
-      "thought",
-      "noticing",
-      "own",
-      "movementbetween",
-      "boredom",
-      "curiosity"
+      "again",
+      "again-again",
+      "again-again-presence",
+      "again-presence",
+      "again-presence-undecided",
+      "already",
+      "already-bored",
+      "already-bored-itself",
+      "also",
+      "also-this"
     ],
     "aliases": [
-      "awareness",
-      "exploration",
-      "interest",
-      "thinking",
-      "wonder"
+      "again again",
+      "again again presence",
+      "again presence",
+      "again presence undecided",
+      "already bored",
+      "already bored itself",
+      "also this"
     ]
   },
   "https://unboundhealing.org/opening/whatever-this-is/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "whatever",
-      "this",
-      "four",
-      "sips",
-      "coffee",
-      "little",
-      "frustration",
-      "question",
-      "if"
+      "advance",
+      "advance-while",
+      "advance-while-still",
+      "ago",
+      "ago-now",
+      "ago-now-couple",
+      "all",
+      "all-ill",
+      "all-ill-ever",
+      "all-this"
     ],
-    "aliases": []
+    "aliases": [
+      "advance while",
+      "advance while still",
+      "ago now",
+      "ago now couple",
+      "all ill",
+      "all ill ever",
+      "all this"
+    ]
   },
   "https://unboundhealing.org/opening/yes-and-no/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "yes",
-      "no",
-      "reflection",
-      "comfort",
-      "discomfort",
-      "certainty",
-      "uncertaintyand",
-      "curious",
-      "impossibility"
+      "actually",
+      "actually-hot",
+      "actually-hot-tea",
+      "all",
+      "all-one",
+      "all-one-same",
+      "any",
+      "any-choice",
+      "any-choice-lead",
+      "aware"
     ],
     "aliases": [
-      "consideration",
-      "contemplation",
-      "introspection",
-      "pondering",
-      "thinking"
+      "actually hot",
+      "actually hot tea",
+      "all one",
+      "all one same",
+      "any choice",
+      "any choice lead"
     ]
   },
   "https://unboundhealing.org/opening/yesterday/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "opening",
-      "yesterday",
-      "thoughts",
-      "memories",
-      "songs",
-      "tea",
-      "curiosity",
-      "recognition",
-      "most",
-      "paths"
+      "60",
+      "60-all",
+      "60-all-levels",
+      "all",
+      "all-levels",
+      "all-levels-following",
+      "application",
+      "application-such",
+      "application-such-things",
+      "beatsaber"
     ],
     "aliases": [
-      "exploration",
-      "interest",
-      "wonder"
+      "60 all",
+      "60 all levels",
+      "all levels",
+      "all levels following",
+      "application such",
+      "application such things"
     ]
   },
   "https://unboundhealing.org/supporting/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "supporting",
-      "ways",
-      "support",
-      "ongoing",
-      "work",
-      "unbound",
-      "healing",
-      "continued",
-      "offering",
-      "reflective"
+      "again",
+      "again-thought",
+      "again-thought-begins",
+      "all",
+      "all-mantra",
+      "all-mantra-again",
+      "aware",
+      "aware-present",
+      "aware-present-whatever",
+      "awareness"
     ],
     "aliases": [
-      "recovery",
-      "restoration",
-      "wholeness"
+      "again thought",
+      "again thought begins",
+      "all mantra",
+      "all mantra again",
+      "attention",
+      "aware present",
+      "aware present whatever",
+      "mindfulness",
+      "noticing",
+      "presence"
     ]
   },
   "https://unboundhealing.org/welcome/": {
     "version": 2,
     "generated": true,
     "tags": [
-      "welcome",
-      "welcoming",
-      "introduction",
-      "unbound",
-      "healing",
-      "ministries",
-      "awareness",
-      "ordinary",
-      "experience",
-      "curiosity"
+      "above",
+      "above-all",
+      "above-all-eventually",
+      "all",
+      "all-am",
+      "all-am-going",
+      "all-eventually",
+      "all-eventually-typed",
+      "am",
+      "am-going"
     ],
     "aliases": [
-      "attention",
-      "exploration",
-      "interest",
-      "mindfulness",
-      "noticing",
-      "presence",
-      "recovery",
-      "restoration",
-      "wholeness",
-      "wonder"
+      "above all",
+      "above all eventually",
+      "all am",
+      "all am going",
+      "all eventually",
+      "all eventually typed",
+      "am going"
     ]
   }
 }
