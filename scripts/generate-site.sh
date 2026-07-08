@@ -54,18 +54,12 @@ echo "💾 Committing generated assets..."
 git config user.name "github-actions"
 git config user.email "github-actions@github.com"
 
-
-echo "🔍 ALL changes before commit:"
-git status --short
-
-echo "📊 Diff summary:"
-git diff --stat
-git diff -- scripts/generate-site.sh
-git diff -- scripts/build-search-index.sh
-git diff -- scripts/build-sitemap.sh
-
-git add assets/*.json || true
-
+git add \
+  assets/*.json \
+  "**/*.html" \
+  feed.xml \
+  sitemap.xml
+  
 git commit -m "🔄 update generated site assets" || exit 0
 
 git fetch origin main
