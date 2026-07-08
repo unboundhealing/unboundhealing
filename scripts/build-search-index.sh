@@ -104,8 +104,6 @@ for url, node in nodes.items():
     concepts = node.get("concepts", [])
 
     vocab = vocabulary.get(url, {})
-    print("SEARCH URL :", url)
-    print("VOCAB HIT  :", vocab)
     
     tags = vocab.get("tags", [])
     aliases = vocab.get("aliases", [])    
