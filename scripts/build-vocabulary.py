@@ -136,9 +136,7 @@ def main():
         aliases = generate_aliases(tags, semantic_aliases)
 
         if url == "https://unboundhealing.org/":
-            print("🏠 ROOT TAGS:", tags)
-            print("🏠 ROOT ALIASES:", aliases)
-            
+              
         tags_index[url] = {
             "version": 2,
             "generated": True,
