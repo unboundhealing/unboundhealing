@@ -65,6 +65,12 @@ git add \
 echo "🔍 STAGED FILES:"
 git diff --cached --name-only
 
+echo "🔍 INDEX HASH:"
+sha256sum index.html
+
+echo "🔍 INDEX DIFF:"
+git diff -- index.html | head -50 || true
+
 git commit -m "🔄 update generated site assets" || true
 
 git fetch origin main
