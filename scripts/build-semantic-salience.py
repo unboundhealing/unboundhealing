@@ -848,60 +848,6 @@ def main():
         indent=2,
         ensure_ascii=False
     )
-
-    print("raw length:", len(raw))
-    print("node keys:", list(semantic.keys()))
-    
-    print(
-        "🧪 semantic-salience SHA256:",
-        hashlib.sha256(raw.encode("utf-8")).hexdigest()
-    )
-
-
-    print(
-        "nodes:",
-        hashlib.sha256(
-            json.dumps(
-                semantic["nodes"],
-                sort_keys=True,
-                ensure_ascii=False
-            ).encode()
-        ).hexdigest()
-    )
-
-    print(
-        "edges:",
-        hashlib.sha256(
-            json.dumps(
-                semantic["edges"],
-                sort_keys=True,
-                ensure_ascii=False
-            ).encode()
-        ).hexdigest()
-    )
-
-    print(
-        "salience:",
-        hashlib.sha256(
-            json.dumps(
-                semantic["salience"],
-                sort_keys=True,
-                ensure_ascii=False
-            ).encode()
-        ).hexdigest()
-    )
-
-    print(
-        "page_graph:",
-        hashlib.sha256(
-            json.dumps(
-                semantic["page_graph"],
-                sort_keys=True,
-                ensure_ascii=False
-            ).encode()
-        ).hexdigest()
-    )
-
     
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(raw)
