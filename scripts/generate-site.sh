@@ -86,6 +86,9 @@ git commit -m "🔄 update generated site assets" || true
 
 git fetch origin main
 
+echo "### BEFORE REBASE"
+git status --short
+
 git rebase origin/main
 
 echo "🔍 STATUS DETAIL:"
