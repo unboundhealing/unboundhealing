@@ -21,7 +21,6 @@ TRACKER_PATH = os.environ.get(
 
 PLACEHOLDER = "<!-- semantic-tracker -->"
 
-
 # =========================================================
 # FILE DISCOVERY (PURE STRUCTURAL SCAN)
 # =========================================================
@@ -41,7 +40,6 @@ def find_html_files():
         files.append(path)
 
     return files
-
 
 # =========================================================
 # TRACKER INJECTION (IDEMPOTENT SIDE EFFECT)
@@ -79,7 +77,6 @@ def inject_tracking_script(soup):
     else:
         soup.append(script)
 
-
 # =========================================================
 # FILE PROCESSOR
 # =========================================================
@@ -87,19 +84,25 @@ def inject_tracking_script(soup):
 def process_file(path: Path):
 
     try:
-        html = path.read_text(encoding="utf-8")
 
-        soup = BeautifulSoup(html, "html.parser")
+        original = path.read_text(encoding="utf-8")
+
+        soup = BeautifulSoup(original, "html.parser")
+
+        # If tracker already exists, leave the file completely untouched.
+        if soup.find("script", {"src": TRACKER_PATH}):
+            return
 
         inject_tracking_script(soup)
 
-        path.write_text(str(soup), encoding="utf-8")
+        updated = str(soup)
 
-        print(f"📡 injected tracking → {path}")
+        if updated != original:
+            path.write_text(updated, encoding="utf-8")
+            print(f"📡 injected tracking → {path}")
 
     except Exception as e:
         print(f"⚠️ skipped {path}: {e}")
-
 
 # =========================================================
 # MAIN
