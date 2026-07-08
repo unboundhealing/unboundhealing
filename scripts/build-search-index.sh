@@ -74,8 +74,6 @@ try:
 
     vocabulary = json.loads(raw)
     
-    print("FIRST VOCAB KEY:", next(iter(vocabulary.keys())))
-
 except Exception as e:
     raise SystemExit(f"❌ Failed to load assets/vocabulary.json: {e}")
 
