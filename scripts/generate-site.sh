@@ -56,9 +56,6 @@ echo "🗺 Sitemap (optional)"
 echo "🔎 Search index (optional)"
 ./scripts/build-search-index.sh || true
 
-echo "===== HTML DIFF ====="
-git diff -- opening/no-tea/index.html
-
 echo "💾 Committing generated assets..."
 
 git config user.name "github-actions"
