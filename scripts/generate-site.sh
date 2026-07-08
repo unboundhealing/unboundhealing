@@ -6,6 +6,10 @@ echo "🚀 Generating UNIFIED semantic-salience system (v3 SINGLE SOURCE)"
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
 
+echo "🔄 Syncing with origin..."
+git fetch origin main
+git rebase origin/main
+
 # ---------------------------------------------------------
 # STEP 1 — TRUTH LAYER (ONLY AUTHORITATIVE SOURCE)
 # ---------------------------------------------------------
@@ -37,7 +41,10 @@ python3 scripts/build-vocabulary.py
 # STEP 4 — PRESENTATION / RENDER LAYER
 # ---------------------------------------------------------
 
-echo "📡 Tracking injection (standalone consumer)..."
+echo "📡 Tracking injection..."
+python3 scripts/build-tracking.py
+
+echo "📡 Verifying tracker..."
 python3 scripts/build-tracking.py
 
 echo "📡 RSS (optional)"
@@ -64,16 +71,6 @@ git add \
   feed.xml \
   sitemap.xml
 
-echo "🔍 JSON HASHES:"
-sha256sum assets/semantic-salience.json
-sha256sum feed.xml
-
-echo "🔍 INDEX HASH:"
-sha256sum index.html
-
-echo "🔍 INDEX DIFF:"
-git diff -- index.html | head -50 || true
-
 echo "🔍 STAGED FILES:"
 git diff --cached --name-only
 
@@ -83,17 +80,6 @@ if git diff --cached --quiet; then
 fi
 
 git commit -m "🔄 update generated site assets" || true
-
-git fetch origin main
-
-echo "### BEFORE REBASE"
-git status --short
-
-git rebase origin/main
-
-echo "🔍 STATUS DETAIL:"
-git diff --summary
-git diff -- index.html | head -50 || true
 
 git push
 
