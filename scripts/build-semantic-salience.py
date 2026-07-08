@@ -435,7 +435,6 @@ def extract_page_metadata(path, url):
             "word_count": 0,
     }
 
-
 # =========================================================
 # REGISTRY (STRUCTURAL REALITY INDEX)
 # =========================================================
@@ -779,7 +778,6 @@ def build_semantic_salience(registry, parent_lookup):
         # DERIVED LAYER (NON-TRUTH)
         "page_graph": page_graph
     }
-
 
 # =========================================================
 # FILE DISCOVERY
