@@ -615,7 +615,7 @@ def word_similarity(a, b):
 
     return 1 - abs(wa - wb) / max(wa, wb)
 
-    compare_pages(page_a, page_b, parents):
+    compare_pages(page_a, page_b, parents)
 
     concept = concept_overlap(page_a, page_b, parents)
 
