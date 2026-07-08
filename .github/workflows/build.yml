@@ -71,15 +71,6 @@ jobs:
           BS4_NO_LXML: "1"
 
       # -------------------------------------
-      # 6. Make scripts executable
-      # -------------------------------------
-      - name: Make scripts executable
-        shell: bash
-        run: |
-          set -euo pipefail
-          chmod +x scripts/*.sh
-
-      # -------------------------------------
       # 7. Generate FULL SITE (single truth pipeline)
       # -------------------------------------
       - name: Generate site (semantic-salience only)
