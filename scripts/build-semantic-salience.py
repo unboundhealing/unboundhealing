@@ -43,6 +43,34 @@ def load_ontology():
         return {}
 
 # =========================================================
+# ONTOLOGY PARENT LOOKUP
+# =========================================================
+
+def build_parent_lookup(ontology):
+
+    parent_lookup = {}
+
+    for concept, data in ontology.items():
+
+        if not isinstance(data, dict):
+            continue
+
+        concept = canonicalize_concept(concept)
+
+        parents = data.get("parents", [])
+
+        if not isinstance(parents, list):
+            parents = []
+
+        parent_lookup[concept] = [
+            canonicalize_concept(parent)
+            for parent in parents
+            if parent
+        ]
+
+    return parent_lookup
+
+# =========================================================
 # BUILD ONTOLOGY LOOKUPS
 # =========================================================
 
