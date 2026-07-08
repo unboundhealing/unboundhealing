@@ -849,6 +849,9 @@ def main():
         ensure_ascii=False
     )
 
+    print("raw length:", len(raw))
+    print("node keys:", list(semantic.keys()))
+    
     print(
         "🧪 semantic-salience SHA256:",
         hashlib.sha256(raw.encode("utf-8")).hexdigest()
