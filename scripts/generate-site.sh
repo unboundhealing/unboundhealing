@@ -16,6 +16,7 @@ python3 scripts/build-semantic-salience.py
 
 echo "AFTER semantic-salience"
 git status --short
+git diff --summary
 
 
 # HARD GUARANTEE: semantic-salience MUST exist
