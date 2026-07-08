@@ -47,8 +47,8 @@ def inject_tracking(path: Path):
 
     if updated != original:
         path.write_text(updated, encoding="utf-8")
-        print(f"📡 CHANGED → {path}")
-
+        print(f"⚠️  Tracker missing → {path}")
+        print(f"✅  Automatically repaired")
 
 def main():
 
