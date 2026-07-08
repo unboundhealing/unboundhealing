@@ -46,7 +46,7 @@ echo "📡 RSS (optional)"
 echo "🗺 Sitemap (optional)"
 ./scripts/build-sitemap.sh || true
 
-]echo "🔎 Search index (optional)"
+echo "🔎 Search index (optional)"
 ./scripts/build-search-index.sh || true
 
 echo "💾 Committing generated assets..."
