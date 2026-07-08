@@ -65,10 +65,11 @@ git add \
 echo "🔍 STAGED FILES:"
 git diff --cached --name-only
 
-
-git commit -m "🔄 update generated site assets" || exit 0
+git commit -m "🔄 update generated site assets" || true
 
 git fetch origin main
+
+git rebase origin/main
 
 echo "🔍 STATUS DETAIL:"
 git diff --summary
