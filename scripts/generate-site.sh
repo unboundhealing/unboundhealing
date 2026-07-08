@@ -67,7 +67,7 @@ git fetch origin main
 
 echo "🔍 STATUS DETAIL:"
 git diff --summary
-git diff -- index.html | head -50
+git diff -- index.html | head -50 || true
 
 
 git push
