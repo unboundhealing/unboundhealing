@@ -134,8 +134,6 @@ def main():
 
         tags = cleaned[:10]
         aliases = generate_aliases(tags, semantic_aliases)
-
-        if url == "https://unboundhealing.org/":
               
         tags_index[url] = {
             "version": 2,
