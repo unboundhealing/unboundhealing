@@ -25,6 +25,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Ignore executable-bit changes
+        run: git config core.filemode false
+
       # -------------------------------------
       # 2. EARLY DEBUG (CATCH 1-SECOND FAILURES)
       # -------------------------------------
