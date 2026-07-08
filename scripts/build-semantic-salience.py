@@ -676,7 +676,7 @@ def word_similarity(a, b):
 
     return 1 - abs(wa - wb) / max(wa, wb)
 
-    compare_pages(page_a, page_b, parents)
+def compare_pages(page_a, page_b, parents):
 
     concept = concept_overlap(page_a, page_b, parents)
 
@@ -690,18 +690,16 @@ def word_similarity(a, b):
         page_b.get("excerpt", "")
     )
 
-    wa = page_a.get("word_count", 0)
-    wb = page_b.get("word_count", 0)
-
-    word_similarity = 0
-    if max(wa, wb) > 0:
-        word_similarity = 1 - abs(wa - wb) / max(wa, wb)
+    word_score = word_similarity(
+        page_a,
+        page_b
+    )
     
     return {
         "concept_overlap": concept,
         "search_similarity": search,
         "excerpt_similarity": excerpt,
-        "word_similarity": word_similarity
+        "word_similarity": word_score
     }
 
 # =========================================================
