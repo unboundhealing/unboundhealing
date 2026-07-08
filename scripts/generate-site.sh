@@ -43,6 +43,9 @@ python3 scripts/build-tracking.py
 echo "📡 RSS (optional)"
 ./scripts/generate-rss.sh || true
 
+echo "📌 RSS SOURCE STAT:"
+git show --stat --oneline "$(git log -1 --format=%H -- '*.html')"
+
 echo "🗺 Sitemap (optional)"
 ./scripts/build-sitemap.sh || true
 
