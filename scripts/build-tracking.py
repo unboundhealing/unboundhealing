@@ -88,7 +88,7 @@ def process_file(path: Path):
         original = path.read_text(encoding="utf-8")
 
         # If tracker already exists, leave the file completely untouched.
-        if soup.find("script", {"src": TRACKER_PATH}):
+        if TRACKER_PATH in original:
             print(f"📡 already present → {path}")
             return
 
