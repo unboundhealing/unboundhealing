@@ -56,9 +56,15 @@ git config user.email "github-actions@github.com"
 
 git add \
   assets/*.json \
-  "**/*.html" \
+  *.html \
+  **/*.html \
   feed.xml \
   sitemap.xml
+
+
+echo "🔍 STAGED FILES:"
+git diff --cached --name-only
+
 
 git commit -m "🔄 update generated site assets" || exit 0
 
