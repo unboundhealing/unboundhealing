@@ -87,7 +87,7 @@ cat > "$OUTPUT" <<EOF
   <link>$BASE_URL/</link>
 </image>
 
-<lastBuildDate>$(date -R)</lastBuildDate>
+<lastBuildDate>$(git log -1 --format=%cD)</lastBuildDate>
 EOF
 
 # =========================
