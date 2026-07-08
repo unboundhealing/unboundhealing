@@ -58,9 +58,9 @@ git add assets/*.json || true
 
 git commit -m "🔄 update generated site assets" || exit 0
 
-# 🔒 RACE-SAFE PUSH STRATEGY
 git fetch origin main
-git rebase origin/main || git rebase --abort || true
+
+git status --short
 
 git push
 
