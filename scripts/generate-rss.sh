@@ -96,7 +96,7 @@ EOF
 # PROCESS SITEMAP
 # =========================
 
-grep "<loc>" "$SITEMAP" | sed 's/<[^>]*>//g' | while read -r url; do
+grep "<loc>" "$SITEMAP" | sed 's/<[^>]*>//g' | sort | while read -r url; do
 
   echo "→ processing $url"
 
