@@ -87,12 +87,12 @@ def process_file(path: Path):
 
         original = path.read_text(encoding="utf-8")
 
-        soup = BeautifulSoup(original, "html.parser")
-
         # If tracker already exists, leave the file completely untouched.
         if soup.find("script", {"src": TRACKER_PATH}):
             print(f"📡 already present → {path}")
             return
+
+        soup = BeautifulSoup(original, "html.parser")
 
         inject_tracking_script(soup)
 
