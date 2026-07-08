@@ -149,11 +149,6 @@ tmp_path = OUTPUT_FILE.with_suffix(".tmp")
 
 from pathlib import Path
 
-for url, page in index.items():
-    for key, value in page.items():
-        if isinstance(value, Path):
-            print("PATH OBJECT FOUND:", url, key, value)
-
 tmp_path.write_text(
     json.dumps(index, indent=2, ensure_ascii=False),
     encoding="utf-8"
