@@ -91,6 +91,40 @@ def build_ontology_maps(ontology):
     return parents, children
 
 # =========================================================
+# EXPAND CONCEPTS USING ONTOLOGY
+# =========================================================
+
+def expand_parent_concepts(concepts, ontology):
+
+    expanded = set()
+
+    for concept in concepts:
+
+        concept = canonicalize_concept(concept)
+
+        if not concept:
+            continue
+
+        expanded.add(concept)
+
+        info = ontology.get(concept, {})
+
+        if isinstance(info, dict):
+
+            parents = info.get("parents", [])
+
+            if isinstance(parents, list):
+
+                for parent in parents:
+
+                    parent = canonicalize_concept(parent)
+
+                    if parent:
+                        expanded.add(parent)
+
+    return sorted(expanded)
+
+# =========================================================
 # CANONICALIZATION (STRUCTURAL NORMALIZATION ONLY)
 # =========================================================
 
