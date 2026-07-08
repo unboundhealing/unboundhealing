@@ -91,6 +91,7 @@ def process_file(path: Path):
 
         # If tracker already exists, leave the file completely untouched.
         if soup.find("script", {"src": TRACKER_PATH}):
+            print(f"📡 already present → {path}")
             return
 
         inject_tracking_script(soup)
@@ -99,7 +100,9 @@ def process_file(path: Path):
 
         if updated != original:
             path.write_text(updated, encoding="utf-8")
-            print(f"📡 injected tracking → {path}")
+            print(f"📡 CHANGED → {path}")
+        else:
+            print(f"📡 unchanged → {path}")
 
     except Exception as e:
         print(f"⚠️ skipped {path}: {e}")
