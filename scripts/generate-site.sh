@@ -65,6 +65,10 @@ git add \
 echo "🔍 STAGED FILES:"
 git diff --cached --name-only
 
+echo "🔍 JSON HASHES:"
+sha256sum assets/semantic-salience.json
+sha256sum feed.xml
+
 echo "🔍 INDEX HASH:"
 sha256sum index.html
 
