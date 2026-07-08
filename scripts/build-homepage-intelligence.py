@@ -2,6 +2,7 @@
 
 import os
 import json
+import re
 from pathlib import Path
 from collections import defaultdict
 
@@ -261,13 +262,37 @@ def main():
 
     html = index.read_text(encoding="utf-8")
 
-    html = html.replace(
-        '<div id="homepage-intelligence"></div>',
-        render(built)
+    start_marker = '<!-- HOMEPAGE INTELLIGENCE START -->'
+    end_marker = '<!-- HOMEPAGE INTELLIGENCE END -->'
+
+    new_block = (
+        start_marker
+        + "\n"
+        + render(built)
+        + "\n"
+        + end_marker
     )
 
-    index.write_text(html, encoding="utf-8")
+    pattern = re.compile(
+        r'<!-- HOMEPAGE INTELLIGENCE START -->.*?<!-- HOMEPAGE INTELLIGENCE END -->',
+        re.DOTALL
+    )
 
+    if pattern.search(html):
+        html = pattern.sub(new_block, html)
+
+    elif '<div id="homepage-intelligence"></div>' in html:
+        html = html.replace(
+            '<div id="homepage-intelligence"></div>',
+            new_block
+        )
+
+    else:
+        print("⚠️ homepage intelligence placeholder not found")
+        return
+
+    index.write_text(html, encoding="utf-8")
+    
     print("DONE")
 
 
