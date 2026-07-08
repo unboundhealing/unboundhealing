@@ -611,7 +611,7 @@ def build_salience(registry, edges):
     salience = {}
     all_concepts = set(frequency) | set(connectivity)
 
-    for c in all_concepts:
+    for c in sorted(all_concepts):
         salience[c] = {
             "frequency": frequency[c],
             "connectivity": connectivity[c],
@@ -854,6 +854,52 @@ def main():
         hashlib.sha256(raw.encode("utf-8")).hexdigest()
     )
 
+
+    print(
+        "nodes:",
+        hashlib.sha256(
+            json.dumps(
+                semantic["nodes"],
+                sort_keys=True,
+                ensure_ascii=False
+            ).encode()
+        ).hexdigest()
+    )
+
+    print(
+        "edges:",
+        hashlib.sha256(
+            json.dumps(
+                semantic["edges"],
+                sort_keys=True,
+                ensure_ascii=False
+            ).encode()
+        ).hexdigest()
+    )
+
+    print(
+        "salience:",
+        hashlib.sha256(
+            json.dumps(
+                semantic["salience"],
+                sort_keys=True,
+                ensure_ascii=False
+            ).encode()
+        ).hexdigest()
+    )
+
+    print(
+        "page_graph:",
+        hashlib.sha256(
+            json.dumps(
+                semantic["page_graph"],
+                sort_keys=True,
+                ensure_ascii=False
+            ).encode()
+        ).hexdigest()
+    )
+
+    
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(raw)
 
