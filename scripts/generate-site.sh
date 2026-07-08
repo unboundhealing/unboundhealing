@@ -13,12 +13,6 @@ cd "$ROOT_DIR"
 echo "🌌 Building semantic truth layer (PRIMARY ARTIFACT)..."
 python3 scripts/build-semantic-salience.py
 
-
-echo "AFTER semantic-salience"
-git status --short
-git diff --summary
-
-
 # HARD GUARANTEE: semantic-salience MUST exist
 if [ ! -f "assets/semantic-salience.json" ]; then
   echo "❌ assets/semantic-salience.json missing — HARD STOP"
@@ -32,22 +26,12 @@ fi
 echo "🏠 Homepage intelligence (derivative)"
 python3 scripts/build-homepage-intelligence.py || true
 
-
-echo "AFTER homepage-intelligence"
-git status --short
-
-
 # ---------------------------------------------------------
 # STEP 3 — TAGS / RENDER LAYER
 # ---------------------------------------------------------
 
 echo "🏷️ Building vocabulary..."
 python3 scripts/build-vocabulary.py
-
-
-echo "AFTER vocabulary"
-git status --short
-
 
 # ---------------------------------------------------------
 # STEP 4 — PRESENTATION / RENDER LAYER
@@ -59,26 +43,11 @@ python3 scripts/build-tracking.py
 echo "📡 RSS (optional)"
 ./scripts/generate-rss.sh || true
 
-
-echo "AFTER rss"
-git status --short
-
-
 echo "🗺 Sitemap (optional)"
 ./scripts/build-sitemap.sh || true
 
-
-echo "AFTER sitemap"
-git status --short
-
-
-echo "🔎 Search index (optional)"
+]echo "🔎 Search index (optional)"
 ./scripts/build-search-index.sh || true
-
-
-echo "AFTER search-index"
-git status --short
-
 
 echo "💾 Committing generated assets..."
 
@@ -96,6 +65,12 @@ git commit -m "🔄 update generated site assets" || exit 0
 git fetch origin main
 
 git status --short
+
+
+echo "🔍 FINAL STATUS BEFORE PUSH:"
+git status --short
+git diff --summary
+
 
 git push
 
