@@ -60,23 +60,14 @@ git add \
   feed.xml \
   sitemap.xml
 
-
-echo "🔍 BEFORE COMMIT INDEX HASH:"
-sha256sum index.html
-
-
 git commit -m "🔄 update generated site assets" || exit 0
-
-
-echo "🔍 AFTER COMMIT INDEX HASH:"
-sha256sum index.html
-
 
 git fetch origin main
 
 
-echo "🔍 BEFORE PUSH INDEX HASH:"
-sha256sum index.html
+echo "🔍 STATUS DETAIL:"
+git diff --summary
+git diff -- index.html | head -50
 
 
 git push
