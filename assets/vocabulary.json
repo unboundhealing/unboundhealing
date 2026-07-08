@@ -756,6 +756,31 @@
       "begin few sips"
     ]
   },
+  "https://unboundhealing.org/opening/no-tea/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "all",
+      "all-entails",
+      "all-entails-morn",
+      "all-excitement",
+      "all-excitement-sur",
+      "altered",
+      "altered-states",
+      "altered-states-ongoing",
+      "am",
+      "am-really"
+    ],
+    "aliases": [
+      "all entails",
+      "all entails morn",
+      "all excitement",
+      "all excitement sur",
+      "altered states",
+      "altered states ongoing",
+      "am really"
+    ]
+  },
   "https://unboundhealing.org/opening/no-title/": {
     "version": 2,
     "generated": true,
