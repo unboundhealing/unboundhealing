@@ -842,8 +842,19 @@ def main():
     
     output_path = os.path.join(root, "assets/semantic-salience.json")
 
+    raw = json.dumps(
+        semantic,
+        indent=2,
+        ensure_ascii=False
+    )
+
+    print(
+        "🧪 semantic-salience SHA256:",
+        hashlib.sha256(raw.encode("utf-8")).hexdigest()
+    )
+
     with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(semantic, f, indent=2, ensure_ascii=False)
+        f.write(raw)
 
     print("🌌 semantic-salience COMPLETE (v4.2 CANONICAL TRUTH MODEL)")
     print("📁 output:", output_path)
