@@ -61,10 +61,6 @@ git add \
   feed.xml \
   sitemap.xml
 
-
-echo "🔍 STAGED FILES:"
-git diff --cached --name-only
-
 echo "🔍 JSON HASHES:"
 sha256sum assets/semantic-salience.json
 sha256sum feed.xml
@@ -74,6 +70,14 @@ sha256sum index.html
 
 echo "🔍 INDEX DIFF:"
 git diff -- index.html | head -50 || true
+
+echo "🔍 STAGED FILES:"
+git diff --cached --name-only
+
+if git diff --cached --quiet; then
+  echo "✅ No generated changes detected"
+  exit 0
+fi
 
 git commit -m "🔄 update generated site assets" || true
 
