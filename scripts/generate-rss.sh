@@ -9,7 +9,8 @@ cd "$ROOT_DIR"
 SITEMAP="sitemap.xml"
 OUTPUT="feed.xml"
 BASE_URL="https://unboundhealing.org"
-LAST_BUILD_DATE=$(git log -1 --format="%aD")
+LAST_BUILD_DATE=$(git log -1 --format="%aD" -- . ':!assets' ':!feed.xml')
+  echo "📅 RSS LAST_BUILD_DATE: $LAST_BUILD_DATE"
 
 # =========================
 # PROPER NOUNS
