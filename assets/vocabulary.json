@@ -631,6 +631,30 @@
       "actually still hot"
     ]
   },
+  "https://unboundhealing.org/opening/happening/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "1",
+      "1-framework",
+      "1-framework-inside",
+      "2",
+      "2-entry",
+      "2-entry-outside",
+      "bold",
+      "bold-text",
+      "bold-text-small",
+      "break"
+    ],
+    "aliases": [
+      "1 framework",
+      "1 framework inside",
+      "2 entry",
+      "2 entry outside",
+      "bold text",
+      "bold text small"
+    ]
+  },
   "https://unboundhealing.org/opening/": {
     "version": 2,
     "generated": true,
