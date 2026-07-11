@@ -929,6 +929,30 @@
       "accurately wrong burner"
     ]
   },
+  "https://unboundhealing.org/opening/placeholder/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "already",
+      "already-mild",
+      "already-mild-steady",
+      "another",
+      "another-bout",
+      "another-bout-beatsaber",
+      "any",
+      "any-signif",
+      "any-signif-icant",
+      "attent"
+    ],
+    "aliases": [
+      "already mild",
+      "already mild steady",
+      "another bout",
+      "another bout beatsaber",
+      "any signif",
+      "any signif icant"
+    ]
+  },
   "https://unboundhealing.org/opening/post-this/": {
     "version": 2,
     "generated": true,
