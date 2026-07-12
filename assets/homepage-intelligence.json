@@ -20,7 +20,7 @@
     "essential_inspirations": [
       {
         "concept": "Opening",
-        "frequency": 37
+        "frequency": 38
       },
       {
         "concept": "This",
@@ -31,8 +31,8 @@
         "frequency": 26
       }
     ],
-    "node_count": 56,
-    "edge_count": 629645
+    "node_count": 57,
+    "edge_count": 642341
   },
   "source": "semantic-salience",
   "status": "ok"
