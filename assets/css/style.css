@@ -71,6 +71,38 @@ main a:hover {
 }
 
 /* =========================================================
+   ENTRY NAVIGATION
+   ========================================================= */
+
+.entry-nav {
+  margin-top: 70px;
+  margin-bottom: 10px;
+
+  text-align: center;
+
+  color: var(--muted);
+
+  font-size: 0.95rem;
+}
+
+.entry-nav a {
+  color: inherit;
+  text-decoration: none;
+
+  transition: color 180ms ease;
+}
+
+.entry-nav a:hover {
+  color: var(--accent);
+}
+
+.entry-nav-divider {
+  margin: 0 10px;
+
+  opacity: 0.45;
+}
+
+/* =========================================================
    SEMANTIC BLOCK SYSTEM
    ========================================================= */
 
