@@ -41,6 +41,9 @@ python3 scripts/build-vocabulary.py
 # STEP 4 — PRESENTATION / RENDER LAYER
 # ---------------------------------------------------------
 
+echo "📚 Building opening order..."
+python3 scripts/build-opening-order.py
+
 echo "📡 Tracking injection..."
 python3 scripts/build-tracking.py
 
