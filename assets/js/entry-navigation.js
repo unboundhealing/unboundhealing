@@ -5,6 +5,7 @@
 
     if (!nextLink || !backLink) return;
 
+
     // ------------------------------------------
     // Back button
     // ------------------------------------------
@@ -14,8 +15,9 @@
         history.back();
     });
 
+
     // ------------------------------------------
-    // Determine current page
+    // Determine current page + section
     // ------------------------------------------
 
     let current = window.location.pathname;
@@ -23,54 +25,75 @@
     if (!current.endsWith("/"))
         current += "/";
 
+    const parts = current.split("/");
+
+    const section = parts[1];
+
+
+    if (!section) {
+        nextLink.href = "/";
+        return;
+    }
+
+
     // ------------------------------------------
-    // Load opening order
+    // Load section order
     // ------------------------------------------
 
     let order;
 
     try {
 
-        const response = await fetch("/assets/opening-order.json");
+        const response = await fetch(
+            `/assets/navigation/${section}.json`
+        );
 
         order = await response.json();
 
     } catch (err) {
 
-        console.warn("Opening navigation unavailable.");
+        console.warn(
+            `Navigation unavailable for section: ${section}`
+        );
+
+        nextLink.href = `/${section}/`;
 
         return;
 
     }
 
+
     // ------------------------------------------
-    // Find ourselves
+    // Find current page
     // ------------------------------------------
 
     const index = order.indexOf(current);
 
+
     if (index === -1) {
 
-        // Not an Opening page
+        // Not an ordered entry page
 
-        nextLink.href = "/opening/";
+        nextLink.href = `/${section}/`;
 
         return;
 
     }
 
+
     // ------------------------------------------
-    // Last page?
+    // Next page
     // ------------------------------------------
 
     if (index === order.length - 1) {
 
-        nextLink.href = "/opening/";
+        nextLink.href = `/${section}/`;
 
     } else {
 
         nextLink.href = order[index + 1];
 
     }
+
 
 })();
