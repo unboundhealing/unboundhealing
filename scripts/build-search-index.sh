@@ -135,10 +135,7 @@ for url, node in nodes.items():
         "word_count": word_count,
         "reading_time": max(1, round(word_count / 200)),
 
-        "priority": 1.0,
-
         "image": "",
-        "last_modified": ""
     }
 
 # -------------------------------------------------------
