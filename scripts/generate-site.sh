@@ -14,7 +14,7 @@ git rebase origin/main
 # STEP 1 — TRUTH LAYER (ONLY AUTHORITATIVE SOURCE)
 # ---------------------------------------------------------
 
-echo "🌌 Building semantic truth layer (PRIMARY ARTIFACT)..."
+echo "🌌 Building semantic truth layer..."
 python3 scripts/build-semantic-salience.py
 
 # HARD GUARANTEE: semantic-salience MUST exist
@@ -23,15 +23,20 @@ if [ ! -f "assets/semantic-salience.json" ]; then
   exit 1
 fi
 
-echo "🔍 semantic-salience git state:"
-git ls-files assets/semantic-salience.json
-git status --short assets/semantic-salience.json
+echo "🔍 semantic-salience size:"
+ls -lh assets/semantic-salience.json
+
+echo "🔍 semantic-salience hash:"
+sha256sum assets/semantic-salience.json
+
+echo "🔍 git tracked version hash:"
+git show HEAD:assets/semantic-salience.json | sha256sum || true
 
 # ---------------------------------------------------------
 # STEP 2 — DERIVATIVE LAYERS (TRUTH CONSUMERS ONLY)
 # ---------------------------------------------------------
 
-echo "🏠 Homepage intelligence (derivative)"
+echo "🏠 Homepage intelligence..."
 python3 scripts/build-homepage-intelligence.py || true
 
 # ---------------------------------------------------------
@@ -54,13 +59,13 @@ python3 scripts/build-tracking.py
 echo "📡 Verifying tracker..."
 python3 scripts/build-tracking.py
 
-echo "📡 RSS (optional)"
+echo "📡 RSS..."
 ./scripts/generate-rss.sh || true
 
-echo "🗺 Sitemap (optional)"
+echo "🗺 Sitemap..."
 ./scripts/build-sitemap.sh || true
 
-echo "🔎 Search index (optional)"
+echo "🔎 Search index..."
 ./scripts/build-search-index.sh || true
 
 echo "💾 Committing generated assets..."
@@ -70,6 +75,7 @@ git config user.email "github-actions@github.com"
 
 git add \
   assets/**/*.json \
+  assets/*.json
   *.html \
   **/*.html \
   feed.xml \
