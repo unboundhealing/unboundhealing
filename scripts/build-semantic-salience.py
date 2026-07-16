@@ -424,7 +424,7 @@ def extract_page_metadata(path, url):
             "title": title,
             "description": desc,
             "excerpt": excerpt,
-            "word_count": word_count
+            "word_count": word_count,
         }
         
     except Exception as e:
@@ -456,7 +456,7 @@ def build_registry(root, html_files, ontology):
             url,
             metadata["title"],
             metadata["description"],
-            metadata["excerpt"],
+            metadata["excerpt"]
         )
         concepts = expand_parent_concepts(concepts, ontology)
         
@@ -465,7 +465,7 @@ def build_registry(root, html_files, ontology):
             metadata["description"],
             kind,
             metadata["excerpt"],
-            concepts,
+            concepts
         )
         
         registry[url] = {
@@ -632,7 +632,7 @@ def build_salience(registry, edges):
                 "graph_degree": connectivity[c],
                 "search_pages": search_pages[c],
                 "excerpt_pages": excerpt_pages[c],
-                "long_form_pages": long_pages[c]
+                "long_form_pages": long_pages[c],
             }
         }
 
@@ -714,7 +714,7 @@ def compare_pages(page_a, page_b, parents):
         "concept_overlap": concept,
         "search_similarity": search,
         "excerpt_similarity": excerpt,
-        "word_similarity": word_score
+        "word_similarity": word_score,
     }
 
 # =========================================================
@@ -757,7 +757,7 @@ def build_page_graph(registry, parents):
 
         page_graph[url] = {
             "concepts": data["concepts"],
-            "related": [u for u, _ in ranked[:10]]
+            "related": [u for u, _ in ranked[:10]],
         }
 
     return page_graph
@@ -772,6 +772,13 @@ def build_semantic_salience(registry, parent_lookup):
     nodes, edges = build_graph(registry)
 
     salience = build_salience(registry, edges)
+    print("🔎 evidence test:")
+
+    sample = next(iter(salience.items()))
+
+    print(sample[0])
+    print(sample[1].keys())
+    print(sample[1].get("evidence"))
 
     page_graph = build_page_graph(registry, parent_lookup)
 
@@ -780,7 +787,7 @@ def build_semantic_salience(registry, parent_lookup):
         "philosophy": {
             "graph": "structure of reality",
             "salience": "weighting of reality",
-            "consumers": "read only"
+            "consumers": "read only",
         },
 
         # TRUTH LAYER
@@ -789,7 +796,7 @@ def build_semantic_salience(registry, parent_lookup):
         "salience": salience,
 
         # DERIVED LAYER (NON-TRUTH)
-        "page_graph": page_graph
+        "page_graph": page_graph,
     }
 
 # =========================================================
