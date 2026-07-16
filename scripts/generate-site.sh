@@ -43,9 +43,6 @@ python3 scripts/build-vocabulary.py
 
 echo "📚 Building section order..."
 python3 scripts/build-section-order.py
-ls -R assets/navigation || true
-ls -la assets/
-ls -la assets/navigation/
 
 echo "📡 Tracking injection..."
 python3 scripts/build-tracking.py
