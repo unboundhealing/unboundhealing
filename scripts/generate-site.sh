@@ -23,6 +23,10 @@ if [ ! -f "assets/semantic-salience.json" ]; then
   exit 1
 fi
 
+echo "🔍 semantic-salience git state:"
+git ls-files assets/semantic-salience.json
+git status --short assets/semantic-salience.json
+
 # ---------------------------------------------------------
 # STEP 2 — DERIVATIVE LAYERS (TRUTH CONSUMERS ONLY)
 # ---------------------------------------------------------
