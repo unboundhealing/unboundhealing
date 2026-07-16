@@ -91,7 +91,7 @@ insp = hi.get("essential_inspirations", [])
 
 print(f"\n📊 inspirations: {len(insp)}")
 
-generic = {"this", "concept", "page", "something", "unknown"}
+generic = {"concept", "page", "something", "unknown"}
 
 for i in insp:
     concept = i.get("concept", "")
@@ -117,6 +117,40 @@ print("edges:", edges)
 
 # no strict enforcement — just informational
 
+# -------------------------------------------------------
+# 5. INSPIRATIONS SOURCE CHECK
+# -------------------------------------------------------
+
+print("\n🧠 TOP INSPIRATIONS\n")
+
+salience = semantic_data.get("salience", {})
+
+# Highest weighted concepts (current weighting)
+top = sorted(
+    salience.items(),
+    key=lambda item: (
+        item[1].get("frequency", 0)
+        + item[1].get("search_signal", 0)
+        + item[1].get("excerpt_signal", 0)
+        + item[1].get("connectivity", 0)
+    ),
+    reverse=True,
+)[:10]
+
+for concept, info in top:
+
+    evidence = info.get("evidence", {})
+
+    print(f"\n{concept}")
+
+    print(f"  frequency:       {info.get('frequency',0)}")
+    print(f"  connectivity:   {info.get('connectivity',0)}")
+    print(f"  search signal:  {info.get('search_signal',0)}")
+    print(f"  excerpt signal: {info.get('excerpt_signal',0)}")
+
+    print(
+        f"  pages:          {len(evidence.get('search_pages',[]))}"
+    )
 
 # -------------------------------------------------------
 # 6. FINAL SUMMARY
