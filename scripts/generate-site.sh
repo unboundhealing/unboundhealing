@@ -75,6 +75,11 @@ git add \
   feed.xml \
   sitemap.xml
 
+echo "🔍 semantic-salience staged state:"
+git status --short assets/semantic-salience.json
+
+git diff --cached --stat -- assets/semantic-salience.json
+
 echo "🔍 STAGED FILES:"
 git diff --cached --name-only
 
