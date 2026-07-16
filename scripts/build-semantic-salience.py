@@ -550,13 +550,17 @@ def build_salience(registry, edges):
     connectivity = defaultdict(int)
 
     search_signal = defaultdict(int)
+    search_pages = defaultdict(list)
     excerpt_signal = defaultdict(int)
+    excerpt_pages = defaultdict(list)
     word_signal = defaultdict(int)
+
+    long_pages = defaultdict(list)
 
     # ----------------------------------------------------
     # concept frequency (existing)
     # ----------------------------------------------------
-    for page in registry.values():
+    for url, page in registry.items():
         for concept in page["concepts"]:
             frequency[concept] += 1
 
@@ -578,19 +582,22 @@ def build_salience(registry, edges):
             # search_text reinforcement
             if ct in text_tokens:
                 search_signal[ct] += 2
-            else:
-                search_signal[ct] += 0
+                search_pages[ct].append(url)
 
             # excerpt reinforcement (lighter)
             if ct in excerpt_tokens:
                 excerpt_signal[ct] += 1
+                excerpt_pages[ct].append(url)
 
             # word count signal (normalize banding)
             if wc > 150:
                 word_signal[ct] += 2
+                long_pages[ct].append(url)
+    
             elif wc > 50:
                 word_signal[ct] += 1
-
+                long_pages[ct].append(url)
+                
     # ----------------------------------------------------
     # connectivity (existing)
     # ----------------------------------------------------
@@ -616,10 +623,17 @@ def build_salience(registry, edges):
             "frequency": frequency[c],
             "connectivity": connectivity[c],
 
-            # NEW SIGNALS
             "search_signal": search_signal[c],
             "excerpt_signal": excerpt_signal[c],
             "word_signal": word_signal[c],
+
+            "evidence": {
+                "pages_count": frequency[c],
+                "graph_degree": connectivity[c],
+                "search_pages": search_pages[c],
+                "excerpt_pages": excerpt_pages[c],
+                "long_form_pages": long_pages[c]
+            }
         }
 
     return salience
