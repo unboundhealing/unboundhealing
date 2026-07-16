@@ -178,13 +178,25 @@ def build(nodes, edges, page_graph, salience):
     # -------------------------
     inspirations = []
 
-    for c, f in sorted(concept_freq.items(), key=lambda x: -x[1]):
+    concept_scores = []
+
+    for c, s in salience.items():
+
+        importance = (
+            s.get("frequency", 0) * 2
+            + s.get("connectivity", 0) * 0.2
+            + s.get("search_signal", 0) * 1.5
+            + s.get("excerpt_signal", 0)
+        )
+
+        concept_scores.append((c, importance))
+
+    for c, score in sorted(concept_scores, key=lambda x: -x[1])[:3]:
+
         inspirations.append({
             "concept": c.title(),
-            "frequency": f
+            "score": round(score, 2)
         })
-        if len(inspirations) == 3:
-            break
 
     return {
         "arising_observations": arisings,
