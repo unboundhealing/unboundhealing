@@ -20,19 +20,19 @@
     "essential_inspirations": [
       {
         "concept": "Opening",
-        "frequency": 38
+        "frequency": 41
       },
       {
         "concept": "This",
-        "frequency": 35
+        "frequency": 36
       },
       {
         "concept": "Reflection",
-        "frequency": 26
+        "frequency": 28
       }
     ],
-    "node_count": 57,
-    "edge_count": 642341
+    "node_count": 60,
+    "edge_count": 678680
   },
   "source": "semantic-salience",
   "status": "ok"
