@@ -115,7 +115,7 @@ def valid_url(url):
 # CORE BUILDER
 # =========================================================
 
-def build(nodes, edges, page_graph):
+def build(nodes, edges, page_graph, salience):
 
     concept_freq = defaultdict(int)
 
@@ -146,9 +146,23 @@ def build(nodes, edges, page_graph):
         if not isinstance(meta, dict):
             continue
 
-        score = 0.0
-        score += len(meta.get("related", [])) * 1.5
-        score += len(meta.get("concepts", [])) * 1.0
+        score = 0
+
+        score += len(meta.get("related", []))
+
+        for concept in meta.get("concepts", []):
+
+            c = clean_concept(concept)
+
+            s = salience.get(c)
+
+            if not s:
+                continue
+
+            score += s["frequency"] * 2
+            score += s["connectivity"] * 0.1
+            score += s["search_signal"] * 1.5
+            score += s["excerpt_signal"] * 1
 
         arisings.append({
             "url": url,
@@ -240,12 +254,17 @@ def render(data):
 def main():
 
     data = load_json(SAL_FILE)
-
+    salience = data.get("salience", {})
     nodes = data.get("nodes", {})
     edges = data.get("edges", [])
     page_graph = data.get("page_graph", {})
 
-    built = build(nodes, edges, page_graph)
+    built = build(
+        nodes,
+        edges,
+        page_graph,
+        salience
+    )
 
     # save structured output
     output = {
