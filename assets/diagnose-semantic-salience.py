@@ -130,6 +130,65 @@ ok("page_graph valid")
 
 
 # -------------------------------------------------------
+# EVIDENCE VALIDATION
+# -------------------------------------------------------
+
+salience = data.get("salience", {})
+
+if not isinstance(salience, dict):
+    fail("salience must be dict")
+
+evidence_count = 0
+missing_evidence = 0
+sample_evidence = None
+
+for concept, entry in salience.items():
+
+    evidence = entry.get("evidence", None)
+
+    if not isinstance(evidence, dict):
+        missing_evidence += 1
+        continue
+
+    evidence_count += 1
+
+    if sample_evidence is None:
+        sample_evidence = (concept, evidence)
+
+
+ok("evidence structure checked")
+
+print("\n🧠 EVIDENCE SUMMARY")
+print(f"salience concepts: {len(salience)}")
+print(f"concepts with evidence: {evidence_count}")
+print(f"concepts missing evidence: {missing_evidence}")
+
+if missing_evidence > 0:
+    warn(
+        f"{missing_evidence} concepts do not contain evidence objects"
+    )
+
+if sample_evidence:
+    concept, evidence = sample_evidence
+    print("\n🔎 SAMPLE EVIDENCE")
+    print(f"concept: {concept}")
+    print(
+        f"page_count: {evidence.get('page_count', 'missing')}"
+    )
+    print(
+        f"graph_degree: {evidence.get('graph_degree', 'missing')}"
+    )
+    print(
+        f"search_pages: {len(evidence.get('search_pages', []))}"
+    )
+    print(
+        f"excerpt_pages: {len(evidence.get('excerpt_pages', []))}"
+    )
+    print(
+        f"long_form_pages: {len(evidence.get('long_form_pages', []))}"
+    )
+
+# -------------------------------------------------------
 # FINAL SUMMARY (STRICT, NOT DEBUG)
 # -------------------------------------------------------
 
