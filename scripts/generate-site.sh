@@ -75,7 +75,7 @@ git config user.email "github-actions@github.com"
 
 git add \
   assets/**/*.json \
-  assets/*.json
+  assets/*.json \
   *.html \
   **/*.html \
   feed.xml \
