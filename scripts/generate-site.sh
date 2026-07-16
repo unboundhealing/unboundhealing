@@ -23,15 +23,6 @@ if [ ! -f "assets/semantic-salience.json" ]; then
   exit 1
 fi
 
-echo "🔍 semantic-salience size:"
-ls -lh assets/semantic-salience.json
-
-echo "🔍 semantic-salience hash:"
-sha256sum assets/semantic-salience.json
-
-echo "🔍 git tracked version hash:"
-git show HEAD:assets/semantic-salience.json | sha256sum || true
-
 # ---------------------------------------------------------
 # STEP 2 — DERIVATIVE LAYERS (TRUTH CONSUMERS ONLY)
 # ---------------------------------------------------------
@@ -80,11 +71,6 @@ git add \
   **/*.html \
   feed.xml \
   sitemap.xml
-
-echo "🔍 semantic-salience staged state:"
-git status --short assets/semantic-salience.json
-
-git diff --cached --stat -- assets/semantic-salience.json
 
 echo "🔍 STAGED FILES:"
 git diff --cached --name-only
