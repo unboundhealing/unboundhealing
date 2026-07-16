@@ -628,7 +628,7 @@ def build_salience(registry, edges):
             "word_signal": word_signal[c],
 
             "evidence": {
-                "pages_count": frequency[c],
+                "page_count": frequency[c],
                 "graph_degree": connectivity[c],
                 "search_pages": search_pages[c],
                 "excerpt_pages": excerpt_pages[c],
@@ -772,13 +772,6 @@ def build_semantic_salience(registry, parent_lookup):
     nodes, edges = build_graph(registry)
 
     salience = build_salience(registry, edges)
-    print("🔎 evidence test:")
-
-    sample = next(iter(salience.items()))
-
-    print(sample[0])
-    print(sample[1].keys())
-    print(sample[1].get("evidence"))
 
     page_graph = build_page_graph(registry, parent_lookup)
 
