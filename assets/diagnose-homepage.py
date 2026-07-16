@@ -5,6 +5,7 @@ import sys
 
 ROOT = os.environ.get("GITHUB_WORKSPACE", os.getcwd())
 PATH = os.path.join(ROOT, "assets/homepage-intelligence.json")
+SAL_PATH = os.path.join(ROOT, "assets/semantic-salience.json")
 
 print("🏠 Running homepage intelligence diagnostic...\n")
 
@@ -26,6 +27,12 @@ except Exception as e:
 
 print("✅ file loaded")
 
+try:
+    with open(SAL_PATH, "r", encoding="utf-8") as f:
+        salience_data = json.load(f)
+except Exception as e:
+    print("❌ semantic-salience JSON parse failure:", e)
+    sys.exit(1)
 
 # -------------------------------------------------------
 # 2. STRUCTURE VALIDATION
@@ -103,27 +110,9 @@ for i in insp:
     if not isinstance(freq, int):
         print(f"⚠️ invalid frequency: {concept}")
 
-
-# -------------------------------------------------------
-# 5. CONSISTENCY CHECK WITH SOURCE GRAPH
-# -------------------------------------------------------
-
-nodes = hi.get("node_count", 0)
-edges = hi.get("edge_count", 0)
-
-print("\n🔗 graph consistency:")
-print("nodes:", nodes)
-print("edges:", edges)
-
-# no strict enforcement — just informational
-
-# -------------------------------------------------------
-# 5. INSPIRATIONS SOURCE CHECK
-# -------------------------------------------------------
-
 print("\n🧠 TOP INSPIRATIONS\n")
 
-salience = semantic_data.get("salience", {})
+salience = salience_data.get("salience", {})
 
 # Highest weighted concepts (current weighting)
 top = sorted(
@@ -151,6 +140,19 @@ for concept, info in top:
     print(
         f"  pages:          {len(evidence.get('search_pages',[]))}"
     )
+
+# -------------------------------------------------------
+# 5. CONSISTENCY CHECK WITH SOURCE GRAPH
+# -------------------------------------------------------
+
+nodes = hi.get("node_count", 0)
+edges = hi.get("edge_count", 0)
+
+print("\n🔗 graph consistency:")
+print("nodes:", nodes)
+print("edges:", edges)
+
+# no strict enforcement — just informational
 
 # -------------------------------------------------------
 # 6. FINAL SUMMARY
