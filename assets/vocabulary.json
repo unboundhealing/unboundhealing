@@ -1056,6 +1056,30 @@
       "presence"
     ]
   },
+  "https://unboundhealing.org/opening/py/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "absence",
+      "absence-awaken",
+      "absence-awaken-other",
+      "all",
+      "all-slowly",
+      "all-slowly-diminish",
+      "attachment",
+      "attachment-body",
+      "attachment-body-fades",
+      "awaken"
+    ],
+    "aliases": [
+      "absence awaken",
+      "absence awaken other",
+      "all slowly",
+      "all slowly diminish",
+      "attachment body",
+      "attachment body fades"
+    ]
+  },
   "https://unboundhealing.org/opening/seriously/": {
     "version": 2,
     "generated": true,
