@@ -783,6 +783,30 @@
       "am listening anything"
     ]
   },
+  "https://unboundhealing.org/opening/label-this/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "achieved",
+      "achieved-via",
+      "achieved-via-difficult",
+      "ady",
+      "ady-case",
+      "ady-case-what",
+      "alre",
+      "alre-ady",
+      "alre-ady-case",
+      "anything"
+    ],
+    "aliases": [
+      "achieved via",
+      "achieved via difficult",
+      "ady case",
+      "ady case what",
+      "alre ady",
+      "alre ady case"
+    ]
+  },
   "https://unboundhealing.org/opening/little-ditties/": {
     "version": 2,
     "generated": true,
