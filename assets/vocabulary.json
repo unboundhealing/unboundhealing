@@ -659,6 +659,32 @@
       "presence"
     ]
   },
+  "https://unboundhealing.org/opening/elsewhere/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "actually",
+      "actually-finished",
+      "actually-finished-not",
+      "all",
+      "all-different",
+      "all-different-website",
+      "always",
+      "always-only",
+      "always-only-small",
+      "attention"
+    ],
+    "aliases": [
+      "actually finished",
+      "actually finished not",
+      "all different",
+      "all different website",
+      "always only",
+      "always only small",
+      "awareness",
+      "presence"
+    ]
+  },
   "https://unboundhealing.org/opening/empty/": {
     "version": 2,
     "generated": true,
