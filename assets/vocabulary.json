@@ -1258,6 +1258,32 @@
       "attachment body fades"
     ]
   },
+  "https://unboundhealing.org/opening/say-anything/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "anything",
+      "anything-contemplative",
+      "anything-contemplative-journal",
+      "anything-incessant",
+      "anything-incessant-chatter",
+      "anything-say",
+      "anything-say-anything",
+      "anything-thoughts",
+      "anything-thoughts-running",
+      "awarenesswondering"
+    ],
+    "aliases": [
+      "anything contemplative",
+      "anything contemplative journal",
+      "anything incessant",
+      "anything incessant chatter",
+      "anything say",
+      "anything say anything",
+      "anything thoughts",
+      "anything thoughts running"
+    ]
+  },
   "https://unboundhealing.org/opening/seriously/": {
     "version": 2,
     "generated": true,
