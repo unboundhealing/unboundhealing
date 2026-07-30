@@ -423,6 +423,30 @@
       "presence"
     ]
   },
+  "https://unboundhealing.org/non-speaking/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "anything",
+      "collection",
+      "collection-reflections",
+      "collection-reflections-communication",
+      "communication",
+      "communication-form",
+      "communication-form-words",
+      "communication-language",
+      "communication-language-silence",
+      "experience"
+    ],
+    "aliases": [
+      "collection reflections",
+      "collection reflections communication",
+      "communication form",
+      "communication form words",
+      "communication language",
+      "communication language silence"
+    ]
+  },
   "https://unboundhealing.org/noticing/": {
     "version": 2,
     "generated": true,
