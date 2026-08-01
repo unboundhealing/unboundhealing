@@ -4,17 +4,17 @@
       {
         "url": "https://unboundhealing.org/opening/yes-and-no/",
         "title": "yes and no…",
-        "score": 12852.000000000002
+        "score": 12862.800000000001
       },
       {
         "url": "https://unboundhealing.org/opening/open/",
         "title": "open…",
-        "score": 12701.899999999998
+        "score": 12702.599999999999
       },
       {
         "url": "https://unboundhealing.org/opening/post-this/",
         "title": "post this?",
-        "score": 12171.900000000003
+        "score": 12172.300000000005
       }
     ],
     "essential_inspirations": [
@@ -24,7 +24,7 @@
       },
       {
         "concept": "This",
-        "score": 1328.6
+        "score": 1329.0
       },
       {
         "concept": "Reflection",
@@ -32,7 +32,7 @@
       }
     ],
     "node_count": 76,
-    "edge_count": 890793
+    "edge_count": 890966
   },
   "source": "semantic-salience",
   "status": "ok"
