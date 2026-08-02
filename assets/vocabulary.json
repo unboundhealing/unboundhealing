@@ -634,6 +634,30 @@
       "presence"
     ]
   },
+  "https://unboundhealing.org/opening/commitment/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "all",
+      "all-things",
+      "all-things-attempt",
+      "allowing",
+      "allowing-whatever",
+      "allowing-whatever-appears",
+      "appears",
+      "appears-commitment",
+      "appears-commitment-obligatory",
+      "attempt"
+    ],
+    "aliases": [
+      "all things",
+      "all things attempt",
+      "allowing whatever",
+      "allowing whatever appears",
+      "appears commitment",
+      "appears commitment obligatory"
+    ]
+  },
   "https://unboundhealing.org/opening/cooling-tea/": {
     "version": 2,
     "generated": true,
