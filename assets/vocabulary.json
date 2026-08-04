@@ -1335,6 +1335,30 @@
       "presence"
     ]
   },
+  "https://unboundhealing.org/opening/purpose/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "abstract",
+      "abstract-drawing",
+      "abstract-drawing-happens",
+      "act",
+      "act-putting",
+      "act-putting-them",
+      "again",
+      "again-wondering",
+      "again-wondering-meanings",
+      "all"
+    ],
+    "aliases": [
+      "abstract drawing",
+      "abstract drawing happens",
+      "act putting",
+      "act putting them",
+      "again wondering",
+      "again wondering meanings"
+    ]
+  },
   "https://unboundhealing.org/opening/py/": {
     "version": 2,
     "generated": true,

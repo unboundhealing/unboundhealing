@@ -4,35 +4,35 @@
       {
         "url": "https://unboundhealing.org/opening/yes-and-no/",
         "title": "yes and no…",
-        "score": 13277.6
+        "score": 13441.200000000003
       },
       {
         "url": "https://unboundhealing.org/opening/open/",
         "title": "open…",
-        "score": 13077.200000000003
+        "score": 13221.000000000002
       },
       {
         "url": "https://unboundhealing.org/opening/this-morning-a/",
         "title": "this morning…",
-        "score": 12547.500000000004
+        "score": 12667.300000000005
       }
     ],
     "essential_inspirations": [
       {
         "concept": "Opening",
-        "score": 1781.0
+        "score": 1814.6
       },
       {
         "concept": "This",
-        "score": 1398.2
+        "score": 1433.0
       },
       {
         "concept": "Reflection",
-        "score": 1082.8
+        "score": 1117.4
       }
     ],
-    "node_count": 78,
-    "edge_count": 922970
+    "node_count": 79,
+    "edge_count": 938612
   },
   "source": "semantic-salience",
   "status": "ok"
