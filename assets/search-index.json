@@ -2809,8 +2809,8 @@
     "type": "page",
     "section": "non-speaking",
     "kind": "page",
-    "excerpt": "Non-Speaking… Communication in form. (((words…))) (((label this…))) (((say anything…))) (((knowing…))) (((speed round…)))",
-    "search_text": "non-speaking… a collection of reflections on communication, language, silence, and the many forms through which experience may be shared. page non-speaking… communication in form. (((words…))) (((label this…))) (((say anything…))) (((knowing…))) (((speed round…))) anything anything-knowing anything-knowing-speed collection collection-reflections collection-reflections-communication communication communication-form communication-form-words communication-language communication-language-silence experience experience-shared experience-shared-non form form-words form-words-label forms forms-which forms-which-experience knowing knowing-speed knowing-speed-round label label-this label-this-say language language-silence language-silence-many many many-forms many-forms-which non non-speaking non-speaking-collection non-speaking-communication non-speaking-non reflections reflections-communication reflections-communication-language round say say-anything say-anything-knowing shared shared-non shared-non-speaking silence silence-many silence-many-forms speaking speaking-collection speaking-collection-reflections speaking-communication speaking-communication-form speaking-non speaking-non-speaking speed speed-round this this-say this-say-anything which which-experience which-experience-shared words words-label words-label-this anything anything-knowing anything-knowing-speed collection collection-reflections collection-reflections-communication communication communication-form communication-form-words communication-language anything knowing anything knowing speed collection reflections collection reflections communication communication form communication form words communication language",
+    "excerpt": "Non-Speaking… Communication in form. (((words…))) (((label this…))) (((say anything…))) (((knowing…))) (((speed round…))) (((speak…)))",
+    "search_text": "non-speaking… a collection of reflections on communication, language, silence, and the many forms through which experience may be shared. page non-speaking… communication in form. (((words…))) (((label this…))) (((say anything…))) (((knowing…))) (((speed round…))) (((speak…))) anything anything-knowing anything-knowing-speed collection collection-reflections collection-reflections-communication communication communication-form communication-form-words communication-language communication-language-silence experience experience-shared experience-shared-non form form-words form-words-label forms forms-which forms-which-experience knowing knowing-speed knowing-speed-round label label-this label-this-say language language-silence language-silence-many many many-forms many-forms-which non non-speaking non-speaking-collection non-speaking-communication non-speaking-non reflections reflections-communication reflections-communication-language round round-speak say say-anything say-anything-knowing shared shared-non shared-non-speaking silence silence-many silence-many-forms speak speaking speaking-collection speaking-collection-reflections speaking-communication speaking-communication-form speaking-non speaking-non-speaking speed speed-round speed-round-speak this this-say this-say-anything which which-experience which-experience-shared words words-label words-label-this anything anything-knowing anything-knowing-speed collection collection-reflections collection-reflections-communication communication communication-form communication-form-words communication-language anything knowing anything knowing speed collection reflections collection reflections communication communication form communication form words communication language",
     "concepts": [
       "anything",
       "anything-knowing",
@@ -2853,6 +2853,7 @@
       "reflections-communication",
       "reflections-communication-language",
       "round",
+      "round-speak",
       "say",
       "say-anything",
       "say-anything-knowing",
@@ -2862,6 +2863,7 @@
       "silence",
       "silence-many",
       "silence-many-forms",
+      "speak",
       "speaking",
       "speaking-collection",
       "speaking-collection-reflections",
@@ -2871,6 +2873,7 @@
       "speaking-non-speaking",
       "speed",
       "speed-round",
+      "speed-round-speak",
       "this",
       "this-say",
       "this-say-anything",
@@ -2902,7 +2905,7 @@
       "communication form words",
       "communication language"
     ],
-    "word_count": 13,
+    "word_count": 14,
     "reading_time": 1,
     "image": ""
   },
