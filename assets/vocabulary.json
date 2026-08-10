@@ -1824,6 +1824,30 @@
       "being said without"
     ]
   },
+  "https://unboundhealing.org/opening/ugh/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "almost",
+      "almost-never",
+      "almost-never-picture",
+      "any",
+      "any-literal",
+      "any-literal-def",
+      "arises",
+      "arises-fun",
+      "arises-fun-but",
+      "because"
+    ],
+    "aliases": [
+      "almost never",
+      "almost never picture",
+      "any literal",
+      "any literal def",
+      "arises fun",
+      "arises fun but"
+    ]
+  },
   "https://unboundhealing.org/opening/unabsent/": {
     "version": 2,
     "generated": true,
