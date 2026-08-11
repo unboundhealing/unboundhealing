@@ -85,7 +85,9 @@ main a:hover {
 
   font-style: italic;
 }
-
+.subtitle-title em {
+  font-style: normal;
+}
 /* =========================================================
    ENTRY NAVIGATION
    ========================================================= */
