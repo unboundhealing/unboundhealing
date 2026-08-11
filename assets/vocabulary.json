@@ -1615,6 +1615,31 @@
       "presence"
     ]
   },
+  "https://unboundhealing.org/opening/still-busy/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "any",
+      "any-control",
+      "any-control-over",
+      "any-kind",
+      "any-kind-necessary",
+      "arises",
+      "arises-without",
+      "arises-without-following",
+      "aside",
+      "aside-experience"
+    ],
+    "aliases": [
+      "any control",
+      "any control over",
+      "any kind",
+      "any kind necessary",
+      "arises without",
+      "arises without following",
+      "aside experience"
+    ]
+  },
   "https://unboundhealing.org/opening/still-warm/": {
     "version": 2,
     "generated": true,
