@@ -1950,6 +1950,36 @@
       "also this"
     ]
   },
+  "https://unboundhealing.org/opening/undone/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "all",
+      "all-many",
+      "all-many-threads",
+      "awareness",
+      "awareness-opening",
+      "awareness-opening-ness",
+      "awareness-presentence",
+      "awareness-presentence-whatever",
+      "awareness-threads",
+      "awareness-threads-left"
+    ],
+    "aliases": [
+      "all many",
+      "all many threads",
+      "attention",
+      "awareness opening",
+      "awareness opening ness",
+      "awareness presentence",
+      "awareness presentence whatever",
+      "awareness threads",
+      "awareness threads left",
+      "mindfulness",
+      "noticing",
+      "presence"
+    ]
+  },
   "https://unboundhealing.org/opening/unsure/": {
     "version": 2,
     "generated": true,
