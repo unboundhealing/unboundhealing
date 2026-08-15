@@ -604,6 +604,32 @@
       "breaths warm"
     ]
   },
+  "https://unboundhealing.org/opening/choice/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "any",
+      "any-this",
+      "any-this-elicits",
+      "anything",
+      "anything-else",
+      "anything-else-perceived",
+      "aside",
+      "aside-what",
+      "aside-what-standards",
+      "attention"
+    ],
+    "aliases": [
+      "any this",
+      "any this elicits",
+      "anything else",
+      "anything else perceived",
+      "aside what",
+      "aside what standards",
+      "awareness",
+      "presence"
+    ]
+  },
   "https://unboundhealing.org/opening/coffee-and-quiet/": {
     "version": 2,
     "generated": true,
