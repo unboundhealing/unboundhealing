@@ -1,4 +1,4 @@
-name: Build Unbound Healing Site (v3.5 Semantic-Salience Truth System)
+name: Build Unbound Healing Site (Semantic-Salience Truth System)
 
 on:
   push:
@@ -104,7 +104,7 @@ jobs:
           test -f assets/semantic-salience.json
 
           echo "📂 Repo snapshot:"
-          ls -R . | grep -E "semantic|sitemap|rss|homepage|feed" || true
+          ls -R . | grep -E "semantic|sitemap|rss|feed" || true
 
       # -------------------------------------
       # 9. Upload Pages artifact (ROOT-BASED ONLY)
