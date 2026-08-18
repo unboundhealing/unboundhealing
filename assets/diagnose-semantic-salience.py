@@ -47,24 +47,16 @@ ok("file loaded")
 # REQUIRED STRUCTURE CHECK
 # -------------------------------------------------------
 
-required_keys = ["nodes", "edges", "page_graph"]
+required_keys = ["nodes"]
 
 for k in required_keys:
     if k not in data:
         fail(f"missing required key: {k}")
 
 nodes = data["nodes"]
-edges = data["edges"]
-page_graph = data["page_graph"]
 
 if not isinstance(nodes, dict):
     fail("nodes must be dict")
-
-if not isinstance(edges, list):
-    fail("edges must be list")
-
-if not isinstance(page_graph, dict):
-    fail("page_graph must be dict")
 
 ok("structure valid")
 
@@ -96,37 +88,6 @@ for url, node in nodes.items():
         warn(f"{url}: unusually short search_text")
 
 ok("node validation passed")
-
-
-# -------------------------------------------------------
-# EDGE SANITY CHECK
-# -------------------------------------------------------
-
-if edges:
-    avg_edges = len(edges) / max(len(nodes), 1)
-    print(f"🔗 avg edges per node: {avg_edges:.2f}")
-else:
-    warn("no edges found")
-
-
-# -------------------------------------------------------
-# PAGE GRAPH CHECK
-# -------------------------------------------------------
-
-sample_key = next(iter(page_graph.keys()), None)
-
-if not sample_key:
-    fail("page_graph is empty")
-
-sample_val = page_graph[sample_key]
-
-if not isinstance(sample_val, dict):
-    fail("page_graph entries must be dicts")
-
-if "concepts" not in sample_val:
-    fail("page_graph entries missing 'concepts'")
-
-ok("page_graph valid")
 
 
 # -------------------------------------------------------
@@ -176,7 +137,7 @@ if sample_evidence:
         f"page_count: {evidence.get('page_count', 'missing')}"
     )
     print(
-        f"graph_degree: {evidence.get('graph_degree', 'missing')}"
+        f"graph_links: {evidence.get('graph_links', 'missing')}"
     )
     print(
         f"search_pages: {len(evidence.get('search_pages', []))}"
@@ -194,7 +155,6 @@ if sample_evidence:
 
 print("\n📊 SUMMARY")
 print(f"nodes: {len(nodes)}")
-print(f"edges: {len(edges)}")
 print(f"missing concept lists: {missing_concepts}")
 
 if missing_concepts > 0:
