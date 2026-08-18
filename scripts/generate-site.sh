@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "🚀 Generating UNIFIED semantic-salience system (v3 SINGLE SOURCE)"
+echo "🚀 Generating UNIFIED semantic-salience system"
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 cd "$ROOT_DIR"
@@ -24,21 +24,14 @@ if [ ! -f "assets/semantic-salience.json" ]; then
 fi
 
 # ---------------------------------------------------------
-# STEP 2 — DERIVATIVE LAYERS (TRUTH CONSUMERS ONLY)
-# ---------------------------------------------------------
-
-echo "🏠 Homepage intelligence..."
-python3 scripts/build-homepage-intelligence.py || true
-
-# ---------------------------------------------------------
-# STEP 3 — TAGS / RENDER LAYER
+# STEP 2 — TAGS / RENDER LAYER
 # ---------------------------------------------------------
 
 echo "🏷️ Building vocabulary..."
 python3 scripts/build-vocabulary.py
 
 # ---------------------------------------------------------
-# STEP 4 — PRESENTATION / RENDER LAYER
+# STEP 3 — PRESENTATION / RENDER LAYER
 # ---------------------------------------------------------
 
 echo "📚 Building section order..."
