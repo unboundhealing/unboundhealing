@@ -2138,8 +2138,8 @@
       "description": "Unbound Healing is a space of reflection, presence, and invitation into deeper awareness through writing, listening, and shared attention.",
       "section": "home",
       "kind": "home",
-      "excerpt": "Have you ever noticed how extraordinary it is that anything is happening at all? This thought. This sensation. This breath. This experience. This life. (((Welcome in…))) [ Meander… ] Arising observations yes and no… open… post this? Essential inspirations Opening This Reflection",
-      "search_text": "unbound healing ministries unbound healing is a space of reflection, presence, and invitation into deeper awareness through writing, listening, and shared attention. home have you ever noticed how extraordinary it is that anything is happening at all? this thought. this sensation. this breath. this experience. this life. (((welcome in…))) [ meander… ] arising observations yes and no… open… post this? essential inspirations opening this reflection all all-this all-this-thought anything anything-happening anything-happening-all arising arising-observations arising-observations-yes attention attention-you attention-you-ever awareness awareness-writing awareness-writing-listening breath breath-this breath-this-experience deeper deeper-awareness deeper-awareness-writing essential essential-inspirations essential-inspirations-opening ever ever-noticed ever-noticed-how experience experience-this experience-this-life extraordinary extraordinary-anything extraordinary-anything-happening happening happening-all happening-all-this healing healing-ministries healing-ministries-unbound healing-space healing-space-reflection how how-extraordinary how-extraordinary-anything inspirations inspirations-opening inspirations-opening-this invitation invitation-deeper invitation-deeper-awareness life life-welcome life-welcome-meander listening listening-shared listening-shared-attention meander meander-arising meander-arising-observations ministries ministries-unbound ministries-unbound-healing no no-open no-open-post noticed noticed-how noticed-how-extraordinary observations observations-yes observations-yes-no open open-post open-post-this opening opening-this opening-this-reflection post post-this post-this-essential presence presence-invitation presence-invitation-deeper reflection reflection-presence reflection-presence-invitation sensation sensation-this sensation-this-breath shared shared-attention shared-attention-you space space-reflection space-reflection-presence this this-breath this-breath-this this-essential this-essential-inspirations this-experience this-experience-this this-life this-life-welcome this-reflection this-sensation this-sensation-this this-thought this-thought-this thought thought-this thought-this-sensation unbound unbound-healing unbound-healing-ministries unbound-healing-space welcome welcome-meander welcome-meander-arising writing writing-listening writing-listening-shared yes yes-no yes-no-open you you-ever you-ever-noticed",
+      "excerpt": "Have you ever noticed how extraordinary it is that anything is happening at all? This thought. This sensation. This breath. This experience. This life. (((Welcome in…))) [ Meander… ]",
+      "search_text": "unbound healing ministries unbound healing is a space of reflection, presence, and invitation into deeper awareness through writing, listening, and shared attention. home have you ever noticed how extraordinary it is that anything is happening at all? this thought. this sensation. this breath. this experience. this life. (((welcome in…))) [ meander… ] all all-this all-this-thought anything anything-happening anything-happening-all attention attention-you attention-you-ever awareness awareness-writing awareness-writing-listening breath breath-this breath-this-experience deeper deeper-awareness deeper-awareness-writing ever ever-noticed ever-noticed-how experience experience-this experience-this-life extraordinary extraordinary-anything extraordinary-anything-happening happening happening-all happening-all-this healing healing-ministries healing-ministries-unbound healing-space healing-space-reflection how how-extraordinary how-extraordinary-anything invitation invitation-deeper invitation-deeper-awareness life life-welcome life-welcome-meander listening listening-shared listening-shared-attention meander ministries ministries-unbound ministries-unbound-healing noticed noticed-how noticed-how-extraordinary presence presence-invitation presence-invitation-deeper reflection reflection-presence reflection-presence-invitation sensation sensation-this sensation-this-breath shared shared-attention shared-attention-you space space-reflection space-reflection-presence this this-breath this-breath-this this-experience this-experience-this this-life this-life-welcome this-sensation this-sensation-this this-thought this-thought-this thought thought-this thought-this-sensation unbound unbound-healing unbound-healing-ministries unbound-healing-space welcome welcome-meander writing writing-listening writing-listening-shared you you-ever you-ever-noticed",
       "concepts": [
         "all",
         "all-this",
@@ -2147,9 +2147,6 @@
         "anything",
         "anything-happening",
         "anything-happening-all",
-        "arising",
-        "arising-observations",
-        "arising-observations-yes",
         "attention",
         "attention-you",
         "attention-you-ever",
@@ -2162,9 +2159,6 @@
         "deeper",
         "deeper-awareness",
         "deeper-awareness-writing",
-        "essential",
-        "essential-inspirations",
-        "essential-inspirations-opening",
         "ever",
         "ever-noticed",
         "ever-noticed-how",
@@ -2185,9 +2179,6 @@
         "how",
         "how-extraordinary",
         "how-extraordinary-anything",
-        "inspirations",
-        "inspirations-opening",
-        "inspirations-opening-this",
         "invitation",
         "invitation-deeper",
         "invitation-deeper-awareness",
@@ -2198,29 +2189,12 @@
         "listening-shared",
         "listening-shared-attention",
         "meander",
-        "meander-arising",
-        "meander-arising-observations",
         "ministries",
         "ministries-unbound",
         "ministries-unbound-healing",
-        "no",
-        "no-open",
-        "no-open-post",
         "noticed",
         "noticed-how",
         "noticed-how-extraordinary",
-        "observations",
-        "observations-yes",
-        "observations-yes-no",
-        "open",
-        "open-post",
-        "open-post-this",
-        "opening",
-        "opening-this",
-        "opening-this-reflection",
-        "post",
-        "post-this",
-        "post-this-essential",
         "presence",
         "presence-invitation",
         "presence-invitation-deeper",
@@ -2239,13 +2213,10 @@
         "this",
         "this-breath",
         "this-breath-this",
-        "this-essential",
-        "this-essential-inspirations",
         "this-experience",
         "this-experience-this",
         "this-life",
         "this-life-welcome",
-        "this-reflection",
         "this-sensation",
         "this-sensation-this",
         "this-thought",
@@ -2259,20 +2230,16 @@
         "unbound-healing-space",
         "welcome",
         "welcome-meander",
-        "welcome-meander-arising",
         "writing",
         "writing-listening",
         "writing-listening-shared",
-        "yes",
-        "yes-no",
-        "yes-no-open",
         "you",
         "you-ever",
         "you-ever-noticed"
       ],
       "tags": [],
       "aliases": [],
-      "word_count": 40
+      "word_count": 27
     },
     "https://unboundhealing.org/inviting/": {
       "path": "inviting/index.html",
@@ -19134,13 +19101,13 @@
     },
     "all": {
       "frequency": 32,
-      "connectivity": 4237,
+      "connectivity": 4211,
       "search_signal": 64,
       "excerpt_signal": 21,
       "word_signal": 55,
       "evidence": {
         "page_count": 32,
-        "graph_degree": 4237,
+        "graph_degree": 4211,
         "search_pages": [
           "https://unboundhealing.org/about/conversing/",
           "https://unboundhealing.org/archive/brittany/",
@@ -20247,13 +20214,13 @@
     },
     "all-this": {
       "frequency": 3,
-      "connectivity": 449,
+      "connectivity": 418,
       "search_signal": 6,
       "excerpt_signal": 0,
       "word_signal": 4,
       "evidence": {
         "page_count": 3,
-        "graph_degree": 449,
+        "graph_degree": 418,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/no-matter/",
@@ -20304,13 +20271,13 @@
     },
     "all-this-thought": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -24118,13 +24085,13 @@
     },
     "anything": {
       "frequency": 12,
-      "connectivity": 1678,
+      "connectivity": 1649,
       "search_signal": 24,
       "excerpt_signal": 5,
       "word_signal": 18,
       "evidence": {
         "page_count": 12,
-        "graph_degree": 1678,
+        "graph_degree": 1649,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/non-speaking/",
@@ -24344,13 +24311,13 @@
     },
     "anything-happening": {
       "frequency": 2,
-      "connectivity": 302,
+      "connectivity": 270,
       "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 302,
+        "graph_degree": 270,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/happening/"
@@ -24363,13 +24330,13 @@
     },
     "anything-happening-all": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -26431,54 +26398,6 @@
         ]
       }
     },
-    "arising": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
-      }
-    },
-    "arising-observations": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
-      }
-    },
-    "arising-observations-yes": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
-      }
-    },
     "around": {
       "frequency": 1,
       "connectivity": 145,
@@ -27695,13 +27614,13 @@
     },
     "attention": {
       "frequency": 18,
-      "connectivity": 2393,
+      "connectivity": 2366,
       "search_signal": 36,
       "excerpt_signal": 2,
       "word_signal": 27,
       "evidence": {
         "page_count": 18,
-        "graph_degree": 2393,
+        "graph_degree": 2366,
         "search_pages": [
           "https://unboundhealing.org/about/",
           "https://unboundhealing.org/concept/zone/",
@@ -28323,13 +28242,13 @@
     },
     "attention-you": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -28339,13 +28258,13 @@
     },
     "attention-you-ever": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -29320,13 +29239,13 @@
     },
     "awareness": {
       "frequency": 32,
-      "connectivity": 4020,
+      "connectivity": 3997,
       "search_signal": 64,
       "excerpt_signal": 0,
       "word_signal": 55,
       "evidence": {
         "page_count": 32,
-        "graph_degree": 4020,
+        "graph_degree": 3997,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/listening/",
@@ -30622,13 +30541,13 @@
     },
     "awareness-writing": {
       "frequency": 2,
-      "connectivity": 281,
+      "connectivity": 251,
       "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 281,
+        "graph_degree": 251,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/open/"
@@ -30659,13 +30578,13 @@
     },
     "awareness-writing-listening": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -37737,13 +37656,13 @@
     },
     "breath": {
       "frequency": 2,
-      "connectivity": 310,
+      "connectivity": 278,
       "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 310,
+        "graph_degree": 278,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/indivisible/"
@@ -37792,13 +37711,13 @@
     },
     "breath-this": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -37808,13 +37727,13 @@
     },
     "breath-this-experience": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -56764,13 +56683,13 @@
     },
     "deeper": {
       "frequency": 2,
-      "connectivity": 256,
+      "connectivity": 224,
       "search_signal": 4,
       "excerpt_signal": 1,
       "word_signal": 2,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 256,
+        "graph_degree": 224,
         "search_pages": [
           "https://unboundhealing.org/about/",
           "https://unboundhealing.org/"
@@ -56785,13 +56704,13 @@
     },
     "deeper-awareness": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -56801,13 +56720,13 @@
     },
     "deeper-awareness-writing": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -67055,54 +66974,6 @@
         ]
       }
     },
-    "essential": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
-      }
-    },
-    "essential-inspirations": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
-      }
-    },
-    "essential-inspirations-opening": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
-      }
-    },
     "essentially": {
       "frequency": 2,
       "connectivity": 287,
@@ -68281,13 +68152,13 @@
     },
     "ever": {
       "frequency": 14,
-      "connectivity": 2051,
+      "connectivity": 2025,
       "search_signal": 28,
       "excerpt_signal": 6,
       "word_signal": 25,
       "evidence": {
         "page_count": 14,
-        "graph_degree": 2051,
+        "graph_degree": 2025,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/another-another-yesterday/",
@@ -68639,13 +68510,13 @@
     },
     "ever-noticed": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -68655,13 +68526,13 @@
     },
     "ever-noticed-how": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -71582,13 +71453,13 @@
     },
     "experience": {
       "frequency": 32,
-      "connectivity": 4139,
+      "connectivity": 4115,
       "search_signal": 64,
       "excerpt_signal": 5,
       "word_signal": 56,
       "evidence": {
         "page_count": 32,
-        "graph_degree": 4139,
+        "graph_degree": 4115,
         "search_pages": [
           "https://unboundhealing.org/about/",
           "https://unboundhealing.org/concept/evolving/",
@@ -72629,13 +72500,13 @@
     },
     "experience-this": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -72645,13 +72516,13 @@
     },
     "experience-this-life": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -75351,13 +75222,13 @@
     },
     "extraordinary": {
       "frequency": 3,
-      "connectivity": 435,
+      "connectivity": 404,
       "search_signal": 6,
       "excerpt_signal": 2,
       "word_signal": 4,
       "evidence": {
         "page_count": 3,
-        "graph_degree": 435,
+        "graph_degree": 404,
         "search_pages": [
           "https://unboundhealing.org/about/",
           "https://unboundhealing.org/",
@@ -75375,13 +75246,13 @@
     },
     "extraordinary-anything": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -75391,13 +75262,13 @@
     },
     "extraordinary-anything-happening": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -85482,13 +85353,13 @@
     },
     "happening": {
       "frequency": 18,
-      "connectivity": 2267,
+      "connectivity": 2242,
       "search_signal": 36,
       "excerpt_signal": 3,
       "word_signal": 31,
       "evidence": {
         "page_count": 18,
-        "graph_degree": 2267,
+        "graph_degree": 2242,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/another-another-yesterday/",
@@ -85537,13 +85408,13 @@
     },
     "happening-all": {
       "frequency": 3,
-      "connectivity": 438,
+      "connectivity": 408,
       "search_signal": 6,
       "excerpt_signal": 0,
       "word_signal": 4,
       "evidence": {
         "page_count": 3,
-        "graph_degree": 438,
+        "graph_degree": 408,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/lukewarm-decaf/",
@@ -85594,13 +85465,13 @@
     },
     "happening-all-this": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -86605,13 +86476,13 @@
     },
     "healing": {
       "frequency": 5,
-      "connectivity": 599,
+      "connectivity": 570,
       "search_signal": 10,
       "excerpt_signal": 0,
       "word_signal": 7,
       "evidence": {
         "page_count": 5,
-        "graph_degree": 599,
+        "graph_degree": 570,
         "search_pages": [
           "https://unboundhealing.org/about/conversing/",
           "https://unboundhealing.org/about/",
@@ -86666,13 +86537,13 @@
     },
     "healing-ministries": {
       "frequency": 3,
-      "connectivity": 382,
+      "connectivity": 352,
       "search_signal": 6,
       "excerpt_signal": 0,
       "word_signal": 4,
       "evidence": {
         "page_count": 3,
-        "graph_degree": 382,
+        "graph_degree": 352,
         "search_pages": [
           "https://unboundhealing.org/about/",
           "https://unboundhealing.org/",
@@ -86741,13 +86612,13 @@
     },
     "healing-ministries-unbound": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -86793,13 +86664,13 @@
     },
     "healing-space": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -86809,13 +86680,13 @@
     },
     "healing-space-reflection": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -89293,13 +89164,13 @@
     },
     "how": {
       "frequency": 20,
-      "connectivity": 2752,
+      "connectivity": 2723,
       "search_signal": 40,
       "excerpt_signal": 14,
       "word_signal": 34,
       "evidence": {
         "page_count": 20,
-        "graph_degree": 2752,
+        "graph_degree": 2723,
         "search_pages": [
           "https://unboundhealing.org/concept/",
           "https://unboundhealing.org/concept/origin/",
@@ -89506,13 +89377,13 @@
     },
     "how-extraordinary": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -89522,13 +89393,13 @@
     },
     "how-extraordinary-anything": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -95979,56 +95850,6 @@
         ]
       }
     },
-    "inspirations": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 1,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "long_form_pages": []
-      }
-    },
-    "inspirations-opening": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
-      }
-    },
-    "inspirations-opening-this": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
-      }
-    },
     "inspired": {
       "frequency": 2,
       "connectivity": 327,
@@ -97480,13 +97301,13 @@
     },
     "invitation": {
       "frequency": 4,
-      "connectivity": 534,
+      "connectivity": 503,
       "search_signal": 8,
       "excerpt_signal": 1,
       "word_signal": 5,
       "evidence": {
         "page_count": 4,
-        "graph_degree": 534,
+        "graph_degree": 503,
         "search_pages": [
           "https://unboundhealing.org/about/conversing/",
           "https://unboundhealing.org/",
@@ -97577,13 +97398,13 @@
     },
     "invitation-deeper": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -97593,13 +97414,13 @@
     },
     "invitation-deeper-awareness": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -103304,13 +103125,13 @@
     },
     "life": {
       "frequency": 4,
-      "connectivity": 495,
+      "connectivity": 464,
       "search_signal": 8,
       "excerpt_signal": 0,
       "word_signal": 4,
       "evidence": {
         "page_count": 4,
-        "graph_degree": 495,
+        "graph_degree": 464,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/noticing/",
@@ -103430,13 +103251,13 @@
     },
     "life-welcome": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -103446,13 +103267,13 @@
     },
     "life-welcome-meander": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -105384,13 +105205,13 @@
     },
     "listening": {
       "frequency": 6,
-      "connectivity": 742,
+      "connectivity": 718,
       "search_signal": 12,
       "excerpt_signal": 3,
       "word_signal": 6,
       "evidence": {
         "page_count": 6,
-        "graph_degree": 742,
+        "graph_degree": 718,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/listening/",
@@ -105715,13 +105536,13 @@
     },
     "listening-shared": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -105731,13 +105552,13 @@
     },
     "listening-shared-attention": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -110572,45 +110393,13 @@
     },
     "meander": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
-      }
-    },
-    "meander-arising": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
-      }
-    },
-    "meander-arising-observations": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -113950,13 +113739,13 @@
     },
     "ministries": {
       "frequency": 3,
-      "connectivity": 382,
+      "connectivity": 352,
       "search_signal": 6,
       "excerpt_signal": 0,
       "word_signal": 4,
       "evidence": {
         "page_count": 3,
-        "graph_degree": 382,
+        "graph_degree": 352,
         "search_pages": [
           "https://unboundhealing.org/about/",
           "https://unboundhealing.org/",
@@ -114079,13 +113868,13 @@
     },
     "ministries-unbound": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -114095,13 +113884,13 @@
     },
     "ministries-unbound-healing": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -121144,17 +120933,16 @@
       }
     },
     "no": {
-      "frequency": 14,
-      "connectivity": 2046,
-      "search_signal": 28,
+      "frequency": 13,
+      "connectivity": 1948,
+      "search_signal": 26,
       "excerpt_signal": 7,
       "word_signal": 23,
       "evidence": {
-        "page_count": 14,
-        "graph_degree": 2046,
+        "page_count": 13,
+        "graph_degree": 1948,
         "search_pages": [
           "https://unboundhealing.org/about/conversing/",
-          "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/another-another-yesterday/",
           "https://unboundhealing.org/opening/elsewhere/",
           "https://unboundhealing.org/opening/fuck-blame/",
@@ -121588,38 +121376,6 @@
         "long_form_pages": [
           "https://unboundhealing.org/opening/meaning/"
         ]
-      }
-    },
-    "no-open": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
-      }
-    },
-    "no-open-post": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
       }
     },
     "no-particular": {
@@ -125377,13 +125133,13 @@
     },
     "noticed": {
       "frequency": 5,
-      "connectivity": 778,
+      "connectivity": 748,
       "search_signal": 10,
       "excerpt_signal": 3,
       "word_signal": 8,
       "evidence": {
         "page_count": 5,
-        "graph_degree": 778,
+        "graph_degree": 748,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/liz/",
@@ -125442,13 +125198,13 @@
     },
     "noticed-how": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -125458,13 +125214,13 @@
     },
     "noticed-how-extraordinary": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -128034,18 +127790,17 @@
       }
     },
     "observations": {
-      "frequency": 7,
-      "connectivity": 807,
-      "search_signal": 14,
-      "excerpt_signal": 3,
+      "frequency": 6,
+      "connectivity": 709,
+      "search_signal": 12,
+      "excerpt_signal": 2,
       "word_signal": 7,
       "evidence": {
-        "page_count": 7,
-        "graph_degree": 807,
+        "page_count": 6,
+        "graph_degree": 709,
         "search_pages": [
           "https://unboundhealing.org/about/",
           "https://unboundhealing.org/concept/ici/",
-          "https://unboundhealing.org/",
           "https://unboundhealing.org/noticing/",
           "https://unboundhealing.org/noticing/shared-experiences/",
           "https://unboundhealing.org/opening/",
@@ -128053,7 +127808,6 @@
         ],
         "excerpt_pages": [
           "https://unboundhealing.org/concept/ici/",
-          "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/"
         ],
         "long_form_pages": [
@@ -128270,38 +128024,6 @@
         "long_form_pages": [
           "https://unboundhealing.org/opening/"
         ]
-      }
-    },
-    "observations-yes": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
-      }
-    },
-    "observations-yes-no": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
       }
     },
     "obsession": {
@@ -130979,16 +130701,15 @@
       }
     },
     "open": {
-      "frequency": 15,
-      "connectivity": 1756,
-      "search_signal": 30,
+      "frequency": 14,
+      "connectivity": 1665,
+      "search_signal": 28,
       "excerpt_signal": 1,
       "word_signal": 25,
       "evidence": {
-        "page_count": 15,
-        "graph_degree": 1756,
+        "page_count": 14,
+        "graph_degree": 1665,
         "search_pages": [
-          "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/another-another-yesterday/",
           "https://unboundhealing.org/opening/",
           "https://unboundhealing.org/opening/lean/",
@@ -131259,38 +130980,6 @@
         ]
       }
     },
-    "open-post": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
-      }
-    },
-    "open-post-this": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
-      }
-    },
     "open-reflections": {
       "frequency": 1,
       "connectivity": 164,
@@ -131400,17 +131089,16 @@
       }
     },
     "opening": {
-      "frequency": 71,
-      "connectivity": 9096,
-      "search_signal": 142,
+      "frequency": 70,
+      "connectivity": 9009,
+      "search_signal": 140,
       "excerpt_signal": 5,
       "word_signal": 130,
       "evidence": {
-        "page_count": 71,
-        "graph_degree": 9096,
+        "page_count": 70,
+        "graph_degree": 9009,
         "search_pages": [
           "https://unboundhealing.org/archive/brittany/",
-          "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/another-another-day-before/",
           "https://unboundhealing.org/opening/another-another-yesterday/",
           "https://unboundhealing.org/opening/another-yesterday/",
@@ -133543,16 +133231,15 @@
       }
     },
     "opening-this": {
-      "frequency": 6,
-      "connectivity": 791,
-      "search_signal": 12,
+      "frequency": 5,
+      "connectivity": 685,
+      "search_signal": 10,
       "excerpt_signal": 0,
       "word_signal": 8,
       "evidence": {
-        "page_count": 6,
-        "graph_degree": 791,
+        "page_count": 5,
+        "graph_degree": 685,
         "search_pages": [
-          "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/",
           "https://unboundhealing.org/opening/this-morning-a/",
           "https://unboundhealing.org/opening/this-morning-too/",
@@ -133591,22 +133278,6 @@
           "https://unboundhealing.org/opening/this-morning-too/",
           "https://unboundhealing.org/opening/this-morning/"
         ]
-      }
-    },
-    "opening-this-reflection": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
       }
     },
     "opening-this-you": {
@@ -143779,22 +143450,19 @@
       }
     },
     "post": {
-      "frequency": 3,
-      "connectivity": 412,
-      "search_signal": 6,
-      "excerpt_signal": 1,
+      "frequency": 2,
+      "connectivity": 303,
+      "search_signal": 4,
+      "excerpt_signal": 0,
       "word_signal": 3,
       "evidence": {
-        "page_count": 3,
-        "graph_degree": 412,
+        "page_count": 2,
+        "graph_degree": 303,
         "search_pages": [
-          "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/",
           "https://unboundhealing.org/opening/post-this/"
         ],
-        "excerpt_pages": [
-          "https://unboundhealing.org/"
-        ],
+        "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/",
           "https://unboundhealing.org/opening/post-this/"
@@ -143802,16 +143470,15 @@
       }
     },
     "post-this": {
-      "frequency": 3,
-      "connectivity": 412,
-      "search_signal": 6,
+      "frequency": 2,
+      "connectivity": 303,
+      "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 3,
       "evidence": {
-        "page_count": 3,
-        "graph_degree": 412,
+        "page_count": 2,
+        "graph_degree": 303,
         "search_pages": [
-          "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/",
           "https://unboundhealing.org/opening/post-this/"
         ],
@@ -143820,22 +143487,6 @@
           "https://unboundhealing.org/opening/",
           "https://unboundhealing.org/opening/post-this/"
         ]
-      }
-    },
-    "post-this-essential": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
       }
     },
     "post-this-post": {
@@ -144651,13 +144302,13 @@
     },
     "presence": {
       "frequency": 15,
-      "connectivity": 1893,
+      "connectivity": 1863,
       "search_signal": 30,
       "excerpt_signal": 0,
       "word_signal": 19,
       "evidence": {
         "page_count": 15,
-        "graph_degree": 1893,
+        "graph_degree": 1863,
         "search_pages": [
           "https://unboundhealing.org/gathering/",
           "https://unboundhealing.org/",
@@ -144869,13 +144520,13 @@
     },
     "presence-invitation": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -144885,13 +144536,13 @@
     },
     "presence-invitation-deeper": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -151896,13 +151547,13 @@
     },
     "reflection": {
       "frequency": 41,
-      "connectivity": 5167,
+      "connectivity": 5144,
       "search_signal": 82,
       "excerpt_signal": 1,
       "word_signal": 69,
       "evidence": {
         "page_count": 41,
-        "graph_degree": 5167,
+        "graph_degree": 5144,
         "search_pages": [
           "https://unboundhealing.org/about/",
           "https://unboundhealing.org/archive/brittany/",
@@ -152787,13 +152438,13 @@
     },
     "reflection-presence": {
       "frequency": 3,
-      "connectivity": 439,
+      "connectivity": 409,
       "search_signal": 6,
       "excerpt_signal": 0,
       "word_signal": 4,
       "evidence": {
         "page_count": 3,
-        "graph_degree": 439,
+        "graph_degree": 409,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/no-tea/",
@@ -152808,13 +152459,13 @@
     },
     "reflection-presence-invitation": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -161445,13 +161096,13 @@
     },
     "sensation": {
       "frequency": 3,
-      "connectivity": 422,
+      "connectivity": 390,
       "search_signal": 6,
       "excerpt_signal": 0,
       "word_signal": 4,
       "evidence": {
         "page_count": 3,
-        "graph_degree": 422,
+        "graph_degree": 390,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/empty/",
@@ -161538,13 +161189,13 @@
     },
     "sensation-this": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -161554,13 +161205,13 @@
     },
     "sensation-this-breath": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -163379,13 +163030,13 @@
     },
     "shared": {
       "frequency": 8,
-      "connectivity": 877,
+      "connectivity": 849,
       "search_signal": 16,
       "excerpt_signal": 2,
       "word_signal": 6,
       "evidence": {
         "page_count": 8,
-        "graph_degree": 877,
+        "graph_degree": 849,
         "search_pages": [
           "https://unboundhealing.org/about/",
           "https://unboundhealing.org/gathering/",
@@ -163409,13 +163060,13 @@
     },
     "shared-attention": {
       "frequency": 3,
-      "connectivity": 367,
+      "connectivity": 335,
       "search_signal": 6,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
         "page_count": 3,
-        "graph_degree": 367,
+        "graph_degree": 335,
         "search_pages": [
           "https://unboundhealing.org/gathering/",
           "https://unboundhealing.org/",
@@ -163463,13 +163114,13 @@
     },
     "shared-attention-you": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -171508,13 +171159,13 @@
     },
     "space": {
       "frequency": 5,
-      "connectivity": 537,
+      "connectivity": 507,
       "search_signal": 10,
       "excerpt_signal": 1,
       "word_signal": 3,
       "evidence": {
         "page_count": 5,
-        "graph_degree": 537,
+        "graph_degree": 507,
         "search_pages": [
           "https://unboundhealing.org/about/conversing/",
           "https://unboundhealing.org/gathering/",
@@ -171637,13 +171288,13 @@
     },
     "space-reflection": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -171653,13 +171304,13 @@
     },
     "space-reflection-presence": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -185946,13 +185597,13 @@
     },
     "this": {
       "frequency": 53,
-      "connectivity": 6594,
+      "connectivity": 6571,
       "search_signal": 106,
       "excerpt_signal": 37,
       "word_signal": 91,
       "evidence": {
         "page_count": 53,
-        "graph_degree": 6594,
+        "graph_degree": 6571,
         "search_pages": [
           "https://unboundhealing.org/about/conversing/",
           "https://unboundhealing.org/archive/brittany/",
@@ -186459,13 +186110,13 @@
     },
     "this-breath": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -186475,13 +186126,13 @@
     },
     "this-breath-this": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -186813,38 +186464,6 @@
         ]
       }
     },
-    "this-essential": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
-      }
-    },
-    "this-essential-inspirations": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
-      }
-    },
     "this-even": {
       "frequency": 1,
       "connectivity": 180,
@@ -186883,13 +186502,13 @@
     },
     "this-experience": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -186899,13 +186518,13 @@
     },
     "this-experience-this": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -187239,13 +186858,13 @@
     },
     "this-life": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -187255,13 +186874,13 @@
     },
     "this-life-welcome": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -188322,16 +187941,15 @@
       }
     },
     "this-reflection": {
-      "frequency": 2,
-      "connectivity": 299,
-      "search_signal": 4,
+      "frequency": 1,
+      "connectivity": 178,
+      "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
-        "page_count": 2,
-        "graph_degree": 299,
+        "page_count": 1,
+        "graph_degree": 178,
         "search_pages": [
-          "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/purpose/"
         ],
         "excerpt_pages": [],
@@ -188392,13 +188010,13 @@
     },
     "this-sensation": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -188408,13 +188026,13 @@
     },
     "this-sensation-this": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -188644,13 +188262,13 @@
     },
     "this-thought": {
       "frequency": 2,
-      "connectivity": 280,
+      "connectivity": 248,
       "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 280,
+        "graph_degree": 248,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/liz/"
@@ -188663,13 +188281,13 @@
     },
     "this-thought-this": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -189409,13 +189027,13 @@
     },
     "thought": {
       "frequency": 18,
-      "connectivity": 2428,
+      "connectivity": 2401,
       "search_signal": 36,
       "excerpt_signal": 8,
       "word_signal": 29,
       "evidence": {
         "page_count": 18,
-        "graph_degree": 2428,
+        "graph_degree": 2401,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/noticing/",
@@ -190024,13 +189642,13 @@
     },
     "thought-this": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -190040,13 +189658,13 @@
     },
     "thought-this-sensation": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -196824,13 +196442,13 @@
     },
     "unbound": {
       "frequency": 4,
-      "connectivity": 475,
+      "connectivity": 445,
       "search_signal": 8,
       "excerpt_signal": 0,
       "word_signal": 6,
       "evidence": {
         "page_count": 4,
-        "graph_degree": 475,
+        "graph_degree": 445,
         "search_pages": [
           "https://unboundhealing.org/about/",
           "https://unboundhealing.org/",
@@ -196847,13 +196465,13 @@
     },
     "unbound-healing": {
       "frequency": 4,
-      "connectivity": 475,
+      "connectivity": 445,
       "search_signal": 8,
       "excerpt_signal": 0,
       "word_signal": 6,
       "evidence": {
         "page_count": 4,
-        "graph_degree": 475,
+        "graph_degree": 445,
         "search_pages": [
           "https://unboundhealing.org/about/",
           "https://unboundhealing.org/",
@@ -196888,13 +196506,13 @@
     },
     "unbound-healing-ministries": {
       "frequency": 3,
-      "connectivity": 382,
+      "connectivity": 352,
       "search_signal": 6,
       "excerpt_signal": 0,
       "word_signal": 4,
       "evidence": {
         "page_count": 3,
-        "graph_degree": 382,
+        "graph_degree": 352,
         "search_pages": [
           "https://unboundhealing.org/about/",
           "https://unboundhealing.org/",
@@ -196909,13 +196527,13 @@
     },
     "unbound-healing-space": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -204738,13 +204356,13 @@
     },
     "welcome": {
       "frequency": 4,
-      "connectivity": 529,
+      "connectivity": 499,
       "search_signal": 8,
       "excerpt_signal": 0,
       "word_signal": 5,
       "evidence": {
         "page_count": 4,
-        "graph_degree": 529,
+        "graph_degree": 499,
         "search_pages": [
           "https://unboundhealing.org/about/conversing/",
           "https://unboundhealing.org/concept/experimenting/",
@@ -204761,29 +204379,13 @@
     },
     "welcome-meander": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
-      }
-    },
-    "welcome-meander-arising": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -214947,13 +214549,13 @@
     },
     "writing": {
       "frequency": 17,
-      "connectivity": 2327,
+      "connectivity": 2301,
       "search_signal": 34,
       "excerpt_signal": 8,
       "word_signal": 29,
       "evidence": {
         "page_count": 17,
-        "graph_degree": 2327,
+        "graph_degree": 2301,
         "search_pages": [
           "https://unboundhealing.org/archive/brittany/",
           "https://unboundhealing.org/concept/iced-coffee/",
@@ -215331,13 +214933,13 @@
     },
     "writing-listening": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -215347,13 +214949,13 @@
     },
     "writing-listening-shared": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -216186,16 +215788,15 @@
       }
     },
     "yes": {
-      "frequency": 11,
-      "connectivity": 1337,
-      "search_signal": 22,
-      "excerpt_signal": 2,
+      "frequency": 10,
+      "connectivity": 1240,
+      "search_signal": 20,
+      "excerpt_signal": 1,
       "word_signal": 18,
       "evidence": {
-        "page_count": 11,
-        "graph_degree": 1337,
+        "page_count": 10,
+        "graph_degree": 1240,
         "search_pages": [
-          "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/another-another-yesterday/",
           "https://unboundhealing.org/opening/feeling-cute/",
           "https://unboundhealing.org/opening/",
@@ -216208,7 +215809,6 @@
           "https://unboundhealing.org/welcome/"
         ],
         "excerpt_pages": [
-          "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/undone/"
         ],
         "long_form_pages": [
@@ -216346,16 +215946,15 @@
       }
     },
     "yes-no": {
-      "frequency": 3,
-      "connectivity": 436,
-      "search_signal": 6,
+      "frequency": 2,
+      "connectivity": 325,
+      "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 3,
       "evidence": {
-        "page_count": 3,
-        "graph_degree": 436,
+        "page_count": 2,
+        "graph_degree": 325,
         "search_pages": [
-          "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/",
           "https://unboundhealing.org/opening/yes-and-no/"
         ],
@@ -216400,22 +215999,6 @@
         "long_form_pages": [
           "https://unboundhealing.org/opening/"
         ]
-      }
-    },
-    "yes-no-open": {
-      "frequency": 1,
-      "connectivity": 127,
-      "search_signal": 2,
-      "excerpt_signal": 0,
-      "word_signal": 0,
-      "evidence": {
-        "page_count": 1,
-        "graph_degree": 127,
-        "search_pages": [
-          "https://unboundhealing.org/"
-        ],
-        "excerpt_pages": [],
-        "long_form_pages": []
       }
     },
     "yes-no-reflection": {
@@ -217199,13 +216782,13 @@
     },
     "you": {
       "frequency": 17,
-      "connectivity": 2257,
+      "connectivity": 2233,
       "search_signal": 34,
       "excerpt_signal": 15,
       "word_signal": 28,
       "evidence": {
         "page_count": 17,
-        "graph_degree": 2257,
+        "graph_degree": 2233,
         "search_pages": [
           "https://unboundhealing.org/concept/zone/",
           "https://unboundhealing.org/",
@@ -217498,13 +217081,13 @@
     },
     "you-ever": {
       "frequency": 2,
-      "connectivity": 286,
+      "connectivity": 257,
       "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 286,
+        "graph_degree": 257,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/post-this/"
@@ -217535,13 +217118,13 @@
     },
     "you-ever-noticed": {
       "frequency": 1,
-      "connectivity": 127,
+      "connectivity": 94,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 127,
+        "graph_degree": 94,
         "search_pages": [
           "https://unboundhealing.org/"
         ],
@@ -220677,8 +220260,8 @@
       "related": [
         "https://unboundhealing.org/opening/tom/",
         "https://unboundhealing.org/opening/indivisible/",
-        "https://unboundhealing.org/",
         "https://unboundhealing.org/about/",
+        "https://unboundhealing.org/",
         "https://unboundhealing.org/opening/silence/",
         "https://unboundhealing.org/concept/origin/",
         "https://unboundhealing.org/opening/noticing/",
@@ -220695,9 +220278,6 @@
         "anything",
         "anything-happening",
         "anything-happening-all",
-        "arising",
-        "arising-observations",
-        "arising-observations-yes",
         "attention",
         "attention-you",
         "attention-you-ever",
@@ -220710,9 +220290,6 @@
         "deeper",
         "deeper-awareness",
         "deeper-awareness-writing",
-        "essential",
-        "essential-inspirations",
-        "essential-inspirations-opening",
         "ever",
         "ever-noticed",
         "ever-noticed-how",
@@ -220733,9 +220310,6 @@
         "how",
         "how-extraordinary",
         "how-extraordinary-anything",
-        "inspirations",
-        "inspirations-opening",
-        "inspirations-opening-this",
         "invitation",
         "invitation-deeper",
         "invitation-deeper-awareness",
@@ -220746,29 +220320,12 @@
         "listening-shared",
         "listening-shared-attention",
         "meander",
-        "meander-arising",
-        "meander-arising-observations",
         "ministries",
         "ministries-unbound",
         "ministries-unbound-healing",
-        "no",
-        "no-open",
-        "no-open-post",
         "noticed",
         "noticed-how",
         "noticed-how-extraordinary",
-        "observations",
-        "observations-yes",
-        "observations-yes-no",
-        "open",
-        "open-post",
-        "open-post-this",
-        "opening",
-        "opening-this",
-        "opening-this-reflection",
-        "post",
-        "post-this",
-        "post-this-essential",
         "presence",
         "presence-invitation",
         "presence-invitation-deeper",
@@ -220787,13 +220344,10 @@
         "this",
         "this-breath",
         "this-breath-this",
-        "this-essential",
-        "this-essential-inspirations",
         "this-experience",
         "this-experience-this",
         "this-life",
         "this-life-welcome",
-        "this-reflection",
         "this-sensation",
         "this-sensation-this",
         "this-thought",
@@ -220807,28 +220361,24 @@
         "unbound-healing-space",
         "welcome",
         "welcome-meander",
-        "welcome-meander-arising",
         "writing",
         "writing-listening",
         "writing-listening-shared",
-        "yes",
-        "yes-no",
-        "yes-no-open",
         "you",
         "you-ever",
         "you-ever-noticed"
       ],
       "related": [
-        "https://unboundhealing.org/welcome/",
         "https://unboundhealing.org/about/",
-        "https://unboundhealing.org/opening/",
-        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/welcome/",
         "https://unboundhealing.org/opening/indivisible/",
-        "https://unboundhealing.org/opening/open/",
         "https://unboundhealing.org/supporting/",
-        "https://unboundhealing.org/opening/this-morning-a/",
-        "https://unboundhealing.org/opening/yes-and-no/",
-        "https://unboundhealing.org/opening/sold-out/"
+        "https://unboundhealing.org/opening/sold-out/",
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/empty/",
+        "https://unboundhealing.org/opening/unabsent/",
+        "https://unboundhealing.org/opening/choice/"
       ]
     },
     "https://unboundhealing.org/inviting/": {
@@ -224423,12 +223973,12 @@
         "https://unboundhealing.org/opening/this-morning-a/",
         "https://unboundhealing.org/opening/still-warm/",
         "https://unboundhealing.org/opening/this-morning/",
-        "https://unboundhealing.org/",
         "https://unboundhealing.org/opening/some-minutes/",
         "https://unboundhealing.org/opening/post-this/",
         "https://unboundhealing.org/opening/the-day-before/",
         "https://unboundhealing.org/opening/tom/",
-        "https://unboundhealing.org/opening/cooling-tea/"
+        "https://unboundhealing.org/opening/cooling-tea/",
+        "https://unboundhealing.org/opening/another-another-yesterday/"
       ]
     },
     "https://unboundhealing.org/opening/indivisible/": {
