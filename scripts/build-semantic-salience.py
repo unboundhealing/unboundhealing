@@ -868,7 +868,6 @@ def main():
     print("🌌 semantic-salience COMPLETE (v4.2 CANONICAL TRUTH MODEL)")
     print("📁 output:", output_path)
     print("📦 nodes:", len(semantic["nodes"]))
-    print("📦 edges:", len(semantic["edges"]))
     print("🧠 salience concepts:", len(semantic["salience"]))
 
 if __name__ == "__main__":
