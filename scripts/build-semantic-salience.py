@@ -785,7 +785,6 @@ def build_semantic_salience(registry, parent_lookup):
 
         # TRUTH LAYER
         "nodes": nodes,
-        "edges": edges,
         "salience": salience,
 
         # DERIVED LAYER (NON-TRUTH)
