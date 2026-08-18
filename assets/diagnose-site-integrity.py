@@ -7,7 +7,6 @@ ROOT = Path(os.environ.get("GITHUB_WORKSPACE", os.getcwd()))
 
 SAL = ROOT / "assets/semantic-salience.json"
 VOCAB = ROOT / "assets/vocabulary.json"
-HOMEPAGE = ROOT / "assets/homepage-intelligence.json"
 
 # ---------------------------------------------------------
 # LOAD HELPERS
@@ -32,7 +31,6 @@ def main():
 
     sal = load(SAL)
     vocabulary = load(VOCAB)
-    home = load(HOMEPAGE)
 
     if not sal:
         print("❌ semantic-salience missing — abort")
@@ -42,11 +40,6 @@ def main():
     sal_urls = set(sal_nodes.keys())
 
     vocab_urls = set(vocabulary.keys()) if vocabulary else set()
-    home_urls = set()
-
-    if home and isinstance(home.get("homepage_intelligence"), dict):
-        for item in home["homepage_intelligence"].get("arising_observations", []):
-            home_urls.add(item.get("url", ""))
 
     # -----------------------------------------------------
     # 1. NODE PARITY CHECK
@@ -56,20 +49,13 @@ def main():
 
     missing_in_vocab = sal_urls - vocab_urls
     missing_in_sal = vocab_urls - sal_urls
-    missing_in_home = sal_urls - home_urls if home_urls else set()
 
     print(f"nodes in salience: {len(sal_urls)}")
     print(f"nodes in vocabulary: {len(vocab_urls)}")
-    print(f"nodes in homepage: {len(home_urls)}")
 
     if missing_in_vocab:
         print("\n⚠️ missing in vocabulary:", len(missing_in_vocab))
         for u in list(missing_in_vocab)[:5]:
-            print("  -", u)
-
-    if missing_in_home:
-        print("\n⚠️ missing in homepage intelligence:", len(missing_in_home))
-        for u in list(missing_in_home)[:5]:
             print("  -", u)
 
     # -----------------------------------------------------
@@ -156,7 +142,6 @@ def main():
     print("================")
     print("salience nodes:", len(sal_urls))
     print("vocabulary nodes:", len(vocab_urls))
-    print("homepage nodes:", len(home_urls))
     print("missing vocabulary coverage:", len(missing_in_vocab))
     print("missing homepage coverage:", len(missing_in_home))
     print("field gaps:", sum(missing_fields.values()))
@@ -164,7 +149,7 @@ def main():
 
     print("\n🧭 interpretation:")
     print("- salience is truth layer")
-    print("- vocabulary + homepage + search index are projections")
+    print("- vocabulary + search index are projections")
     print("- drift indicates semantic inconsistency")
 
     print("\n✅ site integrity diagnostic complete")
