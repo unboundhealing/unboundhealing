@@ -2777,12 +2777,13 @@
     "type": "page",
     "section": "non-speaking",
     "kind": "page",
-    "excerpt": "Non-Speaking… Communication in form; Catching nouns pretending to be things… (((words…))) (((label this…))) (((say anything…))) (((knowing…))) (((speed round…))) (((speak…))) (((why…))) (((ugh…))) (((null…)))",
-    "search_text": "non-speaking… a collection of reflections on communication, language, silence, and the many forms through which experience may be shared. page non-speaking… communication in form; catching nouns pretending to be things… (((words…))) (((label this…))) (((say anything…))) (((knowing…))) (((speed round…))) (((speak…))) (((why…))) (((ugh…))) (((null…))) anything anything-knowing anything-knowing-speed catching catching-nouns catching-nouns-pretending collection collection-reflections collection-reflections-communication communication communication-form communication-form-catching communication-language communication-language-silence experience experience-shared experience-shared-non form form-catching form-catching-nouns forms forms-which forms-which-experience knowing knowing-speed knowing-speed-round label label-this label-this-say language language-silence language-silence-many many many-forms many-forms-which non non-speaking non-speaking-collection non-speaking-communication non-speaking-non nouns nouns-pretending nouns-pretending-things null pretending pretending-things pretending-things-words reflections reflections-communication reflections-communication-language round round-speak round-speak-why say say-anything say-anything-knowing shared shared-non shared-non-speaking silence silence-many silence-many-forms speak speak-why speak-why-ugh speaking speaking-collection speaking-collection-reflections speaking-communication speaking-communication-form speaking-non speaking-non-speaking speed speed-round speed-round-speak things things-words things-words-label this this-say this-say-anything ugh ugh-null which which-experience which-experience-shared why why-ugh why-ugh-null words words-label words-label-this anything anything-knowing anything-knowing-speed catching catching-nouns catching-nouns-pretending collection collection-reflections collection-reflections-communication communication anything knowing anything knowing speed catching nouns catching nouns pretending collection reflections collection reflections communication",
+    "excerpt": "Non-Speaking… Communication in form; Catching nouns pretending to be things… (((words…))) (((label this…))) (((say anything…))) (((knowing…))) (((speed round…))) (((speak…))) (((why…))) (((ugh…))) (((null…))) (((arising…)))",
+    "search_text": "non-speaking… a collection of reflections on communication, language, silence, and the many forms through which experience may be shared. page non-speaking… communication in form; catching nouns pretending to be things… (((words…))) (((label this…))) (((say anything…))) (((knowing…))) (((speed round…))) (((speak…))) (((why…))) (((ugh…))) (((null…))) (((arising…))) anything anything-knowing anything-knowing-speed arising catching catching-nouns catching-nouns-pretending collection collection-reflections collection-reflections-communication communication communication-form communication-form-catching communication-language communication-language-silence experience experience-shared experience-shared-non form form-catching form-catching-nouns forms forms-which forms-which-experience knowing knowing-speed knowing-speed-round label label-this label-this-say language language-silence language-silence-many many many-forms many-forms-which non non-speaking non-speaking-collection non-speaking-communication non-speaking-non nouns nouns-pretending nouns-pretending-things null null-arising pretending pretending-things pretending-things-words reflections reflections-communication reflections-communication-language round round-speak round-speak-why say say-anything say-anything-knowing shared shared-non shared-non-speaking silence silence-many silence-many-forms speak speak-why speak-why-ugh speaking speaking-collection speaking-collection-reflections speaking-communication speaking-communication-form speaking-non speaking-non-speaking speed speed-round speed-round-speak things things-words things-words-label this this-say this-say-anything ugh ugh-null ugh-null-arising which which-experience which-experience-shared why why-ugh why-ugh-null words words-label words-label-this anything anything-knowing anything-knowing-speed arising catching catching-nouns catching-nouns-pretending collection collection-reflections collection-reflections-communication anything knowing anything knowing speed catching nouns catching nouns pretending collection reflections collection reflections communication",
     "concepts": [
       "anything",
       "anything-knowing",
       "anything-knowing-speed",
+      "arising",
       "catching",
       "catching-nouns",
       "catching-nouns-pretending",
@@ -2824,6 +2825,7 @@
       "nouns-pretending",
       "nouns-pretending-things",
       "null",
+      "null-arising",
       "pretending",
       "pretending-things",
       "pretending-things-words",
@@ -2863,6 +2865,7 @@
       "this-say-anything",
       "ugh",
       "ugh-null",
+      "ugh-null-arising",
       "which",
       "which-experience",
       "which-experience-shared",
@@ -2877,13 +2880,13 @@
       "anything",
       "anything-knowing",
       "anything-knowing-speed",
+      "arising",
       "catching",
       "catching-nouns",
       "catching-nouns-pretending",
       "collection",
       "collection-reflections",
-      "collection-reflections-communication",
-      "communication"
+      "collection-reflections-communication"
     ],
     "aliases": [
       "anything knowing",
@@ -2893,7 +2896,7 @@
       "collection reflections",
       "collection reflections communication"
     ],
-    "word_count": 23,
+    "word_count": 24,
     "reading_time": 1,
     "image": ""
   },
