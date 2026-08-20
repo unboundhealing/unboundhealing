@@ -858,6 +858,30 @@
       "appears feeling cute"
     ]
   },
+  "https://unboundhealing.org/opening/form/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "apart",
+      "apart-language",
+      "apart-language-patterns",
+      "appears",
+      "appears-questioning",
+      "appears-questioning-whether",
+      "associated",
+      "associated-underlying",
+      "associated-underlying-meaning",
+      "but"
+    ],
+    "aliases": [
+      "apart language",
+      "apart language patterns",
+      "appears questioning",
+      "appears questioning whether",
+      "associated underlying",
+      "associated underlying meaning"
+    ]
+  },
   "https://unboundhealing.org/opening/fuck-blame/": {
     "version": 2,
     "generated": true,
