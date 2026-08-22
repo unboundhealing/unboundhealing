@@ -501,6 +501,32 @@
       "experiences collection"
     ]
   },
+  "https://unboundhealing.org/opening/2am/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "2am",
+      "2am-2am",
+      "2am-2am-exploring",
+      "2am-exploring",
+      "2am-exploring-impulse",
+      "2am-longing",
+      "2am-longing-yearning",
+      "all",
+      "all-2am",
+      "all-2am-longing"
+    ],
+    "aliases": [
+      "2am 2am",
+      "2am 2am exploring",
+      "2am exploring",
+      "2am exploring impulse",
+      "2am longing",
+      "2am longing yearning",
+      "all 2am",
+      "all 2am longing"
+    ]
+  },
   "https://unboundhealing.org/opening/another-another-day-before/": {
     "version": 2,
     "generated": true,
