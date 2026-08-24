@@ -1078,6 +1078,31 @@
       "am listening anything"
     ]
   },
+  "https://unboundhealing.org/opening/kitchen-sink/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "95",
+      "95-mental",
+      "95-mental-activity",
+      "activity",
+      "activity-observation",
+      "activity-observation-experience",
+      "activity-which",
+      "activity-which-am",
+      "all",
+      "all-floating"
+    ],
+    "aliases": [
+      "95 mental",
+      "95 mental activity",
+      "activity observation",
+      "activity observation experience",
+      "activity which",
+      "activity which am",
+      "all floating"
+    ]
+  },
   "https://unboundhealing.org/opening/knowing/": {
     "version": 2,
     "generated": true,
