@@ -2409,8 +2409,8 @@
       "description": "A collection of reflections on communication, language, silence, and the many forms through which experience may be shared.",
       "section": "non-speaking",
       "kind": "page",
-      "excerpt": "Non-Speaking… Communication in form; Catching nouns pretending to be things… (((words…))) (((label this…))) (((say anything…))) (((knowing…))) (((speed round…))) (((speak…))) (((why…))) (((ugh…))) (((null…))) (((arising…))) (((form…))) (((unchosen…)))",
-      "search_text": "non-speaking… a collection of reflections on communication, language, silence, and the many forms through which experience may be shared. page non-speaking… communication in form; catching nouns pretending to be things… (((words…))) (((label this…))) (((say anything…))) (((knowing…))) (((speed round…))) (((speak…))) (((why…))) (((ugh…))) (((null…))) (((arising…))) (((form…))) (((unchosen…))) anything anything-knowing anything-knowing-speed arising arising-form arising-form-unchosen catching catching-nouns catching-nouns-pretending collection collection-reflections collection-reflections-communication communication communication-form communication-form-catching communication-language communication-language-silence experience experience-shared experience-shared-non form form-catching form-catching-nouns form-unchosen forms forms-which forms-which-experience knowing knowing-speed knowing-speed-round label label-this label-this-say language language-silence language-silence-many many many-forms many-forms-which non non-speaking non-speaking-collection non-speaking-communication non-speaking-non nouns nouns-pretending nouns-pretending-things null null-arising null-arising-form pretending pretending-things pretending-things-words reflections reflections-communication reflections-communication-language round round-speak round-speak-why say say-anything say-anything-knowing shared shared-non shared-non-speaking silence silence-many silence-many-forms speak speak-why speak-why-ugh speaking speaking-collection speaking-collection-reflections speaking-communication speaking-communication-form speaking-non speaking-non-speaking speed speed-round speed-round-speak things things-words things-words-label this this-say this-say-anything ugh ugh-null ugh-null-arising unchosen which which-experience which-experience-shared why why-ugh why-ugh-null words words-label words-label-this",
+      "excerpt": "Non-Speaking… Communication in form; Catching nouns pretending to be things… (((words…))) (((label this…))) (((say anything…))) (((knowing…))) (((speed round…))) (((speak…))) (((why…))) (((ugh…))) (((null…))) (((arising…))) (((form…))) (((unchosen…))) (((going under…)))",
+      "search_text": "non-speaking… a collection of reflections on communication, language, silence, and the many forms through which experience may be shared. page non-speaking… communication in form; catching nouns pretending to be things… (((words…))) (((label this…))) (((say anything…))) (((knowing…))) (((speed round…))) (((speak…))) (((why…))) (((ugh…))) (((null…))) (((arising…))) (((form…))) (((unchosen…))) (((going under…))) anything anything-knowing anything-knowing-speed arising arising-form arising-form-unchosen catching catching-nouns catching-nouns-pretending collection collection-reflections collection-reflections-communication communication communication-form communication-form-catching communication-language communication-language-silence experience experience-shared experience-shared-non form form-catching form-catching-nouns form-unchosen form-unchosen-going forms forms-which forms-which-experience going going-under knowing knowing-speed knowing-speed-round label label-this label-this-say language language-silence language-silence-many many many-forms many-forms-which non non-speaking non-speaking-collection non-speaking-communication non-speaking-non nouns nouns-pretending nouns-pretending-things null null-arising null-arising-form pretending pretending-things pretending-things-words reflections reflections-communication reflections-communication-language round round-speak round-speak-why say say-anything say-anything-knowing shared shared-non shared-non-speaking silence silence-many silence-many-forms speak speak-why speak-why-ugh speaking speaking-collection speaking-collection-reflections speaking-communication speaking-communication-form speaking-non speaking-non-speaking speed speed-round speed-round-speak things things-words things-words-label this this-say this-say-anything ugh ugh-null ugh-null-arising unchosen unchosen-going unchosen-going-under under which which-experience which-experience-shared why why-ugh why-ugh-null words words-label words-label-this",
       "concepts": [
         "anything",
         "anything-knowing",
@@ -2436,9 +2436,12 @@
         "form-catching",
         "form-catching-nouns",
         "form-unchosen",
+        "form-unchosen-going",
         "forms",
         "forms-which",
         "forms-which-experience",
+        "going",
+        "going-under",
         "knowing",
         "knowing-speed",
         "knowing-speed-round",
@@ -2503,6 +2506,9 @@
         "ugh-null",
         "ugh-null-arising",
         "unchosen",
+        "unchosen-going",
+        "unchosen-going-under",
+        "under",
         "which",
         "which-experience",
         "which-experience-shared",
@@ -2515,7 +2521,7 @@
       ],
       "tags": [],
       "aliases": [],
-      "word_count": 26
+      "word_count": 28
     },
     "https://unboundhealing.org/noticing/": {
       "path": "noticing/index.html",
@@ -28507,13 +28513,13 @@
     },
     "anything": {
       "frequency": 17,
-      "connectivity": 2422,
+      "connectivity": 2427,
       "search_signal": 34,
       "excerpt_signal": 8,
       "word_signal": 28,
       "evidence": {
         "page_count": 17,
-        "graph_degree": 2422,
+        "graph_degree": 2427,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/non-speaking/",
@@ -29051,13 +29057,13 @@
     },
     "anything-knowing": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -29067,13 +29073,13 @@
     },
     "anything-knowing-speed": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -31563,13 +31569,13 @@
     },
     "arising": {
       "frequency": 2,
-      "connectivity": 245,
+      "connectivity": 251,
       "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 245,
+        "graph_degree": 251,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/arising/"
@@ -31618,13 +31624,13 @@
     },
     "arising-form": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -31634,13 +31640,13 @@
     },
     "arising-form-unchosen": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -49175,13 +49181,13 @@
     },
     "catching": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -49191,13 +49197,13 @@
     },
     "catching-nouns": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -49207,13 +49213,13 @@
     },
     "catching-nouns-pretending": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -54502,13 +54508,13 @@
     },
     "collection": {
       "frequency": 5,
-      "connectivity": 444,
+      "connectivity": 450,
       "search_signal": 10,
       "excerpt_signal": 1,
       "word_signal": 2,
       "evidence": {
         "page_count": 5,
-        "graph_degree": 444,
+        "graph_degree": 450,
         "search_pages": [
           "https://unboundhealing.org/concept/",
           "https://unboundhealing.org/inviting/",
@@ -54643,13 +54649,13 @@
     },
     "collection-reflections": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -54659,13 +54665,13 @@
     },
     "collection-reflections-communication": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -55577,13 +55583,13 @@
     },
     "communication": {
       "frequency": 2,
-      "connectivity": 263,
+      "connectivity": 269,
       "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 263,
+        "graph_degree": 269,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/meaning/"
@@ -55596,13 +55602,13 @@
     },
     "communication-form": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -55612,13 +55618,13 @@
     },
     "communication-form-catching": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -55628,13 +55634,13 @@
     },
     "communication-language": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -55644,13 +55650,13 @@
     },
     "communication-language-silence": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -82235,13 +82241,13 @@
     },
     "experience": {
       "frequency": 35,
-      "connectivity": 4566,
+      "connectivity": 4571,
       "search_signal": 70,
       "excerpt_signal": 5,
       "word_signal": 63,
       "evidence": {
         "page_count": 35,
-        "graph_degree": 4566,
+        "graph_degree": 4571,
         "search_pages": [
           "https://unboundhealing.org/about/",
           "https://unboundhealing.org/concept/evolving/",
@@ -83274,13 +83280,13 @@
     },
     "experience-shared": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -83290,13 +83296,13 @@
     },
     "experience-shared-non": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -91905,13 +91911,13 @@
     },
     "form": {
       "frequency": 3,
-      "connectivity": 408,
+      "connectivity": 414,
       "search_signal": 6,
       "excerpt_signal": 0,
       "word_signal": 4,
       "evidence": {
         "page_count": 3,
-        "graph_degree": 408,
+        "graph_degree": 414,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/cooling-tea/",
@@ -91926,13 +91932,13 @@
     },
     "form-catching": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -91942,13 +91948,13 @@
     },
     "form-catching-nouns": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -92120,13 +92126,29 @@
     },
     "form-unchosen": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
+        "search_pages": [
+          "https://unboundhealing.org/non-speaking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": []
+      }
+    },
+    "form-unchosen-going": {
+      "frequency": 1,
+      "connectivity": 105,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -92302,13 +92324,13 @@
     },
     "forms": {
       "frequency": 2,
-      "connectivity": 271,
+      "connectivity": 277,
       "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 271,
+        "graph_degree": 277,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/form/"
@@ -92321,13 +92343,13 @@
     },
     "forms-which": {
       "frequency": 2,
-      "connectivity": 271,
+      "connectivity": 277,
       "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 271,
+        "graph_degree": 277,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/form/"
@@ -92358,13 +92380,13 @@
     },
     "forms-which-experience": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -96778,16 +96800,17 @@
       }
     },
     "going": {
-      "frequency": 8,
-      "connectivity": 1238,
-      "search_signal": 16,
+      "frequency": 9,
+      "connectivity": 1331,
+      "search_signal": 18,
       "excerpt_signal": 4,
       "word_signal": 16,
       "evidence": {
-        "page_count": 8,
-        "graph_degree": 1238,
+        "page_count": 9,
+        "graph_degree": 1331,
         "search_pages": [
           "https://unboundhealing.org/concept/origin/",
+          "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/a-little-extra/",
           "https://unboundhealing.org/opening/going-under/",
           "https://unboundhealing.org/opening/inspired/",
@@ -96997,15 +97020,16 @@
       }
     },
     "going-under": {
-      "frequency": 1,
-      "connectivity": 155,
-      "search_signal": 2,
+      "frequency": 2,
+      "connectivity": 254,
+      "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
-        "page_count": 1,
-        "graph_degree": 155,
+        "page_count": 2,
+        "graph_degree": 254,
         "search_pages": [
+          "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/going-under/"
         ],
         "excerpt_pages": [],
@@ -115804,13 +115828,13 @@
     },
     "knowing": {
       "frequency": 8,
-      "connectivity": 1122,
+      "connectivity": 1127,
       "search_signal": 16,
       "excerpt_signal": 2,
       "word_signal": 13,
       "evidence": {
         "page_count": 8,
-        "graph_degree": 1122,
+        "graph_degree": 1127,
         "search_pages": [
           "https://unboundhealing.org/concept/evolving/",
           "https://unboundhealing.org/non-speaking/",
@@ -116018,13 +116042,13 @@
     },
     "knowing-speed": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -116034,13 +116058,13 @@
     },
     "knowing-speed-round": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -116438,13 +116462,13 @@
     },
     "label": {
       "frequency": 2,
-      "connectivity": 282,
+      "connectivity": 287,
       "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 282,
+        "graph_degree": 287,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/label-this/"
@@ -116457,13 +116481,13 @@
     },
     "label-this": {
       "frequency": 2,
-      "connectivity": 282,
+      "connectivity": 287,
       "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 282,
+        "graph_degree": 287,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/label-this/"
@@ -116530,13 +116554,13 @@
     },
     "label-this-say": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -116856,13 +116880,13 @@
     },
     "language": {
       "frequency": 16,
-      "connectivity": 2362,
+      "connectivity": 2365,
       "search_signal": 32,
       "excerpt_signal": 0,
       "word_signal": 30,
       "evidence": {
         "page_count": 16,
-        "graph_degree": 2362,
+        "graph_degree": 2365,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/arising/",
@@ -117339,13 +117363,13 @@
     },
     "language-silence": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -117355,13 +117379,13 @@
     },
     "language-silence-many": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -126442,13 +126466,13 @@
     },
     "many": {
       "frequency": 7,
-      "connectivity": 1056,
+      "connectivity": 1062,
       "search_signal": 14,
       "excerpt_signal": 5,
       "word_signal": 10,
       "evidence": {
         "page_count": 7,
-        "graph_degree": 1056,
+        "graph_degree": 1062,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/another-another-day-before/",
@@ -126477,13 +126501,13 @@
     },
     "many-forms": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -126493,13 +126517,13 @@
     },
     "many-forms-which": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -141534,13 +141558,13 @@
     },
     "non": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -141550,13 +141574,13 @@
     },
     "non-speaking": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -141566,13 +141590,13 @@
     },
     "non-speaking-collection": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -141582,13 +141606,13 @@
     },
     "non-speaking-communication": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -141598,13 +141622,13 @@
     },
     "non-speaking-non": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -145968,13 +145992,13 @@
     },
     "nouns": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 1,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -145986,13 +146010,13 @@
     },
     "nouns-pretending": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -146002,13 +146026,13 @@
     },
     "nouns-pretending-things": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -147268,13 +147292,13 @@
     },
     "null": {
       "frequency": 2,
-      "connectivity": 244,
+      "connectivity": 250,
       "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 1,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 244,
+        "graph_degree": 250,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/null/"
@@ -147287,13 +147311,13 @@
     },
     "null-arising": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -147303,13 +147327,13 @@
     },
     "null-arising-form": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -168251,13 +168275,13 @@
     },
     "pretending": {
       "frequency": 2,
-      "connectivity": 254,
+      "connectivity": 260,
       "search_signal": 4,
       "excerpt_signal": 2,
       "word_signal": 1,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 254,
+        "graph_degree": 260,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/unsure/"
@@ -168309,13 +168333,13 @@
     },
     "pretending-things": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -168325,13 +168349,13 @@
     },
     "pretending-things-words": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -177471,13 +177495,13 @@
     },
     "reflections": {
       "frequency": 11,
-      "connectivity": 1437,
+      "connectivity": 1443,
       "search_signal": 22,
       "excerpt_signal": 0,
       "word_signal": 16,
       "evidence": {
         "page_count": 11,
-        "graph_degree": 1437,
+        "graph_degree": 1443,
         "search_pages": [
           "https://unboundhealing.org/concept/ici/",
           "https://unboundhealing.org/listening/",
@@ -177578,13 +177602,13 @@
     },
     "reflections-communication": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -177594,13 +177618,13 @@
     },
     "reflections-communication-language": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -181572,13 +181596,13 @@
     },
     "round": {
       "frequency": 2,
-      "connectivity": 290,
+      "connectivity": 296,
       "search_signal": 4,
       "excerpt_signal": 1,
       "word_signal": 2,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 290,
+        "graph_degree": 296,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/speed-round/"
@@ -181665,13 +181689,13 @@
     },
     "round-speak": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -181681,13 +181705,13 @@
     },
     "round-speak-why": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -183268,13 +183292,13 @@
     },
     "say": {
       "frequency": 10,
-      "connectivity": 1483,
+      "connectivity": 1489,
       "search_signal": 20,
       "excerpt_signal": 6,
       "word_signal": 17,
       "evidence": {
         "page_count": 10,
-        "graph_degree": 1483,
+        "graph_degree": 1489,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/just-listening/",
@@ -183310,13 +183334,13 @@
     },
     "say-anything": {
       "frequency": 4,
-      "connectivity": 544,
+      "connectivity": 550,
       "search_signal": 8,
       "excerpt_signal": 0,
       "word_signal": 5,
       "evidence": {
         "page_count": 4,
-        "graph_degree": 544,
+        "graph_degree": 550,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/just-listening/",
@@ -183351,13 +183375,13 @@
     },
     "say-anything-knowing": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -188682,13 +188706,13 @@
     },
     "shared": {
       "frequency": 9,
-      "connectivity": 1034,
+      "connectivity": 1040,
       "search_signal": 18,
       "excerpt_signal": 3,
       "word_signal": 8,
       "evidence": {
         "page_count": 9,
-        "graph_degree": 1034,
+        "graph_degree": 1040,
         "search_pages": [
           "https://unboundhealing.org/about/",
           "https://unboundhealing.org/gathering/",
@@ -188903,13 +188927,13 @@
     },
     "shared-non": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -188919,13 +188943,13 @@
     },
     "shared-non-speaking": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -190292,13 +190316,13 @@
     },
     "silence": {
       "frequency": 3,
-      "connectivity": 434,
+      "connectivity": 440,
       "search_signal": 6,
       "excerpt_signal": 0,
       "word_signal": 4,
       "evidence": {
         "page_count": 3,
-        "graph_degree": 434,
+        "graph_degree": 440,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/2am/",
@@ -190385,13 +190409,13 @@
     },
     "silence-many": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -190401,13 +190425,13 @@
     },
     "silence-many-forms": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -198788,13 +198812,13 @@
     },
     "speak": {
       "frequency": 4,
-      "connectivity": 598,
+      "connectivity": 604,
       "search_signal": 8,
       "excerpt_signal": 1,
       "word_signal": 6,
       "evidence": {
         "page_count": 4,
-        "graph_degree": 598,
+        "graph_degree": 604,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/another-yesterday/",
@@ -198975,13 +198999,13 @@
     },
     "speak-why": {
       "frequency": 2,
-      "connectivity": 269,
+      "connectivity": 275,
       "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 269,
+        "graph_degree": 275,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/why/"
@@ -198994,13 +199018,13 @@
     },
     "speak-why-ugh": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -199028,13 +199052,13 @@
     },
     "speaking": {
       "frequency": 3,
-      "connectivity": 407,
+      "connectivity": 413,
       "search_signal": 6,
       "excerpt_signal": 1,
       "word_signal": 4,
       "evidence": {
         "page_count": 3,
-        "graph_degree": 407,
+        "graph_degree": 413,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/nonsense/",
@@ -199087,13 +199111,13 @@
     },
     "speaking-collection": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -199103,13 +199127,13 @@
     },
     "speaking-collection-reflections": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -199119,13 +199143,13 @@
     },
     "speaking-communication": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -199135,13 +199159,13 @@
     },
     "speaking-communication-form": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -199169,13 +199193,13 @@
     },
     "speaking-non": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -199185,13 +199209,13 @@
     },
     "speaking-non-speaking": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -199363,13 +199387,13 @@
     },
     "speed": {
       "frequency": 3,
-      "connectivity": 429,
+      "connectivity": 435,
       "search_signal": 6,
       "excerpt_signal": 1,
       "word_signal": 4,
       "evidence": {
         "page_count": 3,
-        "graph_degree": 429,
+        "graph_degree": 435,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/speed-round/",
@@ -199422,13 +199446,13 @@
     },
     "speed-round": {
       "frequency": 2,
-      "connectivity": 290,
+      "connectivity": 296,
       "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 290,
+        "graph_degree": 296,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/speed-round/"
@@ -199477,13 +199501,13 @@
     },
     "speed-round-speak": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -212798,13 +212822,13 @@
     },
     "things": {
       "frequency": 13,
-      "connectivity": 1888,
+      "connectivity": 1891,
       "search_signal": 26,
       "excerpt_signal": 8,
       "word_signal": 22,
       "evidence": {
         "page_count": 13,
-        "graph_degree": 1888,
+        "graph_degree": 1891,
         "search_pages": [
           "https://unboundhealing.org/concept/website-building/",
           "https://unboundhealing.org/non-speaking/",
@@ -213316,13 +213340,13 @@
     },
     "things-words": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -213332,13 +213356,13 @@
     },
     "things-words-label": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -215471,13 +215495,13 @@
     },
     "this": {
       "frequency": 62,
-      "connectivity": 7764,
+      "connectivity": 7767,
       "search_signal": 124,
       "excerpt_signal": 46,
       "word_signal": 110,
       "evidence": {
         "page_count": 62,
-        "graph_degree": 7764,
+        "graph_degree": 7767,
         "search_pages": [
           "https://unboundhealing.org/about/conversing/",
           "https://unboundhealing.org/archive/brittany/",
@@ -218191,13 +218215,13 @@
     },
     "this-say": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -218207,13 +218231,13 @@
     },
     "this-say-anything": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -227631,13 +227655,13 @@
     },
     "ugh": {
       "frequency": 2,
-      "connectivity": 274,
+      "connectivity": 280,
       "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 274,
+        "graph_degree": 280,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/ugh/"
@@ -227758,13 +227782,13 @@
     },
     "ugh-null": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -227774,13 +227798,13 @@
     },
     "ugh-null-arising": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -229290,13 +229314,13 @@
     },
     "unchosen": {
       "frequency": 2,
-      "connectivity": 280,
+      "connectivity": 286,
       "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
         "page_count": 2,
-        "graph_degree": 280,
+        "graph_degree": 286,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/unchosen/"
@@ -229305,6 +229329,38 @@
         "long_form_pages": [
           "https://unboundhealing.org/opening/unchosen/"
         ]
+      }
+    },
+    "unchosen-going": {
+      "frequency": 1,
+      "connectivity": 105,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 105,
+        "search_pages": [
+          "https://unboundhealing.org/non-speaking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": []
+      }
+    },
+    "unchosen-going-under": {
+      "frequency": 1,
+      "connectivity": 105,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 0,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 105,
+        "search_pages": [
+          "https://unboundhealing.org/non-speaking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": []
       }
     },
     "unchosen-reflection": {
@@ -229702,15 +229758,16 @@
       }
     },
     "under": {
-      "frequency": 1,
-      "connectivity": 155,
-      "search_signal": 2,
+      "frequency": 2,
+      "connectivity": 254,
+      "search_signal": 4,
       "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
-        "page_count": 1,
-        "graph_degree": 155,
+        "page_count": 2,
+        "graph_degree": 254,
         "search_pages": [
+          "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/going-under/"
         ],
         "excerpt_pages": [],
@@ -243975,13 +244032,13 @@
     },
     "which": {
       "frequency": 16,
-      "connectivity": 2398,
+      "connectivity": 2404,
       "search_signal": 32,
       "excerpt_signal": 11,
       "word_signal": 29,
       "evidence": {
         "page_count": 16,
-        "graph_degree": 2398,
+        "graph_degree": 2404,
         "search_pages": [
           "https://unboundhealing.org/concept/zone/",
           "https://unboundhealing.org/non-speaking/",
@@ -244214,13 +244271,13 @@
     },
     "which-experience": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -244230,13 +244287,13 @@
     },
     "which-experience-shared": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -245946,13 +246003,13 @@
     },
     "why": {
       "frequency": 12,
-      "connectivity": 1741,
+      "connectivity": 1744,
       "search_signal": 24,
       "excerpt_signal": 6,
       "word_signal": 20,
       "evidence": {
         "page_count": 12,
-        "graph_degree": 1741,
+        "graph_degree": 1744,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/form/",
@@ -246408,13 +246465,13 @@
     },
     "why-ugh": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -246424,13 +246481,13 @@
     },
     "why-ugh-null": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -248572,13 +248629,13 @@
     },
     "words": {
       "frequency": 23,
-      "connectivity": 3368,
+      "connectivity": 3373,
       "search_signal": 46,
       "excerpt_signal": 9,
       "word_signal": 42,
       "evidence": {
         "page_count": 23,
-        "graph_degree": 3368,
+        "graph_degree": 3373,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/",
           "https://unboundhealing.org/opening/2am/",
@@ -249003,13 +249060,13 @@
     },
     "words-label": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -249019,13 +249076,13 @@
     },
     "words-label-this": {
       "frequency": 1,
-      "connectivity": 99,
+      "connectivity": 105,
       "search_signal": 2,
       "excerpt_signal": 0,
       "word_signal": 0,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 99,
+        "graph_degree": 105,
         "search_pages": [
           "https://unboundhealing.org/non-speaking/"
         ],
@@ -257384,9 +257441,12 @@
         "form-catching",
         "form-catching-nouns",
         "form-unchosen",
+        "form-unchosen-going",
         "forms",
         "forms-which",
         "forms-which-experience",
+        "going",
+        "going-under",
         "knowing",
         "knowing-speed",
         "knowing-speed-round",
@@ -257451,6 +257511,9 @@
         "ugh-null",
         "ugh-null-arising",
         "unchosen",
+        "unchosen-going",
+        "unchosen-going-under",
+        "under",
         "which",
         "which-experience",
         "which-experience-shared",
@@ -257465,13 +257528,13 @@
         "https://unboundhealing.org/opening/label-this/",
         "https://unboundhealing.org/opening/say-anything/",
         "https://unboundhealing.org/opening/why/",
+        "https://unboundhealing.org/opening/going-under/",
         "https://unboundhealing.org/opening/form/",
         "https://unboundhealing.org/opening/speed-round/",
         "https://unboundhealing.org/opening/significance/",
         "https://unboundhealing.org/opening/meaning/",
         "https://unboundhealing.org/opening/arising/",
-        "https://unboundhealing.org/opening/indivisible/",
-        "https://unboundhealing.org/opening/knowing/"
+        "https://unboundhealing.org/opening/indivisible/"
       ]
     },
     "https://unboundhealing.org/noticing/": {
