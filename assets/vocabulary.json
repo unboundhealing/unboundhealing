@@ -1803,6 +1803,30 @@
       "attachment body fades"
     ]
   },
+  "https://unboundhealing.org/opening/question/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "anism",
+      "anism-source",
+      "anism-source-even",
+      "answer",
+      "answer-anything",
+      "answer-anything-other",
+      "answers",
+      "answers-any",
+      "answers-any-questions",
+      "any"
+    ],
+    "aliases": [
+      "anism source",
+      "anism source even",
+      "answer anything",
+      "answer anything other",
+      "answers any",
+      "answers any questions"
+    ]
+  },
   "https://unboundhealing.org/opening/say-anything/": {
     "version": 2,
     "generated": true,
