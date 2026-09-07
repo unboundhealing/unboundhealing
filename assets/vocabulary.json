@@ -732,6 +732,30 @@
       "another story told"
     ]
   },
+  "https://unboundhealing.org/opening/boo/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "already",
+      "already-used",
+      "already-used-even",
+      "apparently",
+      "apparently-necessary",
+      "apparently-necessary-self",
+      "auto",
+      "auto-correction",
+      "auto-correction-hoo",
+      "being"
+    ],
+    "aliases": [
+      "already used",
+      "already used even",
+      "apparently necessary",
+      "apparently necessary self",
+      "auto correction",
+      "auto correction hoo"
+    ]
+  },
   "https://unboundhealing.org/opening/bursts/": {
     "version": 2,
     "generated": true,
