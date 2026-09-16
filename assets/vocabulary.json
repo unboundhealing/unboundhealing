@@ -49,30 +49,6 @@
       "presence"
     ]
   },
-  "https://unboundhealing.org/archive/brittany/": {
-    "version": 2,
-    "generated": true,
-    "tags": [
-      "achieve",
-      "achieve-something",
-      "achieve-something-afraid",
-      "afraid",
-      "afraid-what",
-      "afraid-what-come",
-      "all",
-      "all-dont",
-      "all-dont-forget",
-      "am"
-    ],
-    "aliases": [
-      "achieve something",
-      "achieve something afraid",
-      "afraid what",
-      "afraid what come",
-      "all dont",
-      "all dont forget"
-    ]
-  },
   "https://unboundhealing.org/concept/evolving/": {
     "version": 2,
     "generated": true,
@@ -803,6 +779,30 @@
       "apparently necessary self",
       "auto correction",
       "auto correction hoo"
+    ]
+  },
+  "https://unboundhealing.org/opening/brittany/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "achieve",
+      "achieve-something",
+      "achieve-something-afraid",
+      "afraid",
+      "afraid-what",
+      "afraid-what-come",
+      "all",
+      "all-dont",
+      "all-dont-forget",
+      "am"
+    ],
+    "aliases": [
+      "achieve something",
+      "achieve something afraid",
+      "afraid what",
+      "afraid what come",
+      "all dont",
+      "all dont forget"
     ]
   },
   "https://unboundhealing.org/opening/bursts/": {
