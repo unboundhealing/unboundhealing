@@ -2452,8 +2452,8 @@
     "type": "page",
     "section": "listening",
     "kind": "page",
-    "excerpt": "Listening (((still too nervous to try podcasting, but thinking about it))) Conversations may appear here someday. Or not. We'll see. Streaming Live… Most recently… YouTube · Twitch",
-    "search_text": "listening audio reflections and spoken explorations into awareness, presence, and lived experience. page listening (((still too nervous to try podcasting, but thinking about it))) conversations may appear here someday. or not. we'll see. streaming live… most recently… youtube · twitch appear appear-here appear-here-someday audio audio-reflections audio-reflections-spoken awareness awareness-presence awareness-presence-lived but but-thinking but-thinking-conversations conversations conversations-appear conversations-appear-here experience experience-listening experience-listening-still explorations explorations-awareness explorations-awareness-presence here here-someday here-someday-not listening listening-audio listening-audio-reflections listening-listening listening-listening-audio listening-still listening-still-too live live-most live-most-recently lived lived-experience lived-experience-listening most most-recently most-recently-youtube nervous nervous-try nervous-try-podcasting not not-well not-well-see podcasting podcasting-but podcasting-but-thinking presence presence-lived presence-lived-experience recently recently-youtube recently-youtube-twitch reflections reflections-spoken reflections-spoken-explorations see see-streaming see-streaming-live someday someday-not someday-not-well spoken spoken-explorations spoken-explorations-awareness still still-too still-too-nervous streaming streaming-live streaming-live-most thinking thinking-conversations thinking-conversations-appear too too-nervous too-nervous-try try try-podcasting try-podcasting-but twitch well well-see well-see-streaming youtube youtube-twitch appear appear-here appear-here-someday audio audio-reflections audio-reflections-spoken awareness awareness-presence awareness-presence-lived but appear here appear here someday attention audio reflections audio reflections spoken awareness presence awareness presence lived mindfulness noticing presence",
+    "excerpt": "Listening (((still too nervous to try podcasting, but thinking about it))) Conversations may appear here someday. Or not. We'll see. Streaming Live… Most recently…",
+    "search_text": "listening audio reflections and spoken explorations into awareness, presence, and lived experience. page listening (((still too nervous to try podcasting, but thinking about it))) conversations may appear here someday. or not. we'll see. streaming live… most recently… appear appear-here appear-here-someday audio audio-reflections audio-reflections-spoken awareness awareness-presence awareness-presence-lived but but-thinking but-thinking-conversations conversations conversations-appear conversations-appear-here experience experience-listening experience-listening-still explorations explorations-awareness explorations-awareness-presence here here-someday here-someday-not listening listening-audio listening-audio-reflections listening-listening listening-listening-audio listening-still listening-still-too live live-most live-most-recently lived lived-experience lived-experience-listening most most-recently nervous nervous-try nervous-try-podcasting not not-well not-well-see podcasting podcasting-but podcasting-but-thinking presence presence-lived presence-lived-experience recently reflections reflections-spoken reflections-spoken-explorations see see-streaming see-streaming-live someday someday-not someday-not-well spoken spoken-explorations spoken-explorations-awareness still still-too still-too-nervous streaming streaming-live streaming-live-most thinking thinking-conversations thinking-conversations-appear too too-nervous too-nervous-try try try-podcasting try-podcasting-but well well-see well-see-streaming appear appear-here appear-here-someday audio audio-reflections audio-reflections-spoken awareness awareness-presence awareness-presence-lived but appear here appear here someday attention audio reflections audio reflections spoken awareness presence awareness presence lived mindfulness noticing presence",
     "concepts": [
       "appear",
       "appear-here",
@@ -2494,7 +2494,6 @@
       "lived-experience-listening",
       "most",
       "most-recently",
-      "most-recently-youtube",
       "nervous",
       "nervous-try",
       "nervous-try-podcasting",
@@ -2508,8 +2507,6 @@
       "presence-lived",
       "presence-lived-experience",
       "recently",
-      "recently-youtube",
-      "recently-youtube-twitch",
       "reflections",
       "reflections-spoken",
       "reflections-spoken-explorations",
@@ -2537,12 +2534,9 @@
       "try",
       "try-podcasting",
       "try-podcasting-but",
-      "twitch",
       "well",
       "well-see",
-      "well-see-streaming",
-      "youtube",
-      "youtube-twitch"
+      "well-see-streaming"
     ],
     "tags": [
       "appear",
@@ -2568,7 +2562,7 @@
       "noticing",
       "presence"
     ],
-    "word_count": 27,
+    "word_count": 25,
     "reading_time": 1,
     "image": ""
   },
