@@ -409,24 +409,6 @@ p {
   text-align: center;
 }
 
-.streaming h2,
-.streaming h3 {
-  font-weight: 400;
-  color: var(--muted);
-}
-
-.streaming h2 {
-  font-size: 18px;
-  opacity: 0.85;
-  margin-bottom: 22px;
-  letter-spacing: 0.2px;
-}
-
-.streaming h3 {
-  font-size: 16px;
-  margin: 0 0 16px;
-}
-
 .streaming-recent {
   margin-top: 64px;
 }
@@ -448,8 +430,7 @@ p {
 }
 
 .streaming-links {
-  margin-top: 18px;
-  font-size: 0.9rem;
+  margin-top: 40px;
   color: var(--muted);
 }
 
