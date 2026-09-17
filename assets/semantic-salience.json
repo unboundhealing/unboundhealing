@@ -317,7 +317,7 @@
       ],
       "tags": [],
       "aliases": [],
-      "word_count": 174
+      "word_count": 149
     },
     "https://unboundhealing.org/concept/evolving/": {
       "path": "concept/evolving/index.html",
@@ -25207,7 +25207,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -25225,7 +25225,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -25243,7 +25243,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -30976,7 +30976,7 @@
       "connectivity": 429,
       "search_signal": 6,
       "excerpt_signal": 1,
-      "word_signal": 5,
+      "word_signal": 4,
       "evidence": {
         "page_count": 3,
         "graph_degree": 429,
@@ -31036,7 +31036,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -31054,7 +31054,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -34719,7 +34719,7 @@
       "connectivity": 1102,
       "search_signal": 14,
       "excerpt_signal": 2,
-      "word_signal": 13,
+      "word_signal": 12,
       "evidence": {
         "page_count": 7,
         "graph_degree": 1102,
@@ -34824,7 +34824,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -34842,7 +34842,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -38007,7 +38007,7 @@
       "connectivity": 2502,
       "search_signal": 38,
       "excerpt_signal": 2,
-      "word_signal": 29,
+      "word_signal": 28,
       "evidence": {
         "page_count": 19,
         "graph_degree": 2502,
@@ -38373,7 +38373,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -38391,7 +38391,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -44782,7 +44782,7 @@
       "connectivity": 292,
       "search_signal": 4,
       "excerpt_signal": 0,
-      "word_signal": 4,
+      "word_signal": 3,
       "evidence": {
         "page_count": 2,
         "graph_degree": 292,
@@ -44838,7 +44838,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -44856,7 +44856,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -58550,7 +58550,7 @@
       "connectivity": 482,
       "search_signal": 6,
       "excerpt_signal": 2,
-      "word_signal": 6,
+      "word_signal": 5,
       "evidence": {
         "page_count": 3,
         "graph_degree": 482,
@@ -58647,7 +58647,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -58665,7 +58665,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -62646,7 +62646,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 1,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -62666,7 +62666,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -62684,7 +62684,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -67041,7 +67041,7 @@
       "connectivity": 1424,
       "search_signal": 22,
       "excerpt_signal": 5,
-      "word_signal": 18,
+      "word_signal": 17,
       "evidence": {
         "page_count": 11,
         "graph_degree": 1424,
@@ -67296,7 +67296,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -67314,7 +67314,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -67602,7 +67602,7 @@
       "connectivity": 429,
       "search_signal": 8,
       "excerpt_signal": 0,
-      "word_signal": 4,
+      "word_signal": 3,
       "evidence": {
         "page_count": 4,
         "graph_degree": 429,
@@ -67724,7 +67724,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -70372,7 +70372,7 @@
       "connectivity": 1754,
       "search_signal": 24,
       "excerpt_signal": 2,
-      "word_signal": 21,
+      "word_signal": 20,
       "evidence": {
         "page_count": 12,
         "graph_degree": 1754,
@@ -70831,7 +70831,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -70849,7 +70849,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -72738,7 +72738,7 @@
       "connectivity": 224,
       "search_signal": 4,
       "excerpt_signal": 1,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 2,
         "graph_degree": 224,
@@ -72791,7 +72791,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -72809,7 +72809,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -82649,7 +82649,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 1,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -82669,7 +82669,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -82687,7 +82687,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -91175,7 +91175,7 @@
       "connectivity": 5003,
       "search_signal": 76,
       "excerpt_signal": 7,
-      "word_signal": 69,
+      "word_signal": 68,
       "evidence": {
         "page_count": 38,
         "graph_degree": 5003,
@@ -92226,7 +92226,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -92244,7 +92244,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -94154,7 +94154,7 @@
       "connectivity": 2075,
       "search_signal": 28,
       "excerpt_signal": 1,
-      "word_signal": 25,
+      "word_signal": 24,
       "evidence": {
         "page_count": 14,
         "graph_degree": 2075,
@@ -94524,7 +94524,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -94542,7 +94542,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -96025,7 +96025,7 @@
       "connectivity": 404,
       "search_signal": 6,
       "excerpt_signal": 2,
-      "word_signal": 4,
+      "word_signal": 3,
       "evidence": {
         "page_count": 3,
         "graph_degree": 404,
@@ -96117,7 +96117,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -96135,7 +96135,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -96661,7 +96661,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 1,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -96681,7 +96681,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -96699,7 +96699,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -110728,7 +110728,7 @@
       "connectivity": 570,
       "search_signal": 10,
       "excerpt_signal": 0,
-      "word_signal": 7,
+      "word_signal": 6,
       "evidence": {
         "page_count": 5,
         "graph_degree": 570,
@@ -110789,7 +110789,7 @@
       "connectivity": 352,
       "search_signal": 6,
       "excerpt_signal": 0,
-      "word_signal": 4,
+      "word_signal": 3,
       "evidence": {
         "page_count": 3,
         "graph_degree": 352,
@@ -110828,7 +110828,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -110846,7 +110846,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -110984,7 +110984,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -111002,7 +111002,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -111662,7 +111662,7 @@
       "connectivity": 3009,
       "search_signal": 52,
       "excerpt_signal": 12,
-      "word_signal": 40,
+      "word_signal": 39,
       "evidence": {
         "page_count": 26,
         "graph_degree": 3009,
@@ -111812,7 +111812,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -111830,7 +111830,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -112256,7 +112256,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -112274,7 +112274,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -122423,7 +122423,7 @@
       "connectivity": 832,
       "search_signal": 12,
       "excerpt_signal": 0,
-      "word_signal": 8,
+      "word_signal": 7,
       "evidence": {
         "page_count": 6,
         "graph_degree": 832,
@@ -122626,7 +122626,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -122644,7 +122644,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -123475,7 +123475,7 @@
       "connectivity": 292,
       "search_signal": 4,
       "excerpt_signal": 0,
-      "word_signal": 4,
+      "word_signal": 3,
       "evidence": {
         "page_count": 2,
         "graph_degree": 292,
@@ -123531,7 +123531,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -123549,7 +123549,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -125076,7 +125076,7 @@
       "connectivity": 326,
       "search_signal": 6,
       "excerpt_signal": 0,
-      "word_signal": 4,
+      "word_signal": 3,
       "evidence": {
         "page_count": 3,
         "graph_degree": 326,
@@ -125097,7 +125097,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -125115,7 +125115,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -125201,7 +125201,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 1,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -125221,7 +125221,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -125239,7 +125239,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -126968,7 +126968,7 @@
       "connectivity": 397,
       "search_signal": 6,
       "excerpt_signal": 1,
-      "word_signal": 6,
+      "word_signal": 5,
       "evidence": {
         "page_count": 3,
         "graph_degree": 397,
@@ -126992,7 +126992,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -127010,7 +127010,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -143705,7 +143705,7 @@
       "connectivity": 915,
       "search_signal": 12,
       "excerpt_signal": 1,
-      "word_signal": 12,
+      "word_signal": 11,
       "evidence": {
         "page_count": 6,
         "graph_degree": 915,
@@ -143735,7 +143735,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -143753,7 +143753,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -146800,7 +146800,7 @@
       "connectivity": 352,
       "search_signal": 6,
       "excerpt_signal": 0,
-      "word_signal": 4,
+      "word_signal": 3,
       "evidence": {
         "page_count": 3,
         "graph_degree": 352,
@@ -146857,7 +146857,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -146875,7 +146875,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -146893,7 +146893,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -146911,7 +146911,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -152499,7 +152499,7 @@
       "connectivity": 1153,
       "search_signal": 16,
       "excerpt_signal": 6,
-      "word_signal": 14,
+      "word_signal": 13,
       "evidence": {
         "page_count": 8,
         "graph_degree": 1153,
@@ -152718,7 +152718,7 @@
       "connectivity": 412,
       "search_signal": 6,
       "excerpt_signal": 0,
-      "word_signal": 5,
+      "word_signal": 4,
       "evidence": {
         "page_count": 3,
         "graph_degree": 412,
@@ -152776,7 +152776,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -153525,7 +153525,7 @@
       "connectivity": 1073,
       "search_signal": 14,
       "excerpt_signal": 5,
-      "word_signal": 13,
+      "word_signal": 12,
       "evidence": {
         "page_count": 7,
         "graph_degree": 1073,
@@ -153725,7 +153725,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -153743,7 +153743,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -157865,7 +157865,7 @@
       "connectivity": 5887,
       "search_signal": 88,
       "excerpt_signal": 35,
-      "word_signal": 79,
+      "word_signal": 78,
       "evidence": {
         "page_count": 44,
         "graph_degree": 5887,
@@ -158309,7 +158309,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -158327,7 +158327,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -164565,7 +164565,7 @@
       "connectivity": 748,
       "search_signal": 12,
       "excerpt_signal": 2,
-      "word_signal": 8,
+      "word_signal": 7,
       "evidence": {
         "page_count": 6,
         "graph_degree": 748,
@@ -165489,7 +165489,7 @@
       "connectivity": 401,
       "search_signal": 6,
       "excerpt_signal": 1,
-      "word_signal": 5,
+      "word_signal": 4,
       "evidence": {
         "page_count": 3,
         "graph_degree": 401,
@@ -165549,7 +165549,7 @@
       "connectivity": 275,
       "search_signal": 4,
       "excerpt_signal": 0,
-      "word_signal": 3,
+      "word_signal": 2,
       "evidence": {
         "page_count": 2,
         "graph_degree": 275,
@@ -165587,7 +165587,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -167418,7 +167418,7 @@
       "connectivity": 449,
       "search_signal": 6,
       "excerpt_signal": 1,
-      "word_signal": 6,
+      "word_signal": 5,
       "evidence": {
         "page_count": 3,
         "graph_degree": 449,
@@ -167442,7 +167442,7 @@
       "connectivity": 295,
       "search_signal": 4,
       "excerpt_signal": 0,
-      "word_signal": 4,
+      "word_signal": 3,
       "evidence": {
         "page_count": 2,
         "graph_degree": 295,
@@ -167462,7 +167462,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -172647,7 +172647,7 @@
       "connectivity": 1392,
       "search_signal": 20,
       "excerpt_signal": 2,
-      "word_signal": 20,
+      "word_signal": 19,
       "evidence": {
         "page_count": 10,
         "graph_degree": 1392,
@@ -172722,7 +172722,7 @@
       "connectivity": 572,
       "search_signal": 8,
       "excerpt_signal": 0,
-      "word_signal": 8,
+      "word_signal": 7,
       "evidence": {
         "page_count": 4,
         "graph_degree": 572,
@@ -172800,7 +172800,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -180459,7 +180459,7 @@
       "connectivity": 318,
       "search_signal": 4,
       "excerpt_signal": 0,
-      "word_signal": 4,
+      "word_signal": 3,
       "evidence": {
         "page_count": 2,
         "graph_degree": 318,
@@ -180479,7 +180479,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -180497,7 +180497,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -183510,7 +183510,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 1,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -183530,7 +183530,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -183548,7 +183548,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -190945,7 +190945,7 @@
       "connectivity": 1070,
       "search_signal": 16,
       "excerpt_signal": 1,
-      "word_signal": 13,
+      "word_signal": 12,
       "evidence": {
         "page_count": 8,
         "graph_degree": 1070,
@@ -191118,7 +191118,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -191136,7 +191136,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -195308,7 +195308,7 @@
       "connectivity": 6486,
       "search_signal": 102,
       "excerpt_signal": 1,
-      "word_signal": 89,
+      "word_signal": 88,
       "evidence": {
         "page_count": 51,
         "graph_degree": 6486,
@@ -195733,7 +195733,7 @@
       "connectivity": 259,
       "search_signal": 4,
       "excerpt_signal": 0,
-      "word_signal": 3,
+      "word_signal": 2,
       "evidence": {
         "page_count": 2,
         "graph_degree": 259,
@@ -195771,7 +195771,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -198367,7 +198367,7 @@
       "connectivity": 632,
       "search_signal": 8,
       "excerpt_signal": 1,
-      "word_signal": 8,
+      "word_signal": 7,
       "evidence": {
         "page_count": 4,
         "graph_degree": 632,
@@ -198393,7 +198393,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -198411,7 +198411,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -208342,7 +208342,7 @@
       "connectivity": 478,
       "search_signal": 6,
       "excerpt_signal": 0,
-      "word_signal": 6,
+      "word_signal": 5,
       "evidence": {
         "page_count": 3,
         "graph_degree": 478,
@@ -208400,7 +208400,7 @@
       "connectivity": 345,
       "search_signal": 4,
       "excerpt_signal": 0,
-      "word_signal": 4,
+      "word_signal": 3,
       "evidence": {
         "page_count": 2,
         "graph_degree": 345,
@@ -208420,7 +208420,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -208973,7 +208973,7 @@
       "connectivity": 1040,
       "search_signal": 18,
       "excerpt_signal": 3,
-      "word_signal": 8,
+      "word_signal": 7,
       "evidence": {
         "page_count": 9,
         "graph_degree": 1040,
@@ -209141,7 +209141,7 @@
       "connectivity": 228,
       "search_signal": 4,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 2,
         "graph_degree": 228,
@@ -209176,7 +209176,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -252715,7 +252715,7 @@
       "connectivity": 445,
       "search_signal": 8,
       "excerpt_signal": 0,
-      "word_signal": 6,
+      "word_signal": 5,
       "evidence": {
         "page_count": 4,
         "graph_degree": 445,
@@ -252738,7 +252738,7 @@
       "connectivity": 445,
       "search_signal": 8,
       "excerpt_signal": 0,
-      "word_signal": 6,
+      "word_signal": 5,
       "evidence": {
         "page_count": 4,
         "graph_degree": 445,
@@ -252779,7 +252779,7 @@
       "connectivity": 352,
       "search_signal": 6,
       "excerpt_signal": 0,
-      "word_signal": 4,
+      "word_signal": 3,
       "evidence": {
         "page_count": 3,
         "graph_degree": 352,
@@ -262331,7 +262331,7 @@
       "connectivity": 1024,
       "search_signal": 14,
       "excerpt_signal": 5,
-      "word_signal": 12,
+      "word_signal": 11,
       "evidence": {
         "page_count": 7,
         "graph_degree": 1024,
@@ -262439,7 +262439,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -262457,7 +262457,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -262475,7 +262475,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -262493,7 +262493,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -262547,7 +262547,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -262565,7 +262565,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -264074,7 +264074,7 @@
       "connectivity": 7288,
       "search_signal": 110,
       "excerpt_signal": 37,
-      "word_signal": 103,
+      "word_signal": 102,
       "evidence": {
         "page_count": 55,
         "graph_degree": 7288,
@@ -264550,7 +264550,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -264568,7 +264568,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -265810,7 +265810,7 @@
       "connectivity": 737,
       "search_signal": 10,
       "excerpt_signal": 0,
-      "word_signal": 10,
+      "word_signal": 9,
       "evidence": {
         "page_count": 5,
         "graph_degree": 737,
@@ -265836,7 +265836,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -274272,7 +274272,7 @@
       "connectivity": 593,
       "search_signal": 8,
       "excerpt_signal": 0,
-      "word_signal": 7,
+      "word_signal": 6,
       "evidence": {
         "page_count": 4,
         "graph_degree": 593,
@@ -274296,7 +274296,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -274314,7 +274314,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -276824,7 +276824,7 @@
       "connectivity": 1064,
       "search_signal": 14,
       "excerpt_signal": 3,
-      "word_signal": 14,
+      "word_signal": 13,
       "evidence": {
         "page_count": 7,
         "graph_degree": 1064,
@@ -276894,7 +276894,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
@@ -276912,7 +276912,7 @@
       "connectivity": 141,
       "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 1,
       "evidence": {
         "page_count": 1,
         "graph_degree": 141,
