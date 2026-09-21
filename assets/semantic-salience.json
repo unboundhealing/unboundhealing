@@ -8964,6 +8964,148 @@
       "aliases": [],
       "word_count": 102
     },
+    "https://unboundhealing.org/opening/just-thinking/": {
+      "path": "opening/just-thinking/index.html",
+      "url": "https://unboundhealing.org/opening/just-thinking/",
+      "title": "just thinking…",
+      "description": "An invitation to notice thoughts and feelings changing, awareness apparently remaining, and the curious continuity of simply being “I.”",
+      "section": "opening",
+      "kind": "journal",
+      "excerpt": "(((just thinking…))) you are absolutely your thoughts and your feelings; thoughts and feelings are made of nothing but you… but are you only your thoughts and feelings, or is there more to you? are you not also aware of these thoughts and feelings? is this awareness these thoughts and feelings? sure… but how can whatever is aware of this be",
+      "search_text": "just thinking… an invitation to notice thoughts and feelings changing, awareness apparently remaining, and the curious continuity of simply being “i.” journal (((just thinking…))) you are absolutely your thoughts and your feelings; thoughts and feelings are made of nothing but you… but are you only your thoughts and feelings, or is there more to you? are you not also aware of these thoughts and feelings? is this awareness these thoughts and feelings? sure… but how can whatever is aware of this be absolutely absolutely-your absolutely-your-thoughts also also-aware also-aware-thoughts apparently apparently-remaining apparently-remaining-curious aware aware-this aware-thoughts aware-thoughts-feelings awareness awareness-apparently awareness-apparently-remaining awareness-thoughts awareness-thoughts-feelings being being-thinking being-thinking-you but but-how but-how-whatever but-you but-you-but but-you-only changing changing-awareness changing-awareness-apparently continuity continuity-simply continuity-simply-being curious curious-continuity curious-continuity-simply feelings feelings-changing feelings-changing-awareness feelings-made feelings-made-nothing feelings-sure feelings-sure-but feelings-there feelings-there-more feelings-this feelings-this-awareness feelings-thoughts feelings-thoughts-feelings how how-whatever how-whatever-aware invitation invitation-notice invitation-notice-thoughts made made-nothing made-nothing-but more more-you more-you-you not not-also not-also-aware nothing nothing-but nothing-but-you notice notice-thoughts notice-thoughts-feelings only only-your only-your-thoughts opening opening-thinking opening-thinking-thinking remaining remaining-curious remaining-curious-continuity simply simply-being simply-being-thinking sure sure-but sure-but-how there there-more there-more-you thinking thinking-invitation thinking-invitation-notice thinking-thinking thinking-thinking-invitation thinking-you thinking-you-absolutely this this-awareness this-awareness-thoughts thoughts thoughts-feelings thoughts-feelings-changing thoughts-feelings-made thoughts-feelings-sure thoughts-feelings-there thoughts-feelings-this thoughts-your thoughts-your-feelings whatever whatever-aware whatever-aware-this you you-absolutely you-absolutely-your you-but you-but-you you-not you-not-also you-only you-only-your you-you you-you-not your your-feelings your-feelings-thoughts your-thoughts your-thoughts-feelings your-thoughts-your",
+      "concepts": [
+        "absolutely",
+        "absolutely-your",
+        "absolutely-your-thoughts",
+        "also",
+        "also-aware",
+        "also-aware-thoughts",
+        "apparently",
+        "apparently-remaining",
+        "apparently-remaining-curious",
+        "aware",
+        "aware-this",
+        "aware-thoughts",
+        "aware-thoughts-feelings",
+        "awareness",
+        "awareness-apparently",
+        "awareness-apparently-remaining",
+        "awareness-thoughts",
+        "awareness-thoughts-feelings",
+        "being",
+        "being-thinking",
+        "being-thinking-you",
+        "but",
+        "but-how",
+        "but-how-whatever",
+        "but-you",
+        "but-you-but",
+        "but-you-only",
+        "changing",
+        "changing-awareness",
+        "changing-awareness-apparently",
+        "continuity",
+        "continuity-simply",
+        "continuity-simply-being",
+        "curious",
+        "curious-continuity",
+        "curious-continuity-simply",
+        "feelings",
+        "feelings-changing",
+        "feelings-changing-awareness",
+        "feelings-made",
+        "feelings-made-nothing",
+        "feelings-sure",
+        "feelings-sure-but",
+        "feelings-there",
+        "feelings-there-more",
+        "feelings-this",
+        "feelings-this-awareness",
+        "feelings-thoughts",
+        "feelings-thoughts-feelings",
+        "how",
+        "how-whatever",
+        "how-whatever-aware",
+        "invitation",
+        "invitation-notice",
+        "invitation-notice-thoughts",
+        "made",
+        "made-nothing",
+        "made-nothing-but",
+        "more",
+        "more-you",
+        "more-you-you",
+        "not",
+        "not-also",
+        "not-also-aware",
+        "nothing",
+        "nothing-but",
+        "nothing-but-you",
+        "notice",
+        "notice-thoughts",
+        "notice-thoughts-feelings",
+        "only",
+        "only-your",
+        "only-your-thoughts",
+        "opening",
+        "opening-thinking",
+        "opening-thinking-thinking",
+        "remaining",
+        "remaining-curious",
+        "remaining-curious-continuity",
+        "simply",
+        "simply-being",
+        "simply-being-thinking",
+        "sure",
+        "sure-but",
+        "sure-but-how",
+        "there",
+        "there-more",
+        "there-more-you",
+        "thinking",
+        "thinking-invitation",
+        "thinking-invitation-notice",
+        "thinking-thinking",
+        "thinking-thinking-invitation",
+        "thinking-you",
+        "thinking-you-absolutely",
+        "this",
+        "this-awareness",
+        "this-awareness-thoughts",
+        "thoughts",
+        "thoughts-feelings",
+        "thoughts-feelings-changing",
+        "thoughts-feelings-made",
+        "thoughts-feelings-sure",
+        "thoughts-feelings-there",
+        "thoughts-feelings-this",
+        "thoughts-your",
+        "thoughts-your-feelings",
+        "whatever",
+        "whatever-aware",
+        "whatever-aware-this",
+        "you",
+        "you-absolutely",
+        "you-absolutely-your",
+        "you-but",
+        "you-but-you",
+        "you-not",
+        "you-not-also",
+        "you-only",
+        "you-only-your",
+        "you-you",
+        "you-you-not",
+        "your",
+        "your-feelings",
+        "your-feelings-thoughts",
+        "your-thoughts",
+        "your-thoughts-feelings",
+        "your-thoughts-your"
+      ],
+      "tags": [],
+      "aliases": [],
+      "word_count": 186
+    },
     "https://unboundhealing.org/opening/kitchen-sink/": {
       "path": "opening/kitchen-sink/index.html",
       "url": "https://unboundhealing.org/opening/kitchen-sink/",
@@ -21354,6 +21496,62 @@
         ]
       }
     },
+    "absolutely": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "absolutely-your": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "absolutely-your-thoughts": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
     "abstract": {
       "frequency": 1,
       "connectivity": 178,
@@ -28841,28 +29039,67 @@
       }
     },
     "also": {
-      "frequency": 4,
-      "connectivity": 586,
-      "search_signal": 8,
-      "excerpt_signal": 1,
-      "word_signal": 7,
+      "frequency": 5,
+      "connectivity": 702,
+      "search_signal": 10,
+      "excerpt_signal": 2,
+      "word_signal": 9,
       "evidence": {
-        "page_count": 4,
-        "graph_degree": 586,
+        "page_count": 5,
+        "graph_degree": 702,
         "search_pages": [
           "https://unboundhealing.org/concept/experimenting/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/seriously/",
           "https://unboundhealing.org/opening/still-warm/",
           "https://unboundhealing.org/opening/undecided/"
         ],
         "excerpt_pages": [
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/undecided/"
         ],
         "long_form_pages": [
           "https://unboundhealing.org/concept/experimenting/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/seriously/",
           "https://unboundhealing.org/opening/still-warm/",
           "https://unboundhealing.org/opening/undecided/"
+        ]
+      }
+    },
+    "also-aware": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "also-aware-thoughts": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -34044,18 +34281,19 @@
       }
     },
     "apparently": {
-      "frequency": 6,
-      "connectivity": 920,
-      "search_signal": 12,
+      "frequency": 7,
+      "connectivity": 1032,
+      "search_signal": 14,
       "excerpt_signal": 3,
-      "word_signal": 11,
+      "word_signal": 13,
       "evidence": {
-        "page_count": 6,
-        "graph_degree": 920,
+        "page_count": 7,
+        "graph_degree": 1032,
         "search_pages": [
           "https://unboundhealing.org/opening/another-yesterday/",
           "https://unboundhealing.org/opening/arising/",
           "https://unboundhealing.org/opening/boo/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/null/",
           "https://unboundhealing.org/opening/upbeat/",
           "https://unboundhealing.org/opening/whelm/"
@@ -34069,6 +34307,7 @@
           "https://unboundhealing.org/opening/another-yesterday/",
           "https://unboundhealing.org/opening/arising/",
           "https://unboundhealing.org/opening/boo/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/null/",
           "https://unboundhealing.org/opening/upbeat/",
           "https://unboundhealing.org/opening/whelm/"
@@ -34144,6 +34383,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/boo/"
+        ]
+      }
+    },
+    "apparently-remaining": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "apparently-remaining-curious": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -39905,17 +40180,18 @@
       }
     },
     "aware": {
-      "frequency": 12,
-      "connectivity": 1504,
-      "search_signal": 24,
-      "excerpt_signal": 0,
-      "word_signal": 23,
+      "frequency": 13,
+      "connectivity": 1612,
+      "search_signal": 26,
+      "excerpt_signal": 1,
+      "word_signal": 25,
       "evidence": {
-        "page_count": 12,
-        "graph_degree": 1504,
+        "page_count": 13,
+        "graph_degree": 1612,
         "search_pages": [
           "https://unboundhealing.org/opening/another-another-yesterday/",
           "https://unboundhealing.org/opening/commitment/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/lean/",
           "https://unboundhealing.org/opening/open/",
           "https://unboundhealing.org/opening/post-this/",
@@ -39927,10 +40203,13 @@
           "https://unboundhealing.org/supporting/",
           "https://unboundhealing.org/welcome/"
         ],
-        "excerpt_pages": [],
+        "excerpt_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
         "long_form_pages": [
           "https://unboundhealing.org/opening/another-another-yesterday/",
           "https://unboundhealing.org/opening/commitment/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/lean/",
           "https://unboundhealing.org/opening/open/",
           "https://unboundhealing.org/opening/post-this/",
@@ -40086,15 +40365,69 @@
         ]
       }
     },
-    "awareness": {
-      "frequency": 33,
-      "connectivity": 4190,
-      "search_signal": 66,
+    "aware-this": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
       "excerpt_signal": 0,
-      "word_signal": 57,
+      "word_signal": 2,
       "evidence": {
-        "page_count": 33,
-        "graph_degree": 4190,
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "aware-thoughts": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "aware-thoughts-feelings": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "awareness": {
+      "frequency": 34,
+      "connectivity": 4293,
+      "search_signal": 68,
+      "excerpt_signal": 1,
+      "word_signal": 59,
+      "evidence": {
+        "page_count": 34,
+        "graph_degree": 4293,
         "search_pages": [
           "https://unboundhealing.org/",
           "https://unboundhealing.org/listening/",
@@ -40107,6 +40440,7 @@
           "https://unboundhealing.org/opening/elsewhere/",
           "https://unboundhealing.org/opening/empty/",
           "https://unboundhealing.org/opening/indivisible/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/knowing/",
           "https://unboundhealing.org/opening/lean/",
           "https://unboundhealing.org/opening/open/",
@@ -40130,7 +40464,9 @@
           "https://unboundhealing.org/supporting/",
           "https://unboundhealing.org/welcome/"
         ],
-        "excerpt_pages": [],
+        "excerpt_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
         "long_form_pages": [
           "https://unboundhealing.org/opening/a-little-extra/",
           "https://unboundhealing.org/opening/another-another-day-before/",
@@ -40140,6 +40476,7 @@
           "https://unboundhealing.org/opening/elsewhere/",
           "https://unboundhealing.org/opening/empty/",
           "https://unboundhealing.org/opening/indivisible/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/knowing/",
           "https://unboundhealing.org/opening/lean/",
           "https://unboundhealing.org/opening/open/",
@@ -40162,6 +40499,42 @@
           "https://unboundhealing.org/opening/yes-and-no/",
           "https://unboundhealing.org/supporting/",
           "https://unboundhealing.org/welcome/"
+        ]
+      }
+    },
+    "awareness-apparently": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "awareness-apparently-remaining": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -41315,6 +41688,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/post-this/"
+        ]
+      }
+    },
+    "awareness-thoughts": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "awareness-thoughts-feelings": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -44973,14 +45382,14 @@
       }
     },
     "being": {
-      "frequency": 26,
-      "connectivity": 3300,
-      "search_signal": 52,
+      "frequency": 27,
+      "connectivity": 3401,
+      "search_signal": 54,
       "excerpt_signal": 18,
-      "word_signal": 45,
+      "word_signal": 47,
       "evidence": {
-        "page_count": 26,
-        "graph_degree": 3300,
+        "page_count": 27,
+        "graph_degree": 3401,
         "search_pages": [
           "https://unboundhealing.org/about/conversing/",
           "https://unboundhealing.org/concept/just-thinking/",
@@ -44991,6 +45400,7 @@
           "https://unboundhealing.org/opening/boo/",
           "https://unboundhealing.org/opening/gloomy/",
           "https://unboundhealing.org/opening/indivisible/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/knowing/",
           "https://unboundhealing.org/opening/label-this/",
           "https://unboundhealing.org/opening/love-concept/",
@@ -45038,6 +45448,7 @@
           "https://unboundhealing.org/opening/boo/",
           "https://unboundhealing.org/opening/gloomy/",
           "https://unboundhealing.org/opening/indivisible/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/knowing/",
           "https://unboundhealing.org/opening/label-this/",
           "https://unboundhealing.org/opening/love-concept/",
@@ -45669,6 +46080,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/tom/"
+        ]
+      }
+    },
+    "being-thinking": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "being-thinking-you": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -52510,14 +52957,14 @@
       }
     },
     "but": {
-      "frequency": 30,
-      "connectivity": 4194,
-      "search_signal": 60,
-      "excerpt_signal": 29,
-      "word_signal": 53,
+      "frequency": 31,
+      "connectivity": 4297,
+      "search_signal": 62,
+      "excerpt_signal": 30,
+      "word_signal": 55,
       "evidence": {
-        "page_count": 30,
-        "graph_degree": 4194,
+        "page_count": 31,
+        "graph_degree": 4297,
         "search_pages": [
           "https://unboundhealing.org/concept/iced-coffee/",
           "https://unboundhealing.org/concept/idea/",
@@ -52528,6 +52975,7 @@
           "https://unboundhealing.org/opening/assume/",
           "https://unboundhealing.org/opening/form/",
           "https://unboundhealing.org/opening/fuck-blame/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/little-ditties/",
           "https://unboundhealing.org/opening/love-concept/",
           "https://unboundhealing.org/opening/meaning/",
@@ -52559,6 +53007,7 @@
           "https://unboundhealing.org/opening/assume/",
           "https://unboundhealing.org/opening/form/",
           "https://unboundhealing.org/opening/fuck-blame/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/little-ditties/",
           "https://unboundhealing.org/opening/love-concept/",
           "https://unboundhealing.org/opening/meaning/",
@@ -52590,6 +53039,7 @@
           "https://unboundhealing.org/opening/assume/",
           "https://unboundhealing.org/opening/form/",
           "https://unboundhealing.org/opening/fuck-blame/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/little-ditties/",
           "https://unboundhealing.org/opening/love-concept/",
           "https://unboundhealing.org/opening/meaning/",
@@ -53047,19 +53497,21 @@
       }
     },
     "but-how": {
-      "frequency": 1,
-      "connectivity": 139,
-      "search_signal": 2,
+      "frequency": 2,
+      "connectivity": 262,
+      "search_signal": 4,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 4,
       "evidence": {
-        "page_count": 1,
-        "graph_degree": 139,
+        "page_count": 2,
+        "graph_degree": 262,
         "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/words/"
         ],
         "excerpt_pages": [],
         "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/words/"
         ]
       }
@@ -53079,6 +53531,24 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/words/"
+        ]
+      }
+    },
+    "but-how-whatever": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -53787,6 +54257,60 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/unchosen/"
+        ]
+      }
+    },
+    "but-you": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "but-you-but": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "but-you-only": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -56943,17 +57467,18 @@
       }
     },
     "changing": {
-      "frequency": 4,
-      "connectivity": 648,
-      "search_signal": 8,
+      "frequency": 5,
+      "connectivity": 756,
+      "search_signal": 10,
       "excerpt_signal": 1,
-      "word_signal": 8,
+      "word_signal": 10,
       "evidence": {
-        "page_count": 4,
-        "graph_degree": 648,
+        "page_count": 5,
+        "graph_degree": 756,
         "search_pages": [
           "https://unboundhealing.org/opening/already/",
           "https://unboundhealing.org/opening/assume/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/lean/",
           "https://unboundhealing.org/opening/upbeat/"
         ],
@@ -56963,8 +57488,45 @@
         "long_form_pages": [
           "https://unboundhealing.org/opening/already/",
           "https://unboundhealing.org/opening/assume/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/lean/",
           "https://unboundhealing.org/opening/upbeat/"
+        ]
+      }
+    },
+    "changing-awareness": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "changing-awareness-apparently": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -66803,19 +67365,21 @@
       }
     },
     "continuity": {
-      "frequency": 1,
-      "connectivity": 184,
-      "search_signal": 2,
+      "frequency": 2,
+      "connectivity": 303,
+      "search_signal": 4,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 4,
       "evidence": {
-        "page_count": 1,
-        "graph_degree": 184,
+        "page_count": 2,
+        "graph_degree": 303,
         "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/unchosen/"
         ],
         "excerpt_pages": [],
         "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/unchosen/"
         ]
       }
@@ -66853,6 +67417,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/unchosen/"
+        ]
+      }
+    },
+    "continuity-simply": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "continuity-simply-being": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -71036,20 +71636,21 @@
       }
     },
     "curious": {
-      "frequency": 6,
-      "connectivity": 961,
-      "search_signal": 12,
+      "frequency": 7,
+      "connectivity": 1073,
+      "search_signal": 14,
       "excerpt_signal": 0,
-      "word_signal": 12,
+      "word_signal": 14,
       "evidence": {
-        "page_count": 6,
-        "graph_degree": 961,
+        "page_count": 7,
+        "graph_degree": 1073,
         "search_pages": [
           "https://unboundhealing.org/opening/actually/",
           "https://unboundhealing.org/opening/dis-engage/",
           "https://unboundhealing.org/opening/elsewhere/",
           "https://unboundhealing.org/opening/empty/",
           "https://unboundhealing.org/opening/finger-pain/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/yes-and-no/"
         ],
         "excerpt_pages": [],
@@ -71059,7 +71660,44 @@
           "https://unboundhealing.org/opening/elsewhere/",
           "https://unboundhealing.org/opening/empty/",
           "https://unboundhealing.org/opening/finger-pain/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/yes-and-no/"
+        ]
+      }
+    },
+    "curious-continuity": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "curious-continuity-simply": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -98079,22 +98717,61 @@
       }
     },
     "feelings": {
+      "frequency": 2,
+      "connectivity": 277,
+      "search_signal": 4,
+      "excerpt_signal": 2,
+      "word_signal": 4,
+      "evidence": {
+        "page_count": 2,
+        "graph_degree": 277,
+        "search_pages": [
+          "https://unboundhealing.org/opening/irony/",
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [
+          "https://unboundhealing.org/opening/irony/",
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/irony/",
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "feelings-changing": {
       "frequency": 1,
-      "connectivity": 154,
+      "connectivity": 126,
       "search_signal": 2,
-      "excerpt_signal": 1,
+      "excerpt_signal": 0,
       "word_signal": 2,
       "evidence": {
         "page_count": 1,
-        "graph_degree": 154,
+        "graph_degree": 126,
         "search_pages": [
-          "https://unboundhealing.org/opening/irony/"
+          "https://unboundhealing.org/opening/just-thinking/"
         ],
-        "excerpt_pages": [
-          "https://unboundhealing.org/opening/irony/"
-        ],
+        "excerpt_pages": [],
         "long_form_pages": [
-          "https://unboundhealing.org/opening/irony/"
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "feelings-changing-awareness": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -98131,6 +98808,186 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/irony/"
+        ]
+      }
+    },
+    "feelings-made": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "feelings-made-nothing": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "feelings-sure": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "feelings-sure-but": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "feelings-there": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "feelings-there-more": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "feelings-this": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "feelings-this-awareness": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "feelings-thoughts": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "feelings-thoughts-feelings": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -114056,14 +114913,14 @@
       }
     },
     "how": {
-      "frequency": 30,
-      "connectivity": 4064,
-      "search_signal": 60,
-      "excerpt_signal": 22,
-      "word_signal": 54,
+      "frequency": 31,
+      "connectivity": 4165,
+      "search_signal": 62,
+      "excerpt_signal": 23,
+      "word_signal": 56,
       "evidence": {
-        "page_count": 30,
-        "graph_degree": 4064,
+        "page_count": 31,
+        "graph_degree": 4165,
         "search_pages": [
           "https://unboundhealing.org/concept/",
           "https://unboundhealing.org/concept/origin/",
@@ -114078,6 +114935,7 @@
           "https://unboundhealing.org/opening/going-under/",
           "https://unboundhealing.org/opening/happening/",
           "https://unboundhealing.org/opening/irony/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/knowing/",
           "https://unboundhealing.org/opening/love-concept/",
           "https://unboundhealing.org/opening/low-sugar/",
@@ -114107,6 +114965,7 @@
           "https://unboundhealing.org/opening/going-under/",
           "https://unboundhealing.org/opening/happening/",
           "https://unboundhealing.org/opening/irony/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/knowing/",
           "https://unboundhealing.org/opening/mara/",
           "https://unboundhealing.org/opening/no-matter/",
@@ -114132,6 +114991,7 @@
           "https://unboundhealing.org/opening/going-under/",
           "https://unboundhealing.org/opening/happening/",
           "https://unboundhealing.org/opening/irony/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/knowing/",
           "https://unboundhealing.org/opening/love-concept/",
           "https://unboundhealing.org/opening/low-sugar/",
@@ -115205,6 +116065,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/assume/"
+        ]
+      }
+    },
+    "how-whatever": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "how-whatever-aware": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -125140,18 +126036,19 @@
       }
     },
     "invitation": {
-      "frequency": 4,
-      "connectivity": 503,
-      "search_signal": 8,
+      "frequency": 5,
+      "connectivity": 617,
+      "search_signal": 10,
       "excerpt_signal": 1,
-      "word_signal": 5,
+      "word_signal": 7,
       "evidence": {
-        "page_count": 4,
-        "graph_degree": 503,
+        "page_count": 5,
+        "graph_degree": 617,
         "search_pages": [
           "https://unboundhealing.org/about/conversing/",
           "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/cooling-tea/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/tom/"
         ],
         "excerpt_pages": [
@@ -125160,6 +126057,7 @@
         "long_form_pages": [
           "https://unboundhealing.org/about/conversing/",
           "https://unboundhealing.org/opening/cooling-tea/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/tom/"
         ]
       }
@@ -125266,6 +126164,42 @@
         ],
         "excerpt_pages": [],
         "long_form_pages": []
+      }
+    },
+    "invitation-notice": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "invitation-notice-thoughts": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
       }
     },
     "invitation-simply": {
@@ -140027,26 +140961,29 @@
       }
     },
     "made": {
-      "frequency": 3,
-      "connectivity": 457,
-      "search_signal": 6,
-      "excerpt_signal": 3,
-      "word_signal": 6,
+      "frequency": 4,
+      "connectivity": 574,
+      "search_signal": 8,
+      "excerpt_signal": 4,
+      "word_signal": 8,
       "evidence": {
-        "page_count": 3,
-        "graph_degree": 457,
+        "page_count": 4,
+        "graph_degree": 574,
         "search_pages": [
           "https://unboundhealing.org/opening/assume/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/no-thing/",
           "https://unboundhealing.org/opening/nonsense/"
         ],
         "excerpt_pages": [
           "https://unboundhealing.org/opening/assume/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/no-thing/",
           "https://unboundhealing.org/opening/nonsense/"
         ],
         "long_form_pages": [
           "https://unboundhealing.org/opening/assume/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/no-thing/",
           "https://unboundhealing.org/opening/nonsense/"
         ]
@@ -140085,6 +141022,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/no-thing/"
+        ]
+      }
+    },
+    "made-nothing": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "made-nothing-but": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -148649,14 +149622,14 @@
       }
     },
     "more": {
-      "frequency": 21,
-      "connectivity": 3110,
-      "search_signal": 42,
-      "excerpt_signal": 13,
-      "word_signal": 40,
+      "frequency": 22,
+      "connectivity": 3215,
+      "search_signal": 44,
+      "excerpt_signal": 14,
+      "word_signal": 42,
       "evidence": {
-        "page_count": 21,
-        "graph_degree": 3110,
+        "page_count": 22,
+        "graph_degree": 3215,
         "search_pages": [
           "https://unboundhealing.org/opening/2am/",
           "https://unboundhealing.org/opening/actually/",
@@ -148668,6 +149641,7 @@
           "https://unboundhealing.org/opening/going-under/",
           "https://unboundhealing.org/opening/happening/",
           "https://unboundhealing.org/opening/indivisible/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/lost-in-translation/",
           "https://unboundhealing.org/opening/mara/",
           "https://unboundhealing.org/opening/noticing/",
@@ -148688,6 +149662,7 @@
           "https://unboundhealing.org/opening/going-under/",
           "https://unboundhealing.org/opening/happening/",
           "https://unboundhealing.org/opening/indivisible/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/lost-in-translation/",
           "https://unboundhealing.org/opening/mara/",
           "https://unboundhealing.org/opening/noticing/",
@@ -148706,6 +149681,7 @@
           "https://unboundhealing.org/opening/going-under/",
           "https://unboundhealing.org/opening/happening/",
           "https://unboundhealing.org/opening/indivisible/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/lost-in-translation/",
           "https://unboundhealing.org/opening/mara/",
           "https://unboundhealing.org/opening/noticing/",
@@ -149445,19 +150421,21 @@
       }
     },
     "more-you": {
-      "frequency": 1,
-      "connectivity": 134,
-      "search_signal": 2,
+      "frequency": 2,
+      "connectivity": 254,
+      "search_signal": 4,
       "excerpt_signal": 0,
-      "word_signal": 2,
+      "word_signal": 4,
       "evidence": {
-        "page_count": 1,
-        "graph_degree": 134,
+        "page_count": 2,
+        "graph_degree": 254,
         "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/noticing/"
         ],
         "excerpt_pages": [],
         "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/noticing/"
         ]
       }
@@ -149477,6 +150455,24 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/noticing/"
+        ]
+      }
+    },
+    "more-you-you": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -158197,14 +159193,14 @@
       }
     },
     "not": {
-      "frequency": 44,
-      "connectivity": 5916,
-      "search_signal": 88,
-      "excerpt_signal": 35,
-      "word_signal": 78,
+      "frequency": 45,
+      "connectivity": 6014,
+      "search_signal": 90,
+      "excerpt_signal": 36,
+      "word_signal": 80,
       "evidence": {
-        "page_count": 44,
-        "graph_degree": 5916,
+        "page_count": 45,
+        "graph_degree": 6014,
         "search_pages": [
           "https://unboundhealing.org/about/",
           "https://unboundhealing.org/concept/experimenting/",
@@ -158230,6 +159226,7 @@
           "https://unboundhealing.org/opening/happening/",
           "https://unboundhealing.org/opening/indivisible/",
           "https://unboundhealing.org/opening/just-listening/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/love-concept/",
           "https://unboundhealing.org/opening/low-sugar/",
           "https://unboundhealing.org/opening/mara/",
@@ -158271,6 +159268,7 @@
           "https://unboundhealing.org/opening/gloomy/",
           "https://unboundhealing.org/opening/happening/",
           "https://unboundhealing.org/opening/just-listening/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/love-concept/",
           "https://unboundhealing.org/opening/low-sugar/",
           "https://unboundhealing.org/opening/no-matter/",
@@ -158311,6 +159309,7 @@
           "https://unboundhealing.org/opening/happening/",
           "https://unboundhealing.org/opening/indivisible/",
           "https://unboundhealing.org/opening/just-listening/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/love-concept/",
           "https://unboundhealing.org/opening/low-sugar/",
           "https://unboundhealing.org/opening/mara/",
@@ -158385,6 +159384,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/post-this/"
+        ]
+      }
+    },
+    "not-also": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "not-also-aware": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -160592,14 +161627,14 @@
       }
     },
     "nothing": {
-      "frequency": 23,
-      "connectivity": 2921,
-      "search_signal": 46,
-      "excerpt_signal": 18,
-      "word_signal": 40,
+      "frequency": 24,
+      "connectivity": 3024,
+      "search_signal": 48,
+      "excerpt_signal": 19,
+      "word_signal": 42,
       "evidence": {
-        "page_count": 23,
-        "graph_degree": 2921,
+        "page_count": 24,
+        "graph_degree": 3024,
         "search_pages": [
           "https://unboundhealing.org/about/conversing/",
           "https://unboundhealing.org/opening/2am/",
@@ -160608,6 +161643,7 @@
           "https://unboundhealing.org/opening/boo/",
           "https://unboundhealing.org/opening/indivisible/",
           "https://unboundhealing.org/opening/just-listening/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/little-ditties/",
           "https://unboundhealing.org/opening/lost-in-translation/",
           "https://unboundhealing.org/opening/lukewarm-decaf/",
@@ -160631,6 +161667,7 @@
           "https://unboundhealing.org/opening/another-another-yesterday/",
           "https://unboundhealing.org/opening/indivisible/",
           "https://unboundhealing.org/opening/just-listening/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/little-ditties/",
           "https://unboundhealing.org/opening/lost-in-translation/",
           "https://unboundhealing.org/opening/meaning/",
@@ -160653,6 +161690,7 @@
           "https://unboundhealing.org/opening/boo/",
           "https://unboundhealing.org/opening/indivisible/",
           "https://unboundhealing.org/opening/just-listening/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/little-ditties/",
           "https://unboundhealing.org/opening/lost-in-translation/",
           "https://unboundhealing.org/opening/lukewarm-decaf/",
@@ -160869,6 +161907,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/boo/"
+        ]
+      }
+    },
+    "nothing-but": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "nothing-but-you": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -161447,20 +162521,21 @@
       }
     },
     "notice": {
-      "frequency": 14,
-      "connectivity": 1696,
-      "search_signal": 28,
+      "frequency": 15,
+      "connectivity": 1804,
+      "search_signal": 30,
       "excerpt_signal": 1,
-      "word_signal": 27,
+      "word_signal": 29,
       "evidence": {
-        "page_count": 14,
-        "graph_degree": 1696,
+        "page_count": 15,
+        "graph_degree": 1804,
         "search_pages": [
           "https://unboundhealing.org/opening/another-another-day-before/",
           "https://unboundhealing.org/opening/another-another-yesterday/",
           "https://unboundhealing.org/opening/coffee-and-quiet/",
           "https://unboundhealing.org/opening/commitment/",
           "https://unboundhealing.org/opening/empty/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/lean/",
           "https://unboundhealing.org/opening/open/",
           "https://unboundhealing.org/opening/post-this/",
@@ -161480,6 +162555,7 @@
           "https://unboundhealing.org/opening/coffee-and-quiet/",
           "https://unboundhealing.org/opening/commitment/",
           "https://unboundhealing.org/opening/empty/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/lean/",
           "https://unboundhealing.org/opening/open/",
           "https://unboundhealing.org/opening/post-this/",
@@ -161601,6 +162677,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/yes-and-no/"
+        ]
+      }
+    },
+    "notice-thoughts": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "notice-thoughts-feelings": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -167914,19 +169026,20 @@
       }
     },
     "only": {
-      "frequency": 9,
-      "connectivity": 1332,
-      "search_signal": 18,
-      "excerpt_signal": 4,
-      "word_signal": 15,
+      "frequency": 10,
+      "connectivity": 1441,
+      "search_signal": 20,
+      "excerpt_signal": 5,
+      "word_signal": 17,
       "evidence": {
-        "page_count": 9,
-        "graph_degree": 1332,
+        "page_count": 10,
+        "graph_degree": 1441,
         "search_pages": [
           "https://unboundhealing.org/noticing/shared-experiences/",
           "https://unboundhealing.org/opening/elsewhere/",
           "https://unboundhealing.org/opening/gloomy/",
           "https://unboundhealing.org/opening/indivisible/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/label-this/",
           "https://unboundhealing.org/opening/no-thing/",
           "https://unboundhealing.org/opening/silence/",
@@ -167936,6 +169049,7 @@
         "excerpt_pages": [
           "https://unboundhealing.org/noticing/shared-experiences/",
           "https://unboundhealing.org/opening/indivisible/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/label-this/",
           "https://unboundhealing.org/opening/silence/"
         ],
@@ -167943,6 +169057,7 @@
           "https://unboundhealing.org/opening/elsewhere/",
           "https://unboundhealing.org/opening/gloomy/",
           "https://unboundhealing.org/opening/indivisible/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/label-this/",
           "https://unboundhealing.org/opening/no-thing/",
           "https://unboundhealing.org/opening/silence/",
@@ -168268,6 +169383,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/label-this/"
+        ]
+      }
+    },
+    "only-your": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "only-your-thoughts": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -168730,14 +169881,14 @@
       }
     },
     "opening": {
-      "frequency": 95,
-      "connectivity": 12140,
-      "search_signal": 190,
+      "frequency": 96,
+      "connectivity": 12236,
+      "search_signal": 192,
       "excerpt_signal": 5,
-      "word_signal": 179,
+      "word_signal": 181,
       "evidence": {
-        "page_count": 95,
-        "graph_degree": 12140,
+        "page_count": 96,
+        "graph_degree": 12236,
         "search_pages": [
           "https://unboundhealing.org/opening/2am/",
           "https://unboundhealing.org/opening/a-little-extra/",
@@ -168774,6 +169925,7 @@
           "https://unboundhealing.org/opening/inspired/",
           "https://unboundhealing.org/opening/irony/",
           "https://unboundhealing.org/opening/just-listening/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/kitchen-sink/",
           "https://unboundhealing.org/opening/knowing/",
           "https://unboundhealing.org/opening/label-this/",
@@ -168878,6 +170030,7 @@
           "https://unboundhealing.org/opening/inspired/",
           "https://unboundhealing.org/opening/irony/",
           "https://unboundhealing.org/opening/just-listening/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/kitchen-sink/",
           "https://unboundhealing.org/opening/knowing/",
           "https://unboundhealing.org/opening/label-this/",
@@ -171714,6 +172867,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/still-warm/"
+        ]
+      }
+    },
+    "opening-thinking": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "opening-thinking-thinking": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -198919,17 +200108,18 @@
       }
     },
     "remaining": {
-      "frequency": 2,
-      "connectivity": 307,
-      "search_signal": 4,
+      "frequency": 3,
+      "connectivity": 424,
+      "search_signal": 6,
       "excerpt_signal": 2,
-      "word_signal": 3,
+      "word_signal": 5,
       "evidence": {
-        "page_count": 2,
-        "graph_degree": 307,
+        "page_count": 3,
+        "graph_degree": 424,
         "search_pages": [
           "https://unboundhealing.org/concept/zone/",
-          "https://unboundhealing.org/opening/dis-ease/"
+          "https://unboundhealing.org/opening/dis-ease/",
+          "https://unboundhealing.org/opening/just-thinking/"
         ],
         "excerpt_pages": [
           "https://unboundhealing.org/concept/zone/",
@@ -198937,7 +200127,44 @@
         ],
         "long_form_pages": [
           "https://unboundhealing.org/concept/zone/",
-          "https://unboundhealing.org/opening/dis-ease/"
+          "https://unboundhealing.org/opening/dis-ease/",
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "remaining-curious": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "remaining-curious-continuity": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -211901,14 +213128,14 @@
       }
     },
     "simply": {
-      "frequency": 19,
-      "connectivity": 2753,
-      "search_signal": 38,
+      "frequency": 20,
+      "connectivity": 2855,
+      "search_signal": 40,
       "excerpt_signal": 4,
-      "word_signal": 37,
+      "word_signal": 39,
       "evidence": {
-        "page_count": 19,
-        "graph_degree": 2753,
+        "page_count": 20,
+        "graph_degree": 2855,
         "search_pages": [
           "https://unboundhealing.org/about/conversing/",
           "https://unboundhealing.org/opening/arising/",
@@ -211917,6 +213144,7 @@
           "https://unboundhealing.org/opening/commitment/",
           "https://unboundhealing.org/opening/dis-ease/",
           "https://unboundhealing.org/opening/following/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/knowing/",
           "https://unboundhealing.org/opening/mara/",
           "https://unboundhealing.org/opening/noticing/",
@@ -211944,6 +213172,7 @@
           "https://unboundhealing.org/opening/commitment/",
           "https://unboundhealing.org/opening/dis-ease/",
           "https://unboundhealing.org/opening/following/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/knowing/",
           "https://unboundhealing.org/opening/mara/",
           "https://unboundhealing.org/opening/noticing/",
@@ -212124,20 +213353,22 @@
       }
     },
     "simply-being": {
-      "frequency": 2,
-      "connectivity": 313,
-      "search_signal": 4,
+      "frequency": 3,
+      "connectivity": 429,
+      "search_signal": 6,
       "excerpt_signal": 0,
-      "word_signal": 4,
+      "word_signal": 6,
       "evidence": {
-        "page_count": 2,
-        "graph_degree": 313,
+        "page_count": 3,
+        "graph_degree": 429,
         "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/skwintcheee/",
           "https://unboundhealing.org/opening/speak/"
         ],
         "excerpt_pages": [],
         "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/skwintcheee/",
           "https://unboundhealing.org/opening/speak/"
         ]
@@ -212176,6 +213407,24 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/speak/"
+        ]
+      }
+    },
+    "simply-being-thinking": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -228512,18 +229761,19 @@
       }
     },
     "sure": {
-      "frequency": 10,
-      "connectivity": 1432,
-      "search_signal": 20,
+      "frequency": 11,
+      "connectivity": 1535,
+      "search_signal": 22,
       "excerpt_signal": 7,
-      "word_signal": 17,
+      "word_signal": 19,
       "evidence": {
-        "page_count": 10,
-        "graph_degree": 1432,
+        "page_count": 11,
+        "graph_degree": 1535,
         "search_pages": [
           "https://unboundhealing.org/concept/zone/",
           "https://unboundhealing.org/opening/elsewhere/",
           "https://unboundhealing.org/opening/happening/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/low-sugar/",
           "https://unboundhealing.org/opening/seriously/",
           "https://unboundhealing.org/opening/silence/",
@@ -228545,6 +229795,7 @@
           "https://unboundhealing.org/concept/zone/",
           "https://unboundhealing.org/opening/elsewhere/",
           "https://unboundhealing.org/opening/happening/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/low-sugar/",
           "https://unboundhealing.org/opening/seriously/",
           "https://unboundhealing.org/opening/silence/",
@@ -228552,6 +229803,42 @@
           "https://unboundhealing.org/opening/this-morning/",
           "https://unboundhealing.org/opening/this-you/",
           "https://unboundhealing.org/opening/upbeat/"
+        ]
+      }
+    },
+    "sure-but": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "sure-but-how": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -234630,19 +235917,20 @@
       }
     },
     "there": {
-      "frequency": 12,
-      "connectivity": 1721,
-      "search_signal": 24,
-      "excerpt_signal": 10,
-      "word_signal": 21,
+      "frequency": 13,
+      "connectivity": 1827,
+      "search_signal": 26,
+      "excerpt_signal": 11,
+      "word_signal": 23,
       "evidence": {
-        "page_count": 12,
-        "graph_degree": 1721,
+        "page_count": 13,
+        "graph_degree": 1827,
         "search_pages": [
           "https://unboundhealing.org/about/conversing/",
           "https://unboundhealing.org/opening/form/",
           "https://unboundhealing.org/opening/indivisible/",
           "https://unboundhealing.org/opening/inspired/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/lean/",
           "https://unboundhealing.org/opening/little-ditties/",
           "https://unboundhealing.org/opening/lukewarm-decaf/",
@@ -234656,6 +235944,7 @@
           "https://unboundhealing.org/opening/form/",
           "https://unboundhealing.org/opening/indivisible/",
           "https://unboundhealing.org/opening/inspired/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/lean/",
           "https://unboundhealing.org/opening/little-ditties/",
           "https://unboundhealing.org/opening/lukewarm-decaf/",
@@ -234669,6 +235958,7 @@
           "https://unboundhealing.org/opening/form/",
           "https://unboundhealing.org/opening/indivisible/",
           "https://unboundhealing.org/opening/inspired/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/lean/",
           "https://unboundhealing.org/opening/little-ditties/",
           "https://unboundhealing.org/opening/lukewarm-decaf/",
@@ -234749,6 +236039,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/this-you/"
+        ]
+      }
+    },
+    "there-more": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "there-more-you": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -237559,14 +238885,14 @@
       }
     },
     "thinking": {
-      "frequency": 30,
-      "connectivity": 3998,
-      "search_signal": 60,
+      "frequency": 31,
+      "connectivity": 4098,
+      "search_signal": 62,
       "excerpt_signal": 17,
-      "word_signal": 51,
+      "word_signal": 53,
       "evidence": {
-        "page_count": 30,
-        "graph_degree": 3998,
+        "page_count": 31,
+        "graph_degree": 4098,
         "search_pages": [
           "https://unboundhealing.org/concept/experimenting/",
           "https://unboundhealing.org/concept/",
@@ -237580,6 +238906,7 @@
           "https://unboundhealing.org/opening/authentic-kinda/",
           "https://unboundhealing.org/opening/following/",
           "https://unboundhealing.org/opening/form/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/knowing/",
           "https://unboundhealing.org/opening/no-thing/",
           "https://unboundhealing.org/opening/open/",
@@ -237629,6 +238956,7 @@
           "https://unboundhealing.org/opening/authentic-kinda/",
           "https://unboundhealing.org/opening/following/",
           "https://unboundhealing.org/opening/form/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/knowing/",
           "https://unboundhealing.org/opening/no-thing/",
           "https://unboundhealing.org/opening/open/",
@@ -238199,6 +239527,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/no-thing/"
+        ]
+      }
+    },
+    "thinking-invitation": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "thinking-invitation-notice": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -239086,6 +240450,42 @@
         ]
       }
     },
+    "thinking-thinking": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "thinking-thinking-invitation": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
     "thinking-veterans": {
       "frequency": 1,
       "connectivity": 208,
@@ -239432,6 +240832,42 @@
         ]
       }
     },
+    "thinking-you": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "thinking-you-absolutely": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
     "third": {
       "frequency": 1,
       "connectivity": 122,
@@ -239483,14 +240919,14 @@
       }
     },
     "this": {
-      "frequency": 68,
-      "connectivity": 8531,
-      "search_signal": 136,
-      "excerpt_signal": 50,
-      "word_signal": 120,
+      "frequency": 69,
+      "connectivity": 8631,
+      "search_signal": 138,
+      "excerpt_signal": 51,
+      "word_signal": 122,
       "evidence": {
-        "page_count": 68,
-        "graph_degree": 8531,
+        "page_count": 69,
+        "graph_degree": 8631,
         "search_pages": [
           "https://unboundhealing.org/about/conversing/",
           "https://unboundhealing.org/concept/evolving/",
@@ -239519,6 +240955,7 @@
           "https://unboundhealing.org/opening/going-under/",
           "https://unboundhealing.org/opening/",
           "https://unboundhealing.org/opening/inspired/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/kitchen-sink/",
           "https://unboundhealing.org/opening/knowing/",
           "https://unboundhealing.org/opening/label-this/",
@@ -239579,6 +241016,7 @@
           "https://unboundhealing.org/opening/going-under/",
           "https://unboundhealing.org/opening/",
           "https://unboundhealing.org/opening/inspired/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/kitchen-sink/",
           "https://unboundhealing.org/opening/knowing/",
           "https://unboundhealing.org/opening/lean/",
@@ -239638,6 +241076,7 @@
           "https://unboundhealing.org/opening/going-under/",
           "https://unboundhealing.org/opening/",
           "https://unboundhealing.org/opening/inspired/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/kitchen-sink/",
           "https://unboundhealing.org/opening/knowing/",
           "https://unboundhealing.org/opening/label-this/",
@@ -239899,6 +241338,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/arising/"
+        ]
+      }
+    },
+    "this-awareness": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "this-awareness-thoughts": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -244890,14 +246365,14 @@
       }
     },
     "thoughts": {
-      "frequency": 39,
-      "connectivity": 5140,
-      "search_signal": 78,
-      "excerpt_signal": 10,
-      "word_signal": 74,
+      "frequency": 40,
+      "connectivity": 5243,
+      "search_signal": 80,
+      "excerpt_signal": 11,
+      "word_signal": 76,
       "evidence": {
-        "page_count": 39,
-        "graph_degree": 5140,
+        "page_count": 40,
+        "graph_degree": 5243,
         "search_pages": [
           "https://unboundhealing.org/concept/idea/",
           "https://unboundhealing.org/opening/a-little-extra/",
@@ -244917,6 +246392,7 @@
           "https://unboundhealing.org/opening/indivisible/",
           "https://unboundhealing.org/opening/inspired/",
           "https://unboundhealing.org/opening/just-listening/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/lean/",
           "https://unboundhealing.org/opening/lukewarm-decaf/",
           "https://unboundhealing.org/opening/mara/",
@@ -244946,6 +246422,7 @@
           "https://unboundhealing.org/opening/boo/",
           "https://unboundhealing.org/opening/dis-engage/",
           "https://unboundhealing.org/opening/empty/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/mara/",
           "https://unboundhealing.org/opening/sold-out/",
           "https://unboundhealing.org/opening/speed-round/",
@@ -244970,6 +246447,7 @@
           "https://unboundhealing.org/opening/indivisible/",
           "https://unboundhealing.org/opening/inspired/",
           "https://unboundhealing.org/opening/just-listening/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/lean/",
           "https://unboundhealing.org/opening/lukewarm-decaf/",
           "https://unboundhealing.org/opening/mara/",
@@ -245267,6 +246745,114 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/a-little-extra/"
+        ]
+      }
+    },
+    "thoughts-feelings": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "thoughts-feelings-changing": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "thoughts-feelings-made": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "thoughts-feelings-sure": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "thoughts-feelings-there": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "thoughts-feelings-this": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -246017,6 +247603,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/another-another-yesterday/"
+        ]
+      }
+    },
+    "thoughts-your": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "thoughts-your-feelings": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -267886,14 +269508,14 @@
       }
     },
     "whatever": {
-      "frequency": 28,
-      "connectivity": 3610,
-      "search_signal": 56,
-      "excerpt_signal": 18,
-      "word_signal": 50,
+      "frequency": 29,
+      "connectivity": 3710,
+      "search_signal": 58,
+      "excerpt_signal": 19,
+      "word_signal": 52,
       "evidence": {
-        "page_count": 28,
-        "graph_degree": 3610,
+        "page_count": 29,
+        "graph_degree": 3710,
         "search_pages": [
           "https://unboundhealing.org/about/conversing/",
           "https://unboundhealing.org/concept/just-thinking/",
@@ -267905,6 +269527,7 @@
           "https://unboundhealing.org/opening/assume/",
           "https://unboundhealing.org/opening/commitment/",
           "https://unboundhealing.org/opening/feeling-cute/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/lean/",
           "https://unboundhealing.org/opening/little-ditties/",
           "https://unboundhealing.org/opening/noticing/",
@@ -267929,6 +269552,7 @@
           "https://unboundhealing.org/opening/another-another-yesterday/",
           "https://unboundhealing.org/opening/another-yesterday/",
           "https://unboundhealing.org/opening/assume/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/lean/",
           "https://unboundhealing.org/opening/little-ditties/",
           "https://unboundhealing.org/opening/open/",
@@ -267955,6 +269579,7 @@
           "https://unboundhealing.org/opening/assume/",
           "https://unboundhealing.org/opening/commitment/",
           "https://unboundhealing.org/opening/feeling-cute/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/lean/",
           "https://unboundhealing.org/opening/little-ditties/",
           "https://unboundhealing.org/opening/noticing/",
@@ -268085,6 +269710,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/still-busy/"
+        ]
+      }
+    },
+    "whatever-aware": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "whatever-aware-this": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -281030,20 +282691,21 @@
       }
     },
     "you": {
-      "frequency": 18,
-      "connectivity": 2388,
-      "search_signal": 36,
-      "excerpt_signal": 15,
-      "word_signal": 30,
+      "frequency": 19,
+      "connectivity": 2490,
+      "search_signal": 38,
+      "excerpt_signal": 16,
+      "word_signal": 32,
       "evidence": {
-        "page_count": 18,
-        "graph_degree": 2388,
+        "page_count": 19,
+        "graph_degree": 2490,
         "search_pages": [
           "https://unboundhealing.org/concept/zone/",
           "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/another-another-day-before/",
           "https://unboundhealing.org/opening/gloomy/",
           "https://unboundhealing.org/opening/irony/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/low-sugar/",
           "https://unboundhealing.org/opening/lukewarm-decaf/",
           "https://unboundhealing.org/opening/noticing/",
@@ -281062,6 +282724,7 @@
           "https://unboundhealing.org/concept/zone/",
           "https://unboundhealing.org/",
           "https://unboundhealing.org/opening/gloomy/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/low-sugar/",
           "https://unboundhealing.org/opening/lukewarm-decaf/",
           "https://unboundhealing.org/opening/noticing/",
@@ -281080,6 +282743,7 @@
           "https://unboundhealing.org/opening/another-another-day-before/",
           "https://unboundhealing.org/opening/gloomy/",
           "https://unboundhealing.org/opening/irony/",
+          "https://unboundhealing.org/opening/just-thinking/",
           "https://unboundhealing.org/opening/low-sugar/",
           "https://unboundhealing.org/opening/lukewarm-decaf/",
           "https://unboundhealing.org/opening/noticing/",
@@ -281132,6 +282796,42 @@
         ]
       }
     },
+    "you-absolutely": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "you-absolutely-your": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
     "you-bless": {
       "frequency": 1,
       "connectivity": 191,
@@ -281165,6 +282865,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/another-another-day-before/"
+        ]
+      }
+    },
+    "you-but": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "you-but-you": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -281491,6 +283227,42 @@
         ]
       }
     },
+    "you-not": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "you-not-also": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
     "you-now": {
       "frequency": 1,
       "connectivity": 179,
@@ -281524,6 +283296,42 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/gloomy/"
+        ]
+      }
+    },
+    "you-only": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "you-only-your": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -281958,6 +283766,152 @@
         "excerpt_pages": [],
         "long_form_pages": [
           "https://unboundhealing.org/opening/speak/"
+        ]
+      }
+    },
+    "you-you": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "you-you-not": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "your": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 1,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "your-feelings": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "your-feelings-thoughts": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "your-thoughts": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "your-thoughts-feelings": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ]
+      }
+    },
+    "your-thoughts-your": {
+      "frequency": 1,
+      "connectivity": 126,
+      "search_signal": 2,
+      "excerpt_signal": 0,
+      "word_signal": 2,
+      "evidence": {
+        "page_count": 1,
+        "graph_degree": 126,
+        "search_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
+        ],
+        "excerpt_pages": [],
+        "long_form_pages": [
+          "https://unboundhealing.org/opening/just-thinking/"
         ]
       }
     },
@@ -291410,6 +293364,149 @@
         "https://unboundhealing.org/concept/website-building/"
       ]
     },
+    "https://unboundhealing.org/opening/just-thinking/": {
+      "concepts": [
+        "absolutely",
+        "absolutely-your",
+        "absolutely-your-thoughts",
+        "also",
+        "also-aware",
+        "also-aware-thoughts",
+        "apparently",
+        "apparently-remaining",
+        "apparently-remaining-curious",
+        "aware",
+        "aware-this",
+        "aware-thoughts",
+        "aware-thoughts-feelings",
+        "awareness",
+        "awareness-apparently",
+        "awareness-apparently-remaining",
+        "awareness-thoughts",
+        "awareness-thoughts-feelings",
+        "being",
+        "being-thinking",
+        "being-thinking-you",
+        "but",
+        "but-how",
+        "but-how-whatever",
+        "but-you",
+        "but-you-but",
+        "but-you-only",
+        "changing",
+        "changing-awareness",
+        "changing-awareness-apparently",
+        "continuity",
+        "continuity-simply",
+        "continuity-simply-being",
+        "curious",
+        "curious-continuity",
+        "curious-continuity-simply",
+        "feelings",
+        "feelings-changing",
+        "feelings-changing-awareness",
+        "feelings-made",
+        "feelings-made-nothing",
+        "feelings-sure",
+        "feelings-sure-but",
+        "feelings-there",
+        "feelings-there-more",
+        "feelings-this",
+        "feelings-this-awareness",
+        "feelings-thoughts",
+        "feelings-thoughts-feelings",
+        "how",
+        "how-whatever",
+        "how-whatever-aware",
+        "invitation",
+        "invitation-notice",
+        "invitation-notice-thoughts",
+        "made",
+        "made-nothing",
+        "made-nothing-but",
+        "more",
+        "more-you",
+        "more-you-you",
+        "not",
+        "not-also",
+        "not-also-aware",
+        "nothing",
+        "nothing-but",
+        "nothing-but-you",
+        "notice",
+        "notice-thoughts",
+        "notice-thoughts-feelings",
+        "only",
+        "only-your",
+        "only-your-thoughts",
+        "opening",
+        "opening-thinking",
+        "opening-thinking-thinking",
+        "remaining",
+        "remaining-curious",
+        "remaining-curious-continuity",
+        "simply",
+        "simply-being",
+        "simply-being-thinking",
+        "sure",
+        "sure-but",
+        "sure-but-how",
+        "there",
+        "there-more",
+        "there-more-you",
+        "thinking",
+        "thinking-invitation",
+        "thinking-invitation-notice",
+        "thinking-thinking",
+        "thinking-thinking-invitation",
+        "thinking-you",
+        "thinking-you-absolutely",
+        "this",
+        "this-awareness",
+        "this-awareness-thoughts",
+        "thoughts",
+        "thoughts-feelings",
+        "thoughts-feelings-changing",
+        "thoughts-feelings-made",
+        "thoughts-feelings-sure",
+        "thoughts-feelings-there",
+        "thoughts-feelings-this",
+        "thoughts-your",
+        "thoughts-your-feelings",
+        "whatever",
+        "whatever-aware",
+        "whatever-aware-this",
+        "you",
+        "you-absolutely",
+        "you-absolutely-your",
+        "you-but",
+        "you-but-you",
+        "you-not",
+        "you-not-also",
+        "you-only",
+        "you-only-your",
+        "you-you",
+        "you-you-not",
+        "your",
+        "your-feelings",
+        "your-feelings-thoughts",
+        "your-thoughts",
+        "your-thoughts-feelings",
+        "your-thoughts-your"
+      ],
+      "related": [
+        "https://unboundhealing.org/opening/post-this/",
+        "https://unboundhealing.org/opening/this-morning-a/",
+        "https://unboundhealing.org/opening/open/",
+        "https://unboundhealing.org/opening/this-morning-too/",
+        "https://unboundhealing.org/opening/yes-and-no/",
+        "https://unboundhealing.org/opening/indivisible/",
+        "https://unboundhealing.org/opening/unchosen/",
+        "https://unboundhealing.org/opening/assume/",
+        "https://unboundhealing.org/opening/skwintcheee/",
+        "https://unboundhealing.org/opening/seriously/"
+      ]
+    },
     "https://unboundhealing.org/opening/kitchen-sink/": {
       "concepts": [
         "95",
@@ -294172,6 +296269,7 @@
         "weight-gravity-soles"
       ],
       "related": [
+        "https://unboundhealing.org/opening/just-thinking/",
         "https://unboundhealing.org/opening/asking/",
         "https://unboundhealing.org/opening/lost-in-translation/",
         "https://unboundhealing.org/opening/2am/",
@@ -294180,8 +296278,7 @@
         "https://unboundhealing.org/opening/assume/",
         "https://unboundhealing.org/opening/no-matter/",
         "https://unboundhealing.org/opening/still-busy/",
-        "https://unboundhealing.org/opening/meaning/",
-        "https://unboundhealing.org/opening/yes-and-no/"
+        "https://unboundhealing.org/opening/meaning/"
       ]
     },
     "https://unboundhealing.org/opening/no-title/": {
