@@ -2077,6 +2077,30 @@
       "presence"
     ]
   },
+  "https://unboundhealing.org/opening/short-enough/": {
+    "version": 2,
+    "generated": true,
+    "tags": [
+      "becomes",
+      "becomes-thought",
+      "becomes-thought-writing",
+      "brewing",
+      "brewing-dont",
+      "brewing-dont-want",
+      "brews",
+      "brews-cools",
+      "brews-cools-writing",
+      "but"
+    ],
+    "aliases": [
+      "becomes thought",
+      "becomes thought writing",
+      "brewing dont",
+      "brewing dont want",
+      "brews cools",
+      "brews cools writing"
+    ]
+  },
   "https://unboundhealing.org/opening/significance/": {
     "version": 2,
     "generated": true,
